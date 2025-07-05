@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "crucible_flow": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

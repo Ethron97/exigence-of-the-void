@@ -1,0 +1,1 @@
+scoreboard players remove Menace DeckAnalysis 2

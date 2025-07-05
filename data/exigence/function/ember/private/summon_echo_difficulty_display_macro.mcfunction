@@ -1,0 +1,1 @@
+$summon minecraft:text_display ~ ~ ~ {Tags:["EchoDifficultyDisplay"],text:[{text:"Difficulty: ",color:"gray"},{text:"$(echo_difficulty)",color:"blue"}],billboard:"center",alignment:"left",see_through:true}

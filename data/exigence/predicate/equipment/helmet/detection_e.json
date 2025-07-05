@@ -1,0 +1,21 @@
+{
+    "condition": "minecraft:any_of",
+    "terms": [
+        {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "equipment": {
+                    "head": {
+                        "items": "minecraft:chainmail_helmet",
+                        "predicates": {
+                            "minecraft:custom_data": {
+                                "item_name": "helmet_detection_e"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+$function exigence:cards/$(card_name)/instant

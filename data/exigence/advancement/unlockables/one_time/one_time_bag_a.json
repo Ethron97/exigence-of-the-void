@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "one_time_bag_a": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

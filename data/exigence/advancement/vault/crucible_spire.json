@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "crucible_spire": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

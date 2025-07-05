@@ -1,0 +1,15 @@
+{
+    "parent": "exigence:story/win_difficulty_3",  
+    "criteria": {
+      "talk_to_petitioner": {
+        "trigger": "minecraft:impossible"
+      }
+    },
+    "display": {
+      "description": "Talk to the Petitioner",
+      "icon": {
+        "id": "minecraft:campfire"
+      },
+      "title": "A New Alliance"
+    }
+  }

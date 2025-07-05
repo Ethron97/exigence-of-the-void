@@ -1,0 +1,15 @@
+{
+    "parent": "exigence:story/destroy_crystals",  
+    "criteria": {
+      "light_altars": {
+        "trigger": "minecraft:impossible"
+      }
+    },
+    "display": {
+      "description": "Light the beacons",
+      "icon": {
+        "id": "minecraft:nether_star"
+      },
+      "title": "Solace"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "opened_vex": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

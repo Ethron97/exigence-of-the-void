@@ -1,0 +1,15 @@
+{
+    "criteria": {
+      "eat_carrot": {
+        "trigger": "minecraft:consume_item",
+        "conditions": {
+          "item": {
+            "items": "minecraft:carrot"
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "exigence:advancements/listener/consume/eat_carrot"
+    }
+  }

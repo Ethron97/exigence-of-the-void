@@ -1,0 +1,10 @@
+{
+    "values": [
+        "minecraft:compass",
+        "minecraft:ghast_tear",
+        "minecraft:nether_star",
+        "minecraft:trial_key",
+        "minecraft:ominous_trial_key",
+        "#exigence:echo"
+    ]
+}

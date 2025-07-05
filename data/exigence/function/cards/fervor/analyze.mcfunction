@@ -1,0 +1,1 @@
+scoreboard players add Ember DeckAnalysis 6

@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "trial_spire": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "trial_eye": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

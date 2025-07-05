@@ -1,0 +1,15 @@
+{
+    "parent": "exigence:story/rescue_petitioner",
+    "criteria": {
+      "win_difficulty_4": {
+        "trigger": "minecraft:impossible"
+      }
+    },
+    "display": {
+      "description": "Return from Ardor's Bane",
+      "icon": {
+        "id": "minecraft:sculk"
+      },
+      "title": "Ardor's Bane"
+    }
+}

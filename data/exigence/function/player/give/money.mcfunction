@@ -1,0 +1,2 @@
+#give @s minecraft:diamond[custom_model_data={strings:["glint"]},custom_name=[{text:"💎 Glint 💎",color:"gold",italic:false}],lore=[[{text:"A gemstone suspended in prismatic glass.",color:"gray"}],[{text:"Can be used to purchase items in the shop.",color:"gray"}]]]
+loot give @s loot exigence:glint

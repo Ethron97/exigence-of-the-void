@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "one_time_food_a": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

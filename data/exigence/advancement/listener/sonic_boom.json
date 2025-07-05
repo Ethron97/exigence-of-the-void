@@ -1,0 +1,26 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:entity_hurt_player",
+        "conditions": {
+          "damage": {
+            "source_entity": {
+              "type": "minecraft:warden"
+            },
+            "type": {
+              "tags": [
+                {
+                  "id": "minecraft:bypasses_enchantments",
+                  "expected": true
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "exigence:advancements/listener/sonic_boom"
+    }
+  }
+  

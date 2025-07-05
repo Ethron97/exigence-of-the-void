@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "crucible_eye": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "shop_unlock_potion_glow_b": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

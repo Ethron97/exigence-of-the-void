@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "trial_silence": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

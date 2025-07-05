@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "shop_unlock_one_time_food_a": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

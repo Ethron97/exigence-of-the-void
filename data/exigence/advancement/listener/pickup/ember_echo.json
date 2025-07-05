@@ -1,0 +1,20 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:campfire",
+            "predicates": {
+              "minecraft:custom_data": {"big":"false"}
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "exigence:advancements/listener/pickup/ember_echo"
+  }
+}

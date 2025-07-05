@@ -1,0 +1,51 @@
+{
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:diamond",
+            "functions": [
+              {
+                "function": "minecraft:set_custom_model_data",
+                "strings": {
+                  "values": [
+                    "glint"
+                  ],
+                  "mode": "append"
+                }
+              },
+              {
+                "function": "minecraft:set_name",
+                "entity": "this",
+                "target": "custom_name",
+                "name": {
+                  "text": "💎 Glint 💎",
+                  "color": "gold",
+                  "italic": false
+                }
+              },
+              {
+                "function": "minecraft:set_lore",
+                "lore": [
+                  {
+                    "text": "A gemstone suspended in prismatic glass.",
+                    "color": "gray",
+                    "italic": true
+                  },
+                  {
+                    "text": "Can be used to purchase items in the shop.",
+                    "color": "gray",
+                    "italic": true
+                  }
+                ],
+                "mode": "replace_all"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

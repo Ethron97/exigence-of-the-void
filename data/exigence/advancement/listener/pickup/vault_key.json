@@ -1,0 +1,20 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#exigence:trim_templates",
+            "predicates": {
+              "minecraft:custom_data": {"vault_key_summoned":"true"}
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "exigence:advancements/listener/pickup/vault_key"
+  }
+}

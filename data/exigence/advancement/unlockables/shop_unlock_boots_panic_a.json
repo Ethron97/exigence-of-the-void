@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "shop_unlock_boots_panic_a": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

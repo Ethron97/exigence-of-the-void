@@ -1,0 +1,15 @@
+{
+  "parent": "exigence:story/win_difficulty_4",  
+  "criteria": {
+    "shop_unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": "Disable the wards around the final beacon",
+    "icon": {
+      "id": "minecraft:amethyst_shard"
+    },
+    "title": "Fracture Wards"
+  }
+}

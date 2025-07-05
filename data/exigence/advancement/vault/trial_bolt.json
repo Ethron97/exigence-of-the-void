@@ -1,0 +1,7 @@
+{
+  "criteria": {
+    "trial_bolt": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

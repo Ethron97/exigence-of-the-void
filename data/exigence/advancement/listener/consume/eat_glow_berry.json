@@ -1,0 +1,15 @@
+{
+    "criteria": {
+      "eat_glow_berry": {
+        "trigger": "minecraft:consume_item",
+        "conditions": {
+          "item": {
+            "items": "minecraft:glow_berries"
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "exigence:advancements/listener/consume/eat_glow_berry"
+    }
+  }

@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "shop_unlock_chest_white_a": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

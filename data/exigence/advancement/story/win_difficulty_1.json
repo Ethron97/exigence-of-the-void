@@ -1,0 +1,15 @@
+{
+    "parent": "exigence:story/win_difficulty_0",
+    "criteria": {
+      "win_difficulty_1": {
+        "trigger": "minecraft:impossible"
+      }
+    },
+    "display": {
+      "description": "Return from the Ruins of Solstice",
+      "icon": {
+        "id": "minecraft:warped_planks"
+      },
+      "title": "Ruins of Solstice"
+    }
+}

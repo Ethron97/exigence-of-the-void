@@ -1,0 +1,1 @@
+$summon minecraft:text_display ~ ~ ~ {Tags:["WinrateDisplay"],text:[{text:"Winrate: ",color:"gray"},{text:"$(times_won)",color:"blue"},{text:"/",color:"gray"},{text:"$(times_chosen) ",color:"blue"},{text:"$(winrate)",color:"blue"},{text:"%",color:"gray"}],billboard:"center",alignment:"left",see_through:true}

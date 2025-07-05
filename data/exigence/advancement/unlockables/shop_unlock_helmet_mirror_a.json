@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "shop_unlock_helmet_mirror_a": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

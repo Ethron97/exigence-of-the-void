@@ -1,0 +1,1 @@
+$bossbar set exigence:last_card name [{text:"Last Card: ",color:"white"},$(text)]

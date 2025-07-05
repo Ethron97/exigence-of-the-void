@@ -1,0 +1,15 @@
+{
+    "parent": "exigence:story/talk_to_petitioner",  
+    "criteria": {
+      "light_altars": {
+        "trigger": "minecraft:impossible"
+      }
+    },
+    "display": {
+      "description": "Kindle Faith",
+      "icon": {
+        "id": "minecraft:soul_campfire"
+      },
+      "title": "Free the Petitioner"
+    }
+}

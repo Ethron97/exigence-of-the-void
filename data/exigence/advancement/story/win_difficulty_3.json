@@ -1,0 +1,15 @@
+{
+    "parent": "exigence:story/rescue_scientist",
+    "criteria": {
+      "win_difficulty_3": {
+        "trigger": "minecraft:impossible"
+      }
+    },
+    "display": {
+      "description": "Return from the Temple of Fervor",
+      "icon": {
+        "id": "minecraft:chiseled_tuff"
+      },
+      "title": "Temple of Fervor"
+    }
+}

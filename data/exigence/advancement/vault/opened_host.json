@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "opened_host": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

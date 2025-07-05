@@ -1,0 +1,1 @@
+$setblock $(X) $(Y) $(Z) $(id)[up=true]

@@ -1,0 +1,18 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:amethyst_cluster"
+            }
+          ]
+        }
+      }
+    },
+    "rewards": {
+      "function": "exigence:advancements/listener/pickup/money"
+    }
+  }
+    

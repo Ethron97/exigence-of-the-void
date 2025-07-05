@@ -1,0 +1,1 @@
+advancement revoke @a[tag=Tutorial,advancements={exigence:listener/step_on_sculk=true}] only exigence:listener/step_on_sculk

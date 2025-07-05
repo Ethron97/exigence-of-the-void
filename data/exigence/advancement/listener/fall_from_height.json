@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:fall_from_height",
+      "conditions": {
+        "player": {
+          "stepping_on": {
+            "block": {
+              "blocks": "minecraft:frosted_ice"
+            }
+          }
+        },
+        "distance": {
+          "y": {
+            "min": 0,
+            "max": 999
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "exigence:advancements/listener/fall_from_height"
+  }
+}

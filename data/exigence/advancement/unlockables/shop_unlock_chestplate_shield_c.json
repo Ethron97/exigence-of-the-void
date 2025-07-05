@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "shop_unlock_chestplate_shield_c": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

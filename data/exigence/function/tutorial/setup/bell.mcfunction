@@ -1,0 +1,1 @@
+execute as @e[tag=BellNode,scores={ObjectLevel=10}] run function exigence:bell/node/activate

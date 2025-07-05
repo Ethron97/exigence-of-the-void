@@ -1,0 +1,2 @@
+# To be called only be "create_bb"
+$setblock $(final_x) $(final_y) $(final_z) minecraft:structure_block{posX:0,posY:$(posY),posZ:0,mode:"SAVE",sizeX:$(sizeX),sizeY:$(sizeY),sizeZ:$(sizeZ),name:"minecraft:a",showboundingbox:1b}
