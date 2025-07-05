@@ -1,0 +1,21 @@
+{
+    "condition": "minecraft:any_of",
+    "terms": [
+        {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "equipment": {
+                    "feet": {
+                        "items": "minecraft:iron_boots",
+                        "predicates": {
+                            "minecraft:custom_data": {
+                                "item_name": "boots_panic_d"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

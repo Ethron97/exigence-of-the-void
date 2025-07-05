@@ -1,0 +1,17 @@
+{
+    "values": [
+        "minecraft:air",
+        "minecraft:snow",
+        "minecraft:twisting_vines",
+        "minecraft:spruce_sign",
+        "minecraft:cave_vines",
+        "minecraft:light",
+        "minecraft:gray_stained_glass_pane",
+        "minecraft:short_grass",
+        "minecraft:tall_grass",
+        "minecraft:open_eyeblossom",
+        "minecraft:closed_eyeblossom",
+        "minecraft:pale_moss_carpet",
+        "minecraft:moss_carpet"
+    ]
+}

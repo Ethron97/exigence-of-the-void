@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:trial_key",
+            "predicates": {
+              "minecraft:custom_data": {"key_level":"3"}
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "exigence:advancements/listener/pickup/level_3_key"
+  }
+}
+  

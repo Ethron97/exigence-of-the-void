@@ -1,0 +1,15 @@
+{
+    "parent": "exigence:story/root",  
+    "criteria": {
+      "win_difficulty_0": {
+        "trigger": "minecraft:impossible"
+      }
+    },
+    "display": {
+      "description": "Complete the tutorial",
+      "icon": {
+        "id": "minecraft:blue_terracotta"
+      },
+      "title": "Road to Solstice"
+    }
+}

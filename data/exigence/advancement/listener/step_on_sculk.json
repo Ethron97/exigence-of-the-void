@@ -1,0 +1,32 @@
+{
+    "criteria": {
+      "step_on_sculk": {
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "stepping_on": {
+                  "block": {
+                    "blocks": [
+                      "minecraft:sculk",
+                      "minecraft:bedrock"
+                    ]
+                  }
+                },
+                "type_specific": {
+                  "type": "player",
+                  "gamemode": ["adventure"]
+                }
+              }
+            }
+          ]
+        },
+        "trigger": "minecraft:tick"
+      }
+    },
+    "rewards": {
+        "function": "exigence:advancements/listener/step_on_sculk"
+    }
+  }

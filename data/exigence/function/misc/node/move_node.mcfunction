@@ -1,0 +1,2 @@
+# Move nearest node of the given type to the player's location, aligned and oriented
+$execute at @s as @e[type=minecraft:armor_stand,tag=$(tag),sort=nearest,limit=1] align x align z run tp @s ~0.5 ~ ~0.5 90 0

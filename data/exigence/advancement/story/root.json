@@ -1,0 +1,22 @@
+{
+    "criteria": {
+      "complete_prologue": {
+        "trigger": "minecraft:impossible"
+      }
+    },
+    "display": {
+      "announce_to_chat": false,
+      "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+      "description": "Complete the prologue",
+      "icon": {
+        "id": "minecraft:map"
+      },
+      "show_toast": false,
+      "title": "Story"
+    },
+    "requirements": [
+      [
+        "complete_prologue"
+      ]
+    ]
+}

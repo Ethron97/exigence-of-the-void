@@ -1,0 +1,1 @@
+$teleport @s $(player_pos_x).5 $(player_pos_y).0 $(player_pos_z).5

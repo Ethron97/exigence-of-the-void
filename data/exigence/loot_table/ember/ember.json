@@ -1,0 +1,72 @@
+
+{
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:blaze_powder",
+            "functions": [
+              {
+                "function": "minecraft:set_components",
+                "components": {
+                  "minecraft:max_stack_size": 99
+                }
+              },
+              {
+                "function": "minecraft:set_custom_model_data",
+                "strings": {
+                "values": [
+                  "ember"
+                ],
+                "mode": "append"
+              }
+              },
+              {
+                "function": "minecraft:set_name",
+                "entity": "this",
+                "target": "custom_name",
+                "name": {
+                  "text": "🔥 Ancient Ember 🔥",
+                  "color": "aqua",
+                  "italic": false
+                }
+              },
+              {
+                "function": "minecraft:set_lore",
+                "lore": [
+                  {
+                    "text": "A gift from the Ardor. We have found",
+                    "color": "gray",
+                    "italic": true
+                  },
+                  {
+                    "text": "new ways to harness its power.",
+                    "color": "gray",
+                    "italic": true
+                  },
+                  {
+                    "text": "",
+                    "color": "gray"
+                  },
+                  {
+                    "text": "Used to purchase Cards after",
+                    "color": "dark_gray",
+                    "italic": true
+                  },
+                  {
+                    "text": "escaping from the dungeon.",
+                    "color": "dark_gray",
+                    "italic": true
+                  }
+                ],
+                "mode": "replace_all"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

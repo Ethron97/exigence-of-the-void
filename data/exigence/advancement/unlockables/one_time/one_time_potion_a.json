@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "one_time_potion_a": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

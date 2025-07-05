@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "opened_snout": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

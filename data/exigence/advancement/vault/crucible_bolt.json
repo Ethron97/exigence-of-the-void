@@ -1,0 +1,7 @@
+{
+  "criteria": {
+    "crucible_bolt": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

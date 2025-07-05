@@ -1,0 +1,1 @@
+$execute as @e[type=minecraft:text_display,tag=MoneyDisplay,scores={ShopFrameID=$(shop_frame_id)}] run data merge entity @s {text:[{text:"💎$(money_cost)",color:"$(money_color)"}],alignment:"left"}

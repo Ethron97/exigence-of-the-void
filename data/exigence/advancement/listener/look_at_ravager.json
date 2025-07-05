@@ -1,0 +1,21 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:tick",
+        "conditions": {
+          "player": {
+            "type_specific": {
+              "type": "minecraft:player",
+              "looking_at": {
+                "type": "minecraft:ravager"
+              }
+            }
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "exigence:advancements/listener/look_at_ravager"
+    }
+  }
+  

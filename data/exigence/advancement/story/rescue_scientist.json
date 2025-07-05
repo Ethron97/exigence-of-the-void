@@ -1,0 +1,15 @@
+{
+    "parent": "exigence:story/match_bookshelf",  
+    "criteria": {
+      "rescue_scientist": {
+        "trigger": "minecraft:impossible"
+      }
+    },
+    "display": {
+      "description": "Unlock Uncommon items",
+      "icon": {
+        "id": "minecraft:smithing_table"
+      },
+      "title": "Rescue the Scientist"
+    }
+  }

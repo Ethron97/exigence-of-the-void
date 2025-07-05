@@ -1,0 +1,1 @@
+$execute as @a[tag=Resetting] run advancement revoke @s only exigence:unlockables/shop_unlock_$(item_name)

@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "opened_tide": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

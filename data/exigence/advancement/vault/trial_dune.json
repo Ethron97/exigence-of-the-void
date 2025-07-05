@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "trial_dune": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

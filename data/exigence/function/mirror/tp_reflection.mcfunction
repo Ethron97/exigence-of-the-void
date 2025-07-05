@@ -1,0 +1,1 @@
+$execute as @e[type=minecraft:$(type),tag=Reflection,tag=Active] at @e[type=minecraft:armor_stand,tag=RotationReflection,tag=Active] run tp @s ^ ^$(height) ^$(distance)

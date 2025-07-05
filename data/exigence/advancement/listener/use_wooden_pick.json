@@ -1,0 +1,18 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:item_durability_changed",
+        "conditions": {
+          "delta": -1,
+          "item": {
+            "items": [
+              "minecraft:wooden_pickaxe"
+            ]
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "exigence:advancements/listener/use_wooden_pick"
+    }
+  }

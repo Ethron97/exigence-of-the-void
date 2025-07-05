@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "opened_sentry": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

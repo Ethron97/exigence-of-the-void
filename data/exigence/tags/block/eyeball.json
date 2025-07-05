@@ -1,0 +1,12 @@
+{
+    "values": [
+        "minecraft:air",
+        "minecraft:snow",
+        "minecraft:twisting_vines",
+        "minecraft:spruce_sign",
+        "minecraft:cave_vines",
+        "minecraft:tripwire",
+        "minecraft:light",
+        "minecraft:spruce_wall_sign"
+    ]
+}

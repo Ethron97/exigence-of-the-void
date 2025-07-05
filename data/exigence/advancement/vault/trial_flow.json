@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "trial_flow": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

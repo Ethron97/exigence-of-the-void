@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "crucible_dune": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

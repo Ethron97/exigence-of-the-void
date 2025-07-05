@@ -1,0 +1,1 @@
+$bossbar set exigence:tutorial value $(bossbar)

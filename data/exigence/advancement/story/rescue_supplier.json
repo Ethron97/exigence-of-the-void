@@ -1,0 +1,15 @@
+{
+  "parent": "exigence:story/win_difficulty_1",  
+  "criteria": {
+    "shop_unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": "Unlock the Glint Shop",
+    "icon": {
+      "id": "minecraft:bundle"
+    },
+    "title": "Rescue the Supplier"
+  }
+}

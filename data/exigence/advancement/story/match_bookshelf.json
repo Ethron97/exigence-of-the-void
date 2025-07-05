@@ -1,0 +1,15 @@
+{
+    "parent": "exigence:story/win_difficulty_2",  
+    "criteria": {
+      "match_bookshelf": {
+        "trigger": "minecraft:impossible"
+      }
+    },
+    "display": {
+      "description": "Seven years bad luck",
+      "icon": {
+        "id": "minecraft:tinted_glass"
+      },
+      "title": "Free the Scientist"
+    }
+  }

@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "shop_unlock_chestplate_invis_f": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

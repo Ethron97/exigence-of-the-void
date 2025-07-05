@@ -1,0 +1,21 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:nether_star",
+              "predicates": {
+                "minecraft:custom_data": {"ardor_flame":"true"}
+              }
+            }
+          ]
+        }
+      }
+    },
+    "rewards": {
+      "function": "exigence:advancements/listener/pickup/ardor_flame"
+    }
+  }
+  

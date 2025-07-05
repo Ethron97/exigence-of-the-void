@@ -1,0 +1,1 @@
+scoreboard players add speedSeconds DeckAnalysis 60

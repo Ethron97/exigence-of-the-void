@@ -1,0 +1,1 @@
+$execute at @s run fill -384 ~ -263 -273 ~ -115 $(id) replace minecraft:gray_wool

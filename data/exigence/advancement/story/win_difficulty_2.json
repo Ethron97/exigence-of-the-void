@@ -1,0 +1,15 @@
+{
+    "parent": "exigence:story/rescue_supplier",
+    "criteria": {
+      "win_difficulty_2": {
+        "trigger": "minecraft:impossible"
+      }
+    },
+    "display": {
+      "description": "Return from the Mirror Mines",
+      "icon": {
+        "id": "minecraft:iron_pickaxe"
+      },
+      "title": "Mirror Mines"
+    }
+}

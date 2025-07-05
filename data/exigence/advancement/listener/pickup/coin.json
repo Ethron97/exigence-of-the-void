@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:large_amethyst_bud"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "exigence:advancements/listener/pickup/coin"
+  }
+}

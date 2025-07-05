@@ -1,0 +1,1 @@
+scoreboard players remove Hazard DeckAnalysis 2

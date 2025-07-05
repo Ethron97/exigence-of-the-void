@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "shop_unlock_helmet_beast_e": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }
