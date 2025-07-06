@@ -1,7 +1,9 @@
 # Called when player plays a spellbound card by using it from their inventory
 
+#say Spellsling card
+
 # Copy item to storage so we can clear it later
-execute if score #slot Temp matches 2 run data modify storage exigence:give card_name set from entity @s equipment.mainhand.components."minecraft:custom_data".card_name
+execute if score #slot Temp matches 2 run data modify storage exigence:give card_name set from entity @s SelectedItem.components."minecraft:custom_data".card_name
 execute if score #slot Temp matches 1 run data modify storage exigence:give card_name set from entity @s equipment.offhand.components."minecraft:custom_data".card_name
 
 # Get card entity that matches card name and is spellbound/not played

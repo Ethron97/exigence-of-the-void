@@ -23,7 +23,7 @@ $execute if score 27 number matches ..$(index) run return 1
 $item replace entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] weapon.mainhand from entity @s $(type).$(index)
 
 # If spellsling, remove
-$execute if data entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] {HandItems:[{components:{"minecraft:custom_data":{is_spellsling:'true'}}}]} run item replace entity @s $(type).$(index) with air
+$execute if data entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] {equipment:{mainhand:{components:{"minecraft:custom_data":{is_spellsling:'true'}}}}} run item replace entity @s $(type).$(index) with air
 
 # Copy input to storage
 $data modify storage exigence:give type set value $(type)

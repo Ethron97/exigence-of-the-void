@@ -34,20 +34,3 @@ execute unless items entity @s armor.head * run item replace entity @s armor.hea
 
 # Remove local tag
 tag @e[type=minecraft:armor_stand,tag=GrabHead] remove GrabHead
-
-
-
-
-# OLD STUFF
-# Set armorstand hand item(s) to the same as the player
-#execute as @e[type=minecraft:armor_stand,tag=Reflection] at @s run data modify entity @s equipment.offhand merge from entity @p[tag=ActivePlayer] SelectedItem
-#execute as @e[type=minecraft:armor_stand,tag=Reflection] at @s unless data entity @p[tag=ActivePlayer] SelectedItem run data modify entity @s equipment.offhand set value {}
-#execute as @e[type=minecraft:armor_stand,tag=Reflection] at @s if entity @p[tag=ActivePlayer,nbt={Inventory:[{Slot:-106b}]}] run data modify entity @s equipment.mainhand merge from entity @p[tag=ActivePlayer] Inventory[-1]
-#execute as @e[type=minecraft:armor_stand,tag=Reflection] at @s unless entity @p[tag=ActivePlayer,nbt={Inventory:[{Slot:-106b}]}] run data modify entity @s equipment.mainhand set value {}
-
-# Mirror player armor
-#data modify storage minecraft:temp Mirror.Armor set value [{},{},{},{id:"minecraft:wither_skeleton_skull",count:1}]
-#execute as @a[tag=ActivePlayer] if data entity @s Inventory[{Slot:100b}] run data modify storage temp Mirror.Armor[0].id set from entity @s Inventory[{Slot:100b}].id
-#execute as @a[tag=ActivePlayer] if data entity @s Inventory[{Slot:101b}] run data modify storage temp Mirror.Armor[1].id set from entity @s Inventory[{Slot:101b}].id
-#execute as @a[tag=ActivePlayer] if data entity @s Inventory[{Slot:102b}] run data modify storage temp Mirror.Armor[2].id set from entity @s Inventory[{Slot:102b}].id
-#execute as @e[type=minecraft:armor_stand,tag=Reflection] at @s run data modify entity @s ArmorItems set from storage temp Mirror.Armor

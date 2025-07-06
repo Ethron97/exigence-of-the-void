@@ -8,4 +8,4 @@ execute if data storage exigence:dungeon {is_active:0} run return 1
 
 # Trigger...
 #say Eat honey bottle
-function exigence:player/attributes/health_boost/increase_health {boost:1}
+function exigence:player/attributes/health_boost/increase_health {boost:2}

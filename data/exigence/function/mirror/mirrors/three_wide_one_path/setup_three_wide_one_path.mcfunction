@@ -1,6 +1,6 @@
 # Reset:
-function exigence:mirror/mirrors/three_wide_one_path/reset with storage exigence:dungeon Mirror
-data modify storage temp Mirror.mirror set value "three_wide"
+function exigence:mirror/mirrors/three_wide_one_path/reset with storage exigence:mirror
+data modify storage exigence:mirror mirror set value "three_wide"
 
 # Initialize setup variables
 scoreboard players set StartX MirrorSetup -417

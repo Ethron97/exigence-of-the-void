@@ -59,14 +59,14 @@ function nnmath:vec/2/get_length/exe
 
 scoreboard players operation distance MirrorMath2 = out nnmath_vec
 
-execute store result storage temp Mirror.distance double 0.01 run scoreboard players get out nnmath_vec
+execute store result storage exigence:mirror distance double 0.01 run scoreboard players get out nnmath_vec
 scoreboard players operation in0.z nnmath_vec *= #-1 nnmath_vec
-execute store result storage temp Mirror.height double 0.01 run scoreboard players get in0.z nnmath_vec
+execute store result storage exigence:mirror height double 0.01 run scoreboard players get in0.z nnmath_vec
 
 # =======================================================================================================================
 # Update reflection position
-data modify storage temp Mirror.type set value villager
-function exigence:mirror/tp_reflection with storage temp Mirror
+data modify storage exigence:mirror type set value villager
+function exigence:mirror/tp_reflection with storage exigence:mirror
 
 # Remove local tag
 tag @s remove Reflecting

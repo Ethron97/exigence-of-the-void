@@ -24,7 +24,7 @@ scoreboard players set #clear Temp 0
 
 $item replace entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] weapon.mainhand from entity @s $(type).$(index)
 
-$execute if data entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] {HandItems:[{components:{"minecraft:custom_data":{card_name:'$(card_name)'}}}]} run scoreboard players set #clear Temp 1
+$execute if data entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] {equipment:{mainhand:{components:{"minecraft:custom_data":{card_name:'$(card_name)'}}}}} run scoreboard players set #clear Temp 1
 
 $execute if score #clear Temp matches 1 run item replace entity @s $(type).$(index) with air
 execute if score #clear Temp matches 1 run return 1

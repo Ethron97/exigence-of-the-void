@@ -18,7 +18,7 @@ execute as @e[type=minecraft:item_display,tag=ItemShopDisplay,tag=DisplayingCost
 # Particles behind them if you can buy them or research
 execute at @a[tag=ItemShopping] as @e[distance=..8,type=minecraft:item_display,tag=ItemShopDisplay,tag=CanResearch] at @s run particle dust{color:[0.95f,0.22f,1.0f],scale:0.3f} ^ ^ ^-0.3 0.1 0.1 0.1 0 5
 #execute at @a[tag=ItemShopping] as @e[distance=..8,type=minecraft:item_display,tag=ItemShopDisplay,tag=CanResearch] at @s run particle dragon_breath ^ ^ ^-0.3 0.1 0.1 0.1 0 1
-execute at @a[tag=ItemShopping] as @e[distance=..8,type=minecraft:item_display,tag=ItemShopDisplay,tag=CanBuy] at @s run particle dust{color:[0.2f,0.88f,1.0f],scale:0.3f} ^ ^ ^-0.3 0.1 0.1 0.1 0 5
+execute at @a[tag=ItemShopping] as @e[distance=..8,type=minecraft:item_display,tag=ItemShopDisplay,tag=CanBuy,tag=!IsOneTimePurchased] at @s run particle dust{color:[0.2f,0.88f,1.0f],scale:0.3f} ^ ^ ^-0.3 0.1 0.1 0.1 0 5
 #execute at @a[tag=ItemShopping] as @e[distance=..8,type=minecraft:item_display,tag=ItemShopDisplay,tag=CanBuy] at @s run particle warped_spore ^ ^ ^-0.3 0.1 0.1 0.1 0 1
 
 # Reduce shop purchase cooldown by 1

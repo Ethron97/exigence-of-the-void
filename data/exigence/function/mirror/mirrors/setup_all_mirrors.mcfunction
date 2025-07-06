@@ -1,3 +1,6 @@
+# DEBUG
+#say Setting up all mirrors
+
 function exigence:mirror/mirrors/45_degree/setup_45_degree
 function exigence:mirror/mirrors/four_wide_one_path/setup_four_wide_one_path
 function exigence:mirror/mirrors/intersection/setup_intersection
