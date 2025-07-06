@@ -1,6 +1,6 @@
 # Reset
-function exigence:mirror/mirrors/laboratory/reset with storage exigence:dungeon Mirror
-data modify storage temp Mirror.mirror set value "laboratory"
+function exigence:mirror/mirrors/laboratory/reset with storage exigence:mirror
+data modify storage exigence:mirror mirror set value "laboratory"
 
 ## SECTION A
 #   Initialize setup variables

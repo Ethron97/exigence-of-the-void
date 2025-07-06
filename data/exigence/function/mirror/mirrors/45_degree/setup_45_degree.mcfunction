@@ -1,6 +1,9 @@
+# DEBUG
+#say Setting up 45_degree mirror
+
 # Reset
-function exigence:mirror/mirrors/45_degree/reset with storage exigence:dungeon Mirror
-data modify storage temp Mirror.mirror set value "45_degree"
+function exigence:mirror/mirrors/45_degree/reset with storage exigence:mirror
+data modify storage exigence:mirror mirror set value "45_degree"
 
 # Initialize setup variables
 scoreboard players set StartX MirrorSetup -431

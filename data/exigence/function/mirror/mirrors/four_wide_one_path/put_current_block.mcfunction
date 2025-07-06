@@ -22,13 +22,13 @@ scoreboard players operation OutX MirrorSetup += ForwardStartX MirrorSetup
 scoreboard players operation OutY MirrorSetup += ForwardStartY MirrorSetup
 scoreboard players operation OutZ MirrorSetup += ForwardStartZ MirrorSetup
 
-execute store result storage temp Mirror.X int 1 run scoreboard players get OutX MirrorSetup
-execute store result storage temp Mirror.Y int 1 run scoreboard players get OutY MirrorSetup
-execute store result storage temp Mirror.Z int 1 run scoreboard players get OutZ MirrorSetup
+execute store result storage exigence:mirror X int 1 run scoreboard players get OutX MirrorSetup
+execute store result storage exigence:mirror Y int 1 run scoreboard players get OutY MirrorSetup
+execute store result storage exigence:mirror Z int 1 run scoreboard players get OutZ MirrorSetup
 
-data modify storage temp Mirror.id set from storage exigence:dungeon Mirror.real_id
-data modify storage temp Mirror.reflection set value "NO"
-function exigence:mirror/mirrors/place_block with storage temp Mirror
+data modify storage exigence:mirror current_id set from storage exigence:mirror real_id
+data modify storage exigence:mirror reflection set value "NO"
+function exigence:mirror/mirrors/place_block with storage exigence:mirror
 
 # Mirror section
 scoreboard players operation OutX MirrorSetup = ModX MirrorSetup
@@ -46,10 +46,10 @@ scoreboard players operation OutZ MirrorSetup += MirrorZ MirrorSetup
 scoreboard players operation OutX MirrorSetup += ForwardStartX MirrorSetup
 scoreboard players operation OutZ MirrorSetup += ForwardStartZ MirrorSetup
 
-execute store result storage temp Mirror.X int 1 run scoreboard players get OutX MirrorSetup
-execute store result storage temp Mirror.Y int 1 run scoreboard players get OutY MirrorSetup
-execute store result storage temp Mirror.Z int 1 run scoreboard players get OutZ MirrorSetup
+execute store result storage exigence:mirror X int 1 run scoreboard players get OutX MirrorSetup
+execute store result storage exigence:mirror Y int 1 run scoreboard players get OutY MirrorSetup
+execute store result storage exigence:mirror Z int 1 run scoreboard players get OutZ MirrorSetup
 
-data modify storage temp Mirror.id set from storage exigence:dungeon Mirror.mirror_id
-data modify storage temp Mirror.reflection set value "YES"
-function exigence:mirror/mirrors/place_block with storage temp Mirror
+data modify storage exigence:mirror current_id set from storage exigence:mirror mirror_id
+data modify storage exigence:mirror reflection set value "YES"
+function exigence:mirror/mirrors/place_block with storage exigence:mirror

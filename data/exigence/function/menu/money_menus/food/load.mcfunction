@@ -19,10 +19,10 @@ $execute positioned ^1.0 ^2.75 ^ run function exigence:menu/money_menus/money_it
 $execute positioned ^0.3 ^2.75 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuFood',item_name:'food_beast',rarity:2,tier:4,money_cost:1,research_cost:10,parents:['food_c'],Rotation:'$(Rotation)'}
 
 $execute positioned ^0.8 ^3.5 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuFood',item_name:'food_e',rarity:3,tier:5,money_cost:1,research_cost:16,parents:['food_d'],Rotation:'$(Rotation)'}
-$execute positioned ^0.1 ^3.5 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuFood',item_name:'food_glow',rarity:3,tier:5,money_cost:1,research_cost:16,parents:['food_glow'],Rotation:'$(Rotation)'}
+$execute positioned ^0.1 ^3.5 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuFood',item_name:'food_glow',rarity:3,tier:5,money_cost:1,research_cost:16,parents:['food_beast'],Rotation:'$(Rotation)'}
 
 $execute positioned ^0.5 ^4.25 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuFood',item_name:'food_f',rarity:3,tier:6,money_cost:1,research_cost:24,parents:['food_e'],Rotation:'$(Rotation)'}
-$execute positioned ^-0.2 ^4.25 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuFood',item_name:'food_honey',rarity:3,tier:6,money_cost:1,research_cost:24,parents:['food_beast'],Rotation:'$(Rotation)'}
+$execute positioned ^-0.2 ^4.25 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuFood',item_name:'food_honey',rarity:3,tier:6,money_cost:1,research_cost:24,parents:['food_glow'],Rotation:'$(Rotation)'}
 
 # Add MenuConsumable
 tag @e[type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay] add MenuConsumable

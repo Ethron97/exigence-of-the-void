@@ -30,6 +30,10 @@ execute if score EchosRequired DungeonRun matches 1 as @s run function exigence:
 
 # Increase the player's t_echosPickedUp (total) score by 1
 scoreboard players add @s t_echosPickedUp 1
+execute if score @s ActiveLevel matches 1 run scoreboard players add @s t_echosPickedUpL1 1
+execute if score @s ActiveLevel matches 2 run scoreboard players add @s t_echosPickedUpL2 1
+execute if score @s ActiveLevel matches 3 run scoreboard players add @s t_echosPickedUpL3 1
+execute if score @s ActiveLevel matches 4 run scoreboard players add @s t_echosPickedUpL4 1
 
 # Increase the player's cr_echosPickedUp (current run) score by 1
 scoreboard players add @s cr_echosPickedUp 1

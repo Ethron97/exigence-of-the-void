@@ -1,6 +1,6 @@
 # Reset:
-function exigence:mirror/mirrors/intersection/reset with storage exigence:dungeon Mirror
-data modify storage temp Mirror.mirror set value "intersection"
+function exigence:mirror/mirrors/intersection/reset with storage exigence:mirror
+data modify storage exigence:mirror mirror set value "intersection"
 
 # Initialize setup variables
 scoreboard players set StartX MirrorSetup -434

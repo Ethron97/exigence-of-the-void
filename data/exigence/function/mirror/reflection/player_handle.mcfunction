@@ -38,8 +38,7 @@ tag @e[type=minecraft:armor_stand,tag=MirrorEntity] remove Active
 execute as @e[type=minecraft:armor_stand,tag=MirrorEntity] if score @s NodePlayerID = #compare PlayerID run tag @s add Active
 
 # If there is no active mirror, hide reflection and return
-execute unless entity @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] run data modify entity @e[type=minecraft:armor_stand,tag=Reflection,tag=Active,limit=1] ArmorItems set value [{},{},{},{}]
-execute unless entity @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] run data modify entity @e[type=minecraft:armor_stand,tag=Reflection,tag=Active,limit=1] HandItems set value [{},{}]
+execute unless entity @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] run data modify entity @e[type=minecraft:armor_stand,tag=Reflection,tag=Active,limit=1] equipment set value {}
 execute unless entity @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] run return 1
 
 # If rotation armorstands are not near the active mirrornode, move them
