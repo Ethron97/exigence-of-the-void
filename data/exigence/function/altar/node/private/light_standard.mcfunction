@@ -16,6 +16,8 @@ execute at @s run playsound minecraft:item.flintandsteel.use neutral @a ~ ~ ~
 scoreboard players set @s NodeState 1
 
 # If game is inactive, return here
+execute if score @s ObjectLevel matches 10 run function exigence:tutorial/flow/step
+execute if score @s ObjectLevel matches 10 run return 1
 execute unless data storage exigence:dungeon {is_active:1} run return 1
 #========================================================================================================
 

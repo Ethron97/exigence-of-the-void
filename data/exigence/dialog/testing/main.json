@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:dialog_list",
+    "title": "My Test Dialogs",
+    "columns": 1,
+    "dialogs": [
+        "exigence:testing/confirmation",
+        "exigence:testing/hello_world",
+        "exigence:testing/lots_of_buttons",
+        "exigence:testing/uppies",
+        "exigence:testing/store_input"
+    ]
+}

@@ -120,7 +120,7 @@ function exigence:deck/process/analyze_card {card_name:"metabolism",display_name
 
 # Rare Instant
 function exigence:deck/process/analyze_card {card_name:"elation",display_name:"Elation",rarity:3,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
-function exigence:deck/process/analyze_card {card_name:"key_hunter_iii",display_name:"Key Hunter III",rarity:4,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
+function exigence:deck/process/analyze_card {card_name:"key_hunter_iii",display_name:"Key Hunter III",rarity:3,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/analyze_card {card_name:"joy",display_name:"Joy",rarity:3,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/analyze_card {card_name:"forgotten_offering",display_name:"Forgotten Offering",rarity:3,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/analyze_card {card_name:"mind_of_divinity",display_name:"Mind of Divinity",rarity:3,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}

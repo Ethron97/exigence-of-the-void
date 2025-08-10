@@ -147,4 +147,5 @@ scoreboard objectives add EffectTemp dummy
 scoreboard objectives add EndermiteTimer dummy
 scoreboard objectives add EnemyStunCooldown dummy
 scoreboard objectives add RoomToken dummy
-
+scoreboard objectives add TutorialMarkerID dummy
+scoreboard objectives add Tutorial dummy

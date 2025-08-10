@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:multi_action",
+  "title": "Settings",
+  "can_close_with_escape": true,
+  "pause": true,
+  "actions": [
+    {
+      "label": "Return Compass",
+      "action": {
+        "type": "minecraft:custom",
+        "id": "return_compass",
+        "payload": true
+      }
+    }
+  ]
+}

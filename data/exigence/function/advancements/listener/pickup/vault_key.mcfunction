@@ -4,7 +4,7 @@ advancement revoke @s only exigence:listener/pickup/vault_key
 #say Pickup vault key
 
 # Return if dungeon is not active
-execute if data storage exigence:dungeon {is_active:0} run return 1
+execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
 
 # Add correct vault key item to inventory (switch)
 execute if entity @s[nbt={Inventory:[{id:"minecraft:host_armor_trim_smithing_template",components:{"minecraft:custom_data":{vault_key_summoned:"true"}}}]}] run function exigence:vault/pickup_vault_key {key_name:"host"}

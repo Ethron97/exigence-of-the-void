@@ -42,8 +42,6 @@ title @a actionbar ""
 title @a clear
 
 
-
-
 # Reset bookshelf on principal
 fill -481 61 -200 -473 65 -200 minecraft:chiseled_bookshelf[facing=south]
 

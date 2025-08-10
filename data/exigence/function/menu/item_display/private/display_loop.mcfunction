@@ -15,7 +15,7 @@ scoreboard players remove @s LoreLines 1
 #$say loring Rotation:[$(Rot0),$(Rot1)]
 
 # Summon text display
-$summon minecraft:text_display ~ ~ ~ {billboard:"fixed",alignment:"left",Tags:["ItemDetails","NewTextDisplay","MergeRotation"],text:{text:""},Rotation:[$(Rot0).0f,$(Rot1).0f],background:2017213500,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.75f,0.75f,0.75f]}}
+$summon minecraft:text_display ~ ~ ~ {billboard:"fixed",alignment:"left",Tags:["ItemDetails","NewTextDisplay","MergeRotation"],text:{text:""},Rotation:[$(Rot0),$(Rot1)],background:2017213500,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.75f,0.75f,0.75f]}}
 
 # Give matching scoreboard value
 scoreboard players operation @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] IDID = @s IDID

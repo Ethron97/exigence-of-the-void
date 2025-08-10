@@ -20,6 +20,8 @@ execute if score InnerFire Modifiers matches 0 run function exigence:altar/node/
 scoreboard players set @s NodeState 2
 
 # If game is inactive, return here
+execute if score @s ObjectLevel matches 10 in exigence:tutorial run function exigence:tutorial/flow/step
+execute if score @s ObjectLevel matches 10 run return 1
 execute unless data storage exigence:dungeon {is_active:1} run return 1
 #========================================================================================================
 

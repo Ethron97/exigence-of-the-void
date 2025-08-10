@@ -10,7 +10,7 @@ data modify storage exigence:dungeon tutorial set value 1
 tp @s -266.5 1.0 -120.5 -135 0
 
 # Load tutorial
-function exigence:tutorial/load
+function exigence:tutorial_old/load
 
 # Clear effects
 effect clear @s regeneration
@@ -19,7 +19,7 @@ effect clear @s regeneration
 # Initilize steppign / messaging / handling
 scoreboard players set Fallback Tutorial 1
 scoreboard players set Step Tutorial 0
-schedule function exigence:tutorial/step 1t
+schedule function exigence:tutorial_old/step 1t
 
 # Initialize bossbar
 function exigence:bossbar/tutorial/initialize

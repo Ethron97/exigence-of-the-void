@@ -1,4 +1,9 @@
-# Call as bush
+# Special pick case if player is using harvest scythe
+
+## CONSTRAINTS
+#   AS BerryNode
+
+# ===============================================================================================================
 
 # Increase score
 scoreboard players add @s timesPicked 1

@@ -6,7 +6,7 @@ scoreboard players remove SecondsCooldown TickCounter 1
 # If game is active, game tick
 execute if data storage exigence:dungeon {is_active:1,tutorial:0} run function exigence:game/game_tick
 execute if data storage exigence:dungeon {is_active:0,tutorial:0} run function exigence:hub/hub_tick
-execute if data storage exigence:dungeon {is_active:0,tutorial:1} run function exigence:tutorial/tick
+execute if data storage exigence:dungeon {is_active:0,tutorial:1} in exigence:tutorial run function exigence:tutorial/tick
 
 # Interaction handling
 execute as @e[type=minecraft:interaction] run function exigence:misc/interaction/check_interaction

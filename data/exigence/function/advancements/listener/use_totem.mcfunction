@@ -4,7 +4,7 @@ advancement revoke @s only exigence:listener/use_totem
 #say Used totem
 
 # If game not active, return
-execute if data storage exigence:dungeon {is_active:0} run return 1
+execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
 
 # Trigger use
 function exigence:menu/item_display/void_shop_display/items/totem_of_undying/teleport

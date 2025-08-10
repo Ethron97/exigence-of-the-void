@@ -25,6 +25,10 @@ tag @s remove HandleInteracting
 
 ## SCOREBOARD
 scoreboard players set @s RoomToken 0
+function exigence:game/game_reset/reset_player_scores
+
+# Reset advancements
+function exigence:game/game_reset/reset_advancements
 
 
 ## ATTRIBUTES

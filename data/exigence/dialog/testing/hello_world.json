@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:notice",
+    "title": "My first dialog",
+    "body": [
+        {
+            "type": "plain_message",
+            "contents": "Hello World!"
+        }
+    ],
+    "action": {
+        "label": {
+            "text": "Custom Text!"
+        },
+        "tooltip": {
+            "text": "Tooltip text!"
+        }
+    }
+}
