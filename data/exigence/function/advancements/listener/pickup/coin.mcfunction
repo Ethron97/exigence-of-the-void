@@ -4,10 +4,10 @@ advancement revoke @s only exigence:listener/pickup/coin
 # TUTORIAL
 clear @s[tag=Tutorial] minecraft:large_amethyst_bud
 execute as @s[tag=Tutorial] run function exigence:player/give/coin
-execute as @s[tag=Tutorial] run scoreboard players add @s cr_coinsPickedUp 1
+execute as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/flow/step
 
 # Return if the game is not active
-execute if data storage exigence:dungeon {is_active:0} run return 1
+execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
 
 scoreboard players set #stacksize cr_coinsPickedUp 1
 # Get number of coins if it was a stack

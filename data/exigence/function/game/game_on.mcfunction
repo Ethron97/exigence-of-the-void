@@ -12,16 +12,20 @@ data modify storage exigence:treasure queue set value []
 execute as @e[type=minecraft:painting] run data merge entity @s {Invulnerable:true}
 
 # PLAYER:
-function exigence:game/game_reset/reset_scores
-function exigence:game/game_reset/reset_teams
-function exigence:game/game_reset/reset_advancements
+execute as @a[tag=ActivePlayer] run function exigence:game/game_reset/reset_player_scores
+execute as @a[tag=ActivePlayer] run function exigence:game/game_reset/reset_teams
+execute as @a[tag=ActivePlayer] run function exigence:game/game_reset/reset_advancements
 gamemode adventure @a[tag=ActivePlayer]
 team join Player @a[tag=ActivePlayer]
-xp set @a[tag=ActivePlayer] 0 points
-xp set @a[tag=ActivePlayer] 0 levels
 execute as @a[tag=ActivePlayer] run attribute @s minecraft:safe_fall_distance modifier remove exigence:safe_fall
 # Initialize interaction (insurance):
 execute as @a[tag=ActivePlayer] run function exigence:player/utility/interaction/get_interaction
+
+# Set waypoint to not transmit (so coop players don't get confused seeing each other on it)
+#   Spectators already don't appear on it, and the hub will be in a different world.
+execute as @a[tag=ActivePlayer] run attribute @s minecraft:waypoint_transmit_range base set 0
+
+function exigence:game/game_reset/reset_game_scores
 
 # Select "active" playernode
 tag @e[type=armor_stand,tag=PlayerNode] remove Active

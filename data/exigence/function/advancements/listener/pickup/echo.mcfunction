@@ -6,9 +6,10 @@ clear @s[tag=Tutorial] minecraft:music_disc_relic 1
 tag @s[tag=Tutorial] add FoundEcho
 execute as @s[tag=FoundEcho,tag=Tutorial] run function exigence:game/found_echo
 stopsound @s[tag=Tutorial] neutral minecraft:block.amethyst_block.resonate
+execute as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/flow/step
 
 # Return if the game is not active
-execute if data storage exigence:dungeon {is_active:0} run return 1
+execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
 
 # Delete the music disc from their inventory
 clear @s minecraft:music_disc_relic 1

@@ -6,6 +6,8 @@
 
 #=================================================================================================================
 
+#say Light
+
 scoreboard players set #blaze_powder Temp 0
 execute if entity @a[tag=Lighting,nbt={SelectedItem:{id:"minecraft:blaze_powder"}}] run scoreboard players set #blaze_powder Temp 1
 scoreboard players set #spark Temp 0

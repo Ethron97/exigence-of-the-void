@@ -27,7 +27,7 @@ execute if data storage exigence:dungeon {max_menace:0} run function exigence:de
 function exigence:game/game_tick/detect_game_state
 
 # If game is over, end game
-execute if data storage exigence:dungeon {is_active:0} run return 1
+execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
 
 # Call tick functions
 function exigence:game/game_tick/menace_tick

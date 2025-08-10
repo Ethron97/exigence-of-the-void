@@ -2,4 +2,5 @@
 
 # Measured in ticks
 scoreboard players set #GameLimit RoomToken 300
+scoreboard players set #TutorialLimit RoomToken 300
 # ...

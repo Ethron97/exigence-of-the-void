@@ -5,6 +5,7 @@ bossbar add exigence:resources ""
 bossbar add exigence:last_card ""
 bossbar add exigence:tutorial ""
 bossbar add exigence:objective ""
+bossbar add exigence:tutorial_deck ""
 
 bossbar add exigence:trial_bolt ""
 bossbar add exigence:trial_flow ""

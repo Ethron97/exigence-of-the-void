@@ -18,3 +18,7 @@ setblock ~ ~1 ~ light
 
 # Spawn embers
 execute if score @s EmbersToDrop matches 1.. run function exigence:ember/echo_embers/drop_embers
+
+# Set waypoint information
+waypoint modify @s style set minecraft:default
+attribute @s waypoint_transmit_range base set 10000

@@ -4,12 +4,13 @@ advancement revoke @s only exigence:listener/pickup/ember
 #say pickup ember
 
 # TUTORIAL
-clear @a[tag=Tutorial] minecraft:soul_campfire
-execute as @a[tag=Tutorial] run function exigence:player/give/ember
-execute as @a[tag=Tutorial] run scoreboard players add @s cr_embersPickedUp 1
+clear @s[tag=Tutorial] minecraft:soul_campfire
+execute as @s[tag=Tutorial] run function exigence:player/give/ember
+execute as @s[tag=Tutorial] run scoreboard players add @s cr_embersPickedUp 1
+execute as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/flow/step
 
 # Remove the advancement early (thereby cancelling the rest of this function) if the game is not active
-execute if data storage exigence:dungeon {is_active:0} run return 1
+execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
 
 # Get number of embers if it was a stack
 scoreboard players set #stacksize Temp 1

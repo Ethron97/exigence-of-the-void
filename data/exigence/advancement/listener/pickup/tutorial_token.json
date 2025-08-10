@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:flow_banner_pattern"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "exigence:advancements/listener/pickup/tutorial_token"
+  }
+}

@@ -4,7 +4,7 @@ execute at @e[tag=HubCenter,limit=1] run teleport @a[tag=Tutorial] ~ ~ ~ ~ ~
 execute at @e[tag=HubCenter,limit=1] run spawnpoint @a[tag=Tutorial] ~ ~ ~
 
 # Reset tutorial
-function exigence:tutorial/reset
+function exigence:tutorial_old/reset
 
 # Give advancement
 advancement grant @a[tag=Tutorial] only exigence:story/win_difficulty_0

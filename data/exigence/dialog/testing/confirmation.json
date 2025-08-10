@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:confirmation",
+    "title": "My second dialog",
+    "external_title": "Confirmation",
+    "body": [
+        {
+            "type": "plain_message",
+            "contents": "Hello World!"
+        }
+    ],
+    "yes": {
+        "label": {
+            "text": "Custom Text!"
+        },
+        "tooltip": {
+            "text": "Tooltip text!"
+        }
+    },
+    "no": {
+        "label": {
+            "text": "No button",
+            "width": 30
+        }
+    }
+}

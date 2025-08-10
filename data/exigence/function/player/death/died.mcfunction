@@ -66,6 +66,8 @@ execute if score @s ActiveLevel matches 4 run scoreboard players add @s t_level4
 
 # Update killed_by scores
 function exigence:player/death/private/update_scores
+scoreboard players add @s cr_deaths 1
+scoreboard players add @s t_deaths 1
 
 # If died at max menace, add to score
 execute if data storage exigence:dungeon {max_menace:1} run scoreboard players add @s t_maxMenaceDeaths 1

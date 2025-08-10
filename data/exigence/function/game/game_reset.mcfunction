@@ -35,13 +35,10 @@ execute as @e[type=minecraft:marker,tag=RavagerGlass] run function exigence:game
 execute as @e[type=minecraft:armor_stand,tag=Start] at @s run tp @s ~ ~ ~ 135 0
 
 # Reset scores
-function exigence:game/game_reset/reset_scores
+function exigence:game/game_reset/reset_game_scores
 
 # Reset teams
 function exigence:game/game_reset/reset_teams
-
-# Reset advancements
-function exigence:game/game_reset/reset_advancements
 
 # Hide bossbar(s)
 function exigence:bossbar/deck/hide

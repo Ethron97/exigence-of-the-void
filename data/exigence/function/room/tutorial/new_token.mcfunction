@@ -2,4 +2,4 @@
 # Called when the tutorial begins
 
 scoreboard players add _Next RoomToken 1
-scoreboard players operation Game RoomToken = _Next RoomToken
+scoreboard players operation Tutorial RoomToken = _Next RoomToken

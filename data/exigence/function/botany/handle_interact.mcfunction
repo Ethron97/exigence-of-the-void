@@ -6,7 +6,7 @@
 # ===============================================================================================================
 
 # DEBUG
-#say Altar handle
+#say Berry handle
 
 # Tag the player who interacted
 execute on target run tag @s add Picking

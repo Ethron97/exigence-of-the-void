@@ -88,7 +88,7 @@ execute if data storage exigence:debug {todo:0} run tellraw @s [{text:"TODO",ita
 # WATCHER
 #tellraw @s [{text:"WATCHER",italic:false,bold:false,color:"dark_purple"}]
 
-tellraw @s [{text:"-------------------------------------",italic:false,bold:false,color:"gold"}]
+#tellraw @s [{text:"-------------------------------------",italic:false,bold:false,color:"gold"}]
 
 # Reset trigger score
 scoreboard players set @s DebugMenu 0

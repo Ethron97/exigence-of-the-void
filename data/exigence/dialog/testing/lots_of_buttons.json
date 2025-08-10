@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:multi_action",
+    "title": "Too Many Buttons",
+    "body": [
+        {
+            "type": "plain_message",
+            "contents": "Hello World!"
+        }
+    ],
+    "actions": [
+        {
+            "label": "Custom Text!",
+            "tooltip": "Tooltip text!"
+        },
+        {
+            "label": "Back to Main",
+            "action": {
+                "type": "show_dialog",
+                "dialog": "exigence:testing/main"
+            }
+        }
+    ],
+    "exit_action": {
+        "label": "Exit"
+    }
+}

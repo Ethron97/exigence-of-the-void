@@ -1,4 +1,7 @@
-# Call as bush
+## CONSTRAINTS
+#   AS BerryNode
+
+# ===============================================================================================================
 
 # Summon berries
 execute store result storage exigence:berry min int 1 run scoreboard players get @s minBerries

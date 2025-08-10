@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:notice",
+    "title": "Uppies",
+    "body": [
+        {
+            "type": "plain_message",
+            "contents": "Wait what? What wait?"
+        }
+    ],
+    "inputs": [
+        {
+            "type": "number_range",
+            "key": "uppies",
+            "label": "Teleport Up:",
+            "start": 0,
+            "end": 10,
+            "step": 1
+        }
+    ],
+    "action": {
+        "label": "Submit",
+        "action": {
+            "type": "minecraft:dynamic/run_command",
+            "template": "tp @s ~ ~$(uppies) ~"
+        }
+    }
+}

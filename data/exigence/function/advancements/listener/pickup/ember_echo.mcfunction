@@ -4,12 +4,13 @@ advancement revoke @s only exigence:listener/pickup/ember_echo
 #say pickup ember echo
 
 # TUTORIAL
-clear @a[tag=Tutorial] minecraft:campfire
-execute as @a[tag=Tutorial] run function exigence:player/give/ember
-execute as @a[tag=Tutorial] run scoreboard players add @s cr_embersEchoPickedUp 1
+clear @s[tag=Tutorial] minecraft:campfire
+execute as @s[tag=Tutorial] run function exigence:player/give/ember
+execute as @s[tag=Tutorial] run scoreboard players add @s cr_embersEchoPickedUp 1
+
 
 # Remove the advancement early (thereby cancelling the rest of this function) if the game is not active
-execute if data storage exigence:dungeon {is_active:0} run return 1
+execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
 
 # Delete the pickup item from their inventory
 clear @s minecraft:campfire 1

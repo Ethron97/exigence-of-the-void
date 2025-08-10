@@ -1,6 +1,6 @@
 # Teleports user to the Tutorial dimension
 
-execute in exigence:tutorial run tp 16.5 105.0 16.5
+execute in exigence:tutorial run tp @s 76.5 100.00 15.5 -30 0
 
 # Reset trigger score
 scoreboard players set @s TpTutorial 0

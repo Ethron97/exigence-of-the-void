@@ -5,7 +5,7 @@
 advancement revoke @s only exigence:listener/pickup/ardor_flame
 
 # Return if the game is not active
-execute if data storage exigence:dungeon {is_active:0} run return 1
+execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
 
 # Kill all other ardor flames this player's level
 scoreboard players operation #compare ObjectLevel = @s ActiveLevel

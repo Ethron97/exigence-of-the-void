@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:notice",
+    "title": "Can I store this?",
+    "body": [
+        {
+            "type": "plain_message",
+            "contents": "Compounding confusion"
+        }
+    ],
+    "inputs": [
+        {
+            "type": "boolean",
+            "key": "bool_test",
+            "label": "Whya re you?"
+        }
+    ],
+    "action": {
+        "label": "Store",
+        "action": {
+            "type": "minecraft:dynamic/custom",
+            "id": "minecraft.custom:minecraft.boat_one_cm"
+        }
+    }
+}

@@ -8,7 +8,7 @@
 execute unless entity @a[tag=ActivePlayer,scores={dead=0}] if entity @a[tag=ActivePlayer,scores={dead=2}] run function exigence:game/game_loss
 
 # If game is no longer active, return
-execute if data storage exigence:dungeon {is_active:0} run return 1
+execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
 
 # Spectate
 #   Cancel old spectate else player glitches or something

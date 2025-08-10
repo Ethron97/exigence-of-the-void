@@ -17,7 +17,7 @@ execute if score Step Tutorial matches 5 run tellraw @a [{color:"green",text:"\n
 execute if score Step Tutorial matches 6 run tellraw @a [{color:"green",text:"\nWith wits and speed you can outmaneuver them."}]
 #execute if score Step Tutorial matches 6 run spawnpoint @a[tag=Tutorial] -252 2 -118
 execute if score Step Tutorial matches 7 run tellraw @a [{color:"green",text:"\nAh, here's one now. It appears to be too large to fit through the hole."}]
-execute if score Step Tutorial matches 7 run data modify entity @e[type=minecraft:ravager,tag=L10,name=Loopy,limit=1] Silent set value 0
+execute if score Step Tutorial matches 7 run data modify entity @e[type=minecraft:ravager,tag=L10,name=Loopy,limit=1] Silent set value false
 execute if score Step Tutorial matches 7 run effect clear @e[type=minecraft:ravager,tag=L10,name=Loopy,limit=1] slowness
 execute if score Step Tutorial matches 8 run scoreboard players set Step Tutorial 100
 
@@ -38,7 +38,7 @@ execute if score Step Tutorial matches 201 run tellraw @a [{color:"green",text:"
 execute if score Step Tutorial matches 201 run bossbar set exigence:tutorial name {text:"Get past the ravager",color:"green",italic:false}
 execute if score Step Tutorial matches 201 run fill -260 5 -134 -260 2 -136 air replace ice
 
-execute if score Step Tutorial matches 202 run data modify entity @e[type=minecraft:ravager,tag=L10,name=Loopy,limit=1] Silent set value 1
+execute if score Step Tutorial matches 202 run data modify entity @e[type=minecraft:ravager,tag=L10,name=Loopy,limit=1] Silent set value true
 execute if score Step Tutorial matches 202 run bossbar set exigence:tutorial name {text:"Follow the compass",color:"green",italic:false}
 execute if score Step Tutorial matches 202 run bossbar set exigence:tutorial value 7
 execute if score Step Tutorial matches 202 run tellraw @a [{color:"green",text:"\nWhile freezing doorways is not something you will have to worry about inside the dungeon, other forces will strive to block your progress."}]
@@ -198,7 +198,7 @@ execute if score Step Tutorial matches 1102 run tellraw @a [{color:"green",text:
 execute if score Step Tutorial matches 1102 run bossbar set exigence:tutorial name {text:"Witness the ravager climb",color:"green",italic:false}
 execute if score Step Tutorial matches 1102 run bossbar set exigence:tutorial value 0
 execute if score Step Tutorial matches 1102 run effect clear @e[type=minecraft:ravager,tag=L10,name=Steppy,limit=1] slowness
-execute if score Step Tutorial matches 1102 run data modify entity @e[type=minecraft:ravager,tag=L10,name=Steppy,limit=1] Silent set value 0
+execute if score Step Tutorial matches 1102 run data modify entity @e[type=minecraft:ravager,tag=L10,name=Steppy,limit=1] Silent set value false
 
 execute if score Step Tutorial matches 1201 run bossbar set exigence:tutorial name {text:"Follow the compass",color:"green",italic:false}
 execute if score Step Tutorial matches 1201 run bossbar set exigence:tutorial value 71
@@ -243,11 +243,11 @@ execute if score Step Tutorial matches 1500 run spawnpoint @a[tag=Tutorial] -249
 ## ECHO FINALE
 execute if score Step Tutorial matches 1501 run tellraw @a [{color:"green",text:"\nAlmost there. The echo will give an audible sound when you are close."}]
 execute if score Step Tutorial matches 1501 run effect clear @e[type=minecraft:ravager,tag=L10,name=Guardy,limit=1] slowness
-execute if score Step Tutorial matches 1501 run data modify entity @e[type=minecraft:ravager,tag=L10,name=Guardy,limit=1] Silent set value 0
+execute if score Step Tutorial matches 1501 run data modify entity @e[type=minecraft:ravager,tag=L10,name=Guardy,limit=1] Silent set value false
 
 execute if score Step Tutorial matches 1502 run tellraw @a [{color:"green",text:"\nGreat work! The echo allows you to teleport back. Go to the green rune to leave."}]
 execute if score Step Tutorial matches 1502 run bossbar set exigence:tutorial name {text:"Stand on the green rune to exit",color:"green",italic:false}
 execute if score Step Tutorial matches 1502 run bossbar set exigence:tutorial value 100
 
-execute if score Step Tutorial matches 1503 run function exigence:tutorial/leave_tutorial
+execute if score Step Tutorial matches 1503 run function exigence:tutorial_old/leave_tutorial
 

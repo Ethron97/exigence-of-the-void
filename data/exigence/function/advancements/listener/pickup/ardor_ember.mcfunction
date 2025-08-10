@@ -5,7 +5,7 @@
 advancement revoke @s only exigence:listener/pickup/ardor_ember
 
 # Return if the game is not active
-execute if data storage exigence:dungeon {is_active:0} run return 1
+execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
 
 # Clear ghast_tear
 clear @s minecraft:ghast_tear[custom_data={ardor_ember:"true"}]

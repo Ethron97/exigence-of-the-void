@@ -4,7 +4,7 @@ say Deathed
 scoreboard players set @a cr_deaths 0
 
 # Reset tutorial
-function exigence:tutorial/reset
+function exigence:tutorial_old/reset
 
 clear @a[tag=Tutorial] #exigence:win_clear
 clear @a[tag=Tutorial] #exigence:loss_clear
@@ -13,7 +13,7 @@ clear @a[tag=Tutorial] #exigence:loss_clear
 scoreboard players operation Step Tutorial = Fallback Tutorial
 
 # Reload load
-function exigence:tutorial/load
+function exigence:tutorial_old/load
 
 bossbar set exigence:tutorial name {text:"Follow the compass",color:"green",italic:false}
 bossbar set exigence:tutorial value 0

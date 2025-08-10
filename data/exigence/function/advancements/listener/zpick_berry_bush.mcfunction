@@ -7,7 +7,7 @@ execute as @s[tag=Tutorial] run scoreboard players add @s cr_berryBushesPicked 1
 execute at @s[tag=Tutorial] as @e[type=minecraft:armor_stand,tag=BerryNode,sort=nearest,limit=1,scores={ObjectLevel=10}] run function exigence:botany/node/pick/pick_bush
 
 # Return if dungeon is off
-execute if data storage exigence:dungeon {is_active:0} run return 1
+execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
 
 # Increase the player's t_berryBushesPicked (total) score by 1
 scoreboard players add @s t_berryBushesPicked 1

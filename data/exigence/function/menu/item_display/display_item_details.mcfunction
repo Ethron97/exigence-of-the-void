@@ -32,6 +32,5 @@ $execute at @s[tag=!VoidShopDisplay,scores={ItemShopTier=6}] positioned ^ ^0.5 ^
 $execute at @s[tag=!VoidShopDisplay,scores={ItemShopTier=7}] positioned ^ ^0.5 ^0.12 rotated ~ ~15 run function exigence:menu/item_display/private/display_loop {Rot0:$(Rot0),Rot1:15.0f}
 $execute at @s[tag=!VoidShopDisplay,scores={ItemShopTier=8}] positioned ^ ^0.5 ^0.12 rotated ~ ~30 run function exigence:menu/item_display/private/display_loop {Rot0:$(Rot0),Rot1:30.0f}
 $execute at @s[tag=VoidShopDisplay] positioned ^ ^0.2 ^0.12 run function exigence:menu/item_display/private/display_loop_alt {Rot0:$(Rot0),Rot1:$(Rot1)}
-
 # Start at 0.45, increment by 0.725
 #0.725

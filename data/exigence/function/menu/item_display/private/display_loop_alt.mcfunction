@@ -10,13 +10,16 @@
 
 #=============================================================================================================
 
+# DEBUG
+#say QUestio nkarm
+
 # Decrement lore lines
 scoreboard players remove @s LoreLines 1
 
 #$say loring Rotation:[$(Rot0),$(Rot1)]
 
 # Summon text display
-$summon minecraft:text_display ~ ~ ~ {background:-936902616,billboard:"fixed",alignment:"left",Tags:["ItemDetails","NewTextDisplay","MergeRotation"],text:{text:""},Rotation:[$(Rot0).0f,$(Rot1).0f],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.5f,0.5f,0.5f]}}
+$summon minecraft:text_display ~ ~ ~ {background:-936902616,billboard:"fixed",alignment:"left",Tags:["ItemDetails","NewTextDisplay","MergeRotation"],text:{text:""},Rotation:[$(Rot0),$(Rot1)],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.5f,0.5f,0.5f]}}
 
 
 # Merge text based on how many lore lines there are

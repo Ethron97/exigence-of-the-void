@@ -1,41 +1,50 @@
-# Turn off
+## CONSTRAINTS
+#   IN exigence:tutorial
+
+#=============================================================================================================
+
+# DEBUG
 say Reset tutorial
 
-function exigence:game/game_reset/reset_scores
-
-data modify storage exigence:dungeon waiting_for_respawn set value 0
-
-
-# Kill items
-kill @e[type=minecraft:item,scores={ObjectLevel=10}]
+# Markers
+execute as @e[distance=..1000,type=marker,tag=TutorialMarker,tag=LastDropped] run tag @s remove LastDropped
+execute as @e[distance=..1000,type=marker,tag=TutorialMarker,tag=Dropped] run tag @s remove Dropped
+execute as @e[distance=..1000,type=marker,tag=TutorialMarker,tag=Fallback] run tag @s remove Fallback
 
 
+# Entities
+kill @e[distance=..1000,type=ravager]
+kill @e[distance=..1000,type=item]
+kill @e[distance=..1000,type=armor_stand,tag=Bait1]
+kill @e[distance=..1000,type=villager,tag=Bait1]
 
-# Kill ravagers
-kill @e[type=ravager,tag=L10]
+# Ice doors
+#   Ravager arena entrance
+fill 114 104 11 114 105 12 ice
+fill 109 104 17 108 105 17 ice
+#   Ravager arena exits
+fill 126 103 29 130 109 33 ice replace structure_void
+#   Berry exit
+fill 122 114 70 124 119 74 ice replace structure_void
+#   Heartbeat sample exit
+fill 92 122 85 88 128 90 ice replace structure_void
+#   Treasure town exit
+fill 84 122 134 79 127 139 ice replace structure_void
+#   Altar exit
+fill 107 125 157 112 131 153 ice replace structure_void
+#   CLimby exit
+fill 122 125 142 126 129 147 ice replace structure_void
 
-# Kill Ravager Glass stands (function both respawns and kills)
-execute as @e[type=minecraft:marker,tag=RavagerGlass] run function exigence:game/game_tick/ravager_glass/respawn_ravager_glass
 
-# Clear ravager loop ice
-fill -260 5 -134 -260 2 -136 air replace ice
-fill -249 2 -131 -249 4 -127 air replace ice
-fill -244 2 -133 -247 4 -133 air replace ice
+# Heartbeat sample buttons
+fill 102 123 86 98 123 86 air
 
-# Reset post-berry ice
-fill -264 13 -185 -261 17 -185 ice replace air
+schedule clear exigence:tutorial/flow/private/ravager_loop
 
-# Fill below house
-fill -251 13 -209 -246 17 -209 ice
+execute as @n[tag=BellNode,scores={ObjectLevel=10}] run function exigence:bell/node/deactivate
+execute as @n[tag=BellNode,scores={ObjectLevel=10}] run function exigence:bell/node/activate
 
-# Post altar
-fill -256 23 -237 -256 27 -233 ice
+# Reset nodes
+execute as @e[distance=..1000,type=minecraft:armor_stand,tag=BerryNode,scores={ObjectLevel=10}] at @s run function exigence:botany/node/berry_bush_inactive
+execute as @e[distance=..1000,type=minecraft:armor_stand,tag=AltarNode,scores={ObjectLevel=10}] at @s run function exigence:altar/node/deactivate
 
-# Post ravager
-fill -271 23 -237 -269 27 -237 ice replace air
-
-# Clear bell sculk
-fill -272 23 -252 -268 29 -252 ice replace sculk
-
-# Ice variance
-fill -266 22 -245 -267 22 -244 ice replace water

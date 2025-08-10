@@ -11,4 +11,4 @@ function exigence:player/display/resource_bar/full/get_red
 function exigence:player/display/resource_bar/full/get_aqua
 
 # Call macro function
-function exigence:player/display/resource_bar/efficient/macro with storage exigence:resource_hud
+function exigence:player/display/resource_bar/full/macro with storage exigence:resource_hud

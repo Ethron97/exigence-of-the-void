@@ -48,6 +48,9 @@ team modify Yellow color yellow
 team add Botany
 team modify Botany color dark_green
 
+team add Tutorial
+team modify Tutorial color green
+
 # Teams on GOLD will display ConsumableLimit
 team add Lockerroom
 team modify Lockerroom color gold
