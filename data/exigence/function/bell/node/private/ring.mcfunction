@@ -18,15 +18,21 @@ execute at @s run particle minecraft:end_rod ~ ~ ~ 0.3 0.3 0.3 0.1 20
 # Play bell ring sound
 execute at @s run playsound minecraft:block.bell.use ambient @a ~ ~ ~ 1 1
 
-# Set bell cooldown
-scoreboard players set @s RingBellCooldown 100
-
 # Remove interaction
 function exigence:bell/node/remove_interaction
+
+# If game is inactive, return here
+execute if score @s ObjectLevel matches 10 run function exigence:tutorial/flow/step
+execute if score @s ObjectLevel matches 10 run return 1
+execute unless data storage exigence:dungeon {is_active:1} run return 1
+#========================================================================================================
 
 # Call sub function based on if player has golden axe
 execute if entity @a[tag=Ringing,nbt={SelectedItem:{id:"minecraft:golden_axe"}}] run function exigence:bell/node/private/ring_smash
 execute if entity @a[tag=Ringing,nbt=!{SelectedItem:{id:"minecraft:golden_axe"}}] run function exigence:bell/node/private/ring_standard
+
+# Set bell cooldown
+scoreboard players set @s RingBellCooldown 100
 
 # 2/3 chance of generating one Hazard
 execute store result score random Random run random value 1..3

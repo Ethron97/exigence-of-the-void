@@ -7,7 +7,7 @@ execute if entity @a[tag=Tutorial,scores={CarrotOnStick=1..}] run function exige
 function exigence:bell/bell_tick
 
 # Ravager glass
-function exigence:game/game_tick/ravager_glass/ravager_glass_tick
+function exigence:game/other/ravager_glass/ravager_glass_tick
 
 # ALTARS
 # Inactive altars

@@ -9,7 +9,10 @@
 say Try enter tutorial
 
 # Check that no one else is currently in the tutorial
-# TODO
+execute if data storage exigence:dungeon {tutorial:1} run tellraw @s [{text:"The Tutorial is in use",color:"red"}]
+execute if data storage exigence:dungeon {tutorial:1} run return 1
+#   TODO message changes if someone disconnected or if they're currently usin git
+#   Maybe let someone in immediately if someone DCs?
 # Involves tokens or something, incase someone disconnects from tutorial
 
 # Check that player has empty inventory

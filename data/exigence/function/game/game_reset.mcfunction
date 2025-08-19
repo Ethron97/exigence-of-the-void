@@ -29,7 +29,7 @@ kill @e[type=block_display,tag=ItemPreview]
 function exigence:hub/item_shop/frame/item/item_web_ball/reset
 
 # Kill Ravager Glass stands (function both respawns and kills)
-execute as @e[type=minecraft:marker,tag=RavagerGlass] run function exigence:game/game_tick/ravager_glass/respawn_ravager_glass
+execute as @e[type=minecraft:marker,tag=RavagerGlass,tag=!TutorialGlass] run function exigence:game/other/ravager_glass/respawn_ravager_glass
 
 # Reset start/exit armorstand rotation
 execute as @e[type=minecraft:armor_stand,tag=Start] at @s run tp @s ~ ~ ~ 135 0

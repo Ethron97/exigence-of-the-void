@@ -21,8 +21,9 @@ data modify storage exigence:dungeon tutorial set value 1
 function exigence:room/tutorial/new_token
 scoreboard players operation @s RoomToken = Tutorial RoomToken
 
-# Give "exit" button
-item replace entity @s hotbar.8 with minecraft:carrot_on_a_stick[custom_name=[{text:"Exit Tutorial",color:"red",italic:false}]]
+# Give "exit" button and "skip" button
+item replace entity @s hotbar.8 with minecraft:carrot_on_a_stick[custom_name=[{text:"Exit Tutorial",color:"red",italic:false}],custom_data={item_name:'exit_tutorial'}]
+item replace entity @s hotbar.7 with minecraft:carrot_on_a_stick[custom_name=[{text:"Skip Section",color:"yellow",italic:false}],custom_data={item_name:'skip_section'}]
 
 # Teleport to canyon
 tp @s 76.5 100.0 15.5 -30 0
@@ -49,7 +50,7 @@ execute if data storage exigence:debug {tutorial:1} run function exigence:tutori
 
 
 # TEMP TESTING
-scoreboard players set Fallback Tutorial 1001
-spawnpoint @a[tag=Tutorial] 80 123 143
-execute as @n[distance=..1000,type=marker,tag=TutorialMarker,scores={TutorialMarkerID=37}] run tag @s add Fallback
-kill @s
+#scoreboard players set Fallback Tutorial 1001
+#spawnpoint @a[tag=Tutorial] 80 123 143
+#execute as @n[distance=..1000,type=marker,tag=TutorialMarker,scores={TutorialMarkerID=37}] run tag @s add Fallback
+#kill @s

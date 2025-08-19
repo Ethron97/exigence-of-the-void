@@ -1,7 +1,7 @@
 # Typically called when you leave the embershop door
 
 # 1. Clear all buttons
-execute as @e[type=minecraft:armor_stand,tag=EmberShopNode] at @s run setblock ~4 ~ ~ minecraft:air
+execute as @e[type=minecraft:marker,tag=EmberShopNode] at @s run setblock ~4 ~ ~ minecraft:air
 
 # 2. Reset Refresh cost
 scoreboard players set EmberShopRefresh EmberShopCost 0

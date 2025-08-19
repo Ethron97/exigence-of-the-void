@@ -4,21 +4,21 @@
 #==================================================================================================
 
 # Clear all existing buttons
-execute as @e[type=minecraft:armor_stand,tag=EmberShopNode] at @s run setblock ~4 ~ ~ minecraft:air
+execute as @e[type=minecraft:marker,tag=EmberShopNode] at @s run setblock ~4 ~ ~ minecraft:air
 
 # Reset tag
-tag @e[type=minecraft:armor_stand,tag=EmberShopNode,tag=Purchaseable] remove Purchaseable
+tag @e[type=minecraft:marker,tag=EmberShopNode,tag=Purchaseable] remove Purchaseable
 
 # Cards available = 3 per rarity, 1 void per rarity
-execute as @e[type=minecraft:armor_stand,tag=EmberShopNode,tag=!Purchaseable,tag=!Void,scores={Rarity=1},sort=random,limit=3] run function exigence:hub/ember_shop/make_purchasable
-execute as @e[type=minecraft:armor_stand,tag=EmberShopNode,tag=!Purchaseable,tag=!Void,scores={Rarity=2},sort=random,limit=3] run function exigence:hub/ember_shop/make_purchasable
-execute as @e[type=minecraft:armor_stand,tag=EmberShopNode,tag=!Purchaseable,tag=!Void,scores={Rarity=3},sort=random,limit=3] run function exigence:hub/ember_shop/make_purchasable
-execute as @e[type=minecraft:armor_stand,tag=EmberShopNode,tag=!Purchaseable,tag=!Void,scores={Rarity=4},sort=random,limit=3] run function exigence:hub/ember_shop/make_purchasable
+execute as @e[type=minecraft:marker,tag=EmberShopNode,tag=!Purchaseable,tag=!Void,scores={Rarity=1},sort=random,limit=3] run function exigence:hub/ember_shop/make_purchasable
+execute as @e[type=minecraft:marker,tag=EmberShopNode,tag=!Purchaseable,tag=!Void,scores={Rarity=2},sort=random,limit=3] run function exigence:hub/ember_shop/make_purchasable
+execute as @e[type=minecraft:marker,tag=EmberShopNode,tag=!Purchaseable,tag=!Void,scores={Rarity=3},sort=random,limit=3] run function exigence:hub/ember_shop/make_purchasable
+execute as @e[type=minecraft:marker,tag=EmberShopNode,tag=!Purchaseable,tag=!Void,scores={Rarity=4},sort=random,limit=3] run function exigence:hub/ember_shop/make_purchasable
 
-execute as @e[type=minecraft:armor_stand,tag=EmberShopNode,tag=!Purchaseable,tag=Void,scores={Rarity=1},sort=random,limit=1] run function exigence:hub/ember_shop/make_purchasable
-execute as @e[type=minecraft:armor_stand,tag=EmberShopNode,tag=!Purchaseable,tag=Void,scores={Rarity=2},sort=random,limit=1] run function exigence:hub/ember_shop/make_purchasable
-execute as @e[type=minecraft:armor_stand,tag=EmberShopNode,tag=!Purchaseable,tag=Void,scores={Rarity=3},sort=random,limit=1] run function exigence:hub/ember_shop/make_purchasable
-execute as @e[type=minecraft:armor_stand,tag=EmberShopNode,tag=!Purchaseable,tag=Void,scores={Rarity=4},sort=random,limit=1] run function exigence:hub/ember_shop/make_purchasable
+execute as @e[type=minecraft:marker,tag=EmberShopNode,tag=!Purchaseable,tag=Void,scores={Rarity=1},sort=random,limit=1] run function exigence:hub/ember_shop/make_purchasable
+execute as @e[type=minecraft:marker,tag=EmberShopNode,tag=!Purchaseable,tag=Void,scores={Rarity=2},sort=random,limit=1] run function exigence:hub/ember_shop/make_purchasable
+execute as @e[type=minecraft:marker,tag=EmberShopNode,tag=!Purchaseable,tag=Void,scores={Rarity=3},sort=random,limit=1] run function exigence:hub/ember_shop/make_purchasable
+execute as @e[type=minecraft:marker,tag=EmberShopNode,tag=!Purchaseable,tag=Void,scores={Rarity=4},sort=random,limit=1] run function exigence:hub/ember_shop/make_purchasable
 
 # Bonus cards (+1 per rarity, normal or void)
 scoreboard players operation #BonusCards EmberShop = BonusCards EmberShop
