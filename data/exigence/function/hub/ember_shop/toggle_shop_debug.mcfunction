@@ -10,5 +10,5 @@ execute if data storage exigence:debug {ember_shop:0} run say Turning ember shop
 # Update actual value
 data modify storage exigence:debug ember_shop set from storage temp debug
 
-execute if data storage exigence:debug {ember_shop:1} as @e[type=minecraft:armor_stand,tag=EmberShopNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
-execute if data storage exigence:debug {ember_shop:0} as @e[type=minecraft:armor_stand,tag=EmberShopNode] run data merge entity @s {Glowing:0b,CustomNameVisible:0b,Invisible:1b,Marker:1b}
+execute if data storage exigence:debug {ember_shop:1} as @e[type=minecraft:marker,tag=EmberShopNode] at @s run function exigence:hub/ember_shop/private/show_shop_node
+execute if data storage exigence:debug {ember_shop:0} as @e[type=minecraft:marker,tag=EmberShopNode] at @s run kill @n[type=block_display,tag=EmberShopNodeDebug]

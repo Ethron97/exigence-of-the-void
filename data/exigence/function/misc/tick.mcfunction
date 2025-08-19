@@ -21,8 +21,6 @@ advancement grant @a[advancements={exigence:story/root=false}] only exigence:sto
 #execute as @a store result score @s PlayerY run data get entity @s Pos[1] 1
 #execute as @a store result score @s PlayerZ run data get entity @s Pos[2] 1
 
-
-
 # TP eople stuck in the sky box (respawn broken for some reason)
 execute positioned -376.5 318.00 -119.5 run tp @a[distance=..5] -260.5 17.00 -44.5
 

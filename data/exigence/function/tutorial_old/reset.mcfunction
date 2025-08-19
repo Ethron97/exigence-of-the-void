@@ -15,7 +15,7 @@ kill @e[type=minecraft:item,scores={ObjectLevel=10}]
 kill @e[type=ravager,tag=L10]
 
 # Kill Ravager Glass stands (function both respawns and kills)
-execute as @e[type=minecraft:marker,tag=RavagerGlass] run function exigence:game/game_tick/ravager_glass/respawn_ravager_glass
+execute as @e[type=minecraft:marker,tag=RavagerGlass] run function exigence:game/other/ravager_glass/respawn_ravager_glass
 
 # Clear ravager loop ice
 fill -260 5 -134 -260 2 -136 air replace ice

@@ -17,7 +17,7 @@ execute on attacker run tag @s add Ringing
 scoreboard players operation #compare NodeID = @s NodeID
 
 # Call subfunction as bell that is ringing
-execute as @e[type=minecraft:armor_stand,tag=BellNode] if score @s NodeID = #compare NodeID run function exigence:bell/node/private/ring
+execute at @s as @e[distance=..10,type=minecraft:armor_stand,tag=BellNode] if score @s NodeID = #compare NodeID run function exigence:bell/node/private/ring
 
 # Call Resonance
 execute as @a[tag=ActivePlayer,tag=Ringing] run function exigence:cards/resonance/private/trigger

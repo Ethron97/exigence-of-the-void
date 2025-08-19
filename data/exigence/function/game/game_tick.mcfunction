@@ -32,7 +32,7 @@ execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon 
 # Call tick functions
 function exigence:game/game_tick/menace_tick
 function exigence:game/game_tick/ambient_tick
-function exigence:game/game_tick/ravager_glass/ravager_glass_tick
+function exigence:game/other/ravager_glass/ravager_glass_tick
 function exigence:mirror/mirror_tick
 function exigence:game/game_tick/detect_active_level
 function exigence:bell/bell_tick

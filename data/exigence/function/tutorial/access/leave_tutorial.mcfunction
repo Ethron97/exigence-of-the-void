@@ -34,6 +34,7 @@ scoreboard players set Tutorial RoomToken 0
 
 data modify storage exigence:dungeon tutorial set value 0
 
+title @s actionbar ""
 
 # DEBUG
 effect give @s night_vision infinite 0 true

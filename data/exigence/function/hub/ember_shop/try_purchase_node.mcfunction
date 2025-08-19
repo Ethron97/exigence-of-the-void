@@ -24,4 +24,4 @@ execute at @s if score @p[gamemode=!creative,tag=EmberShopping] HasEnoughEmbers 
 execute at @s if score @p[tag=EmberShopping] HasEnoughEmbers matches 1 run playsound minecraft:block.respawn_anchor.charge neutral @a
 
 # Remove local tag
-tag @e[type=minecraft:armor_stand,tag=TryPurchase] remove TryPurchase
+tag @e[type=minecraft:marker,tag=TryPurchase] remove TryPurchase
