@@ -14,4 +14,8 @@ data modify storage exigence:compass lore append value [{text:"Points towards th
 data modify storage exigence:compass lore append value [{text:"(Soulbound)",color:"dark_gray",italic:false}]
 $data modify storage exigence:compass echo_id set value $(echo_id)
 
+# Set dimension based on if tutorial or not tutorial
+data modify storage exigence:compass dimension set value 'minecraft:overworld'
+execute if score @s ObjectLevel matches 10 run data modify storage exigence:compass dimension set value 'exigence:tutorial'
+
 execute as @a[tag=ActivePlayer] run function exigence:player/give/compass with storage exigence:compass

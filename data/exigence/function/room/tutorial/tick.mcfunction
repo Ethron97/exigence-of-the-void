@@ -10,6 +10,4 @@ execute as @a[tag=Tutorial] unless score @s RoomToken = Tutorial RoomToken run f
 # If tutorial grace runs out, reset the tutorial so another player can play
 scoreboard players remove #TutorialGrace RoomToken 1
 execute if score #TutorialGrace RoomToken matches ..0 if data storage exigence:dungeon {tutorial:1} run say Player disconencted, ending tutorial
-execute if score #TutorialGrace RoomToken matches ..0 run data modify storage exigence:dungeon tutorial set value 0
-execute if score #TutorialGrace RoomToken matches ..0 run scoreboard players set Tutorial RoomToken 0
-execute if score #TutorialGrace RoomToken matches ..0 in exigence:tutorial run function exigence:tutorial/reset
+execute if score #TutorialGrace RoomToken matches ..0 in exigence:tutorial run function exigence:tutorial/unload

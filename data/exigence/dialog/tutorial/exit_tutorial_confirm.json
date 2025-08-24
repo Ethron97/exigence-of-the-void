@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:confirmation",
+  "title": "Settings",
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": "Are you sure you want to exit the tutorial?"
+  },
+  "can_close_with_escape": true,
+  "pause": true,
+  "no": {
+    "label": "Cancel"
+  },
+  "yes": {
+    "label": "Exit Tutorial",
+    "action": {
+      "type": "minecraft:run_command",
+      "command": "trigger ExitTutorial"
+    }
+  }
+}

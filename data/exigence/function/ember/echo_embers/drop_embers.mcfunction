@@ -8,7 +8,7 @@
 #==============================================================================================================
 
 # Copy object level for reference
-scoreboard players operation #comopare ObjectLevel = @s ObjectLevel
+scoreboard players operation #compare ObjectLevel = @s ObjectLevel
 
 execute if score @s EmbersToDrop matches 1..19 run function exigence:ember/echo_embers/summon_ember
 execute if score @s EmbersToDrop matches 1..19 run scoreboard players remove @s EmbersToDrop 1

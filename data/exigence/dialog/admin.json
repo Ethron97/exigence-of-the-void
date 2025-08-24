@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:multi_action",
+  "title": "Settings",
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": "Admin"
+  },
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": true,
+  "after_action": "close",
+  "exit_action": {
+    "label": "Exit"
+  },
+  "actions": [
+    {
+      "label": "Tp Tutorial",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger TpTutorial"
+      }
+    },
+    {
+      "label": "Tp Game",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger TpGame"
+      }
+    }
+  ]
+}

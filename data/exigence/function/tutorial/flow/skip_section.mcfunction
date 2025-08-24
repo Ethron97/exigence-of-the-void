@@ -14,6 +14,8 @@ tag @n[distance=..1000,type=marker,tag=TutorialMarker,tag=LastDropped] add SaveL
 # Reset tutorial
 function exigence:tutorial/reset
 
+clear @a[distance=..1000,tag=Tutorial] compass
+
 # Restore saved last dropped
 tag @n[distance=..1000,type=marker,tag=TutorialMarker,tag=SaveLastDropped] add LastDropped
 tag @n[distance=..1000,type=marker,tag=TutorialMarker,tag=SaveLastDropped] remove SaveLastDropped
@@ -24,3 +26,5 @@ execute as @n[distance=..1000,type=marker,tag=TutorialMarker,tag=LastDropped] ru
 tp @s @n[distance=..1000,type=marker,tag=TutorialMarker,tag=Fallback]
 
 function exigence:tutorial/flow/reset_bossbars
+
+execute if score Step Tutorial matches 1500 run fill 175 131 49 177 134 47 structure_void replace ice

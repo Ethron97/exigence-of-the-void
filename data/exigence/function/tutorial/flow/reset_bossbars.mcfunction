@@ -9,7 +9,10 @@ execute if score Step Tutorial matches 107.. run function exigence:bossbar/tutor
 execute if score Step Tutorial matches 107.. run function exigence:bossbar/tutorial/initialize
 
 # Set to default
-bossbar set exigence:tutorial name {text:"Follow the compass",color:"green",italic:false}
+schedule clear exigence:tutorial/utility/flashing_bossbar_b
+bossbar set exigence:tutorial name {text:"Follow the Tutorial Tokens",color:"green",italic:false}
+bossbar set exigence:tutorial color green
+
 
 execute if score Step Tutorial matches 107.. run bossbar set exigence:tutorial_deck name [{text:"Deck (5",color:"white"},{text:"/",color:"gray"},{text:"5): [ ",color:"white"},\
 {text:"▌▌▌▌▌",color:"white",italic:false},{text:"",color:"dark_gray",italic:false},{text:" ]",color:"white"}]
@@ -23,6 +26,19 @@ execute if score Step Tutorial matches 1208.. run bossbar set exigence:tutorial_
 {text:"▌",color:"white",italic:false},{text:"▌▌▌▌",color:"dark_gray",italic:false},{text:" ]",color:"white"}]
 execute if score Step Tutorial matches 1401.. run bossbar set exigence:tutorial_deck name [{text:"Deck (0",color:"white"},{text:"/",color:"gray"},{text:"5): [ ",color:"white"},\
 {text:"",color:"white",italic:false},{text:"▌▌▌▌▌",color:"dark_gray",italic:false},{text:" ]",color:"white"}]
+
+bossbar set exigence:tutorial value 0
+execute if score Step Tutorial matches 105.. run bossbar set exigence:tutorial value 10
+execute if score Step Tutorial matches 200.. run bossbar set exigence:tutorial value 18
+execute if score Step Tutorial matches 300.. run bossbar set exigence:tutorial value 26
+execute if score Step Tutorial matches 400.. run bossbar set exigence:tutorial value 34
+execute if score Step Tutorial matches 900.. run bossbar set exigence:tutorial value 42
+execute if score Step Tutorial matches 1000.. run bossbar set exigence:tutorial value 50
+execute if score Step Tutorial matches 1100.. run bossbar set exigence:tutorial value 58
+execute if score Step Tutorial matches 1200.. run bossbar set exigence:tutorial value 66
+execute if score Step Tutorial matches 1300.. run bossbar set exigence:tutorial value 84
+execute if score Step Tutorial matches 1400.. run bossbar set exigence:tutorial value 92
+execute if score Step Tutorial matches 1500.. run bossbar set exigence:tutorial value 98
 
 #execute if score Step Tutorial matches 5 run 
 #execute if score Step Tutorial matches 106 run 
