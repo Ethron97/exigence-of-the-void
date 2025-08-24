@@ -6,7 +6,7 @@
 #=============================================================================================================
 
 # Summon vex
-summon minecraft:vex ~ ~ ~ {life_ticks:999999,Tags:["Eyeball","NewEyeball"],PersistenceRequired:1b\
+summon minecraft:vex ~ ~ ~ {life_ticks:999999,Tags:["TutorialEyeball","NewEyeball"],PersistenceRequired:1b\
 ,CustomName:{text:"Dungeon Spirit",color:"red"}\
 ,active_effects:[{id:"resistance",duration:999999,amplifier:4,show_particles:0b}\
 ]}

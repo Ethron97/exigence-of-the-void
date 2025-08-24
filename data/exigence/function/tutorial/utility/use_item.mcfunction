@@ -16,5 +16,5 @@ execute unless items entity @s weapon.mainhand carrot_on_a_stick if items entity
 execute if items entity @s weapon.mainhand carrot_on_a_stick run scoreboard players set #slot Temp 2
 
 # Call sub-function based on which hand(s) the player has a carrot on stick in
-execute unless items entity @s weapon.mainhand carrot_on_a_stick if items entity @s weapon.offhand carrot_on_a_stick run function exigence:tutorial/access/use_item_hand {slot:'mainhand'}
-execute if items entity @s weapon.mainhand carrot_on_a_stick run function exigence:tutorial/access/use_item_hand {slot:'mainhand'}
+execute unless items entity @s weapon.mainhand carrot_on_a_stick if items entity @s weapon.offhand carrot_on_a_stick run function exigence:tutorial/utility/use_item_hand {slot:'mainhand'}
+execute if items entity @s weapon.mainhand carrot_on_a_stick run function exigence:tutorial/utility/use_item_hand {slot:'mainhand'}

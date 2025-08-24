@@ -1,7 +1,7 @@
 # Aggro ravagers every X ticks (defined by RavagerAggroCooldownLimit)
 execute if score RavagerAggroCooldownCurrent TickCounter matches 1.. run scoreboard players remove RavagerAggroCooldownCurrent TickCounter 1
-execute if score RavagerAggroCooldownCurrent TickCounter matches 1 at @a[tag=ActivePlayer,scores={dead=0}] at @e[type=minecraft:armor_stand,tag=MenaceNode,limit=1,sort=nearest] run function exigence:menace/eyeball/flyball
-
+#execute if score RavagerAggroCooldownCurrent TickCounter matches 1 at @a[tag=ActivePlayer,scores={dead=0}] at @e[type=minecraft:armor_stand,tag=MenaceNode,limit=1,sort=nearest] run function exigence:menace/eyeball/flyball
+execute if score RavagerAggroCooldownCurrent TickCounter matches 1 at @a[tag=ActivePlayer,scores={dead=0}] positioned ~ ~5 ~ run function exigence:menace/eyeball/flyball
 execute if score RavagerAggroCooldownCurrent TickCounter matches 0 run function exigence:menace/private/aggro_enemies
 
 

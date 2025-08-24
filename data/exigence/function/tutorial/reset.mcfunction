@@ -13,12 +13,22 @@ execute as @e[distance=..1000,type=marker,tag=TutorialMarker,tag=Fallback] run t
 
 # Entities
 kill @e[distance=..1000,type=ravager]
+kill @e[distance=..1000,type=vex,tag=TutorialEyeball]
 kill @e[distance=..1000,type=item]
 kill @e[distance=..1000,type=armor_stand,tag=Bait1]
 kill @e[distance=..1000,type=armor_stand,tag=Bait2]
 
 effect clear @a[tag=Tutorial] luck
 effect clear @a[tag=Tutorial] jump_boost
+
+scoreboard players set Menace Tutorial 0
+scoreboard players set CardDrawCooldown Tutorial 600
+scoreboard players set Fatigue Tutorial 0
+scoreboard players set RavagerAggroCooldownCurrent Tutorial 0
+scoreboard players set MaxMenace Tutorial 0
+bossbar set exigence:tutorial_deck color white
+bossbar set exigence:tutorial color green
+worldborder warning distance 0
 
 # Ice doors
 #   Ravager arena entrance
@@ -36,13 +46,24 @@ fill 84 122 134 79 127 139 ice replace structure_void
 fill 107 125 157 112 131 153 ice replace structure_void
 #   CLimby exit
 fill 122 125 142 126 129 147 ice replace structure_void
+#   Bellwater entrance
+fill 136 126 140 137 126 142 ice replace structure_void
 #   Bellwater exit
 fill 142 126 121 146 131 118 ice replace structure_void
 #   Glassy exit
 fill 195 129 81 198 133 78 ice replace structure_void
-#   Final test
-fill 175 131 49 177 134 47 ice replace structure_void
+#   Final test (open by
+fill 175 131 49 177 135 47 ice replace structure_void
 
+# Sculk bell hazard
+fill 152 126 141 152 130 147 air replace sculk
+
+# Kill exit armorstnads (and clear light)
+execute at @e[distance=..1000,type=minecraft:marker,tag=TutorialExitNode] run fill ~ ~1 ~ ~ ~1 ~ air replace light
+kill @e[distance=..1000,type=marker,tag=TutorialExitNode]
+kill @e[distance=..1000,type=block_display,tag=TutorialExitPortalDisplay]
+
+execute positioned 186.5 131.0 33.5 run function exigence:tutorial/setup/setup_exit_portal
 
 # Jump boost insurance
 setblock 157 128 112 air
@@ -64,3 +85,4 @@ execute as @e[distance=..1000,type=minecraft:armor_stand,tag=AltarNode,scores={O
 
 execute as @a[tag=Tutorial] run title @s actionbar ""
 
+execute at @e[distance=..1000,type=minecraft:armor_stand,tag=EchoNode] run fill ~ ~1 ~ ~ ~1 ~ air replace light

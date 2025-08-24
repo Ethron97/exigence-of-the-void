@@ -15,6 +15,7 @@ execute at @s[scores={ActiveLevel=1}] run tag @e[type=minecraft:item,tag=EchoSha
 execute at @s[scores={ActiveLevel=2}] run tag @e[type=minecraft:item,tag=EchoShard,scores={ObjectLevel=2},sort=nearest,limit=1] add ClosestEchoShard
 execute at @s[scores={ActiveLevel=3}] run tag @e[type=minecraft:item,tag=EchoShard,scores={ObjectLevel=3},sort=nearest,limit=1] add ClosestEchoShard
 execute at @s[scores={ActiveLevel=4}] run tag @e[type=minecraft:item,tag=EchoShard,scores={ObjectLevel=4},sort=nearest,limit=1] add ClosestEchoShard
+execute at @s[tag=Tutorial] run tag @e[type=minecraft:item,tag=EchoShard,scores={ObjectLevel=10},sort=nearest,limit=1] add ClosestEchoShard
 
 # If no echo shard on same level, return
 #execute unless entity @e[type=item,tag=ClosestEchoShard] run say No echo on same level found

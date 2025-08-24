@@ -6,6 +6,11 @@
 # Play wither spawn sound because it's dramatic
 execute at @s run playsound minecraft:entity.wither.spawn neutral @a ~ ~1000 ~ 1000 0.8
 
+# Add echo shard to their inventory
+#   If there are multiple echos, fragment instead
+execute if score EchosRequired DungeonRun matches 2.. as @s run function exigence:player/give/echo_fragment
+execute if score EchosRequired DungeonRun matches 1 as @s run function exigence:game/found_all_echos
+
 # Add three menace to the queue
 data modify storage exigence:menace amount set value 3
 data modify storage exigence:menace from set value 'Other'
@@ -21,12 +26,6 @@ execute at @s as @e[type=minecraft:armor_stand,tag=ChosenEchoNode,sort=nearest,l
 execute as @a[tag=ActivePlayer] run function exigence:player/clear/echo_compass with storage exigence:compass
 # Remove lightblock from above nearest echo node
 execute at @s at @e[type=minecraft:armor_stand,tag=ChosenEchoNode,sort=nearest,limit=1] run setblock ~ ~1 ~ air
-
-
-# Add echo shard to their inventory
-#   If there are multiple echos, fragment instead
-execute if score EchosRequired DungeonRun matches 2.. as @s run function exigence:player/give/echo_fragment
-execute if score EchosRequired DungeonRun matches 1 as @s run function exigence:game/found_all_echos
 
 # Increase the player's t_echosPickedUp (total) score by 1
 scoreboard players add @s t_echosPickedUp 1

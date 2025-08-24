@@ -28,8 +28,11 @@ execute if score Difficulty DungeonRun matches 4 run function exigence:game/exit
 
 ## LOCATION SPECIFIC EFFECTS (need to happen after it got positioned)
 # Summon block displays
-execute at @s run summon block_display ~ ~ ~ {teleport_duration:1,Glowing:false,Tags:["ExitPortalDisplay"],Rotation:[0.f,0.f],block_state:{Name:"minecraft:nether_portal",Properties:{}},transformation:[-0.0000f,0.0000f,-0.0100f,0.0000f,0.0000f,4.0000f,0.0000f,0.0000f,2.0000f,0.0000f,-0.0000f,-1.0000f,0.0000f,0.0000f,0.0000f,1.0000f]}
-execute at @s run summon block_display ~ ~ ~ {teleport_duration:1,Glowing:false,Tags:["ExitPortalDisplay"],Rotation:[90.f,0.f],block_state:{Name:"minecraft:nether_portal",Properties:{}},transformation:[-0.0000f,0.0000f,-0.0100f,0.0000f,0.0000f,4.0000f,0.0000f,0.0000f,2.0000f,0.0000f,-0.0000f,-1.0000f,0.0000f,0.0000f,0.0000f,1.0000f]}
+#execute at @s run summon block_display ~ ~ ~ {teleport_duration:1,Glowing:false,Tags:["ExitPortalDisplay"],Rotation:[0.f,0.f],block_state:{Name:"minecraft:nether_portal",Properties:{}},transformation:[-0.0000f,0.0000f,-0.0100f,0.0000f,0.0000f,4.0000f,0.0000f,0.0000f,2.0000f,0.0000f,-0.0000f,-1.0000f,0.0000f,0.0000f,0.0000f,1.0000f]}
+#execute at @s run summon block_display ~ ~ ~ {teleport_duration:1,Glowing:false,Tags:["ExitPortalDisplay"],Rotation:[90.f,0.f],block_state:{Name:"minecraft:nether_portal",Properties:{}},transformation:[-0.0000f,0.0000f,-0.0100f,0.0000f,0.0000f,4.0000f,0.0000f,0.0000f,2.0000f,0.0000f,-0.0000f,-1.0000f,0.0000f,0.0000f,0.0000f,1.0000f]}
+execute at @s run summon block_display ~ ~ ~ {teleport_duration:1,Glowing:false,Tags:["ExitPortalDisplay"],Rotation:[0.f,0.f],block_state:{Name:"minecraft:nether_portal",Properties:{}},transformation:[2.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,4.0000f,0.0000f,0.0000f,0.0000f,0.0000f,8.0000f,-4.0000f,0.0000f,0.0000f,0.0000f,1.0000f]}
+execute at @s run summon block_display ~ ~ ~ {teleport_duration:1,Glowing:false,Tags:["ExitPortalDisplay"],Rotation:[90.f,0.f],block_state:{Name:"minecraft:nether_portal",Properties:{}},transformation:[2.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,4.0000f,0.0000f,0.0000f,0.0000f,0.0000f,8.0000f,-4.0000f,0.0000f,0.0000f,0.0000f,1.0000f]}
+
 # Join team for color
 execute at @s as @e[distance=..5,type=block_display,tag=ExitPortalDisplay] run team join LightPurple @s
 

@@ -21,14 +21,22 @@ execute if score Step Tutorial matches 1 as @a[tag=Tutorial] run playsound minec
 
 ## INTRODUCTION 
 execute if score Step Tutorial matches 1 run tellraw @a [{color:"green",text:"-> Welcome to the Tutorial Canyon!"}]
+execute if score Step Tutorial matches 1 run bossbar set exigence:tutorial value 0
+
 execute if score Step Tutorial matches 2 run tellraw @a [{color:"green",text:"\n-> Follow the Tutorial Tokens to learn how the dungeon operates."}]
-# TODO give compass here
-execute if score Step Tutorial matches 3 run tellraw @a [{color:"green",text:"\n-> You may encounter various threats within the dungeon."}]
-execute if score Step Tutorial matches 4 run tellraw @a [{color:"green",text:"\n-> The most common of these will be ravagers."}]
+execute if score Step Tutorial matches 2 run bossbar set exigence:tutorial value 1
 
-execute if score Step Tutorial matches 5 run tellraw @a [{color:"green",text:"\n-> They are deadly, but are also slow and not terribly smart."}]
+execute if score Step Tutorial matches 3 run tellraw @a [{color:"green",text:"\n-> The text at the top of your screen lists your current objective, as well as your overall progress."}]
+execute if score Step Tutorial matches 3 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Follow the Tutorial Tokens",text:">>> Follow the Tutorial Tokens <<<",color0:"green",color1:"white",active_color:0,interval:3,flashes:9}
+execute if score Step Tutorial matches 3 run bossbar set exigence:tutorial value 2
 
-execute if score Step Tutorial matches 6 run tellraw @a [{color:"green",text:"\n-> With wits and speed you can outmaneuver them."}]
+execute if score Step Tutorial matches 4 run tellraw @a [{color:"green",text:"\n-> Throughout the dungeon, you will encounter various threats and dangers."}]
+execute if score Step Tutorial matches 4 run bossbar set exigence:tutorial value 3
+
+execute if score Step Tutorial matches 5 run tellraw @a [{color:"green",text:"\n-> The most common of these will be ravagers."}]
+execute if score Step Tutorial matches 5 run bossbar set exigence:tutorial value 4
+
+execute if score Step Tutorial matches 6 run tellraw @a [{color:"green",text:"\n-> They are deadly, but can be outmaneuvered with practice."}]
 execute if score Step Tutorial matches 6 run fill 114 104 11 114 105 12 air
 execute if score Step Tutorial matches 6 run fill 109 104 17 108 105 17 air
 execute if score Step Tutorial matches 6 run function exigence:tutorial/setup/ravager/setup_loopy
@@ -42,22 +50,20 @@ execute if score Step Tutorial matches 6 run scoreboard players set Step Tutoria
 execute if score Step Tutorial matches 102 run tellraw @a [{color:"green",text:"\n-> Here's one now. It appears to be too tall to fit through the hole."}]
 
 execute if score Step Tutorial matches 103 run effect clear @n[type=minecraft:ravager,tag=L10,name=Loopy] slowness
-execute if score Step Tutorial matches 103 run bossbar set exigence:tutorial name {text:"Get past the ravager",color:"green",italic:false}
+execute if score Step Tutorial matches 103 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Get past the ravager",text:">>> Get past the ravager <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
 execute if score Step Tutorial matches 103 run bossbar set exigence:tutorial value 0
 execute if score Step Tutorial matches 103 run tellraw @a [{color:"green",text:"\n-> See if you can find a way around the ravager."}]
 
 execute if score Step Tutorial matches 104 run tellraw @a [{color:"green",text:"\n-> The exit is blocked! Distract the ravager while the door melts!"}]
-execute if score Step Tutorial matches 104 run bossbar set exigence:tutorial name {text:"!!! Survive for 5 seconds !!!",color:"red",italic:false}
-execute if score Step Tutorial matches 104 run bossbar set exigence:tutorial color red
+execute if score Step Tutorial matches 104 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"!!! Survive for 5 seconds !!!",text:">>> !!! Survive for 5 seconds !!! <<<",color0:"red",color1:"yellow",active_color:0,interval:3,flashes:9}
 execute if score Step Tutorial matches 104 run scoreboard players set Bossbar Tutorial 0
 execute if score Step Tutorial matches 104 run fill 114 104 11 114 105 12 ice
 execute if score Step Tutorial matches 104 run fill 109 104 17 108 105 17 ice
 execute if score Step Tutorial matches 104 run function exigence:tutorial/flow/private/ravager_loop
 
 execute if score Step Tutorial matches 105 run tellraw @a [{color:"green",text:"\n-> The exit is open, go go go!"}]
-execute if score Step Tutorial matches 105 run bossbar set exigence:tutorial name {text:"Get past the ravager",color:"green",italic:false}
+execute if score Step Tutorial matches 105 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Get past the ravager",text:">>> Get past the ravager <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
 execute if score Step Tutorial matches 105 run bossbar set exigence:tutorial value 0
-execute if score Step Tutorial matches 105 run bossbar set exigence:tutorial color green
 execute if score Step Tutorial matches 105 run fill 126 103 29 130 109 33 minecraft:structure_void replace ice destroy
 
 execute if score Step Tutorial matches 105..201 run function exigence:tutorial/flow/next_token
@@ -68,10 +74,10 @@ execute if score Step Tutorial matches 105..201 run function exigence:tutorial/f
 
 execute if score Step Tutorial matches 106 run kill @n[distance=..1000,type=minecraft:ravager,tag=L10,name=Loopy]
 execute if score Step Tutorial matches 106 run function exigence:tutorial/flow/reset_bossbars
-execute if score Step Tutorial matches 106 run tellraw @a [{color:"green",text:"\n-> Wits and speed is not all you will have against the ravagers..."}]
+execute if score Step Tutorial matches 106 run tellraw @a [{color:"green",text:"\n-> Though you cannot fight them directly, many things can aid you in avoiding the ravagers."}]
 execute if score Step Tutorial matches 106 run fill 126 103 29 130 109 33 ice replace structure_void
 
-execute if score Step Tutorial matches 107 run tellraw @a [{color:"green",text:"\n-> You will also have your Deck!"}]
+execute if score Step Tutorial matches 107 run tellraw @a [{color:"green",text:"\n-> Your Deck is your most powerful tool in the Dungeon."}]
 execute if score Step Tutorial matches 107 run function exigence:tutorial/flow/reset_bossbars
 execute if score Step Tutorial matches 107 run bossbar set exigence:tutorial_deck name [{text:"Deck (5",color:"white"},{text:"/",color:"gray"},{text:"5): [ ",color:"white"},\
 {text:"▌▌▌▌▌",color:"white",italic:false},{text:"",color:"dark_gray",italic:false},{text:" ]",color:"white"}]
@@ -88,7 +94,7 @@ execute if score Step Tutorial matches 201 run bossbar set exigence:tutorial_dec
 execute if score Step Tutorial matches 201 run function exigence:tutorial/setup/grow_berries
 
 execute if score Step Tutorial matches 202 run tellraw @a [{color:"green",text:"\n-> Dead bushes cannot grow berries. See if you can find some other bushes."}]
-execute if score Step Tutorial matches 202 run bossbar set exigence:tutorial name {text:"Pick 3 berry bushes",color:"green",italic:false}
+execute if score Step Tutorial matches 202 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Pick 3 berry bushes",text:">>> Pick 3 berry bushes <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
 execute if score Step Tutorial matches 202 run bossbar set exigence:tutorial value 0
 
 # Pick first
@@ -134,14 +140,15 @@ execute if score Step Tutorial matches 309 run tellraw @a [{color:"green",text:"
 execute if score Step Tutorial matches 310 run tellraw @a [{color:"green",text:"\n-> Hear that noise? The Watchers can sense your vibrations when you step on sculk."}]
 execute if score Step Tutorial matches 310..311 run function exigence:tutorial/flow/next_token
 execute if score Step Tutorial matches 311 run tellraw @a [{color:"green",text:"\n-> Stepping on sculk has a high chance of generating Menace."}]
+execute if score Step Tutorial matches 311 run scoreboard players set Step Tutorial 315
 
-execute if score Step Tutorial matches 312 run tellraw @a [{color:"green",text:"\n-> Listen to the heartbeat as Menace increases by playing these samples."}]
-execute if score Step Tutorial matches 312 run bossbar set exigence:tutorial value 0
-execute if score Step Tutorial matches 312 run bossbar set exigence:tutorial name {text:"Listen to the heartbeat samples",color:"green",italic:false}
-# Pushy buttons to play heartbeat sounds
-execute if score Step Tutorial matches 313 run bossbar set exigence:tutorial value 25
-execute if score Step Tutorial matches 314 run bossbar set exigence:tutorial value 50
-execute if score Step Tutorial matches 315 run bossbar set exigence:tutorial value 75
+#execute if score Step Tutorial matches 312 run tellraw @a [{color:"green",text:"\n-> Listen to the heartbeat as Menace increases by playing these samples."}]
+#execute if score Step Tutorial matches 312 run bossbar set exigence:tutorial value 0
+#execute if score Step Tutorial matches 312 run bossbar set exigence:tutorial name {text:"Listen to the heartbeat samples",color:"green",italic:false}
+## Pushy buttons to play heartbeat sounds
+#execute if score Step Tutorial matches 313 run bossbar set exigence:tutorial value 25
+#execute if score Step Tutorial matches 314 run bossbar set exigence:tutorial value 50
+#execute if score Step Tutorial matches 315 run bossbar set exigence:tutorial value 75
 
 
 execute if score Step Tutorial matches 316 run tellraw @a [{color:"green",text:"\n-> Menace will also increase when you run out of cards, so the bigger your deck, the longer you can stay in the dungeon!"}]
@@ -157,7 +164,7 @@ execute if score Step Tutorial matches 316 run scoreboard players set Step Tutor
 
 execute if score Step Tutorial matches 401..403 run function exigence:tutorial/flow/next_token
 
-execute if score Step Tutorial matches 401 run tellraw @a [{color:"green",text:"\n-> The dungeon contains many treasures scattered throughout the dungeon."}]
+execute if score Step Tutorial matches 401 run tellraw @a [{color:"green",text:"\n-> The dungeon contains varioust treasures."}]
 
 execute if score Step Tutorial matches 402 run tellraw @a [{color:"green",text:"\n-> Coins are the most common treasure drop."}]
 
@@ -167,7 +174,7 @@ execute if score Step Tutorial matches 403 run scoreboard players set Step Tutor
 execute if score Step Tutorial matches 703 run tellraw @a [{color:"green",text:"\n-> See what you can find in this abandoned village."}]
 execute if score Step Tutorial matches 703 as @e[distance=..1000,type=minecraft:armor_stand,tag=TreasureNode,scores={ObjectLevel=10},tag=!EmberSpecial] run function exigence:treasure/node/drop_treasure {function:"exigence:treasure/node/coin/summon_coin"}
 execute if score Step Tutorial matches 703 as @e[distance=..1000,type=minecraft:item,scores={ObjectLevel=10}] run tag @s add PreventItemDespawn
-execute if score Step Tutorial matches 703 run bossbar set exigence:tutorial name {text:"Collect 5 Coins",color:"green",italic:false}
+execute if score Step Tutorial matches 703 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Collect 5 coins",text:">>> Collect 5 coins <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
 execute if score Step Tutorial matches 703 run bossbar set exigence:tutorial value 0
 
 execute if score Step Tutorial matches 704 run tellraw @a [{color:"green",text:"\n-> Coins naturally spawn over time in the dungeon."}]
@@ -179,45 +186,36 @@ execute if score Step Tutorial matches 705 run bossbar set exigence:tutorial val
 execute if score Step Tutorial matches 706 run tellraw @a [{color:"green",text:"\n-> ...but they will always be somewhere accessible."}]
 execute if score Step Tutorial matches 706 run bossbar set exigence:tutorial value 60
 
-execute if score Step Tutorial matches 707 run tellraw @a [{color:"green",text:"\n-> Coins convert to Glint at a 5:1 ratio."}]
+execute if score Step Tutorial matches 707 run tellraw @a [{color:"green",text:"\n-> Cards can be played to drop additional treasure."}]
 execute if score Step Tutorial matches 707 run bossbar set exigence:tutorial value 80
+execute if score Step Tutorial matches 707 run scoreboard players set Step Tutorial 800
 
-execute if score Step Tutorial matches 708 run tellraw @a [{color:"green",text:"\n-> Cards can be played to drop additional treasure."}]
-execute if score Step Tutorial matches 708 run kill @e[distance=..1000,type=minecraft:item,tag=Coin]
-execute if score Step Tutorial matches 708 run bossbar set exigence:tutorial value 100
-execute if score Step Tutorial matches 708 run scoreboard players set Step Tutorial 800
-
-execute if score Step Tutorial matches 800 run function exigence:tutorial/flow/next_token
 
 ## EMBERS
-execute if score Step Tutorial matches 801 run tellraw @a [{color:"green",text:"\n-> Sounds like a card just spawned some embers as well."}]
+execute if score Step Tutorial matches 801 run kill @e[distance=..1000,type=minecraft:item,tag=Coin]
+execute if score Step Tutorial matches 801 run tellraw @a [{color:"green",text:"\n-> Sounds like a card just spawned some Ancient Embers."}]
 execute if score Step Tutorial matches 801 run tellraw @a [{color:"white",text:"["},{color:"dark_aqua",text:"Ember Seeker"},{color:"white",text:"] "},{color:"white",text:"+ Ancient Embers"}]
 execute if score Step Tutorial matches 801 run bossbar set exigence:tutorial_deck name [{text:"Deck (3",color:"white"},{text:"/",color:"gray"},{text:"5): [ ",color:"white"},\
 {text:"▌▌▌",color:"white",italic:false},{text:"▌▌",color:"dark_gray",italic:false},{text:" ]",color:"white"}]
 execute if score Step Tutorial matches 801 as @a[tag=Tutorial] run playsound minecraft:entity.lightning_bolt.thunder ambient @s ~ ~1000 ~ 1000 1
 execute if score Step Tutorial matches 801 run bossbar set exigence:tutorial value 0
-execute if score Step Tutorial matches 801 run bossbar set exigence:tutorial name {text:"Collect 3 Embers",color:"green",italic:false}
+execute if score Step Tutorial matches 801 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Collect 3 embers",text:">>> Collect 3 embers <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
 execute if score Step Tutorial matches 801 run execute as @e[distance=..1000,type=minecraft:armor_stand,tag=TreasureNode,scores={ObjectLevel=10},tag=EmberSpecial] run function exigence:treasure/node/drop_treasure {function:"exigence:ember/summon_ember"}
 execute if score Step Tutorial matches 801 run execute as @e[distance=..1000,type=minecraft:item,scores={ObjectLevel=10}] run tag @s add PreventItemDespawn
 
-execute if score Step Tutorial matches 802 run tellraw @a [{color:"green",text:"\n-> Embers can be spent purchasing cards after the run."}]
+execute if score Step Tutorial matches 802 run tellraw @a [{color:"green",text:"\n-> Unlike coins, Embers only spawn from cards and around Echo Shards."}]
 execute if score Step Tutorial matches 802 run bossbar set exigence:tutorial value 33
 
-execute if score Step Tutorial matches 803 run tellraw @a [{color:"green",text:"\n-> Unlike coins, they do not spawn naturally except for around the Echo shard."}]
+execute if score Step Tutorial matches 803 run tellraw @a [{color:"green",text:"\n-> Embers can be spent purchasing cards after the run."}]
 execute if score Step Tutorial matches 803 run bossbar set exigence:tutorial value 66
-
-execute if score Step Tutorial matches 804 run tellraw @a [{color:"green",text:"\n-> Cards can be played to drop additional embers."}]
-execute if score Step Tutorial matches 804 run execute at @e[distance=..1000,type=minecraft:armor_stand,tag=TreasureNode,scores={ObjectLevel=10},tag=EmberSpecial] run kill @e[distance=..2,type=minecraft:item,tag=Ember]
-execute if score Step Tutorial matches 804 run bossbar set exigence:tutorial value 100
-execute if score Step Tutorial matches 804 run scoreboard players set Step Tutorial 900
-
-execute if score Step Tutorial matches 900 run function exigence:tutorial/flow/next_token
+execute if score Step Tutorial matches 803 run scoreboard players set Step Tutorial 900
 
 ## RESEARCH SHERDS
+execute if score Step Tutorial matches 901 run execute at @e[distance=..1000,type=minecraft:armor_stand,tag=TreasureNode,scores={ObjectLevel=10},tag=EmberSpecial] run kill @e[distance=..2,type=minecraft:item,tag=Ember]
 execute if score Step Tutorial matches 901 run tellraw @a [{color:"green",text:"\n-> The final common dungeon drop is the Research Fragment."}]
 execute if score Step Tutorial matches 901 run bossbar set exigence:tutorial value 0
-execute if score Step Tutorial matches 901 run bossbar set exigence:tutorial name {text:"Collect 1 Fragment",color:"green",italic:false}
-execute if score Step Tutorial matches 901 run execute as @e[distance=..1000,type=minecraft:armor_stand,tag=TreasureNode,scores={ObjectLevel=10},limit=2,sort=random] run function exigence:treasure/node/drop_treasure {function:"exigence:treasure/sherd/summon_sherd"}
+execute if score Step Tutorial matches 901 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Collect 1 fragment",text:">>> Collect 1 fragment <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
+execute if score Step Tutorial matches 901 run execute at @a[distance=..1000,tag=Tutorial] as @e[distance=5..1000,type=minecraft:armor_stand,tag=TreasureNode,scores={ObjectLevel=10},limit=2,sort=random] run function exigence:treasure/node/drop_treasure {function:"exigence:treasure/sherd/summon_sherd"}
 execute if score Step Tutorial matches 901 run execute as @e[distance=..1000,type=minecraft:item,scores={ObjectLevel=10}] run tag @s add PreventItemDespawn
 
 execute if score Step Tutorial matches 902 run tellraw @a [{color:"green",text:"\n-> Fragments are used to unlock new items in the shop."}]
@@ -237,11 +235,11 @@ execute if score Step Tutorial matches 1001 run function exigence:tutorial/flow/
 
 execute if score Step Tutorial matches 1002 run tellraw @a [{color:"green",text:"\n-> Up ahead is an old altar. Rekindle it by right clicking."}]
 execute if score Step Tutorial matches 1002 run execute as @e[distance=..1000,type=minecraft:armor_stand,tag=AltarNode,scores={ObjectLevel=10}] run function exigence:altar/node/activate
-execute if score Step Tutorial matches 1002 run bossbar set exigence:tutorial name {text:"Light the altar",color:"green",italic:false}
+execute if score Step Tutorial matches 1002 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Light the altar",text:">>> Light the altar <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
 execute if score Step Tutorial matches 1002 run bossbar set exigence:tutorial value 0
 
 execute if score Step Tutorial matches 1003 run tellraw @a [{color:"green",text:"\n-> Now Enhance the altar by lighting it with an Ember."}]
-execute if score Step Tutorial matches 1003 run bossbar set exigence:tutorial name {text:"Enhance the altar",color:"green",italic:false}
+execute if score Step Tutorial matches 1003 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Enhance the altar",text:">>> Enhance the altar <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
 execute if score Step Tutorial matches 1003 as @a[distance=..1000,tag=Tutorial] run function exigence:tutorial/flow/private/force_ember
 execute if score Step Tutorial matches 1003 run title @a[tag=Tutorial] subtitle [{text:"❂",color:"aqua"}]
 execute if score Step Tutorial matches 1003 run title @a[tag=Tutorial] title [{text:""}]
@@ -294,18 +292,20 @@ execute if score Step Tutorial matches 1201 run function exigence:tutorial/flow/
 execute if score Step Tutorial matches 1201 run effect clear @a[tag=Tutorial] luck
 
 execute if score Step Tutorial matches 1202 run tellraw @a [{color:"green",text:"\n-> Ringing bells gives 1 Red, but has a 2/3 chance to trigger a Hazard."}]
-execute if score Step Tutorial matches 1202 run bossbar set exigence:tutorial name {text:"Ring the bell",color:"green",italic:false}
+execute if score Step Tutorial matches 1202 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Ring the bell",text:">>> Ring the bell <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
 execute if score Step Tutorial matches 1202 run bossbar set exigence:tutorial value 0
 
 # Ring the bell
 execute if score Step Tutorial matches 1203 run tellraw @a [{color:"green",text:"\n-> Placeholder to explain how bells respawn/move after ringing them."}]
 execute if score Step Tutorial matches 1203 run title @a[tag=Tutorial] subtitle [{text:"❂",color:"dark_red"}]
 execute if score Step Tutorial matches 1203 run title @a[tag=Tutorial] title [{text:""}]
+execute if score Step Tutorial matches 1203 run function exigence:tutorial/flow/reset_bossbars
+execute if score Step Tutorial matches 1203 run fill 152 126 141 152 130 147 sculk
 execute if score Step Tutorial matches 1203..1206 run function exigence:tutorial/flow/next_token
 
 # Infront of the blocked passage
 execute if score Step Tutorial matches 1204 run tellraw @a [{color:"green",text:"\n-> Looks like the passage ahead got blocked. You'll have to find another way."}]
-execute if score Step Tutorial matches 1204 run function exigence:tutorial/flow/reset_bossbars
+execute if score Step Tutorial matches 1204 run fill 136 126 140 137 126 142 structure_void replace ice destroy
 
 # Under the ice
 execute if score Step Tutorial matches 1205 run tellraw @a [{color:"green",text:"\n-> Keep an eye out for shortcuts and other small changes in the dungeon. These are called variances, and are randomized each run."}]
@@ -335,9 +335,12 @@ execute if score Step Tutorial matches 1303 run effect clear @a[tag=Tutorial] ju
 execute if score Step Tutorial matches 1303 run setblock 157 128 112 stone_bricks
 
 execute if score Step Tutorial matches 1304 run tellraw @a [{color:"green",text:"\n-> It is designed to withstand heavy loads..."}]
+execute if score Step Tutorial matches 1304 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Step on the ravager glass",text:">>> Step on the ravager glass <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
+execute if score Step Tutorial matches 1304 run bossbar set exigence:tutorial value 0
 
 # Triggere by stepping on ravager glass
 execute if score Step Tutorial matches 1305 run tellraw @a [{color:"green",text:"\n-> ... but break under light ones."}]
+execute if score Step Tutorial matches 1305 run function exigence:tutorial/flow/reset_bossbars
 
 execute if score Step Tutorial matches 1306 run tellraw @a [{color:"green",text:"\n-> It also regenerates after a second."}]
 execute if score Step Tutorial matches 1306..1307 run function exigence:tutorial/flow/next_token
@@ -381,8 +384,8 @@ execute if score Step Tutorial matches 1404 run tellraw @a [{color:"green",text:
 
 execute if score Step Tutorial matches 1405 run tellraw @a [{color:"green",text:"\n-> The deeper into the dungeon you go, the more treasure and embers you will find."}]
 
-execute if score Step Tutorial matches 1406 run tellraw @a [{color:"green",text:"\n-> Are you ready?"}]
-execute if score Step Tutorial matches 1406 run fill 175 131 49 177 134 47 structure_void replace ice destroy
+execute if score Step Tutorial matches 1406 run tellraw @a [{color:"green",text:"\n-> We've simulated part of the dungeon up ahead. Are you ready?"}]
+execute if score Step Tutorial matches 1406 run fill 175 131 49 177 135 47 structure_void replace ice destroy
 execute if score Step Tutorial matches 1406 as @n[distance=..1000,type=marker,tag=TutorialMarker,tag=LastDropped,tag=Checkpoint] run function exigence:tutorial/flow/last_dropped_fallback
 
 #=============================================================================================================
@@ -390,6 +393,20 @@ execute if score Step Tutorial matches 1406 as @n[distance=..1000,type=marker,ta
 #=============================================================================================================
 # Triggers when you walk through the door, close door
 execute if score Step Tutorial matches 1501 run tellraw @a [{color:"green",text:"\n-> Find the Echo Shard and bring it to the Exit Portal."}]
-execute if score Step Tutorial matches 1501 run fill 175 131 49 177 134 47 ice replace structure_void
+execute if score Step Tutorial matches 1501 run fill 175 131 49 177 135 47 ice replace structure_void
+execute if score Step Tutorial matches 1501 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Find the echo shard",text:">>> Find the echo shard <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
+execute if score Step Tutorial matches 1501 run bossbar set exigence:tutorial value 0
+execute if score Step Tutorial matches 1501 run function exigence:tutorial/setup/choose_echo_node
+execute if score Step Tutorial matches 1501 at @n[distance=..1000,tag=ChosenEchoNode] run function exigence:tutorial/setup/ravager/setup_finaly
+execute if score Step Tutorial matches 1501 run effect clear @a[distance=..1000,tag=Tutorial]
 
-
+# Next trigger when the player picks up the echo shard
+execute if score Step Tutorial matches 1502 run clear @a[distance=..1000,tag=Tutorial] compass
+execute if score Step Tutorial matches 1502 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Get to the exit portal",text:">>> Get to the exit portal <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
+execute if score Step Tutorial matches 1502 run bossbar set exigence:tutorial value 0
+execute if score Step Tutorial matches 1502 at @p[distance=..1000,tag=Tutorial] run playsound minecraft:entity.wither.spawn neutral @a ~ ~1000 ~ 1000 0.8
+execute if score Step Tutorial matches 1502 run title @a[tag=Tutorial] subtitle [{text:"❂",color:"dark_red"}]
+execute if score Step Tutorial matches 1502 at @e[distance=..1000,type=minecraft:armor_stand,tag=EchoNode] run fill ~ ~1 ~ ~ ~1 ~ air replace light
+execute if score Step Tutorial matches 1502 as @e[distance=..1000,type=block_display,tag=TutorialExitPortalDisplay] run data modify entity @s Glowing set value true
+execute if score Step Tutorial matches 1502 as @a[distance=..1000,tag=Tutorial] run function exigence:player/give/echo_shard
+execute if score Step Tutorial matches 1502 run scoreboard players add Menace Tutorial 3

@@ -25,6 +25,10 @@ clear @s
 tag @s remove Tutorial
 team leave @s
 effect clear @s
+attribute @s minecraft:safe_fall_distance modifier add exigence:safe_fall 100 add_value
+# Disable triggers
+trigger SkipSection
+trigger ExitTutorial
 
 function exigence:bossbar/tutorial/hide
 function exigence:bossbar/tutorial_deck/hide
@@ -35,6 +39,8 @@ scoreboard players set Tutorial RoomToken 0
 data modify storage exigence:dungeon tutorial set value 0
 
 title @s actionbar ""
+
+function exigence:tutorial/unload
 
 # DEBUG
 effect give @s night_vision infinite 0 true

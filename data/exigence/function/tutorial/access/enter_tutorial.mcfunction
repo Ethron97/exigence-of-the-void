@@ -14,39 +14,33 @@ say Enter Tutorial
 # Reset scores
 function exigence:game/game_reset/reset_player_scores
 
-# Turn tutorial on
-data modify storage exigence:dungeon tutorial set value 1
-
 # Give room token
 function exigence:room/tutorial/new_token
 scoreboard players operation @s RoomToken = Tutorial RoomToken
 
+# Load tutorial
+execute in exigence:tutorial run function exigence:tutorial/load
+
 # Give "exit" button and "skip" button
-item replace entity @s hotbar.8 with minecraft:carrot_on_a_stick[custom_name=[{text:"Exit Tutorial",color:"red",italic:false}],custom_data={item_name:'exit_tutorial'}]
-item replace entity @s hotbar.7 with minecraft:carrot_on_a_stick[custom_name=[{text:"Skip Section",color:"yellow",italic:false}],custom_data={item_name:'skip_section'}]
+item replace entity @s hotbar.8 with minecraft:carrot_on_a_stick[custom_name=[{text:"Exit Tutorial",color:"red",italic:false}],custom_data={item_name:'exit_tutorial'},custom_model_data={strings:["exit_button"]}]
+item replace entity @s hotbar.7 with minecraft:carrot_on_a_stick[custom_name=[{text:"Skip Section",color:"yellow",italic:false}],custom_data={item_name:'skip_section'},custom_model_data={strings:["skip_button"]}]
 
 # Teleport to canyon
 tp @s 76.5 100.0 15.5 -30 0
-
-# Initilize stepping / messaging / handling
-scoreboard players set Fallback Tutorial 1
-scoreboard players set Step Tutorial 0
 
 effect clear @s regeneration
 tag @s add Tutorial
 gamemode adventure @s
 spawnpoint @s 75 100 15
 team join Tutorial @s
+attribute @s minecraft:safe_fall_distance modifier remove exigence:safe_fall
 
 # Initialize bossbar
 function exigence:bossbar/tutorial/initialize
 
-# Load tutorial
-function exigence:tutorial/reset
-function exigence:tutorial/flow/next_token
-
-
-execute if data storage exigence:debug {tutorial:1} run function exigence:tutorial/toggle_debug
+# Enable triggers
+scoreboard players enable @s SkipSection
+scoreboard players enable @s ExitTutorial
 
 
 # TEMP TESTING

@@ -15,8 +15,8 @@ team join Echo @s
 # Prevent item from despawning
 data merge entity @s {Age:-32768}
 
-# Change model if there are multiple echos
-execute if score EchosRequired DungeonRun matches 2.. run data merge entity @s {Item:{components:{"minecraft:custom_model_data":{"strings":["disc_fragment_5"]}}}}
+# Change model if there are multiple echos (and not tutorial)
+execute unless score @s ObjectLevel matches 10 if score EchosRequired DungeonRun matches 2.. run data merge entity @s {Item:{components:{"minecraft:custom_model_data":{"strings":["disc_fragment_5"]}}}}
 
 # Remove local tag
 tag @s remove NewEcho
