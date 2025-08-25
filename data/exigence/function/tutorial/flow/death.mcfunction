@@ -34,8 +34,8 @@ scoreboard players operation #compare TutorialMarkerID = @n[distance=..1000,type
 execute as @e[distance=..1000,type=marker,tag=TutorialMarker] if score @s TutorialMarkerID <= #compare TutorialMarkerID run tag @s add Dropped
 
 # Give "exit" button and "skip" button
-item replace entity @s hotbar.8 with minecraft:carrot_on_a_stick[custom_name=[{text:"Exit Tutorial",color:"red",italic:false}],custom_data={item_name:'exit_tutorial'}]
-item replace entity @s hotbar.7 with minecraft:carrot_on_a_stick[custom_name=[{text:"Skip Section",color:"yellow",italic:false}],custom_data={item_name:'skip_section'}]
+item replace entity @s hotbar.8 with minecraft:carrot_on_a_stick[custom_name=[{text:"Exit Tutorial",color:"red",italic:false}],custom_data={item_name:'exit_tutorial'},custom_model_data={strings:["exit_button"]}]
+item replace entity @s hotbar.7 with minecraft:carrot_on_a_stick[custom_name=[{text:"Skip Section",color:"yellow",italic:false}],custom_data={item_name:'skip_section'},custom_model_data={strings:["skip_button"]}]
 
 # Restart chain
 function exigence:tutorial/flow/next_token

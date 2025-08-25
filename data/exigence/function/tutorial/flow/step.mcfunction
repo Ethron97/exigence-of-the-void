@@ -132,7 +132,7 @@ execute if score Step Tutorial matches 305 run tellraw @a [{color:"green",text:"
 
 execute if score Step Tutorial matches 306 run tellraw @a [{color:"green",text:"\n-> As you traverse the dungeon, you will generate Menace."}]
 execute if score Step Tutorial matches 307 run tellraw @a [{color:"green",text:"\n-> Menace measures how aware the dungeon is of you."}]
-execute if score Step Tutorial matches 308 run tellraw @a [{color:"green",text:"\n-> The more Menace, the faster your heart will beat."}]
+execute if score Step Tutorial matches 308 run tellraw @a [{color:"green",text:"\n-> The more Menace, the faster the heart of the Watchers will beat."}]
 
 
 execute if score Step Tutorial matches 309 run tellraw @a [{color:"green",text:"\n-> If you reach Max Menace, the Watchers become fully aware of you and there is no hiding."}]
@@ -164,7 +164,7 @@ execute if score Step Tutorial matches 316 run scoreboard players set Step Tutor
 
 execute if score Step Tutorial matches 401..403 run function exigence:tutorial/flow/next_token
 
-execute if score Step Tutorial matches 401 run tellraw @a [{color:"green",text:"\n-> The dungeon contains varioust treasures."}]
+execute if score Step Tutorial matches 401 run tellraw @a [{color:"green",text:"\n-> The dungeon contains various treasures."}]
 
 execute if score Step Tutorial matches 402 run tellraw @a [{color:"green",text:"\n-> Coins are the most common treasure drop."}]
 

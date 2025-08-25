@@ -26,6 +26,27 @@
         "type": "minecraft:run_command",
         "command": "trigger TpGame"
       }
+    },
+    {
+      "label": "Tp Hub",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger TpHub"
+      }
+    },
+    {
+      "label": "Creative mode",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger Admin"
+      }
+    },
+    {
+      "label": "Debug Menu",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger DebugMenu"
+      }
     }
   ]
 }

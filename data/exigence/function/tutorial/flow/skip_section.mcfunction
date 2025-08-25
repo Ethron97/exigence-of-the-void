@@ -15,6 +15,8 @@ tag @n[distance=..1000,type=marker,tag=TutorialMarker,tag=LastDropped] add SaveL
 function exigence:tutorial/reset
 
 clear @a[distance=..1000,tag=Tutorial] compass
+clear @a[distance=..1000,tag=Tutorial] echo_shard
+clear @a[distance=..1000,tag=Tutorial] blaze_powder
 
 # Restore saved last dropped
 tag @n[distance=..1000,type=marker,tag=TutorialMarker,tag=SaveLastDropped] add LastDropped

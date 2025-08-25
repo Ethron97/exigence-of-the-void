@@ -1,5 +1,10 @@
 # Update action bar based on which zone the player is in
 
+## CONSTRAINTS
+#   AS player
+
+#=============================================================================================================
+
 # Reset piggy tag
 #tag @a[tag=PiggyBank,nbt=!{SelectedItem:{components:{"minecraft:custom_data":{item_name:'piggy_bank'}}}}] remove PiggyBank
 # Add piggy tag if holding is

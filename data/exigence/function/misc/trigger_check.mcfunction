@@ -25,7 +25,7 @@ execute as @a unless score @s Admin matches 0 run function exigence:misc/trigger
 execute as @a unless score @s DebugMenu matches 0 run function exigence:misc/triggers/debug_menu
 execute as @a unless score @s TpTutorial matches 0 run function exigence:misc/triggers/tp_tutorial
 execute as @a unless score @s TpGame matches 0 run function exigence:misc/triggers/tp_game
-#execute as @a[scores={TpHub=1..}] run function exigence:misc/triggers/hub
+execute as @a unless score @s TpHub matches 0 run function exigence:misc/triggers/tp_hub
 
 execute as @a unless score @s SkipSection matches 0 run function exigence:misc/triggers/skip_section
 execute as @a unless score @s ExitTutorial matches 0 run function exigence:misc/triggers/exit_tutorial
