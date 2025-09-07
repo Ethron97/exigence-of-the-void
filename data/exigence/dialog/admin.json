@@ -35,6 +35,13 @@
       }
     },
     {
+      "label": "Tp OLD Hub",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger TpOldHub"
+      }
+    },
+    {
       "label": "Creative mode",
       "action": {
         "type": "minecraft:run_command",

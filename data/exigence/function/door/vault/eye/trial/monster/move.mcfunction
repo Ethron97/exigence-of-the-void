@@ -15,5 +15,5 @@ execute if score @s EyeSpeed matches 2 at @s run teleport @s ^ ^ ^0.1
 execute if score @s EyeSpeed matches 4 at @s run teleport @s ^ ^ ^0.2
 
 # If Eye steps is 0 after moving, change direction if intersection (marked by glaze)
-execute if score @s EyeSteps matches 0 at @s if block ~ 126 ~ minecraft:blue_glazed_terracotta run function exigence:door/vault/eye/trial/monster/turn
+execute if score @s EyeSteps matches 0 at @s if block ~ 126 ~ minecraft:waxed_exposed_cut_copper run function exigence:door/vault/eye/trial/monster/turn
 execute if score @s EyeSteps matches 0 run function exigence:door/vault/eye/trial/monster/reset_steps

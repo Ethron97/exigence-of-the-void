@@ -24,7 +24,8 @@ execute if entity @a[distance=..1000,tag=ConvertingCoins,scores={s_coinConversio
 
 # Door checks for player warping throughout the hub
 #function exigence:hub/door_tick
-execute as @a[gamemode=!spectator,predicate=exigence:level/hub] run function exigence:hub/player/check_door
+# TODO DISABVLED CHECK DOOR DURING HUB RENOVATIONS
+#execute as @a[gamemode=!spectator,predicate=exigence:level/hub] run function exigence:hub/player/check_door
 
 # This is for difficulty setup
 execute if score SecondsCooldown TickCounter matches 0 run execute if data storage exigence:debug {echo:1} as @e[type=minecraft:armor_stand,tag=EchoNode,team=!ActiveEcho,scores={EchoDifficulty=0}] run team join Green @s
