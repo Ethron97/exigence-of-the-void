@@ -1,0 +1,1 @@
+# Initialize scoreboard magic numbers

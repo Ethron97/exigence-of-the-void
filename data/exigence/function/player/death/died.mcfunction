@@ -58,11 +58,35 @@ scoreboard players set @s mod_Heighten 0
 
 scoreboard players set @s cr_damageTakenSinceLastDeath 0
 
-# Increase t_levelXDeaths
-execute if score @s ActiveLevel matches 1 run scoreboard players add @s t_level1Deaths 1
-execute if score @s ActiveLevel matches 2 run scoreboard players add @s t_level2Deaths 1
-execute if score @s ActiveLevel matches 3 run scoreboard players add @s t_level3Deaths 1
-execute if score @s ActiveLevel matches 4 run scoreboard players add @s t_level4Deaths 1
+# Increase locational deaths; t_deaths_LX
+execute if score @s ActiveLevel matches 1 run scoreboard players add @s t_deaths_L1 1
+execute if score @s ActiveLevel matches 2 run scoreboard players add @s t_deaths_L2 1
+execute if score @s ActiveLevel matches 3 run scoreboard players add @s t_deaths_L3 1
+execute if score @s ActiveLevel matches 4 run scoreboard players add @s t_deaths_L4 1
+execute if score @s ActiveLevel matches 5 run scoreboard players add @s t_deaths_L5 1
+
+# Increase difficulty deaths; t_deaths_DX
+execute if score Difficulty DungeonRun matches 1 run scoreboard players add @s t_deaths_D1 1
+execute if score Difficulty DungeonRun matches 2 run scoreboard players add @s t_deaths_D2 1
+execute if score Difficulty DungeonRun matches 3 run scoreboard players add @s t_deaths_D3 1
+execute if score Difficulty DungeonRun matches 4 run scoreboard players add @s t_deaths_D4 1
+execute if score Difficulty DungeonRun matches 5 run scoreboard players add @s t_deaths_D5 1
+execute if score Difficulty DungeonRun matches 6 run scoreboard players add @s t_deaths_D6 1
+
+# Increase locational deaths; cr_deaths_LX
+execute if score @s ActiveLevel matches 1 run scoreboard players add @s cr_deaths_L1 1
+execute if score @s ActiveLevel matches 2 run scoreboard players add @s cr_deaths_L2 1
+execute if score @s ActiveLevel matches 3 run scoreboard players add @s cr_deaths_L3 1
+execute if score @s ActiveLevel matches 4 run scoreboard players add @s cr_deaths_L4 1
+execute if score @s ActiveLevel matches 5 run scoreboard players add @s cr_deaths_L5 1
+
+# Increase difficulty deaths; cr_deaths_DX
+execute if score Difficulty DungeonRun matches 1 run scoreboard players add @s cr_deaths_D1 1
+execute if score Difficulty DungeonRun matches 2 run scoreboard players add @s cr_deaths_D2 1
+execute if score Difficulty DungeonRun matches 3 run scoreboard players add @s cr_deaths_D3 1
+execute if score Difficulty DungeonRun matches 4 run scoreboard players add @s cr_deaths_D4 1
+execute if score Difficulty DungeonRun matches 5 run scoreboard players add @s cr_deaths_D5 1
+execute if score Difficulty DungeonRun matches 6 run scoreboard players add @s cr_deaths_D6 1
 
 # Update killed_by scores
 function exigence:player/death/private/update_scores

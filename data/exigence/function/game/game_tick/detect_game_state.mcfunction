@@ -12,7 +12,6 @@ execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon 
 
 # Spectate
 #   Cancel old spectate else player glitches or something
-#execute as @a[tag=ActivePlayer,scores={dead=2}] unless score @s Respectated matches 2 store success score @s Respectated run spectate @p[tag=ActivePlayer,scores={dead=0}]
 execute as @a[tag=ActivePlayer,scores={dead=2}] at @s run spectate @p[tag=ActivePlayer,scores={dead=0}]
 #execute as @a[tag=ActivePlayer,scores={dead=2}] at @s unless entity @a[tag=ActivePlayer,scores={dead=0},distance=0] run say Away!
 #execute as @a[tag=ActivePlayer,scores={dead=2}] at @s unless entity @a[tag=ActivePlayer,scores={dead=0},distance=0] run spectate

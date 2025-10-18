@@ -69,9 +69,6 @@ scoreboard players set RedNeeded Resources 0
 scoreboard players set AquaNeeded Resources 0
 scoreboard players set GreenNeeded Resources 0
 
-# Reset anti-stack uuid (I think this is deprecated)
-scoreboard players set Current DropID 0
-
 # Reset default max resources, just to be sure
 scoreboard players set MaxRed Resources 2
 scoreboard players set MaxAqua Resources 2

@@ -1,4 +1,4 @@
-# used for checking things in the Hub
+# Used for checking things in the Hub
 # Called by misc/tick if at least one player is in exigence:hub dimension
 
 ## CONSTRAINTS
@@ -7,11 +7,20 @@
 #=============================================================================================================
 
 # Give everyone in the hub saturation
-effect give @a[distance=..1000,predicate=!exigence:effects/saturation] saturation infinite 0 true
-effect give @a[distance=..1000,predicate=!exigence:effects/regeneration] regeneration infinite 200 true
+effect give @a[predicate=exigence:dimension/hub,predicate=!exigence:effects/saturation] saturation infinite 0 true
+effect give @a[predicate=exigence:dimension/hub,predicate=!exigence:effects/regeneration] regeneration infinite 200 true
 
 # Update actionbar
 function exigence:hub/hub_tick/update_actionbar
+
+# Door checks for player warping throughout the hub
+#function exigence:hub/door_tick
+# TODO DISABVLED CHECK DOOR DURING HUB RENOVATIONS
+#execute as @a[gamemode=!spectator,predicate=exigence:level/hub] run function exigence:hub/player/check_door
+execute as @a[gamemode=!spectator,predicate=exigence:dimension/hub] run function exigence:hub/player/check_door
+
+
+
 
 # Item shop tick if someone is shopping
 execute if entity @a[distance=..1000,tag=ItemShopping] run function exigence:hub/item_shop/item_shop_tick
@@ -19,22 +28,8 @@ execute if entity @a[distance=..1000,tag=ItemShopping] run function exigence:hub
 # Animate coin conversion
 execute if entity @a[distance=..1000,tag=ConvertingCoins,scores={s_coinConversion=1}] run function exigence:hub/convert_money/display_hud/tick
 execute if entity @a[distance=..1000,tag=ConvertingCoins,scores={s_coinConversion=0}] run function exigence:hub/convert_money/item_smash/tick
+ 
 
-
-
-# Door checks for player warping throughout the hub
-#function exigence:hub/door_tick
-# TODO DISABVLED CHECK DOOR DURING HUB RENOVATIONS
-#execute as @a[gamemode=!spectator,predicate=exigence:level/hub] run function exigence:hub/player/check_door
-
-# This is for difficulty setup
-execute if score SecondsCooldown TickCounter matches 0 run execute if data storage exigence:debug {echo:1} as @e[type=minecraft:armor_stand,tag=EchoNode,team=!ActiveEcho,scores={EchoDifficulty=0}] run team join Green @s
-execute if score SecondsCooldown TickCounter matches 0 run execute if data storage exigence:debug {echo:1} as @e[type=minecraft:armor_stand,tag=EchoNode,team=Green,scores={EchoDifficulty=1..}] run team join Echo @s
-
-
-
-# Set offline to 0
-scoreboard players set @a offline 0
 
 # Add 0 to all players player id to initialize it
 scoreboard players add @a PlayerID 0
@@ -57,15 +52,7 @@ execute if entity @a[tag=Exalting] run function exigence:hub/hub_tick/exalting
 execute if score SecondsCooldown TickCounter matches 17 as @a[team=ItemShop] run function exigence:player/utility/calculate_item_limit
 execute if score SecondsCooldown TickCounter matches 17 as @a[team=Lockerroom] run function exigence:player/utility/calculate_item_limit
 
-# DEBUG
-#=============================================================================================================
-function exigence:hub/hub_tick/predicate_debug
-# Update nodecounter automatically every second
-execute store result storage exigence:debug current_level int 1 run scoreboard players get Ethron97 ObjectLevel
-execute if data storage exigence:debug {void:1} if score SecondsCooldown TickCounter matches 0 run function exigence:misc/update_node_counter with storage exigence:debug
 
-# Update vault node counter
-execute if data storage exigence:debug {void:1} if score SecondsCooldown TickCounter matches 0 run function exigence:misc/update_vault_counter
 
 
 # DEPRECATED

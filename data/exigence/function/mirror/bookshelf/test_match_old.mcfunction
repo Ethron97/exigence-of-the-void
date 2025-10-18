@@ -1,11 +1,74 @@
+# Duplicated 10/10/2025 to remove the top/bottom rows from checker
+
 # Test if the pattern matches the one in the mirror
 #say testmatch
 scoreboard players operation OldBookshelf BookshelfMatch = Bookshelf BookshelfMatch
-# Because some of the final book shelves are blank, most slots start "correct"
-scoreboard players set Bookshelf BookshelfMatch -122
+# Because some of the final book shelves are blank, most start "correct"
+scoreboard players set Bookshelf BookshelfMatch -230
 
 # Top to bottom, row by row left to right
-## TOP ROW
+## TOP ROW - SLOT 0
+execute unless data block -481 65 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -480 65 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -479 65 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -478 65 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -477 65 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -476 65 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -475 65 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -474 65 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -473 65 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+## TOP ROW - SLOT 1
+execute unless data block -481 65 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -480 65 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -479 65 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -478 65 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -477 65 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -476 65 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -475 65 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -474 65 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -473 65 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+## TOP ROW - SLOT 2
+execute unless data block -481 65 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -480 65 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -479 65 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -478 65 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -477 65 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -476 65 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -475 65 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -474 65 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -473 65 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+## TOP ROW - SLOT 3
+execute unless data block -481 65 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -480 65 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -479 65 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -478 65 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -477 65 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -476 65 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -475 65 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -474 65 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -473 65 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+## TOP ROW - SLOT 4
+execute unless data block -481 65 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -480 65 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -479 65 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -478 65 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -477 65 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -476 65 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -475 65 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -474 65 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -473 65 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+## TOP ROW - SLOT 5
+execute unless data block -481 65 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -480 65 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -479 65 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -478 65 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -477 65 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -476 65 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -475 65 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -474 65 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -473 65 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+
+## SECOND TOP ROW, bookshelf by bookshelf
 # Bookshelf 1
 execute unless data block -481 64 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
 execute unless data block -481 64 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
@@ -70,7 +133,7 @@ execute if data block -473 64 -200 {Items:[{Slot:3b}]} run scoreboard players ad
 execute unless data block -473 64 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
 execute unless data block -473 64 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
 
-## MIDDLE
+## MIDDLE, bookshelf by bookshelf
 # Bookshelf 1
 execute unless data block -481 63 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
 execute unless data block -481 63 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
@@ -135,6 +198,7 @@ execute unless data block -473 63 -200 {Items:[{Slot:3b}]} run scoreboard player
 execute unless data block -473 63 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
 execute unless data block -473 63 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
 
+
 ## SECOND BOTTOM ROW - SLOT 0
 execute unless data block -481 62 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
 execute unless data block -480 62 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
@@ -195,6 +259,68 @@ execute unless data block -476 62 -200 {Items:[{Slot:5b}]} run scoreboard player
 execute unless data block -475 62 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
 execute unless data block -474 62 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
 execute unless data block -473 62 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+
+
+## BOTTOM ROW - SLOT 0
+execute unless data block -481 61 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -480 61 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -479 61 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -478 61 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -477 61 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -476 61 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -475 61 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -474 61 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -473 61 -200 {Items:[{Slot:0b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+## BOTTOM ROW - SLOT 1
+execute unless data block -481 61 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -480 61 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -479 61 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -478 61 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -477 61 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -476 61 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -475 61 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -474 61 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -473 61 -200 {Items:[{Slot:1b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+## BOTTOM ROW - SLOT 2
+execute unless data block -481 61 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -480 61 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -479 61 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -478 61 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -477 61 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -476 61 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -475 61 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -474 61 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -473 61 -200 {Items:[{Slot:2b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+## BOTTOM ROW - SLOT 3
+execute unless data block -481 61 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -480 61 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -479 61 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -478 61 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -477 61 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -476 61 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -475 61 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -474 61 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -473 61 -200 {Items:[{Slot:3b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+## BOTTOM ROW - SLOT 4
+execute unless data block -481 61 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -480 61 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -479 61 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -478 61 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -477 61 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -476 61 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -475 61 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -474 61 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -473 61 -200 {Items:[{Slot:4b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+## BOTTOM ROW - SLOT 5
+execute unless data block -481 61 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -480 61 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -479 61 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -478 61 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -477 61 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -476 61 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -475 61 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -474 61 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
+execute unless data block -473 61 -200 {Items:[{Slot:5b}]} run scoreboard players add Bookshelf BookshelfMatch 1
 
 # If bookshelf match changed, update mirror brokage
 execute unless score OldBookshelf BookshelfMatch = Bookshelf BookshelfMatch run function exigence:mirror/bookshelf/update_bookshelf_mirror

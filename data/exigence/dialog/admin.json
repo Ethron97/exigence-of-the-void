@@ -10,7 +10,7 @@
   "pause": true,
   "after_action": "close",
   "exit_action": {
-    "label": "Exit"
+    "label": "Close"
   },
   "actions": [
     {
@@ -39,6 +39,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger TpOldHub"
+      }
+    },
+    {
+      "label": "Tp Profile Data",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger TpProfileData"
       }
     },
     {

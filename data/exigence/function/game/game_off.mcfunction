@@ -43,7 +43,7 @@ title @a clear
 
 
 # Reset bookshelf on principal
-fill -481 61 -200 -473 65 -200 minecraft:chiseled_bookshelf[facing=south]
+fill -481 62 -200 -473 64 -200 minecraft:chiseled_bookshelf[facing=south]
 
 # Hide trial bossbars in case game ended while one was active
 bossbar set exigence:trial_bolt visible false

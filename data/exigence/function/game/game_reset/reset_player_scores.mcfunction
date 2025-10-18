@@ -252,12 +252,12 @@ scoreboard players set @s PingVaultKeyDistance 10
 
 ## TREASURE
 #   COINS
-scoreboard players set @s cr_coinsPickedUp 0
 scoreboard players set @s cr_coinsDropped 0
 scoreboard players set @s cr_coinsDroppedL1 0
 scoreboard players set @s cr_coinsDroppedL2 0
 scoreboard players set @s cr_coinsDroppedL3 0
 scoreboard players set @s cr_coinsDroppedL4 0
+scoreboard players set @s cr_coinsPickedUp 0
 scoreboard players set @s cr_coinsPickedUpL1 0
 scoreboard players set @s cr_coinsPickedUpL2 0
 scoreboard players set @s cr_coinsPickedUpL3 0
@@ -430,9 +430,6 @@ scoreboard players set Green Resources 0
 scoreboard players set RedNeeded Resources 0
 scoreboard players set AquaNeeded Resources 0
 scoreboard players set GreenNeeded Resources 0
-
-# Reset anti-stack uuid (I think this is deprecated)
-scoreboard players set Current DropID 0
 
 # Reset default max resources, just to be sure
 scoreboard players set MaxRed Resources 2

@@ -50,6 +50,8 @@ fill 122 125 142 126 129 147 ice replace structure_void
 fill 136 126 140 137 126 142 ice replace structure_void
 #   Bellwater exit
 fill 142 126 121 146 131 118 ice replace structure_void
+#   Jumpboost exit
+fill 171 130 110 171 132 112 ice replace structure_void
 #   Glassy exit
 fill 195 129 81 198 133 78 ice replace structure_void
 #   Final test (open by

@@ -13,10 +13,12 @@ execute as @a unless score @s 3 matches 0 run function exigence:misc/triggers/3
 execute as @a unless score @s 4 matches 0 run function exigence:misc/triggers/4
 execute as @a unless score @s Admin matches 0 run function exigence:misc/triggers/admin
 execute as @a unless score @s DebugMenu matches 0 run function exigence:misc/triggers/debug_menu
+
 execute as @a unless score @s TpTutorial matches 0 run function exigence:misc/triggers/tp_tutorial
 execute as @a unless score @s TpGame matches 0 run function exigence:misc/triggers/tp_game
 execute as @a unless score @s TpHub matches 0 run function exigence:misc/triggers/tp_hub
 execute as @a unless score @s TpOldHub matches 0 run function exigence:misc/triggers/tp_old_hub
+execute as @a unless score @s TpProfileData matches 0 run function exigence:misc/triggers/tp_profile_data
 
 execute as @a unless score @s SkipSection matches 0 run function exigence:misc/triggers/skip_section
 execute as @a unless score @s ExitTutorial matches 0 run function exigence:misc/triggers/exit_tutorial

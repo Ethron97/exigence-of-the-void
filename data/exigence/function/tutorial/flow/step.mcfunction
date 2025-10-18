@@ -329,9 +329,11 @@ execute if score Step Tutorial matches 1302 run title @a[tag=Tutorial] subtitle 
 execute if score Step Tutorial matches 1302 run title @a[tag=Tutorial] title [{text:""}]
 execute if score Step Tutorial matches 1302 as @a[tag=Tutorial] run playsound minecraft:entity.lightning_bolt.thunder ambient @s ~ ~1000 ~ 1000 1
 execute if score Step Tutorial matches 1302 run effect give @a[distance=..1000,tag=Tutorial] jump_boost infinite 1
+execute if score Step Tutorial matches 1302 run fill 136 126 140 137 126 142 ice replace structure_void
 
 execute if score Step Tutorial matches 1303 run tellraw @a [{color:"green",text:"\n-> There is one final aspect of the dungeon to learn about: Ravager Glass™"}]
 execute if score Step Tutorial matches 1303 run effect clear @a[tag=Tutorial] jump_boost
+execute if score Step Tutorial matches 1303 run fill 171 130 110 171 132 112 minecraft:structure_void replace ice destroy
 execute if score Step Tutorial matches 1303 run setblock 157 128 112 stone_bricks
 
 execute if score Step Tutorial matches 1304 run tellraw @a [{color:"green",text:"\n-> It is designed to withstand heavy loads..."}]
