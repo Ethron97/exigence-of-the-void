@@ -8,7 +8,7 @@
     "display": {
       "description": "Talk to the Petitioner",
       "icon": {
-        "id": "minecraft:campfire"
+        "id": "minecraft:candle"
       },
       "title": "A New Alliance"
     }

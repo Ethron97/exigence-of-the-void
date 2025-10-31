@@ -6,7 +6,7 @@ execute as @e[type=minecraft:armor_stand,tag=NewNode] run data modify entity @s 
 execute as @e[type=minecraft:armor_stand,tag=NewNode] run tag @s add MenaceNode
 
 # Initialize menace cooldown to 0
-scoreboard players set @e[type=minecraft:armor_stand,tag=NewNode] MenaceNodeCooldown 0
+scoreboard players set @e[type=minecraft:armor_stand,tag=NewNode] game.node.menace.cooldown 0
 
 # Add to Menace team for color
 team join Menace @e[type=minecraft:armor_stand,tag=NewNode]

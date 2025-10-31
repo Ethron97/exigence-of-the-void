@@ -9,5 +9,4 @@
 #==========================================================================================================
 
 # Increase source specific scores
-$scoreboard players add @s cr_coindrop_$(resolving) 1
-$scoreboard players add @s t_coindrop_$(resolving) 1
+$scoreboard players add @s profile.data.treasure.cr.coindrop_$(resolving) 1

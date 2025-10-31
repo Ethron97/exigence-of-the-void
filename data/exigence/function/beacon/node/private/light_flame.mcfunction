@@ -20,7 +20,7 @@ execute as @p[tag=Lighting] run function exigence:resources/try_generate {green:
 # Start animation to light the rest of the beacon
 tag @s add BeaconLightLoop
 # Set score to triggered
-scoreboard players set @s NodeState 3
+scoreboard players set @s game.node.node_state 3
 function exigence:beacon/node/light_beacon_loop
 
 # Playsound

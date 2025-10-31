@@ -15,7 +15,7 @@ tag @s remove NewExit
 execute if data storage exigence:dungeon {debug:1} run data merge entity @s {Glowing:1b,Invisible:0b,Marker:0b,CustomNameVisible:true}
 
 # Initialize sound cooldown (so they don't immediately start hearing sounds at game start)
-scoreboard players add @s AmbientNoiseCooldown 300
+scoreboard players add @s game.entity.ambient_noise_cooldown 300
 
 
 ## DETERMINE EXIT LOCATION

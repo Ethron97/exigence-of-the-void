@@ -15,8 +15,8 @@ execute at @s run playsound minecraft:item.trident.thunder ambient @a ~ ~1000 ~ 
 scoreboard players set #remove Temp 1
 
 # If inside a vault, return
-execute if score @s VaultCode matches 1..6 run tellraw @s [{text:"This item cannot be used during a Trial",color:"red"}]
-execute if score @s VaultCode matches 1..6 run return 1
+execute if score @s game.player.vault_code matches 1..6 run tellraw @s [{text:"This item cannot be used during a Trial",color:"red"}]
+execute if score @s game.player.vault_code matches 1..6 run return 1
 #=========================================================================================================
 # The following only runs if successful
 
@@ -24,14 +24,14 @@ execute if score @s VaultCode matches 1..6 run return 1
 tag @s add Clocking
 
 # Get player id to lookup
-scoreboard players operation #compare PlayerID = @s PlayerID
+scoreboard players operation #compare game.entity.profile_id = @s profile.profile_id
 
 # Get smallest clock id
-scoreboard players set #tp_to ClockID 999999
-execute as @e[type=minecraft:marker,tag=ClockMarker] if score @s PlayerID = #compare PlayerID run scoreboard players operation #tp_to ClockID < @s ClockID
+scoreboard players set #tp_to game.item.clock_marker.id 999999
+execute as @e[type=minecraft:marker,tag=ClockMarker] if score @s game.entity.profile_id = #compare profile.profile_id run scoreboard players operation #tp_to game.item.clock_marker.id < @s game.item.clock_marker.id
 
 # Tp player to them
-execute as @e[type=minecraft:marker,tag=ClockMarker] if score @s PlayerID = #compare PlayerID if score @s ClockID = #tp_to ClockID at @s run tp @a[tag=Clocking] ~ ~ ~
+execute as @e[type=minecraft:marker,tag=ClockMarker] if score @s game.entity.profile_id = #compare profile.profile_id if score @s game.item.clock_marker.id = #tp_to game.item.clock_marker.id at @s run tp @a[tag=Clocking] ~ ~ ~
 
 # Give a couple seconds of inivisibilty and slow falling to be nice
 effect give @s slow_falling 1 0 true

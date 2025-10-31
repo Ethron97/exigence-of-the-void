@@ -7,16 +7,16 @@
 
 # Get players's speed modifier
 scoreboard players set @s Temp 0
-execute if score @s effect_speed1 matches 1.. run scoreboard players set @s Temp 1
-execute if score @s effect_speed2 matches 1.. run scoreboard players set @s Temp 2
-execute if score @s effect_speed3 matches 1.. run scoreboard players set @s Temp 3
-execute if score @s effect_speed4 matches 1.. run scoreboard players set @s Temp 4
-execute if score @s effect_speed5 matches 1.. run scoreboard players set @s Temp 5
-execute if score @s effect_speed6 matches 1.. run scoreboard players set @s Temp 6
-execute if score @s effect_speed7 matches 1.. run scoreboard players set @s Temp 7
-execute if score @s effect_speed8 matches 1.. run scoreboard players set @s Temp 8
-execute if score @s effect_speed9 matches 1.. run scoreboard players set @s Temp 9
-execute if score @s effect_speed10 matches 1.. run scoreboard players set @s Temp 10
+execute if score @s game.player.effects.speed1 matches 1.. run scoreboard players set @s Temp 1
+execute if score @s game.player.effects.speed2 matches 1.. run scoreboard players set @s Temp 2
+execute if score @s game.player.effects.speed3 matches 1.. run scoreboard players set @s Temp 3
+execute if score @s game.player.effects.speed4 matches 1.. run scoreboard players set @s Temp 4
+execute if score @s game.player.effects.speed5 matches 1.. run scoreboard players set @s Temp 5
+execute if score @s game.player.effects.speed6 matches 1.. run scoreboard players set @s Temp 6
+execute if score @s game.player.effects.speed7 matches 1.. run scoreboard players set @s Temp 7
+execute if score @s game.player.effects.speed8 matches 1.. run scoreboard players set @s Temp 8
+execute if score @s game.player.effects.speed9 matches 1.. run scoreboard players set @s Temp 9
+execute if score @s game.player.effects.speed10 matches 1.. run scoreboard players set @s Temp 10
 
 # Call corresponding effect
 execute at @s if score @s Temp matches 1 run function exigence:player/modifiers/private/gathering_storm_speed_1

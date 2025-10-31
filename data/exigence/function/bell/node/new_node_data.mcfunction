@@ -13,7 +13,7 @@ tag @s add BellNode
 team join Special @s
 
 # Initialize cooldown scoreboard
-scoreboard players set @s RingBellCooldown 0
+scoreboard players set @s game.node.bell.ring_cooldown 0
 
 # If debug, glow
 execute if data storage exigence:debug {bell:1} run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}

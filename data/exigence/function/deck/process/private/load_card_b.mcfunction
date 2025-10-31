@@ -33,10 +33,10 @@ $item replace entity @s weapon.mainhand with paper[custom_data={card_name:'$(car
 item replace entity @s weapon.offhand from entity @s weapon.mainhand
 
 # Copy rarity score
-$scoreboard players set @s Rarity $(rarity)
+$scoreboard players set @s deck.card.rarity $(rarity)
 
 # Copy void score
-$scoreboard players set @s IsVoid $(void)
+$scoreboard players set @s deck.card.is_void $(void)
 
 # Clean up local tag
 tag @s remove NewCards

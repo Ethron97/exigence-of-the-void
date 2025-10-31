@@ -11,6 +11,7 @@
 #tag @s[tag=!PiggyBank,nbt={SelectedItem:{components:{"minecraft:custom_data":{item_name:'piggy_bank'}}}}] add PiggyBank
 
 execute as @s[predicate=exigence:level/hub] run title @s actionbar ["",{text:"",color:"white"}]
+execute as @s[tag=ProfileSelecting] run title @s actionbar ["",{text:"[Profile Selection]",color:"dark_aqua"}]
 execute as @s[tag=MoneyShopping] run title @s actionbar ["",{text:"[Money Shop]",color:"gold"}]
 execute as @s[tag=ItemShopping] run title @s actionbar ["",{text:"[Item Shop]",color:"gold"}]
 execute as @s[tag=EmberShopping,tag=!CoopEmberShopping] run title @s actionbar ["",{text:"[Ember Shop]",color:"aqua"}]

@@ -6,4 +6,4 @@
 
 #=======================================================================================================
 
-execute at @s run function exigence:hub/item_shop/frame/item/summon_item {item_name:'item_far_step'}
+execute at @s run function exigence:hub/item_shop/item/summon_item {item_name:'item_far_step'}

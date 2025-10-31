@@ -1,7 +1,7 @@
 # Begin Bolt trial
 
 ## CONSTRAINTS
-#   AS player with VaultCode = 1
+#   AS player with game.player.vault_code = 1
 
 #===================================================================================================
 
@@ -21,11 +21,11 @@ function exigence:door/vault/bolt/trial/setup
 tp @s -413.5 152.0 -17.5
 
 # COOP - Show title to all other players
-execute if entity @s[tag=Trial] as @a unless score @s VaultCode matches 1 run title @s subtitle [{"selector":"@a[scores={VaultCode=1}]",color:"yellow"},\
+execute if entity @s[tag=Trial] as @a unless score @s game.player.vault_code matches 1 run title @s subtitle [{"selector":"@a[scores={game.player.vault_code=1}]",color:"yellow"},\
 {text:" entered the ",color:"gray"},{text:"Trial of Lightning",color:"aqua"}]
-execute if entity @s[tag=Crucible] as @a unless score @s VaultCode matches 1 run title @s subtitle [{"selector":"@a[scores={VaultCode=1}]",color:"yellow"},\
+execute if entity @s[tag=Crucible] as @a unless score @s game.player.vault_code matches 1 run title @s subtitle [{"selector":"@a[scores={game.player.vault_code=1}]",color:"yellow"},\
 {text:" entered the ",color:"gray"},{text:"Crucible of Lightning",color:"light_purple"}]
-execute as @a unless score @s VaultCode matches 1 run title @s title ""
+execute as @a unless score @s game.player.vault_code matches 1 run title @s title ""
 
 # Initialize bolt bossbar
 bossbar set exigence:trial_bolt visible true
@@ -36,8 +36,8 @@ execute if entity @s[tag=Crucible] run bossbar set exigence:trial_bolt color pur
 execute if entity @s[tag=Crucible] run bossbar set exigence:trial_bolt name [{text:"Crucible of Lightning",color:"light_purple"}]
 
 # If game is active, give begin scores
-execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Trial] bolt_trial_try 1
-execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Crucible] bolt_crucible_try 1
+execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Trial] profile.data.vaults.cr.bolt_trial_try 1
+execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Crucible] profile.data.vaults.cr.bolt_crucible_try 1
 
 # Begin tick iteration
 function exigence:door/vault/bolt/trial/tick

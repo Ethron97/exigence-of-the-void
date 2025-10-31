@@ -1,2 +1,2 @@
 # Variable... so idk
-#scoreboard players add Ember DeckAnalysis 3
+#scoreboard players add other.Ember deck.analysis 3

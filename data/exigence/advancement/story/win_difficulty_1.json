@@ -8,7 +8,7 @@
     "display": {
       "description": "Return from the Ruins of Solstice",
       "icon": {
-        "id": "minecraft:warped_planks"
+        "id": "minecraft:warped_door"
       },
       "title": "Ruins of Solstice"
     }

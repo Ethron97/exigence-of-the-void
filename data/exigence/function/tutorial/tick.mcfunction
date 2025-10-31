@@ -52,13 +52,13 @@ execute if score Step Tutorial matches 1500 if entity @a[tag=Tutorial,x=173,y=13
 
 # ALTARS
 # Inactive altars
-execute at @e[distance=..1000,type=minecraft:armor_stand,tag=AltarNode,scores={NodeState=0..1}] if score SecondsCooldown TickCounter matches 7 run particle minecraft:glow ~ ~0.5 ~ 0.2 0.2 0.2 0 1
-execute at @e[distance=..1000,type=minecraft:armor_stand,tag=AltarNode,scores={NodeState=0..1}] if score SecondsCooldown TickCounter matches 17 run particle minecraft:glow ~ ~0.5 ~ 0.2 0.2 0.2 0 1
+execute at @e[distance=..1000,type=minecraft:armor_stand,tag=AltarNode,scores={game.node.node_state=0..1}] if score seconds.cooldown tick_counter matches 7 run particle minecraft:glow ~ ~0.5 ~ 0.2 0.2 0.2 0 1
+execute at @e[distance=..1000,type=minecraft:armor_stand,tag=AltarNode,scores={game.node.node_state=0..1}] if score seconds.cooldown tick_counter matches 17 run particle minecraft:glow ~ ~0.5 ~ 0.2 0.2 0.2 0 1
 # Radiant altars
-execute at @e[distance=..1000,type=minecraft:armor_stand,tag=AltarNode,scores={NodeState=2}] run particle minecraft:soul_fire_flame ~ ~1 ~ 0.3 0.5 0.3 0 3
+execute at @e[distance=..1000,type=minecraft:armor_stand,tag=AltarNode,scores={game.node.node_state=2}] run particle minecraft:soul_fire_flame ~ ~1 ~ 0.3 0.5 0.3 0 3
 
-execute at @e[distance=..1000,type=minecraft:armor_stand,tag=BellNode,tag=Active] if score SecondsCooldown TickCounter matches 7 run particle minecraft:glow ~ ~0.5 ~ 0.2 0.2 0.2 0 1
-execute at @e[distance=..1000,type=minecraft:armor_stand,tag=BellNode,tag=Active] if score SecondsCooldown TickCounter matches 17 run particle minecraft:glow ~ ~0.5 ~ 0.2 0.2 0.2 0 1
+execute at @e[distance=..1000,type=minecraft:armor_stand,tag=BellNode,tag=Active] if score seconds.cooldown tick_counter matches 7 run particle minecraft:glow ~ ~0.5 ~ 0.2 0.2 0.2 0 1
+execute at @e[distance=..1000,type=minecraft:armor_stand,tag=BellNode,tag=Active] if score seconds.cooldown tick_counter matches 17 run particle minecraft:glow ~ ~0.5 ~ 0.2 0.2 0.2 0 1
 
 # CLIMBY DOOR OPEN
 execute if score Step Tutorial matches 1103 at @n[distance=..1000,type=armor_stand,tag=Bait1] if entity @n[distance=..2,type=ravager] run function exigence:tutorial/flow/private/open_climby_door

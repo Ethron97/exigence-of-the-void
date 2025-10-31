@@ -8,8 +8,8 @@ execute at @a[tag=ActivePlayer,scores={dead=0}] at @e[distance=..32,type=minecra
 
 
 # Sound
-scoreboard players remove @a[tag=ActivePlayer,scores={dead=0,PingVaultKeyCooldown=1..}] PingVaultKeyCooldown 1
+scoreboard players remove @a[tag=ActivePlayer,scores={dead=0,game.player.sound_ping.vault_key_cooldown=1..}] game.player.sound_ping.vault_key_cooldown 1
 
-execute as @a[tag=ActivePlayer,scores={dead=0,PingVaultKeyCooldown=0}] at @s run function exigence:player/effects/detection/vault_key/ping_vault_key
+execute as @a[tag=ActivePlayer,scores={dead=0,game.player.sound_ping.vault_key_cooldown=0}] at @s run function exigence:player/effects/detection/vault_key/ping_vault_key
 # Call every second also, to catch cases where player is moving towards key but the sound delay is too long
-execute if score SecondsCooldown TickCounter matches 18 as @a[tag=ActivePlayer,scores={dead=0,PingVaultKeyCooldown=1..}] at @s run function exigence:player/effects/detection/vault_key/ping_vault_key
+execute if score seconds.cooldown tick_counter matches 18 as @a[tag=ActivePlayer,scores={dead=0,game.player.sound_ping.vault_key_cooldown=1..}] at @s run function exigence:player/effects/detection/vault_key/ping_vault_key

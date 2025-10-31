@@ -1,2 +1,2 @@
-scoreboard players add Berry DeckAnalysis 3
-scoreboard players add CardsAscend DeckAnalysis 1
+scoreboard players add other.Berry deck.analysis 3
+scoreboard players add CardsCards.Ascend deck.analysis 1

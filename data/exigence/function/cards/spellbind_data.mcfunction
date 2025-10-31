@@ -17,7 +17,7 @@ data modify entity @s Item.components."minecraft:custom_data".is_spellsling set 
 # Append to lore explaining Spellbound
 data modify entity @s Item.components."minecraft:lore" append value [{text:"",italic:false,color:"gray"}]
 data modify entity @s Item.components."minecraft:lore" append value [{text:"Spellbound: Right click to play",italic:true,color:"dark_gray"}]
-execute if score #CostReduced Resources matches 1 run data modify entity @s Item.components."minecraft:lore" append value [{text:"Cost reduced by Spellbook",italic:true,color:"dark_gray"}]
+execute if score #CostReduced game.resources matches 1 run data modify entity @s Item.components."minecraft:lore" append value [{text:"Cost reduced by Spellbook",italic:true,color:"dark_gray"}]
 
 # Add costs to the lore to reference later
 data modify entity @s Item.components."minecraft:custom_data".green set from storage exigence:resources green

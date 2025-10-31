@@ -17,7 +17,7 @@ clear @s #exigence:echo
 function exigence:player/give/echo_shard
 
 # Give return compass
-execute as @a[tag=ActivePlayer] unless score @s s_disableReturnCompass matches 1 run function exigence:player/give/return_compass
+execute as @a[tag=ActivePlayer] if score @s career.settings.return_compass matches 1 run function exigence:player/give/return_compass
 
 # Give portal compass(s) to all players if difficulty 4
 execute if score Difficulty DungeonRun matches 4 as @e[type=armor_stand,tag=ExitNode] run function exigence:player/give/portal_compass

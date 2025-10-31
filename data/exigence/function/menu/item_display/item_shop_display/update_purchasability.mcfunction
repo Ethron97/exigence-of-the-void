@@ -23,10 +23,10 @@ tag @s remove CanPurchase
 
 ## ASSIGN TAGS
 # Has enough money amount or is in creative
-$execute if score Total MoneyToSpend matches $(money_cost).. run tag @s add CanAfford
+$execute if score #Total shop.player.money_to_spend matches $(money_cost).. run tag @s add CanAfford
 
 # Has enough Research amount or is in creative
-$execute if score Total ResearchToSpend matches $(research_cost).. run tag @s add CanAffordResearch
+$execute if score #Total shop.player.research_to_spend matches $(research_cost).. run tag @s add CanAffordResearch
 
 # Final tags (to make other IFs easier to read)
 execute if entity @s[tag=CanAffordResearch,tag=IsTierUnlocked,tag=!IsResearched,tag=IsParentResearched] run tag @s add CanResearch

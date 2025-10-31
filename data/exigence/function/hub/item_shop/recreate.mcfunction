@@ -14,10 +14,10 @@ function exigence:menu/unload_menu {menu_tag:'MenuArtifact'}
 execute as @a[tag=ItemShopping] run function exigence:hub/item_shop/load_advancements
 
 # Calculate how much moneys and research the player has to spend
-execute as @a[tag=ItemShopping] store result score @s MoneyToSpend run clear @s diamond 0
-execute as @a[tag=ItemShopping] store result score @s ResearchToSpend run clear @s minecraft:prize_pottery_sherd 0
-scoreboard players set @a[tag=ItemShopping,gamemode=creative] MoneyToSpend 999
-scoreboard players set @a[tag=ItemShopping,gamemode=creative] ResearchToSpend 999
+execute as @a[tag=ItemShopping] store result score @s shop.player.money_to_spend run clear @s diamond 0
+execute as @a[tag=ItemShopping] store result score @s shop.player.research_to_spend run clear @s minecraft:prize_pottery_sherd 0
+scoreboard players set @a[tag=ItemShopping,gamemode=creative] shop.player.money_to_spend 999
+scoreboard players set @a[tag=ItemShopping,gamemode=creative] shop.player.research_to_spend 999
 
 # Note, recreated displays start as "Loaded"
 execute positioned -237.5 16.00 -51.5 run function exigence:menu/load_menu {Rotation:[-45.0f,0.0f],menu_path:'money_menus/food/load'}

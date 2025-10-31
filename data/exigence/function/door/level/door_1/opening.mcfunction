@@ -7,7 +7,7 @@
 #say Opening door 1
 
 # Return if no one has InsertingKey score > 1
-execute unless score Door1 InsertingKey matches 1.. run return 1
+execute unless score Door.1 game.door.inserting_key matches 1.. run return 1
 
 #======================================================================================================
 
@@ -17,7 +17,7 @@ execute at @e[type=minecraft:item_display,tag=Door1Handle] run function exigence
 
 #======================================================================================================
 # Remove inserting key
-scoreboard players remove Door1 InsertingKey 1
+scoreboard players remove Door.1 game.door.inserting_key 1
 
 # Iterate
 schedule function exigence:door/level/door_1/opening 1t

@@ -16,8 +16,8 @@ execute at @s run playsound minecraft:entity.evoker.cast_spell neutral @a ~ ~ ~ 
 execute if score InnerFire Modifiers matches 1 if entity @s[tag=Red] run function exigence:altar/node/remove_interaction
 execute if score InnerFire Modifiers matches 0 run function exigence:altar/node/remove_interaction
 
-# Set NodeState to 2
-scoreboard players set @s NodeState 2
+# Set game.node.node_state to 2
+scoreboard players set @s game.node.node_state 2
 
 # If game is inactive, return here
 execute unless data storage exigence:dungeon {is_active:1} run return 1
@@ -25,8 +25,7 @@ execute if score @s ObjectLevel matches 10 run return 1
 #========================================================================================================
 
 # Give player score
-scoreboard players add @p[tag=Lighting] cr_altarsEnhanced 1
-scoreboard players add @p[tag=Lighting] t_altarsEnhanced 1
+scoreboard players add @p[tag=Lighting] profile.data.altar.cr.altars_enhanced 1
 
 # Reduce menace by 2
 function exigence:menace/try_reduce_menace
@@ -36,7 +35,7 @@ function exigence:menace/try_reduce_menace
 execute as @p[tag=Lighting] run function exigence:resources/try_generate {green:0,red:0,aqua:2}
 
 # Give tracker score
-scoreboard players add @s AltarTimesEnhanced 1
+scoreboard players add @s node.data.altar.times_enhanced 1
 
 # Try give spark
 execute as @p[tag=Lighting] run function exigence:altar/puzzle/give_spark

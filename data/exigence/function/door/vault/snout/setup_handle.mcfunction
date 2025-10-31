@@ -7,7 +7,7 @@ transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],transla
 summon interaction -460.96875 52 -192.5 {Tags:["VaultHandle","NewVaultHandle"],response:1b}
 
 # Copy score from snout node
-scoreboard players operation @e[tag=NewVaultHandle] VaultHandleID = @e[type=minecraft:armor_stand,tag=VaultNode,tag=Vault_snout,limit=1] NodeID
+scoreboard players operation @e[tag=NewVaultHandle] game.vault.handle.id = @e[type=minecraft:armor_stand,tag=VaultNode,tag=Vault_snout,limit=1] NodeID
 
 # Remove local tag
 tag @e[tag=NewVaultHandle] remove NewVaultHandle

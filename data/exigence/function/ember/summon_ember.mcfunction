@@ -25,12 +25,8 @@ execute if data storage exigence:dungeon_settings {stacked_embers:1} if score @s
 execute as @e[type=minecraft:item,tag=NewEmber] run function exigence:ember/private/summon_ember_data
 
 # Increase scores
-scoreboard players operation @a[tag=ActivePlayer] cr_embersDropped += #stacksize Temp
-execute if score #compare ObjectLevel matches 1 run scoreboard players operation @a[tag=ActivePlayer] cr_embersDroppedL1 += #stacksize Temp
-execute if score #compare ObjectLevel matches 1 run scoreboard players operation @a[tag=ActivePlayer] t_embersDroppedL1 += #stacksize Temp
-execute if score #compare ObjectLevel matches 2 run scoreboard players operation @a[tag=ActivePlayer] cr_embersDroppedL2 += #stacksize Temp
-execute if score #compare ObjectLevel matches 2 run scoreboard players operation @a[tag=ActivePlayer] t_embersDroppedL2 += #stacksize Temp
-execute if score #compare ObjectLevel matches 3 run scoreboard players operation @a[tag=ActivePlayer] cr_embersDroppedL3 += #stacksize Temp
-execute if score #compare ObjectLevel matches 3 run scoreboard players operation @a[tag=ActivePlayer] t_embersDroppedL3 += #stacksize Temp
-execute if score #compare ObjectLevel matches 4 run scoreboard players operation @a[tag=ActivePlayer] cr_embersDroppedL4 += #stacksize Temp
-execute if score #compare ObjectLevel matches 4 run scoreboard players operation @a[tag=ActivePlayer] t_embersDroppedL4 += #stacksize Temp
+scoreboard players operation @a[tag=ActivePlayer] profile.data.ember.cr.embers_dropped += #stacksize Temp
+execute if score #compare ObjectLevel matches 1 run scoreboard players operation @a[tag=ActivePlayer] profile.data.ember.cr.embers_dropped_L1 += #stacksize Temp
+execute if score #compare ObjectLevel matches 2 run scoreboard players operation @a[tag=ActivePlayer] profile.data.ember.cr.embers_dropped_L2 += #stacksize Temp
+execute if score #compare ObjectLevel matches 3 run scoreboard players operation @a[tag=ActivePlayer] profile.data.ember.cr.embers_dropped_L3 += #stacksize Temp
+execute if score #compare ObjectLevel matches 4 run scoreboard players operation @a[tag=ActivePlayer] profile.data.ember.cr.embers_dropped_L4 += #stacksize Temp

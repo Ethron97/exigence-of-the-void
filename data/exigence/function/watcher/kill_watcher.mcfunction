@@ -8,5 +8,5 @@ $execute as @e[type=minecraft:armor_stand,tag=HazardNode,scores={ObjectLevel=$(l
 
 # Add 3 menace
 data modify storage exigence:menace amount set value 3
-data modify storage exigence:menace from set value 'Other'
+data modify storage exigence:menace from set value 'other'
 function exigence:menace/trigger/from_ with storage exigence:menace

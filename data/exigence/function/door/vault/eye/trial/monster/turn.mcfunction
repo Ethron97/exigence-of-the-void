@@ -12,7 +12,7 @@
 execute at @s run function exigence:door/vault/eye/trial/monster/random_direction
 
 # Copy direction
-scoreboard players operation @s EyeDirection = random Random
+scoreboard players operation @s EyeDirection = #random Random
 
 # Turn facing new direction
 execute if score @s EyeDirection matches 0 at @s run tp @s ~ ~ ~ -90 0

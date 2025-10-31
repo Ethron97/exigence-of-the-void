@@ -6,7 +6,7 @@
 #==========================================================================================================
 
 # Initialize life (in seconds)
-execute store result score @s EndermiteTimer run random value 100..150
+execute store result score @s game.endermite.timer run random value 100..150
 
 # Give effects
 effect give @s speed infinite 1 true

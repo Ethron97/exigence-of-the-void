@@ -19,5 +19,4 @@ execute if score Menace DungeonRun <= MinMenace DungeonRun run return 1
 # Else, reduce by one
 scoreboard players remove Menace DungeonRun 1
 # Increase player score
-scoreboard players add @p[tag=Lighting] cr_menaceReduced 1
-scoreboard players add @p[tag=Lighting] t_menaceReduced 1
+scoreboard players add @p[tag=Lighting] profile.data.altar.cr.menace_reduced 1

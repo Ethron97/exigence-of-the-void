@@ -9,7 +9,7 @@ execute as @e[type=minecraft:armor_stand,tag=AltarNode,tag=Trial] if score @s Va
 execute as @e[type=minecraft:armor_stand,tag=AltarNode,tag=Crucible] if score @s VaultID = @e[type=minecraft:armor_stand,tag=VaultNode,tag=Vault_eye,limit=1] NodeID run tag @s add AltarCrucibleDisplay
 
 # Summon displays above altars
-execute as @e[type=minecraft:armor_stand,tag=AltarNode,tag=Trial,tag=AltarTrialDisplay,scores={NodeState=0}] at @s run function exigence:door/vault/eye/summon_trial_displays with entity @s
+execute as @e[type=minecraft:armor_stand,tag=AltarNode,tag=Trial,tag=AltarTrialDisplay,scores={game.node.node_state=0}] at @s run function exigence:door/vault/eye/summon_trial_displays with entity @s
 execute as @e[type=minecraft:armor_stand,tag=AltarNode,tag=Crucible,tag=AltarCrucibleDisplay] at @s run function exigence:door/vault/eye/summon_crucible_displays with entity @s
 
 # Main display
@@ -18,7 +18,7 @@ summon minecraft:text_display -364.1 155.5 6.5 {background:1,line_width:150,Rota
 
 
 # Copy score to NewVaultTrialDisplays
-scoreboard players operation @e[type=minecraft:text_display,tag=NewVaultTrialDisplay] VaultCode = @e[type=minecraft:armor_stand,tag=AltarNode,tag=Crucible,tag=AltarCrucibleDisplay,limit=1] VaultCode
+scoreboard players operation @e[type=minecraft:text_display,tag=NewVaultTrialDisplay] game.entity.vault_code = @e[type=minecraft:armor_stand,tag=AltarNode,tag=Crucible,tag=AltarCrucibleDisplay,limit=1] node.property.altar.vault_code
 
 
 

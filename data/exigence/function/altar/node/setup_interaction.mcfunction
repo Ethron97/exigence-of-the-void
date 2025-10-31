@@ -19,7 +19,7 @@ execute at @s run summon minecraft:interaction ~ ~ ~ {width:2.8,height:1.5,Tags:
 scoreboard players operation @e[type=minecraft:interaction,tag=NewAltarInteract] NodeID = #compare NodeID
 
 # Assign vault code (for level 3 vaults)
-scoreboard players operation @e[type=minecraft:interaction,tag=NewAltarInteract] VaultCode = @s VaultCode
+execute if score @s node.property.altar.vault_code matches 1.. run scoreboard players operation @e[type=minecraft:interaction,tag=NewAltarInteract] game.entity.vault_code = @s node.property.altar.vault_code
 
 # Remove local tag
 tag @e[type=minecraft:interaction,tag=NewAltarInteract] remove NewAltarInteract

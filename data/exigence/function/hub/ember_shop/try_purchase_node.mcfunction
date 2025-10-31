@@ -7,7 +7,7 @@ tag @s add TryPurchase
 scoreboard players operation #cost EmberShopCost = @s EmberShopCost
 
 # If void crystal held by anyone in the shop, half price
-execute if entity @s[tag=Void] as @a[tag=EmberShopping,scores={mod_VoidCrystal=1}] run scoreboard players operation #cost EmberShopCost /= 2 number
+execute if entity @s[tag=Void] as @a[tag=EmberShopping,scores={game.player.mod.void_crystal=1}] run scoreboard players operation #cost EmberShopCost /= 2 number
 
 # Make sure cost is minimum of 1
 scoreboard players operation #cost EmberShopCost > 1 number

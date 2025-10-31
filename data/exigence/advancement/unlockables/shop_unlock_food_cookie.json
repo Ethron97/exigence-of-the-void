@@ -1,7 +1,0 @@
-{
-    "criteria": {
-      "shop_unlock_food_cookie": {
-        "trigger": "minecraft:impossible"
-      }
-    }
-  }

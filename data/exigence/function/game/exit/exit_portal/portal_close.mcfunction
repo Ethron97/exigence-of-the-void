@@ -1,4 +1,4 @@
-# Called by exit_portal/tick when tickcounter reaches 0
+# Called by exit_portal/tick when tick_counter reaches 0
 
 ## CONSTRAINTS
 #   AS Player who didn't escape

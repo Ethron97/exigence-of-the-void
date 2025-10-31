@@ -12,11 +12,11 @@ execute if score Difficulty DungeonRun matches 3.. as @e[type=minecraft:armor_st
 execute if score Difficulty DungeonRun matches 4.. as @e[type=minecraft:armor_stand,tag=HazardNode,scores={ObjectLevel=4},limit=3,sort=random,tag=Active,tag=!SetupStartingHazard,tag=!StartingHazard] run tag @s add SetupStartingHazard
 
 # +1 hazard on level 4 for each Ward destroyed
-execute if score Difficulty DungeonRun matches 4.. if score Emerald Wards matches 0 as @e[type=minecraft:armor_stand,tag=HazardNode,scores={ObjectLevel=4},limit=1,sort=random,tag=Active,tag=!SetupStartingHazard,tag=!StartingHazard] run tag @s add SetupStartingHazard
-execute if score Difficulty DungeonRun matches 4.. if score Sapphire Wards matches 0 as @e[type=minecraft:armor_stand,tag=HazardNode,scores={ObjectLevel=4},limit=1,sort=random,tag=Active,tag=!SetupStartingHazard,tag=!StartingHazard] run tag @s add SetupStartingHazard
-execute if score Difficulty DungeonRun matches 4.. if score Ruby Wards matches 0 as @e[type=minecraft:armor_stand,tag=HazardNode,scores={ObjectLevel=4},limit=1,sort=random,tag=Active,tag=!SetupStartingHazard,tag=!StartingHazard] run tag @s add SetupStartingHazard
-execute if score Difficulty DungeonRun matches 4.. if score Topaz Wards matches 0 as @e[type=minecraft:armor_stand,tag=HazardNode,scores={ObjectLevel=4},limit=1,sort=random,tag=Active,tag=!SetupStartingHazard,tag=!StartingHazard] run tag @s add SetupStartingHazard
-execute if score Difficulty DungeonRun matches 4.. if score Amethyst Wards matches 0 as @e[type=minecraft:armor_stand,tag=HazardNode,scores={ObjectLevel=4},limit=1,sort=random,tag=Active,tag=!SetupStartingHazard,tag=!StartingHazard] run tag @s add SetupStartingHazard
+execute if score Difficulty DungeonRun matches 4.. if score ward.Emerald game.story.wards matches 0 as @e[type=minecraft:armor_stand,tag=HazardNode,scores={ObjectLevel=4},limit=1,sort=random,tag=Active,tag=!SetupStartingHazard,tag=!StartingHazard] run tag @s add SetupStartingHazard
+execute if score Difficulty DungeonRun matches 4.. if score ward.Sapphire game.story.wards matches 0 as @e[type=minecraft:armor_stand,tag=HazardNode,scores={ObjectLevel=4},limit=1,sort=random,tag=Active,tag=!SetupStartingHazard,tag=!StartingHazard] run tag @s add SetupStartingHazard
+execute if score Difficulty DungeonRun matches 4.. if score ward.Ruby game.story.wards matches 0 as @e[type=minecraft:armor_stand,tag=HazardNode,scores={ObjectLevel=4},limit=1,sort=random,tag=Active,tag=!SetupStartingHazard,tag=!StartingHazard] run tag @s add SetupStartingHazard
+execute if score Difficulty DungeonRun matches 4.. if score ward.Topaz game.story.wards matches 0 as @e[type=minecraft:armor_stand,tag=HazardNode,scores={ObjectLevel=4},limit=1,sort=random,tag=Active,tag=!SetupStartingHazard,tag=!StartingHazard] run tag @s add SetupStartingHazard
+execute if score Difficulty DungeonRun matches 4.. if score ward.Amethyst game.story.wards matches 0 as @e[type=minecraft:armor_stand,tag=HazardNode,scores={ObjectLevel=4},limit=1,sort=random,tag=Active,tag=!SetupStartingHazard,tag=!StartingHazard] run tag @s add SetupStartingHazard
 
 # Add common tag
 tag @e[type=minecraft:armor_stand,tag=SetupStartingHazard] add StartingHazard

@@ -1,29 +1,29 @@
-#scoreboard players add GreenConsume DeckAnalysis 0
-#scoreboard players add RedConsume DeckAnalysis 0
-#scoreboard players add AquaConsume DeckAnalysis 0
+#scoreboard players add Green.Consume deck.analysis 0
+#scoreboard players add Red.Consume deck.analysis 0
+#scoreboard players add Aqua.Consume deck.analysis 0
 
-#scoreboard players add speedSeconds DeckAnalysis 0
-#scoreboard players add speed2Seconds DeckAnalysis 0
-#scoreboard players add regenSeconds DeckAnalysis 0
-#scoreboard players add jumpSeconds DeckAnalysis 0
-#scoreboard players add invisibilitySeconds DeckAnalysis 0
-#scoreboard players add beastSenseSeconds DeckAnalysis 0
-#scoreboard players add glimmerSeconds DeckAnalysis 0
-#scoreboard players add detectionSeconds DeckAnalysis 0
-#scoreboard players add flickerSeconds DeckAnalysis 0
+#scoreboard players add e.speedSeconds deck.analysis 0
+#scoreboard players add e.speed2Seconds deck.analysis 0
+#scoreboard players add e.regenSeconds deck.analysis 0
+#scoreboard players add e.jumpSeconds deck.analysis 0
+#scoreboard players add e.invisibilitySeconds deck.analysis 0
+#scoreboard players add e.beastsenseSeconds deck.analysis 0
+#scoreboard players add e.glimmerSeconds deck.analysis 0
+#scoreboard players add e.detectionSeconds deck.analysis 0
+#scoreboard players add e.flickerSeconds deck.analysis 0
 
-#scoreboard players add Menace DeckAnalysis 0
-#scoreboard players add Hazard DeckAnalysis 0
-#scoreboard players add Berry DeckAnalysis 0
-#scoreboard players add Treasure DeckAnalysis 0
-#scoreboard players add Ember DeckAnalysis 0
+#scoreboard players add other.Menace deck.analysis 0
+#scoreboard players add other.Hazard deck.analysis 0
+#scoreboard players add other.Berry deck.analysis 0
+#scoreboard players add other.Treasure deck.analysis 0
+#scoreboard players add other.Ember deck.analysis 0
 
-#scoreboard players add CardsTotal DeckAnalysis 0
-#scoreboard players add CardsVoid DeckAnalysis 0
-#scoreboard players add CardsAscend DeckAnalysis 0
-#scoreboard players add CardsInstant DeckAnalysis 0
+#scoreboard players add CardsCards.Total deck.analysis 0
+#scoreboard players add CardsCards.Void deck.analysis 0
+#scoreboard players add CardsCards.Ascend deck.analysis 0
+#scoreboard players add CardsCards.Instant deck.analysis 0
 
-#scoreboard players add DifficultyMod DeckAnalysis 0
-#scoreboard players add Level1Keys DeckAnalysis 0
-#scoreboard players add Level2Keys DeckAnalysis 0
-#scoreboard players add Level3Keys DeckAnalysis 0
+#scoreboard players add Difficulty.Mod deck.analysis 0
+#scoreboard players add Level1.Keys deck.analysis 0
+#scoreboard players add Level2.Keys deck.analysis 0
+#scoreboard players add Level3.Keys deck.analysis 0

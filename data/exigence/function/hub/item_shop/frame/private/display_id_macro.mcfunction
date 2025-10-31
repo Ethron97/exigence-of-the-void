@@ -1,1 +1,0 @@
-$summon minecraft:text_display ~-0.04 ~-0.2 ~ {Tags:["DisplayID"],text:[{text:"$(shop_frame_id)",color:"white"}],alignment:"left",Rotation:[90.0f,0.0f],background:1}

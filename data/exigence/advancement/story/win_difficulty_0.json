@@ -8,7 +8,7 @@
     "display": {
       "description": "Complete the tutorial",
       "icon": {
-        "id": "minecraft:blue_terracotta"
+        "id": "minecraft:warped_sign"
       },
       "title": "Road to Solstice"
     }

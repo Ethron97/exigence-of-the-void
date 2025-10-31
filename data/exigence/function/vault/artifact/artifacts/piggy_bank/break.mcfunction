@@ -9,10 +9,9 @@
 
 # Convert coins to money as nearest player
 
-execute at @s run scoreboard players operation Coins CoinsToConvert = @p PiggyBank
-scoreboard players set @p PiggyBank 0
+execute at @s run scoreboard players operation coins.converting hub.coin_conversion = @p profile.piggy_bank
+scoreboard players set @p profile.piggy_bank 0
 execute at @s as @p run function exigence:hub/convert_money/convert
-
 
 # Particle
 # TODO

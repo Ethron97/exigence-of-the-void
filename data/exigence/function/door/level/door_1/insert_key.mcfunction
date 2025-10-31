@@ -18,7 +18,7 @@
 execute at @s run playsound minecraft:entity.breeze.idle_air ambient @a ~ ~ ~ 1 1
 
 # Initialize score
-scoreboard players set Door1 InsertingKey 81
+scoreboard players set Door.1 game.door.inserting_key 81
 
 # Call function
 schedule function exigence:door/level/door_1/opening 1t

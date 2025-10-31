@@ -52,14 +52,14 @@ function exigence:player/clear/research
 function exigence:player/clear/glint
 
 # COINKEEP PART 1: Save how many coins they had
-execute store result score Coins CoinsToConvertAlt run clear @s minecraft:gold_nugget
+execute store result score coins.converting hub.coin_conversion_alt run clear @s minecraft:gold_nugget
 
 # Clear inventory
 clear @s #exigence:win_clear
 clear @s #exigence:loss_clear
-clear @s[scores={mod_VoidBundle=0}] #exigence:consumable
+clear @s[scores={game.player.mod.void_bundle=0}] #exigence:consumable
 # If VaultKeep is 1, do not clear vault keys
-clear @s[scores={mod_VaultKeep=0}] #exigence:trim_templates
+clear @s[scores={game.player.mod.vault_keep=0}] #exigence:trim_templates
 
 # COINKEEP PART 2 - start after we've cleared their junk
 # Convert coins to money (always instant version)

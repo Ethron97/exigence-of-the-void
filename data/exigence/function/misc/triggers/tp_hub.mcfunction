@@ -4,5 +4,4 @@ execute in exigence:hub run tp 0 200 0
 
 # Reset trigger score
 scoreboard players set @s TpHub 0
-
 scoreboard players enable @s TpHub

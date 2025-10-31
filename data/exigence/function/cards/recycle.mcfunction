@@ -18,11 +18,10 @@ tag @s remove Played
 tag @s add Recycled
 
 # Add scores
-scoreboard players add @a[tag=ActivePlayer] cr_cardsRecycled 1
-scoreboard players add @a[tag=ActivePlayer] t_cardsRecycled 1
+scoreboard players add @a[tag=ActivePlayer] profile.data.deck.cr.cards_recycled 1
 
 # Set success score
-scoreboard players set did_recycle Temp 1
+scoreboard players set #did_recycle Temp 1
 
 # Update displays
 function exigence:deck/update_card_counter

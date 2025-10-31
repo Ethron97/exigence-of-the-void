@@ -17,10 +17,11 @@ teleport @s ~ ~ ~-3
 playsound minecraft:entity.enderman.teleport ambient @s ~ ~1000 ~ 1000 1
 
 # Remind player of their profile difficulty:
-execute if score @s ProfileDifficulty matches 0 run tellraw @s [{text:"Profile Difficulty: ",color:"gray"},{text:"Radiant",color:"yellow"}]
-execute if score @s ProfileDifficulty matches 1 run tellraw @s [{text:"Profile Difficulty: ",color:"gray"},{text:"Ancient",color:"gold"}]
-execute if score @s ProfileDifficulty matches 2 run tellraw @s [{text:"Profile Difficulty: ",color:"gray"},{text:"Ascendant",color:"dark_purple"}]
-execute if score @s ProfileDifficulty matches 3 run tellraw @s [{text:"Profile Difficulty: ",color:"gray"},{text:"Exigent",color:"dark_purple"}]
+execute if score @s profile.profile_difficulty matches -1 run tellraw @s [{text:"Profile Difficulty: ",color:"gray"},{text:"Free Play?",color:"#09ff00"}]
+execute if score @s profile.profile_difficulty matches 0 run tellraw @s [{text:"Profile Difficulty: ",color:"gray"},{text:"Radiant",color:"yellow"}]
+execute if score @s profile.profile_difficulty matches 1 run tellraw @s [{text:"Profile Difficulty: ",color:"gray"},{text:"Ancient",color:"gold"}]
+execute if score @s profile.profile_difficulty matches 2 run tellraw @s [{text:"Profile Difficulty: ",color:"gray"},{text:"Ascendant",color:"dark_purple"}]
+execute if score @s profile.profile_difficulty matches 3 run tellraw @s [{text:"Profile Difficulty: ",color:"gray"},{text:"Exigent",color:"dark_purple"}]
 
 # Remind player of the Echo Selection:
 execute if data storage exigence:dungeon_settings {echo_selection_type:0} run tellraw @s [{text:"Echo Selection: ",color:"gray"},{text:"Standard",color:"aqua"}]

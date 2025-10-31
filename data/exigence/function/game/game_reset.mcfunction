@@ -26,7 +26,7 @@ kill @e[type=endermite]
 kill @e[type=block_display,tag=ItemPreview]
 
 # Reset web ball related stuff
-function exigence:hub/item_shop/frame/item/item_web_ball/reset
+function exigence:hub/item_shop/item/item_web_ball/reset
 
 # Kill Ravager Glass stands (function both respawns and kills)
 execute as @e[type=minecraft:marker,tag=RavagerGlass,tag=!TutorialGlass] run function exigence:game/other/ravager_glass/respawn_ravager_glass
@@ -99,7 +99,7 @@ tag @e[type=minecraft:armor_stand,tag=CartCache] remove CartCache
 # Reset void cache
 execute as @e[type=armor_stand,tag=VoidCache] run function exigence:cards/void_cache/reset
 
-# Clear Wards
+# Clear ward/crystals
 execute as @e[type=interaction,tag=Crystal] run function exigence:game/other/wards/crystal/remove
 
 # Remove active tag from playernode

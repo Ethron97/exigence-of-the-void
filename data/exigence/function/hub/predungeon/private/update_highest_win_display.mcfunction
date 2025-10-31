@@ -6,7 +6,7 @@
 #===============================================================================================================
 
 # Move scores to data
-execute store result storage exigence:temp HighestWin int 1 run scoreboard players get @s HighestWin
+execute store result storage exigence:temp HighestWin int 1 run scoreboard players get @s profile.data.winloss.highest_win
 
 # Call macro
 function exigence:hub/predungeon/private/update_highest_win_display_macro with storage exigence:temp

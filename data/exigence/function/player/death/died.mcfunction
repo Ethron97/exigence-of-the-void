@@ -6,7 +6,7 @@
 #======================================================================================================
 
 # DEBUG
-#tellraw @a [{"score": {"name": "@s","objective": "ActiveLevel"}}]
+#tellraw @a [{"score": {"name": "@s","objective": "game.player.active_level"}}]
 
 # Setup
 data merge storage exigence:give {pos:{list:[0d,0d,0d],int_array:[I;0,0,0]}}
@@ -27,9 +27,10 @@ execute as @e[type=minecraft:marker,tag=DeathMarker] run data modify entity @s P
 execute unless entity @e[type=minecraft:armor_stand,tag=intermediary] run summon minecraft:armor_stand -382.47 37.00 -115.34 {Tags:[intermediary],ShowArms:1b}
 
 # Before clear, check if character has echo (or shards)
-execute store result score temp Temp run clear @s #exigence:echo 0
-scoreboard players operation @s cr_echosLost += temp Temp
-scoreboard players operation @s t_echosLost += temp Temp
+execute store result score #temp Temp run clear @s minecraft:echo_shard 0
+scoreboard players operation @s profile.data.ember.cr.echos_lost += #temp Temp
+execute store result score #temp Temp run clear @s minecraft:disc_fragment_5 0
+scoreboard players operation @s profile.data.ember.cr.echo_fragment_lost += #temp Temp
 
 # Drop items
 execute at @e[type=minecraft:marker,tag=DeathMarker] positioned ~ ~1.1 ~ run function exigence:player/death/drop_items
@@ -54,47 +55,31 @@ team join Player @s
 # Reset effects (effect_)
 function exigence:player/effects/reset_active_effects
 
-scoreboard players set @s mod_Heighten 0
+scoreboard players set @s game.player.heighten 0
 
-scoreboard players set @s cr_damageTakenSinceLastDeath 0
+scoreboard players set @s game.player.damage_since_last_death 0
 
-# Increase locational deaths; t_deaths_LX
-execute if score @s ActiveLevel matches 1 run scoreboard players add @s t_deaths_L1 1
-execute if score @s ActiveLevel matches 2 run scoreboard players add @s t_deaths_L2 1
-execute if score @s ActiveLevel matches 3 run scoreboard players add @s t_deaths_L3 1
-execute if score @s ActiveLevel matches 4 run scoreboard players add @s t_deaths_L4 1
-execute if score @s ActiveLevel matches 5 run scoreboard players add @s t_deaths_L5 1
+# Increase locational deaths
+execute if score @s game.player.active_level matches 1 run scoreboard players add @s profile.data.winloss.cr.deaths_L1 1
+execute if score @s game.player.active_level matches 2 run scoreboard players add @s profile.data.winloss.cr.deaths_L2 1
+execute if score @s game.player.active_level matches 3 run scoreboard players add @s profile.data.winloss.cr.deaths_L3 1
+execute if score @s game.player.active_level matches 4 run scoreboard players add @s profile.data.winloss.cr.deaths_L4 1
+execute if score @s game.player.active_level matches 5 run scoreboard players add @s profile.data.winloss.cr.deaths_L5 1
 
-# Increase difficulty deaths; t_deaths_DX
-execute if score Difficulty DungeonRun matches 1 run scoreboard players add @s t_deaths_D1 1
-execute if score Difficulty DungeonRun matches 2 run scoreboard players add @s t_deaths_D2 1
-execute if score Difficulty DungeonRun matches 3 run scoreboard players add @s t_deaths_D3 1
-execute if score Difficulty DungeonRun matches 4 run scoreboard players add @s t_deaths_D4 1
-execute if score Difficulty DungeonRun matches 5 run scoreboard players add @s t_deaths_D5 1
-execute if score Difficulty DungeonRun matches 6 run scoreboard players add @s t_deaths_D6 1
-
-# Increase locational deaths; cr_deaths_LX
-execute if score @s ActiveLevel matches 1 run scoreboard players add @s cr_deaths_L1 1
-execute if score @s ActiveLevel matches 2 run scoreboard players add @s cr_deaths_L2 1
-execute if score @s ActiveLevel matches 3 run scoreboard players add @s cr_deaths_L3 1
-execute if score @s ActiveLevel matches 4 run scoreboard players add @s cr_deaths_L4 1
-execute if score @s ActiveLevel matches 5 run scoreboard players add @s cr_deaths_L5 1
-
-# Increase difficulty deaths; cr_deaths_DX
-execute if score Difficulty DungeonRun matches 1 run scoreboard players add @s cr_deaths_D1 1
-execute if score Difficulty DungeonRun matches 2 run scoreboard players add @s cr_deaths_D2 1
-execute if score Difficulty DungeonRun matches 3 run scoreboard players add @s cr_deaths_D3 1
-execute if score Difficulty DungeonRun matches 4 run scoreboard players add @s cr_deaths_D4 1
-execute if score Difficulty DungeonRun matches 5 run scoreboard players add @s cr_deaths_D5 1
-execute if score Difficulty DungeonRun matches 6 run scoreboard players add @s cr_deaths_D6 1
+# Increase difficulty deaths
+execute if score Difficulty DungeonRun matches 1 run scoreboard players add @s profile.data.winloss.cr.deaths_D1 1
+execute if score Difficulty DungeonRun matches 2 run scoreboard players add @s profile.data.winloss.cr.deaths_D2 1
+execute if score Difficulty DungeonRun matches 3 run scoreboard players add @s profile.data.winloss.cr.deaths_D3 1
+execute if score Difficulty DungeonRun matches 4 run scoreboard players add @s profile.data.winloss.cr.deaths_D4 1
+execute if score Difficulty DungeonRun matches 5 run scoreboard players add @s profile.data.winloss.cr.deaths_D5 1
+execute if score Difficulty DungeonRun matches 6 run scoreboard players add @s profile.data.winloss.cr.deaths_D6 1
 
 # Update killed_by scores
 function exigence:player/death/private/update_scores
-scoreboard players add @s cr_deaths 1
-scoreboard players add @s t_deaths 1
+scoreboard players add @s profile.data.winloss.cr.deaths 1
 
 # If died at max menace, add to score
-execute if data storage exigence:dungeon {max_menace:1} run scoreboard players add @s t_maxMenaceDeaths 1
+execute if data storage exigence:dungeon {max_menace:1} run scoreboard players add @s profile.data.winloss.cr.max_menace_deaths 1
 
 # If player dies while carrying NPC (and game is coop), remove NPC and carrying tag and send message
 execute if entity @s[tag=Carrying] run function exigence:player/uncarry

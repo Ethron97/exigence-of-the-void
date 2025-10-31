@@ -21,21 +21,21 @@ $execute if score $(active_color) number matches 1 if score $(flashes) number ma
 $execute if score $(active_color) number matches 0 run bossbar set exigence:tutorial color $(color0)
 $execute if score $(active_color) number matches 1 run bossbar set exigence:tutorial color $(color1)
 
-$scoreboard players set temp Temp $(flashes)
-scoreboard players remove temp Temp 1
-execute if score temp Temp matches ..0 run return 1
+$scoreboard players set #temp Temp $(flashes)
+scoreboard players remove #temp Temp 1
+execute if score #temp Temp matches ..0 run return 1
 
 # Flip the color bit
-$scoreboard players set temp2 Temp $(active_color)
-scoreboard players add temp2 Temp 1
-scoreboard players operation temp2 Temp %= 2 number
+$scoreboard players set #temp2 Temp $(active_color)
+scoreboard players add #temp2 Temp 1
+scoreboard players operation #temp2 Temp %= 2 number
 
 $data modify storage exigence:tutorial flashing_bossbar.text set value '$(text)'
 $data modify storage exigence:tutorial flashing_bossbar.final_text set value '$(final_text)'
 $data modify storage exigence:tutorial flashing_bossbar.color0 set value $(color0)
 $data modify storage exigence:tutorial flashing_bossbar.color1 set value $(color1)
-execute store result storage exigence:tutorial flashing_bossbar.active_color int 1 run scoreboard players get temp2 Temp
+execute store result storage exigence:tutorial flashing_bossbar.active_color int 1 run scoreboard players get #temp2 Temp
 $data modify storage exigence:tutorial flashing_bossbar.interval set value $(interval)
-execute store result storage exigence:tutorial flashing_bossbar.flashes int 1 run scoreboard players get temp Temp
+execute store result storage exigence:tutorial flashing_bossbar.flashes int 1 run scoreboard players get #temp Temp
 
 $schedule function exigence:tutorial/utility/flashing_bossbar_b $(interval)t

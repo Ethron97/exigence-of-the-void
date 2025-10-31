@@ -9,7 +9,7 @@
 data modify entity @s NoAI set value true
 
 # Set score
-scoreboard players set @s EnemyStunCooldown 600
+scoreboard players set @s game.enemy.stun_timer 600
 
 # Playsound
 execute at @s run playsound minecraft:entity.evoker.prepare_summon hostile @a ~ ~ ~ 1 1

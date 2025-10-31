@@ -7,12 +7,12 @@
 #   had one card to start, but now you're replaying
 
 # Set to scoreboard, number = place in order when played
-$scoreboard players set $(times_played)$(card_name) CardsPlayed $(score)
+$scoreboard players set $(times_played)$(card_name) game.cards_played $(score)
 
 ## DISPLAY/COLOR
 # Use Display mechanic rather than team for color
-$execute if score $(times_can_played) number matches 2.. run scoreboard players display name $(times_played)$(card_name) CardsPlayed \
+$execute if score $(times_can_played) number matches 2.. run scoreboard players display name $(times_played)$(card_name) game.cards_played \
 [{text:"$(instant)",color:"white"},{text:"$(recycled)",color:"green"},{text:"$(spellsling)",color:"dark_purple"},{text:"$(display_name) ",color:"$(color)"},{text:"($(times_played)/$(times_can_played))",color:"gray"}]
 
-$execute if score $(times_can_played) number matches 1 run scoreboard players display name $(times_played)$(card_name) CardsPlayed \
+$execute if score $(times_can_played) number matches 1 run scoreboard players display name $(times_played)$(card_name) game.cards_played \
 [{text:"$(instant)",color:"white"},{text:"$(recycled)",color:"green"},{text:"$(spellsling)",color:"dark_purple"},{text:"$(display_name)",color:"$(color)"}]

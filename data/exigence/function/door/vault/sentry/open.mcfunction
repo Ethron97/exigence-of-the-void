@@ -6,5 +6,5 @@ fill -420 60 -207 -415 66 -210 minecraft:bone_block replace minecraft:netherite_
 
 # Ladder
 fill -417 73 -206 -417 82 -206 ladder[facing=east]
-scoreboard players set Sentry VaultOpenState 0
+scoreboard players set #Sentry vault_open_state 0
 function exigence:door/vault/sentry/open_loop

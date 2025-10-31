@@ -5,12 +5,7 @@
 
 #=============================================================================================================
 
-execute if score @s ObjectLevel matches 1 run scoreboard players add @a[tag=ActivePlayer] cr_hazardSetupL1 1
-execute if score @s ObjectLevel matches 2 run scoreboard players add @a[tag=ActivePlayer] cr_hazardSetupL2 1
-execute if score @s ObjectLevel matches 3 run scoreboard players add @a[tag=ActivePlayer] cr_hazardSetupL3 1
-execute if score @s ObjectLevel matches 4 run scoreboard players add @a[tag=ActivePlayer] cr_hazardSetupL4 1
-
-execute if score @s ObjectLevel matches 1 run scoreboard players add @a[tag=ActivePlayer] t_hazardSetupL1 1
-execute if score @s ObjectLevel matches 2 run scoreboard players add @a[tag=ActivePlayer] t_hazardSetupL2 1
-execute if score @s ObjectLevel matches 3 run scoreboard players add @a[tag=ActivePlayer] t_hazardSetupL3 1
-execute if score @s ObjectLevel matches 4 run scoreboard players add @a[tag=ActivePlayer] t_hazardSetupL4 1
+execute if score @s ObjectLevel matches 1 run scoreboard players add @a[tag=ActivePlayer] profile.data.hazard.cr.hazard_setup_L1 1
+execute if score @s ObjectLevel matches 2 run scoreboard players add @a[tag=ActivePlayer] profile.data.hazard.cr.hazard_setup_L2 1
+execute if score @s ObjectLevel matches 3 run scoreboard players add @a[tag=ActivePlayer] profile.data.hazard.cr.hazard_setup_L3 1
+execute if score @s ObjectLevel matches 4 run scoreboard players add @a[tag=ActivePlayer] profile.data.hazard.cr.hazard_setup_L4 1

@@ -1,7 +1,7 @@
 # Begin Spire trial
 
 ## CONSTRAINTS
-#   AS player with VaultCode = 2
+#   AS player with game.player.vault_code = 5
 
 #===================================================================================================
 
@@ -21,11 +21,11 @@ function exigence:door/vault/spire/trial/setup
 tp @s -355.5 156.0 -9.5
 
 # COOP - Show title to all other players
-execute if entity @s[tag=Trial] as @a unless score @s VaultCode matches 5 run title @s subtitle [{"selector":"@a[scores={VaultCode=5}]",color:"yellow"},\
+execute if entity @s[tag=Trial] as @a unless score @s game.player.vault_code matches 5 run title @s subtitle [{"selector":"@a[scores={game.player.vault_code=5}]",color:"yellow"},\
 {text:" entered the ",color:"gray"},{text:"Trial of Spire",color:"aqua"}]
-execute if entity @s[tag=Crucible] as @a unless score @s VaultCode matches 5 run title @s subtitle [{"selector":"@a[scores={VaultCode=5}]",color:"yellow"},\
+execute if entity @s[tag=Crucible] as @a unless score @s Vaultgame.player.vault_codeCode matches 5 run title @s subtitle [{"selector":"@a[scores={game.player.vault_code=5}]",color:"yellow"},\
 {text:" entered the ",color:"gray"},{text:"Crucible of Spire",color:"light_purple"}]
-execute as @a unless score @s VaultCode matches 5 run title @s title ""
+execute as @a unless score @s game.player.vault_code matches 5 run title @s title ""
 
 # Initialize spire bossbar
 bossbar set exigence:trial_spire visible true
@@ -36,8 +36,8 @@ execute if entity @s[tag=Crucible] run bossbar set exigence:trial_spire color pu
 execute if entity @s[tag=Crucible] run bossbar set exigence:trial_spire name [{text:"Crucible of Spire",color:"light_purple"}]
 
 # Give scores
-execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Trial] spire_trial_try 1
-execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Crucible] spire_crucible_try 1
+execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Trial] profile.data.vaults.cr.spire_trial_try 1
+execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Crucible] profile.data.vaults.cr.spire_crucible_try 1
 
 # Begin tick iteration
 function exigence:door/vault/spire/trial/tick

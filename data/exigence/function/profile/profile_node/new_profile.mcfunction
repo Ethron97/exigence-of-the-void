@@ -4,6 +4,9 @@
 #   AS player
 #   IN exigence:profile_data
 
+## INPUT
+#   #compare profile.node.slot_id
+
 #=============================================================================================================
 
 ## VALIDATE
@@ -15,23 +18,26 @@ execute if score #sequence profile.profile_id matches 1008.. run tellraw @s {tex
 execute if score #sequence profile.profile_id matches 1008.. run return 1
 
 # Enforce player node exists
-execute unless score @s profile.player_id matches 0.. run function exigence:profile/player_node/new_player
+execute unless score @s career.player_id matches 0.. run function exigence:profile/player_node/new_player
 
 # If this player already has more than 5, fail
-scoreboard players set temp Temp 0
-scoreboard players operation #compare profile.node.player_id = @s profile.player_id
-execute as @e[distance=..1000,tag=ProfileNode] if score @s profile.node.player_id = #compare profile.node.player_id run scoreboard players add temp Temp 1
-execute if score temp Temp matches 5.. run tellraw @s {text:"Maximum number of profiles reached for this player (5)",color:"red"}
-execute if score temp Temp matches 5.. run return 1
+scoreboard players set #temp Temp 0
+scoreboard players operation #compare profile.node.player_id = @s career.player_id
+execute as @e[distance=..1000,tag=ProfileNode,scores={profile.node.slot_id=1..}] if score @s profile.node.player_id = #compare profile.node.player_id run scoreboard players add #temp Temp 1
+execute if score #temp Temp matches 5.. run tellraw @s {text:"Maximum number of profiles reached for this player (5)",color:"red"}
+execute if score #temp Temp matches 5.. run return 1
 
 #=============================================================================================================
+
+# Increase number of profiles created
+scoreboard players add @s career.profiles_created 1
 
 # Call function to locate the next available slot to place a node (tps NewProfileNodeMarker to position)
 execute unless entity @e[distance=..1000,type=marker,tag=NewProfileNodeMarker] run summon minecraft:marker 0.5 5.0 0.5 {Tags:["NewProfileNodeMarker"]}
 tp @e[distance=..1000,type=marker,tag=NewProfileNodeMarker] 0.5 5.0 0.5
 execute positioned 0.5 5.0 0.5 as @e[distance=..1,type=marker,tag=NewProfileNodeMarker] at @s run function exigence:profile/profile_node/new/locate_next_profile_slot
 
-# Generate player id
+# Generate profile id
 function exigence:profile/profile_node/new/generate_id
 
 # Summon player head

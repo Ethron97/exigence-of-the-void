@@ -5,14 +5,14 @@
 #==============================================================================================================
 
 # Four 1/5 chances
-execute store result score random Random run random value 1..5
-execute if score random Random matches 1 run function exigence:game/other/wards/drop_resonance
+execute store result score #random Random run random value 1..5
+execute if score #random Random matches 1 run function exigence:game/other/wards/drop_resonance
 
-execute store result score random Random run random value 1..5
-execute if score random Random matches 1 run function exigence:game/other/wards/drop_resonance
+execute store result score #random Random run random value 1..5
+execute if score #random Random matches 1 run function exigence:game/other/wards/drop_resonance
 
-execute store result score random Random run random value 1..5
-execute if score random Random matches 1 run function exigence:game/other/wards/drop_resonance
+execute store result score #random Random run random value 1..5
+execute if score #random Random matches 1 run function exigence:game/other/wards/drop_resonance
 
-execute store result score random Random run random value 1..5
-execute if score random Random matches 1 run function exigence:game/other/wards/drop_resonance
+execute store result score #random Random run random value 1..5
+execute if score #random Random matches 1 run function exigence:game/other/wards/drop_resonance

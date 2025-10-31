@@ -4,7 +4,7 @@
 #   AS crystal interaction
 
 ## INPUT
-#   STR color - "Ruby", "Sapphire", "Emerald", "Topaz", "Amethyst"
+#   STR color - "ruby", "sapphire", "emerald", "topaz", "amethyst"
 
 #============================================================================================================
 
@@ -12,19 +12,19 @@
 #say Damage
 
 # Get ID score for compare
-scoreboard players operation #compare CrystalID = @s CrystalID
+scoreboard players operation #compare game.story.ward_crystal.node_id = @s game.story.ward_crystal.node_id
 
 # Remove 1 random item display with matching ID
-execute as @e[type=minecraft:item_display,tag=CrystalDisplay] if score @s CrystalID = #compare CrystalID run tag @s add RandomDestroy
+execute as @e[type=minecraft:item_display,tag=CrystalDisplay] if score @s game.story.ward_crystal.node_id = #compare game.story.ward_crystal.node_id run tag @s add RandomDestroy
 execute as @e[type=item_display,tag=RandomDestroy,sort=random,limit=1] run kill @s
 tag @e[type=item_display,tag=RandomDestroy] remove RandomDestroy
 
-# Remove 1 from Wards score
-$scoreboard players remove $(color) Wards 1
-$scoreboard players remove @a[tag=PrimaryPlayer] Ward$(color) 1
+# Remove 1 from game.story.wards score
+$scoreboard players remove ward.$(color) game.story.wards 1
+$scoreboard players remove @a[tag=PrimaryPlayer] profile.story.ward_$(color) 1
 
 # If remaining score is no 0, break
-$execute if score $(color) Wards matches 0 run function exigence:game/other/wards/crystal/break
+$execute if score ward.$(color) game.story.wards matches 0 run function exigence:game/other/wards/crystal/break
 
 # TODO playsound/particles
 execute at @s run playsound minecraft:entity.elder_guardian.hurt ambient @a ~ ~ ~ 2 1

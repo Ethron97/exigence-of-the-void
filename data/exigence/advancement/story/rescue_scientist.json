@@ -8,7 +8,7 @@
     "display": {
       "description": "Unlock Uncommon items",
       "icon": {
-        "id": "minecraft:smithing_table"
+        "id": "minecraft:brewing_stand"
       },
       "title": "Rescue the Scientist"
     }

@@ -5,4 +5,4 @@
 
 #==========================================================================================================
 
-$scoreboard players add $(card_name) TimesRecycled 1
+$scoreboard players add card.$(card_name) game.cards_played.times_recycled 1

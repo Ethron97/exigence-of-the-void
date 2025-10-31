@@ -1,1 +1,1 @@
-scoreboard players add speedSeconds DeckAnalysis 60
+scoreboard players add e.speedSeconds deck.analysis 60

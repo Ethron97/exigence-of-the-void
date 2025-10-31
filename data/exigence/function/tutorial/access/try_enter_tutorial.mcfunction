@@ -16,9 +16,9 @@ execute if data storage exigence:dungeon {tutorial:1} run return 1
 # Involves tokens or something, incase someone disconnects from tutorial
 
 # Check that player has empty inventory
-execute store result score temp Temp run clear @s * 0
-execute if score temp Temp matches 1.. run tellraw @s {text:"Put away your items before entering the tutorial",color:"red"}
-execute if score temp Temp matches 1.. run return 1
+execute store result score #temp Temp run clear @s * 0
+execute if score #temp Temp matches 1.. run tellraw @s {text:"Put away your items before entering the tutorial",color:"red"}
+execute if score #temp Temp matches 1.. run return 1
 
 # If all checks passed, enter tutorial
 execute in exigence:tutorial run function exigence:tutorial/access/enter_tutorial

@@ -14,4 +14,4 @@ clone -411 -43 -122 -407 -41 -118 ~-2 ~-2 ~-2
 
 
 # Set node state
-scoreboard players set @s NodeState -1
+scoreboard players set @s game.node.node_state -1

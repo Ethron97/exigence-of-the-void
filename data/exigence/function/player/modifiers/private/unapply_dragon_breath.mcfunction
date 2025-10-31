@@ -9,5 +9,5 @@
 #say Unapply dragon breath
 
 tag @s remove DragonBreath
-scoreboard players set @s GlowRemaining 0
+scoreboard players set @s game.entity.glow_remaining 0
 effect clear @s glowing

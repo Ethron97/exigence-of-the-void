@@ -24,4 +24,4 @@ scoreboard players set Pizza TrialTimer 70
 fill -422 148 -26 -405 148 -10 end_portal replace black_concrete
 
 # Set blue fire
-execute if entity @a[scores={VaultCode=1},tag=Crucible] run fill -407 158 -25 -421 158 -11 minecraft:soul_soil replace minecraft:chiseled_tuff
+execute if entity @a[scores={game.player.vault_code=1},tag=Crucible] run fill -407 158 -25 -421 158 -11 minecraft:soul_soil replace minecraft:chiseled_tuff

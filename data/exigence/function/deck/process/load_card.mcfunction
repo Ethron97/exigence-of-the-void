@@ -9,9 +9,9 @@ $execute if score $(copies) number matches 1.. run execute at @e[type=minecraft:
 $execute if score $(copies) number matches 2.. unless score $(rarity) number matches 4 run execute at @e[type=minecraft:armor_stand,tag=DeckCardLocation] run function exigence:deck/process/summon_card
 $execute if score $(copies) number matches 3.. unless score $(rarity) number matches 4 run execute at @e[type=minecraft:armor_stand,tag=DeckCardLocation] run function exigence:deck/process/summon_card
 
-# Update TimesProcessed
-$scoreboard players add $(card_name) TimesProcessed $(copies)
-$execute if data storage exigence:debug {void:0} run scoreboard players add $(card_name) TimesProcessedTotal $(copies)
+# Update game.cards_played.times_processed
+$scoreboard players add card.$(card_name) game.cards_played.times_processed $(copies)
+$execute if data storage exigence:debug {void:0} run scoreboard players add card.$(card_name) TimesProcessedTotal $(copies)
 
 # Summon copy of card
 $execute positioned -313.5 3.00 -96.5 run function exigence:cards/summon_card {card_name:'$(card_name)'}

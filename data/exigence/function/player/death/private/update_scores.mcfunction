@@ -6,47 +6,36 @@
 #======================================================================================================
 
 # Check if player was killed by entity
-scoreboard players set temp Temp 0
-scoreboard players operation temp Temp += @s KilledByBlaze
-scoreboard players operation temp Temp += @s KilledByRavager
-scoreboard players operation temp Temp += @s KilledByWarden
-scoreboard players operation temp Temp += @s KilledByWitch
-scoreboard players operation temp Temp += @s KilledByWitherSkeleton
-scoreboard players operation temp Temp += @s KilledByCreaking
-scoreboard players operation temp Temp += @s KilledByVex
-scoreboard players operation temp Temp += @s KilledByEndermite
-# if temp Temp > 0, killed by entity
+scoreboard players set #temp Temp 0
+scoreboard players operation #temp Temp += @s game.player.killed_by.blaze
+scoreboard players operation #temp Temp += @s game.player.killed_by.creaking
+scoreboard players operation #temp Temp += @s game.player.killed_by.endermite
+scoreboard players operation #temp Temp += @s game.player.killed_by.ravager
+scoreboard players operation #temp Temp += @s game.player.killed_by.vex
+scoreboard players operation #temp Temp += @s game.player.killed_by.warden
+scoreboard players operation #temp Temp += @s game.player.killed_by.witch
+scoreboard players operation #temp Temp += @s game.player.killed_by.wither_skeleton
+# if #temp Temp > 0, killed by entity
 
 # Add score from entity deaths
-scoreboard players operation @s cr_killedByBlaze += @s KilledByBlaze
-scoreboard players operation @s cr_killedByRavager += @s KilledByRavager
-scoreboard players operation @s cr_killedByWarden += @s KilledByWarden
-scoreboard players operation @s cr_killedByWitch += @s KilledByWitch
-scoreboard players operation @s cr_killedByWitherSkeleton += @s KilledByWitherSkeleton
-scoreboard players operation @s cr_killedByCreaking += @s KilledByCreaking
-scoreboard players operation @s cr_killedByVex += @s KilledByVex
-scoreboard players operation @s cr_killedByEndermite += @s KilledByEndermite
-
-scoreboard players operation @s t_killedByBlaze += @s KilledByBlaze
-scoreboard players operation @s t_killedByRavager += @s KilledByRavager
-scoreboard players operation @s t_killedByWarden += @s KilledByWarden
-scoreboard players operation @s t_killedByWitch += @s KilledByWitch
-scoreboard players operation @s t_killedByWitherSkeleton += @s KilledByWitherSkeleton
-scoreboard players operation @s t_killedByCreaking += @s KilledByCreaking
-scoreboard players operation @s t_killedByVex += @s KilledByVex
-scoreboard players operation @s t_killedByEndermite += @s KilledByEndermite
+scoreboard players operation @s profile.data.enemy.cr.killed_by_blaze += @s game.player.killed_by.blaze
+scoreboard players operation @s profile.data.enemy.cr.killed_by_creaking += @s game.player.killed_by.creaking
+scoreboard players operation @s profile.data.enemy.cr.killed_by_endermite += @s game.player.killed_by.endermite
+scoreboard players operation @s profile.data.enemy.cr.killed_by_ravager += @s game.player.killed_by.ravager
+scoreboard players operation @s profile.data.enemy.cr.killed_by_vex += @s game.player.killed_by.vex
+scoreboard players operation @s profile.data.enemy.cr.killed_by_warden += @s game.player.killed_by.warden
+scoreboard players operation @s profile.data.enemy.cr.killed_by_witch += @s game.player.killed_by.witch
+scoreboard players operation @s profile.data.enemy.cr.killed_by_wither_skeleton += @s game.player.killed_by.wither_skeleton
 
 # If not killed by entity, killed by dungeon
-scoreboard players add @s t_killedByDungeon 0
-execute if score temp Temp matches 0 run scoreboard players add @s cr_killedByDungeon 1
-execute if score temp Temp matches 0 run scoreboard players add @s t_killedByDungeon 1
+execute if score #temp Temp matches 0 run scoreboard players add @s profile.data.enemy.cr.killed_by_dungeon 1
 
 # Reset scores to track again later
-scoreboard players set @s KilledByBlaze 0
-scoreboard players set @s KilledByRavager 0
-scoreboard players set @s KilledByWarden 0
-scoreboard players set @s KilledByWitch 0
-scoreboard players set @s KilledByWitherSkeleton 0
-scoreboard players set @s KilledByCreaking 0
-scoreboard players set @s KilledByVex 0
-scoreboard players set @s KilledByEndermite 0
+scoreboard players set @s game.player.killed_by.blaze 0
+scoreboard players set @s game.player.killed_by.ravager 0
+scoreboard players set @s game.player.killed_by.creaking 0
+scoreboard players set @s game.player.killed_by.endermite 0
+scoreboard players set @s game.player.killed_by.vex 0
+scoreboard players set @s game.player.killed_by.warden 0
+scoreboard players set @s game.player.killed_by.witch 0
+scoreboard players set @s game.player.killed_by.wither_skeleton 0

@@ -9,7 +9,7 @@
 ## Home towards player (with turn radius)
 
 # Move marker B to the skull, facing player
-execute at @s facing entity @p[tag=ActivePlayer,scores={dead=0,VaultCode=2}] eyes run tp @e[type=marker,tag=DunePosB] ~ ~ ~ ~ ~
+execute at @s facing entity @p[tag=ActivePlayer,scores={dead=0,game.player.vault_code=2}] eyes run tp @e[type=marker,tag=DunePosB] ~ ~ ~ ~ ~
 
 
 # Store rotations and normalize to 0..360

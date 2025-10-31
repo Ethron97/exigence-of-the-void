@@ -1,5 +1,5 @@
 # Increase heighten level by 1
-scoreboard players add @a[tag=ActivePlayer,scores={dead=0}] mod_Heighten 1
+scoreboard players add @a[tag=ActivePlayer,scores={dead=0}] game.player.heighten 1
 
 # Update player effect
 function exigence:player/effects/heighten/update_effect

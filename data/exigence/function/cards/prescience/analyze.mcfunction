@@ -1,3 +1,3 @@
-scoreboard players add CardsInstant DeckAnalysis 1
-scoreboard players add CardsVoid DeckAnalysis 1
-scoreboard players add Spellbind DeckAnalysis 2
+scoreboard players add CardsCards.Instant deck.analysis 1
+scoreboard players add CardsCards.Void deck.analysis 1
+scoreboard players add Cards.Spellbind deck.analysis 2

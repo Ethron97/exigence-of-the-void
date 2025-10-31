@@ -1,3 +1,3 @@
-scoreboard players add Treasure DeckAnalysis 6
-scoreboard players add CardsVoid DeckAnalysis 1
-scoreboard players add CardsInstant DeckAnalysis 1
+scoreboard players add other.Treasure deck.analysis 6
+scoreboard players add CardsCards.Void deck.analysis 1
+scoreboard players add CardsCards.Instant deck.analysis 1

@@ -9,4 +9,4 @@
 function exigence:hub/item_shop/refresh_currency
 
 # If either spend amounts changed for any player, update purchasability
-execute if entity @a[tag=ItemShopping,scores={CurrencyChanged=1}] run function exigence:hub/item_shop/update_purchasability_b
+execute if entity @a[tag=ItemShopping,scores={shop.player.currency_amounts_changed=1}] run function exigence:hub/item_shop/update_purchasability_b

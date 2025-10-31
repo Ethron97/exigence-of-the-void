@@ -6,7 +6,7 @@
 #==================================================================================================
 
 # If player, loss
-execute positioned ^ ^ ^ as @a[tag=ActivePlayer,scores={dead=0,VaultCode=6},distance=..0.4] run function exigence:door/vault/flow/trial/loss
+execute positioned ^ ^ ^ as @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=6},distance=..0.4] run function exigence:door/vault/flow/trial/loss
 
 #particle minecraft:end_rod ^ ^ ^
 

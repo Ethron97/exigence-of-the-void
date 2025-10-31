@@ -1,3 +1,3 @@
-scoreboard players set GreenCost Resources 4
-#scoreboard players set RedCost Resources 0
-#scoreboard players set AquaCost Resources 0
+scoreboard players set Green.Cost game.resources 4
+#scoreboard players set Red.Cost game.resources 0
+#scoreboard players set Aqua.Cost game.resources 0

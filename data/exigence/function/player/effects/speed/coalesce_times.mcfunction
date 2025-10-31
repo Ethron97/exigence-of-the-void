@@ -20,42 +20,42 @@ effect clear @s speed
 # Give speed in ascending order
 data modify storage exigence:player_effects effect set value "speed"
 
-execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s effect_speed1
+execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s game.player.effects.speed1
 data modify storage exigence:player_effects amplifier set value 0
-execute if score @s effect_speed1 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
+execute if score @s game.player.effects.speed1 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
 
-execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s effect_speed2
+execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s game.player.effects.speed2
 data modify storage exigence:player_effects amplifier set value 1
-execute if score @s effect_speed2 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
+execute if score @s game.player.effects.speed2 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
 
-execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s effect_speed3
+execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s game.player.effects.speed3
 data modify storage exigence:player_effects amplifier set value 2
-execute if score @s effect_speed3 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
+execute if score @s game.player.effects.speed3 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
 
-execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s effect_speed4
+execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s game.player.effects.speed4
 data modify storage exigence:player_effects amplifier set value 3
-execute if score @s effect_speed4 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
+execute if score @s game.player.effects.speed4 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
 
-execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s effect_speed5
+execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s game.player.effects.speed5
 data modify storage exigence:player_effects amplifier set value 4
-execute if score @s effect_speed5 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
+execute if score @s game.player.effects.speed5 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
 
-execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s effect_speed6
+execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s game.player.effects.speed6
 data modify storage exigence:player_effects amplifier set value 5
-execute if score @s effect_speed6 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
+execute if score @s game.player.effects.speed6 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
 
-execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s effect_speed7
+execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s game.player.effects.speed7
 data modify storage exigence:player_effects amplifier set value 6
-execute if score @s effect_speed7 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
+execute if score @s game.player.effects.speed7 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
 
-execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s effect_speed8
+execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s game.player.effects.speed8
 data modify storage exigence:player_effects amplifier set value 7
-execute if score @s effect_speed8 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
+execute if score @s game.player.effects.speed8 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
 
-execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s effect_speed9
+execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s game.player.effects.speed9
 data modify storage exigence:player_effects amplifier set value 8
-execute if score @s effect_speed9 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
+execute if score @s game.player.effects.speed9 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
 
-execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s effect_speed10
+execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s game.player.effects.speed10
 data modify storage exigence:player_effects amplifier set value 9
-execute if score @s effect_speed10 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects
+execute if score @s game.player.effects.speed10 matches 1.. run function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects

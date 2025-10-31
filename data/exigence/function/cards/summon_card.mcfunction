@@ -10,8 +10,8 @@ $data modify storage exigence:colors card_name set value $(card_name)
 function exigence:cards/get_cost with storage exigence:colors
 
 # If this was summoned from SPELLBIND, and Spellbook modifier active, modify the costs
-scoreboard players set #CostReduced Resources 0
-execute if score spellbinding Temp matches 1 if score Spellbook Modifiers matches 1 run function exigence:vault/artifact/artifacts/enchanted_book/public/modify_costs
+scoreboard players set #CostReduced game.resources 0
+execute if score #spellbinding Temp matches 1 if score Spellbook Modifiers matches 1 run function exigence:vault/artifact/artifacts/enchanted_book/public/modify_costs
 
 # Convert costs to strings for reference
 function exigence:cards/get_cost_strings
@@ -21,7 +21,7 @@ data modify storage exigence:colors lore_cost set from storage exigence:resource
 
 # If spellbinding, also copy that card cost name into name cost
 data modify storage exigence:colors name_cost set value {text:""}
-execute if score spellbinding Temp matches 1 run data modify storage exigence:colors name_cost set from storage exigence:resources full_cost_2
+execute if score #spellbinding Temp matches 1 run data modify storage exigence:colors name_cost set from storage exigence:resources full_cost_2
 #data modify storage exigence:colors name_cost set from storage exigence:resources full_cost_2
 
 

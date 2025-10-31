@@ -6,7 +6,7 @@
 # ===============================================================================================================
 
 # Increase score
-scoreboard players add @s timesPicked 1
+scoreboard players add @s node.berry.data.times_picked 1
 
 # Generate green
 execute as @p[tag=Picking] run function exigence:resources/try_generate {green:2,red:0,aqua:0}

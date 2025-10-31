@@ -27,22 +27,8 @@ fill -263 18 -77 -259 18 -77 air
 # Begin game
 function exigence:game/game_on
 
-# Copy deck analysis scores to ResourcesNeeded for later use
-#scoreboard players operation GreenNeeded Resources = GreenConsume DeckAnalysis
-#scoreboard players operation RedNeeded Resources = RedConsume DeckAnalysis
-#scoreboard players operation AquaNeeded Resources = AquaConsume DeckAnalysis
-
 # Remind player of how many resources they need
-tellraw @a [{text:"\nResources Needed: ",color:"gray"},{"score":{"name":"GreenConsume","objective":"DeckAnalysis"},color:"dark_green"}," ",{"score":{"name":"RedConsume","objective":"DeckAnalysis"},color:"red"}," ",{"score":{"name":"AquaConsume","objective":"DeckAnalysis"},color:"aqua"}]
+tellraw @a [{text:"\nResources Needed: ",color:"gray"},{"score":{"name":"Green.Consume","objective":"deck.analysis"},color:"dark_green"}," ",{"score":{"name":"Red.Consume","objective":"deck.analysis"},color:"red"}," ",{"score":{"name":"Aqua.Consume","objective":"deck.analysis"},color:"aqua"}]
 
 # Initialize resources needed
 function exigence:bossbar/resource/update_title
-
-# Increment attempt scores
-execute if score Difficulty DungeonRun matches 1 run scoreboard players add @a[tag=ActivePlayer] t_level1Attempts 1
-execute if score Difficulty DungeonRun matches 2 run scoreboard players add @a[tag=ActivePlayer] t_level2Attempts 1
-execute if score Difficulty DungeonRun matches 3 run scoreboard players add @a[tag=ActivePlayer] t_level3Attempts 1
-execute if score Difficulty DungeonRun matches 4 run scoreboard players add @a[tag=ActivePlayer] t_level4Attempts 1
-execute if score Difficulty DungeonRun matches 5 run scoreboard players add @a[tag=ActivePlayer] t_level5Attempts 1
-execute if score Difficulty DungeonRun matches 6 run scoreboard players add @a[tag=ActivePlayer] t_level6Attempts 1
-

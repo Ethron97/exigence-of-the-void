@@ -18,5 +18,5 @@ execute if data storage exigence:dungeon_settings {stacked_coins:1} run function
 
 # Drop coin
 #   If coming from a card, DOUBLE for treasure distribution testing
-execute if data storage exigence:treasure {resolving:'passive'} if score @s Random matches 1 run function exigence:treasure/node/drop_treasure {function:"exigence:treasure/node/coin/summon_coin"}
-execute unless data storage exigence:treasure {resolving:'passive'} if score @s Random matches 1..2 run function exigence:treasure/node/drop_treasure {function:"exigence:treasure/node/coin/summon_coin"}
+execute if data storage exigence:treasure {resolving:'passive'} if score @s Random matches 1 run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:treasure/node/coin/summon_coin"}
+execute unless data storage exigence:treasure {resolving:'passive'} if score @s Random matches 1..2 run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:treasure/node/coin/summon_coin"}

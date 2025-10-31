@@ -5,6 +5,11 @@
 
 #==============================================================================================================
 
+# STATUS EFFECT TICK
+function exigence:player/effects/player_effect_tick
+
+#==============================================================================================================
+
 # Clear spellbound cards dropped on the ground
 execute as @e[distance=..3,type=minecraft:item,tag=!SoulWarned,nbt={Item:{id:"minecraft:carrot_on_a_stick",components:{"minecraft:custom_data":{is_spellsling:"true"}}}}] run function exigence:player/dropped_soulbound
 execute as @e[distance=..3,type=minecraft:item,tag=!SoulWarned,nbt={Item:{components:{"minecraft:custom_data":{is_soulbound:1b}}}}] run function exigence:player/dropped_soulbound
@@ -23,11 +28,11 @@ execute unless score @s Temp matches 1.. store result score @s Temp run clear @s
 execute if score @s Temp matches 1.. run function exigence:player/use_item/phantom_membrane/private/player_update
 
 # If player has any farstep, queue removal of the item
-execute if score @s effect_farstep matches 1.. run schedule function exigence:player/clear/farstepper 1t
+execute if score @s game.player.effects.farstep matches 1.. run schedule function exigence:player/clear/farstepper 1t
 
 # If player has JUMPBOOST or Speed2+, give them step height
 #   Can probably relageted to every second
-execute if score SecondsCooldown TickCounter matches 2 run function exigence:player/attributes/step_height
+execute if score seconds.cooldown tick_counter matches 2 run function exigence:player/attributes/step_height
 
 # Speed coalesce
 #   Fixes bug where lower level speed gets "lost" when you have higher level speed
@@ -40,11 +45,11 @@ function exigence:player/effects/speed/should_coalesce
 # (Others are probably still under "player effect tick"
 
 # Gathering Storm (with speed)
-execute if score @s[predicate=exigence:effects/speed] mod_GatheringStorm matches 1 run function exigence:player/modifiers/gathering_storm
+execute if score @s[predicate=exigence:effects/speed] game.player.mod.gathering_storm matches 1 run function exigence:player/modifiers/gathering_storm
 
 # Sunplate (speed)
-execute if score @s mod_SunPlate matches 5 if score SecondsCooldown TickCounter matches 4 run function exigence:player/modifiers/sun_plate_s_tick
+execute if score @s game.player.mod.sun_plate matches 5 if score seconds.cooldown tick_counter matches 4 run function exigence:player/modifiers/sun_plate_s_tick
 
 # Phantom Cloak (speed)
-execute if score @s mod_PhantomScales matches 7 if score SecondsCooldown TickCounter matches 4 run function exigence:player/modifiers/phantom_cloak_s_tick
+execute if score @s game.player.mod.phantom_scales matches 7 if score seconds.cooldown tick_counter matches 4 run function exigence:player/modifiers/phantom_cloak_s_tick
 

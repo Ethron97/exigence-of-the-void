@@ -1,7 +1,7 @@
 # Begin Silence trial
 
 ## CONSTRAINTS
-#   AS player with VaultCode = 3
+#   AS player with game.player.vault_code = 3
 
 #===================================================================================================
 
@@ -25,11 +25,11 @@ function exigence:door/vault/silence/trial/setup
 tp @s -413.5 152.0 14.5
 
 # COOP - Show title to all other players
-execute if entity @s[tag=Trial] as @a unless score @s VaultCode matches 3 run title @s subtitle [{"selector":"@a[scores={VaultCode=3}]",color:"yellow"},\
+execute if entity @s[tag=Trial] as @a unless score @s game.player.vault_code matches 3 run title @s subtitle [{"selector":"@a[scores={game.player.vault_code=3}]",color:"yellow"},\
 {text:" entered the ",color:"gray"},{text:"Trial of Silence",color:"aqua"}]
-execute if entity @s[tag=Crucible] as @a unless score @s VaultCode matches 3 run title @s subtitle [{"selector":"@a[scores={VaultCode=3}]",color:"yellow"},\
+execute if entity @s[tag=Crucible] as @a unless score @s game.player.vault_code matches 3 run title @s subtitle [{"selector":"@a[scores={game.player.vault_code=3}]",color:"yellow"},\
 {text:" entered the ",color:"gray"},{text:"Crucible of Silence",color:"light_purple"}]
-execute as @a unless score @s VaultCode matches 3 run title @s title ""
+execute as @a unless score @s game.player.vault_code matches 3 run title @s title ""
 
 # Initialize silence bossbar
 bossbar set exigence:trial_silence visible true
@@ -40,8 +40,8 @@ execute if entity @s[tag=Crucible] run bossbar set exigence:trial_silence color 
 execute if entity @s[tag=Crucible] run bossbar set exigence:trial_silence name [{text:"Crucible of Silence",color:"light_purple"}]
 
 # Give scores
-execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Trial] silence_trial_try 1
-execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Crucible] silence_crucible_try 1
+execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Trial] profile.data.vaults.cr.silence_trial_try 1
+execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Crucible] profile.data.vaults.cr.silence_crucible_try 1
 
 # Begin tick iteration
 function exigence:door/vault/silence/trial/tick

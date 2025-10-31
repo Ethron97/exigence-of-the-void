@@ -2,9 +2,9 @@
 # To be called by the player purchasing
 
 # 1. Check if player has X money. Store in scoreboard.
-execute store result score @s MoneyToSpend run clear @s diamond 0
-$execute if score @s MoneyToSpend matches $(money_cost).. run scoreboard players set @s HasEnoughMoney 1
-$execute unless score @s MoneyToSpend matches $(money_cost).. run scoreboard players set @s HasEnoughMoney 0
+execute store result score @s shop.player.money_to_spend run clear @s diamond 0
+$execute if score @s shop.player.money_to_spend matches $(money_cost).. run scoreboard players set @s HasEnoughMoney 1
+$execute unless score @s shop.player.money_to_spend matches $(money_cost).. run scoreboard players set @s HasEnoughMoney 0
 
 # If creative mode, always has enough
 execute if entity @s[gamemode=creative] run scoreboard players set @s HasEnoughMoney 1

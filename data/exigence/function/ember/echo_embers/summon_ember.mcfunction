@@ -18,13 +18,8 @@ execute as @e[distance=..4,type=item,nbt={Item:{components:{"minecraft:custom_da
 execute if score @s ObjectLevel matches 10 run return 1
 
 # Increase scores
-scoreboard players add @a[tag=ActivePlayer] cr_embersEchoDropped 1
-scoreboard players add @a[tag=ActivePlayer] t_embersEchoDropped 1
-execute if score @s ObjectLevel matches 1 run scoreboard players add @a[tag=ActivePlayer] cr_embersEchoDroppedL1 1
-execute if score @s ObjectLevel matches 1 run scoreboard players add @a[tag=ActivePlayer] t_embersEchoDroppedL1 1
-execute if score @s ObjectLevel matches 2 run scoreboard players add @a[tag=ActivePlayer] cr_embersEchoDroppedL2 1
-execute if score @s ObjectLevel matches 2 run scoreboard players add @a[tag=ActivePlayer] t_embersEchoDroppedL2 1
-execute if score @s ObjectLevel matches 3 run scoreboard players add @a[tag=ActivePlayer] cr_embersEchoDroppedL3 1
-execute if score @s ObjectLevel matches 3 run scoreboard players add @a[tag=ActivePlayer] t_embersEchoDroppedL3 1
-execute if score @s ObjectLevel matches 4 run scoreboard players add @a[tag=ActivePlayer] cr_embersEchoDroppedL4 1
-execute if score @s ObjectLevel matches 4 run scoreboard players add @a[tag=ActivePlayer] t_embersEchoDroppedL4 1
+scoreboard players add @a[tag=ActivePlayer] profile.data.ember.cr.embers_echo_dropped 1
+execute if score @s ObjectLevel matches 1 run scoreboard players add @a[tag=ActivePlayer] profile.data.ember.cr.embers_echo_dropped_L1 1
+execute if score @s ObjectLevel matches 2 run scoreboard players add @a[tag=ActivePlayer] profile.data.ember.cr.embers_echo_dropped_L2 1
+execute if score @s ObjectLevel matches 3 run scoreboard players add @a[tag=ActivePlayer] profile.data.ember.cr.embers_echo_dropped_L3 1
+execute if score @s ObjectLevel matches 4 run scoreboard players add @a[tag=ActivePlayer] profile.data.ember.cr.embers_echo_dropped_L4 1

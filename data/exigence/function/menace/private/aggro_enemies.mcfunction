@@ -8,4 +8,4 @@ execute as @e[type=minecraft:wither_skeleton] if function exigence:misc/node/on_
 execute as @e[type=minecraft:witch] if function exigence:misc/node/on_active run function exigence:enemy/aggro_enemy
 
 # Reset cooldown
-scoreboard players operation RavagerAggroCooldownCurrent TickCounter = RavagerAggroCooldownLimit TickCounter
+scoreboard players operation ravager.aggro.cooldown tick_counter = #RavagerAggroCooldownLimit tick_counter

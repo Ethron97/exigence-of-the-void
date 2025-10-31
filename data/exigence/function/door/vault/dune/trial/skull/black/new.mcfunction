@@ -7,7 +7,7 @@
 function exigence:door/vault/dune/trial/random_pos/rim_pos
 
 # Have DunePosA face the trial player
-execute as @e[type=marker,tag=DunePosA] at @s facing entity @p[scores={VaultCode=2}] feet run tp @s ~ ~ ~ ~ ~
+execute as @e[type=marker,tag=DunePosA] at @s facing entity @p[scores={game.player.vault_code=2}] feet run tp @s ~ ~ ~ ~ ~
 # Make sure pitch is 0
 data modify entity @e[type=marker,tag=DunePosA,limit=1] Rotation[1] set value 0.0f
 

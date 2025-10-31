@@ -15,11 +15,10 @@ tag @s add Spellbound
 execute positioned -384.5 37.00 -116.5 run function exigence:cards/create_spellbind with entity @s equipment.mainhand.components."minecraft:custom_data"
 
 # Add scores
-scoreboard players add @a[tag=ActivePlayer] cr_cardsSpellbound 1
-scoreboard players add @a[tag=ActivePlayer] t_cardsSpellbound 1
+scoreboard players add @a[tag=ActivePlayer] profile.data.deck.cr.cards_spellbound 1
 
 # Set success score
-scoreboard players set did_spellbind Temp 1
+scoreboard players set #did_spellbind Temp 1
 
 # Update displays
 function exigence:deck/update_card_counter

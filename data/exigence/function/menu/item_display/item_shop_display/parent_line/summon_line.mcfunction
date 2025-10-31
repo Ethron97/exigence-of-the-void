@@ -16,10 +16,10 @@
 #$say summoning line $(texture) $(thickness) $(offset) $(length)
 
 # Summon block dispay
-execute store result score random Random run random value 1..2
+execute store result score #random Random run random value 1..2
 # This small offset determines whether the block display is misaligned to the left, or to the right. So we turned it into a feature.
-$execute if score random Random matches 1 run summon minecraft:block_display ^0.0 ^ ^ {Tags:["NewMenuLine","MenuLine"],block_state:{Name:"$(texture)"}}
-$execute if score random Random matches 2 run summon minecraft:block_display ^0.0 ^ ^ {Tags:["NewMenuLine","MenuLine"],block_state:{Name:"$(texture)"}}
+$execute if score #random Random matches 1 run summon minecraft:block_display ^0.0 ^ ^ {Tags:["NewMenuLine","MenuLine"],block_state:{Name:"$(texture)"}}
+$execute if score #random Random matches 2 run summon minecraft:block_display ^0.0 ^ ^ {Tags:["NewMenuLine","MenuLine"],block_state:{Name:"$(texture)"}}
 
 $scoreboard players set #compare IDID $(id)
 

@@ -19,5 +19,4 @@ execute if entity @s[tag=Tutorial] in exigence:tutorial if score Step Tutorial m
 execute as @e[distance=..3,type=minecraft:marker,tag=NewRavagerGlass] run function exigence:game/other/ravager_glass/marker_data
 
 # Give player score
-scoreboard players add @s[tag=!Tutorial] cr_ravagerGlass 1
-scoreboard players add @s[tag=!Tutorial] t_ravagerGlass 1
+scoreboard players add @s[tag=!Tutorial] profile.data.gameplay.cr.ravager_glass 1

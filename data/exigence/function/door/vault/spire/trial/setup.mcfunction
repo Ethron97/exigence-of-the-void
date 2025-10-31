@@ -31,4 +31,4 @@ summon block_display -355.5 154.5 -9.5 {Glowing:1b,Tags:["SpireTrialSetup","Spir
 team join Hazard @e[type=block_display,tag=SpireWarning]
 
 # Replace fire with soulfire
-execute if entity @a[scores={VaultCode=5},tag=Crucible] run fill -363 158 -3 -349 158 -17 minecraft:soul_soil replace minecraft:chiseled_tuff
+execute if entity @a[scores={game.player.vault_code=5},tag=Crucible] run fill -363 158 -3 -349 158 -17 minecraft:soul_soil replace minecraft:chiseled_tuff

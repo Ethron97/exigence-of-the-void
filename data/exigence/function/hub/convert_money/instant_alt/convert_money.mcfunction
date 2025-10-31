@@ -14,9 +14,9 @@ tag @a[tag=ConvertingCoinsAlt] remove ConvertingCoinsAlt
 tag @s add ConvertingCoinsAlt
 
 # Reset scores
-scoreboard players set CoinsConverted CoinsToConvertAlt 0
-scoreboard players set MoneyConverted CoinsToConvertAlt 0
+scoreboard players set coins.converted hub.coin_conversion_alt 0
+scoreboard players set money.converted hub.coin_conversion_alt 0
 
 # Start recursion
-execute if score Coins CoinsToConvertAlt matches 5.. run function exigence:hub/convert_money/instant_alt/private/loop
-execute if score Coins CoinsToConvertAlt matches ..4 run tag @a[tag=ConvertingCoinsAlt] remove ConvertingCoinsAlt
+execute if score coins.converting hub.coin_conversion_alt matches 5.. run function exigence:hub/convert_money/instant_alt/private/loop
+execute if score coins.converting hub.coin_conversion_alt matches ..4 run tag @a[tag=ConvertingCoinsAlt] remove ConvertingCoinsAlt

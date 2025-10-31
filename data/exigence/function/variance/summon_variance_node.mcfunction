@@ -11,7 +11,7 @@ execute as @e[type=minecraft:armor_stand,tag=NewNode] run tag @s add VarianceNod
 team join Variance @e[type=minecraft:armor_stand,tag=NewNode]
 
 # Set from data
-$scoreboard players set @e[type=minecraft:armor_stand,tag=NewNode] MaxNodeState $(max_node_state)
+$scoreboard players set @e[type=minecraft:armor_stand,tag=NewNode] Maxgame.node.node_state $(max_node_state)
 
 # Glow if debug on
 execute if data storage exigence:debug {variance:1} as @e[type=minecraft:armor_stand,tag=VarianceNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}

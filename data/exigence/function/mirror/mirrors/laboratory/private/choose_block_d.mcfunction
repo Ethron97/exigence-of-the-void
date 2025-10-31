@@ -1,4 +1,4 @@
-execute store result score out Random run random value 0..1
+execute store result score #out Random run random value 0..1
 function exigence:mirror/mirrors/laboratory/choose_block
-scoreboard players remove StartX MirrorSetup 3
-scoreboard players add StartY MirrorSetup 1
+scoreboard players remove Start.X game.mirror.setup 3
+scoreboard players add Start.Y game.mirror.setup 1

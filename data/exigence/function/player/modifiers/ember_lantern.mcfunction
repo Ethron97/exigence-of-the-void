@@ -5,4 +5,4 @@
 
 #=============================================================================================================
 
-execute as @e[distance=..10,type=minecraft:item,tag=Ember] run scoreboard players operation @s GlowRemaining > 20 number
+execute as @e[distance=..10,type=minecraft:item,tag=Ember] run scoreboard players operation @s game.entity.glow_remaining > 20 number

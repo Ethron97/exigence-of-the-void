@@ -13,10 +13,10 @@
 $summon minecraft:armor_stand ~ ~ ~ {Invisible:0b,Tags:["MenuAnchor"],NoGravity:1b,Rotation:$(Rotation)}
 
 # Execute sub function at anchor
-$execute at @e[type=minecraft:armor_stand,tag=MenuAnchor] run function exigence:menu/$(menu_path) {Rotation:'$(Rotation)'}
+$execute at @e[distance=..1,type=minecraft:armor_stand,tag=MenuAnchor] run function exigence:menu/$(menu_path) {Rotation:'$(Rotation)'}
 
 # Remove tags
 tag @e[type=minecraft:item_display,tag=NewItemDisplays] remove NewItemDisplays
 
 # Kill menu anchor
-kill @e[type=minecraft:armor_stand,tag=MenuAnchor]
+kill @e[distance=..1,type=minecraft:armor_stand,tag=MenuAnchor]

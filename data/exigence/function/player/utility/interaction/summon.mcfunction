@@ -2,7 +2,7 @@
 # Called from get_interaction if it did not find an existing one for this playerid
 
 ## CONSTRAINTS
-#   #compare PlayerID set
+#   #compare game.entity.profile_id set
 #   AS/AT PlayerNode
 
 #========================================================================================================
@@ -11,7 +11,7 @@
 summon interaction ~ ~ ~ {Tags:["PlayerInteraction","FunctionInteraction","NEWI"],response:true}
 
 # Copy player id score
-execute as @e[distance=..1,type=interaction,tag=NEWI] run scoreboard players operation @s PlayerID = #compare PlayerID
+execute as @e[distance=..1,type=interaction,tag=NEWI] run scoreboard players operation @s game.entity.profile_id = #compare game.entity.profile_id
 
 # Remove local tag
 execute as @e[distance=..1,type=interaction,tag=NEWI] run tag @s remove NEWI

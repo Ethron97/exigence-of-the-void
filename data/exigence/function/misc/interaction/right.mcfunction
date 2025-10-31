@@ -6,6 +6,8 @@
 
 #=============================================================================================================
 
+#say right
+
 # Check for sub-function
 execute as @s[tag=FunctionInteraction] run function exigence:misc/interaction/function_right
 

@@ -7,12 +7,12 @@
 #======================================================================================================
 
 # Get coordinates
-execute store result score x TempCoords run data get entity @s Pos[0]
-execute store result score y TempCoords run data get entity @s Pos[1]
-execute store result score z TempCoords run data get entity @s Pos[2]
-execute store result storage exigence:compass x int 1 run scoreboard players get x TempCoords
-execute store result storage exigence:compass y int 1 run scoreboard players get y TempCoords
-execute store result storage exigence:compass z int 1 run scoreboard players get z TempCoords
+execute store result score x temp_coords run data get entity @s Pos[0]
+execute store result score y temp_coords run data get entity @s Pos[1]
+execute store result score z temp_coords run data get entity @s Pos[2]
+execute store result storage exigence:compass x int 1 run scoreboard players get x temp_coords
+execute store result storage exigence:compass y int 1 run scoreboard players get y temp_coords
+execute store result storage exigence:compass z int 1 run scoreboard players get z temp_coords
 data modify storage exigence:compass name set value {text:"Portal Compass",color:"dark_purple",italic:false}
 data modify storage exigence:compass lore set value []
 data modify storage exigence:compass lore append value [{text:"Points towards exit portal",color:"gray",italic:false}]

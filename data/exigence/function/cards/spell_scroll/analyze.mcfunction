@@ -1,1 +1,1 @@
-scoreboard players add Spellbind DeckAnalysis 1
+scoreboard players add Cards.Spellbind deck.analysis 1

@@ -29,14 +29,7 @@ scoreboard players set @s dead 0
 # Playsound
 execute at @s run playsound minecraft:block.respawn_anchor.set_spawn ambient @a ~ ~ ~ 3 1
 
-# Animate
-# Summon two allays, or however many
-#execute at @s run summon minecraft:allay ~1 ~2 ~ {NoAI:1,Tags:["ReviveAllay1","ReviveAllay"]}
-#execute at @s run summon minecraft:allay ~-1 ~2 ~ {NoAI:1,Tags:["ReviveAllay2","ReviveAllay"]}
-#scoreboard players set @s Respawning 100
-#function exigence:player/death/private/animate
-
-execute if entity @s[scores={mod_WaterCrystal=1}] run effect give @s dolphins_grace infinite 0 true
+execute if entity @s[scores={game.player.mod.water_crystal=1}] run effect give @s dolphins_grace infinite 0 true
 
 # Glow
 effect give @s minecraft:glowing infinite 0 true

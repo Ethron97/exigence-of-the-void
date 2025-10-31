@@ -45,7 +45,7 @@ fill -335 10 -238 -335 12 -238 sculk
 setblock -323 16 -239 sculk
 
 # Increase scores
-scoreboard players add @a[tag=ActivePlayer] t_maxMenaceReached 1
+scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.cr.max_menace_reached 1
 
 # Clear all spellbound cards, since they can't play them at max menace anyways.
 execute as @a[tag=ActivePlayer] run function exigence:player/clear/all_spellbound {type:'hotbar',index:0}

@@ -13,7 +13,7 @@ execute store result storage exigence:treasure_drop working_y2 int 1 run scorebo
 execute store result storage exigence:treasure_drop working_z2 int 1 run scoreboard players get @s TreasureBBZ2
 
 # Randomize drop location
-scoreboard players set IterationCurrent TreasureDropWorking 0
+scoreboard players set Iteration.Current node.treasure.drop_working 0
 data modify storage exigence:treasure_drop verify set value 0
 function exigence:treasure/node/randomize_drop_pos with storage exigence:treasure_drop
 
@@ -21,9 +21,9 @@ function exigence:treasure/node/randomize_drop_pos with storage exigence:treasur
 $execute if data storage exigence:treasure_drop {verify:1} at @e[type=marker,tag=TreasureWalking] run function $(function) with storage exigence:treasure_drop
 execute if data storage exigence:treasure_drop {verify:0} run say Failed to drop treasure.
 
-# Update HighestTreasureIterations
-scoreboard players operation @s HighestTreasureIterations > IterationCurrent TreasureDropWorking
-scoreboard players operation @s TreasureWalkDepth > @e[type=minecraft:marker,tag=TreasureWalking,limit=1] TreasureWalkDepth
+# Update node.treasure.data.highest_drop_tries
+scoreboard players operation @s node.treasure.data.highest_drop_tries > Iteration.Current node.treasure.drop_working
+scoreboard players operation @s node.treasure.treasure_walk_depth > @e[type=minecraft:marker,tag=TreasureWalking,limit=1] node.treasure.treasure_walk_depth
 
 # Remove marker
 kill @e[type=minecraft:marker,tag=TreasureWalking]

@@ -6,8 +6,8 @@
 #================================================================================================
 
 # Spellsling ENCHANTED BOOK bonus
-execute if score FromSpellsling EffectTemp matches 1 if score @s mod_EnchantedBook matches 1 run scoreboard players add AddingTime EffectTemp 1200
+execute if score et.FromSpellsling game.effect_temp matches 1 if score @s game.player.mod.enchanted_book matches 1 run scoreboard players add et.AddingTime game.effect_temp 1200
 
 # Potion CATALYST bonus
-execute if score FromPotion EffectTemp matches 1 if score @s mod_Catalyst matches 1.. run scoreboard players operation AddingTime EffectTemp *= 2 number
-execute if score FromPotion EffectTemp matches 1 if score @s mod_Catalyst matches 1.. run scoreboard players operation SetTime EffectTemp *= 2 number
+execute if score et.FromPotion game.effect_temp matches 1 if score @s game.player.mod.catalyst matches 1.. run scoreboard players operation et.AddingTime game.effect_temp *= 2 number
+execute if score et.FromPotion game.effect_temp matches 1 if score @s game.player.mod.catalyst matches 1.. run scoreboard players operation et.SetTime game.effect_temp *= 2 number

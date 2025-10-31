@@ -9,12 +9,17 @@
 
 # PROLOGUE
 
+# PROFILE SELECTOR (cyan stained glass)
+execute as @s[tag=ProfileSelecting] at @s if block ~ ~ ~ minecraft:cyan_stained_glass_pane run function exigence:hub/profile_selector/access/try_leave
+execute as @s[tag=!ProfileSelecting] at @s if block ~ ~ ~ minecraft:cyan_stained_glass_pane run function exigence:hub/profile_selector/access/try_enter
+
+# ITEM SHOP (orange stained glass)
+#execute as @s[tag=ItemShopping] at @s if block ~ ~ ~ minecraft:orange_stained_glass_pane run function exigence:hub/item_shop/door/try_leave
+#execute as @s[tag=!ItemShopping,tag=!Lockerroom,tag=!Predungeon,tag=!EmberViewing] at @s if block ~ ~ ~ minecraft:orange_stained_glass_pane run function exigence:hub/item_shop/door/try_enter
 
 # If magenta stained glass (locker room):
 #execute as @s[tag=Lockerroom] at @s if block ~ ~ ~ minecraft:magenta_stained_glass_pane run function exigence:hub/locker_room/leave_room
 #execute as @s[tag=!Lockerroom,tag=!ItemShopping,tag=!EmberViewing] at @s if block ~ ~ ~ minecraft:magenta_stained_glass_pane run function exigence:hub/locker_room/try_enter_room
-
-
 
 # Predungeon
 #execute as @s[tag=Lockerroom,tag=!Predungeon,tag=!Coop] at @s if block ~ ~ ~ minecraft:purple_stained_glass_pane run function exigence:hub/predungeon/try_enter_room
@@ -29,13 +34,6 @@
 # If Coop in predungeon, and no one is in lockerroom, return to lockerroom
 #execute as @s[tag=!Lockerroom,tag=Coop] at @s unless entity @a[tag=Lockerroom] if block ~ ~ ~ minecraft:purple_stained_glass_pane run function exigence:hub/predungeon/coop_leave
 
-
-
-
-# If orange stained glass:
-# Item shop
-#execute as @s[tag=ItemShopping] at @s if block ~ ~ ~ minecraft:orange_stained_glass_pane run function exigence:hub/item_shop/door/try_leave
-#execute as @s[tag=!ItemShopping,tag=!Lockerroom,tag=!Predungeon,tag=!EmberViewing] at @s if block ~ ~ ~ minecraft:orange_stained_glass_pane run function exigence:hub/item_shop/door/try_enter
 
 # Ember shop (viewing)
 #execute as @s[tag=EmberViewing] at @s if block ~ ~ ~ minecraft:light_blue_stained_glass_pane run function exigence:hub/ember_shop/door_viewing/try_leave

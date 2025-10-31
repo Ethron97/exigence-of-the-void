@@ -24,11 +24,11 @@ execute unless items entity @a[tag=HandleInteracting] weapon.mainhand #exigence:
 
 
 ## CHECK MATCH
-# Mark VaultHandleID for compare
-scoreboard players operation #compare VaultHandleID = @s VaultHandleID
+# Mark game.vault.handle.id for compare
+scoreboard players operation #compare game.vault.handle.id = @s game.vault.handle.id
 
 # Get item display with item
-execute as @e[type=minecraft:item_display,tag=VaultHandle] if score @s VaultHandleID = #compare VaultHandleID run tag @s add HandleInteracting
+execute as @e[type=minecraft:item_display,tag=VaultHandle] if score @s game.vault.handle.id = #compare game.vault.handle.id run tag @s add HandleInteracting
 
 # Call sub function that matches the trim the player is holding
 data modify storage exigence:door vault_interacting set from entity @e[type=minecraft:item_display,tag=VaultHandle,tag=HandleInteracting,limit=1] item.id

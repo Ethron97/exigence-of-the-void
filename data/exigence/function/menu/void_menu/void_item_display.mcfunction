@@ -26,14 +26,14 @@ execute as @e[type=minecraft:item,tag=NVS] run data modify entity @s Item.compon
 $execute as @e[type=minecraft:item,tag=NVS] run data modify entity @s Item.components."minecraft:custom_data".money_cost set value $(money_cost)
 
 # Copy void shop id to data
-execute as @e[type=minecraft:item,tag=NVS] store result entity @s Item.components."minecraft:custom_data".VoidShopID int 1 run scoreboard players get #highest VoidShopID
+execute as @e[type=minecraft:item,tag=NVS] store result entity @s Item.components."minecraft:custom_data".VoidShopID int 1 run scoreboard players get #highest game.void_merchant.shop_id
 
 # Call load_item_display as summoned item
 #   This handles copying the data and summoning item display
 $execute as @e[type=minecraft:item,tag=NVS] run function exigence:menu/load_item_display {menu_tag:'MenuVoid',Rotation:'$(Rotation)',scale:'0.3',hover_scale:'0.4'}
 
-# Assign VoidShopID
-scoreboard players operation @e[type=minecraft:item_display,tag=NewItemDisplay] VoidShopID = #highest VoidShopID
+# Assign game.void_merchant.shop_id
+scoreboard players operation @e[type=minecraft:item_display,tag=NewItemDisplay] game.void_merchant.shop_id = #highest game.void_merchant.shop_id
 
 # Give ItemShopDisplay tag
 tag @e[type=minecraft:item_display,tag=NewItemDisplay] add VoidShopDisplay

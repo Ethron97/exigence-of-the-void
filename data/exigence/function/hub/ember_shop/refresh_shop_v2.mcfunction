@@ -25,7 +25,7 @@ scoreboard players operation #BonusCards EmberShop = BonusCards EmberShop
 execute if score #BonusCards EmberShop matches 1.. run function exigence:hub/ember_shop/private/bonus_cards
 
 # Void Crystal bonus cards
-execute as @a[tag=EmberShopping,scores={mod_VoidCrystal=1}] run function exigence:hub/ember_shop/private/bonus_card_void
+execute as @a[tag=EmberShopping,scores={game.player.mod.void_crystal=1}] run function exigence:hub/ember_shop/private/bonus_card_void
 
 # Increase cost of next refresh
 scoreboard players add EmberShopRefresh EmberShopCost 1

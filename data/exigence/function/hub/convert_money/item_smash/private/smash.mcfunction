@@ -4,8 +4,8 @@
 # in * in_sc / get_length(in)
 #scoreboard players set in_sc nnmath_vec 100
 # Final - start
-scoreboard players operation in0.x nnmath_vec = average_x CoinConvertMath
-scoreboard players operation in0.y nnmath_vec = average_z CoinConvertMath
+scoreboard players operation in0.x nnmath_vec = average.x hub.coin_conversion.math
+scoreboard players operation in0.y nnmath_vec = average.z hub.coin_conversion.math
 scoreboard players operation in0.x nnmath_vec -= @s X
 scoreboard players operation in0.y nnmath_vec -= @s Z
 #function nnmath:vec/2/set_length/exe

@@ -19,17 +19,17 @@ execute if score Difficulty DungeonRun matches 5 run tellraw @s [{text:"✪✪�
 execute if data storage exigence:dungeon {escape_portal:1} run tellraw @s [{text:"✔ Victory",italic:false,bold:true,color:"green"}]
 execute if data storage exigence:dungeon {escape_portal:0} run tellraw @s [{text:"✖ Defeat",italic:false,bold:true,color:"red"}]
 
-# If lost, show what killed you
-execute if data storage exigence:dungeon {escape_portal:0} if score @s cr_killedByBlaze matches 1.. run tellraw @s [{text:"   Killed by Blaze",italic:true,bold:false,color:"red"}]
-execute if data storage exigence:dungeon {escape_portal:0} if score @s cr_killedByCreaking matches 1.. run tellraw @s [{text:"   Killed by Creaking",italic:true,bold:false,color:"red"}]
-execute if data storage exigence:dungeon {escape_portal:0} if score @s cr_killedByRavager matches 1.. run tellraw @s [{text:"   Killed by Ravager",italic:true,bold:false,color:"red"}]
-execute if data storage exigence:dungeon {escape_portal:0} if score @s cr_killedByVex matches 1.. run tellraw @s [{text:"   Killed by Eyeball",italic:true,bold:false,color:"red"}]
-execute if data storage exigence:dungeon {escape_portal:0} if score @s cr_killedByWarden matches 1.. run tellraw @s [{text:"   Killed by Warden",italic:true,bold:false,color:"red"}]
-execute if data storage exigence:dungeon {escape_portal:0} if score @s cr_killedByWitch matches 1.. run tellraw @s [{text:"    Killed by Witch",italic:true,bold:false,color:"red"}]
-execute if data storage exigence:dungeon {escape_portal:0} if score @s cr_killedByWitherSkeleton matches 1.. run tellraw @s [{text:"   Killed by Wither Skeleton",italic:true,bold:false,color:"red"}]
-execute if data storage exigence:dungeon {escape_portal:0} if score @s cr_killedByDungeon matches 1.. run tellraw @s [{text:"   Killed by Dungeon",italic:true,bold:false,color:"red"}]
+# If lost, show what killed you(s)
+execute if data storage exigence:dungeon {escape_portal:0} if score @s profile.data.enemy.cr.killed_by_blaze matches 1.. run tellraw @s [{text:"   Killed by Blaze",italic:true,bold:false,color:"red"}]
+execute if data storage exigence:dungeon {escape_portal:0} if score @s profile.data.enemy.cr.killed_by_creaking matches 1.. run tellraw @s [{text:"   Killed by Creaking",italic:true,bold:false,color:"red"}]
+execute if data storage exigence:dungeon {escape_portal:0} if score @s profile.data.enemy.cr.killed_by_endermite matches 1.. run tellraw @s [{text:"   Killed by Endermite",italic:true,bold:false,color:"red"}]
+execute if data storage exigence:dungeon {escape_portal:0} if score @s profile.data.enemy.cr.killed_by_ravager matches 1.. run tellraw @s [{text:"   Killed by Ravager",italic:true,bold:false,color:"red"}]
+execute if data storage exigence:dungeon {escape_portal:0} if score @s profile.data.enemy.cr.killed_by_vex matches 1.. run tellraw @s [{text:"   Killed by Eyeball",italic:true,bold:false,color:"red"}]
+execute if data storage exigence:dungeon {escape_portal:0} if score @s profile.data.enemy.cr.killed_by_warden matches 1.. run tellraw @s [{text:"   Killed by Warden",italic:true,bold:false,color:"red"}]
+execute if data storage exigence:dungeon {escape_portal:0} if score @s profile.data.enemy.cr.killed_by_witch matches 1.. run tellraw @s [{text:"    Killed by Witch",italic:true,bold:false,color:"red"}]
+execute if data storage exigence:dungeon {escape_portal:0} if score @s profile.data.enemy.cr.killed_by_wither_skeleton matches 1.. run tellraw @s [{text:"   Killed by Wither Skeleton",italic:true,bold:false,color:"red"}]
 
-
+execute if data storage exigence:dungeon {escape_portal:0} if score @s profile.data.enemy.cr.killed_by_dungeon matches 1.. run tellraw @s [{text:"   Killed by Dungeon",italic:true,bold:false,color:"red"}]
 # Dungeon stats
 tellraw @s [{text:"\n(Hover to show details)",italic:false,bold:false,color:"dark_gray"}]
 function exigence:player/stats/berry/cr

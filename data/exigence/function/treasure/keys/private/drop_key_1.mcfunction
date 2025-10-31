@@ -6,4 +6,4 @@
 #==========================================================================================================
 
 tag @s add KeyDropper
-function exigence:treasure/node/drop_treasure {function:"exigence:door/level/door_1/summon_key"}
+function exigence:treasure/node/drop_treasure {priority:1,function:"exigence:door/level/door_1/summon_key"}

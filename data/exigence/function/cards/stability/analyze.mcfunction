@@ -1,1 +1,1 @@
-scoreboard players remove Hazard DeckAnalysis 2
+scoreboard players remove other.Hazard deck.analysis 2

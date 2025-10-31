@@ -1,6 +1,6 @@
-execute if score Redify Temp matches 0 as @e[type=minecraft:marker,tag=Redifier] at @s run fill ~-150 ~ ~-150 ~150 ~1 ~150 minecraft:sculk replace #exigence:sculk_alt
-execute if score Redify Temp matches 1 as @e[type=minecraft:marker,tag=Redifier] at @s run fill ~-150 ~ ~-150 ~150 ~1 ~150 minecraft:bedrock replace minecraft:sculk
-execute if score Redify Temp matches 2 as @e[type=minecraft:marker,tag=Redifier] at @s run fill ~-150 ~ ~-150 ~150 ~1 ~150 minecraft:dried_kelp_block replace #exigence:sculk
+execute if score #Redify Temp matches 0 as @e[type=minecraft:marker,tag=Redifier] at @s run fill ~-150 ~ ~-150 ~150 ~1 ~150 minecraft:sculk replace #exigence:sculk_alt
+execute if score #Redify Temp matches 1 as @e[type=minecraft:marker,tag=Redifier] at @s run fill ~-150 ~ ~-150 ~150 ~1 ~150 minecraft:bedrock replace minecraft:sculk
+execute if score #Redify Temp matches 2 as @e[type=minecraft:marker,tag=Redifier] at @s run fill ~-150 ~ ~-150 ~150 ~1 ~150 minecraft:dried_kelp_block replace #exigence:sculk
 
 # Teleport up
 execute as @e[type=minecraft:marker,tag=Redifier] at @s run tp @s ~ ~2 ~

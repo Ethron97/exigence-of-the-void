@@ -1,2 +1,2 @@
-scoreboard players add CardsInstant DeckAnalysis 1
-scoreboard players add speed2Seconds DeckAnalysis 60
+scoreboard players add CardsCards.Instant deck.analysis 1
+scoreboard players add e.speed2Seconds deck.analysis 60

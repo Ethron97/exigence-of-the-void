@@ -10,8 +10,8 @@
 summon armor_stand ~ ~ ~ {Tags:["NewCards","Card","NewCard"],ShowArms:1b,NoGravity:1b,CustomNameVisible:0b}
 
 # Wrap check
-execute store result score @s TempCoords run data get entity @s Pos[0] 10
-execute if score @s TempCoords matches -2925 run teleport @s ~-10 ~ ~1
+execute store result score @s temp_coords run data get entity @s Pos[0] 10
+execute if score @s temp_coords matches -2925 run teleport @s ~-10 ~ ~1
 
 # Move forward
 execute at @s run teleport @s ~1 ~ ~

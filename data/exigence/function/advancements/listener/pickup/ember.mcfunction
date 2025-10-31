@@ -6,7 +6,7 @@ advancement revoke @s only exigence:listener/pickup/ember
 # TUTORIAL
 clear @s[tag=Tutorial] minecraft:soul_campfire
 execute as @s[tag=Tutorial] run function exigence:player/give/ember
-execute as @s[tag=Tutorial] run scoreboard players add @s cr_embersPickedUp 1
+execute as @s[tag=Tutorial] run scoreboard players add @s profile.data.ember.cr.embers_picked_up 1
 execute as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/flow/step
 
 # Remove the advancement early (thereby cancelling the rest of this function) if the game is not active
@@ -32,13 +32,8 @@ execute if score #stacksize Temp matches 3.. run function exigence:player/give/e
 execute if score #stacksize Temp matches 4.. run function exigence:player/give/ember
 
 # Increase scores
-scoreboard players operation @s t_embersPickedUp += #stacksize Temp
-scoreboard players operation @s cr_embersPickedUp += #stacksize Temp
-execute if score @s ActiveLevel matches 1 run scoreboard players operation @s t_embersPickedUpL1 += #stacksize Temp
-execute if score @s ActiveLevel matches 1 run scoreboard players operation @s cr_embersPickedUpL1 += #stacksize Temp
-execute if score @s ActiveLevel matches 2 run scoreboard players operation @s t_embersPickedUpL2 += #stacksize Temp
-execute if score @s ActiveLevel matches 2 run scoreboard players operation @s cr_embersPickedUpL2 += #stacksize Temp
-execute if score @s ActiveLevel matches 3 run scoreboard players operation @s t_embersPickedUpL3 += #stacksize Temp
-execute if score @s ActiveLevel matches 3 run scoreboard players operation @s cr_embersPickedUpL3 += #stacksize Temp
-execute if score @s ActiveLevel matches 4 run scoreboard players operation @s t_embersPickedUpL4 += #stacksize Temp
-execute if score @s ActiveLevel matches 4 run scoreboard players operation @s cr_embersPickedUpL4 += #stacksize Temp
+scoreboard players operation @s profile.data.ember.cr.embers_picked_up += #stacksize Temp
+execute if score @s game.player.active_level matches 1 run scoreboard players operation @s profile.data.ember.cr.embers_picked_up_L1 += #stacksize Temp
+execute if score @s game.player.active_level matches 2 run scoreboard players operation @s profile.data.ember.cr.embers_picked_up_L2 += #stacksize Temp
+execute if score @s game.player.active_level matches 3 run scoreboard players operation @s profile.data.ember.cr.embers_picked_up_L3 += #stacksize Temp
+execute if score @s game.player.active_level matches 4 run scoreboard players operation @s profile.data.ember.cr.embers_picked_up_L4 += #stacksize Temp

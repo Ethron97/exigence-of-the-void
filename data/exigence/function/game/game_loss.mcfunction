@@ -21,18 +21,18 @@ execute as @a[tag=ActivePlayer] run function exigence:player/clear/glint
 
 
 # COINKEEP PART 1: Save how many coins they had
-execute as @a[tag=ActivePlayer] store result score @s CoinsToConvert run clear @s minecraft:gold_nugget
+execute as @a[tag=ActivePlayer] store result score @s hub.coin_conversion run clear @s minecraft:gold_nugget
 # Add combine all players coins into one pile
-scoreboard players set Coins CoinsToConvert 0
-execute as @a[tag=ActivePlayer] run scoreboard players operation Coins CoinsToConvert += @s CoinsToConvert
-scoreboard players reset @a[tag=ActivePlayer] CoinsToConvert
+scoreboard players set coins.converting hub.coin_conversion 0
+execute as @a[tag=ActivePlayer] run scoreboard players operation coins.converting hub.coin_conversion += @s hub.coin_conversion
+scoreboard players reset @a[tag=ActivePlayer] hub.coin_conversion
 
 # Clear inventory
 clear @a[tag=ActivePlayer] #exigence:win_clear
 clear @a[tag=ActivePlayer] #exigence:loss_clear
-clear @a[tag=ActivePlayer,scores={mod_VoidBundle=0}] #exigence:consumable
+clear @a[tag=ActivePlayer,scores={game.player.mod.void_bundle=0}] #exigence:consumable
 # If VaultKeep is 1, do not clear vault keys
-clear @a[tag=ActivePlayer,scores={mod_VaultKeep=0}] #exigence:trim_templates
+clear @a[tag=ActivePlayer,scores={game.player.mod.vault_keep=0}] #exigence:trim_templates
 
 # COINKEEP PART 2 - start after we've cleared their junk
 # Choose lesser of how many coins they picked up vs how many CoinKeep they have

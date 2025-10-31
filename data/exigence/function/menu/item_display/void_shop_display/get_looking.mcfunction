@@ -19,8 +19,8 @@ execute at @a[tag=VoidShopping] as @e[type=minecraft:item_display,tag=HoverCandi
 
 
 # Copy IDID to foreign key so we know which IDID which player is looking at
-scoreboard players operation @s LookingAtIDID = @e[type=minecraft:item_display,tag=HoverCandidate,tag=Hover,limit=1] IDID
-scoreboard players operation #compare IDID = @s LookingAtIDID
+scoreboard players operation @s shop.player.looking_at_idid = @e[type=minecraft:item_display,tag=HoverCandidate,tag=Hover,limit=1] IDID
+scoreboard players operation #compare IDID = @s shop.player.looking_at_idid
 
 # If looking at was found, move here
 #execute at @e[type=minecraft:item_display,tag=HoverCandidate,tag=Hover,limit=1] positioned ~ ~-0.5 ~ run function exigence:player/utility/interaction/tp_here

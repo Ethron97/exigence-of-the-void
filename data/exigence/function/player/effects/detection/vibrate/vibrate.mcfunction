@@ -13,12 +13,12 @@ execute store result storage exigence:vibration y int 1 run data get entity @s P
 execute store result storage exigence:vibration z int 1 run data get entity @s Pos[2] 1
 
 # Calculate distance
-#   Outputs score "distance Temp"
+#   Outputs score "#distance Temp"
 function exigence:player/utility/get_distance/64
 
-scoreboard players operation distance Temp *= 2 number
+scoreboard players operation #distance Temp *= 2 number
 
-execute store result storage exigence:vibration ticks int 1 run scoreboard players get distance Temp
+execute store result storage exigence:vibration ticks int 1 run scoreboard players get #distance Temp
 
 # Call macro
 execute positioned ~ ~1.0 ~ run function exigence:player/effects/detection/vibrate/macro with storage exigence:vibration

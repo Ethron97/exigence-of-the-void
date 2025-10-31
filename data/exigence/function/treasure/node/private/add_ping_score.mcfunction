@@ -11,5 +11,4 @@
 # DEBUG
 #$say Pinging $(resolving)
 
-$scoreboard players add @s cr_treasureping_$(resolving) 1
-$scoreboard players add @s t_treasureping_$(resolving) 1
+$scoreboard players add @s profile.data.treasure.cr.ping_$(resolving) 1

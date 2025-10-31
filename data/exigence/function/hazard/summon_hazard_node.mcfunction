@@ -12,7 +12,7 @@ execute as @e[type=minecraft:armor_stand,tag=NewNode] run tag @s add HazardNode
 team join Hazard @e[type=minecraft:armor_stand,tag=NewNode]
 
 # Set max node state default (2)
-scoreboard players set @e[type=minecraft:armor_stand,tag=NewNode] MaxNodeState 2
+scoreboard players set @e[type=minecraft:armor_stand,tag=NewNode] Maxgame.node.node_state 2
 
 # Glow if debiug
 execute if data storage exigence:debug {hazard:1} as @e[type=minecraft:armor_stand,tag=HazardNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}

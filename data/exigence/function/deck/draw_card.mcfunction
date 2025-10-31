@@ -11,7 +11,7 @@ execute unless entity @e[type=minecraft:armor_stand,tag=Drawing] run function ex
 execute as @e[type=minecraft:armor_stand,tag=Drawing] run function exigence:deck/draw_card_resolve
 
 # Update last played bossbar
-#execute if entity @a[tag=ActivePlayer,scores={s_cardDisplayBossbar=1}] run 
+#execute if entity @a[tag=ActivePlayer,scores={career.settings.card_display_bossbar=1}] run 
 function exigence:deck/update_last_played_bossbar with storage exigence:last_card
 
 # Update displays

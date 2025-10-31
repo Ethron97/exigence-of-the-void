@@ -1,1 +1,1 @@
-scoreboard players set GreenCost Resources 5
+scoreboard players set Green.Cost game.resources 5

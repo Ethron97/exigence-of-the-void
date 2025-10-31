@@ -1,1 +1,1 @@
-scoreboard players remove Menace DeckAnalysis 2
+scoreboard players remove other.Menace deck.analysis 2

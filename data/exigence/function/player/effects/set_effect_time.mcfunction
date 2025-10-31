@@ -7,13 +7,13 @@
 #$say Set effect $(effect) $(duration)
 
 # Setup scores
-scoreboard players set FromCard EffectTemp 0
-scoreboard players set FromSpellsling EffectTemp 0
-scoreboard players set @s mod_calc_Heighten 1
+scoreboard players set et.FromCard game.effect_temp 0
+scoreboard players set et.FromSpellsling game.effect_temp 0
+scoreboard players set @s game.player.calc_heighten 1
 
 # Store given duration in temp variable
-scoreboard players set BaseTime EffectTemp 0
-$scoreboard players set SetTime EffectTemp $(duration)
+scoreboard players set et.BaseTime game.effect_temp 0
+$scoreboard players set et.SetTime game.effect_temp $(duration)
 
 # Update in-game player effects
 $function exigence:player/effects/private/update_effect/$(effect)

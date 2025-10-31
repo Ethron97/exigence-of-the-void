@@ -1,7 +1,0 @@
-{
-    "criteria": {
-      "shop_unlock_dust_heighten": {
-        "trigger": "minecraft:impossible"
-      }
-    }
-  }

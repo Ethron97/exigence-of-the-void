@@ -225,19 +225,19 @@ function exigence:deck/process/process_card {card_name:"dev_freesources",display
 
 # ========================================================================================================================
 
-scoreboard players set #Highest CardsPlayed 0
+scoreboard players set #Highest game.cards_played 0
 # Play all INSTANT cards
 execute as @e[type=minecraft:armor_stand,tag=Card,tag=Instant] run function exigence:deck/play_instant with entity @s equipment.mainhand.components."minecraft:custom_data"
 execute as @e[type=minecraft:armor_stand,tag=Card,tag=Instant] run tag @s add Played
 execute as @e[type=minecraft:armor_stand,tag=Card,tag=Instant] run function exigence:cards/add_sidebar_display_instant
-#scoreboard players set #Highest CardsPlayed 0
+#scoreboard players set #Highest game.cards_played 0
 
 # Add ReturnCard to all non-void cards
 #   Only cards added to the deck at the very start will ever get returned, so we can load new cards freely during the run without worrying about it.
-tag @e[type=minecraft:armor_stand,tag=Card,scores={IsVoid=0}] add ReturnCard
+tag @e[type=minecraft:armor_stand,tag=Card,scores={deck.card.is_void=0}] add ReturnCard
 
 # If void debug on, return void cards
-execute if data storage exigence:debug {void:1} run tag @e[type=minecraft:armor_stand,tag=Card,scores={IsVoid=1}] add ReturnCard
+execute if data storage exigence:debug {void:1} run tag @e[type=minecraft:armor_stand,tag=Card,scores={deck.card.is_void=1}] add ReturnCard
 
 
 ## OBLIVION

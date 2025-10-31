@@ -13,11 +13,11 @@ execute as @e[type=minecraft:item_display,tag=VoidShopDisplay,tag=Hover] run fun
 tag @e[type=minecraft:item_display,tag=HoverCandidate] remove HoverCandidate
 
 # Detect which item_display(s) the player is looking at
-scoreboard players set @a[tag=VoidShopping] LookingAtIDID 0
+scoreboard players set @a[tag=VoidShopping] shop.player.looking_at_idid 0
 execute as @a[tag=VoidShopping] run function exigence:menu/item_display/void_shop_display/get_looking
 
 # Reset interaction for playres that are not looking
-execute as @a[tag=VoidShopping,scores={LookingAtIDID=0}] run function exigence:player/utility/interaction/tp_home
+execute as @a[tag=VoidShopping,scores={shop.player.looking_at_idid=0}] run function exigence:player/utility/interaction/tp_home
 
 # Unhover old entity (unless it is the same as current)
 execute as @e[type=minecraft:item_display,tag=VoidShopDisplay,tag=OldHover,tag=!Hover] run function exigence:menu/item_display/unhover with entity @s item.components."minecraft:custom_data"
@@ -53,7 +53,7 @@ execute as @e[type=minecraft:enderman,tag=VoidMerchant,tag=Loaded] at @s unless 
 # Plus, multiple players doesn't seem to break anything. The second player just can't shop.
 
 # Reduce shop purchase cooldown by 1
-scoreboard players remove @e[type=minecraft:item_display,tag=VoidShopDisplay,scores={ShopPurchaseCooldown=1..}] ShopPurchaseCooldown 1
+scoreboard players remove @e[type=minecraft:item_display,tag=VoidShopDisplay,scores={shop.frame.purchase_cooldown=1..}] shop.frame.purchase_cooldown 1
 
 # If at least one void menu is loaded, tick display
 execute if entity @e[type=minecraft:enderman,tag=VoidMerchant,tag=Loaded] run function exigence:menu/void_menu/void_menu_tick_displays

@@ -32,23 +32,15 @@ execute as @e[type=minecraft:item,tag=NewCoin] at @s run function exigence:treas
 
 
 # Increment coin dropped scores
-execute if score #Bonus Temp matches 0 if score @s ObjectLevel matches 1 run scoreboard players operation @a[tag=ActivePlayer] cr_coinsDroppedL1 += #stacksize Temp
-execute if score #Bonus Temp matches 0 if score @s ObjectLevel matches 2 run scoreboard players operation @a[tag=ActivePlayer] cr_coinsDroppedL2 += #stacksize Temp
-execute if score #Bonus Temp matches 0 if score @s ObjectLevel matches 3 run scoreboard players operation @a[tag=ActivePlayer] cr_coinsDroppedL3 += #stacksize Temp
-execute if score #Bonus Temp matches 0 if score @s ObjectLevel matches 4 run scoreboard players operation @a[tag=ActivePlayer] cr_coinsDroppedL4 += #stacksize Temp
-execute if score #Bonus Temp matches 0 if score @s ObjectLevel matches 1 run scoreboard players operation @a[tag=ActivePlayer] t_coinsDroppedL1 += #stacksize Temp
-execute if score #Bonus Temp matches 0 if score @s ObjectLevel matches 2 run scoreboard players operation @a[tag=ActivePlayer] t_coinsDroppedL2 += #stacksize Temp
-execute if score #Bonus Temp matches 0 if score @s ObjectLevel matches 3 run scoreboard players operation @a[tag=ActivePlayer] t_coinsDroppedL3 += #stacksize Temp
-execute if score #Bonus Temp matches 0 if score @s ObjectLevel matches 4 run scoreboard players operation @a[tag=ActivePlayer] t_coinsDroppedL4 += #stacksize Temp
+execute if score #Bonus Temp matches 0 if score @s ObjectLevel matches 1 run scoreboard players operation @a[tag=ActivePlayer] profile.data.treasure.cr.coins_dropped_L1 += #stacksize Temp
+execute if score #Bonus Temp matches 0 if score @s ObjectLevel matches 2 run scoreboard players operation @a[tag=ActivePlayer] profile.data.treasure.cr.coins_dropped_L2 += #stacksize Temp
+execute if score #Bonus Temp matches 0 if score @s ObjectLevel matches 3 run scoreboard players operation @a[tag=ActivePlayer] profile.data.treasure.cr.coins_dropped_L3 += #stacksize Temp
+execute if score #Bonus Temp matches 0 if score @s ObjectLevel matches 4 run scoreboard players operation @a[tag=ActivePlayer] profile.data.treasure.cr.coins_dropped_L4 += #stacksize Temp
 
-execute if score #Bonus Temp matches 1 if score @s ObjectLevel matches 1 run scoreboard players operation @a[tag=ActivePlayer] cr_coinsBonusDroppedL1 += #stacksize Temp
-execute if score #Bonus Temp matches 1 if score @s ObjectLevel matches 2 run scoreboard players operation @a[tag=ActivePlayer] cr_coinsBonusDroppedL2 += #stacksize Temp
-execute if score #Bonus Temp matches 1 if score @s ObjectLevel matches 3 run scoreboard players operation @a[tag=ActivePlayer] cr_coinsBonusDroppedL3 += #stacksize Temp
-execute if score #Bonus Temp matches 1 if score @s ObjectLevel matches 4 run scoreboard players operation @a[tag=ActivePlayer] cr_coinsBonusDroppedL4 += #stacksize Temp
-execute if score #Bonus Temp matches 1 if score @s ObjectLevel matches 1 run scoreboard players operation @a[tag=ActivePlayer] t_coinsBonusDroppedL1 += #stacksize Temp
-execute if score #Bonus Temp matches 1 if score @s ObjectLevel matches 2 run scoreboard players operation @a[tag=ActivePlayer] t_coinsBonusDroppedL2 += #stacksize Temp
-execute if score #Bonus Temp matches 1 if score @s ObjectLevel matches 3 run scoreboard players operation @a[tag=ActivePlayer] t_coinsBonusDroppedL3 += #stacksize Temp
-execute if score #Bonus Temp matches 1 if score @s ObjectLevel matches 4 run scoreboard players operation @a[tag=ActivePlayer] t_coinsBonusDroppedL4 += #stacksize Temp
+execute if score #Bonus Temp matches 1 if score @s ObjectLevel matches 1 run scoreboard players operation @a[tag=ActivePlayer] profile.data.treasure.cr.coins_bonus_dropped_L1 += #stacksize Temp
+execute if score #Bonus Temp matches 1 if score @s ObjectLevel matches 2 run scoreboard players operation @a[tag=ActivePlayer] profile.data.treasure.cr.coins_bonus_dropped_L2 += #stacksize Temp
+execute if score #Bonus Temp matches 1 if score @s ObjectLevel matches 3 run scoreboard players operation @a[tag=ActivePlayer] profile.data.treasure.cr.coins_bonus_dropped_L3 += #stacksize Temp
+execute if score #Bonus Temp matches 1 if score @s ObjectLevel matches 4 run scoreboard players operation @a[tag=ActivePlayer] profile.data.treasure.cr.coins_bonus_dropped_L4 += #stacksize Temp
 
 # Increase source-specific scores
 execute as @a[tag=ActivePlayer] run function exigence:treasure/node/coin/private/update_scores with storage exigence:treasure

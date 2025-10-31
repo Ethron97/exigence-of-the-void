@@ -22,7 +22,7 @@ execute at @s run playsound minecraft:entity.enderman.teleport ambient @s ~ ~100
 function exigence:hub/ember_shop/reset
 
 # Save player id (required to load chest)
-scoreboard players operation #compare PlayerID = @s PlayerID
+scoreboard players operation #compare profile.profile_id = @s profile.profile_id
 
 # Load deck
 execute as @s run function exigence:hub/ember_shop/private/load_chest

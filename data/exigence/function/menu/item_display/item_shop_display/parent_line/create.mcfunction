@@ -15,17 +15,17 @@
 #$say drawing line $(texture) $(thickness) $(offset)
 
 # Get distance between two entities
-execute store result score x TempCoords run data get entity @s Pos[0] 100
-execute store result score y TempCoords run data get entity @s Pos[1] 100
-execute store result score z TempCoords run data get entity @s Pos[2] 100
+execute store result score x temp_coords run data get entity @s Pos[0] 100
+execute store result score y temp_coords run data get entity @s Pos[1] 100
+execute store result score z temp_coords run data get entity @s Pos[2] 100
 execute as @e[distance=..5,tag=DrawLineTo] run function exigence:menu/item_display/item_shop_display/parent_line/private/save_coords
 
-scoreboard players operation in0.x nnmath_vec = x TempCoords
-scoreboard players operation in0.y nnmath_vec = y TempCoords
-scoreboard players operation in0.z nnmath_vec = z TempCoords
-scoreboard players operation in0.x nnmath_vec -= X TempCoords
-scoreboard players operation in0.y nnmath_vec -= Y TempCoords
-scoreboard players operation in0.z nnmath_vec -= Z TempCoords
+scoreboard players operation in0.x nnmath_vec = x temp_coords
+scoreboard players operation in0.y nnmath_vec = y temp_coords
+scoreboard players operation in0.z nnmath_vec = z temp_coords
+scoreboard players operation in0.x nnmath_vec -= X temp_coords
+scoreboard players operation in0.y nnmath_vec -= Y temp_coords
+scoreboard players operation in0.z nnmath_vec -= Z temp_coords
 
 function nnmath:vec/3/get_length/exe
 

@@ -1,1 +1,1 @@
-scoreboard players add CardsInstant DeckAnalysis 1
+scoreboard players add CardsCards.Instant deck.analysis 1

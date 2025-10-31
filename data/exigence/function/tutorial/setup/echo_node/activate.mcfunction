@@ -6,7 +6,7 @@
 
 #=============================================================================================================
 
-scoreboard players set @s EmbersToDrop 10
+scoreboard players set @s node.ember.embers_to_drop 10
 
 # Summon echo:
 function exigence:ember/node/summon_echo_item

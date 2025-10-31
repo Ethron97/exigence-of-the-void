@@ -10,7 +10,7 @@ say use glow ink sac
 
 # Set any entity that has glow to 999999
 #   Maybe in future set to -1 so it no longer updates... but then we need to change other glow updaters
-scoreboard players set @e[type=#exigence:glowable,scores={GlowRemaining=1..}] GlowRemaining 999999
+scoreboard players set @e[type=#exigence:glowable,scores={game.entity.glow_remaining=1..}] game.entity.glow_remaining 999999
 
 # Playsound
 playsound minecraft:entity.glow_squid.squirt ambient @a ^ ^ ^3 1 1.5

@@ -7,8 +7,8 @@ execute as @e[type=minecraft:armor_stand,tag=NewNode] run tag @s add EmberNode
 # Give custom name
 execute as @e[type=minecraft:armor_stand,tag=NewNode] run data modify entity @s CustomName set value {text:"EmberNode",color:"aqua",italic:false}
 
-# Initialize EmbersToDrop scoreboard
-execute as @e[type=armor_stand,tag=NewNode] run scoreboard players set @s EmbersToDrop 0
+# Initialize node.ember.embers_to_drop scoreboard
+execute as @e[type=armor_stand,tag=NewNode] run scoreboard players set @s node.ember.embers_to_drop 0
 
 # Assign team
 execute as @e[type=armor_stand,tag=NewNode] run team join Ember @s

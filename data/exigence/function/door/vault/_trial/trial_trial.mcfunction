@@ -16,7 +16,7 @@ execute if data storage exigence:dungeon {is_active:1} run return 1
 
 # Set scores
 scoreboard players set @s dead 0
-$scoreboard players set @s VaultCode $(vault_code)
+$scoreboard players set @s game.player.vault_code $(vault_code)
 
 # Gamemode
 gamemode adventure @s

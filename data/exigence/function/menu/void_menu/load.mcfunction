@@ -12,12 +12,12 @@
 
 tag @s add Loaded
 
-# Generate new VoidShopID
-scoreboard players add #highest VoidShopID 1
-scoreboard players operation @s VoidShopID = #highest VoidShopID
+# Generate new game.void_merchant.shop_id
+scoreboard players add #highest game.void_merchant.shop_id 1
+scoreboard players operation @s game.void_merchant.shop_id = #highest game.void_merchant.shop_id
 
 # Assign FK to nearest player
-execute at @s run scoreboard players operation @p[tag=ActivePlayer,scores={dead=0}] VoidShopping = #highest VoidShopID
+execute at @s run scoreboard players operation @p[tag=ActivePlayer,scores={dead=0}] shop.player.void_shopping_id = #highest game.void_merchant.shop_id
 
 # Give tag to nearest player
 tag @p[tag=ActivePlayer,scores={dead=0}] add VoidShopping
@@ -37,4 +37,4 @@ execute if score VoidShopSlots Modifiers matches 6 run function exigence:menu/vo
 function exigence:menu/void_menu/update_purchasability
 
 # Initialize shop purchase cooldown
-execute as @e[type=minecraft:item_display,tag=VoidShopDisplay] run scoreboard players set @s ShopPurchaseCooldown 0
+execute as @e[type=minecraft:item_display,tag=VoidShopDisplay] run scoreboard players set @s shop.frame.purchase_cooldown 0

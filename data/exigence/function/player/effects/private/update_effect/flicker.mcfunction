@@ -2,30 +2,30 @@
 #   AS player
 
 ## INPUT
-#   BaseTime EffectTemp - score set to a base duration in ticks
+#   et.BaseTime game.effect_temp - score set to a base duration in ticks
 
 #================================================================================================
 
 # Copy base "add time"
-scoreboard players operation AddingTime EffectTemp = BaseTime EffectTemp
+scoreboard players operation et.AddingTime game.effect_temp = et.BaseTime game.effect_temp
 
 # DURATION MODIFIERS
 function exigence:player/effects/private/update_effect/common_duration_mods
-execute if score FromCard EffectTemp matches 1 if score @s mod_Flicker matches 2 run scoreboard players add @s effect_flicker 300
-execute if score FromCard EffectTemp matches 1 if score @s mod_Flicker matches 3 run scoreboard players add @s effect_flicker 600
-execute if score FromCard EffectTemp matches 1 if score @s mod_Flicker matches 4 run scoreboard players add @s effect_flicker 1200
+execute if score et.FromCard game.effect_temp matches 1 if score @s game.player.mod.flicker matches 2 run scoreboard players add et.AddingTime game.effect_temp 300
+execute if score et.FromCard game.effect_temp matches 1 if score @s game.player.mod.flicker matches 3 run scoreboard players add et.AddingTime game.effect_temp 600
+execute if score et.FromCard game.effect_temp matches 1 if score @s game.player.mod.flicker matches 4 run scoreboard players add et.AddingTime game.effect_temp 1200
 
 # Multiply total add time by heighten modifier
-scoreboard players operation AddingTime EffectTemp *= @s mod_calc_Heighten
+scoreboard players operation et.AddingTime game.effect_temp *= @s game.player.calc_heighten
 
 # Add added time to current
-scoreboard players operation @s effect_flicker += AddingTime EffectTemp
+scoreboard players operation @s game.player.effects.flicker += et.AddingTime game.effect_temp
 
 # Cap time (if set)
-scoreboard players operation @s effect_flicker > SetTime EffectTemp
+scoreboard players operation @s game.player.effects.flicker > et.SetTime game.effect_temp
 
 # Give player effect
-execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s effect_flicker
-execute store result storage exigence:player_effects amplifier int 1 run scoreboard players get @s mod_Flicker
+execute store result storage exigence:player_effects duration int 0.05 run scoreboard players get @s game.player.effects.flicker
+execute store result storage exigence:player_effects amplifier int 1 run scoreboard players get @s game.player.mod.flicker
 data modify storage exigence:player_effects effect set value "unluck"
 function exigence:player/effects/private/give_potion_effect with storage exigence:player_effects

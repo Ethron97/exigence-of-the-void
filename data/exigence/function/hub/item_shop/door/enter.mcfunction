@@ -9,7 +9,7 @@
 say Enter item shop normal
 
 # Reset team so you only see your own score
-scoreboard players reset * ConsumableLimit
+scoreboard players reset * hub.player.consumable_limit
 
 # Add tag
 tag @s add ItemShopping

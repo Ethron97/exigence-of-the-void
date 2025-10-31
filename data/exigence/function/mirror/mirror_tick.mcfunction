@@ -6,7 +6,7 @@
 #=================================================================================================
 
 # Mirror Vision
-execute if score SecondsCooldown TickCounter matches 3 as @a[tag=ActivePlayer,scores={mod_MirrorVision=1..,dead=0}] run function exigence:player/modifiers/mirror_vision
+execute if score seconds.cooldown tick_counter matches 3 as @a[tag=ActivePlayer,scores={game.player.mod.mirror_vision=1..,dead=0}] run function exigence:player/modifiers/mirror_vision
 function exigence:mirror/hidden_blocks/hidden_block_tick
 
 # Detect approaches

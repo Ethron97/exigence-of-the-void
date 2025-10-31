@@ -1,3 +1,3 @@
-scoreboard players add CardsVoid DeckAnalysis 1
-scoreboard players add CardsInstant DeckAnalysis 1
-scoreboard players remove DifficultyMod DeckAnalysis 1
+scoreboard players add CardsCards.Void deck.analysis 1
+scoreboard players add CardsCards.Instant deck.analysis 1
+scoreboard players remove Difficulty.Mod deck.analysis 1

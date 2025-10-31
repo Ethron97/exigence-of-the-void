@@ -6,11 +6,11 @@ tag @s add Active
 team join ActiveEcho @s
 
 # Assign new echo id (highest + 1)
-scoreboard players set #Highest EchoID 0
-execute as @e[scores={EchoID=1..}] run scoreboard players operation #Highest EchoID > @s EchoID
-scoreboard players operation @s EchoID = #Highest EchoID
-scoreboard players add @s EchoID 1
-execute store result storage exigence:echo_selection echo_id int 1 run scoreboard players get @s EchoID
+scoreboard players set #Highest game.node.echo.id 0
+execute as @e[scores={game.node.echo.id=1..}] run scoreboard players operation #Highest game.node.echo.id > @s game.node.echo.id
+scoreboard players operation @s game.node.echo.id = #Highest game.node.echo.id
+scoreboard players add @s game.node.echo.id 1
+execute store result storage exigence:echo_selection echo_id int 1 run scoreboard players get @s game.node.echo.id
 execute store result storage exigence:echo_selection level int 1 run scoreboard players get @s ObjectLevel
 
 # OLD
@@ -24,30 +24,30 @@ execute store result storage exigence:echo_selection level int 1 run scoreboard 
 
 # Calculate
 # Final embers = (#embers_to_drop * #embers_multiplier) / #temp
-scoreboard players set #temp EmbersToDrop 100
-scoreboard players set #min_embers EmbersToDrop 5
-scoreboard players operation #embers_to_drop EmbersToDrop = @s BaseEmberDrop
+scoreboard players set #temp node.ember.embers_to_drop 100
+scoreboard players set #min_embers node.ember.embers_to_drop 5
+scoreboard players operation #embers_to_drop node.ember.embers_to_drop = @s BaseEmberDrop
 
-execute store result score #embers_add EmbersToDrop run random value -25..25
-#execute store result score #embers_remove EmbersToDrop run random value 0..25
+execute store result score #embers_add node.ember.embers_to_drop run random value -25..25
+#execute store result score #embers_remove node.ember.embers_to_drop run random value 0..25
 
-scoreboard players set #embers_multiplier EmbersToDrop 100
-scoreboard players operation #embers_multiplier EmbersToDrop += #embers_add EmbersToDrop
-#scoreboard players operation #embers_multiplier EmbersToDrop -= #embers_remove EmbersToDrop
+scoreboard players set #embers_multiplier node.ember.embers_to_drop 100
+scoreboard players operation #embers_multiplier node.ember.embers_to_drop += #embers_add node.ember.embers_to_drop
+#scoreboard players operation #embers_multiplier node.ember.embers_to_drop -= #embers_remove node.ember.embers_to_drop
 
-scoreboard players operation #embers_to_drop EmbersToDrop *= #embers_multiplier EmbersToDrop
-scoreboard players operation #embers_to_drop EmbersToDrop /= #temp EmbersToDrop
-scoreboard players operation @s EmbersToDrop = #embers_to_drop EmbersToDrop
+scoreboard players operation #embers_to_drop node.ember.embers_to_drop *= #embers_multiplier node.ember.embers_to_drop
+scoreboard players operation #embers_to_drop node.ember.embers_to_drop /= #temp node.ember.embers_to_drop
+scoreboard players operation @s node.ember.embers_to_drop = #embers_to_drop node.ember.embers_to_drop
 
 
 # After clculations, set miniumum, so the player can always at least buy a void card.
-scoreboard players operation @s EmbersToDrop > #min_embers EmbersToDrop
+scoreboard players operation @s node.ember.embers_to_drop > #min_embers node.ember.embers_to_drop
 
 # If tutorial: always 10
-execute if data storage exigence:dungeon {tutorial:1} run scoreboard players set @s EmbersToDrop 10
+execute if data storage exigence:dungeon {tutorial:1} run scoreboard players set @s node.ember.embers_to_drop 10
 
 # If level 0, set the amount to 6 for consistent tutorial level
-execute if score Difficulty DungeonRun matches 0 run scoreboard players set @s EmbersToDrop 5
+execute if score Difficulty DungeonRun matches 0 run scoreboard players set @s node.ember.embers_to_drop 5
 
 
 # Summon echo:
@@ -57,7 +57,7 @@ function exigence:ember/node/summon_echo_item
 # Spawn compass
 function exigence:ember/node/create_echo_compass with storage exigence:echo_selection
 
-#execute as @s run tellraw @a [{text:"Embers to drop: "},{"score":{"name":"@s","objective":"EmbersToDrop"}}]
+#execute as @s run tellraw @a [{text:"Embers to drop: "},{"score":{"name":"@s","objective":"node.ember.embers_to_drop"}}]
 
 # Increase "EchosRequired" so we know how many echos the player needs to escape
 scoreboard players add EchosRequired DungeonRun 1

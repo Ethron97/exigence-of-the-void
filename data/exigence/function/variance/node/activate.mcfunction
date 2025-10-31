@@ -5,8 +5,8 @@
 
 #=============================================================================================================
 
-# Reset NodeState score
-scoreboard players set @s NodeState 0
+# Reset game.node.node_state score
+scoreboard players set @s game.node.node_state 0
 
 # Reset active tag
 tag @s remove Active

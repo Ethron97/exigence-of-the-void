@@ -6,26 +6,23 @@
 #==========================================================================================================
 
 # Add missing to "Creamed" stats, or just Underflow?
-scoreboard players operation @a[tag=ActivePlayer] cr_underflowGreen += #MissingGreen Resources
-scoreboard players operation @a[tag=ActivePlayer] cr_underflowRed += #MissingRed Resources
-scoreboard players operation @a[tag=ActivePlayer] cr_underflowAqua += #MissingAqua Resources
+scoreboard players operation @a[tag=ActivePlayer] profile.data.resources.cr.underflow_green += #MissingGreen game.resources
+scoreboard players operation @a[tag=ActivePlayer] profile.data.resources.cr.underflow_red += #MissingRed game.resources
+scoreboard players operation @a[tag=ActivePlayer] profile.data.resources.cr.underflow_aqua += #MissingAqua game.resources
 
-scoreboard players operation @a[tag=ActivePlayer] t_underflowGreen += #MissingGreen Resources
-scoreboard players operation @a[tag=ActivePlayer] t_underflowRed += #MissingRed Resources
-scoreboard players operation @a[tag=ActivePlayer] t_underflowAqua += #MissingAqua Resources
 
 # Set #Missing variables to 0
-scoreboard players set #MissingGreen Resources 0
-scoreboard players set #MissingRed Resources 0
-scoreboard players set #MissingAqua Resources 0
+scoreboard players set #MissingGreen game.resources 0
+scoreboard players set #MissingRed game.resources 0
+scoreboard players set #MissingAqua game.resources 0
 
 # Set LastConsumeResult to 1
-scoreboard players set LastConsumeResult Resources 1
+scoreboard players set #LastConsumeResult game.resources 1
 
 # Cap "Costs" at the current player resources so we don't go negative
-scoreboard players operation GreenCost Resources < Green Resources
-scoreboard players operation GreenCost Resources < Green Resources
-scoreboard players operation GreenCost Resources < Green Resources
+scoreboard players operation Green.Cost game.resources < Current.Green game.resources
+scoreboard players operation Green.Cost game.resources < Current.Green game.resources
+scoreboard players operation Green.Cost game.resources < Current.Green game.resources
 
 # Clear
 clear @s magma_cream 1

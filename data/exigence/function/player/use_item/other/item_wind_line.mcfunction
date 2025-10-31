@@ -9,7 +9,7 @@
 #say use wind line
 
 # Call function
-execute at @s run function exigence:hub/item_shop/frame/item/item_wind_line/trigger
+execute at @s run function exigence:hub/item_shop/item/item_wind_line/trigger
 
 # Clear 
 scoreboard players set #remove Temp 1

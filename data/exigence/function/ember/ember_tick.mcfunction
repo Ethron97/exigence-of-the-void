@@ -2,4 +2,4 @@
 
 # Resolve 1 queued ember
 #   Embers will not drop once max menace is reached
-execute if score SecondsCooldown TickCounter matches 10 if score EmberQueue DungeonRun matches 1.. run function exigence:ember/resolve_ember
+execute if score seconds.cooldown tick_counter matches 10 if score EmberQueue DungeonRun matches 1.. run function exigence:ember/resolve_ember

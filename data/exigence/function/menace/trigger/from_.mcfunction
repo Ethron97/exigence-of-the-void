@@ -2,7 +2,7 @@
 
 ## INPUT
 #   INT amount
-#   STR from - "Sculk", "Node", "Other", "Fatigue"
+#   STR from - "sculk", "node", "other", "fatigue"
 
 #===========================================================================================================
 
@@ -21,17 +21,12 @@ scoreboard players operation #after_max Temp = #menace_added Temp
 scoreboard players operation #after_max Temp -= #before_max Temp
 
 
-
 # Add scores
-$scoreboard players operation @a[tag=ActivePlayer] cr_menaceFrom$(from) += #before_max Temp
-$scoreboard players operation @a[tag=ActivePlayer] t_menaceFrom$(from) += #before_max Temp
-$scoreboard players operation @a[tag=ActivePlayer] cr_menaceExtraFrom$(from) += #after_max Temp
-$scoreboard players operation @a[tag=ActivePlayer] t_menaceExtraFrom$(from) += #after_max Temp
+$scoreboard players operation @a[tag=ActivePlayer] profile.data.menace.cr.menace_from_$(from) += #before_max Temp
+$scoreboard players operation @a[tag=ActivePlayer] profile.data.menace.cr.menace_extra_from_$(from) += #after_max Temp
 
-scoreboard players operation @a[tag=ActivePlayer] cr_menaceTotal += #before_max Temp
-scoreboard players operation @a[tag=ActivePlayer] t_menaceTotal += #before_max Temp
-scoreboard players operation @a[tag=ActivePlayer] cr_menaceExtraTotal += #after_max Temp
-scoreboard players operation @a[tag=ActivePlayer] t_menaceExtraTotal += #after_max Temp
+scoreboard players operation @a[tag=ActivePlayer] profile.data.menace.cr.menace_total += #before_max Temp
+scoreboard players operation @a[tag=ActivePlayer] profile.data.menace.cr.menace_extra_total += #after_max Temp
 
 # Add menace after calculationss
 $scoreboard players add MenaceQueue DungeonRun $(amount)

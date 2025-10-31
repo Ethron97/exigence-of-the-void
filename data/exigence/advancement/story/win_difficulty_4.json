@@ -8,7 +8,7 @@
     "display": {
       "description": "Return from Ardor's Bane",
       "icon": {
-        "id": "minecraft:sculk"
+        "id": "minecraft:echo_shard"
       },
       "title": "Ardor's Bane"
     }

@@ -2,7 +2,7 @@
 
 ## CONSTRAINTS
 #   AS player (not dead)
-#   IF mod_MirrorVision > 0
+#   IF game.player.mod.mirror_vision > 0
 
 #=============================================================================================================
 

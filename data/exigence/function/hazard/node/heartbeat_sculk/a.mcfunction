@@ -7,7 +7,7 @@
 #=============================================================================================================
 
 # Set nodestate to -1
-scoreboard players set @s NodeState -1
+scoreboard players set @s game.node.node_state -1
 
 # Call pulse
 function exigence:misc/node/pulse_state

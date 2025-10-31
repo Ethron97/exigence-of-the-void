@@ -1,2 +1,2 @@
-scoreboard players add speedSeconds DeckAnalysis 45
-scoreboard players add CardsAscend DeckAnalysis 1
+scoreboard players add e.speedSeconds deck.analysis 45
+scoreboard players add CardsCards.Ascend deck.analysis 1

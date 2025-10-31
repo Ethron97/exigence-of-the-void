@@ -9,35 +9,35 @@
 ## GAMESTATE
 # Detect loss
 #   If player is stepping on barrier, loss
-execute as @a[tag=ActivePlayer,scores={dead=0,VaultCode=1}] at @s if block ~ ~-1 ~ minecraft:barrier run function exigence:door/vault/bolt/trial/loss
-execute as @a[tag=ActivePlayer,scores={dead=0,VaultCode=1}] if predicate exigence:player/on_fire run function exigence:door/vault/bolt/trial/loss
+execute as @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1}] at @s if block ~ ~-1 ~ minecraft:barrier run function exigence:door/vault/bolt/trial/loss
+execute as @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1}] if predicate exigence:player/on_fire run function exigence:door/vault/bolt/trial/loss
 
 # Detect win
 #   If player survives 30 seconds, win. (600 ticks + 60 for pre-trial time)
-execute if score Bolt TrialTimer matches 660.. as @a[tag=ActivePlayer,scores={dead=0,VaultCode=1}] run function exigence:door/vault/bolt/trial/win
+execute if score Bolt TrialTimer matches 660.. as @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1}] run function exigence:door/vault/bolt/trial/win
 
 # If player died somehow, loss
-execute as @a[tag=ActivePlayer,scores={dead=1,VaultCode=1}] run function exigence:door/vault/bolt/trial/loss
+execute as @a[tag=ActivePlayer,scores={dead=1,game.player.vault_code=1}] run function exigence:door/vault/bolt/trial/loss
 
 # If no players with vault code = 1, return.
 #   (Loss function removes this code, so if player just lost the function will return immediately after)
-execute unless entity @a[tag=ActivePlayer,scores={dead=0,VaultCode=1}] run return 1
+execute unless entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1}] run return 1
 
 
 
 # Pre-trial time titles
-execute if score Bolt TrialTimer matches 0 as @a[tag=ActivePlayer,scores={dead=0,VaultCode=1}] run function exigence:door/vault/_trial/titles/3
-execute if score Bolt TrialTimer matches 20 as @a[tag=ActivePlayer,scores={dead=0,VaultCode=1}] run function exigence:door/vault/_trial/titles/2
-execute if score Bolt TrialTimer matches 40 as @a[tag=ActivePlayer,scores={dead=0,VaultCode=1}] run function exigence:door/vault/_trial/titles/1
-execute if score Bolt TrialTimer matches 60 as @a[tag=ActivePlayer,scores={dead=0,VaultCode=1}] run title @s subtitle {text:"Avoid the blue lines",color:"aqua"}
-execute if score Bolt TrialTimer matches 60 as @a[tag=ActivePlayer,scores={dead=0,VaultCode=1}] run title @s title ""
-execute if score Bolt TrialTimer matches 80 as @a[tag=ActivePlayer,scores={dead=0,VaultCode=1}] run function exigence:door/vault/_trial/titles/blank
+execute if score Bolt TrialTimer matches 0 as @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1}] run function exigence:door/vault/_trial/titles/3
+execute if score Bolt TrialTimer matches 20 as @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1}] run function exigence:door/vault/_trial/titles/2
+execute if score Bolt TrialTimer matches 40 as @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1}] run function exigence:door/vault/_trial/titles/1
+execute if score Bolt TrialTimer matches 60 as @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1}] run title @s subtitle {text:"Avoid the blue lines",color:"aqua"}
+execute if score Bolt TrialTimer matches 60 as @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1}] run title @s title ""
+execute if score Bolt TrialTimer matches 80 as @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1}] run function exigence:door/vault/_trial/titles/blank
 
 # Almost there!
-execute if score Bolt TrialTimer matches 600 as @a[tag=ActivePlayer,scores={dead=0,VaultCode=1}] run function exigence:door/vault/_trial/titles/3
-execute if score Bolt TrialTimer matches 620 as @a[tag=ActivePlayer,scores={dead=0,VaultCode=1}] run function exigence:door/vault/_trial/titles/2
-execute if score Bolt TrialTimer matches 640 as @a[tag=ActivePlayer,scores={dead=0,VaultCode=1}] run function exigence:door/vault/_trial/titles/1
-execute if score Bolt TrialTimer matches 659 as @a[tag=ActivePlayer,scores={dead=0,VaultCode=1}] run function exigence:door/vault/_trial/titles/blank
+execute if score Bolt TrialTimer matches 600 as @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1}] run function exigence:door/vault/_trial/titles/3
+execute if score Bolt TrialTimer matches 620 as @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1}] run function exigence:door/vault/_trial/titles/2
+execute if score Bolt TrialTimer matches 640 as @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1}] run function exigence:door/vault/_trial/titles/1
+execute if score Bolt TrialTimer matches 659 as @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1}] run function exigence:door/vault/_trial/titles/blank
 
 
 
@@ -48,7 +48,7 @@ execute if score Bolt TrialTimer matches 659 as @a[tag=ActivePlayer,scores={dead
 #   Reduce scores
 scoreboard players remove @e[type=minecraft:marker,tag=PizzaLightning] PizzaTimer 1
 #   If at least one are triggering, sound
-execute if entity @e[type=minecraft:marker,tag=PizzaLightning,scores={PizzaTimer=0}] run playsound minecraft:entity.breeze.jump ambient @a[scores={VaultCode=1}] ~ ~1000 ~ 1000 1
+execute if entity @e[type=minecraft:marker,tag=PizzaLightning,scores={PizzaTimer=0}] run playsound minecraft:entity.breeze.jump ambient @a[scores={game.player.vault_code=1}] ~ ~1000 ~ 1000 1
 
 #   If 0, trigger lightning then kill
 execute as @e[type=minecraft:marker,tag=PizzaLightning,scores={PizzaTimer=0}] at @s run function exigence:door/vault/bolt/trial/pizza/lightning/trigger
@@ -68,10 +68,10 @@ scoreboard players remove Pizza TrialTimer 1
 
 ## Crucible
 #   Drop 10 blocks out every "bracket" change
-execute if score Bolt TrialTimer matches 0 if entity @a[tag=ActivePlayer,scores={dead=0,VaultCode=1},tag=Crucible] run function exigence:door/vault/bolt/trial/proc/proc_drop_blocks
-execute if score Bolt TrialTimer matches 200 if entity @a[tag=ActivePlayer,scores={dead=0,VaultCode=1},tag=Crucible] run function exigence:door/vault/bolt/trial/proc/proc_drop_blocks
-execute if score Bolt TrialTimer matches 400 if entity @a[tag=ActivePlayer,scores={dead=0,VaultCode=1},tag=Crucible] run function exigence:door/vault/bolt/trial/proc/proc_drop_blocks
-execute if score Bolt TrialTimer matches 520 if entity @a[tag=ActivePlayer,scores={dead=0,VaultCode=1},tag=Crucible] run function exigence:door/vault/bolt/trial/proc/proc_drop_blocks
+execute if score Bolt TrialTimer matches 0 if entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1},tag=Crucible] run function exigence:door/vault/bolt/trial/proc/proc_drop_blocks
+execute if score Bolt TrialTimer matches 200 if entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1},tag=Crucible] run function exigence:door/vault/bolt/trial/proc/proc_drop_blocks
+execute if score Bolt TrialTimer matches 400 if entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1},tag=Crucible] run function exigence:door/vault/bolt/trial/proc/proc_drop_blocks
+execute if score Bolt TrialTimer matches 520 if entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1},tag=Crucible] run function exigence:door/vault/bolt/trial/proc/proc_drop_blocks
 
 # Dropblocks update
 #   Reduce scores

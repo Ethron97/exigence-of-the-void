@@ -1,0 +1,34 @@
+## CONSTRAINTS
+#    AS player, when they die (or enter the dungeon)
+scoreboard players set @s game.player.effects.beastsense 0
+scoreboard players set @s game.player.effects.circulation 0
+scoreboard players set @s game.player.effects.detection 0
+scoreboard players set @s game.player.effects.detectthoughts 0
+scoreboard players set @s game.player.effects.farstep 0
+scoreboard players set @s game.player.effects.flicker 0
+scoreboard players set @s game.player.effects.glimmer 0
+scoreboard players set @s game.player.effects.invisibility 0
+scoreboard players set @s game.player.effects.jump 0
+scoreboard players set @s game.player.effects.jump4 0
+scoreboard players set @s game.player.effects.jump6 0
+scoreboard players set @s game.player.effects.jump8 0
+scoreboard players set @s game.player.effects.regen 0
+scoreboard players set @s game.player.effects.speed 0
+scoreboard players set @s game.player.effects.speed1 0
+scoreboard players set @s game.player.effects.speed10 0
+scoreboard players set @s game.player.effects.speed2 0
+scoreboard players set @s game.player.effects.speed3 0
+scoreboard players set @s game.player.effects.speed4 0
+scoreboard players set @s game.player.effects.speed5 0
+scoreboard players set @s game.player.effects.speed6 0
+scoreboard players set @s game.player.effects.speed7 0
+scoreboard players set @s game.player.effects.speed8 0
+scoreboard players set @s game.player.effects.speed9 0
+scoreboard players set @s game.player.killed_by.blaze 0
+scoreboard players set @s game.player.killed_by.creaking 0
+scoreboard players set @s game.player.killed_by.endermite 0
+scoreboard players set @s game.player.killed_by.ravager 0
+scoreboard players set @s game.player.killed_by.vex 0
+scoreboard players set @s game.player.killed_by.warden 0
+scoreboard players set @s game.player.killed_by.witch 0
+scoreboard players set @s game.player.killed_by.wither_skeleton 0

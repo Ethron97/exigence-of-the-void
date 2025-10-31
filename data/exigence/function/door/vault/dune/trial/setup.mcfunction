@@ -19,4 +19,4 @@ summon marker -413.5 152.0 -1.5 {Tags:["DuneTrialSetup","DunePosB"]}
 fill -406 148 6 -422 148 -10 end_portal replace black_concrete
 
 # Set blue fire
-execute if entity @a[scores={VaultCode=2},tag=Crucible] run fill -407 158 -9 -421 158 5 minecraft:soul_soil replace minecraft:chiseled_tuff
+execute if entity @a[scores={game.player.vault_code=2},tag=Crucible] run fill -407 158 -9 -421 158 5 minecraft:soul_soil replace minecraft:chiseled_tuff

@@ -1,1 +1,1 @@
-scoreboard players add Ember DeckAnalysis 6
+scoreboard players add other.Ember deck.analysis 6

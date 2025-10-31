@@ -13,8 +13,8 @@ execute if entity @s[tag=Trial] as @e[type=marker,tag=PotMarker,tag=silence,tag=
 execute if entity @s[tag=Crucible] as @e[type=marker,tag=PotMarker,tag=silence] at @s run function exigence:door/vault/silence/setup_pots_crucible
 
 # Give scores
-execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Trial] silence_trial_win 1
-execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Crucible] silence_crucible_win 1
+execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Trial] profile.data.vaults.cr.silence_trial_win 1
+execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Crucible] profile.data.vaults.cr.silence_crucible_win 1
 
 # Give advancement
 execute if data storage exigence:dungeon {is_active:1} run advancement grant @s[tag=Trial] only exigence:vault/trial_silence

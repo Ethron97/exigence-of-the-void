@@ -32,11 +32,11 @@ execute if entity @a[tag=Ringing,nbt={SelectedItem:{id:"minecraft:golden_axe"}}]
 execute if entity @a[tag=Ringing,nbt=!{SelectedItem:{id:"minecraft:golden_axe"}}] run function exigence:bell/node/private/ring_standard
 
 # Set bell cooldown
-scoreboard players set @s RingBellCooldown 100
+scoreboard players set @s game.node.bell.ring_cooldown 100
 
 # 2/3 chance of generating one Hazard
-execute store result score random Random run random value 1..3
-execute if score random Random matches 2..3 if score @s ObjectLevel matches 1 run function exigence:hazard/proc_hazard {level:1,amount:1,type:"Bell"}
-execute if score random Random matches 2..3 if score @s ObjectLevel matches 2 run function exigence:hazard/proc_hazard {level:2,amount:1,type:"Bell"}
-execute if score random Random matches 2..3 if score @s ObjectLevel matches 3 run function exigence:hazard/proc_hazard {level:3,amount:1,type:"Bell"}
-execute if score random Random matches 2..3 if score @s ObjectLevel matches 4 run function exigence:hazard/proc_hazard {level:4,amount:1,type:"Bell"}
+execute store result score #random Random run random value 1..3
+execute if score #random Random matches 2..3 if score @s ObjectLevel matches 1 run function exigence:hazard/proc_hazard {level:1,amount:1,type:"bell"}
+execute if score #random Random matches 2..3 if score @s ObjectLevel matches 2 run function exigence:hazard/proc_hazard {level:2,amount:1,type:"bell"}
+execute if score #random Random matches 2..3 if score @s ObjectLevel matches 3 run function exigence:hazard/proc_hazard {level:3,amount:1,type:"bell"}
+execute if score #random Random matches 2..3 if score @s ObjectLevel matches 4 run function exigence:hazard/proc_hazard {level:4,amount:1,type:"bell"}

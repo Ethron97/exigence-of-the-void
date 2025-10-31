@@ -14,7 +14,7 @@
 #say QUestio nkarm
 
 # Decrement lore lines
-scoreboard players remove @s LoreLines 1
+scoreboard players remove @s shop.frame.lore_lines 1
 
 #$say loring Rotation:[$(Rot0),$(Rot1)]
 
@@ -23,18 +23,18 @@ $summon minecraft:text_display ~ ~ ~ {background:-936902616,billboard:"fixed",al
 
 
 # Merge text based on how many lore lines there are
-execute if score @s LoreLines matches -1 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:custom_name"
-execute if score @s LoreLines matches 0 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[0]
-execute if score @s LoreLines matches 1 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[1]
-execute if score @s LoreLines matches 2 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[2]
-execute if score @s LoreLines matches 3 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[3]
-execute if score @s LoreLines matches 4 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[4]
-execute if score @s LoreLines matches 5 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[5]
-execute if score @s LoreLines matches 6 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[6]
-execute if score @s LoreLines matches 7 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[7]
-execute if score @s LoreLines matches 8 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[8]
-execute if score @s LoreLines matches 9 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[9]
-execute if score @s LoreLines matches 10 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[10]
+execute if score @s shop.frame.lore_lines matches -1 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:custom_name"
+execute if score @s shop.frame.lore_lines matches 0 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[0]
+execute if score @s shop.frame.lore_lines matches 1 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[1]
+execute if score @s shop.frame.lore_lines matches 2 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[2]
+execute if score @s shop.frame.lore_lines matches 3 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[3]
+execute if score @s shop.frame.lore_lines matches 4 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[4]
+execute if score @s shop.frame.lore_lines matches 5 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[5]
+execute if score @s shop.frame.lore_lines matches 6 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[6]
+execute if score @s shop.frame.lore_lines matches 7 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[7]
+execute if score @s shop.frame.lore_lines matches 8 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[8]
+execute if score @s shop.frame.lore_lines matches 9 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[9]
+execute if score @s shop.frame.lore_lines matches 10 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[10]
 
 scoreboard players set #skip Temp 0
 
@@ -51,7 +51,7 @@ tag @e[type=minecraft:text_display,tag=NewTextDisplay] remove NewTextDisplay
 
 # Continue loop if lore remains
 #   If skip, don't move upwards
-#$execute if score @s LoreLines matches 0.. if score #skip Temp matches 0 positioned ^ ^0.275 ^ run function exigence:menu/item_display/private/display_loop {Rot0:$(Rot0),Rot1:$(Rot1)}
-#$execute if score @s LoreLines matches 0.. if score #skip Temp matches 0 positioned ^ ^0.20625 ^ run function exigence:menu/item_display/private/display_loop {Rot0:$(Rot0),Rot1:$(Rot1)}
-$execute if score @s LoreLines matches 0.. if score #skip Temp matches 0 positioned ^ ^0.1375 ^ run function exigence:menu/item_display/private/display_loop_alt {Rot0:$(Rot0),Rot1:$(Rot1)}
-$execute if score @s LoreLines matches 0.. if score #skip Temp matches 1 positioned ^ ^ ^ run function exigence:menu/item_display/private/display_loop_alt {Rot0:$(Rot0),Rot1:$(Rot1)}
+#$execute if score @s shop.frame.lore_lines matches 0.. if score #skip Temp matches 0 positioned ^ ^0.275 ^ run function exigence:menu/item_display/private/display_loop {Rot0:$(Rot0),Rot1:$(Rot1)}
+#$execute if score @s shop.frame.lore_lines matches 0.. if score #skip Temp matches 0 positioned ^ ^0.20625 ^ run function exigence:menu/item_display/private/display_loop {Rot0:$(Rot0),Rot1:$(Rot1)}
+$execute if score @s shop.frame.lore_lines matches 0.. if score #skip Temp matches 0 positioned ^ ^0.1375 ^ run function exigence:menu/item_display/private/display_loop_alt {Rot0:$(Rot0),Rot1:$(Rot1)}
+$execute if score @s shop.frame.lore_lines matches 0.. if score #skip Temp matches 1 positioned ^ ^ ^ run function exigence:menu/item_display/private/display_loop_alt {Rot0:$(Rot0),Rot1:$(Rot1)}

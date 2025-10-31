@@ -1,7 +1,7 @@
 # Removes invisibility and rejoins player team
 #   Call as player
 
-scoreboard players set @s effect_invisibility 0
+scoreboard players set @s game.player.effects.invisibility 0
 effect clear @s invisibility
 
 tellraw @s {text:"Your position has been revealed",color:"red",italic:true}

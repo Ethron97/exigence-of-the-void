@@ -3,7 +3,7 @@
 say Leave predungeon (coop)
 
 # Reset team so you only see your own score
-scoreboard players reset * ConsumableLimit
+scoreboard players reset * hub.player.consumable_limit
 
 # Join team/tag
 tag @s add Lockerroom

@@ -9,7 +9,7 @@ tag @e[type=minecraft:armor_stand,tag=CanTeleport] remove CanTeleport
 # Teleport
 #   Add all echo (other than chosen) and menace nodes to CanTeleport
 #   On active level
-scoreboard players operation #compare ObjectLevel = @s ActiveLevel
+scoreboard players operation #compare ObjectLevel = @s game.player.active_level
 execute as @e[type=armor_stand,tag=MenaceNode] if score @s ObjectLevel = #compare ObjectLevel run tag @s add CanTeleport
 execute as @e[type=armor_stand,tag=EchoNode,tag=!ChosenEchoNode] if score @s ObjectLevel = #compare ObjectLevel run tag @s add CanTeleport
 

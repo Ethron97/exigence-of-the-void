@@ -6,9 +6,7 @@
 #=========================================================================================================================
 
 # Select "active" playernode
-tag @e[type=armor_stand,tag=PlayerNode] remove Active
-scoreboard players operation #temp PlayerID = @s PlayerID
-execute as @e[type=minecraft:armor_stand,tag=PlayerNode] if score @s PlayerID = #temp PlayerID run tag @s add Active
+function exigence:profile/profile_node/select_active
 
 # Reset validate
 data modify storage exigence:hub too_many_copies set value false

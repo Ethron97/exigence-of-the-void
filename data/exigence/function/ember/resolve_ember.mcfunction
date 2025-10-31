@@ -1,8 +1,7 @@
 # If ember is queued, send it to ember droppers
 
 # Increase ping scores
-scoreboard players add @a[tag=ActivePlayer] cr_emberPing 1
-scoreboard players add @a[tag=ActivePlayer] t_emberPing 1
+scoreboard players add @a[tag=ActivePlayer] profile.data.ember.cr.ember_ping 1
 
 # Reduce EmberQueue by 1
 scoreboard players remove EmberQueue DungeonRun 1
@@ -23,4 +22,4 @@ execute if data storage exigence:dungeon_settings {stacked_embers:0} if score Di
 
 
 # Each ember node that rolled a 1, summon an ember
-execute as @e[type=minecraft:armor_stand,tag=Active,tag=EmberNode,scores={Random=1},tag=!ChosenEchoNode] at @s run execute as @e[type=minecraft:armor_stand,tag=TreasureNode,tag=Active,sort=nearest,limit=1] run function exigence:treasure/node/drop_treasure {function:"exigence:ember/summon_ember"}
+execute as @e[type=minecraft:armor_stand,tag=Active,tag=EmberNode,scores={Random=1},tag=!ChosenEchoNode] at @s run execute as @e[type=minecraft:armor_stand,tag=TreasureNode,tag=Active,sort=nearest,limit=1] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:ember/summon_ember"}

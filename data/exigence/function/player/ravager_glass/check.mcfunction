@@ -1,7 +1,7 @@
 # Checks around player for ravager glass to replace
 
 ## CONSTRAINTS
-#   AS player (alive), that does not have score mod_RavagerHoof=1
+#   AS player (alive), that does not have score game.player.mod.ravager_hoof=1
 #   AT player
 
 #==========================================================================================================

@@ -19,7 +19,7 @@ item replace entity @s weapon.offhand from entity @p[tag=Reflecting] weapon.offh
 
 ## HELMET
 # Add tag to playernode
-execute as @e[type=minecraft:armor_stand,tag=PlayerNode] if score @s PlayerID = @p[tag=Reflecting] PlayerID run tag @s add GrabHead
+execute as @e[type=minecraft:armor_stand,tag=PlayerNode] if score @s profile.node.player_id = @p[tag=Reflecting] career.player_id run tag @s add GrabHead
 
 # 1/1000 change to flash wither skeleton skull for the jump scare
 #   Too glitchy

@@ -1,2 +1,2 @@
-scoreboard players add Recycle DeckAnalysis 2
-scoreboard players add CardsVoid DeckAnalysis 1
+scoreboard players add Cards.Recycle deck.analysis 2
+scoreboard players add CardsCards.Void deck.analysis 1

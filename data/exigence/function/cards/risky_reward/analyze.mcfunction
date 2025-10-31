@@ -1,2 +1,2 @@
-scoreboard players add Hazard DeckAnalysis 2
-scoreboard players add Treasure DeckAnalysis 10
+scoreboard players add other.Hazard deck.analysis 2
+scoreboard players add other.Treasure deck.analysis 10

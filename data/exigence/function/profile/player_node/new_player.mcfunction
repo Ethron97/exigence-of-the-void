@@ -30,3 +30,10 @@ execute positioned 0.5 1.0 2.5 run kill @n[distance=..1,type=minecraft:item]
 
 # Remove temp marker
 kill @e[distance=..1000,type=marker,tag=NewPlayerNodeMarker]
+
+# Enable trigger
+scoreboard players set @s MyPlayerID 0
+scoreboard players enable @s MyPlayerID
+
+# Initialize settings
+function exigence:profile/player_node/new/initialize_settings

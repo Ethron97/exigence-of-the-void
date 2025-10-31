@@ -6,7 +6,7 @@
 #==========================================================================
 
 # Get nodes on same level
-scoreboard players operation #compare ObjectLevel = @s ActiveLevel
+scoreboard players operation #compare ObjectLevel = @s game.player.active_level
 execute as @e[type=armor_stand,tag=MenaceNode] if score @s ObjectLevel = #compare ObjectLevel run tag @s add OnActiveLevel
 execute as @e[type=armor_stand,tag=EchoNode] if score @s ObjectLevel = #compare ObjectLevel run tag @s add OnActiveLevel
 

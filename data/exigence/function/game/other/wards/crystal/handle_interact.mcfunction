@@ -22,11 +22,11 @@ execute if entity @s[tag=Amethyst] unless items entity @a[tag=Crystaling] weapon
 
 # Call function based on if player is holding corresponding crystal
 #   Use custom model number for switch
-execute if entity @s[tag=Emerald] if items entity @a[tag=Crystaling] weapon.mainhand #exigence:resonance[custom_model_data={"strings":["resonance_emerald"]}|custom_model_data={"strings":["resonance_universal"]}] run function exigence:game/other/wards/crystal/damage {color:'Emerald'}
-execute if entity @s[tag=Sapphire] if items entity @a[tag=Crystaling] weapon.mainhand #exigence:resonance[custom_model_data={"strings":["resonance_sapphire"]}|custom_model_data={"strings":["resonance_universal"]}] run function exigence:game/other/wards/crystal/damage {color:'Sapphire'}
-execute if entity @s[tag=Ruby] if items entity @a[tag=Crystaling] weapon.mainhand #exigence:resonance[custom_model_data={"strings":["resonance_ruby"]}|custom_model_data={"strings":["resonance_universal"]}] run function exigence:game/other/wards/crystal/damage {color:'Ruby'}
-execute if entity @s[tag=Topaz] if items entity @a[tag=Crystaling] weapon.mainhand #exigence:resonance[custom_model_data={"strings":["resonance_topaz"]}|custom_model_data={"strings":["resonance_universal"]}] run function exigence:game/other/wards/crystal/damage {color:'Topaz'}
-execute if entity @s[tag=Amethyst] if items entity @a[tag=Crystaling] weapon.mainhand #exigence:resonance[custom_model_data={"strings":["resonance_amethyst"]}|custom_model_data={"strings":["resonance_universal"]}] run function exigence:game/other/wards/crystal/damage {color:'Amethyst'}
+execute if entity @s[tag=Emerald] if items entity @a[tag=Crystaling] weapon.mainhand #exigence:resonance[custom_model_data={"strings":["resonance_emerald"]}|custom_model_data={"strings":["resonance_universal"]}] run function exigence:game/other/wards/crystal/damage {color:'emerald'}
+execute if entity @s[tag=Sapphire] if items entity @a[tag=Crystaling] weapon.mainhand #exigence:resonance[custom_model_data={"strings":["resonance_sapphire"]}|custom_model_data={"strings":["resonance_universal"]}] run function exigence:game/other/wards/crystal/damage {color:'sapphire'}
+execute if entity @s[tag=Ruby] if items entity @a[tag=Crystaling] weapon.mainhand #exigence:resonance[custom_model_data={"strings":["resonance_ruby"]}|custom_model_data={"strings":["resonance_universal"]}] run function exigence:game/other/wards/crystal/damage {color:'ruby'}
+execute if entity @s[tag=Topaz] if items entity @a[tag=Crystaling] weapon.mainhand #exigence:resonance[custom_model_data={"strings":["resonance_topaz"]}|custom_model_data={"strings":["resonance_universal"]}] run function exigence:game/other/wards/crystal/damage {color:'topaz'}
+execute if entity @s[tag=Amethyst] if items entity @a[tag=Crystaling] weapon.mainhand #exigence:resonance[custom_model_data={"strings":["resonance_amethyst"]}|custom_model_data={"strings":["resonance_universal"]}] run function exigence:game/other/wards/crystal/damage {color:'amethyst'}
 
 # Clear tag
 execute on target run tag @s remove Crystaling

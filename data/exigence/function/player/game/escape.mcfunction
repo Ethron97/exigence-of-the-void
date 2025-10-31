@@ -23,10 +23,10 @@ gamemode adventure @s
 clear @s #exigence:win_clear
 
 # If VaultKeep is 1, do not clear vault keys
-clear @s[scores={mod_VaultKeep=0}] #exigence:trim_templates
+clear @s[scores={game.player.mod.vault_keep=0}] #exigence:trim_templates
 
 # If portal is not yet opened, create portal effect
-execute if data storage exigence:dungeon {escape_portal:0} run scoreboard players set Portal TickCounter 200
+execute if data storage exigence:dungeon {escape_portal:0} run scoreboard players set exit.portal.countdown tick_counter 200
 
 # Open "potal"
 data modify storage exigence:dungeon escape_portal set value 1
@@ -38,6 +38,6 @@ team leave @a[team=EmberView]
 tag @a[tag=EmberViewing] remove EmberViewing
 
 # Give appropriate advancement if rescued NPC
-execute if entity @s[tag=Carrying] if score Supplier DialogueGame matches 5.. as @a[tag=ActivePlayer,advancements={exigence:story/rescue_supplier=false}] run advancement grant @s only exigence:story/rescue_supplier
-execute if entity @s[tag=Carrying] if score Scientist DialogueGame matches 8.. as @a[tag=ActivePlayer,advancements={exigence:story/rescue_scientist=false}] run advancement grant @s only exigence:story/rescue_scientist
-execute if entity @s[tag=Carrying] if score Petitioner DialogueGame matches 7.. as @a[tag=ActivePlayer,advancements={exigence:story/rescue_petitioner=false}] run advancement grant @s only exigence:story/rescue_petitioner
+execute if entity @s[tag=Carrying] if score #Supplier game.dialogue matches 5.. as @a[tag=ActivePlayer,limit=1,sort=arbitrary] run function exigence:profile/profile_node/story/grant {story:'rescue_supplier'}
+execute if entity @s[tag=Carrying] if score #Scientist game.dialogue matches 8.. as @a[tag=ActivePlayer,limit=1,sort=arbitrary] run function exigence:profile/profile_node/story/grant {story:'rescue_scientist'}
+execute if entity @s[tag=Carrying] if score #Petitioner game.dialogue matches 7.. as @a[tag=ActivePlayer,limit=1,sort=arbitrary] run function exigence:profile/profile_node/story/grant {story:'rescue_petitioner'}

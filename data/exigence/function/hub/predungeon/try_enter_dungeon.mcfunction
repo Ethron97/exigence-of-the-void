@@ -6,16 +6,14 @@
 
 # Set difficulty
 $scoreboard players set Difficulty DungeonRun $(difficulty)
-scoreboard players operation ProfileDifficulty DungeonRun = @s ProfileDifficulty
+scoreboard players operation ProfileDifficulty DungeonRun = @s profile.profile_difficulty
 
 # Validate
 function exigence:hub/predungeon/private/validate
 
-
 # Select "active" playernode
-tag @e[type=armor_stand,tag=PlayerNode] remove Active
-scoreboard players operation #temp PlayerID = @s PlayerID
-execute as @e[type=minecraft:armor_stand,tag=PlayerNode] if score @s PlayerID = #temp PlayerID run tag @s add Active
+function exigence:profile/profile_node/select_active
+
 data modify storage exigence:hub valid_coop set value true
 execute if entity @a[tag=Coop] run function exigence:hub/predungeon/private/coop_validate
 

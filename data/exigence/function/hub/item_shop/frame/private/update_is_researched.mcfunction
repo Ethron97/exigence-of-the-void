@@ -1,1 +1,0 @@
-$execute if data storage exigence:shop {shop_unlocked:[$(frame_name)]} run tag @s add IsResearched

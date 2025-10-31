@@ -6,7 +6,7 @@
 #======================================================================================================
 
 # Reset
-scoreboard players set @s NodeState -1
+scoreboard players set @s game.node.node_state -1
 scoreboard players set @s Random 0
 tag @s remove Red
 tag @s remove ChooseLock

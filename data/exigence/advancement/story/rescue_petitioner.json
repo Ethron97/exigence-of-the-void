@@ -8,7 +8,7 @@
     "display": {
       "description": "Unlock Rare items",
       "icon": {
-        "id": "minecraft:end_stone_bricks"
+        "id": "minecraft:soul_campfire"
       },
       "title": "Rescue the Petitioner"
     }

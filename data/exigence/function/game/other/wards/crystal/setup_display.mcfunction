@@ -6,7 +6,7 @@
 #=================================================================================================================
 
 # Store this id for lookup
-scoreboard players operation #compare CrystalID = @s CrystalID
+scoreboard players operation #compare game.story.ward_crystal.node_id = @s game.story.ward_crystal.node_id
 
 # Summon block display
 #   Colored glass based on score
@@ -24,7 +24,7 @@ execute as @e[type=item_display,tag=CrystalDisplay,tag=Topaz] run team join Spec
 execute as @e[type=item_display,tag=CrystalDisplay,tag=Amethyst] run team join Menace @s
 
 # Assign id
-scoreboard players operation @e[type=minecraft:item_display,tag=NewCrystalDisplay] CrystalID = #compare CrystalID
+scoreboard players operation @e[type=minecraft:item_display,tag=NewCrystalDisplay] game.story.ward_crystal.node_id = #compare game.story.ward_crystal.node_id
 
 # Remove local tag
 tag @e[type=minecraft:item_display,tag=NewCrystalDisplay] remove NewCrystalDisplay

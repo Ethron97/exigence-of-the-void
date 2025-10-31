@@ -9,7 +9,6 @@ clear @s minecraft:amethyst_cluster 1
 
 # Call function to handle the rest of the event
 execute as @s run function exigence:player/give/money
-scoreboard players add @s t_moneyPickedUp 1
-scoreboard players add @s cr_moneyPickedUp 1
+scoreboard players add @s profile.data.treasure.cr.money_picked_up 1
 
 #say pickup money

@@ -1,5 +1,5 @@
-scoreboard players operation GreenConsume DeckAnalysis += GreenCost Resources
-#scoreboard players operation RedConsume DeckAnalysis += RedCost Resources
-#scoreboard players operation AquaConsume DeckAnalysis += AquaCost Resources
-scoreboard players add speedSeconds DeckAnalysis 60
-scoreboard players add regenSeconds DeckAnalysis 60
+scoreboard players operation Green.Consume deck.analysis += Green.Cost game.resources
+#scoreboard players operation Red.Consume deck.analysis += Red.Cost game.resources
+#scoreboard players operation Aqua.Consume deck.analysis += Aqua.Cost game.resources
+scoreboard players add e.speedSeconds deck.analysis 60
+scoreboard players add e.regenSeconds deck.analysis 60

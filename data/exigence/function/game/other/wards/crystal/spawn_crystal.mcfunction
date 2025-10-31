@@ -25,12 +25,12 @@ $execute at @e[type=armor_stand,tag=NewChosenCrystal] run summon minecraft:inter
 scoreboard players set @e[type=minecraft:interaction,tag=NewCrystal] ObjectLevel 4
 
 # Copy node id
-scoreboard players operation @e[type=minecraft:interaction,tag=NewCrystal] CrystalID = @e[type=armor_stand,tag=NewChosenCrystal] NodeID
+scoreboard players operation @e[type=minecraft:interaction,tag=NewCrystal] game.story.ward_crystal.node_id = @e[type=armor_stand,tag=NewChosenCrystal] NodeID
 
 # Setup block displays
-$execute as @e[type=minecraft:interaction,tag=NewCrystal] if score $(color) Wards matches 1.. run function exigence:game/other/wards/crystal/setup_display
-$execute as @e[type=minecraft:interaction,tag=NewCrystal] if score $(color) Wards matches 2.. run function exigence:game/other/wards/crystal/setup_display
-$execute as @e[type=minecraft:interaction,tag=NewCrystal] if score $(color) Wards matches 3.. run function exigence:game/other/wards/crystal/setup_display
+$execute as @e[type=minecraft:interaction,tag=NewCrystal] if score ward.$(color) game.story.wards matches 1.. run function exigence:game/other/wards/crystal/setup_display
+$execute as @e[type=minecraft:interaction,tag=NewCrystal] if score ward.$(color) game.story.wards matches 2.. run function exigence:game/other/wards/crystal/setup_display
+$execute as @e[type=minecraft:interaction,tag=NewCrystal] if score ward.$(color) game.story.wards matches 3.. run function exigence:game/other/wards/crystal/setup_display
 
 # Set conduit block
 execute at @e[type=minecraft:interaction,tag=NewCrystal] run setblock ~ ~ ~ conduit[waterlogged=false]

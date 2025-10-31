@@ -17,5 +17,5 @@ function exigence:altar/node/setup_interaction
 # Set block to unlit campfire
 execute at @s run setblock ~ ~ ~ minecraft:soul_campfire[lit=false]
 
-# Set NodeState to 0
-scoreboard players set @s NodeState 0
+# Set game.node.node_state to 0
+scoreboard players set @s game.node.node_state 0

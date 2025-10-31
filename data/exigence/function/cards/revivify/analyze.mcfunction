@@ -1,4 +1,4 @@
-scoreboard players operation GreenConsume DeckAnalysis += GreenCost Resources
-#scoreboard players operation RedConsume DeckAnalysis += RedCost Resources
-#scoreboard players operation AquaConsume DeckAnalysis += AquaCost Resources
-scoreboard players add Recycle DeckAnalysis 2
+scoreboard players operation Green.Consume deck.analysis += Green.Cost game.resources
+#scoreboard players operation Red.Consume deck.analysis += Red.Cost game.resources
+#scoreboard players operation Aqua.Consume deck.analysis += Aqua.Cost game.resources
+scoreboard players add Cards.Recycle deck.analysis 2

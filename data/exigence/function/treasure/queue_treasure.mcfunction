@@ -1,7 +1,7 @@
 # Add X to the treasure queue
 
 ## INPUT
-#   STR source - "Passive", "Card", "Circulation"
+#   STR source - "passive", "card", "circulation"
 #   INT amount - amount of treasure to add to queue
 
 #================================================================================================================
@@ -21,5 +21,5 @@
 $scoreboard players add TreasureQueue DungeonRun $(amount)
 
 # Add scores
-$scoreboard players add @a[tag=ActivePlayer] cr_treasureQueue$(source) $(amount)
-$scoreboard players add @a[tag=ActivePlayer] t_treasureQueue$(source) $(amount)
+$scoreboard players add @a[tag=ActivePlayer] profile.data.treasure.cr.treasure_queue_$(source) $(amount)
+

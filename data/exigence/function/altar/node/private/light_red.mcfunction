@@ -19,7 +19,7 @@ execute at @s run playsound minecraft:block.nether_bricks.place block @a ~ ~ ~ 1
 execute at @s run playsound minecraft:block.nether_bricks.place block @a ~ ~ ~ 1 0.8
 
 # Remove interaction if already max node state (ugpraded)
-execute if score @s NodeState matches 2 run function exigence:altar/node/remove_interaction
+execute if score @s game.node.node_state matches 2 run function exigence:altar/node/remove_interaction
 
 # Damage player
 damage @p[tag=Lighting] 2 minecraft:generic
@@ -30,8 +30,7 @@ execute if score @s ObjectLevel matches 10 run return 1
 #========================================================================================================
 
 # Give player score
-scoreboard players add @p[tag=Lighting] cr_altarsRed 1
-scoreboard players add @p[tag=Lighting] t_altarsRed 1
+scoreboard players add @p[tag=Lighting] profile.data.altar.cr.altars_red 1
 
 # Reduce menace by 1
 function exigence:menace/try_reduce_menace
@@ -40,7 +39,7 @@ function exigence:menace/try_reduce_menace
 execute as @p[tag=Lighting] run function exigence:resources/try_generate {green:0,red:0,aqua:1}
 
 # Give tracker score
-scoreboard players add @s AltarTimesRed 1
+scoreboard players add @s node.data.altar.times_red 1
 
 # Try give spark?
 execute as @p[tag=Lighting] run function exigence:altar/puzzle/give_spark

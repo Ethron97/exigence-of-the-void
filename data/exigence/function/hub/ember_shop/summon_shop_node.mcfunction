@@ -6,8 +6,8 @@
 execute at @s align x align y align z run summon minecraft:marker ~.5 ~ ~.5 {Tags:["NewMarker","Marker"]}
 
 # Give void tag if void
-$scoreboard players set random Random $(void)
-execute if score random Random matches 1 run tag @e[type=minecraft:marker,tag=NewMarker] add Void
+$scoreboard players set #random Random $(void)
+execute if score #random Random matches 1 run tag @e[type=minecraft:marker,tag=NewMarker] add Void
 
 # Give name and tags
 execute as @e[type=minecraft:marker,tag=NewMarker] run data modify entity @s CustomName set value {text:"ShopNode",color:"aqua",italic:false}

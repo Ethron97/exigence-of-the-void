@@ -29,11 +29,11 @@ execute if data entity @s item.components."minecraft:custom_data".one_time run t
 execute as @s[tag=!Artifact] run function exigence:menu/item_display/item_shop_display/is_researched with entity @s item.components."minecraft:custom_data"
 execute as @s[tag=Artifact] run function exigence:menu/item_display/item_shop_display/is_researched_artifact with entity @s item.components."minecraft:custom_data"
 
-# Rarity, tag (1=Common, 2=Uncommon, 3=Rare, 4=Legendary)
-scoreboard players operation @s Rarity = #compare Rarity
+# shop.frame.rarity (1=Common, 2=Uncommon, 3=Rare, 4=Legendary)
+scoreboard players operation @s shop.frame.rarity = #compare shop.frame.rarity
 
 # Tier (sub-rarity)
-scoreboard players operation @s ItemShopTier = #compare ItemShopTier
+scoreboard players operation @s shop.frame.tier = #compare shop.frame.tier
 
 # Remove local tag(s)
 tag @s remove NewItemDisplay

@@ -53,5 +53,5 @@ $execute positioned ^1.66 ^5 ^ run function exigence:menu/money_menus/artifact/a
 
 # Give artifact displays tag
 tag @e[type=minecraft:item_display,tag=NewItemDisplays] add Artifact
-tag @e[type=minecraft:item_display,tag=NewItemDisplays,scores={Rarity=3}] add Trial
-tag @e[type=minecraft:item_display,tag=NewItemDisplays,scores={Rarity=4}] add Crucible
+tag @e[type=minecraft:item_display,tag=NewItemDisplays,scores={shop.frame.rarity=3}] add Trial
+tag @e[type=minecraft:item_display,tag=NewItemDisplays,scores={shop.frame.rarity=4}] add Crucible

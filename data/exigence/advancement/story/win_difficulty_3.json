@@ -8,7 +8,7 @@
     "display": {
       "description": "Return from the Temple of Fervor",
       "icon": {
-        "id": "minecraft:chiseled_tuff"
+        "id": "minecraft:campfire"
       },
       "title": "Temple of Fervor"
     }

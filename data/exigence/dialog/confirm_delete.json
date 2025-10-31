@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:confirmation",
+  "title": "Settings",
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": "Are you sure you want to delete this profile?"
+  },
+  "can_close_with_escape": true,
+  "pause": true,
+  "no": {
+    "label": "Cancel",
+    "action": {
+      "type": "minecraft:run_command",
+      "command": "trigger ProfileSelectorCancelDelete"
+    }
+  },
+  "yes": {
+    "label": {"text":"Delete Profile","color":"red"},
+    "tooltip": {"text":"THIS ACTION CANNOT BE UNDONE","color":"red"},
+    "action": {
+      "type": "minecraft:run_command",
+      "command": "trigger ProfileSelectorConfirmDelete"
+    }
+  }
+}

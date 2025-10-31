@@ -21,7 +21,7 @@ execute as @a[tag=ActivePlayer,scores={dead=2}] at @s run spectate @p[tag=Active
 execute as @a[tag=ActivePlayer,scores={dead=1}] run function exigence:player/death/died
 
 # Refresh score to track who has echos
-execute as @a[tag=ActivePlayer] store result score @s EchoFragments run clear @s #exigence:echo 0
+execute as @a[tag=ActivePlayer] store result score @s game.player.echo_fragments run clear @s #exigence:echo 0
 
 ## WIN CHECK
 # The player is at the start/exit with an Echo shard in their inventory (victory)

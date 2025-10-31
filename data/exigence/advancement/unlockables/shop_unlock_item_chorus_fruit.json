@@ -1,0 +1,7 @@
+{
+    "criteria": {
+      "shop_unlock_item_chorus_fruit": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }

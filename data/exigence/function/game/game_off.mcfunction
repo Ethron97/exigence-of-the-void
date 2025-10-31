@@ -28,6 +28,14 @@ stopsound @a[tag=ActivePlayer] ambient
 # Reset teams
 team join Spectator @a[tag=ActivePlayer]
 
+# Increment attempt scores
+execute if score Difficulty DungeonRun matches 1 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.attempts_D1 1
+execute if score Difficulty DungeonRun matches 2 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.attempts_D2 1
+execute if score Difficulty DungeonRun matches 3 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.attempts_D3 1
+execute if score Difficulty DungeonRun matches 4 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.attempts_D4 1
+execute if score Difficulty DungeonRun matches 5 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.attempts_D5 1
+execute if score Difficulty DungeonRun matches 6 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.attempts_D6 1
+
 # Display post game stats
 #   Wait until later if they are Exalting
 execute as @a[tag=ActivePlayer,tag=!Exalting] run function exigence:player/stats/run_stats

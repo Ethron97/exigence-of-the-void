@@ -1,1 +1,0 @@
-$function exigence:hub/item_shop/frame/item/$(item_name)/display with storage exigence:colors

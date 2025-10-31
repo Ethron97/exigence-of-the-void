@@ -15,5 +15,5 @@ execute if data storage exigence:debug {void:1} run setblock -261 17 -75 minecra
 execute if data storage exigence:debug {void:0} run setblock -261 17 -75 minecraft:air
 
 # Change echowintracking
-execute if data storage exigence:debug {void:1} run scoreboard players set Ethron97 s_disableEchoWinTracking 1
-execute if data storage exigence:debug {void:0} run scoreboard players set Ethron97 s_disableEchoWinTracking 0
+execute if data storage exigence:debug {void:1} run scoreboard players set Ethron97 career.settings.echo_win_tracking 0
+execute if data storage exigence:debug {void:0} run scoreboard players set Ethron97 career.settings.echo_win_tracking 1

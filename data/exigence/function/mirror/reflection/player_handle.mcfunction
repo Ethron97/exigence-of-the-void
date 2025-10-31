@@ -8,7 +8,7 @@
 # DEBUG
 #say player handle
 
-scoreboard players operation #compare PlayerID = @s PlayerID
+scoreboard players operation #compare game.entity.profile_id = @s profile.profile_id
 
 ## GET MIRROR
 # Reset active tag
@@ -35,7 +35,7 @@ function exigence:mirror/reflection/get_active_mirror
 tag @e[type=minecraft:armor_stand,tag=MirrorEntity] remove Active
 
 # Get mirror entities that match this player's
-execute as @e[type=minecraft:armor_stand,tag=MirrorEntity] if score @s NodePlayerID = #compare PlayerID run tag @s add Active
+execute as @e[type=minecraft:armor_stand,tag=MirrorEntity] if score @s game.entity.profile_id = #compare game.entity.profile_id run tag @s add Active
 
 # If there is no active mirror, hide reflection and return
 execute unless entity @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] run data modify entity @e[type=minecraft:armor_stand,tag=Reflection,tag=Active,limit=1] equipment set value {}

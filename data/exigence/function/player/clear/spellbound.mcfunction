@@ -37,15 +37,15 @@ $data modify storage exigence:give type set value $(type)
 $data modify storage exigence:give index set value $(index)
 
 # Increase index by 1
-$scoreboard players set temp Temp $(index)
-scoreboard players add temp Temp 1
+$scoreboard players set #temp Temp $(index)
+scoreboard players add #temp Temp 1
 
 # If index = 8 and type is 'hotbar', set index to 0 and type to 'inventory'
-execute if data storage exigence:give {type:'hotbar',index:8} run scoreboard players set temp Temp 0
+execute if data storage exigence:give {type:'hotbar',index:8} run scoreboard players set #temp Temp 0
 execute if data storage exigence:give {type:'hotbar',index:8} run data modify storage exigence:give type set value 'inventory'
 
 # Copy index back to storage
-execute store result storage exigence:give index int 1 run scoreboard players get temp Temp
+execute store result storage exigence:give index int 1 run scoreboard players get #temp Temp
 
 # Iterate
 function exigence:player/clear/spellbound with storage exigence:give

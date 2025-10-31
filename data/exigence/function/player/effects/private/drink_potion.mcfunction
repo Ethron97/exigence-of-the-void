@@ -8,21 +8,21 @@
 say Drinked potion
 
 # Cleanup
-scoreboard players set @s DrinkPotion 0
+scoreboard players set @s game.player.used.potion 0
 clear @s glass_bottle
 
 # Store player id
-scoreboard players operation #compare PlayerID = @s PlayerID
+scoreboard players operation #compare profile.node.player_id = @s career.player_id
 
 # Get player node from player id
-execute as @e[type=minecraft:armor_stand,tag=PlayerNode] if score @s PlayerID = #compare PlayerID run tag @s add SelectedPlayerNode
+execute as @e[type=minecraft:armor_stand,tag=PlayerNode] if score @s profile.node.player_id = #compare profile.node.player_id run tag @s add SelectedPlayerNode
 
 # Get potion item name from player node (offhand first so mainhand is prioritized)
 execute as @e[type=minecraft:armor_stand,tag=PlayerNode,tag=SelectedPlayerNode] run data modify storage exigence:player_effects potion_name set from entity @s equipment.offhand.components."minecraft:custom_data".item_name
 execute as @e[type=minecraft:armor_stand,tag=PlayerNode,tag=SelectedPlayerNode] run data modify storage exigence:player_effects potion_name set from entity @s equipment.mainhand.components."minecraft:custom_data".item_name
 
 # Setup function
-scoreboard players set FromPotion EffectTemp 1
+scoreboard players set et.FromPotion game.effect_temp 1
 
 # Call switch on hardcoded effect
 execute if data storage exigence:player_effects {potion_name:"potion_health_a"} run function exigence:player/effects/set_effect_time_health {amplifier:0,duration:1200}
@@ -56,7 +56,7 @@ execute if data storage exigence:player_effects {potion_name:"potion_jump_4"} ru
 execute if data storage exigence:player_effects {potion_name:"potion_jump_6"} run function exigence:player/effects/set_effect_time {effect:'jump6',duration:200}
 execute if data storage exigence:player_effects {potion_name:"potion_jump_8"} run function exigence:player/effects/set_effect_time {effect:'jump8',duration:200}
 
-scoreboard players set FromPotion EffectTemp 0
+scoreboard players set et.FromPotion game.effect_temp 0
 
 # Remove local tag
 tag @e[type=minecraft:armor_stand,tag=PlayerNode,tag=SelectedPlayerNode] remove SelectedPlayerNode

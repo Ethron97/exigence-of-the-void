@@ -6,14 +6,14 @@
 # ===============================================================================================================
 
 # Increase score
-scoreboard players add @s timesPicked 1
+scoreboard players add @s node.berry.data.times_picked 1
 
 # Summon berries
 # harvest: increase by +1/1
-scoreboard players add @s minBerries 1
-execute store result storage exigence:berry min int 1 run scoreboard players get @s minBerries
-scoreboard players add @s maxBerries 1
-execute store result storage exigence:berry max int 1 run scoreboard players get @s maxBerries
+scoreboard players add @s node.berry.min_berries 1
+execute store result storage exigence:berry min int 1 run scoreboard players get @s node.berry.min_berries
+scoreboard players add @s node.berry.max_berries 1
+execute store result storage exigence:berry max int 1 run scoreboard players get @s node.berry.max_berries
 
 function exigence:botany/private/random_berry_amount with storage exigence:berry
 execute at @s positioned ~ ~1 ~ run function exigence:botany/private/summon_berries with storage exigence:berry

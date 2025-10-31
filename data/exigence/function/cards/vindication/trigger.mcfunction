@@ -6,7 +6,7 @@
 scoreboard players set #highest_hearts Temp 0
 
 # Get highiest damage taken since last death (for living players)
-execute as @a[tag=ActivePlayer,scores={dead=0}] run scoreboard players operation #highest_hearts Temp > @s cr_damageTakenSinceLastDeath
+execute as @a[tag=ActivePlayer,scores={dead=0}] run scoreboard players operation #highest_hearts Temp > @s game.player.damage_since_last_death
 # Convert to hearts
 scoreboard players operation #highest_hearts Temp /= 20 number
 

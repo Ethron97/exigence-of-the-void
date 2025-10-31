@@ -19,4 +19,4 @@ execute as @e[type=marker,tag=SilencePlatform] at @s run function exigence:door/
 fill -406 148 22 -422 148 6 end_portal replace black_concrete
 
 # Blue fire
-execute if entity @a[scores={VaultCode=3},tag=Crucible] run fill -407 158 7 -421 158 21 minecraft:soul_soil replace minecraft:chiseled_tuff
+execute if entity @a[scores={game.player.vault_code=3},tag=Crucible] run fill -407 158 7 -421 158 21 minecraft:soul_soil replace minecraft:chiseled_tuff

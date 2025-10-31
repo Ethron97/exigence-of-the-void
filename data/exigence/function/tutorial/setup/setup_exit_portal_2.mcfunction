@@ -8,7 +8,7 @@
 tag @s remove NewTutorialExitNode
 
 # Initialize sound cooldown (so they don't immediately start hearing sounds at game start)
-scoreboard players add @s AmbientNoiseCooldown 300
+scoreboard players add @s game.entity.ambient_noise_cooldown 300
 
 ## LOCATION SPECIFIC EFFECTS (need to happen after it got positioned)
 # Summon block displays

@@ -10,6 +10,7 @@
 
 # DEBUG
 say Enter Tutorial
+effect clear @s night_vision
 
 # Reset scores
 function exigence:game/game_reset/reset_player_scores

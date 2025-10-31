@@ -19,14 +19,14 @@ execute store result score @s Random run random value 1..2
 
 # FULLY GROWN (50%)
 execute if score @s Random matches 1 at @s run setblock ~ ~ ~ minecraft:sweet_berry_bush[age=3]
-execute if score @s Random matches 1 run scoreboard players set @s maxBerries 4
-execute if score @s Random matches 1 run scoreboard players set @s minBerries 2
+execute if score @s Random matches 1 run scoreboard players set @s node.berry.max_berries 4
+execute if score @s Random matches 1 run scoreboard players set @s node.berry.min_berries 2
 execute if score @s Random matches 1 at @s run setblock ~ ~1 ~ minecraft:light[level=9]
 
 # HALF GROWN (50%)
 execute if score @s Random matches 2 at @s run setblock ~ ~ ~ minecraft:sweet_berry_bush[age=2]
-execute if score @s Random matches 2 run scoreboard players set @s maxBerries 2
-execute if score @s Random matches 2 run scoreboard players set @s minBerries 1
+execute if score @s Random matches 2 run scoreboard players set @s node.berry.max_berries 2
+execute if score @s Random matches 2 run scoreboard players set @s node.berry.min_berries 1
 execute if score @s Random matches 2 at @s run setblock ~ ~1 ~ minecraft:light[level=6]
 
 # Playsound

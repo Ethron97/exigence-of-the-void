@@ -19,7 +19,7 @@ scoreboard players operation #MinDifficulty DungeonRun += #BaseDifficulty Dungeo
 scoreboard players operation #MaxDifficulty DungeonRun += #BaseDifficulty DungeonRun
 
 # Cap diffiulcty based on the highest echo this player has achieved + 1
-execute as @a[tag=ActivePlayer] run scoreboard players operation #MaxDifficulty DungeonRun < @s HighestWin
+execute as @a[tag=ActivePlayer] run scoreboard players operation #MaxDifficulty DungeonRun < @s profile.data.winloss.highest_win
 scoreboard players add #MaxDifficulty DungeonRun 1
 
 # Ensure difficulty mod is bounded at +/-4 (so min difficiulty doesn't go above 5, or max below 1)
@@ -44,7 +44,7 @@ $data modify storage exigence:echo_selection echos set from storage exigence:ech
 $data modify storage exigence:echo_selection level set value $(level)
 
 # Start iteration to call macros
-execute store result score temp Temp run data get storage exigence:echo_selection echos 1
+execute store result score #temp Temp run data get storage exigence:echo_selection echos 1
 function exigence:ember/private/choose_echo_nodes_b2 with storage exigence:echo_selection
 
 #function exigence:ember/private/choose_echo_nodes_c with storage exigence:echo_selection

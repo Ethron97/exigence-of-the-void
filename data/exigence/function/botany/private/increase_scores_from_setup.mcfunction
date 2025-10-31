@@ -6,13 +6,8 @@
 
 #====================================================================================================
 
-scoreboard players add @s t_berryBushesPickedFromSetup 1
-scoreboard players add @s cr_berryBushesPickedFromSetup 1
-execute if score @s ActiveLevel matches 1 run scoreboard players add @s cr_berryBushesPickedFromSetupL1 1
-execute if score @s ActiveLevel matches 1 run scoreboard players add @s t_berryBushesPickedFromSetupL1 1
-execute if score @s ActiveLevel matches 2 run scoreboard players add @s cr_berryBushesPickedFromSetupL2 1
-execute if score @s ActiveLevel matches 2 run scoreboard players add @s t_berryBushesPickedFromSetupL2 1
-execute if score @s ActiveLevel matches 3 run scoreboard players add @s cr_berryBushesPickedFromSetupL3 1
-execute if score @s ActiveLevel matches 3 run scoreboard players add @s t_berryBushesPickedFromSetupL3 1
-execute if score @s ActiveLevel matches 4 run scoreboard players add @s cr_berryBushesPickedFromSetupL4 1
-execute if score @s ActiveLevel matches 4 run scoreboard players add @s t_berryBushesPickedFromSetupL4 1
+scoreboard players add @s profile.data.berry.cr.berry_bushes_picked_from_setup 1
+execute if score @s game.player.active_level matches 1 run scoreboard players add @s profile.data.berry.cr.berry_bushes_picked_from_setup_L1 1
+execute if score @s game.player.active_level matches 2 run scoreboard players add @s profile.data.berry.cr.berry_bushes_picked_from_setup_L2 1
+execute if score @s game.player.active_level matches 3 run scoreboard players add @s profile.data.berry.cr.berry_bushes_picked_from_setup_L3 1
+execute if score @s game.player.active_level matches 4 run scoreboard players add @s profile.data.berry.cr.berry_bushes_picked_from_setup_L4 1

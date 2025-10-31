@@ -7,18 +7,23 @@ scoreboard players enable Ethron97 Admin
 scoreboard players enable Ethron97 DebugMenu
 scoreboard players enable Ethypus DebugMenu
 
-execute as @a unless score @s 1 matches 0 run function exigence:misc/triggers/1
-execute as @a unless score @s 2 matches 0 run function exigence:misc/triggers/2
-execute as @a unless score @s 3 matches 0 run function exigence:misc/triggers/3
-execute as @a unless score @s 4 matches 0 run function exigence:misc/triggers/4
-execute as @a unless score @s Admin matches 0 run function exigence:misc/triggers/admin
-execute as @a unless score @s DebugMenu matches 0 run function exigence:misc/triggers/debug_menu
+execute as @a if score @s 1 matches 1.. run function exigence:misc/triggers/admin/1
+execute as @a if score @s 2 matches 1.. run function exigence:misc/triggers/admin/2
+execute as @a if score @s 3 matches 1.. run function exigence:misc/triggers/admin/3
+execute as @a if score @s 4 matches 1.. run function exigence:misc/triggers/admin/4
+execute as @a if score @s Admin matches 1.. run function exigence:misc/triggers/admin/admin
+execute as @a if score @s DebugMenu matches 1.. run function exigence:misc/triggers/admin/debug_menu
 
-execute as @a unless score @s TpTutorial matches 0 run function exigence:misc/triggers/tp_tutorial
-execute as @a unless score @s TpGame matches 0 run function exigence:misc/triggers/tp_game
-execute as @a unless score @s TpHub matches 0 run function exigence:misc/triggers/tp_hub
-execute as @a unless score @s TpOldHub matches 0 run function exigence:misc/triggers/tp_old_hub
-execute as @a unless score @s TpProfileData matches 0 run function exigence:misc/triggers/tp_profile_data
+execute as @a if score @s TpTutorial matches 1.. run function exigence:misc/triggers/tp_tutorial
+execute as @a if score @s TpGame matches 1.. run function exigence:misc/triggers/tp_game
+execute as @a if score @s TpHub matches 1.. run function exigence:misc/triggers/tp_hub
+execute as @a if score @s TpOldHub matches 1.. run function exigence:misc/triggers/tp_old_hub
+execute as @a if score @s TpProfileData matches 1.. run function exigence:misc/triggers/tp_profile_data
 
-execute as @a unless score @s SkipSection matches 0 run function exigence:misc/triggers/skip_section
-execute as @a unless score @s ExitTutorial matches 0 run function exigence:misc/triggers/exit_tutorial
+execute as @a if score @s SkipSection matches 1.. run function exigence:misc/triggers/skip_section
+execute as @a if score @s ExitTutorial matches 1.. run function exigence:misc/triggers/exit_tutorial
+
+execute as @a if score @s MyPlayerID matches 1.. run function exigence:misc/triggers/my_player_id
+
+execute as @a if score @s ProfileSelectorConfirmDelete matches 1.. run function exigence:misc/triggers/hub/confirm_profile_delete
+execute as @a if score @s ProfileSelectorCancelDelete matches 1.. run function exigence:misc/triggers/hub/cancel_profile_delete

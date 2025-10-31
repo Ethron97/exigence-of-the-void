@@ -13,4 +13,4 @@ $execute if data storage exigence:debug {levelonly:0} run function exigence:$(de
 playsound minecraft:block.stone_button.click_off block @s ~ ~ ~ 1 1.2
 
 # Reopen menu with updated switches
-function exigence:misc/triggers/debug_menu
+function exigence:misc/triggers/admin/debug_menu

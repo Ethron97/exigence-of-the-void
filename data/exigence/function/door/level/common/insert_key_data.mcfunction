@@ -12,7 +12,7 @@ teleport @s ^ ^ ^-0.28125 ~ ~
 #data modify entity @s Rotation set from storage exigence:temp Rotation
 
 # Copy vault handle ID (#compare was set from previous function)
-scoreboard players operation @s VaultHandleID = #compare VaultHandleID
+scoreboard players operation @s game.vault.handle.id = #compare game.vault.handle.id
 
 # Remove local tag
 tag @s remove NewDoorHandleKey

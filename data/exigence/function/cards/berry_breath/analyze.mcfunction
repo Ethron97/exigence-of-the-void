@@ -1,1 +1,1 @@
-scoreboard players add beastSenseSeconds DeckAnalysis 40
+scoreboard players add e.beastsenseSeconds deck.analysis 40

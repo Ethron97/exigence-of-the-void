@@ -1,3 +1,3 @@
-scoreboard players add Hazard DeckAnalysis 1
-scoreboard players add Berry DeckAnalysis 4
-scoreboard players add CardsInstant DeckAnalysis 1
+scoreboard players add other.Hazard deck.analysis 1
+scoreboard players add other.Berry deck.analysis 4
+scoreboard players add CardsCards.Instant deck.analysis 1

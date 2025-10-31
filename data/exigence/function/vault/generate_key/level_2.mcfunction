@@ -18,11 +18,10 @@ execute if entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode,tag=Vault_
 execute if entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode,tag=Vault_ward] run data modify storage exigence:treasure_drop vault_name set value ward
 
 # Increase scores (if there was a vault node remaining to spawn a key)
-execute if entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode] run scoreboard players add @a[tag=ActivePlayer] t_vaultKeysDropped 1
-execute if entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode] run scoreboard players add @a[tag=ActivePlayer] cr_vaultKeysDropped 1
+execute if entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode] run scoreboard players add @a[tag=ActivePlayer] profile.data.vaults.cr.vault_keys_spawned 1
 
 # Drop key
-execute if entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode] run execute as @e[type=minecraft:armor_stand,tag=VaultKeyDropper] run function exigence:treasure/node/drop_treasure {function:"exigence:door/vault/summon_vault_key"}
+execute if entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode] run execute as @e[type=minecraft:armor_stand,tag=VaultKeyDropper] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:door/vault/summon_vault_key"}
 
 # Debug
 execute unless entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode] run say No vault nodes available to drop a key

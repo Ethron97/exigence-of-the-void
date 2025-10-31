@@ -1,1 +1,1 @@
-#scoreboard players add Treasure DeckAnalysis 1
+#scoreboard players add other.Treasure deck.analysis 1

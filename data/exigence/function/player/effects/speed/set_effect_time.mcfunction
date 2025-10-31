@@ -9,19 +9,19 @@
 #=======================================================================================================
 
 # Setup scores
-scoreboard players set FromCard EffectTemp 0
-scoreboard players set FromPotion EffectTemp 0
-scoreboard players set FromSpellsling EffectTemp 0
-scoreboard players set @s mod_calc_Heighten 1
+scoreboard players set et.FromCard game.effect_temp 0
+scoreboard players set et.FromPotion game.effect_temp 0
+scoreboard players set et.FromSpellsling game.effect_temp 0
+scoreboard players set @s game.player.calc_heighten 1
 
 # Store given duration in temp variable
-scoreboard players set BaseTime EffectTemp 0
-$scoreboard players set SetTime EffectTemp $(duration)
+scoreboard players set et.BaseTime game.effect_temp 0
+$scoreboard players set et.SetTime game.effect_temp $(duration)
 
 # Amplifier is one less than level
-$scoreboard players set Level EffectTemp $(level)
-scoreboard players operation Amplifier EffectTemp = Level EffectTemp
-scoreboard players remove Amplifier EffectTemp 1
+$scoreboard players set et.Level game.effect_temp $(level)
+scoreboard players operation et.Amplifier game.effect_temp = et.Level game.effect_temp
+scoreboard players remove et.Amplifier game.effect_temp 1
 
 # Update in-game player effects
 $function exigence:player/effects/private/update_effect/speed {level:$(level)}

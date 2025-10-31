@@ -14,4 +14,4 @@ function exigence:beacon/node/setup_interaction
 clone -405 -43 -122 -401 -41 -118 ~-2 ~-2 ~-2
 
 # Set node state
-scoreboard players set @s NodeState 0
+scoreboard players set @s game.node.node_state 0

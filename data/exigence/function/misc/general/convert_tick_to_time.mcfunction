@@ -1,7 +1,7 @@
 # Converts ticks to seconds/minutes/hours
 
 # SCOREBOARD
-# TickConvert
+# tick_convert
 
 # INPUT
 # in.ticks
@@ -13,11 +13,11 @@
 
 #==========================================================================================================
 
-scoreboard players operation out.s TickConvert = in.ticks TickConvert
-scoreboard players operation out.s TickConvert /= 20 number
-scoreboard players operation out.m TickConvert = out.s TickConvert
-scoreboard players operation out.m TickConvert /= 60 number
-scoreboard players operation out.h TickConvert = out.m TickConvert
-scoreboard players operation out.h TickConvert /= 60 number
-scoreboard players operation out.m TickConvert %= 60 number
-scoreboard players operation out.s TickConvert %= 60 number
+scoreboard players operation out.s tick_convert = in.ticks tick_convert
+scoreboard players operation out.s tick_convert /= 20 number
+scoreboard players operation out.m tick_convert = out.s tick_convert
+scoreboard players operation out.m tick_convert /= 60 number
+scoreboard players operation out.h tick_convert = out.m tick_convert
+scoreboard players operation out.h tick_convert /= 60 number
+scoreboard players operation out.m tick_convert %= 60 number
+scoreboard players operation out.s tick_convert %= 60 number

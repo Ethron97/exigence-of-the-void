@@ -10,4 +10,4 @@
 playsound minecraft:block.amethyst_block.resonate neutral @s ~ ~ ~ 7 0.3
 
 # Reset cooldown
-execute store result score @s PingEchoCooldown run random value 100..110
+execute store result score @s game.player.sound_ping.echo_cooldown run random value 100..110

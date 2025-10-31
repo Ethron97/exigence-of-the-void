@@ -13,9 +13,9 @@ execute as @e[type=armor_stand,tag=NewNode] run scoreboard players set @s BaseEm
 
 # Initialize scoreboards
 $execute as @e[type=armor_stand,tag=NewNode] run scoreboard players set @s EchoDifficulty $(ed)
-execute as @e[type=armor_stand,tag=NewNode] run scoreboard players set @s EmbersToDrop 0
-execute as @e[type=armor_stand,tag=NewNode] run scoreboard players set @s EchoTimesChosen 0
-execute as @e[type=armor_stand,tag=NewNode] run scoreboard players set @s EchoTimesWon 0
+execute as @e[type=armor_stand,tag=NewNode] run scoreboard players set @s node.ember.embers_to_drop 0
+execute as @e[type=armor_stand,tag=NewNode] run scoreboard players set @s node.data.echo.times_chosen 0
+execute as @e[type=armor_stand,tag=NewNode] run scoreboard players set @s node.data.echo.times_won 0
 
 # Assign team
 execute as @e[type=armor_stand,tag=NewNode] run team join Echo @s

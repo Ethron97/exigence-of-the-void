@@ -18,4 +18,4 @@ $data modify entity @s transformation set value {left_rotation:[0f,0f,0f,1f],rig
 #tag @e[type=interaction,tag=HoverScale] remove HoverScale
 
 # Undisplay costs
-$execute unless entity @a[tag=ActivePlayer,scores={dead=0,VoidShopping=$(VoidShopID),HoldingCurrency=1}] as @s[tag=VoidShopDisplay] run function exigence:menu/item_display/void_shop_display/cost_display/delete with entity @s item.components."minecraft:custom_data"
+$execute unless entity @a[tag=ActivePlayer,scores={dead=0,shop.player.void_shopping_id=$(VoidShopID),shop.player.holding_currency=1}] as @s[tag=VoidShopDisplay] run function exigence:menu/item_display/void_shop_display/cost_display/delete with entity @s item.components."minecraft:custom_data"

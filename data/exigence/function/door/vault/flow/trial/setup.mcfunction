@@ -14,4 +14,4 @@ summon marker -355.5 152.00 -25.5 {Tags:["FlowTrialSetup","FlowPosA"]}
 fill -347 148 -34 -364 148 -18 end_portal replace black_concrete
 
 # Blue fire
-execute if entity @a[scores={VaultCode=6},tag=Crucible] run fill -363 158 -19 -349 158 -33 minecraft:soul_soil replace minecraft:chiseled_tuff
+execute if entity @a[scores={game.player.vault_code=6},tag=Crucible] run fill -363 158 -19 -349 158 -33 minecraft:soul_soil replace minecraft:chiseled_tuff

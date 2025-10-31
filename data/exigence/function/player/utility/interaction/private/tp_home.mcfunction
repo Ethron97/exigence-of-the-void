@@ -4,8 +4,8 @@
 #   AS interaction
 
 ## INPUT
-#   INT player_id
+#   INT profile_id
 
 #========================================================================================================
 
-$execute at @e[type=minecraft:armor_stand,tag=PlayerNode,scores={PlayerID=$(player_id)}] run tp @s ~ ~ ~
+$execute at @e[type=minecraft:armor_stand,tag=ProfileNode,scores={profile.node.profile_id=$(profile_id)}] run tp @s ~ ~ ~

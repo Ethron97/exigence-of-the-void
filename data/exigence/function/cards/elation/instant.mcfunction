@@ -1,4 +1,4 @@
 say Triumph: +60 seconds of Speed II
 
 # FUNCTIONALITY
-scoreboard players add Elation Triumph 1
+scoreboard players add tri.Elation game.triumph 1

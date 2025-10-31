@@ -6,7 +6,7 @@
 #========================================================================================================
 
 # Increment node state
-scoreboard players add @s NodeState 1
+scoreboard players add @s game.node.node_state 1
 
 # Node state 0 = active
 # Node state 1 = 1 ember
@@ -14,16 +14,16 @@ scoreboard players add @s NodeState 1
 # Node state 3 = 3 ember
 
 # Set middle block
-execute if score @s NodeState matches 1 at @s run setblock ~ ~-1 ~ minecraft:netherrack
-execute if score @s NodeState matches 1 at @s run setblock ~ ~ ~ minecraft:fire
+execute if score @s game.node.node_state matches 1 at @s run setblock ~ ~-1 ~ minecraft:netherrack
+execute if score @s game.node.node_state matches 1 at @s run setblock ~ ~ ~ minecraft:fire
 
-execute if score @s NodeState matches 2 at @s run setblock ~ ~-1 ~ minecraft:soul_soil
-execute if score @s NodeState matches 2 at @s run setblock ~ ~ ~ minecraft:soul_fire
+execute if score @s game.node.node_state matches 2 at @s run setblock ~ ~-1 ~ minecraft:soul_soil
+execute if score @s game.node.node_state matches 2 at @s run setblock ~ ~ ~ minecraft:soul_fire
 
 # Title for 1/3, 2/3
-execute if score @s NodeState matches 1 run title @a[tag=ActivePlayer] subtitle [{text:"1/3",color:"aqua"}]
-execute if score @s NodeState matches 2 run title @a[tag=ActivePlayer] subtitle [{text:"2/3",color:"aqua"}]
-execute if score @s NodeState matches 1..2 run title @a[tag=ActivePlayer] title ""
+execute if score @s game.node.node_state matches 1 run title @a[tag=ActivePlayer] subtitle [{text:"1/3",color:"aqua"}]
+execute if score @s game.node.node_state matches 2 run title @a[tag=ActivePlayer] subtitle [{text:"2/3",color:"aqua"}]
+execute if score @s game.node.node_state matches 1..2 run title @a[tag=ActivePlayer] title ""
 
 # Playsound
 execute at @s run playsound minecraft:item.flintandsteel.use neutral @a ~ ~ ~
@@ -37,7 +37,7 @@ execute if score @s ObjectLevel matches 4 run clear @a[tag=Lighting] ghast_tear[
 
 #========================================================================================================
 # Only run past here if the final state was lit
-execute if score @s NodeState matches ..2 run return 1
+execute if score @s game.node.node_state matches ..2 run return 1
 
 # Remove interaction
 function exigence:beacon/node/remove_interaction

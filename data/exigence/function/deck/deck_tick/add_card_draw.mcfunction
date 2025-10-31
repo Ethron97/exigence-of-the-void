@@ -1,7 +1,5 @@
 # Reset the cooldown for the next card draw
-scoreboard players operation CardPlayCooldown TickCounter = #CardPlayCooldownLimit TickCounter
-
-
+scoreboard players operation card.play.cooldown tick_counter = #CardPlayCooldownLimit tick_counter
 
 scoreboard players remove CardQueue DungeonRun 1
 

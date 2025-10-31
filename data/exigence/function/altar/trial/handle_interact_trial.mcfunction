@@ -7,9 +7,8 @@
 
 #=========================================================================================================
 
-
-# Copy VaultCode from altarnode to player
-scoreboard players operation @p[tag=Lighting] VaultCode = @s VaultCode
+# Copy vault code from altarnode to player
+scoreboard players operation @p[tag=Lighting] game.player.vault_code = @s node.property.altar.vault_code
 
 # Copy tag as well
 execute if entity @s[tag=Trial] run tag @p[tag=Lighting] add Trial
@@ -17,4 +16,4 @@ execute if entity @s[tag=Crucible] run tag @p[tag=Lighting] add Crucible
 
 # Get/tag parent vault node
 scoreboard players operation #compare VaultID = @s VaultID
-execute as @e[type=minecraft:armor_stand,tag=VaultNode,scores={ObjectLevel=3}] if score @s NodeID = #compare VaultID run function exigence:altar/trial/begin_switch
+execute as @n[distance=..16,type=minecraft:armor_stand,tag=VaultNode,scores={ObjectLevel=3}] if score @s NodeID = #compare VaultID run function exigence:altar/trial/begin_switch

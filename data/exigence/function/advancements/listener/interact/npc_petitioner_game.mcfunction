@@ -1,6 +1,7 @@
 
 # If player(s) does not have "talk to petitioner" give that first
-advancement grant @a[tag=ActivePlayer,advancements={exigence:story/talk_to_petitioner=false}] only exigence:story/talk_to_petitioner
+#advancement grant @a[tag=ActivePlayer,advancements={exigence:story/talk_to_petitioner=false}] only exigence:story/talk_to_petitioner
+execute as @a[tag=ActivePlayer,limit=1,sort=arbitrary] run function exigence:profile/profile_node/story/grant {story:'talk_to_petitioner'}
 
 # Trigger dialoge
 execute as @e[type=minecraft:villager,tag=NPC_Petitioner,tag=Game] run function exigence:npc/game/dialogue_petitioner

@@ -15,4 +15,4 @@ execute positioned -350.5 152.00 7.5 run function exigence:door/vault/eye/trial/
 execute positioned -356.5 152.0 11.5 run function exigence:door/vault/eye/trial/monster/new {Type:'husk',Rotation:[180.0f,0.0f],Speed:1,Direction:3}
 
 # Blue fire
-execute if entity @a[scores={VaultCode=4},tag=Crucible] run fill -363 158 13 -349 158 -1 minecraft:soul_soil replace minecraft:chiseled_tuff
+execute if entity @a[scores={game.player.vault_code=4},tag=Crucible] run fill -363 158 13 -349 158 -1 minecraft:soul_soil replace minecraft:chiseled_tuff

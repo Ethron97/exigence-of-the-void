@@ -12,7 +12,7 @@ summon armor_stand -388.5 62.00 -245.5 {Tags:["L2","Rotation","Debug","NewMirror
 summon armor_stand -388.5 62.00 -245.5 {Tags:["L2","RotationReflection","Debug","NewMirrorEntity","MirrorEntity"],NoGravity:1,Invisible:1,NoBasePlate:1,Silent:1}
 
 # Copy player id
-scoreboard players operation @e[type=minecraft:armor_stand,tag=NewMirrorEntity] NodePlayerID = @s PlayerID
+scoreboard players operation @e[type=minecraft:armor_stand,tag=NewMirrorEntity] game.entity.profile_id = @s profile.profile_id
 
 # Initialize random
 scoreboard players add @e[type=minecraft:armor_stand,tag=NewMirrorEntity] Random 0

@@ -1,7 +1,7 @@
 # Called from player tick
 
 ## CONSTRAINTS
-#   AS player with s_resourceActionbar = 1
+#   AS player with career.settings.resource_actionbar_style = 1
 
 #=============================================================================================================
 

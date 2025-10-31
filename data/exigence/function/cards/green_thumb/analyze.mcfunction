@@ -1,1 +1,1 @@
-scoreboard players add Berry DeckAnalysis 4
+scoreboard players add other.Berry deck.analysis 4

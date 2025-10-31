@@ -6,23 +6,22 @@
 #=============================================================================================================
 
 # Reset DialogueTracker GAME scores
-scoreboard players set Supplier DialogueGame 0
-execute if entity @a[tag=ActivePlayer,advancements={exigence:story/match_bookshelf=false}] run scoreboard players set Scientist DialogueGame 0
-execute if entity @a[tag=ActivePlayer,advancements={exigence:story/match_bookshelf=true}] run scoreboard players set Scientist DialogueGame 6
-execute if entity @a[tag=ActivePlayer,advancements={exigence:story/light_altars=false}] run scoreboard players set Petitioner DialogueGame 0
-execute if entity @a[tag=ActivePlayer,advancements={exigence:story/light_altars=true}] run scoreboard players set Petitioner DialogueGame 4
+scoreboard players set #Supplier game.dialogue 0
+execute if entity @a[tag=ActivePlayer,advancements={exigence:story/match_bookshelf=false}] run scoreboard players set #Scientist game.dialogue 0
+execute if entity @a[tag=ActivePlayer,advancements={exigence:story/match_bookshelf=true}] run scoreboard players set #Scientist game.dialogue 6
+execute if entity @a[tag=ActivePlayer,advancements={exigence:story/light_altars=false}] run scoreboard players set #Petitioner game.dialogue 0
+execute if entity @a[tag=ActivePlayer,advancements={exigence:story/light_altars=true}] run scoreboard players set #Petitioner game.dialogue 4
 
 ## GAME TIME
-scoreboard players set cr_gameTicks TickCounter 0
+scoreboard players set game.ticks tick_counter 0
 
 # Cooldowns
-scoreboard players set CardDrawCooldown TickCounter 0
-scoreboard players set CardPlayCooldown TickCounter 0
-scoreboard players set @e[scores={RavagerAttractCooldown=1..}] RavagerAttractCooldown 0
-scoreboard players set @e[type=minecraft:ravager] GlowRemaining 0
-scoreboard players set @e[type=minecraft:warden] GlowRemaining 0
-scoreboard players set @e[type=minecraft:enderman] GlowRemaining 0
-scoreboard players set FloatingFlameCooldown TickCounter 0
+scoreboard players set card.draw.cooldown tick_counter 0
+scoreboard players set card.play.cooldown tick_counter 0
+scoreboard players set @e[type=minecraft:ravager] game.entity.glow_remaining 0
+scoreboard players set @e[type=minecraft:warden] game.entity.glow_remaining 0
+scoreboard players set @e[type=minecraft:enderman] game.entity.glow_remaining 0
+scoreboard players set FloatingFlameCooldown tick_counter 0
 
 # Reset DungeonRun scoreboard
 scoreboard players set MinMenace DungeonRun 0
@@ -62,20 +61,17 @@ scoreboard players set Level4Echos DungeonRun 0
 
 
 # Reset resources
-scoreboard players set Red Resources 0
-scoreboard players set Aqua Resources 0
-scoreboard players set Green Resources 0
-scoreboard players set RedNeeded Resources 0
-scoreboard players set AquaNeeded Resources 0
-scoreboard players set GreenNeeded Resources 0
+scoreboard players set Current.Red game.resources 0
+scoreboard players set Current.Aqua game.resources 0
+scoreboard players set Current.Green game.resources 0
 
 # Reset default max resources, just to be sure
-scoreboard players set MaxRed Resources 2
-scoreboard players set MaxAqua Resources 2
-scoreboard players set MaxGreen Resources 2
-#execute if data storage exigence:dungeon {is_coop:1} run scoreboard players set MaxRed Resources 2
-#execute if data storage exigence:dungeon {is_coop:1} run scoreboard players set MaxAqua Resources 2
-#execute if data storage exigence:dungeon {is_coop:1} run scoreboard players set MaxGreen Resources 2
+scoreboard players set Max.Red game.resources 2
+scoreboard players set Max.Aqua game.resources 2
+scoreboard players set Max.Green game.resources 2
+#execute if data storage exigence:dungeon {is_coop:1} run scoreboard players set Max.Red game.resources 2
+#execute if data storage exigence:dungeon {is_coop:1} run scoreboard players set Max.Aqua game.resources 2
+#execute if data storage exigence:dungeon {is_coop:1} run scoreboard players set Max.Green game.resources 2
 scoreboard players set DeckModifier Modifiers 0
 scoreboard players set VoidDeckModifier Modifiers 0
 
@@ -107,26 +103,21 @@ scoreboard players set Metabolism Modifiers 0
 scoreboard players set FinalAscension Modifiers 0
 scoreboard players set InnerFire Modifiers 0
 
-scoreboard players set #current ClockID 0
+scoreboard players set #current game.item.clock_marker.id 0
 
 # Dev modififers
 scoreboard players set VaultRain DevModifiers 0
 
-# Key hover cooldowns
-scoreboard players set LevelKeyHover TickCounter 0
-
 # Cards played display
-scoreboard players reset * CardsPlayed
-scoreboard players reset * TimesPlayed
-scoreboard players reset * TimesProcessed
-scoreboard players reset * TimesRecycled
+scoreboard players reset * game.cards_played
+scoreboard players reset * game.cards_played.times_played
+scoreboard players reset * game.cards_played.times_processed
+scoreboard players reset * game.cards_played.times_recycled
 
 # Triumph
-scoreboard players set Elation Triumph 0
-scoreboard players set Joy Triumph 0
-scoreboard players set Gratification Triumph 0
-scoreboard players set TrueAscension Triumph 0
+scoreboard players set tri.Elation game.triumph 0
+scoreboard players set tri.Joy game.triumph 0
+scoreboard players set tri.Gratification game.triumph 0
+scoreboard players set tri.TrueAscension game.triumph 0
 
-
-scoreboard players set Portal TickCounter 0
-
+scoreboard players set exit.portal.countdown tick_counter 0

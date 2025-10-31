@@ -30,7 +30,7 @@ data modify entity @e[type=minecraft:item_display,tag=NewVaultHandleKey,limit=1]
 data modify entity @e[type=minecraft:item_display,tag=NewVaultHandleKey,limit=1] teleport_duration set value 30
 
 # Copy vault handle ID (#compare was set from previous function)
-scoreboard players operation @e[type=minecraft:item_display,tag=NewVaultHandleKey] VaultHandleID = #compare VaultHandleID
+scoreboard players operation @e[type=minecraft:item_display,tag=NewVaultHandleKey] game.vault.handle.id = #compare game.vault.handle.id
 
 # Initialize score
 scoreboard players set @s InsertingKey 83

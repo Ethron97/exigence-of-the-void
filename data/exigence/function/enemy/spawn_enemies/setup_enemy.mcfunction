@@ -34,11 +34,13 @@ attribute @s step_height base set 2.0
 
 # Scale wardens on level 4 (so they don't fall into lava)
 execute as @s[type=warden,tag=L4] run attribute @s scale base set 2.0
+# Initialize awareness
+scoreboard players add @s[type=warden] game.warden.awareness 0
 
 # Initialize scores
-scoreboard players add @s[type=minecraft:ravager] EatingCookie 0
-scoreboard players add @s[type=minecraft:ravager] AmbientNoiseCooldown 0
-scoreboard players add @s EnemyStunCooldown 0
+scoreboard players add @s[type=minecraft:ravager] game.ravager.eating_cookie 0
+scoreboard players add @s[type=minecraft:ravager] game.entity.ambient_noise_cooldown 0
+scoreboard players add @s game.enemy.stun_timer 0
 
 # Glow enemies if debug
 execute if data storage exigence:debug {enemy:1} run effect give @s minecraft:glowing infinite 0 true

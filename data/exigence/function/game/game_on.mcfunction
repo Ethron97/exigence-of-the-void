@@ -28,9 +28,7 @@ execute as @a[tag=ActivePlayer] run attribute @s minecraft:waypoint_transmit_ran
 function exigence:game/game_reset/reset_game_scores
 
 # Select "active" playernode
-tag @e[type=armor_stand,tag=PlayerNode] remove Active
-scoreboard players operation #temp PlayerID = @a[tag=PrimaryPlayer] PlayerID
-execute as @e[type=minecraft:armor_stand,tag=PlayerNode] if score @s PlayerID = #temp PlayerID run tag @s add Active
+function exigence:profile/profile_node/select_active
 
 # Teleport to dungeon start
 #execute at @e[type=armor_stand,tag=Start] run spreadplayers ~ ~ 3 3 under 3 false @a[tag=ActivePlayer]
@@ -102,12 +100,12 @@ function exigence:vault/enter_with_vault_key
 function exigence:beacon/activate_beacon_nodes
 # If difficulty 5, drop Ardor Flames/Embers
 #   One flame if type 0
-execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:0} run execute as @e[type=minecraft:armor_stand,tag=BeaconNode,scores={NodeState=0}] run function exigence:beacon/node/spawn_flame
+execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:0} run execute as @e[type=minecraft:armor_stand,tag=BeaconNode,scores={game.node.node_state=0}] run function exigence:beacon/node/spawn_flame
 #   Three embers if type 1
-execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:1} run execute as @e[type=minecraft:armor_stand,tag=BeaconNode,scores={NodeState=0}] run function exigence:beacon/node/spawn_ember
-execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:1} run execute as @e[type=minecraft:armor_stand,tag=BeaconNode,scores={NodeState=0}] run function exigence:beacon/node/spawn_ember
-execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:1} run execute as @e[type=minecraft:armor_stand,tag=BeaconNode,scores={NodeState=0}] run function exigence:beacon/node/spawn_ember
-execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:1} run execute as @e[type=minecraft:armor_stand,tag=BeaconNode,scores={NodeState=0}] run function exigence:beacon/node/spawn_ember
+execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:1} run execute as @e[type=minecraft:armor_stand,tag=BeaconNode,scores={game.node.node_state=0}] run function exigence:beacon/node/spawn_ember
+execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:1} run execute as @e[type=minecraft:armor_stand,tag=BeaconNode,scores={game.node.node_state=0}] run function exigence:beacon/node/spawn_ember
+execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:1} run execute as @e[type=minecraft:armor_stand,tag=BeaconNode,scores={game.node.node_state=0}] run function exigence:beacon/node/spawn_ember
+execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:1} run execute as @e[type=minecraft:armor_stand,tag=BeaconNode,scores={game.node.node_state=0}] run function exigence:beacon/node/spawn_ember
 
 # If LBAL (led by ancient light): call it now
 execute if score LBAL DungeonRun matches 1.. run function exigence:cards/led_by_ancient_light/trigger
@@ -140,29 +138,50 @@ function exigence:treasure/keys/drop_level_keys
 # Initialize random rotation data
 data merge storage temp {Rotation:[0.0f,0.0f]}
 
+#=======================================================================================================
 # Initialize cooldowns
-scoreboard players set RavagerAggroCooldownLimit TickCounter 100
-scoreboard players set RavagerAggroCooldownCurrent TickCounter 50
+scoreboard players set #RavagerAggroCooldownLimit tick_counter 100
+scoreboard players set ravager.aggro.cooldown tick_counter 50
 
 # Pull passive treasure cooldown from data
-execute store result score #PassiveTreasureCooldownLimit TickCounter run data get storage exigence:dungeon_settings passive_treasure 1
-scoreboard players operation PassiveTreasureCooldown TickCounter = #PassiveTreasureCooldownLimit TickCounter
+execute store result score #PassiveTreasureCooldownLimit tick_counter run data get storage exigence:dungeon_settings passive_treasure 1
+scoreboard players operation passive.treasure.cooldown tick_counter = #PassiveTreasureCooldownLimit tick_counter
 
-scoreboard players set SecondsCooldown TickCounter 20
+scoreboard players set seconds.cooldown tick_counter 20
 
 # 35 seconds cooldown for the first card draw. Normally 30 seconds
-scoreboard players set #CardDrawCooldownLimit TickCounter 600
-scoreboard players operation CardDrawCooldown TickCounter = #CardDrawCooldownLimit TickCounter
+scoreboard players set #CardDrawCooldownLimit tick_counter 600
+scoreboard players operation card.draw.cooldown tick_counter = #CardDrawCooldownLimit tick_counter
 
 # Queued cards get played every 3 seconds
-scoreboard players set #CardPlayCooldownLimit TickCounter 60
-scoreboard players operation CardPlayCooldown TickCounter = #CardPlayCooldownLimit TickCounter
+scoreboard players set #CardPlayCooldownLimit tick_counter 60
+scoreboard players operation card.play.cooldown tick_counter = #CardPlayCooldownLimit tick_counter
+
+# Lowest interval of heartbeats
+scoreboard players set #minHeartbeatDelay tick_counter 9
+
+# Max attempts of a treasure node before giving up treasure drop
+scoreboard players set #MaxTreasureDroppingIterations node.treasure.drop_working 10
+
+# Delay before a menace node can trigger from player presence again
+scoreboard players set #MenaceNodeCooldownLimit game.node.menace.cooldown 200
+
+# Delay after breaking ravager glass before it comes back
+scoreboard players set #RavagerGlassCooldownLimit game.entity.ravager_glass.cooldown 20
+
+# Warden - Max Awareness
+scoreboard players set #max_awareness game.warden.awareness 75
+# Warden - Anger Threshold
+scoreboard players set #anger_threshold game.warden.awareness 30
+
+#=======================================================================================================
+
 
 # Load Game NPCs
 function exigence:npc/game/load_npcs
 
 # Set sidebar display or bossbar display for cards played display
-#scoreboard objectives setdisplay sidebar CardsPlayed
+#scoreboard objectives setdisplay sidebar game.cards_played
 
 # Initialize bossbar(s)
 function exigence:bossbar/deck/initialize
@@ -172,8 +191,8 @@ function exigence:bossbar/resource/initialize
 function exigence:bossbar/objective/initialize
 
 # Set team based sidebar based on primary player settings
-execute if entity @a[tag=PrimaryPlayer,scores={s_cardDisplaySidebar=1}] run scoreboard objectives setdisplay sidebar.team.dark_aqua CardsPlayed
-execute if entity @a[tag=PrimaryPlayer,scores={s_cardDisplaySidebar=1}] run scoreboard objectives setdisplay sidebar.team.dark_red CardsPlayed
+execute if entity @a[tag=PrimaryPlayer,scores={career.settings.card_display_sidebar=1}] run scoreboard objectives setdisplay sidebar.team.dark_aqua game.cards_played
+execute if entity @a[tag=PrimaryPlayer,scores={career.settings.card_display_sidebar=1}] run scoreboard objectives setdisplay sidebar.team.dark_red game.cards_played
 
 # Setup PHANTOM preview entities
 kill @e[type=block_display,tag=ItemPreview]

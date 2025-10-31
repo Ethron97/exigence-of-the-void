@@ -8,9 +8,6 @@ kill @e[type=minecraft:item_display,tag=DoorHandleKey]
 kill @e[type=minecraft:item_display,tag=Door]
 kill @e[type=minecraft:interaction,tag=DoorHandle]
 
-# Reset score
-#scoreboard players set VaultKeyHover TickCounter 0
-
 # Reset tags
 tag @a[tag=Trial] remove Trial
 tag @a[tag=Crucible] remove Crucible

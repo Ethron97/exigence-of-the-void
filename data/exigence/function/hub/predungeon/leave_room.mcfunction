@@ -3,7 +3,7 @@
 say Leave predungeon
 
 # Reset team so you only see your own score
-scoreboard players reset * ConsumableLimit
+scoreboard players reset * hub.player.consumable_limit
 
 # Team/tag
 tag @s add Lockerroom
