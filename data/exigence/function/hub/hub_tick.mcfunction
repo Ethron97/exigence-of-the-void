@@ -29,8 +29,8 @@ execute as @a[scores={hub.player.profile_selector_id=1..}] at @s run function ex
 #execute if entity @a[distance=..1000,tag=ItemShopping] run function exigence:hub/item_shop/item_shop_tick
 
 # Animate coin conversion
-#execute if entity @a[distance=..1000,tag=ConvertingCoins,scores={career.settings.coin_conversion_style=1}] run function exigence:hub/convert_money/display_hud/tick
-#execute if entity @a[distance=..1000,tag=ConvertingCoins,scores={career.settings.coin_conversion_style=0}] run function exigence:hub/convert_money/item_smash/tick
+#execute if entity @a[distance=..1000,tag=ConvertingCoins,scores={career.settings.coin_conversion_style=2}] run function exigence:hub/convert_money/display_hud/tick
+#execute if entity @a[distance=..1000,tag=ConvertingCoins,scores={career.settings.coin_conversion_style=1}] run function exigence:hub/convert_money/item_smash/tick
  
 # Add 0 to all players player id to initialize it
 #scoreboard players add @a career.player_id 0

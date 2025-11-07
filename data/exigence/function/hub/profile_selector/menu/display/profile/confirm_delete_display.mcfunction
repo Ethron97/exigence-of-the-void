@@ -9,8 +9,8 @@
 #=============================================================================================================
 
 # Effects
-#execute at @s run playsound minecraft:entity.zombie.break_wooden_door block @p[distance=..24] ~ ~ ~ 0.6 1.3
-execute at @s run playsound minecraft:block.conduit.deactivate block @p[distance=..24] ~ ~ ~ 1.0 1.0
+#execute at @s run playsound minecraft:entity.zombie.break_wooden_door block @p[distance=..16,tag=ProfileSelecting] ~ ~ ~ 0.6 1.3
+execute at @s run playsound minecraft:block.conduit.deactivate block @p[distance=..16,tag=ProfileSelecting] ~ ~ ~ 1.0 1.0
 $execute at @s run particle item{item:{id:"$(id)"}} ~ ~ ~0.1 0.2 0.2 0.0 0.02 15
 
 # Wipe out slot

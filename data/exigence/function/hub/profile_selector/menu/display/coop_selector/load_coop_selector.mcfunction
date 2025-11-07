@@ -11,7 +11,7 @@
 #say Load difficulty selector
 
 # Summon item display
-summon item_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["CoopSelectorDisplay","MenuDisplay","NewItemDisplay"],item:{id:"minecraft:water_bucket",count:1},\
+summon item_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["CoopSelectorDisplay","MenuDisplay","NewItemDisplay","SizeClassMedium"],item:{id:"minecraft:sunflower",count:1},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.4f,0.4f,0.4f]}}
 
 # Assign data
@@ -23,8 +23,6 @@ $data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.c
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".scale set value '0.4'
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".hover_scale set value '0.4'
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".Rotation set value '[0.0f,0.0f]'
-data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".Rot0 set value '0'
-data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".Rot1 set value '0'
 
 # Give right and left click functions
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".function_right set value 'exigence:hub/profile_selector/menu/display/coop_selector/calls/right_clicked'

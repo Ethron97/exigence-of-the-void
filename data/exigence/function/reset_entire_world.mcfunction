@@ -21,6 +21,7 @@ execute in exigence:profile_data run function exigence:profile/profile_cleanup
 
 say Creating scoreboards
 function exigence:scoreboard/generated_functions/create_scoreboards
+scoreboard objectives modify game.cards_played displayname {text:"Cards Played"}
 
 say Loading entity property scores from entity data
 function exigence:scoreboard/load_score_from_property

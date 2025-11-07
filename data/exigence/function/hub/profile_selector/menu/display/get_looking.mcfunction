@@ -12,9 +12,9 @@ tag @s add IAmLooking
 tag @e[distance=..6,type=minecraft:item_display,tag=HoverCandidate] remove HoverCandidate
 
 # Check
-execute at @s as @e[distance=..6,type=minecraft:item_display,tag=MenuDisplay,tag=!CreationProcess,tag=SlotDisplay] at @s anchored eyes facing entity @p[tag=IAmLooking] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=IAmLooking] positioned ^ ^ ^1 if entity @s[distance=..0.12] run tag @s add HoverCandidate
-execute at @s as @e[distance=..6,type=minecraft:item_display,tag=MenuDisplay,tag=!CreationProcess,tag=DifficultySelectorDisplay] at @s anchored eyes facing entity @p[tag=IAmLooking] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=IAmLooking] positioned ^ ^ ^1 if entity @s[distance=..0.05] run tag @s add HoverCandidate
-execute at @s as @e[distance=..6,type=minecraft:item_display,tag=MenuDisplay,tag=!CreationProcess,tag=CoopSelectorDisplay] at @s anchored eyes facing entity @p[tag=IAmLooking] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=IAmLooking] positioned ^ ^ ^1 if entity @s[distance=..0.05] run tag @s add HoverCandidate
+execute at @s as @e[distance=..6,type=minecraft:item_display,tag=MenuDisplay,tag=SizeClassA,tag=!CreationProcess] at @s anchored eyes facing entity @p[distance=..16,tag=ProfileSelecting,tag=IAmLooking] eyes anchored feet positioned ^ ^ ^1 rotated as @p[distance=..16,tag=ProfileSelecting,tag=IAmLooking] positioned ^ ^ ^1 if entity @s[distance=..0.12] run tag @s add HoverCandidate
+execute at @s as @e[distance=..6,type=minecraft:item_display,tag=MenuDisplay,tag=SizeClassB] at @s anchored eyes facing entity @p[distance=..16,tag=ProfileSelecting,tag=IAmLooking] eyes anchored feet positioned ^ ^ ^1 rotated as @p[distance=..16,tag=ProfileSelecting,tag=IAmLooking] positioned ^ ^ ^1 if entity @s[distance=..0.05] run tag @s add HoverCandidate
+execute at @s as @e[distance=..6,type=minecraft:item_display,tag=MenuDisplay,tag=SizeClassMedium] at @s anchored eyes facing entity @p[distance=..16,tag=ProfileSelecting,tag=IAmLooking] eyes anchored feet positioned ^ ^ ^1 rotated as @p[distance=..16,tag=ProfileSelecting,tag=IAmLooking] positioned ^ ^ ^1 if entity @s[distance=..0.08] run tag @s add HoverCandidate
 
 # Get closest of HoverCandidates
 execute at @a as @n[distance=..6,type=minecraft:item_display,tag=HoverCandidate] run tag @s add Hover

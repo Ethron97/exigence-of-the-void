@@ -1,11 +1,11 @@
-# Display difficulty selector buttons
+# Display coop selector buttons
 
 ## CONSTRAINTS
 #   AS profile display
 
 #=============================================================================================================
 
-say Summon coop selectors
+#say Summon coop selectors
 
 # Clear previous step details
 # Show step details

@@ -6,7 +6,7 @@
 
 #=============================================================================================================
 
-say Summon single player selector
+#say Summon multi player selector
 
 # Summon display
 function exigence:hub/profile_selector/menu/display/coop_selector/load_coop_selector with entity @s item.components."minecraft:custom_data"
@@ -16,9 +16,8 @@ tag @n[distance=..1,type=item_display,tag=NewItemDisplay] add Solo
 team join Special @n[distance=..1,type=item_display,tag=NewItemDisplay]
 
 # Item data
-data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.id set value "minecraft:water_bucket"
+data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_model_data".strings set value ["solo_selector"]
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_name" set value {text:"Solo",color:"yellow"}
-data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".difficulty set value 1
 
 # Teleport (so the interpolate happens)
 execute as @n[distance=..5,type=item_display,tag=NewItemDisplay] run tp @s ~-0.3 ~1.0 ~

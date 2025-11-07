@@ -11,7 +11,7 @@
 #=============================================================================================================
 
 # Summon item display
-execute align xyz positioned ~0.5 ~0.5 ~0.5 run summon item_display ~ ~ ~-0.45 {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["SlotDisplay","MenuDisplay","NewItemDisplay","NewItemDisplays"],item:{id:"minecraft:ghast_tear",count:1},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.8f,0.8f,0.8f]}}
+execute align xyz positioned ~0.5 ~0.5 ~0.5 run summon item_display ~ ~ ~-0.45 {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["SlotDisplay","MenuDisplay","NewItemDisplay","NewItemDisplays","SizeClassA"],item:{id:"minecraft:ghast_tear",count:1},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.8f,0.8f,0.8f]}}
 
 # Assign data
 $data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".player_id set value '$(player_id)'

@@ -12,7 +12,7 @@
 #$say Show step details $(step_text)
 
 # Summon text display
-$summon minecraft:text_display ~ ~ ~ {billboard:"fixed",alignment:"center",Tags:["StepDetails","NewTextDisplay"],text:{text:"$(step_text)",color:"yellow"},background:2017213500\
+$summon minecraft:text_display ~ ~ ~ {billboard:"fixed",alignment:"center",Tags:["StepDetails","NewTextDisplay"],text:{text:"$(step_text)",color:"yellow"},background:1\
 ,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.75f,0.75f,0.75f]}}
 
 # Give matching scoreboard value

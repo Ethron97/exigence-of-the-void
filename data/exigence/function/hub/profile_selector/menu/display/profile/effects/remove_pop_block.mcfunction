@@ -8,4 +8,4 @@
 
 #=============================================================================================================
 
-$kill @n[distance=..24,type=block_display,tag=PopBlock,scores={IDID=$(idid)}]
+$kill @n[distance=..16,type=block_display,tag=PopBlock,scores={IDID=$(idid)}]

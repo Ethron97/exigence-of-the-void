@@ -22,3 +22,6 @@ function exigence:hub/profile_selector/menu/unload_menu with storage exigence:te
 
 # Remove interaction
 function exigence:hub/profile_selector/node/kill_interaction
+
+# Reset id
+scoreboard players set @s hub.profile_selector_id 0

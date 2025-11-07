@@ -39,12 +39,12 @@ $execute in exigence:profile_data positioned 8 128 8 at @n[distance=..200,type=m
 run function exigence:profile/profile_node/load/chest_to_data
 
 # Fill chests
-$execute in exigence:hub at @n[distance=..200,type=marker,tag=ProfileSelectorNode,scores={hub.profile_selector_id=$(profile_selector_id)}] \
+$execute in exigence:hub positioned 999.5 128 6.5 at @n[distance=..200,type=marker,tag=ProfileSelectorNode,scores={hub.profile_selector_id=$(profile_selector_id)}] \
 run function exigence:hub/profile_selector/load/load_chests
 
 # Effects (particle sound)
 #   "Creating" tag added by create_new to prevent overlapping effects
-execute at @s[tag=!Creating] run playsound minecraft:block.ender_chest.open block @p[distance=..24] ~ ~ ~ 1.0 1.4
+execute at @s[tag=!Creating] run playsound minecraft:block.ender_chest.open block @p[distance=..16,tag=ProfileSelecting] ~ ~ ~ 1.0 1.4
 execute at @s[tag=!Creating] run particle end_rod ~ ~ ~0.1 0.3 0.3 0.0 0.01 5
 
 # Un/rehover for display entities (if currently hovering)

@@ -8,7 +8,7 @@
 
 # Summon text display
 #,background:2017213500
-summon minecraft:text_display ~ ~ ~ {teleport_duration:4,billboard:"fixed",alignment:"center",Tags:["DifficultySelectorDetails","NewTextDisplay"],text:{text:""}\
+summon minecraft:text_display ~ ~ ~ {teleport_duration:4,billboard:"fixed",alignment:"center",Tags:["DifficultySelectorDetails","NewTextDisplay","DifficultyTitle"],text:{text:""}\
 ,background:1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.55f,0.55f,0.55f]}}
 
 # Give matching scoreboard value

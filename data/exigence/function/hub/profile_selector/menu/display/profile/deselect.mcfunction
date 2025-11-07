@@ -35,7 +35,7 @@ team join Green
 
 # Save chests
 # Chests -> data
-$execute in exigence:hub at @n[distance=..200,type=marker,tag=ProfileSelectorNode,scores={hub.profile_selector_id=$(profile_selector_id)}] \
+$execute in exigence:hub positioned 999.5 128 6.5 at @n[distance=..200,type=marker,tag=ProfileSelectorNode,scores={hub.profile_selector_id=$(profile_selector_id)}] \
 run function exigence:hub/profile_selector/load/save_chests
 
 # Data -> profile chest
@@ -43,5 +43,5 @@ $execute in exigence:profile_data positioned 8 128 8 at @n[distance=..200,type=m
 run function exigence:profile/profile_node/save/data_to_chest
 
 # Save actual profile from player
-$execute at @s as @p[tag=ProfileSelecting,scores={hub.player.profile_selector_id=$(profile_selector_id)}] \
+$execute at @s as @p[distance=..16,tag=ProfileSelecting,tag=ProfileSelecting,scores={hub.player.profile_selector_id=$(profile_selector_id)}] \
 in exigence:profile_data run function exigence:profile/profile_node/save_profile {profile_id:$(profile_id)}

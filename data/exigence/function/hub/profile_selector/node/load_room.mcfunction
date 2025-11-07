@@ -7,6 +7,10 @@
 
 say Load room
 
+# Generate new id
+scoreboard players add #sequence hub.profile_selector_id 1
+scoreboard players operation @s hub.profile_selector_id = #sequence hub.profile_selector_id
+
 # Place empty chests
 function exigence:hub/profile_selector/load/place_chests
 
@@ -20,3 +24,6 @@ function exigence:hub/profile_selector/load/load_chests
 
 # Setup interaction
 function exigence:hub/profile_selector/node/setup_interaction
+
+# Load settings menu
+function exigence:hub/profile_selector/menu/display/settings/load_settings_displays with storage exigence:temp

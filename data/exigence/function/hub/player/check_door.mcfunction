@@ -11,7 +11,7 @@
 
 # PROFILE SELECTOR (cyan stained glass)
 execute as @s[tag=ProfileSelecting] at @s if block ~ ~ ~ minecraft:cyan_stained_glass_pane run function exigence:hub/profile_selector/access/try_leave
-execute as @s[tag=!ProfileSelecting] at @s if block ~ ~ ~ minecraft:cyan_stained_glass_pane run function exigence:hub/profile_selector/access/try_enter
+execute as @s[tag=!ProfileSelecting] at @s if block ~ ~ ~ minecraft:cyan_stained_glass_pane run function exigence:hub/profile_selector/access/try_enter_door
 
 # ITEM SHOP (orange stained glass)
 #execute as @s[tag=ItemShopping] at @s if block ~ ~ ~ minecraft:orange_stained_glass_pane run function exigence:hub/item_shop/door/try_leave

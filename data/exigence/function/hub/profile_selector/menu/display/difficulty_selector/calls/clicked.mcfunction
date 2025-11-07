@@ -15,12 +15,23 @@
 $execute at @s as @n[distance=..5,type=item_display,tag=SlotDisplay,scores={IDID=$(parent_idid)}] \
 run data modify entity @s item.components."minecraft:custom_data".difficulty set value $(difficulty)
 
+# Copy picked item
+#$data modify entity @n[distance=..5,type=item_display,tag=SlotDisplay,scores={IDID=$(parent_idid)}] item.id set from entity @s item.id
+# TODO also the custom model data?
+
+# Mark the title of this one to be kept around
+$execute at @s as @n[distance=..5,type=text_display,tag=DifficultyTitle,scores={IDID=$(idid)}] run tag @s add KeepDisplay
+# Move to fixed location
+$execute at @s as @n[distance=..5,type=item_display,tag=SlotDisplay,scores={IDID=$(parent_idid)}] at @s \
+run tp @n[distance=..5,type=text_display,tag=DifficultyTitle,scores={IDID=$(idid)}] ~ ~1.5 ~
+
+
 # Setup coop selector
 $execute at @s as @n[distance=..5,type=item_display,tag=SlotDisplay,scores={IDID=$(parent_idid)}] \
 run function exigence:hub/profile_selector/menu/display/profile/effects/summon_coop_selectors with entity @s item.components."minecraft:custom_data"
 
 # Effects
-execute at @s run playsound minecraft:entity.ender_eye.death ui @p[distance=..24,tag=Interacting] ~ ~ ~ 1 1
+execute at @s run playsound minecraft:entity.ender_eye.death ui @p[distance=..16,tag=ProfileSelecting,tag=Interacting] ~ ~ ~ 1 1
 execute at @s run particle glow ~ ~ ~0.1 0.1 0.1 0.0 0.001 5
 
 # Remove difficulty selectors

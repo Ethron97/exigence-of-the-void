@@ -20,10 +20,12 @@ execute as @a if score @s TpHub matches 1.. run function exigence:misc/triggers/
 execute as @a if score @s TpOldHub matches 1.. run function exigence:misc/triggers/tp_old_hub
 execute as @a if score @s TpProfileData matches 1.. run function exigence:misc/triggers/tp_profile_data
 
-execute as @a if score @s SkipSection matches 1.. run function exigence:misc/triggers/skip_section
-execute as @a if score @s ExitTutorial matches 1.. run function exigence:misc/triggers/exit_tutorial
+execute as @a if score @s SkipSection matches 1.. run function exigence:misc/triggers/tutorial/skip_section
+execute as @a if score @s ExitTutorial matches 1.. run function exigence:misc/triggers/tutorial/exit_tutorial
 
 execute as @a if score @s MyPlayerID matches 1.. run function exigence:misc/triggers/my_player_id
 
 execute as @a if score @s ProfileSelectorConfirmDelete matches 1.. run function exigence:misc/triggers/hub/confirm_profile_delete
 execute as @a if score @s ProfileSelectorCancelDelete matches 1.. run function exigence:misc/triggers/hub/cancel_profile_delete
+execute as @a if score @s SendCoopInvite matches 1.. run function exigence:misc/triggers/hub/invite_coop_send
+execute as @a if score @s AcceptCoopInvite matches 1.. run function exigence:misc/triggers/hub/invite_coop_accept

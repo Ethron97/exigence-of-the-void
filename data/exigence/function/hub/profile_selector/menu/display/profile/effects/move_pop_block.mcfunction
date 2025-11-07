@@ -8,4 +8,4 @@
 
 #=============================================================================================================
 
-$tp @n[distance=..24,type=block_display,tag=PopBlock,scores={IDID=$(idid)}] ~ ~ ~
+$tp @n[distance=..16,type=block_display,tag=PopBlock,scores={IDID=$(idid)}] ~ ~ ~
