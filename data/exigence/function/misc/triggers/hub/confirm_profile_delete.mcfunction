@@ -1,7 +1,7 @@
 say Confirm profile delete
 
 # Reset trigger score
-scoreboard players set @s ProfileSelectorConfirmDelete 0
+scoreboard players reset @s ProfileSelectorConfirmDelete
 
 # No queried slot, return fail
 execute unless score @s hub.player.query_selector_slot_id matches 1.. run return 1

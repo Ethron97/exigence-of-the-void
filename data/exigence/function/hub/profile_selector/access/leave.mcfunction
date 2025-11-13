@@ -20,8 +20,11 @@ scoreboard players operation #compare profile.node.profile_id = @s profile.profi
 scoreboard players operation #compare hub.profile_selector_id = @s hub.player.profile_selector_id
 scoreboard players reset @s hub.player.profile_selector_id
 # Reset triggers
-scoreboard players set @s SendCoopInvite 0
-scoreboard players set @s AcceptCoopInvite 0
+scoreboard players reset @s AcceptCoopInvite
+scoreboard players reset @s DeclineCoopInvite
 
 # Unload room
 execute in exigence:hub positioned 999.5 128 6.5 as @e[distance=..200,type=marker,tag=ProfileSelectorNode] if score @s hub.profile_selector_id = #compare hub.profile_selector_id at @s run function exigence:hub/profile_selector/node/unload_room
+
+# If there was an invite pending on you, cancel it
+execute if score @s hub.player_entity.query_idid matches 1.. run function exigence:misc/triggers/hub/invite_coop_decline

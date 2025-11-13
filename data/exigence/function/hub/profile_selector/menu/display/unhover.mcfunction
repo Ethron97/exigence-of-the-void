@@ -9,7 +9,7 @@
 #=============================================================================================================
 
 # DEBUG
-#say Unhover
+#say Unhover (generic unhover)
 
 # Remove Glow
 data modify entity @s Glowing set value false

@@ -8,7 +8,7 @@
 
 #=============================================================================================================
 
-#say Switch to
+say Switch to
 
 execute at @s as @n[distance=..16,tag=SlotDisplay,tag=Selected] run function exigence:hub/profile_selector/menu/display/profile/deselect with entity @s item.components."minecraft:custom_data"
 

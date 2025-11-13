@@ -7,7 +7,7 @@
 #=============================================================================================================
 
 # If there is no available ProfileSelector node, fail
-
+execute in exigence:hub positioned 999.5 128 6.5 as @e[distance=..200,type=marker,tag=ProfileSelectorNode] run scoreboard players add @s hub.profile_selector_id 0
 execute in exigence:hub positioned 999.5 128 6.5 store result score #temp Temp if entity @e[distance=..200,type=marker,tag=ProfileSelectorNode,scores={hub.profile_selector_id=0}]
 execute if score #temp Temp matches 0 run function exigence:hub/profile_selector/access/try_enter_door_fail
 execute if score #temp Temp matches 0 run return 1

@@ -27,5 +27,5 @@ execute as @a if score @s MyPlayerID matches 1.. run function exigence:misc/trig
 
 execute as @a if score @s ProfileSelectorConfirmDelete matches 1.. run function exigence:misc/triggers/hub/confirm_profile_delete
 execute as @a if score @s ProfileSelectorCancelDelete matches 1.. run function exigence:misc/triggers/hub/cancel_profile_delete
-execute as @a if score @s SendCoopInvite matches 1.. run function exigence:misc/triggers/hub/invite_coop_send
 execute as @a if score @s AcceptCoopInvite matches 1.. run function exigence:misc/triggers/hub/invite_coop_accept
+execute as @a if score @s DeclineCoopInvite matches 1.. run function exigence:misc/triggers/hub/invite_coop_decline

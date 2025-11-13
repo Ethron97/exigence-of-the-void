@@ -10,12 +10,12 @@ scoreboard players remove seconds.cooldown tick_counter 1
 # If game is active, game tick
 execute if data storage exigence:dungeon {is_active:1} run function exigence:game/game_tick
 # If any players are in the hub dimension, hub tick
-execute in exigence:hub positioned 0 200 0 if entity @a[distance=..2000] run function exigence:hub/hub_tick
+execute in exigence:hub positioned 0 200 0 if entity @a[predicate=exigence:dimension/entity/hub,limit=1] run function exigence:hub/hub_tick
 # If tutorial is active, tutorial tick
 execute if data storage exigence:dungeon {tutorial:1} in exigence:tutorial run function exigence:tutorial/tick
 
 # Interaction handling
-execute at @a as @e[distance=..16,type=minecraft:interaction] at @s run function exigence:misc/interaction/check_interaction
+execute at @a as @e[distance=..8,type=minecraft:interaction] at @s run function exigence:misc/interaction/check_interaction
 
 
 # Send to prologue (disabled for testing)

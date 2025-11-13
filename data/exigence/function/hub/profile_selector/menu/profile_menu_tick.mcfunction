@@ -32,7 +32,6 @@ tag @e[distance=..16,type=minecraft:item_display,tag=OldHover] remove OldHover
 execute as @n[distance=..16,type=item_display,tag=CreationProcess] at @s unless entity @a[distance=..6] run function exigence:hub/profile_selector/menu/display/profile/create_new_cancel
 
 #=============================================================================================================
-# TODO
 # If sneaking, change color to red of all loaded
 execute if entity @s[predicate=exigence:player/sneaking] as @e[distance=..16,type=minecraft:item_display,tag=SlotDisplay,tag=ProfileLoaded,tag=!Selected,team=Green] run team join Enemy @s
 # If not sneaking, change color to green of all loaded

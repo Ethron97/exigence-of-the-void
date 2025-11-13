@@ -7,7 +7,7 @@
 #=============================================================================================================
 
 ## VALIDATE
-execute unless predicate exigence:dimension/location/profile_data run tellraw @s {text:"Not in exigence:profile_data, aborting",color:"red"}
+execute unless predicate exigence:dimension/location/profile_data run tellraw @a {text:"Not in exigence:profile_data, aborting",color:"red"}
 execute unless predicate exigence:dimension/location/profile_data run return 1
 
 # Call function to locate the next available slot to place a node (tps NewPlayerNodeMarker to position)

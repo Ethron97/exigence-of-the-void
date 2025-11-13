@@ -14,7 +14,7 @@ execute as @s run function exigence:player/give/level_3_key
 function exigence:advancements/listener/pickup/level_key_generic
 
 # Kill all level keys of the current active level
-execute as @e[type=minecraft:item,tag=LevelKey,scores={ObjectLevel=3}] run kill @s
+execute at @s as @e[distance=..1000,type=minecraft:item,tag=LevelKey,scores={ObjectLevel=3}] run kill @s
 
 # Update got score
 scoreboard players set GotArdorsBaneKey DungeonRun 1

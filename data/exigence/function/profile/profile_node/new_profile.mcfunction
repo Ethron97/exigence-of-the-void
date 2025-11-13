@@ -9,6 +9,8 @@
 
 #=============================================================================================================
 
+##say Try new profile
+
 ## VALIDATE
 execute unless predicate exigence:dimension/location/profile_data run tellraw @s {text:"Not in exigence:profile_data, aborting",color:"red"}
 execute unless predicate exigence:dimension/location/profile_data run return 1
@@ -16,9 +18,6 @@ execute unless predicate exigence:dimension/location/profile_data run return 1
 # If there are already 1008 total, fail
 execute if score #sequence profile.profile_id matches 1008.. run tellraw @s {text:"Maximum number of TOTAL profiles reached (1008)",color:"red"}
 execute if score #sequence profile.profile_id matches 1008.. run return 1
-
-# Enforce player node exists
-execute unless score @s career.player_id matches 0.. run function exigence:profile/player_node/new_player
 
 # If this player already has more than 5, fail
 scoreboard players set #temp Temp 0
@@ -28,6 +27,8 @@ execute if score #temp Temp matches 5.. run tellraw @s {text:"Maximum number of 
 execute if score #temp Temp matches 5.. run return 1
 
 #=============================================================================================================
+
+#say Creating new profile
 
 # Increase number of profiles created
 scoreboard players add @s career.profiles_created 1

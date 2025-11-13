@@ -11,7 +11,7 @@
 #   3 = neg z, north
 
 ## OUTPUT
-#   0 = wall found (if function, proceed)
+#   1 = wall found (if function, proceed)
 #   0 = no wall
 
 #===============================================================================================================

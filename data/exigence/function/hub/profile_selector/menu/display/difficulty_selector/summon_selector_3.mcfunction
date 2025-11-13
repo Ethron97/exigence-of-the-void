@@ -17,6 +17,7 @@ team join Enemy @n[distance=..1,type=item_display,tag=NewItemDisplay]
 # Give name and lore
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.id set value "minecraft:magma_cream"
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_name" set value {text:"Ascendant",color:"red"}
+data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".reminder set value [{text:"Difficulty: ",color:"white"},{text:"Ascendant",color:"red"}]
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:lore" set value [{text:"+1 Ravagers on each level",italic:false,color:"white"}]
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".difficulty set value 3
 

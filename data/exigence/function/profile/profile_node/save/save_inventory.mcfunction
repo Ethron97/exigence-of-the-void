@@ -51,3 +51,6 @@ item replace block ~1 ~ ~ container.10 from entity @s armor.chest
 item replace block ~1 ~ ~ container.11 from entity @s armor.legs
 item replace block ~1 ~ ~ container.12 from entity @s armor.feet
 item replace block ~1 ~ ~ container.13 from entity @s weapon.offhand
+
+# Clear inventory
+clear @s

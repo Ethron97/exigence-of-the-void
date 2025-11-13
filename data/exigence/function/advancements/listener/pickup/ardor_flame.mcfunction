@@ -9,7 +9,7 @@ execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon 
 
 # Kill all other ardor flames this player's level
 scoreboard players operation #compare ObjectLevel = @s game.player.active_level
-execute if data storage exigence:dungeon {is_active:1} run execute as @e[type=minecraft:item,tag=ArdorFlame] if score @s ObjectLevel = #compare ObjectLevel run kill @s
+execute if data storage exigence:dungeon {is_active:1} at @s run execute as @e[distance=..1000,type=minecraft:item,tag=ArdorFlame] if score @s ObjectLevel = #compare ObjectLevel run kill @s
 
 # Clear netherstar
 execute if score @s game.player.active_level matches 1 run clear @s minecraft:nether_star[custom_data={ardor_flame:"true"}]

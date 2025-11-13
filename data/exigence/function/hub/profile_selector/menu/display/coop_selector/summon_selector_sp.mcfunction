@@ -20,7 +20,7 @@ data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.co
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_name" set value {text:"Solo",color:"yellow"}
 
 # Teleport (so the interpolate happens)
-execute as @n[distance=..5,type=item_display,tag=NewItemDisplay] run tp @s ~-0.3 ~1.0 ~
+execute as @n[distance=..5,type=item_display,tag=NewItemDisplay] run tp @s ~-0.3 ~1.05 ~
 
 # Display item details
 execute as @n[distance=..5,type=item_display,tag=NewItemDisplay] run function exigence:hub/profile_selector/menu/display/coop_selector/calls/private/show_all_details

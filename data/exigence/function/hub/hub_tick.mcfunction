@@ -11,7 +11,7 @@ effect give @a[predicate=exigence:dimension/entity/hub,predicate=!exigence:effec
 effect give @a[predicate=exigence:dimension/entity/hub,predicate=!exigence:effects/regeneration] regeneration infinite 200 true
 
 # Update actionbar
-execute as @a[distance=..1000] run function exigence:hub/hub_tick/update_actionbar
+execute as @a[distance=..2000] run function exigence:hub/hub_tick/update_actionbar
 
 # Door checks for player warping throughout the hub
 #function exigence:hub/door_tick

@@ -8,7 +8,7 @@
 
 #=============================================================================================================
 
-#say Unhover
+#$say Unhover (profile) (profile_selector:$(profile_selector_id) slot:$(slot_id))
 
 # Remove item details
 function exigence:hub/profile_selector/menu/display/profile/calls/private/remove_hover_details with entity @s item.components."minecraft:custom_data"

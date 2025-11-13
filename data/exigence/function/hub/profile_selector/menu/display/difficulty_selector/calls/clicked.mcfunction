@@ -21,9 +21,13 @@ run data modify entity @s item.components."minecraft:custom_data".difficulty set
 
 # Mark the title of this one to be kept around
 $execute at @s as @n[distance=..5,type=text_display,tag=DifficultyTitle,scores={IDID=$(idid)}] run tag @s add KeepDisplay
+$execute at @s as @n[distance=..5,type=text_display,tag=DifficultyTitle,scores={IDID=$(idid)}] run data modify entity @s text set value $(reminder)
+$execute at @s as @n[distance=..5,type=text_display,tag=DifficultyTitle,scores={IDID=$(idid)}] \
+run data modify entity @s transformation set value {left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.4f,0.4f,0.4f]}
+
 # Move to fixed location
 $execute at @s as @n[distance=..5,type=item_display,tag=SlotDisplay,scores={IDID=$(parent_idid)}] at @s \
-run tp @n[distance=..5,type=text_display,tag=DifficultyTitle,scores={IDID=$(idid)}] ~ ~1.5 ~
+run tp @n[distance=..5,type=text_display,tag=DifficultyTitle,scores={IDID=$(idid)}] ~ ~0.72 ~
 
 
 # Setup coop selector

@@ -16,6 +16,10 @@ execute at @s run playsound minecraft:entity.enderman.teleport ambient @s ~ ~100
 # Join team (to hide nametag)
 team join ProfileSelecting @s
 
+# Enforce player node exists
+scoreboard players add @s career.player_id 0
+execute unless score @s career.player_id matches 1.. in exigence:profile_data positioned 8 3 8 run function exigence:profile/player_node/new_player
+
 # Store ids
 scoreboard players operation #compare career.player_id = @s career.player_id
 scoreboard players operation #compare profile.node.profile_id = @s profile.profile_id

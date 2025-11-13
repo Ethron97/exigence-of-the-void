@@ -17,6 +17,7 @@ team join Treasure @n[distance=..1,type=item_display,tag=NewItemDisplay]
 # Item data
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.id set value "minecraft:slime_ball"
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_name" set value {text:"Ancient",color:"gold"}
+data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".reminder set value [{text:"Difficulty: ",color:"white"},{text:"Ancient",color:"gold"}]
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:lore" set value [{text:"Standard difficulty",italic:false,color:"white"}]
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".difficulty set value 2
 

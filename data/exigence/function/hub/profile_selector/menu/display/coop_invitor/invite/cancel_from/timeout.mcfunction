@@ -1,7 +1,8 @@
-# Cancel when the invite-sender logs out
+# Cancel an ongoing invitation, if the time expired
 
 ## CONSTRAINTS
-#   AS player node of player who logged out
+#   AS player who sent the invite
 
 #=============================================================================================================
 
+say TODO

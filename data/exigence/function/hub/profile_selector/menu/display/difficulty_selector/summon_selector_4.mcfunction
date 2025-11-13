@@ -18,6 +18,7 @@ team join LightPurple @n[distance=..1,type=item_display,tag=NewItemDisplay]
 # Give name and lore
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.id set value "minecraft:ender_eye"
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_name" set value {text:"Exigent",color:"light_purple"}
+data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".reminder set value [{text:"Difficulty: ",color:"white"},{text:"Exigent",color:"light_purple"}]
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:lore" set value [{text:"Stacking difficulty modifiers",italic:false,color:"white"}]
 execute store result entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".difficulty int 1 run scoreboard players get @p[distance=..16,tag=ProfileSelecting] career.exigence_level
 

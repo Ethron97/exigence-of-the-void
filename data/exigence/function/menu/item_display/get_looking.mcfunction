@@ -15,7 +15,7 @@ tag @e[distance=..8,type=minecraft:item_display,tag=HoverCandidate] remove Hover
 execute at @s as @e[distance=..8,type=minecraft:item_display,tag=MenuDisplay] at @s anchored eyes facing entity @p[tag=IAmLooking] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=IAmLooking] positioned ^ ^ ^1 if entity @s[distance=..0.05] run tag @s add HoverCandidate
 
 # Get closest of HoverCandidates
-execute at @a as @n[type=minecraft:item_display,tag=HoverCandidate] run tag @s add Hover
+execute at @s as @n[type=minecraft:item_display,tag=HoverCandidate] run tag @s add Hover
 
 # Copy IDID to foreign key so we know which IDID which player is looking at
 scoreboard players operation @s shop.player.looking_at_idid = @n[distance=..8,type=minecraft:item_display,tag=HoverCandidate,tag=Hover] IDID
