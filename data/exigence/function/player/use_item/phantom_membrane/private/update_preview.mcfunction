@@ -6,7 +6,7 @@
 #============================================================================
 
 # Tag the preview associated with this player
-scoreboard players operation #compare game.entity.profile_id = @s profile.profile_id
+scoreboard players operation #compare game.entity.profile_id = @s profile.player.profile_id
 tag @e[type=block_display,tag=ItemPreview] remove Updating
 execute as @e[type=block_display,tag=ItemPreview] if score @s game.entity.profile_id = #compare game.entity.profile_id run tag @s add Updating
 

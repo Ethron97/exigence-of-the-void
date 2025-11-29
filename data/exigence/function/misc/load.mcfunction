@@ -18,3 +18,6 @@ function exigence:misc/setup_functions/redo_lore_colors with storage exigence:co
 function exigence:room/reset_grace_limits
 
 difficulty hard
+
+# Initialize global settings from storage
+function exigence:misc/setup_functions/initialize_global_settings

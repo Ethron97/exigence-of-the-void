@@ -7,7 +7,7 @@
 #========================================================================================================
 
 # Store player id for comparison
-scoreboard players operation #compare game.entity.profile_id = @s profile.profile_id
+scoreboard players operation #compare game.entity.profile_id = @s profile.player.profile_id
 
 # Reset dummy score
 scoreboard players set #temp Temp 0

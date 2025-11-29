@@ -13,7 +13,7 @@ function exigence:hub/profile_selector/menu/display/coop_invitor/load_coop_invit
 tag @n[distance=..1,type=item_display,tag=NewItemDisplay] add Confirm
 
 # Team for glow color
-team join Special @n[distance=..1,type=item_display,tag=NewItemDisplay]
+team join Red @n[distance=..1,type=item_display,tag=NewItemDisplay]
 
 # Item data
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_model_data".strings set value ["coop_confirm_red"]

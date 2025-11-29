@@ -18,4 +18,6 @@ execute if score #filled_slots Temp matches 1..3 run tag @s add CanConfirm
 
 # Button color
 execute if entity @s[tag=CanConfirm] run data modify entity @s item.components."minecraft:custom_model_data".strings set value ["coop_confirm_green"]
+execute if entity @s[tag=CanConfirm] run team join Green @s
 execute if entity @s[tag=!CanConfirm] run data modify entity @s item.components."minecraft:custom_model_data".strings set value ["coop_confirm_red"]
+execute if entity @s[tag=!CanConfirm] run team join Red @s

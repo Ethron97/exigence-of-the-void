@@ -25,3 +25,6 @@ scoreboard objectives modify game.cards_played displayname {text:"Cards Played"}
 
 say Loading entity property scores from entity data
 function exigence:scoreboard/load_score_from_property
+
+say Loading default global settings
+function exigence:misc/setup_functions/initialize_global_settings

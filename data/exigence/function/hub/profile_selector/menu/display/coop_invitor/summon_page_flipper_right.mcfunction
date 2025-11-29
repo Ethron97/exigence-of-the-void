@@ -22,8 +22,5 @@ data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.co
 # Teleport (so the interpolate happens)
 execute as @n[distance=..5,type=item_display,tag=NewItemDisplay] run tp @s ~0.32 ~1.0 ~
 
-# Display item details
-#execute as @n[distance=..5,type=item_display,tag=NewItemDisplay] run function exigence:hub/profile_selector/menu/display/coop_invitor/calls/private/show_all_details
-
 # Remove local display tag
 tag @n[distance=..5,type=item_display,tag=NewItemDisplay] remove NewItemDisplay

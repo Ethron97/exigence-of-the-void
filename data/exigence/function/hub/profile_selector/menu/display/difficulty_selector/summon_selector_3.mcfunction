@@ -12,7 +12,7 @@
 function exigence:hub/profile_selector/menu/display/difficulty_selector/load_difficulty_selector with entity @s item.components."minecraft:custom_data"
 
 # Team for glow color
-team join Enemy @n[distance=..1,type=item_display,tag=NewItemDisplay]
+team join Red @n[distance=..1,type=item_display,tag=NewItemDisplay]
 
 # Give name and lore
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.id set value "minecraft:magma_cream"

@@ -10,6 +10,8 @@
 
 say Chest to data
 
+tag @n[distance=..0.1,tag=ProfileNode] add ChestsLoaded
+
 data modify storage exigence:profile chests.blue_left set from block ~4 ~ ~ Items
 data modify storage exigence:profile chests.blue_right set from block ~5 ~ ~ Items
 data modify storage exigence:profile chests.blue_name set from block ~4 ~ ~ CustomName

@@ -15,7 +15,7 @@ kill @e[distance=..1000,tag=ProfileNode]
 
 # Reset scoreboards
 scoreboard players reset * career.player_id
-scoreboard players reset * profile.profile_id
+scoreboard players reset * profile.player.profile_id
 scoreboard players reset * profile.node.player_id
 scoreboard players reset * profile.node.profile_id
 scoreboard players reset * profile.node.local_profile_id
@@ -23,7 +23,7 @@ scoreboard players reset * profile.node.slot_id
 
 # Reset sequence(s)
 scoreboard players set #sequence career.player_id 0
-scoreboard players set #sequence profile.profile_id 0
+scoreboard players set #sequence profile.player.profile_id 0
 
 # Clear blocks
 fill 1 1 2 15 1 15 air

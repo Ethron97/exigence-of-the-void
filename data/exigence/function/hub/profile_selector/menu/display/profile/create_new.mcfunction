@@ -5,6 +5,8 @@
 
 ## INPUT
 #   data: item.components."minecraft:custom_data"
+#   SCORE #coop_profile_id Temp (Optional)
+#   SCORE #player_index Temp (Optional)
 
 #=============================================================================================================
 
@@ -13,11 +15,10 @@ $say Create new slot:$(slot_id) profile_selector:$(profile_selector_id) player:$
 # Add local tag (to prevent overlapping effects from the "select" function)
 tag @s add Creating
 
-# Remove step details
-function exigence:hub/profile_selector/menu/display/profile/calls/private/remove_step_details with entity @s item.components."minecraft:custom_data"
-data modify entity @s Glowing set value false
-execute at @s run kill @n[distance=..16,type=text_display,tag=KeepDisplay]
+## PREP
+execute at @s run function exigence:hub/profile_selector/menu/display/profile/effects/clear_menus
 
+## CREATE
 # 0. Effects (particle/sounds)
 execute at @s run playsound minecraft:block.beacon.activate block @p[distance=..16,tag=ProfileSelecting] ~ ~ ~ 1.0 1.2
 execute at @s run particle happy_villager ~ ~ ~0.1 0.3 0.3 0.0 0.02 10

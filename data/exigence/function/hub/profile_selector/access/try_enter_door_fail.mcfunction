@@ -12,4 +12,4 @@ execute at @s run tp @s ~3 ~ ~
 execute at @s run playsound minecraft:entity.enderman.hurt ambient @s ~ ~1000 ~ 1000 1
 
 # Message
-tellraw @s {text:"All Profile Selector rooms are currently full!",color:"red"}
+tellraw @s {text:"All Profile Selector rooms are currently full",color:"red"}

@@ -9,6 +9,9 @@ team modify Echo color blue
 team add Enemy
 team modify Enemy color dark_red
 
+team add Red
+team modify Red color red
+
 team add LightPurple
 team modify LightPurple color light_purple
 

@@ -12,6 +12,3 @@ tag @s add HidingHead
 
 # Move head behind block
 tp @s ~ ~1.5 ~-0.5
-
-# Remove any detail displays
-# TODO

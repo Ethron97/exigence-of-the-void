@@ -5,6 +5,6 @@
 
 #=============================================================================================================
 
-tellraw @s [{text:"PENDING INVITE",bold:true,color:"yellow"}\
+tellraw @s [{text:"\nPENDING INVITE",bold:true,color:"yellow"}\
 ,{text:"\n - Leave this menu open while you wait for a response to your invitation.",color:"gray",bold:false}\
 ,{text:"\n - Close this menu or shift click the player head to cancel the invitation.",color:"gray",bold:false}]

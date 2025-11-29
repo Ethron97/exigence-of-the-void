@@ -49,7 +49,7 @@ scoreboard players operation @a[tag=ActivePlayer] profile.data.winloss.highest_w
 execute unless entity @a[tag=ActivePlayer,scores={career.settings.echo_win_tracking=0}] run scoreboard players add @e[type=minecraft:armor_stand,tag=ChosenEchoNode] node.data.echo.times_won 1
 
 # Save primary player id before resetting the game
-scoreboard players operation #compare profile.profile_id = @a[tag=ActivePlayer,tag=PrimaryPlayer,limit=1] profile.profile_id
+scoreboard players operation #compare profile.player.profile_id = @a[tag=ActivePlayer,tag=PrimaryPlayer,limit=1] profile.player.profile_id
 
 # Turn off the game
 function exigence:game/game_off

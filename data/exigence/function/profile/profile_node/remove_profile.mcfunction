@@ -7,8 +7,8 @@
 
 #=============================================================================================================
 scoreboard players operation #compare profile.node.profile_id = @s profile.node.profile_id
-execute as @a if score @s profile.profile_id = #compare profile.node.profile_id run tellraw @s {text:"Cannot remove a profile if a player has it loaded",color:"red"}
-execute as @a if score @s profile.profile_id = #compare profile.node.profile_id run return 1
+execute as @a if score @s profile.player.profile_id = #compare profile.node.profile_id run tellraw @s {text:"Cannot remove a profile if a player has it loaded",color:"red"}
+execute as @a if score @s profile.player.profile_id = #compare profile.node.profile_id run return 1
 #=============================================================================================================
 
 say I have been removed

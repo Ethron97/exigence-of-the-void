@@ -20,6 +20,8 @@ $execute positioned ~5.49 ~1.0 ~-1.3 run function exigence:hub/profile_selector/
 $execute positioned ~5.49 ~0.7 ~-1.3 run function exigence:hub/profile_selector/menu/display/settings/load/return_compass {player_id:$(player_id),profile_selector_id:$(profile_selector_id)}
 $execute positioned ~5.49 ~0.4 ~-1.3 run function exigence:hub/profile_selector/menu/display/settings/load/coin_conversion_style {player_id:$(player_id),profile_selector_id:$(profile_selector_id)}
 
+$execute positioned ~5.49 ~0.4 ~0.325 run function exigence:hub/profile_selector/menu/display/settings/load/allow_coop_invites {player_id:$(player_id),profile_selector_id:$(profile_selector_id)}
+
 #   Right side
 $execute positioned ~5.49 ~2.5 ~1.3 run function exigence:hub/profile_selector/menu/display/settings/load/card_display_bossbar {player_id:$(player_id),profile_selector_id:$(profile_selector_id)}
 $execute positioned ~5.49 ~2.2 ~1.3 run function exigence:hub/profile_selector/menu/display/settings/load/card_display_sidebar {player_id:$(player_id),profile_selector_id:$(profile_selector_id)}

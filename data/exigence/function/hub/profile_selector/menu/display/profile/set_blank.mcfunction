@@ -5,13 +5,14 @@
 
 #=============================================================================================================
 
-#say Set blank
+say Set blank
 
 # Change the block behind it
 execute at @s run setblock ~ ~ ~-1 purpur_block
 
 tag @s add Blank
 tag @s remove ProfileLoaded
+tag @s remove Coop
 
 # Team for glow color
 team join Special
@@ -32,5 +33,9 @@ data modify entity @s item.components."minecraft:custom_data".profile_id set val
 # Remove pop block
 execute at @s run function exigence:hub/profile_selector/menu/display/profile/effects/remove_pop_block with entity @s item.components."minecraft:custom_data"
 
-# Remove profile info
+# Remove stickers
+function exigence:hub/profile_selector/menu/display/profile/effects/remove_stickers with entity @s item.components."minecraft:custom_data"
+
+# Remove misc text displays
 function exigence:hub/profile_selector/menu/display/text_displays/hide_profile_info with entity @s item.components."minecraft:custom_data"
+function exigence:hub/profile_selector/menu/display/text_displays/hide_coop_list with entity @s item.components."minecraft:custom_data"

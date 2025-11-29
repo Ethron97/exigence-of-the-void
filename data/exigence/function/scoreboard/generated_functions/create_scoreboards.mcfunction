@@ -780,6 +780,7 @@ scoreboard objectives add career.settings.show_resource_consume dummy
 scoreboard objectives add career.settings.show_resource_generate dummy
 scoreboard objectives add career.settings.show_resource_overflow dummy
 scoreboard objectives add career.settings.show_resource_underflow dummy
+scoreboard objectives add career.settings.allow_coop_invites dummy
 scoreboard objectives add debug.node_counter dummy
 scoreboard objectives add debug.vault_pots_1 dummy
 scoreboard objectives add debug.vault_pots_2 dummy
@@ -865,7 +866,6 @@ scoreboard objectives add node.treasure.drop_working dummy
 scoreboard objectives add node.treasure.treasure_walk_depth dummy
 scoreboard objectives add node.vault.data.opened dummy
 scoreboard objectives add node.vault.data.picked_up dummy
-scoreboard objectives add profile.coop_profile_id dummy
 scoreboard objectives add profile.data.deck.cards_purchased_common dummy
 scoreboard objectives add profile.data.deck.cards_purchased_common_void dummy
 scoreboard objectives add profile.data.deck.cards_purchased_legendary dummy
@@ -908,7 +908,11 @@ scoreboard objectives add profile.node.profile_id dummy
 scoreboard objectives add profile.node.slot_id dummy
 scoreboard objectives add profile.piggy_bank dummy
 scoreboard objectives add profile.profile_difficulty dummy
-scoreboard objectives add profile.profile_id dummy
+scoreboard objectives add profile.node.coop_profile_id dummy
+scoreboard objectives add profile.node.coop_profile_index dummy
+scoreboard objectives add profile.player.profile_id dummy
+scoreboard objectives add profile.player.coop_profile_id dummy
+scoreboard objectives add profile.player.coop_profile_index dummy
 scoreboard objectives add profile.story.puzzle_candles dummy
 scoreboard objectives add profile.story.ward_amethyst dummy
 scoreboard objectives add profile.story.ward_emerald dummy
@@ -935,3 +939,4 @@ scoreboard objectives add temp_coords dummy
 scoreboard objectives add tick_convert dummy
 scoreboard objectives add tick_counter dummy
 scoreboard objectives add vault_open_state dummy
+scoreboard objectives add global_settings dummy

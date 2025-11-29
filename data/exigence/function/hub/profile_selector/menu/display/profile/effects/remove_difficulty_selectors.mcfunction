@@ -8,7 +8,7 @@
 
 #=============================================================================================================
 
-#say Remove difficulty selectors
+say Remove difficulty selectors
 
 # Remove display details
 $execute at @s as @e[distance=..16,type=minecraft:item_display,tag=DifficultySelectorDisplay,nbt={item:{components:{"minecraft:custom_data":{slot_id:"$(slot_id)"}}}}] \

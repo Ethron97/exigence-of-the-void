@@ -26,6 +26,7 @@ $execute positioned ~2 ~1.5 ~-5.4 run function exigence:hub/profile_selector/men
 [{text:"[ ",color:"dark_gray"},{text:"Player Code: ",color:"yellow"},{text:"$(player_id)",color:"yellow",bold:true,underlined:true},{text:" ]",color:"dark_gray",bold:false,underlined:false}]\
 ,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.5f,0.5f,0.5f]}}
 
+#=============================================================================================================
 # Load titles
 summon item_display ~ ~5.25 ~-4.5 {brightness:{block:13,sky:13},Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["MenuTitleDisplay","NewMenuDisplay"],\
 item:{id:"minecraft:sunflower",count:1,components:{"minecraft:custom_model_data":{strings:["title_profiles"]}}}\

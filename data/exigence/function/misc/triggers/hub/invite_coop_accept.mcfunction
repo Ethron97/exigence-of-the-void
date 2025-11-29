@@ -10,6 +10,8 @@ say Accept invite
 # Reset trigger score
 scoreboard players reset @s AcceptCoopInvite
 
+execute at @s run playsound entity.player.levelup player @s ~ ~100 ~ 100 1
+
 scoreboard players operation #compare hub.player_entity.query_idid = @s hub.player_entity.query_idid
 # Find the player head that corresponds to
 execute in exigence:hub positioned 999 128 6 as @e[distance=..300,type=item_display,tag=PlayerHeadDisplay] if score @s IDID = #compare hub.player_entity.query_idid \
@@ -26,3 +28,6 @@ execute at @s as @n[distance=..20,tag=SlotDisplay,tag=Selected] run function exi
 
 # Cancel in-process creation
 execute at @s as @n[distance=..20,type=item_display,tag=SlotDisplay,tag=CreationProcess] run function exigence:hub/profile_selector/menu/display/profile/create_new_cancel
+
+# Remove chests
+execute at @s as @n[distance=..20,type=marker,tag=ProfileSelectorNode] at @s run function exigence:hub/profile_selector/load/remove_chests

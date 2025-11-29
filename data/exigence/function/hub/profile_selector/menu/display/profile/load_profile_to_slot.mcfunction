@@ -11,6 +11,7 @@
 # Mark
 tag @s remove Blank
 tag @s add ProfileLoaded
+execute if score @n[distance=..0.1,type=marker,tag=ProfileNode] profile.node.coop_profile_id matches 1.. run tag @s add Coop
 
 # Team for glow color
 team join Green
@@ -24,6 +25,8 @@ data modify entity @s item.components."minecraft:lore" append value [{text:"Shif
 
 # Profile id
 execute store result entity @s item.components."minecraft:custom_data".profile_id int 1 run scoreboard players get @n[distance=..0.1,type=marker,tag=ProfileNode] profile.node.profile_id
+data modify entity @s item.components."minecraft:custom_data".coop_profile_id set value 0
+execute store result entity @s item.components."minecraft:custom_data".coop_profile_id int 1 run scoreboard players get @n[distance=..0.1,type=marker,tag=ProfileNode] profile.node.coop_profile_id
 
 # Item type
 data modify entity @s item.id set value "minecraft:map"
@@ -43,9 +46,14 @@ execute if score @n[distance=..0.1,type=marker,tag=ProfileNode] profile.story.ad
 # Load profile info
 execute at @s run function exigence:hub/profile_selector/menu/display/text_displays/load_profile_info with entity @s item.components."minecraft:custom_data"
 
+# Load stickers
+function exigence:hub/profile_selector/menu/display/profile/effects/summon_stickers
+
 # Summon pop block
 execute at @s align xyz positioned ~ ~ ~-0.99 run function exigence:hub/profile_selector/menu/display/profile/effects/summon_pop_block
 
+# If co-op, load status list
+execute if score @n[distance=..0.1,type=marker,tag=ProfileNode] profile.node.coop_profile_id matches 1.. at @s run function exigence:hub/profile_selector/menu/display/profile/effects/refresh_coop_statuses with entity @s item.components."minecraft:custom_data"
 
 # If profile node is active, start selected
 execute if score @n[distance=..0.1,type=marker,tag=ProfileNode] profile.node.profile_id = #compare profile.node.profile_id run function exigence:hub/profile_selector/menu/display/profile/select with entity @s item.components."minecraft:custom_data"

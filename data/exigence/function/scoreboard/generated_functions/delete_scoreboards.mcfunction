@@ -780,6 +780,7 @@ scoreboard objectives remove career.settings.show_resource_consume
 scoreboard objectives remove career.settings.show_resource_generate
 scoreboard objectives remove career.settings.show_resource_overflow
 scoreboard objectives remove career.settings.show_resource_underflow
+scoreboard objectives remove career.settings.allow_coop_invites
 scoreboard objectives remove debug.node_counter
 scoreboard objectives remove debug.vault_pots_1
 scoreboard objectives remove debug.vault_pots_2
@@ -865,7 +866,6 @@ scoreboard objectives remove node.treasure.drop_working
 scoreboard objectives remove node.treasure.treasure_walk_depth
 scoreboard objectives remove node.vault.data.opened
 scoreboard objectives remove node.vault.data.picked_up
-scoreboard objectives remove profile.coop_profile_id
 scoreboard objectives remove profile.data.deck.cards_purchased_common
 scoreboard objectives remove profile.data.deck.cards_purchased_common_void
 scoreboard objectives remove profile.data.deck.cards_purchased_legendary
@@ -908,7 +908,11 @@ scoreboard objectives remove profile.node.profile_id
 scoreboard objectives remove profile.node.slot_id
 scoreboard objectives remove profile.piggy_bank
 scoreboard objectives remove profile.profile_difficulty
-scoreboard objectives remove profile.profile_id
+scoreboard objectives remove profile.node.coop_profile_id
+scoreboard objectives remove profile.node.coop_profile_index
+scoreboard objectives remove profile.player.profile_id
+scoreboard objectives remove profile.player.coop_profile_id
+scoreboard objectives remove profile.player.coop_profile_index
 scoreboard objectives remove profile.story.puzzle_candles
 scoreboard objectives remove profile.story.ward_amethyst
 scoreboard objectives remove profile.story.ward_emerald
@@ -935,3 +939,4 @@ scoreboard objectives remove temp_coords
 scoreboard objectives remove tick_convert
 scoreboard objectives remove tick_counter
 scoreboard objectives remove vault_open_state
+scoreboard objectives remove global_settings

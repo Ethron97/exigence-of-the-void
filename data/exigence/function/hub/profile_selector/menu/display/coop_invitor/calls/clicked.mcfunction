@@ -20,6 +20,8 @@ run function exigence:hub/profile_selector/menu/display/coop_invitor/calls/priva
 
 # Confirm button
 execute if entity @s[tag=Confirm] run say Clicked confirm
+$execute at @s[tag=Confirm] as @n[distance=..5,type=item_display,tag=SlotDisplay,scores={IDID=$(parent_idid)}] at @s \
+run function exigence:hub/profile_selector/menu/display/coop_invitor/calls/private/confirm_coop_creation with entity @s item.components."minecraft:custom_data"
 
 # Effects
 execute at @s run playsound minecraft:entity.ender_eye.death ui @a ~ ~ ~ 1 1

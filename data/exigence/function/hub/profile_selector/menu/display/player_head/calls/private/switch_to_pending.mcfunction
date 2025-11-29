@@ -17,6 +17,7 @@ say Switch to pending
 execute at @s as @p[distance=..16,tag=Interacting] run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/message/pending
 
 tag @s remove DisplayingHead
+tag @s add Pending
 
 #   Then teleport it to be center frame
 $execute at @s at @n[distance=..16,type=item_display,tag=SlotDisplay,scores={IDID=$(parent_idid)}] run tp @s ~ ~1.2 ~

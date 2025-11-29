@@ -6,6 +6,8 @@
 
 ## INPUT
 #   SCORE #target player.node.invite_sent_to
+#   SCORE #from_ Temp; 1 = from decline, 2 = from leave
+#   SCORE #compare IDID; item display id of the player head display that called this function
 
 #=============================================================================================================
 
@@ -23,6 +25,11 @@ run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/priv
 execute at @s as @e[distance=..32,type=armor_stand,tag=PlayerNode] if score @s profile.node.player_id = #target player.node.invite_sent_to \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/try_cancel_invited
 
+scoreboard players set #filled_slots_old Temp 0
+execute if score @s player.node.joined_player_1 matches 1.. run scoreboard players add #filled_slots_old Temp 1
+execute if score @s player.node.joined_player_2 matches 1.. run scoreboard players add #filled_slots_old Temp 1
+execute if score @s player.node.joined_player_3 matches 1.. run scoreboard players add #filled_slots_old Temp 1
+
 # Clear scoreboards
 execute if score @s player.node.invited_player_1 = #target player.node.invite_sent_to run scoreboard players reset @s player.node.invited_player_1
 execute if score @s player.node.invited_player_2 = #target player.node.invite_sent_to run scoreboard players reset @s player.node.invited_player_2
@@ -39,6 +46,10 @@ execute if score @s player.node.joined_player_2 matches 1.. run scoreboard playe
 execute if score @s player.node.joined_player_3 matches 1.. run scoreboard players add #filled_slots Temp 1
 
 execute at @a[tag=CancelledBy,limit=1] as @n[distance=..16,type=item_display,tag=CoopInvitorDisplay,tag=Confirm] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/update_confirm_button
+
+# Shift menu depending on state
+execute at @a[tag=CancelledBy,limit=1] as @e[distance=..16,type=item_display,tag=PlayerHeadDisplay] if score @s IDID = #compare IDID \
+run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/update_menu_from_cancel_only with entity @s item.components."minecraft:custom_data"
 
 # Remove local tag(s)
 tag @a[tag=Inviteded] remove Inviteded

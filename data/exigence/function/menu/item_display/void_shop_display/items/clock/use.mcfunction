@@ -24,14 +24,14 @@ execute if score @s game.player.vault_code matches 1..6 run return 1
 tag @s add Clocking
 
 # Get player id to lookup
-scoreboard players operation #compare game.entity.profile_id = @s profile.profile_id
+scoreboard players operation #compare game.entity.profile_id = @s profile.player.profile_id
 
 # Get smallest clock id
 scoreboard players set #tp_to game.item.clock_marker.id 999999
-execute as @e[type=minecraft:marker,tag=ClockMarker] if score @s game.entity.profile_id = #compare profile.profile_id run scoreboard players operation #tp_to game.item.clock_marker.id < @s game.item.clock_marker.id
+execute as @e[type=minecraft:marker,tag=ClockMarker] if score @s game.entity.profile_id = #compare profile.player.profile_id run scoreboard players operation #tp_to game.item.clock_marker.id < @s game.item.clock_marker.id
 
 # Tp player to them
-execute as @e[type=minecraft:marker,tag=ClockMarker] if score @s game.entity.profile_id = #compare profile.profile_id if score @s game.item.clock_marker.id = #tp_to game.item.clock_marker.id at @s run tp @a[tag=Clocking] ~ ~ ~
+execute as @e[type=minecraft:marker,tag=ClockMarker] if score @s game.entity.profile_id = #compare profile.player.profile_id if score @s game.item.clock_marker.id = #tp_to game.item.clock_marker.id at @s run tp @a[tag=Clocking] ~ ~ ~
 
 # Give a couple seconds of inivisibilty and slow falling to be nice
 effect give @s slow_falling 1 0 true

@@ -16,7 +16,7 @@ execute at @s run playsound minecraft:entity.enderman.teleport ambient @s ~ ~100
 team leave @s
 
 # Handle scores
-scoreboard players operation #compare profile.node.profile_id = @s profile.profile_id
+scoreboard players operation #compare profile.node.profile_id = @s profile.player.profile_id
 scoreboard players operation #compare hub.profile_selector_id = @s hub.player.profile_selector_id
 scoreboard players reset @s hub.player.profile_selector_id
 # Reset triggers

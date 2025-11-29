@@ -11,9 +11,10 @@ scoreboard players enable @s AcceptCoopInvite
 scoreboard players enable @s DeclineCoopInvite
 
 # Inform
-tellraw @s [{text:"You have been invited by ",color:"green"},{selector:"@p[distance=..0.1,tag=SendingInvite]",color:"gold"},{text:" to join a co-co profile!",color:"green"}]
-execute at @s run playsound entity.player.levelup player @s ~ ~100 ~ 100 1
-# Tellraw with click events (TODO)
+tellraw @s [{text:"\nYou have been invited by ",color:"green"},{selector:"@p[distance=..0.1,tag=SendingInvite]",color:"gold"},{text:" to join a co-co profile!",color:"green"}]
+tellraw @s [{text:"Click:    ",color:gray},{text:"[ACCEPT]",italic:false,bold:false,color:"green","click_event": {"action":"run_command","command":"/trigger AcceptCoopInvite"}},"    ",{text:"[DECLINE]",italic: false,color: "red","click_event": {"action":"run_command","command":"/trigger DeclineCoopInvite"}}]
+tellraw @s [{text:""}]
+execute at @s run playsound entity.experience_orb.pickup player @s ~ ~100 ~ 100 1
 
 # Save IDID of the player head that sourced the invite
 scoreboard players operation @s hub.player_entity.query_idid = #compare hub.player_entity.query_idid
@@ -44,6 +45,6 @@ scoreboard players operation @p[distance=..0.1,tag=SendingInvite] player.node.in
 #=============================================================================================================
 ## SENDER
 tellraw @p[distance=..0.1,tag=SendingInvite] [{text:"An invite has been sent to ",color:"green"},{selector:"@s",color:"gold"},{text:"!",color:"green"}]
-#playsound entity.player.levelup player @p[distance=..0.1,tag=SendingInvite] ~ ~100 ~ 100 1
+playsound entity.experience_orb.pickup player @p[distance=..0.1,tag=SendingInvite] ~ ~100 ~ 100 1
 
 # Start timeout? TODO

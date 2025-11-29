@@ -22,9 +22,6 @@ data modify entity @s item.components."minecraft:custom_name" set value {text:"C
 # Lore
 data remove entity @s item.components."minecraft:lore"
 
-# Change the block behind it
-#execute at @s run setblock ~ ~ ~-1 purpur_pillar[axis=z]
-
 # Pop block
 execute at @s align xyz positioned ~ ~ ~-0.82 run function exigence:hub/profile_selector/menu/display/profile/effects/move_pop_block with entity @s item.components."minecraft:custom_data"
 # Pop self
@@ -33,14 +30,19 @@ execute at @s align xyz positioned ~0.5 ~0.5 ~0.5 run tp @s ~ ~ ~-0.3
 # Team for glow color
 team join Green
 
-# Load chests
+#=============================================================================================================
+## LOAD CHESTS
 # Get data
-$execute in exigence:profile_data positioned 8 128 8 at @n[distance=..200,type=marker,tag=ProfileNode,scores={profile.node.profile_id=$(profile_id)}] \
-run function exigence:profile/profile_node/load/chest_to_data
+$execute in exigence:profile_data positioned 8 128 8 as @n[distance=..200,type=marker,tag=ProfileNode,scores={profile.node.profile_id=$(profile_id)}] \
+run function exigence:profile/profile_node/load/try_chest_to_data
 
-# Fill chests
-$execute in exigence:hub positioned 999.5 128 6.5 at @n[distance=..200,type=marker,tag=ProfileSelectorNode,scores={hub.profile_selector_id=$(profile_selector_id)}] \
+execute at @s unless score #data_loaded Temp matches 1 run tellraw @p[distance=..20,tag=ProfileSelecting] [{text:"Another player has already loaded the chests for this co-op profile",color:"yellow",italic:true}]
+
+# Fill chests (if data was loaded successfully)
+$execute if score #data_loaded Temp matches 1 \
+in exigence:hub positioned 999.5 128 6.5 at @n[distance=..200,type=marker,tag=ProfileSelectorNode,scores={hub.profile_selector_id=$(profile_selector_id)}] \
 run function exigence:hub/profile_selector/load/load_chests
+#=============================================================================================================
 
 # Effects (particle sound)
 #   "Creating" tag added by create_new to prevent overlapping effects

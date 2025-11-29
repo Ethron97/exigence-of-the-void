@@ -8,7 +8,7 @@
 # DEBUG
 #say player handle
 
-scoreboard players operation #compare game.entity.profile_id = @s profile.profile_id
+scoreboard players operation #compare game.entity.profile_id = @s profile.player.profile_id
 
 ## GET MIRROR
 # Reset active tag

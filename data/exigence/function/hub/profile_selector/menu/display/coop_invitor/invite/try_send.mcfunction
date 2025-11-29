@@ -1,7 +1,7 @@
 # Send invite to player
 
 ## CONSTRAINTS
-#   AS player who was invite
+#   AS player who was invited
 #   AT player who sent the invite (tag=SendingInvite)
 
 #=============================================================================================================
@@ -15,6 +15,13 @@ scoreboard players set #temp Temp 0
 execute if entity @s[tag=ProfileSelecting] run scoreboard players set #temp Temp 1
 execute if score #temp Temp matches 0 run tellraw @p[distance=..0.01,tag=SendingInvite] [{selector:"@s",color:gold},{text:" is not in a Profile Selector room.",color:"red"}]
 execute if score #temp Temp matches 0 run return fail
+
+# Fail if the player has invites disabled
+#   I leave this here for reduncancy, but if the setting is diabled then we wont even have the player head show up in the first place.
+scoreboard players set #temp Temp 0
+execute unless score @s career.settings.allow_coop_invites matches 1 run scoreboard players set #temp Temp 1
+execute if score #temp Temp matches 1 run tellraw @p[distance=..0.01,tag=SendingInvite] [{selector:"@s",color:gold},{text:" has disabled co-op invites",color:"red"}]
+execute if score #temp Temp matches 1 run return fail
 
 # Fail if the player is already being invited
 scoreboard players set #temp Temp 0

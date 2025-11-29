@@ -10,6 +10,9 @@
 
 say Load chests
 
+# Make sure chests are placed
+function exigence:hub/profile_selector/load/place_chests
+
 # Copy data to chest
 data modify block ~-4 ~ ~4 Items set from storage exigence:profile chests.blue_left
 data modify block ~-4 ~ ~3 Items set from storage exigence:profile chests.blue_right

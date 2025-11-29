@@ -9,10 +9,12 @@
 
 #=============================================================================================================
 
-say Switch from pending
+say Switch from pending to head
 
 # Kill pending title
 execute at @s run kill @n[distance=..5,type=text_display,tag=PendingTitle]
+
+tag @s remove Pending
 
 # Load player head menu
 $execute at @s as @n[distance=..5,type=item_display,tag=SlotDisplay,scores={IDID=$(parent_idid)}] at @s \

@@ -3,6 +3,9 @@
 ## CONSTRAINTS
 #   AS/AT profile selector node
 
+## INPUT
+#   SCORE #compare profile.node.profile_id
+
 #=============================================================================================================
 
 say Unload room
@@ -11,7 +14,8 @@ say Unload room
 function exigence:hub/profile_selector/load/save_chests
 
 # Store data
-execute in exigence:profile_data positioned 8 128 8 as @e[distance=..200,type=marker,tag=ProfileNode] if score @s profile.node.profile_id = #compare profile.node.profile_id at @s run function exigence:profile/profile_node/save/data_to_chest
+execute if score #chests_saved Temp matches 1.. in exigence:profile_data positioned 8 128 8 as @e[distance=..200,type=marker,tag=ProfileNode] \
+if score @s profile.node.profile_id = #compare profile.node.profile_id at @s run function exigence:profile/profile_node/save/try_data_to_chest
 
 # Remove chests
 function exigence:hub/profile_selector/load/remove_chests

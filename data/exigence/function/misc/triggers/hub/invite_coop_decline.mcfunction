@@ -10,6 +10,9 @@ say Decline invite
 # Reset trigger score
 scoreboard players reset @s DeclineCoopInvite
 
+# Re-place chests if needed
+execute at @s[tag=Invited,tag=Joined] as @n[distance=..20,type=marker,tag=ProfileSelectorNode] at @s run function exigence:hub/profile_selector/load/place_chests
+
 scoreboard players operation #compare hub.player_entity.query_idid = @s hub.player_entity.query_idid
 # Find the player head that corresponds to
 scoreboard players operation #target player.node.invite_sent_to = @s career.player_id

@@ -16,8 +16,8 @@ execute unless predicate exigence:dimension/location/profile_data run tellraw @s
 execute unless predicate exigence:dimension/location/profile_data run return 1
 
 # If there are already 1008 total, fail
-execute if score #sequence profile.profile_id matches 1008.. run tellraw @s {text:"Maximum number of TOTAL profiles reached (1008)",color:"red"}
-execute if score #sequence profile.profile_id matches 1008.. run return 1
+execute if score #sequence profile.player.profile_id matches 1008.. run tellraw @s {text:"Maximum number of TOTAL profiles reached (1008)",color:"red"}
+execute if score #sequence profile.player.profile_id matches 1008.. run return 1
 
 # If this player already has more than 5, fail
 scoreboard players set #temp Temp 0

@@ -8,7 +8,7 @@
 
 #=============================================================================================================
 
-#say Remove coop invitor
+say Remove coop invitor
 
 execute at @s run kill @e[distance=..5,type=text_display,tag=StatusDisplay]
 
@@ -20,4 +20,4 @@ run function exigence:hub/profile_selector/menu/display/coop_invitor/calls/priva
 $execute at @s run kill @e[distance=..16,type=minecraft:item_display,tag=CoopInvitorDisplay,nbt={item:{components:{"minecraft:custom_data":{slot_id:"$(slot_id)"}}}}]
 
 # If there was an outgoing invitation, cancel it
-execute as @p[distance=..16,tag=ProfileSelecting,tag=InvitesSent] run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/cancel_from/unhover
+execute unless entity @s[tag=Creating] as @p[distance=..16,tag=ProfileSelecting,tag=InvitesSent] run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/cancel_from/unhover

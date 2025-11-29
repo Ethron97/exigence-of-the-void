@@ -6,7 +6,7 @@
 #========================================================================================================
 
 # Store player id for comparison
-scoreboard players operation #compare game.entity.profile_id = @s profile.profile_id
+scoreboard players operation #compare game.entity.profile_id = @s profile.player.profile_id
 
 execute store result storage exigence:temp profile_id int 1 run scoreboard players get #compare game.entity.profile_id
 
