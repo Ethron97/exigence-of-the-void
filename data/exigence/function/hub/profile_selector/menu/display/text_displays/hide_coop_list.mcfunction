@@ -8,4 +8,4 @@
 
 #=============================================================================================================
 
-$execute at @s run kill @e[distance=..5,type=minecraft:text_display,tag=CoopPlayerDisplay,scores={IDID=$(idid)}]
+$execute at @s run kill @e[distance=..5,tag=CoopPlayerDisplay,scores={IDID=$(idid)}]

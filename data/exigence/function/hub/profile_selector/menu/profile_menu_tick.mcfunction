@@ -39,5 +39,3 @@ execute if entity @s[predicate=exigence:player/sneaking] as @n[distance=..7,type
 # If not sneaking, change color to green of all loaded
 execute unless entity @s[predicate=exigence:player/sneaking] as @n[distance=..7,type=minecraft:item_display,tag=SlotDisplay,tag=ProfileLoaded,team=Red] run team join Green @s
 execute unless entity @s[predicate=exigence:player/sneaking] as @n[distance=..7,type=minecraft:item_display,tag=PlayerHeadDisplay,team=Red] run team join Special @s
-
-scoreboard players remove @s[scores={hub.player.profile_selector_cooldown=1..}] hub.player.profile_selector_cooldown 1

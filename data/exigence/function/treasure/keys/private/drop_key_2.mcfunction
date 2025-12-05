@@ -7,3 +7,4 @@
 
 tag @s add KeyDropper
 function exigence:treasure/node/drop_treasure {priority:1,function:"exigence:door/level/door_2/summon_key"}
+scoreboard players add 2.keys_dropped game.level_doors 1

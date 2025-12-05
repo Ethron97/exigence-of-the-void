@@ -5,7 +5,7 @@
 
 #=============================================================================================================
 
-say Summon difficulty selectors
+#say Summon difficulty selectors
 
 # Place the four buttons
 #execute at @s positioned ~-0.355 ~0.9 ~ run function exigence:hub/profile_selector/menu/display/difficulty_selector/summon_selector_1 with entity @s item.components."minecraft:custom_data"

@@ -17,7 +17,7 @@ function exigence:advancements/listener/pickup/level_key_generic
 execute at @s as @e[distance=..1000,type=minecraft:item,tag=LevelKey,scores={ObjectLevel=3}] run kill @s
 
 # Update got score
-scoreboard players set GotArdorsBaneKey DungeonRun 1
+scoreboard players set 3.got_key game.level_doors 1
 
 # Triumph
 #function exigence:cards/triumph

@@ -1,2 +1,6 @@
-scoreboard players add CardsCards.Instant deck.analysis 1
-scoreboard players add CardsCards.Void deck.analysis 1
+# CONTROLLED BY SPREADSHEET
+scoreboard players add cards.void deck.analysis 1
+scoreboard players add cards.recycle deck.analysis 1
+
+scoreboard players add class.deck deck.analysis 10
+scoreboard players add class.deck.weighted deck.analysis 40

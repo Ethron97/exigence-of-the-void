@@ -8,7 +8,7 @@
 
 #=============================================================================================================
 
-say Remove coop invitor
+#say Remove coop invitor
 
 execute at @s run kill @e[distance=..5,type=text_display,tag=StatusDisplay]
 

@@ -11,7 +11,7 @@
 
 # Summon text display
 summon minecraft:text_display ~ ~ ~ {billboard:"fixed",alignment:"center",Tags:["HoverDetails","NewTextDisplay"],text:{text:""},background:1\
-,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.5f,0.5f,0.5f]}}
+,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.4f,0.4f,0.4f]}}
 
 # Give matching scoreboard value
 scoreboard players operation @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] IDID = @s IDID

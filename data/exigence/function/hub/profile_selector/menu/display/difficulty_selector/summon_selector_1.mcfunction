@@ -16,6 +16,7 @@ team join Special @n[distance=..1,type=item_display,tag=NewItemDisplay]
 
 # Item data
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.id set value "minecraft:sunflower"
+data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_model_data".strings set value ["difficulty_radiant"]
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_name" set value {text:"Radiant",color:"yellow"}
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".reminder set value [{text:"Difficulty: ",color:"white"},{text:"Radiant",color:"yellow"}]
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:lore" set value [{text:"Enemies are 20% slower",italic:false,color:"white"}]

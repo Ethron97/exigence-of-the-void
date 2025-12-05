@@ -1,1 +1,5 @@
-scoreboard players add other.Ember deck.analysis 6
+# CONTROLLED BY SPREADSHEET
+scoreboard players add other.ember deck.analysis 6
+
+scoreboard players add class.ember deck.analysis 10
+scoreboard players add class.ember.weighted deck.analysis 20

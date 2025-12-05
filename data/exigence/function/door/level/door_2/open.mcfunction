@@ -9,6 +9,9 @@
 # DEBUG
 #say open Door 2
 
+tag @n[distance=..10,type=minecraft:armor_stand,tag=DoorNode,tag=Door2] add Open
+scoreboard players set 2.opened game.level_doors 1
+
 #============================================================================================================
 ## SOUNDS
 stopsound @a neutral block.beacon.activate
@@ -27,8 +30,6 @@ function exigence:door/level/common/open_particles
 
 #============================================================================================================
 ## CLEANUP
-tag @e[type=minecraft:armor_stand,tag=DoorNode,tag=Door2] add Open
-
 kill @e[distance=..10,type=minecraft:item_display,tag=Door2]
 kill @e[distance=..10,type=minecraft:interaction,tag=Door2Handle]
 

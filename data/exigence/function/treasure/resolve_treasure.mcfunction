@@ -30,6 +30,15 @@ execute if score VaultRain DevModifiers matches 1 run scoreboard players set #Va
 execute if score #VaultKeyCheck Random matches 1 run function exigence:vault/generate_key/generate
 
 
+## LEVEL KEYS+
+# Change per dungeon proc to summon a LEVEL KEY at any active treasure node, on a level with at least one person (and unopened level door)
+execute store result score #LevelKeyCheck Random run random value 1..12
+#   Drop if random check + less than 5 keys exist + door not opened + 
+execute if score #LevelKeyCheck Random matches 1 unless score 1.keys_dropped game.level_doors matches 5.. unless score 1.opened game.level_doors matches 1 if entity @a[tag=ActivePlayer,scores={game.player.active_level=1}] as @e[type=minecraft:armor_stand,tag=TreasureNode,scores={ObjectLevel=1},tag=!L0,tag=!KeyDropper,tag=!KeyBlacklist,limit=1,sort=random] run function exigence:treasure/keys/private/drop_key_1
+execute if score #LevelKeyCheck Random matches 1 unless score 2.keys_dropped game.level_doors matches 5.. unless score 2.opened game.level_doors matches 1 if entity @a[tag=ActivePlayer,scores={game.player.active_level=2}] as @e[type=minecraft:armor_stand,tag=TreasureNode,scores={ObjectLevel=2},tag=!L0,tag=!KeyDropper,tag=!KeyBlacklist,limit=1,sort=random] run function exigence:treasure/keys/private/drop_key_2
+execute if score #LevelKeyCheck Random matches 1 unless score 3.keys_dropped game.level_doors matches 5.. unless score 3.opened game.level_doors matches 1 if entity @a[tag=ActivePlayer,scores={game.player.active_level=3}] as @e[type=minecraft:armor_stand,tag=TreasureNode,scores={ObjectLevel=3},tag=!L0,tag=!KeyDropper,tag=!KeyBlacklist,limit=1,sort=random] run function exigence:treasure/keys/private/drop_key_3
+
+
 ## WARD CRYSTALS
 #   If player is on levels 3 or 4, and at least one crystal exists
 execute if score Difficulty DungeonRun matches 4 if entity @e[type=interaction,tag=Crystal] if entity @a[tag=ActivePlayer,scores={dead=0,game.player.active_level=3..4}] run function exigence:game/other/wards/proc_resonance

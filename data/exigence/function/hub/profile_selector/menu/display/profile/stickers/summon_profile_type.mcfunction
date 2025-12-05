@@ -15,10 +15,10 @@
 #   Change item texture and scale depending on is coop or not
 execute if entity @s[tag=Coop] \
 run summon item_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["ProfileSticker","NewItemDisplay","ProfileTypeSticker"],item:{id:"minecraft:sunflower",count:1\
-,components:{"minecraft:custom_model_data":{strings:["coop_selector"]}}},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.3f,0.3f,0.3f]}}
+,components:{"minecraft:custom_model_data":{strings:["coop_selector"]}}},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.32f,0.32f,0.7f]}}
 execute unless entity @s[tag=Coop] \
 run summon item_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["ProfileSticker","NewItemDisplay","ProfileTypeSticker"],item:{id:"minecraft:sunflower",count:1\
-,components:{"minecraft:custom_model_data":{strings:["solo_selector"]}}},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.2f,0.2f,0.2f]}}
+,components:{"minecraft:custom_model_data":{strings:["solo_selector"]}}},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.18f,0.18f,0.7f]}}
 
 # Assign data
 $data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".parent_idid set value '$(idid)'

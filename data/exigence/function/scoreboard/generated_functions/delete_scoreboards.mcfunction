@@ -827,6 +827,7 @@ scoreboard objectives remove game.story.ward_crystal.node_id
 scoreboard objectives remove game.story.wards
 scoreboard objectives remove game.treasure.picked_up_coin_handle
 scoreboard objectives remove game.triumph
+scoreboard objectives remove game.level_doors
 scoreboard objectives remove game.vault.handle.id
 scoreboard objectives remove game.void_merchant.shop_id
 scoreboard objectives remove game.warden.active_level
@@ -841,11 +842,12 @@ scoreboard objectives remove hub.entity.profile_selector_id
 scoreboard objectives remove hub.entity.player_head_order
 scoreboard objectives remove hub.entity.player_head_page
 scoreboard objectives remove hub.entity.page_number
+scoreboard objectives remove hub.entity.profile_id
 scoreboard objectives remove hub.player.consumable_limit
 scoreboard objectives remove hub.player.profile_selector_id
 scoreboard objectives remove hub.player_entity.query_idid
 scoreboard objectives remove hub.player.query_selector_slot_id
-scoreboard objectives remove hub.player.profile_selector_cooldown
+scoreboard objectives remove hub.player.interaction_cooldown
 scoreboard objectives remove hub.entity.profile_invite_timer
 scoreboard objectives remove hub.profile_selector_id
 scoreboard objectives remove hub.validate_items
@@ -940,3 +942,4 @@ scoreboard objectives remove tick_convert
 scoreboard objectives remove tick_counter
 scoreboard objectives remove vault_open_state
 scoreboard objectives remove global_settings
+scoreboard objectives remove profile.node.queue_update_profile_scores

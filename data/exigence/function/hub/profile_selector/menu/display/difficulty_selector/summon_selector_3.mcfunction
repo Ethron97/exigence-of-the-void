@@ -15,7 +15,8 @@ function exigence:hub/profile_selector/menu/display/difficulty_selector/load_dif
 team join Red @n[distance=..1,type=item_display,tag=NewItemDisplay]
 
 # Give name and lore
-data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.id set value "minecraft:magma_cream"
+data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.id set value "minecraft:sunflower"
+data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_model_data".strings set value ["difficulty_ascendant"]
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_name" set value {text:"Ascendant",color:"red"}
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".reminder set value [{text:"Difficulty: ",color:"white"},{text:"Ascendant",color:"red"}]
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:lore" set value [{text:"+1 Ravagers on each level",italic:false,color:"white"}]

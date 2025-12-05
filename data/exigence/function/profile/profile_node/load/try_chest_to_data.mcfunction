@@ -17,6 +17,7 @@ scoreboard players set #data_loaded Temp 0
 # Check if there are any other co-op profiles with the chests already loaded
 scoreboard players operation #compare profile.node.coop_profile_id = @s profile.node.coop_profile_id
 #   If there is ANY profile node with chests loaded who shares a profile id:
+execute if score @s profile.node.coop_profile_id matches 1.. run say (IS COOP)
 execute if score @s profile.node.coop_profile_id matches 1.. \
 as @e[distance=..200,type=marker,tag=ProfileNode,tag=ChestsLoaded,scores={profile.node.coop_profile_id=1..}] \
 if score @s profile.node.coop_profile_id = #compare profile.node.coop_profile_id run return fail

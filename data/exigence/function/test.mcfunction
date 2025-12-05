@@ -31,3 +31,4 @@
 
 say test
 #advancement revoke @a[advancements={exigence:listener/pickup/coin/bonus_coin=true}] only exigence:listener/pickup/coin/bonus_coin
+$say $(Rotation)

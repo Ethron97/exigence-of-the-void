@@ -5,6 +5,7 @@
 
 ## INPUT
 #   data: item.components."minecraft:custom_data"
+#   SCORE #creating_coop Temp (Optional)
 #   SCORE #coop_profile_id Temp (Optional)
 #   SCORE #player_index Temp (Optional)
 
@@ -17,6 +18,9 @@ tag @s add Creating
 
 ## PREP
 execute at @s run function exigence:hub/profile_selector/menu/display/profile/effects/clear_menus
+# Store difficulty if not coop, if if first coop
+execute if score #creating_coop Temp matches 1 if score #player_index Temp matches 1 store result score #difficulty Temp run data get entity @s item.components."minecraft:custom_data".difficulty
+execute unless score #creating_coop Temp matches 1 store result score #difficulty Temp run data get entity @s item.components."minecraft:custom_data".difficulty
 
 ## CREATE
 # 0. Effects (particle/sounds)

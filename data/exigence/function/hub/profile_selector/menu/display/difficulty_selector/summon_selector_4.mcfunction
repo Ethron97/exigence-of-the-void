@@ -16,7 +16,8 @@ tag @n[distance=..1,type=item_display,tag=NewItemDisplay] add Exigent
 team join LightPurple @n[distance=..1,type=item_display,tag=NewItemDisplay]
 
 # Give name and lore
-data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.id set value "minecraft:ender_eye"
+data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.id set value "minecraft:sunflower"
+data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_model_data".strings set value ["difficulty_exigent"]
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_name" set value {text:"Exigent",color:"light_purple"}
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".reminder set value [{text:"Difficulty: ",color:"white"},{text:"Exigent",color:"light_purple"}]
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:lore" set value [{text:"Stacking difficulty modifiers",italic:false,color:"white"}]

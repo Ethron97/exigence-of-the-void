@@ -10,6 +10,9 @@
 
 say Select
 
+# Change player score
+$execute at @s run scoreboard players set @p[distance=..16,tag=ProfileSelecting,scores={hub.player.profile_selector_id=$(profile_selector_id)}] profile.player.profile_id $(profile_id)
+
 # Tag
 tag @s add Selected
 
@@ -23,9 +26,9 @@ data modify entity @s item.components."minecraft:custom_name" set value {text:"C
 data remove entity @s item.components."minecraft:lore"
 
 # Pop block
-execute at @s align xyz positioned ~ ~ ~-0.82 run function exigence:hub/profile_selector/menu/display/profile/effects/move_pop_block with entity @s item.components."minecraft:custom_data"
+execute at @s align xyz positioned ~ ~ ~-0.75 run function exigence:hub/profile_selector/menu/display/profile/effects/move_pop_block with entity @s item.components."minecraft:custom_data"
 # Pop self
-execute at @s align xyz positioned ~0.5 ~0.5 ~0.5 run tp @s ~ ~ ~-0.3
+execute at @s align xyz positioned ~0.5 ~0.5 ~0.5 run tp @s ~ ~ ~-0.23
 
 # Team for glow color
 team join Green
@@ -39,9 +42,13 @@ run function exigence:profile/profile_node/load/try_chest_to_data
 execute at @s unless score #data_loaded Temp matches 1 run tellraw @p[distance=..20,tag=ProfileSelecting] [{text:"Another player has already loaded the chests for this co-op profile",color:"yellow",italic:true}]
 
 # Fill chests (if data was loaded successfully)
-$execute if score #data_loaded Temp matches 1 \
-in exigence:hub positioned 999.5 128 6.5 at @n[distance=..200,type=marker,tag=ProfileSelectorNode,scores={hub.profile_selector_id=$(profile_selector_id)}] \
+$execute if score #data_loaded Temp matches 1 at @s at @n[distance=..32,type=marker,tag=ProfileSelectorNode,scores={hub.profile_selector_id=$(profile_selector_id)}] \
 run function exigence:hub/profile_selector/load/load_chests
+
+# Load deck analyzer (if data was loaded successfully)
+$execute if score #data_loaded Temp matches 1 at @s as @n[distance=..32,type=marker,tag=DeckAnalyzer,scores={hub.entity.profile_selector_id=$(profile_selector_id)}] \
+run function exigence:hub/profile_selector/load/load_deck_analyzer {profile_id:$(profile_id)}
+
 #=============================================================================================================
 
 # Effects (particle sound)

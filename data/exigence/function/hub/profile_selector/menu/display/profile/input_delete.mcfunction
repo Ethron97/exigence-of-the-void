@@ -8,8 +8,6 @@
 
 #=============================================================================================================
 
-#say Input delete
-
 # Save score to "query"
 $scoreboard players set @s hub.player.query_selector_slot_id $(slot_id)
 
@@ -21,4 +19,7 @@ scoreboard players enable @s ProfileSelectorCancelDelete
 # Show confirmation dialogue to player
 #   If confirm, run Confirm trigger
 #   If cancel, remove slot display from query
-dialog show @s exigence:confirm_delete
+$scoreboard players set #temp Temp $(coop_profile_id)
+#       If coop, use different language
+execute if score #temp Temp matches 1.. run dialog show @s exigence:profile/confirm_leave
+execute unless score #temp Temp matches 1.. run dialog show @s exigence:profile/confirm_delete

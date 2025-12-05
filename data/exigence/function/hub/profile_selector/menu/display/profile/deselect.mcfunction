@@ -10,6 +10,10 @@
 
 say Deselect
 
+# Change player score
+$execute at @s run scoreboard players reset @p[distance=..16,tag=ProfileSelecting,scores={hub.player.profile_selector_id=$(profile_selector_id)}] profile.player.profile_id
+$execute at @s run scoreboard players reset @p[distance=..16,tag=ProfileSelecting,scores={hub.player.profile_selector_id=$(profile_selector_id)}] profile.player.coop_profile_id
+
 tag @s remove Selected
 
 # Un-enchant the item
@@ -26,9 +30,9 @@ data modify entity @s item.components."minecraft:lore" append value [{text:"Shif
 #execute at @s run setblock ~ ~ ~-1 purpur_block
 
 # Unpop block
-execute at @s align xyz positioned ~ ~ ~-0.99 run function exigence:hub/profile_selector/menu/display/profile/effects/move_pop_block with entity @s item.components."minecraft:custom_data"
+execute at @s align xyz positioned ~ ~ ~-0.95 run function exigence:hub/profile_selector/menu/display/profile/effects/move_pop_block with entity @s item.components."minecraft:custom_data"
 # Unpop self
-execute at @s align xyz positioned ~0.5 ~0.5 ~0.5 run tp @s ~ ~ ~-0.45
+execute at @s align xyz positioned ~0.5 ~0.5 ~0.5 run tp @s ~ ~ ~-0.43
 
 # Team for glow color
 team join Green
@@ -41,9 +45,15 @@ $execute in exigence:hub positioned 999.5 128 6.5 at @n[distance=..200,type=mark
 run function exigence:hub/profile_selector/load/save_chests
 
 # Data -> profile chest
+scoreboard players set #remove_tag Temp 1
 $execute if score #chests_saved Temp matches 1 \
 in exigence:profile_data positioned 8 128 8 as @n[distance=..200,type=marker,tag=ProfileNode,scores={profile.node.profile_id=$(profile_id)}] \
 run function exigence:profile/profile_node/save/try_data_to_chest
+
+# Unload deck analyzer
+$execute if score #chests_saved Temp matches 1 at @s \
+run function exigence:hub/profile_selector/load/unload_deck_analyzer {profile_selector_id:$(profile_selector_id)}
+
 #=============================================================================================================
 
 # Save actual profile from player

@@ -827,6 +827,7 @@ scoreboard objectives add game.story.ward_crystal.node_id dummy
 scoreboard objectives add game.story.wards dummy
 scoreboard objectives add game.treasure.picked_up_coin_handle dummy
 scoreboard objectives add game.triumph dummy
+scoreboard objectives add game.level_doors dummy
 scoreboard objectives add game.vault.handle.id dummy
 scoreboard objectives add game.void_merchant.shop_id dummy
 scoreboard objectives add game.warden.active_level dummy
@@ -841,11 +842,12 @@ scoreboard objectives add hub.entity.profile_selector_id dummy
 scoreboard objectives add hub.entity.player_head_order dummy
 scoreboard objectives add hub.entity.player_head_page dummy
 scoreboard objectives add hub.entity.page_number dummy
+scoreboard objectives add hub.entity.profile_id dummy
 scoreboard objectives add hub.player.consumable_limit dummy
 scoreboard objectives add hub.player.profile_selector_id dummy
 scoreboard objectives add hub.player_entity.query_idid dummy
 scoreboard objectives add hub.player.query_selector_slot_id dummy
-scoreboard objectives add hub.player.profile_selector_cooldown dummy
+scoreboard objectives add hub.player.interaction_cooldown dummy
 scoreboard objectives add hub.entity.profile_invite_timer dummy
 scoreboard objectives add hub.profile_selector_id dummy
 scoreboard objectives add hub.validate_items dummy
@@ -940,3 +942,4 @@ scoreboard objectives add tick_convert dummy
 scoreboard objectives add tick_counter dummy
 scoreboard objectives add vault_open_state dummy
 scoreboard objectives add global_settings dummy
+scoreboard objectives add profile.node.queue_update_profile_scores dummy

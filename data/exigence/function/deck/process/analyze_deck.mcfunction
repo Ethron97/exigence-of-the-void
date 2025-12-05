@@ -5,13 +5,15 @@
 
 #=========================================================================================================================
 
-# Select "active" playernode
+say Analyze deck
+
+# Select "active" profile node
 function exigence:profile/profile_node/select_active
 
-# Reset validate
+# Reset
 data modify storage exigence:hub too_many_copies set value false
-#say analyzei cek
 function exigence:deck/process/reset_analyze_scores
+data modify storage exigence:deck_analysis errors set value []
 
 # ========================================================================================================================
 # COMMON

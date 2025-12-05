@@ -7,11 +7,11 @@
 #   Returns exigence:hub too_many_copies true/false
 function exigence:deck/process/analyze_deck
 
-scoreboard players operation Cards.TotalCheck deck.analysis = CardsCards.Total deck.analysis
+scoreboard players operation Cards.TotalCheck deck.analysis = cards.total deck.analysis
 scoreboard players operation Cards.TotalCheck deck.analysis -= DeckModifier Modifiers
 
 # Reduce up to VoidDeckModifiers of void chards
-scoreboard players operation #VoidCap deck.analysis = CardsCards.Void deck.analysis
+scoreboard players operation #VoidCap deck.analysis = cards.void deck.analysis
 scoreboard players operation #VoidCap deck.analysis < VoidDeckModifier Modifiers
 scoreboard players operation Cards.TotalCheck deck.analysis -= #VoidCap deck.analysis
 

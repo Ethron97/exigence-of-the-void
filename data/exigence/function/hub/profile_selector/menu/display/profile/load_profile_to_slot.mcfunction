@@ -28,6 +28,9 @@ execute store result entity @s item.components."minecraft:custom_data".profile_i
 data modify entity @s item.components."minecraft:custom_data".coop_profile_id set value 0
 execute store result entity @s item.components."minecraft:custom_data".coop_profile_id int 1 run scoreboard players get @n[distance=..0.1,type=marker,tag=ProfileNode] profile.node.coop_profile_id
 
+# Difficulty
+execute store result entity @s item.components."minecraft:custom_data".difficulty int 1 run scoreboard players get @n[distance=..0.1,type=marker,tag=ProfileNode] profile.profile_difficulty
+
 # Item type
 data modify entity @s item.id set value "minecraft:map"
 execute if score @n[distance=..0.1,type=marker,tag=ProfileNode] profile.story.adv.win_difficulty_1 matches 1 run data modify entity @s item.id set value "minecraft:warped_door"
@@ -46,11 +49,13 @@ execute if score @n[distance=..0.1,type=marker,tag=ProfileNode] profile.story.ad
 # Load profile info
 execute at @s run function exigence:hub/profile_selector/menu/display/text_displays/load_profile_info with entity @s item.components."minecraft:custom_data"
 
+# Load identifier
+data modify entity @s item.components."minecraft:custom_data".identifier set from entity @n[distance=..0.1,type=marker,tag=ProfileNode] data.custom_data.profile_identifier
 # Load stickers
 function exigence:hub/profile_selector/menu/display/profile/effects/summon_stickers
 
 # Summon pop block
-execute at @s align xyz positioned ~ ~ ~-0.99 run function exigence:hub/profile_selector/menu/display/profile/effects/summon_pop_block
+execute at @s align xyz positioned ~ ~ ~-0.95 run function exigence:hub/profile_selector/menu/display/profile/effects/summon_pop_block
 
 # If co-op, load status list
 execute if score @n[distance=..0.1,type=marker,tag=ProfileNode] profile.node.coop_profile_id matches 1.. at @s run function exigence:hub/profile_selector/menu/display/profile/effects/refresh_coop_statuses with entity @s item.components."minecraft:custom_data"

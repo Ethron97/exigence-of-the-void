@@ -5,7 +5,10 @@
 #   IN exigence:profile_data
 
 ## INPUT
-#   #compare profile.node.slot_id
+#   SCORE #compare profile.node.slot_id
+#   SCORE #difficulty Temp
+#   SCORE #creating_coop Temp (Optional)
+#   SCORE #coop_profile_id Temp (Optional)
 
 #=============================================================================================================
 

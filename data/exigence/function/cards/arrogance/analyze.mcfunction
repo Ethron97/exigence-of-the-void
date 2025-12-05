@@ -1,2 +1,4 @@
-# Variable... so idk
-#scoreboard players add other.Ember deck.analysis 3
+# CONTROLLED BY SPREADSHEET
+
+scoreboard players add class.ember deck.analysis 10
+scoreboard players add class.ember.weighted deck.analysis 20

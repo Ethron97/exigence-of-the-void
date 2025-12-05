@@ -46,19 +46,26 @@ scoreboard players set LBAL DungeonRun 0
 scoreboard players set MaxDragonBreath DungeonRun 0
 scoreboard players set VoidCache DungeonRun 0
 
-scoreboard players set MirrorMineKeys DungeonRun 1
-scoreboard players set TempleOfFervorKeys DungeonRun 1
-scoreboard players set ArdorsBaneKeys DungeonRun 1
 
-scoreboard players set GotMirrorMineKey DungeonRun 0
-scoreboard players set GotTempleOfFervorKey DungeonRun 0
-scoreboard players set GotArdorsBaneKey DungeonRun 0
 
 scoreboard players set Level1Echos DungeonRun 0
 scoreboard players set Level2Echos DungeonRun 0
 scoreboard players set Level3Echos DungeonRun 0
 scoreboard players set Level4Echos DungeonRun 0
 
+# Level doors
+scoreboard players set 1.keys_to_drop game.level_doors 1
+scoreboard players set 2.keys_to_drop game.level_doors 1
+scoreboard players set 3.keys_to_drop game.level_doors 1
+scoreboard players set 1.got_key game.level_doors 0
+scoreboard players set 2.got_key game.level_doors 0
+scoreboard players set 3.got_key game.level_doors 0
+scoreboard players set 1.opened game.level_doors 0
+scoreboard players set 2.opened game.level_doors 0
+scoreboard players set 3.opened game.level_doors 0
+scoreboard players set 1.keys_dropped game.level_doors 0
+scoreboard players set 2.keys_dropped game.level_doors 0
+scoreboard players set 3.keys_dropped game.level_doors 0
 
 # Reset resources
 scoreboard players set Current.Red game.resources 0

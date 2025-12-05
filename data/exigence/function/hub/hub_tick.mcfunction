@@ -24,6 +24,7 @@ execute as @a[gamemode=adventure,predicate=exigence:dimension/entity/hub] run sc
 
 # Profile menu tick
 execute as @a[scores={hub.player.profile_selector_id=1..}] at @s run function exigence:hub/profile_selector/menu/profile_menu_tick
+scoreboard players remove @a[scores={hub.player.interaction_cooldown=1..}] hub.player.interaction_cooldown 1
 
 # Item shop tick if someone is shopping
 #execute if entity @a[distance=..1000,tag=ItemShopping] run function exigence:hub/item_shop/item_shop_tick

@@ -4,9 +4,17 @@
 #   AS player
 #   AT location
 
+## INPUT
+#   SCORE #difficulty Temp
+#   SCORE #creating_coop Temp (Optional)
+#   SCORE #coop_profile_id Temp (Optional)
+
 #=============================================================================================================
 
 summon minecraft:marker ~ ~ ~ {Tags:["NewProfileNode","ProfileNode"]}
+
+# Assign difficulty
+scoreboard players operation @n[distance=..1,type=minecraft:marker,tag=NewProfileNode] profile.profile_difficulty = #difficulty Temp
 
 # Assign player id
 execute as @n[distance=..1,type=minecraft:marker,tag=NewProfileNode] run scoreboard players operation @s profile.node.profile_id = #sequence profile.player.profile_id
@@ -17,6 +25,13 @@ scoreboard players operation @n[distance=..1,type=marker,tag=NewProfileNode] pro
 # Copy co-op id
 execute if score #creating_coop Temp matches 1 as @n[distance=..1,type=marker,tag=NewProfileNode] run scoreboard players operation @s profile.node.coop_profile_id = @s profile.node.profile_id
 execute if score #creating_coop Temp matches 1 if score #coop_profile_id Temp matches 1.. as @n[distance=..1,type=marker,tag=NewProfileNode] run scoreboard players operation @s profile.node.coop_profile_id = #coop_profile_id Temp
+
+# Get identifier (outputs to exigence:temp identifier)
+execute unless score #creating_coop Temp matches 1 run function exigence:profile/profile_node/new/identifier/generate_identifier
+#   IF COOP: Only generate new one if there is not one already popualated
+execute if score #creating_coop Temp matches 1 unless data storage exigence:temp identifier run function exigence:profile/profile_node/new/identifier/generate_identifier
+# Assign to marker customdata
+data modify entity @n[distance=..1,type=marker,tag=NewProfileNode] data.custom_data.profile_identifier set from storage exigence:temp identifier
 
 # Clone blocks
 clone 0 0 0 15 3 0 ~ ~-1 ~
