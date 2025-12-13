@@ -10,6 +10,8 @@
 
 say Switch to
 
+scoreboard players set #switching Temp 1
+
 execute at @s as @n[distance=..16,tag=SlotDisplay,tag=Selected] run function exigence:hub/profile_selector/menu/display/profile/deselect with entity @s item.components."minecraft:custom_data"
 
 function exigence:hub/profile_selector/menu/display/profile/select with entity @s item.components."minecraft:custom_data"
@@ -20,3 +22,5 @@ in exigence:profile_data run function exigence:profile/profile_node/load_profile
 
 # Refresh coop status lists
 function exigence:hub/profile_selector/menu/display/text_displays/player_list_display/update_all_displays
+
+scoreboard players set #switching Temp 0

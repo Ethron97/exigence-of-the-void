@@ -177,3 +177,5 @@ function exigence:deck/process/analyze_card {card_name:"void_clone",display_name
 function exigence:deck/process/analyze_card {card_name:"inner_fire",display_name:"Inner Fire",rarity:4,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 
 # ========================================================================================================================
+# Copy information from scores to data
+function exigence:deck/process/private/update_analysis_storage

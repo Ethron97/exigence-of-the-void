@@ -51,7 +51,8 @@ in exigence:profile_data positioned 8 128 8 as @n[distance=..200,type=marker,tag
 run function exigence:profile/profile_node/save/try_data_to_chest
 
 # Unload deck analyzer
-$execute if score #chests_saved Temp matches 1 at @s \
+#   Don't un-load if called from switch_to
+$execute unless score #switching Temp matches 1 if score #chests_saved Temp matches 1 at @s \
 run function exigence:hub/profile_selector/load/unload_deck_analyzer {profile_selector_id:$(profile_selector_id)}
 
 #=============================================================================================================

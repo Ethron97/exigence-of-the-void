@@ -839,6 +839,7 @@ scoreboard objectives remove hub.coin_conversion.smash_batch
 scoreboard objectives remove hub.coin_conversion_alt
 scoreboard objectives remove hub.entity.player_id
 scoreboard objectives remove hub.entity.profile_selector_id
+scoreboard objectives remove hub.entity.deck_analyzer_id
 scoreboard objectives remove hub.entity.player_head_order
 scoreboard objectives remove hub.entity.player_head_page
 scoreboard objectives remove hub.entity.page_number
@@ -850,6 +851,7 @@ scoreboard objectives remove hub.player.query_selector_slot_id
 scoreboard objectives remove hub.player.interaction_cooldown
 scoreboard objectives remove hub.entity.profile_invite_timer
 scoreboard objectives remove hub.profile_selector_id
+scoreboard objectives remove hub.deck_analyzer_id
 scoreboard objectives remove hub.validate_items
 scoreboard objectives remove node.berry.data.times_picked
 scoreboard objectives remove node.berry.max_berries

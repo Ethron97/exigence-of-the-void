@@ -839,6 +839,7 @@ scoreboard objectives add hub.coin_conversion.smash_batch dummy
 scoreboard objectives add hub.coin_conversion_alt dummy
 scoreboard objectives add hub.entity.player_id dummy
 scoreboard objectives add hub.entity.profile_selector_id dummy
+scoreboard objectives add hub.entity.deck_analyzer_id dummy
 scoreboard objectives add hub.entity.player_head_order dummy
 scoreboard objectives add hub.entity.player_head_page dummy
 scoreboard objectives add hub.entity.page_number dummy
@@ -850,6 +851,7 @@ scoreboard objectives add hub.player.query_selector_slot_id dummy
 scoreboard objectives add hub.player.interaction_cooldown dummy
 scoreboard objectives add hub.entity.profile_invite_timer dummy
 scoreboard objectives add hub.profile_selector_id dummy
+scoreboard objectives add hub.deck_analyzer_id dummy
 scoreboard objectives add hub.validate_items dummy
 scoreboard objectives add node.berry.data.times_picked dummy
 scoreboard objectives add node.berry.max_berries dummy

@@ -1,6 +1,8 @@
 # Takes seconds, outputs minutes and seconds in data
 # {effect:}
 
+#$say format effect time $(effect)
+
 # Get minutes
 $scoreboard players operation $(effect).M format_time = e.$(effect)Seconds deck.analysis
 $scoreboard players operation $(effect).M format_time /= 60 number

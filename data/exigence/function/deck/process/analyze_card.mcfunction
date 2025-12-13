@@ -44,10 +44,10 @@ execute if score #copies deck.process_card matches 3.. run scoreboard players ad
 
 # Check if too many copies
 $execute if score #rarity deck.process_card matches 1..3 if score #copies deck.process_card matches 4.. run tellraw @s [{text:"Warning: you have more than 3 copies of (",color:"red"},{text:"$(display_name)",color:"gold"},{text:")",color:"red"}]
-$data modify storage exigence:deck_analysis errors append value [{text:"Warning: you have more than 3 copies of (",color:"red"},{text:"$(display_name)",color:"gold"},{text:")",color:"red"}]
+$execute if score #rarity deck.process_card matches 1..3 if score #copies deck.process_card matches 4.. run data modify storage exigence:deck_analysis errors append value [{text:"Warning: you have more than 3 copies of (",color:"red"},{text:"$(display_name)",color:"gold"},{text:")",color:"red"}]
 execute if score #rarity deck.process_card matches 1..3 if score #copies deck.process_card matches 4.. run data modify storage exigence:hub too_many_copies set value true
 
 # If legendary, >1
 $execute if score #rarity deck.process_card matches 4 if score #copies deck.process_card matches 2.. run tellraw @s [{text:"Warning: you have more than 1 copy of (",color:"red"},{text:"$(display_name)",color:"gold"},{text:")",color:"red"}]
-$data modify storage exigence:deck_analysis errors append value [{text:"Warning: you have more than 1 copy of (",color:"red"},{text:"$(display_name)",color:"gold"},{text:")",color:"red"}]
+$execute if score #rarity deck.process_card matches 4 if score #copies deck.process_card matches 2.. run data modify storage exigence:deck_analysis errors append value [{text:"Warning: you have more than 1 copy of (",color:"red"},{text:"$(display_name)",color:"gold"},{text:")",color:"red"}]
 execute if score #rarity deck.process_card matches 4 if score #copies deck.process_card matches 2.. run data modify storage exigence:hub too_many_copies set value true

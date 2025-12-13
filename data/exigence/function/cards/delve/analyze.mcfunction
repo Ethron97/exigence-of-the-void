@@ -1,5 +1,5 @@
 # CONTROLLED BY SPREADSHEET
-scoreboard players add other.hazard deck.analysis 1
+scoreboard players add hazard.echo deck.analysis 1
 scoreboard players add other.difficulty_mod deck.analysis 1
 scoreboard players add cards.instant deck.analysis 1
 scoreboard players add cards.void deck.analysis 1
