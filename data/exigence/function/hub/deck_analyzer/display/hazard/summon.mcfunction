@@ -11,7 +11,7 @@
 
 ## BACKGROUND
 $summon block_display ^ ^ ^-0.025 {Rotation:$(Rotation),billboard:"fixed",Tags:["NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","Background","NewBlockDisplay"]\
-,brightness:{sky:6,block:6},block_state:{Name:"minecraft:light_gray_terracotta"},\
+,brightness:{sky:6,block:6},block_state:{Name:"minecraft:oxidized_copper"},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.875f,1.0f,0.05f]}}
 
 ## TITLE

@@ -7,9 +7,9 @@ data modify storage exigence:resource_hud green_missing set value {text:""}
 data modify storage exigence:resource_hud red_missing set value {text:""}
 data modify storage exigence:resource_hud aqua_missing set value {text:""}
 
-scoreboard players operation #MissingGreen game.resources = Green.Cost game.resources
-scoreboard players operation #MissingRed game.resources = Red.Cost game.resources
-scoreboard players operation #MissingAqua game.resources = Aqua.Cost game.resources
+scoreboard players operation #MissingGreen game.resources = green.cost game.resources
+scoreboard players operation #MissingRed game.resources = red.cost game.resources
+scoreboard players operation #MissingAqua game.resources = aqua.cost game.resources
 
 scoreboard players operation #MissingGreen game.resources -= Current.Green game.resources
 scoreboard players operation #MissingRed game.resources -= Current.Red game.resources

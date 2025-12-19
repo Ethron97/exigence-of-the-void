@@ -18,4 +18,4 @@ tp @s ~ ~ ~1
 execute at @s if block ~ 0 ~ minecraft:air run tp @s ~1 ~ 2.5
 
 # Iterate
-execute at @s run function exigence:profile/player_node/locate_next_player_slot
+execute at @s run function exigence:profile/player_node/new/locate_next_player_slot

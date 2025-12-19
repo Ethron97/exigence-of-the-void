@@ -14,4 +14,4 @@
 $data modify entity @s transformation set value {left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[$(scale)f,$(scale)f,$(scale)f]}
 
 # Remove item details
-function exigence:hub/deck_analyzer/refresh_button/calls/private/remove_hover_name with entity @s item.components."minecraft:custom_data"
+function exigence:hub/deck_analyzer/refresh_button/calls/private/remove_all_details with entity @s item.components."minecraft:custom_data"

@@ -8,4 +8,4 @@
 
 #=============================================================================================================
 
-$execute at @s run kill @e[distance=..3,type=minecraft:text_display,tag=RefreshButtonName,scores={IDID=$(idid)}]
+$execute at @s run kill @e[distance=..3,type=minecraft:text_display,tag=RefreshButtonDisplay,scores={IDID=$(idid)}]

@@ -38,5 +38,5 @@ execute at @s run function exigence:hub/profile_selector/menu/display/profile/ef
 function exigence:hub/profile_selector/menu/display/profile/effects/remove_stickers with entity @s item.components."minecraft:custom_data"
 
 # Remove misc text displays
-function exigence:hub/profile_selector/menu/display/text_displays/hide_profile_info with entity @s item.components."minecraft:custom_data"
+function exigence:hub/profile_selector/menu/display/profile/profile_info/hide_profile_info with entity @s item.components."minecraft:custom_data"
 function exigence:hub/profile_selector/menu/display/text_displays/hide_coop_list with entity @s item.components."minecraft:custom_data"

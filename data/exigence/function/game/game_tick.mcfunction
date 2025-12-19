@@ -6,6 +6,7 @@ scoreboard players add total.game.ticks tick_counter 1
 scoreboard players add game.ticks tick_counter 1
 
 # Update tick counter scores
+scoreboard players add @a[tag=ActivePlayer] profile.data.gametime.cr.ticks_playtime 1
 execute if data storage exigence:dungeon {max_menace:0} run scoreboard players add @a[tag=ActivePlayer] profile.data.gametime.cr.regulation_ticks 1
 execute if data storage exigence:dungeon {max_menace:1} run scoreboard players add @a[tag=ActivePlayer] profile.data.gametime.cr.max_menace_ticks 1
 

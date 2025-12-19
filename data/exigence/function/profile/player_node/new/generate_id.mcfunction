@@ -17,7 +17,7 @@ execute in exigence:profile_data positioned 8 3 8 as @e[distance=..24,tag=Player
 # If it doesn't already exist, assign to player.
 execute if score #temp Temp matches 0 run scoreboard players operation @s career.player_id = #sequence career.player_id
 # If it does already exist, iterate.
-execute if score #temp Temp matches 1 run function exigence:profile/player_node/generate_id
+execute if score #temp Temp matches 1 run function exigence:profile/player_node/new/generate_id
 
 # OLD
 # Make sure #sequence is current the highest or higher than all existing

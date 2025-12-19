@@ -47,7 +47,7 @@ execute if score @n[distance=..0.1,type=marker,tag=ProfileNode] profile.story.ad
 execute if score @n[distance=..0.1,type=marker,tag=ProfileNode] profile.story.adv.light_beacons matches 1 run data modify entity @s item.id set value "minecraft:nether_star"
 
 # Load profile info
-execute at @s run function exigence:hub/profile_selector/menu/display/text_displays/load_profile_info with entity @s item.components."minecraft:custom_data"
+execute at @s run function exigence:hub/profile_selector/menu/display/profile/profile_info/load_profile_info with entity @s item.components."minecraft:custom_data"
 
 # Load identifier
 data modify entity @s item.components."minecraft:custom_data".identifier set from entity @n[distance=..0.1,type=marker,tag=ProfileNode] data.custom_data.profile_identifier

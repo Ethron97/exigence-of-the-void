@@ -5,7 +5,7 @@
 
 #=============================================================================================================
 
-say Decline invite
+#say Decline invite
 
 # Reset trigger score
 scoreboard players reset @s DeclineCoopInvite

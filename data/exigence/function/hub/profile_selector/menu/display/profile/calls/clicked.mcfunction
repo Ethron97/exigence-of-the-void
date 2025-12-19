@@ -5,7 +5,9 @@
 #   AS item shop display
 
 #=============================================================================================================
-say clicked profile
+
+#say clicked profile
+
 # If clicked non-selected profile, switch to
 execute at @s if entity @s[tag=ProfileLoaded,tag=!Selected] unless entity @p[distance=..16,tag=ProfileSelecting,tag=Interacting,predicate=exigence:player/sneaking] run function exigence:hub/profile_selector/menu/display/profile/switch_to with entity @s item.components."minecraft:custom_data"
 

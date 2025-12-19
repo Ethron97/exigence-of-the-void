@@ -1,2 +1,2 @@
 # CONTROLLED BY SPREADSHEET
-scoreboard players set Aqua.Cost game.resources 6
+scoreboard players set aqua.cost game.resources 6

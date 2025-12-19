@@ -22,7 +22,8 @@ $scoreboard players set @s hub.entity.profile_id $(profile_id)
 data modify storage exigence:temp Rotation set from entity @s Rotation
 data modify storage exigence:temp color_a set from storage exigence:colors da_tan
 #data modify storage exigence:temp color_b set from storage exigence:colors da_brown
-data modify storage exigence:temp color_b set value "gold"
+data modify storage exigence:temp color_b set value "#DAD2BC"
+#data modify storage exigence:temp color_b set value "gold"
 
 # Summon refresh button
 #   We'll just make it a dumb refresh (no status/update detection, just refresh with the currently stored profile id)

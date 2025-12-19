@@ -5,4 +5,4 @@ $data modify entity @s Item.components."minecraft:custom_model_data".strings set
 
 $data modify entity @s Item.components."minecraft:lore" append value [$(legendary_stars),{text:"Instant Standard",italic:false,color:"white"}]
 data modify entity @s Item.components."minecraft:lore" append value [{text:""}]
-data modify entity @s Item.components."minecraft:lore" append value [{text:"Cards are drawn 3-6 seconds slower",italic:false,color:"gray"}]
+data modify entity @s Item.components."minecraft:lore" append value [{text:"Cards are drawn 3-7 seconds slower",italic:false,color:"gray"}]

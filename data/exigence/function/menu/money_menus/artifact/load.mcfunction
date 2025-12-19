@@ -39,7 +39,6 @@ $execute positioned ^1 ^3.75 ^ run function exigence:menu/money_menus/artifact/a
 #$execute positioned ^1.66 ^3.75 ^ run function exigence:menu/money_menus/artifact/artifact_item_display {menu_tag:'MenuArtifact',item_name:'potion_pack',vault:'flow',rarity:3,tier:6,money_cost:15,research_cost:9999,parents:[],Rotation:'$(Rotation)'}
 $execute positioned ^1.66 ^3.75 ^ run function exigence:menu/money_menus/artifact/artifact_item_display {menu_tag:'MenuArtifact',item_name:'glistering_melon',vault:'flow',rarity:3,tier:6,money_cost:15,research_cost:9999,parents:[],Rotation:'$(Rotation)'}
 
-
 # LEGENDARY
 #$execute positioned ^-1.66 ^5 ^ run function exigence:menu/money_menus/artifact/artifact_item_display {menu_tag:'MenuArtifact',item_name:'gold_idol',vault:'dune',rarity:4,tier:8,money_cost:40,research_cost:9999,parents:[],Rotation:'$(Rotation)'}
 $execute positioned ^-1.66 ^5 ^ run function exigence:menu/money_menus/artifact/artifact_item_display {menu_tag:'MenuArtifact',item_name:'ravager_hoof',vault:'dune',rarity:4,tier:8,money_cost:40,research_cost:9999,parents:[],Rotation:'$(Rotation)'}
@@ -49,7 +48,6 @@ $execute positioned ^0.33 ^5 ^ run function exigence:menu/money_menus/artifact/a
 $execute positioned ^1 ^5 ^ run function exigence:menu/money_menus/artifact/artifact_item_display {menu_tag:'MenuArtifact',item_name:'catalyst',vault:'eye',rarity:4,tier:8,money_cost:40,research_cost:9999,parents:[],Rotation:'$(Rotation)'}
 #$execute positioned ^1.66 ^5 ^ run function exigence:menu/money_menus/artifact/artifact_item_display {menu_tag:'MenuArtifact',item_name:'brush',vault:'flow',rarity:4,tier:8,money_cost:40,research_cost:9999,parents:[],Rotation:'$(Rotation)'}
 $execute positioned ^1.66 ^5 ^ run function exigence:menu/money_menus/artifact/artifact_item_display {menu_tag:'MenuArtifact',item_name:'gathering_storm',vault:'flow',rarity:4,tier:8,money_cost:40,research_cost:9999,parents:[],Rotation:'$(Rotation)'}
-
 
 # Give artifact displays tag
 tag @e[type=minecraft:item_display,tag=NewItemDisplays] add Artifact

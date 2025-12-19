@@ -166,6 +166,7 @@ scoreboard players set @s profile.data.gametime.cr.ticks_alive_L2 0
 scoreboard players set @s profile.data.gametime.cr.ticks_alive_L3 0
 scoreboard players set @s profile.data.gametime.cr.ticks_alive_L4 0
 scoreboard players set @s profile.data.gametime.cr.ticks_dead 0
+scoreboard players set @s profile.data.gametime.cr.ticks_playtime 0
 scoreboard players set @s profile.data.hazard.cr.hazard_bell_L1 0
 scoreboard players set @s profile.data.hazard.cr.hazard_bell_L2 0
 scoreboard players set @s profile.data.hazard.cr.hazard_bell_L3 0

@@ -6,8 +6,12 @@
 
 #=============================================================================================================
 
-$data modify entity @n[distance=..5,type=text_display,tag=EffectScores] text.extra[$(index)].color set from storage exigence:temp color_b
 $data modify entity @n[distance=..5,type=text_display,tag=EffectLabels] text.extra[$(index)].color set from storage exigence:temp color_b
+
+$data modify entity @n[distance=..5,type=text_display,tag=EffectScores] text.extra[$(index)].color set from storage exigence:temp color_b
+$execute if score e.$(effect)Seconds deck.analysis matches 180..359 run data modify entity @n[distance=..5,type=text_display,tag=EffectScores] text.extra[$(index)].color set value "#D8C5A0"
+$execute if score e.$(effect)Seconds deck.analysis matches 360..539 run data modify entity @n[distance=..5,type=text_display,tag=EffectScores] text.extra[$(index)].color set value "#D3A052"
+$execute if score e.$(effect)Seconds deck.analysis matches 540.. run data modify entity @n[distance=..5,type=text_display,tag=EffectScores] text.extra[$(index)].color set value "gold"
 
 $data modify storage exigence:temp M set from storage exigence:deck_analysis $(effect).M
 $data modify storage exigence:temp S set from storage exigence:deck_analysis $(effect).S

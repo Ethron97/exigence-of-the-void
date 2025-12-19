@@ -1,2 +1,2 @@
 # CONTROLLED BY SPREADSHEET
-scoreboard players set Red.Cost game.resources 4
+scoreboard players set red.cost game.resources 4

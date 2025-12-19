@@ -6,6 +6,7 @@
 ## OUTPUT
 #   Profile with "Active" tag
 #   Possible profile with "ActiveCoop" tag
+#   Single profile with "ActiveChest" tag
 
 #=========================================================================================================================
 

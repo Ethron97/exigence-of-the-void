@@ -474,6 +474,8 @@ scoreboard objectives remove profile.data.gametime.cr.ticks_alive_L4
 scoreboard objectives remove profile.data.gametime.t.ticks_alive_L4
 scoreboard objectives remove profile.data.gametime.cr.ticks_dead
 scoreboard objectives remove profile.data.gametime.t.ticks_dead
+scoreboard objectives remove profile.data.gametime.cr.ticks_playtime
+scoreboard objectives remove profile.data.gametime.t.ticks_playtime
 scoreboard objectives remove profile.data.hazard.cr.hazard_bell_L1
 scoreboard objectives remove profile.data.hazard.t.hazard_bell_L1
 scoreboard objectives remove profile.data.hazard.cr.hazard_bell_L2

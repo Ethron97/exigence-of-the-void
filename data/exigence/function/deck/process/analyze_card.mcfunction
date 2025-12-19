@@ -4,7 +4,7 @@
 #   AS player
 
 ## INPUT
-#   STR card_name (no spaces, lowercase)
+#   STR card_name (snake case)
 #   STR display_name 
 #   INT rarity
 #   BIT void
@@ -26,9 +26,10 @@ execute if score #copies deck.process_card matches 0 run return 0
 
 #=========================================================================================================================
 
-$scoreboard players set #rarity deck.process_card $(rarity)
-
+# DEBUG
 #$say analyze card $(card_name)
+
+$scoreboard players set #rarity deck.process_card $(rarity)
 
 # Get costs
 $function exigence:cards/get_cost {card_name:'$(card_name)'}
@@ -37,17 +38,30 @@ $function exigence:cards/get_cost {card_name:'$(card_name)'}
 $execute if score #copies deck.process_card matches 1.. run function exigence:cards/$(card_name)/analyze
 $execute if score #rarity deck.process_card matches 1..3 if score #copies deck.process_card matches 2.. run function exigence:cards/$(card_name)/analyze
 $execute if score #rarity deck.process_card matches 1..3 if score #copies deck.process_card matches 3.. run function exigence:cards/$(card_name)/analyze
+# Call B function, used for rare cases (usually unique card effects) of analysis needs that would be not worth adding to the spreadsheet
+$execute if score #copies deck.process_card matches 1.. run function exigence:cards/$(card_name)/analyze_b {copy:1}
+$execute if score #rarity deck.process_card matches 1..3 if score #copies deck.process_card matches 2.. run function exigence:cards/$(card_name)/analyze_b {copy:2}
+$execute if score #rarity deck.process_card matches 1..3 if score #copies deck.process_card matches 3.. run function exigence:cards/$(card_name)/analyze_b {copy:3}
 
-execute if score #copies deck.process_card matches 1.. run scoreboard players add cards.total deck.analysis 1
-execute if score #copies deck.process_card matches 2.. run scoreboard players add cards.total deck.analysis 1
-execute if score #copies deck.process_card matches 3.. run scoreboard players add cards.total deck.analysis 1
+#=========================================================================================================================
+## VALIDATION CHECKS
+# Check if cost is greater than max loaded resource
+$execute if score green.cost game.resources > resource.green.max deck.analysis run function exigence:deck/process/private/error/cost_too_great {display_name:'$(display_name)',resource:"green"}
+$execute if score red.cost game.resources > resource.red.max deck.analysis run function exigence:deck/process/private/error/cost_too_great {display_name:'$(display_name)',resource:"red"}
+$execute if score aqua.cost game.resources > resource.aqua.max deck.analysis run function exigence:deck/process/private/error/cost_too_great {display_name:'$(display_name)',resource:"aqua"}
 
-# Check if too many copies
-$execute if score #rarity deck.process_card matches 1..3 if score #copies deck.process_card matches 4.. run tellraw @s [{text:"Warning: you have more than 3 copies of (",color:"red"},{text:"$(display_name)",color:"gold"},{text:")",color:"red"}]
-$execute if score #rarity deck.process_card matches 1..3 if score #copies deck.process_card matches 4.. run data modify storage exigence:deck_analysis errors append value [{text:"Warning: you have more than 3 copies of (",color:"red"},{text:"$(display_name)",color:"gold"},{text:")",color:"red"}]
-execute if score #rarity deck.process_card matches 1..3 if score #copies deck.process_card matches 4.. run data modify storage exigence:hub too_many_copies set value true
+# Check if too many copies (>3)
+$execute if score #rarity deck.process_card matches 1..3 if score #copies deck.process_card matches 4.. \
+run function exigence:deck/process/private/error/too_many_copies {display_name:'$(display_name)'}
 
-# If legendary, >1
-$execute if score #rarity deck.process_card matches 4 if score #copies deck.process_card matches 2.. run tellraw @s [{text:"Warning: you have more than 1 copy of (",color:"red"},{text:"$(display_name)",color:"gold"},{text:")",color:"red"}]
-$execute if score #rarity deck.process_card matches 4 if score #copies deck.process_card matches 2.. run data modify storage exigence:deck_analysis errors append value [{text:"Warning: you have more than 1 copy of (",color:"red"},{text:"$(display_name)",color:"gold"},{text:")",color:"red"}]
-execute if score #rarity deck.process_card matches 4 if score #copies deck.process_card matches 2.. run data modify storage exigence:hub too_many_copies set value true
+# If legendary (>1)
+$execute if score #rarity deck.process_card matches 4 if score #copies deck.process_card matches 2.. \
+run function exigence:deck/process/private/error/too_many_copies_legendary {display_name:'$(display_name)'}
+
+#=========================================================================================================================
+# Increase analysis scores
+scoreboard players operation cards.total deck.analysis += #copies deck.process_card
+execute if score #rarity deck.process_card matches 1 run scoreboard players operation cards.common deck.analysis += #copies deck.process_card
+execute if score #rarity deck.process_card matches 2 run scoreboard players operation cards.uncommon deck.analysis += #copies deck.process_card
+execute if score #rarity deck.process_card matches 3 run scoreboard players operation cards.rare deck.analysis += #copies deck.process_card
+execute if score #rarity deck.process_card matches 4 run scoreboard players operation cards.legendary deck.analysis += #copies deck.process_card

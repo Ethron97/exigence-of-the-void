@@ -1,1 +1,1 @@
-scoreboard players remove other.menace deck.analysis 2
+scoreboard players remove core.menace deck.analysis 2

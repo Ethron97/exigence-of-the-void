@@ -14,6 +14,15 @@ function exigence:profile/profile_node/select_active
 data modify storage exigence:hub too_many_copies set value false
 function exigence:deck/process/reset_analyze_scores
 data modify storage exigence:deck_analysis errors set value []
+data modify storage exigence:deck_analysis warnings set value []
+
+# ========================================================================================================================
+# PRIORITY
+# ========================================================================================================================
+# Process resource max modifiers first so we can detect if cards are un-playable
+function exigence:deck/process/analyze_card {card_name:"roots_of_vitality",display_name:"Roots of Vitality",rarity:1,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
+function exigence:deck/process/analyze_card {card_name:"heart_of_ferocity",display_name:"Heart of Ferocity",rarity:2,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
+function exigence:deck/process/analyze_card {card_name:"mind_of_divinity",display_name:"Mind of Divinity",rarity:3,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 
 # ========================================================================================================================
 # COMMON
@@ -45,7 +54,6 @@ function exigence:deck/process/analyze_card {card_name:"canyon_runner",display_n
 function exigence:deck/process/analyze_card {card_name:"spike_growth",display_name:"Spike Growth",rarity:1,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/analyze_card {card_name:"key_hunter_i",display_name:"Key Hunter I",rarity:1,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/analyze_card {card_name:"forgotten_belonging",display_name:"Forgotten Belonging",rarity:1,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
-function exigence:deck/process/analyze_card {card_name:"roots_of_vitality",display_name:"Roots of Vitality",rarity:1,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 
 # ========================================================================================================================
 # UNCOMMON
@@ -83,7 +91,6 @@ function exigence:deck/process/analyze_card {card_name:"eyes_on_the_prize",displ
 function exigence:deck/process/analyze_card {card_name:"forgotten_experiment",display_name:"Forgotten Experiment",rarity:2,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/analyze_card {card_name:"key_hunter_ii",display_name:"Key Hunter II",rarity:2,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/analyze_card {card_name:"reflection",display_name:"Reflection",rarity:2,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
-function exigence:deck/process/analyze_card {card_name:"heart_of_ferocity",display_name:"Heart of Ferocity",rarity:2,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 
 # ========================================================================================================================
 # RARE
@@ -123,7 +130,6 @@ function exigence:deck/process/analyze_card {card_name:"elation",display_name:"E
 function exigence:deck/process/analyze_card {card_name:"key_hunter_iii",display_name:"Key Hunter III",rarity:3,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/analyze_card {card_name:"joy",display_name:"Joy",rarity:3,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/analyze_card {card_name:"forgotten_offering",display_name:"Forgotten Offering",rarity:3,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
-function exigence:deck/process/analyze_card {card_name:"mind_of_divinity",display_name:"Mind of Divinity",rarity:3,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/analyze_card {card_name:"heretic",display_name:"Heretic",rarity:3,void:1,recycler:0,spellbinder:0,instant:1,persistent:0}
 
 # ========================================================================================================================
@@ -169,7 +175,7 @@ function exigence:deck/process/analyze_card {card_name:"key_master",display_name
 function exigence:deck/process/analyze_card {card_name:"mending",display_name:"Mending",rarity:4,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/analyze_card {card_name:"oblivion",display_name:"Oblivion",rarity:4,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/analyze_card {card_name:"tranquility",display_name:"Tranquility",rarity:4,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
-function exigence:deck/process/analyze_card {card_name:"true_ascension",display_name:"True Ascension",rarity:4,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
+function exigence:deck/process/analyze_card {card_name:"final_ascension",display_name:"Final Ascension",rarity:4,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/analyze_card {card_name:"voidscent",display_name:"Voidscent",rarity:4,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/analyze_card {card_name:"spellbook",display_name:"Spellbook",rarity:4,void:0,recycler:0,spellbinder:1,instant:1,persistent:0}
 function exigence:deck/process/analyze_card {card_name:"conviction",display_name:"Conviction",rarity:4,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}

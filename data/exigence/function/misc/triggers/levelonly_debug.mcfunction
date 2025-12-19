@@ -33,4 +33,4 @@ data modify storage exigence:debug levelonly set from storage temp debug
 #execute if data storage exigence:debug {levelonly:1} run say h
 #execute if data storage exigence:debug {levelonly:0} run say h
 
-function exigence:misc/triggers/debug_menu
+function exigence:misc/triggers/admin/debug_menu

@@ -16,10 +16,11 @@ $execute if score #switching Temp matches 1 run function exigence:hub/deck_analy
 #   Otherwise, load new
 $execute unless score #switching Temp matches 1 run function exigence:hub/deck_analyzer/load_deck_anaylzer {profile_id:$(profile_id)}
 
-# Edit button
-scoreboard players operation @n[distance=..10,type=item_display,tag=NewItemDisplay] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id
-execute store result entity @n[distance=..10,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".profile_selector_id int 1 run scoreboard players get @s hub.entity.profile_selector_id
-tag @n[distance=..10,type=item_display,tag=NewItemDisplay] remove NewItemDisplay
+# Item Displays
+scoreboard players operation @e[distance=..10,type=item_display,tag=NewItemDisplay] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id
+#   Refresh button
+execute store result entity @n[distance=..10,type=item_display,tag=NewItemDisplay,tag=RefreshButton] item.components."minecraft:custom_data".profile_selector_id int 1 run scoreboard players get @s hub.entity.profile_selector_id
+tag @e[distance=..10,type=item_display,tag=NewItemDisplay] remove NewItemDisplay
 
 # Edit text displays
 scoreboard players operation @e[distance=..10,type=text_display,tag=NewTextDisplay] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id

@@ -11,7 +11,7 @@ execute if score @s hub.entity.profile_selector_id matches 1.. run function exig
 
 
 # analyze_deck
-execute at @s as @p[distance=..16,tag=Interacting] run function exigence:deck/process/analyze_deck
+execute at @s as @p[distance=..16,tag=ProfileSelecting] run function exigence:deck/process/analyze_deck
 
 # update displays
 execute at @s as @n[distance=..16,type=marker,tag=DeckAnalyzer] run function exigence:hub/deck_analyzer/update_displays

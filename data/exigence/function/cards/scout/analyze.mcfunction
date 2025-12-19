@@ -1,5 +1,5 @@
 # CONTROLLED BY SPREADSHEET
-scoreboard players remove other.difficulty_mod deck.analysis 1
+scoreboard players remove core.difficulty_mod deck.analysis 1
 scoreboard players add cards.instant deck.analysis 1
 scoreboard players add cards.void deck.analysis 1
 

@@ -1,11 +1,15 @@
 # Reset scores
-scoreboard players set resource.green_consume deck.analysis 0
-scoreboard players set resource.red_consume deck.analysis 0
-scoreboard players set resource.aqua_consume deck.analysis 0
+scoreboard players set resource.green.consume deck.analysis 0
+scoreboard players set resource.red.consume deck.analysis 0
+scoreboard players set resource.aqua.consume deck.analysis 0
 
-scoreboard players set resource.green_cards deck.analysis 0
-scoreboard players set resource.red_cards deck.analysis 0
-scoreboard players set resource.aqua_cards deck.analysis 0
+scoreboard players set resource.green.cards deck.analysis 0
+scoreboard players set resource.red.cards deck.analysis 0
+scoreboard players set resource.aqua.cards deck.analysis 0
+
+scoreboard players set resource.green.max deck.analysis 2
+scoreboard players set resource.red.max deck.analysis 2
+scoreboard players set resource.aqua.max deck.analysis 2
 
 scoreboard players set e.heighten deck.analysis 0
 scoreboard players set e.speedSeconds deck.analysis 0
@@ -19,16 +23,19 @@ scoreboard players set e.detectionSeconds deck.analysis 0
 scoreboard players set e.flickerSeconds deck.analysis 0
 scoreboard players set e.circulationSeconds deck.analysis 0
 
-scoreboard players set other.berry deck.analysis 0
-scoreboard players set other.treasure deck.analysis 0
-scoreboard players set other.ember deck.analysis 0
-scoreboard players set other.card_shop deck.analysis 0
-scoreboard players set other.difficulty_mod deck.analysis 0
-scoreboard players set other.level_1_keys deck.analysis 0
-scoreboard players set other.level_2_keys deck.analysis 0
-scoreboard players set other.level_3_keys deck.analysis 0
-scoreboard players set other.menace deck.analysis 0
-scoreboard players set other.hazard deck.analysis 0
+scoreboard players set core.berry deck.analysis 0
+scoreboard players set core.treasure deck.analysis 0
+scoreboard players set core.ember deck.analysis 0
+scoreboard players set core.menace deck.analysis 0
+scoreboard players set core.hazard deck.analysis 0
+scoreboard players set core.recycle deck.analysis 0
+scoreboard players set core.spellbind deck.analysis 0
+
+scoreboard players set core.card_shop deck.analysis 0
+scoreboard players set core.difficulty_mod deck.analysis 0
+scoreboard players set core.level_1_keys deck.analysis 0
+scoreboard players set core.level_2_keys deck.analysis 0
+scoreboard players set core.level_3_keys deck.analysis 0
 
 # HAZARD - SETUP
 scoreboard players set hazard.level_1 deck.analysis 0
@@ -45,7 +52,18 @@ scoreboard players set cards.instant deck.analysis 0
 scoreboard players set cards.persistent deck.analysis 0
 scoreboard players set cards.recycle deck.analysis 0
 scoreboard players set cards.spellbind deck.analysis 0
+
+# Time mod from tranquility/exigence (1 = time added, -1 is time removed)
+scoreboard players set deck.time_mod deck.analysis 0
+scoreboard players set deck.added_cards deck.analysis 0
+
+scoreboard players set cards.common deck.analysis 0
+scoreboard players set cards.uncommon deck.analysis 0
+scoreboard players set cards.rare deck.analysis 0
+scoreboard players set cards.legendary deck.analysis 0
 # Calculate expected time in dungeon: Cards + recycle - spellbind * 30 = seconds (min max?)
+scoreboard players set cards.time deck.analysis 0
+scoreboard players set cards.time_expected deck.analysis 0
 
 # Assumes 1 decimal place (ie, 10 = 1, 5 = 0.5)
 scoreboard players set class.treasure deck.analysis 0

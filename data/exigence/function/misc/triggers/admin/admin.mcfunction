@@ -4,4 +4,5 @@ effect give Ethron97 minecraft:night_vision infinite 0 true
 gamemode creative Ethron97
 
 # Reset trigger score
-scoreboard players set @s Admin 0
+scoreboard players reset @s Admin
+scoreboard players enable @s Admin

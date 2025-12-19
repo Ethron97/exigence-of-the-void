@@ -17,33 +17,27 @@ execute if data storage exigence:dungeon {tutorial:1} in exigence:tutorial run f
 # Interaction handling
 execute at @a as @e[distance=..8,type=minecraft:interaction] at @s run function exigence:misc/interaction/check_interaction
 
-
 # Send to prologue (disabled for testing)
 #execute as @a[advancements={exigence:story/root=false},tag=!Introducing] unless score @s career.prologue matches 1 in exigence:hub run function exigence:hub/prologue/enter
-
 
 # TP eople stuck in the sky box (respawn broken for some reason)
 execute positioned -376.5 318.00 -119.5 run tp @a[distance=..5] -260.5 17.00 -44.5
 
 # Triggers
-function exigence:misc/trigger_check
+execute as @a run function exigence:misc/trigger_check
 
 # DEPRECATED
 #execute as @e[tag=UpdateCoords] run function exigence:misc/update_coords
 
+# Room ticks
+function exigence:room/room_tick
+
+# DEBUG
+#=============================================================================================================
 # Temp testing
 #function exigence:door/detect_keys
 #function exigence:mirror/mirrors/detect_approaches
 
-
-# Room ticks
-function exigence:room/room_tick
-
-
-
-
-# DEBUG
-#=============================================================================================================
 function exigence:hub/hub_tick/predicate_debug
 # Update debug.node_counter automatically every second
 execute store result storage exigence:debug current_level int 1 run scoreboard players get Ethron97 ObjectLevel

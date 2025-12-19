@@ -20,9 +20,9 @@ scoreboard players set #MissingAqua game.resources 0
 scoreboard players set #LastConsumeResult game.resources 1
 
 # Cap "Costs" at the current player resources so we don't go negative
-scoreboard players operation Green.Cost game.resources < Current.Green game.resources
-scoreboard players operation Green.Cost game.resources < Current.Green game.resources
-scoreboard players operation Green.Cost game.resources < Current.Green game.resources
+scoreboard players operation green.cost game.resources < Current.Green game.resources
+scoreboard players operation green.cost game.resources < Current.Green game.resources
+scoreboard players operation green.cost game.resources < Current.Green game.resources
 
 # Clear
 clear @s magma_cream 1

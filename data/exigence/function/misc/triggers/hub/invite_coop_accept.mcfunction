@@ -5,7 +5,7 @@
 
 #=============================================================================================================
 
-say Accept invite
+#say Accept invite
 
 # Reset trigger score
 scoreboard players reset @s AcceptCoopInvite

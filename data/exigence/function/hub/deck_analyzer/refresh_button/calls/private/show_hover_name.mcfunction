@@ -11,7 +11,7 @@
 
 # Summon text display
 #,background:2017213500
-$summon minecraft:text_display ~ ~ ~ {Rotation:$(Rotation),billboard:"fixed",alignment:"center",Tags:["RefreshButtonName","NewTextDisplay"],text:{text:""}\
+$summon minecraft:text_display ~ ~ ~ {Rotation:$(Rotation),billboard:"fixed",alignment:"center",Tags:["RefreshButtonDisplay","NewTextDisplay"],text:{text:""}\
 ,background:1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.7f,0.7f,0.7f]}}
 
 # Give matching scoreboard value

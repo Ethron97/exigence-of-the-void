@@ -11,9 +11,9 @@ data modify storage exigence:resource_hud aqua_fail set value ""
 
 scoreboard players set #LastConsumeResult game.resources 0
 
-$scoreboard players set Green.Cost game.resources $(green)
-$scoreboard players set Red.Cost game.resources $(red)
-$scoreboard players set Aqua.Cost game.resources $(aqua)
+$scoreboard players set green.cost game.resources $(green)
+$scoreboard players set red.cost game.resources $(red)
+$scoreboard players set aqua.cost game.resources $(aqua)
 
 # DEBUG
 $say try consume $(green) green, $(red) red, $(aqua) aqua
@@ -21,9 +21,9 @@ $execute unless score Current.Green game.resources matches $(green).. run say No
 $execute unless score Current.Red game.resources matches $(red).. run say Not enough red
 $execute unless score Current.Aqua game.resources matches $(aqua).. run say Not enough aqua
 
-scoreboard players operation #MissingGreen game.resources = Green.Cost game.resources
-scoreboard players operation #MissingRed game.resources = Red.Cost game.resources
-scoreboard players operation #MissingAqua game.resources = Aqua.Cost game.resources
+scoreboard players operation #MissingGreen game.resources = green.cost game.resources
+scoreboard players operation #MissingRed game.resources = red.cost game.resources
+scoreboard players operation #MissingAqua game.resources = aqua.cost game.resources
 
 scoreboard players operation #MissingGreen game.resources -= Current.Green game.resources
 scoreboard players operation #MissingRed game.resources -= Current.Red game.resources
@@ -46,9 +46,9 @@ execute if score #MissingRed game.resources matches 1.. run function exigence:re
 execute if score #MissingAqua game.resources matches 1.. run function exigence:resources/aqua/consume_fail
 
 # Consume amounts
-execute if score Green.Cost game.resources matches 1.. if score #LastConsumeResult game.resources matches 1 run function exigence:resources/green/consume
-execute if score Red.Cost game.resources matches 1.. if score #LastConsumeResult game.resources matches 1 run function exigence:resources/red/consume
-execute if score Aqua.Cost game.resources matches 1.. if score #LastConsumeResult game.resources matches 1 run function exigence:resources/aqua/consume
+execute if score green.cost game.resources matches 1.. if score #LastConsumeResult game.resources matches 1 run function exigence:resources/green/consume
+execute if score red.cost game.resources matches 1.. if score #LastConsumeResult game.resources matches 1 run function exigence:resources/red/consume
+execute if score aqua.cost game.resources matches 1.. if score #LastConsumeResult game.resources matches 1 run function exigence:resources/aqua/consume
 
 execute if score #LastConsumeResult game.resources matches 1 run say Successful consume
 

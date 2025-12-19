@@ -13,13 +13,13 @@ say Load refresh button
 
 # Summon item display
 $summon item_display ~ ~ ~ {Rotation:$(Rotation),billboard:"fixed",Tags:["RefreshButton","MenuDisplay","NewItemDisplay","DeckAnalyzerDisplay","SizeClassMedium"],item:{id:"minecraft:sunflower",count:1\
-,components:{"minecraft:custom_model_data":{strings:["refresh"]}}},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[1.0f,1.0f,1.0f]}}
+,components:{"minecraft:custom_model_data":{strings:["refresh_green"]}}},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[1.0f,1.0f,1.0f]}}
 
 # Assign data
 execute store result entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".profile_id int 1 run scoreboard players get @s hub.entity.profile_id
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".scale set value '1.0'
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".hover_scale set value '1.0'
-data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_name" set value {text:"Refresh",color:"green"}
+data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_name" set value {text:"Refresh",color:"white"}
 team join Green @n[distance=..1,type=item_display,tag=NewItemDisplay]
 
 # Give right and left click functions

@@ -1,5 +1,5 @@
 # CONTROLLED BY SPREADSHEET
-scoreboard players add other.berry deck.analysis 3
+scoreboard players add core.berry deck.analysis 3
 scoreboard players add cards.persistent deck.analysis 1
 scoreboard players add cards.ascend deck.analysis 1
 

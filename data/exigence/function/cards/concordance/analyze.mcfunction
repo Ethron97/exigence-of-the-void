@@ -1,6 +1,6 @@
 # CONTROLLED BY SPREADSHEET
-scoreboard players add resource.aqua_cards deck.analysis 1
-scoreboard players add resource.aqua_consume deck.analysis 4
+scoreboard players add resource.aqua.cards deck.analysis 1
+scoreboard players add resource.aqua.consume deck.analysis 4
 scoreboard players add cards.persistent deck.analysis 1
 
 scoreboard players add class.treasure deck.analysis 3

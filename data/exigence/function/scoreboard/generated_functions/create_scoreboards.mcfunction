@@ -474,6 +474,8 @@ scoreboard objectives add profile.data.gametime.cr.ticks_alive_L4 dummy
 scoreboard objectives add profile.data.gametime.t.ticks_alive_L4 dummy
 scoreboard objectives add profile.data.gametime.cr.ticks_dead dummy
 scoreboard objectives add profile.data.gametime.t.ticks_dead dummy
+scoreboard objectives add profile.data.gametime.cr.ticks_playtime dummy
+scoreboard objectives add profile.data.gametime.t.ticks_playtime dummy
 scoreboard objectives add profile.data.hazard.cr.hazard_bell_L1 dummy
 scoreboard objectives add profile.data.hazard.t.hazard_bell_L1 dummy
 scoreboard objectives add profile.data.hazard.cr.hazard_bell_L2 dummy
