@@ -1,6 +1,6 @@
 # Controls ambience around wards etc
 
-#==============================================================================================================
+#====================================================================================================
 
 # Ambience around wards
 execute at @e[type=minecraft:interaction,tag=Crystal] if score seconds.cooldown tick_counter matches 3 run playsound minecraft:block.conduit.ambient.short ambient @a ~ ~ ~ 2 1

@@ -7,11 +7,12 @@
 #   exigence:profile.chests
 #   SCORE #remove_tag Temp
 
-#=============================================================================================================
+#====================================================================================================
 
 say Data to chest
 
 execute if score #remove_tag Temp matches 1 run tag @n[distance=..0.1,tag=ProfileNode] remove ChestsLoaded
+execute if score #remove_tag Temp matches 1 run say REMOVING CHESTS LOADED TAG
 
 data modify block ~4 ~ ~ Items set from storage exigence:profile chests.blue_left
 data modify block ~5 ~ ~ Items set from storage exigence:profile chests.blue_right

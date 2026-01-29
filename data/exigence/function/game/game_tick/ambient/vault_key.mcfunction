@@ -1,6 +1,6 @@
 # Handles vault key related ambience
 
-#=======================================================================================================
+#====================================================================================================
 
 # Ambient enchantment particles centered on the vault key
 execute at @a[tag=ActivePlayer,scores={dead=0}] at @e[distance=..32,type=minecraft:item,tag=VaultKey] run particle minecraft:enchant ~ ~1.2 ~ 0 0 0 2 2

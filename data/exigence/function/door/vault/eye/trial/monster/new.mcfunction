@@ -10,7 +10,7 @@
 #   STR Type, entity type. Zombie or skeleton
 
 
-#=============================================================================================================
+#====================================================================================================
 
 $summon $(Type) ~ ~ ~ {Invulnerable:1b,NoAI:1b,Silent:1b,Tags:["EyeTrialSetup","Monster","NewMonster"],Rotation:$(Rotation)}
 

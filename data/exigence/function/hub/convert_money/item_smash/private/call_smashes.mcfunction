@@ -5,6 +5,7 @@
 #execute unless score coins.converting hub.coin_conversion matches 5.. run say Not enough to smash
 execute unless score coins.converting hub.coin_conversion matches 5.. run schedule function exigence:hub/convert_money/item_smash/private/fin_smashing 20t
 execute unless score coins.converting hub.coin_conversion matches 5.. run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Select 5 coins to smash
 tag @e[type=minecraft:item,tag=ConvertMoneyCoinItem,limit=5,sort=random,tag=!Smashing] add NewSmashing

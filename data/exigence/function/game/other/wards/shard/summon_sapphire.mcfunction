@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AT location
 
-#=========================================================================================================
+#====================================================================================================
 
 # Summon a new resonance with tag "new resonance"
 summon minecraft:item ~ ~ ~ {Tags:["NewResonance","Resonance","ResonanceSapphire","Treasure"],Item:{id:"minecraft:amethyst_shard",count:1,components:{\

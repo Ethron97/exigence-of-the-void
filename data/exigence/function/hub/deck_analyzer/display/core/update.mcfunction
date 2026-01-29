@@ -6,7 +6,7 @@
 ## INPUT
 #   DATA deck_analysis
 
-#=============================================================================================================
+#====================================================================================================
 
 ## CORE
 # BERRY
@@ -51,7 +51,7 @@ $data modify entity @n[distance=..5,type=text_display,tag=CoreScores] text.extra
 execute if data storage exigence:deck_analysis {core_spellbind:0} run data modify entity @n[distance=..5,type=text_display,tag=CoreScores] text.extra[5].color set from storage exigence:temp color_a
 execute unless data storage exigence:deck_analysis {core_spellbind:0} run data modify entity @n[distance=..5,type=text_display,tag=CoreScores] text.extra[5].color set from storage exigence:temp color_b
 
-#=============================================================================================================
+#====================================================================================================
 ## SETUP
 # SHOP SLOTS
 execute if data storage exigence:deck_analysis {core_card_shop:0} run data modify entity @n[distance=..5,type=text_display,tag=CoreLabels] text.extra[6].color set from storage exigence:temp color_a

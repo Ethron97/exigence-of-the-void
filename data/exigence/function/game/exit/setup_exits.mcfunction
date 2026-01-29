@@ -1,7 +1,7 @@
 # Controls exit node/portal setup
 # Called by game_on
 
-#======================================================================================================
+#====================================================================================================
 
 # Reset tags
 tag @e[type=armor_stand,tag=EchoNode,tag=HasPortal] remove HasPortal

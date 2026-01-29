@@ -2,7 +2,7 @@
 
 # Do we weight based on how many Healths are remaining? Or would that just encourage hoarding crystals
 
-#================================================================================================================
+#====================================================================================================
 
 # Tag random crystal
 tag @e[type=interaction,tag=Crystal,sort=random,limit=1] add DroppingResonance

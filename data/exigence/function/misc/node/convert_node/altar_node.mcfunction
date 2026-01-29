@@ -4,15 +4,15 @@
 #   AS altar node
 #   AT altar node
 
-#=============================================================================================================
+#====================================================================================================
 execute unless entity @s[distance=..1,tag=AltarNode,type=armor_stand,tag=!Converted] run return 1
-#=============================================================================================================
+#====================================================================================================
 
 # MARK THIS ARMORSTAND NODE AS CONVERTED
 tag @s add Converted
 
 # Summon marker
-summon marker ~ ~ ~ {Tags:["NewMarker"]}
+summon minecraft:marker ~ ~ ~ {Tags:["NewMarker"],CustomName:{text:"Marker | AltarNode"}}
 
 # Copy scores
 #   These will get captured in "copy data" step if we migrate them all to data before converting

@@ -6,7 +6,7 @@
 ## INPUT
 #   SCORE #new_main_id Temp
 
-#=============================================================================================================
+#====================================================================================================
 
 execute if score #remaining_profiles Temp matches 2.. store result entity @s item.components."minecraft:custom_data".coop_profile_id int 1 run scoreboard players get #new_main_id Temp
 

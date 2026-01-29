@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   IN exigence:tutorial
 
-#=============================================================================================================
+#====================================================================================================
 
 # Aggro ravagers every X ticks (defined by RavagerAggroCooldownLimit)
 execute if score RavagerAggroCooldownCurrent Tutorial matches 1.. run scoreboard players remove RavagerAggroCooldownCurrent Tutorial 1

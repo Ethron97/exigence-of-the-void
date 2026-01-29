@@ -6,7 +6,7 @@
 ## INPUT
 #   WITH item.components."minecraft:custom_data" for function_unhover
 
-#=============================================================================================================
+#====================================================================================================
 
 #$say Unhover (profile) (profile_selector:$(profile_selector_id) slot:$(slot_id))
 

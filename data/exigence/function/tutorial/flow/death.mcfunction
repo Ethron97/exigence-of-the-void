@@ -3,15 +3,14 @@
 ## CONSTRAINTS
 #   AS player
 
-#=============================================================================================================
+#====================================================================================================
 
 # DEBUG
 say Tutorial Deathed
 effect give @s night_vision infinite 0 true
 
 # Reset scores
-function exigence:game/game_reset/reset_player_scores
-
+function exigence:scoreboard/generated_functions/reset_on_enter
 
 # Save fallback
 execute as @e[distance=..1000,type=marker,tag=TutorialMarker,tag=Fallback] run tag @s add SuperFallback

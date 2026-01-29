@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   IN exigence:tutorial
 
-#=============================================================================================================
+#====================================================================================================
 
 # Reset tag
 tag @e[distance=..1000,type=minecraft:armor_stand,tag=ChosenEchoNode] remove ChosenEchoNode

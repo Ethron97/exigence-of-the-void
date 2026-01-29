@@ -4,7 +4,7 @@
 ## INPUT
 #   et.BaseTime game.effect_temp - score set to a base duration in ticks
 
-#================================================================================================
+#====================================================================================================
 
 # Copy base "add time"
 scoreboard players operation et.AddingTime game.effect_temp = et.BaseTime game.effect_temp

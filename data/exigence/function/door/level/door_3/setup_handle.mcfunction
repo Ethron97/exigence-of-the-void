@@ -4,34 +4,34 @@
 #   AS/AT DoorNode tag=DoorNode,tag=Door3
 #   positioned
 
-#============================================================================================================
+#====================================================================================================
 
 # Summon new item display(s)
 
 # Little skull above the key slot
-summon item_display ^ ^0.25 ^-0.171875 {brightness:{block:15,sky:15},Rotation:[180.0f,0.0f],billboard:"fixed",Tags:["Door","Door3"],\
+summon minecraft:item_display ^ ^0.25 ^-0.171875 {brightness:{block:15,sky:15},Rotation:[180.0f,0.0f],billboard:"fixed",Tags:["Door","Door3"],\
 item:{id:"minecraft:nether_brick",count:1,components:{"minecraft:custom_model_data":{"strings":["door_lock_skull_3"]}}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.5f,0.5f,0.5f]}}
 
 # Main front block of the lock
-summon item_display ^ ^ ^-0.0625 {brightness:{block:15,sky:15},Rotation:[180.0f,0.0f],billboard:"fixed",Tags:["Door","Door3"],\
+summon minecraft:item_display ^ ^ ^-0.0625 {brightness:{block:15,sky:15},Rotation:[180.0f,0.0f],billboard:"fixed",Tags:["Door","Door3"],\
 item:{id:"minecraft:nether_brick",count:1,components:{"minecraft:custom_model_data":{"strings":["door_lock_a"]}}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.0f,1.0f,1.0f]}}
-summon item_display ^ ^ ^-0.125 {brightness:{block:15,sky:15},Rotation:[180.0f,0.0f],billboard:"fixed",Tags:["Door","Door3"],\
+summon minecraft:item_display ^ ^ ^-0.125 {brightness:{block:15,sky:15},Rotation:[180.0f,0.0f],billboard:"fixed",Tags:["Door","Door3"],\
 item:{id:"minecraft:nether_brick",count:1,components:{"minecraft:custom_model_data":{"strings":["door_lock_a"]}}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.0f,1.0f,1.0f]}}
 
 # Central key slot that turns with the key
-summon item_display ^ ^ ^ {brightness:{block:15,sky:15},Rotation:[180.0f,0.0f],billboard:"fixed",Tags:["Door","Door3","DoorHandle","NewDoorHandle","Door3Handle"],\
+summon minecraft:item_display ^ ^ ^ {brightness:{block:15,sky:15},Rotation:[180.0f,0.0f],billboard:"fixed",Tags:["Door","Door3","DoorHandle","NewDoorHandle","Door3Handle"],\
 item:{id:"minecraft:nether_brick",count:1,components:{"minecraft:custom_model_data":{"strings":["door_lock_b"]}}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.0f,1.0f,1.0f]}}
 
 # Back and rim covers
-summon item_display ^ ^ ^0.0625 {brightness:{block:15,sky:15},Rotation:[180.0f,0.0f],billboard:"fixed",Tags:["Door","Door3"],\
+summon minecraft:item_display ^ ^ ^0.0625 {brightness:{block:15,sky:15},Rotation:[180.0f,0.0f],billboard:"fixed",Tags:["Door","Door3"],\
 item:{id:"minecraft:nether_brick",count:1,components:{"minecraft:custom_model_data":{"strings":["door_lock_c"]}}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.0f,1.0f,1.0f]}}
 
-summon item_display ^ ^ ^ {brightness:{block:15,sky:15},Rotation:[180.0f,0.0f],billboard:"fixed",Tags:["Door","Door3"],\
+summon minecraft:item_display ^ ^ ^ {brightness:{block:15,sky:15},Rotation:[180.0f,0.0f],billboard:"fixed",Tags:["Door","Door3"],\
 item:{id:"minecraft:nether_brick",count:1,components:{"minecraft:custom_model_data":{"strings":["door_lock_c"]}}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.0f,1.0f,1.0f]}}
 

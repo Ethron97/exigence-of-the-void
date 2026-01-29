@@ -3,13 +3,14 @@
 ## CONSTRAINTS
 #   AS/AT AltarNode
 
-#==============================================================================================================
+#====================================================================================================
 
 # Inactive altars
 execute if score seconds.cooldown tick_counter matches 7 if score @s game.node.node_state matches 0 run particle minecraft:glow ~ ~0.5 ~ 0.5 0.2 0.5 0 1
 execute if score seconds.cooldown tick_counter matches 17 if score @s game.node.node_state matches 0 run particle minecraft:glow ~ ~0.5 ~ 0.5 0.2 0.5 0 1
 # Return after the most common fail case
 execute if score @s game.node.node_state matches 0 run return 0
+#----------------------------------------------------------------------------------------------------
 
 # Lit altars
 execute if score seconds.cooldown tick_counter matches 4 if score @s game.node.node_state matches 1 run particle minecraft:glow ~ ~0.5 ~ 0.5 0.2 0.5 0 2
@@ -24,5 +25,6 @@ execute if score seconds.cooldown tick_counter matches 12 if score Concordance M
 
 # Red-able altars (inner fire)
 execute if score InnerFire Modifiers matches 0 run return 0
+#----------------------------------------------------------------------------------------------------
 execute if score seconds.cooldown tick_counter matches 6 if score @s[tag=!Red] game.node.node_state matches 1.. run particle minecraft:dust{color:[1.0f,0.0f,0.0f],scale:1.0f} ~ ~0.5 ~ 0.5 0.2 0.5 0 2
 execute if score seconds.cooldown tick_counter matches 16 if score @s[tag=!Red] game.node.node_state matches 1.. run particle minecraft:dust{color:[1.0f,0.0f,0.0f],scale:1.0f} ~ ~0.5 ~ 0.5 0.2 0.5 0 2

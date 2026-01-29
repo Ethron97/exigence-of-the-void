@@ -1,6 +1,6 @@
 # Responsible for setting everything up required for the Eye Trial/Crucible
 
-#======================================================================================================
+#====================================================================================================
 
 # Reset scores
 scoreboard players set Eye TrialTimer 0

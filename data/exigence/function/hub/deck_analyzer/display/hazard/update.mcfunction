@@ -6,7 +6,7 @@
 ## INPUT
 #   DATA deck_analysis
 
-#=============================================================================================================
+#====================================================================================================
 
 # HAZARD LEVEL 1
 execute if data storage exigence:deck_analysis {hazard_level_1:0} run data modify entity @n[distance=..5,type=text_display,tag=HazardLabels] text.extra[0].color set from storage exigence:temp color_a

@@ -9,6 +9,7 @@ function exigence:misc/node/pulse_state
 
 # If game is not active, return
 execute unless data storage exigence:dungeon {is_active:1} run return 0
+#----------------------------------------------------------------------------------------------------
 
 # Update scoreboard
 execute if score @s ObjectLevel matches 1 run scoreboard players add @a[tag=ActivePlayer] profile.data.hazard.cr.hazard_L1 1

@@ -4,7 +4,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#===========================================================================================
+#====================================================================================================
 
 # Save old value
 scoreboard players operation #old_amount shop.player.money_to_spend = @s shop.player.money_to_spend

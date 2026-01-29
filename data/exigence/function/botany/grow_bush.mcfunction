@@ -10,6 +10,7 @@
 
 # Cancel if invalid input
 execute unless score GrowthLevel DungeonRun matches 1..4 run return 1
+#----------------------------------------------------------------------------------------------------
 
 # DEBUG
 #tellraw @a [{text:"DEBUG Attempting to grow on level ",color:"gray"},{"score":{"name":"GrowthLevel","objective":"DungeonRun"},color:"dark_green"}]

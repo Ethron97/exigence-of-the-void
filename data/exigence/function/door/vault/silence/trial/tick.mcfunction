@@ -1,6 +1,6 @@
 # Main "game loop" of the trial
 
-#==================================================================================================
+#====================================================================================================
 
 # DEBUG
 #execute unless entity @a[tag=ActivePlayer] run say No active player
@@ -22,7 +22,7 @@ execute as @a[tag=ActivePlayer,scores={dead=1,game.player.vault_code=3}] run fun
 # If no players with vault code = 1, return.
 #   (Loss function removes this code, so if player just lost the function will return immediately after)
 execute unless entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=3}] run return 1
-
+#----------------------------------------------------------------------------------------------------
 
 
 # Pre-trial time titles
@@ -41,14 +41,14 @@ execute if score Silence TrialTimer matches 659 as @a[tag=ActivePlayer,scores={d
 
 
 
-#==============================================================================================================
+#====================================================================================================
 ## TRIAL FUNCTIONALITY
 
 scoreboard players remove SilencePlatform TrialTimer 1
 
 execute if score SilencePlatform TrialTimer matches ..0 as @e[type=marker,tag=SilencePlatform] at @s run function exigence:door/vault/silence/trial/platform/step
 
-#==============================================================================================================
+#====================================================================================================
 ## Tick cleanup
 
 # Countup trial clock

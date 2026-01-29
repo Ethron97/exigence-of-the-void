@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player with career.settings.resource_actionbar_style = 1
 
-#=============================================================================================================
+#====================================================================================================
 
 # Call efficientized subfunctions that avoid running unncessary steps
 function exigence:player/display/resource_bar/efficient/get_green

@@ -7,7 +7,7 @@
 ## INPUT
 #   STR num, value between 2-4
 
-#=============================================================================================================
+#====================================================================================================
 
 # Summon text display
 $summon minecraft:text_display ~ ~ ~ {teleport_duration:3,billboard:"fixed",alignment:"left",Tags:["StatusDisplay","StatusDisplay$(num)","NewTextDisplay","ConfirmGroup"]\

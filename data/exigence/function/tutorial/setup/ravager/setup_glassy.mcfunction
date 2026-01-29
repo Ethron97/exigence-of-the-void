@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   IN exigence:tutorial
 
-#=============================================================================================================
+#====================================================================================================
 
 summon minecraft:ravager 177.5 125.0 96.5 {Tags:["L10"],CustomName:{text:"Glassy",color:"dark_red",italic:false},PersistenceRequired:1b}
 

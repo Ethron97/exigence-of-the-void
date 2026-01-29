@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS Interaction
 
-#=============================================================================================================
+#====================================================================================================
 
 # Call sub function based on interaction
 execute if data entity @s interaction run function exigence:misc/interaction/right

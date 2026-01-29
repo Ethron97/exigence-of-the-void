@@ -13,7 +13,7 @@
 #   1 = difficulty based (choose one tier, then node in that tier)
 #   2 = difficulty based advantage two attempts, roll twice pick higher
 
-#==========================================================================================================
+#====================================================================================================
 
 say Choose echo nodes b2
 

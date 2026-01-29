@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player who is by the exit
 
-#==============================================================================================
+#====================================================================================================
 
 # If at exit but don't have enough echo fragments, message
 execute if score EchosRequired DungeonRun matches 2.. if score @s game.player.echo_fragments matches 1.. if data storage exigence:dungeon {all_echos_found:0} run title @s actionbar {text:"You must collect all the Echo Fragments to escape!",color:"red"}

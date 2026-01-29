@@ -6,7 +6,7 @@
 # WITH {duration:,level:}, level is the literal level, not amplifier. So it starts at 1.
 # Valid levels: 1-10
 
-#=======================================================================================================
+#====================================================================================================
 
 # Setup scores
 scoreboard players set et.FromCard game.effect_temp 0

@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS Player who just picked bush
 
-#======================================================================================================
+#====================================================================================================
 
 # TUTORIAL:
 execute if data storage exigence:dungeon {tutorial:1} as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/flow/step
@@ -12,6 +12,7 @@ execute if data storage exigence:dungeon {tutorial:1} as @s[tag=Tutorial] run re
 
 # Return if dungeon is off
 execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Increase the player's berry_bushes_picked (total) score by 1
 scoreboard players add @s profile.data.berry.cr.berry_bushes_picked 1

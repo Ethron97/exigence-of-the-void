@@ -1,6 +1,6 @@
 # Main "game loop" of the trial
 
-#==================================================================================================
+#====================================================================================================
 
 # DEBUG
 #execute unless entity @a[tag=ActivePlayer] run say No active player
@@ -22,6 +22,8 @@ execute as @a[tag=ActivePlayer,scores={dead=1,game.player.vault_code=5}] run fun
 # If no players with vault code = 1, return.
 #   (Loss function removes this code, so if player just lost the function will return immediately after)
 execute unless entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=5}] run return 1
+#----------------------------------------------------------------------------------------------------
+
 
 execute if score Spire TrialTimer matches 1 run function exigence:door/vault/spire/trial/proc/proc_next
 execute if score Spire TrialTimer matches 2 run function exigence:door/vault/spire/trial/proc/proc_next
@@ -55,7 +57,7 @@ execute if score Spire TrialTimer matches 659 as @a[tag=ActivePlayer,scores={dea
 
 
 
-#==============================================================================================================
+#====================================================================================================
 ## TRIAL FUNCTIONALITY
 
 # Reduce cooldown
@@ -71,7 +73,7 @@ execute if score Cooldown SpireTimer matches 0 run playsound minecraft:block.not
 execute if score Cooldown SpireTimer matches 0 run function exigence:door/vault/spire/trial/proc/proc_next
 execute if score Cooldown SpireTimer matches 0 run function exigence:door/vault/spire/trial/proc/reset_cooldown
 
-#==============================================================================================================
+#====================================================================================================
 ## Tick cleanup
 
 # Countup trial clock

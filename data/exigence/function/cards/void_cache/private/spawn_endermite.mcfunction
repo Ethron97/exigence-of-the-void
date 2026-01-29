@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AT EchoNode (VoidCache)
 
-#==========================================================================================================
+#====================================================================================================
 
 # Summon entity
 summon endermite ~ ~1 ~ {Tags:["VoidMite","NewMite"],PersistenceRequired:1b,Invulnerable:1b}

@@ -4,7 +4,7 @@
 ## CONSTRAINTS
 #   AS/AT marker (PotMarker,bolt)
 
-#============================================================================================================
+#====================================================================================================
 
 # Clear any existing pot
 setblock ~ ~ ~ minecraft:air
@@ -17,6 +17,7 @@ execute if entity @s[tag=Crucible] run return 1
 # Chance of a pot spawning (2/3), return if fail
 execute store result score @s Random run random value 0..2
 execute if score @s Random matches 0 run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Place empty pot
 setblock ~ ~ ~ minecraft:decorated_pot

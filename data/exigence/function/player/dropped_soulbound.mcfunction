@@ -4,7 +4,7 @@
 #   AS carrot on a stick with data is_spellbound = true
 #   OR as any item with is_soulbound
 
-#==========================================================================================================
+#====================================================================================================
 
 # Tellraw (origin of item)
 execute on origin run tellraw @s [{text:"You cannot drop Soulbound items",color:"red"}]

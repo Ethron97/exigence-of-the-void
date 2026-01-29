@@ -7,7 +7,7 @@
 #   STR rotation - eg [0.0f,0.0f]
 #   STR menu_path - Path following exigence:menu/ to be called after this one
 
-#=============================================================================================================
+#====================================================================================================
 
 # Summon menu anchor
 $summon minecraft:armor_stand ~ ~ ~ {Invisible:0b,Tags:["MenuAnchor"],NoGravity:1b,Rotation:$(Rotation)}

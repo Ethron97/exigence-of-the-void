@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#================================================================================================
+#====================================================================================================
 
 scoreboard players set @s game.player.effects.beastsense 0
 scoreboard players set @s game.player.effects.circulation 0

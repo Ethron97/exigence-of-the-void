@@ -9,7 +9,7 @@
 #   FLOAT z (score value, decimal portion)
 #   FLOAT length (length of class bar)
 
-#=============================================================================================================
+#====================================================================================================
 
 # Teleport displazy to be on the end of the display
 #   Change offset if #temp2 is beyond a threshold

@@ -3,7 +3,7 @@
 ## INPUT
 #   STR color - "Ruby", "Sapphire", "Emerald", "Topaz", "Amethyst"
 
-#============================================================================================================
+#====================================================================================================
 
 # Select random level 4 echo or menace node
 tag @e[type=armor_stand,tag=EchoNode,scores={ObjectLevel=4},tag=!ChosenEchoNode,tag=!ChosenCrystal] add CrystalCandidate
@@ -17,6 +17,7 @@ tag @e[type=armor_stand,tag=NewChosenCrystal] add ChosenCrystal
 
 execute unless entity @e[tag=NewChosenCrystal] run say No chosen crystal found
 execute unless entity @e[tag=NewChosenCrystal] run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Summon interaction
 $execute at @e[type=armor_stand,tag=NewChosenCrystal] run summon minecraft:interaction ~ ~1 ~ {Tags:[NewCrystal,Crystal,$(color)],response:1b}

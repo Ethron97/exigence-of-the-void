@@ -1,17 +1,17 @@
 # Move chest block data to temporary storage for copying chest contents
 
 ## CONSTRAINTS
-#   AT profile node
+#   AS/AT profile node
 
 ## OUTPUT
 #   exigence:profile.chests
 
-#=============================================================================================================
+#====================================================================================================
 
 say Chest to data
 
-tag @n[distance=..0.1,tag=ProfileNode] add ChestsLoaded
-execute if entity @e[tag=ChestsLoaded] run say YES WE ADDED THE CHEST LOADED TAG
+tag @s add ChestsLoaded
+execute if entity @s[tag=ChestsLoaded] run say YES WE ADDED THE CHEST LOADED TAG
 
 data modify storage exigence:profile chests.blue_left set from block ~4 ~ ~ Items
 data modify storage exigence:profile chests.blue_right set from block ~5 ~ ~ Items

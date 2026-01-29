@@ -4,7 +4,7 @@
 #   AS TutorialMarker, tags LastDropped and Checkpoint
 #   IN exigence:tutorial
 
-#=============================================================================================================
+#====================================================================================================
 
 # Reset tag
 tag @e[distance=..1000,type=marker,tag=TutorialMarker,tag=Fallback] remove Fallback

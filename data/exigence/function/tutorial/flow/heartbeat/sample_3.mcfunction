@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   Set #i Tutorial to 0 before calling
 
-#=============================================================================================================
+#====================================================================================================
 
 execute at @a[tag=Tutorial] in exigence:tutorial run playsound minecraft:heartbeat ambient @a ~ ~1000 ~ 1000 1.1
 

@@ -3,9 +3,9 @@
 ## CONSTRAINTS:
 #   AS item shop display
 
-#=============================================================================================================
+#====================================================================================================
 execute at @s as @p[distance=..16,tag=Interacting] unless function exigence:hub/profile_selector/menu/display/profile/calls/validate_click run return fail
-
+#----------------------------------------------------------------------------------------------------
 
 #say Left click profile
 

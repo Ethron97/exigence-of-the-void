@@ -3,10 +3,11 @@
 ## CONSTRAINTS
 #   AT starting/current position
 
-#=============================================================================================================
+#====================================================================================================
 
 # If space is empty, place and return
 execute unless entity @e[distance=..0.5,tag=ProfileNode] run return 1
+#----------------------------------------------------------------------------------------------------
 
 # If there is a player node in the current space, move one over
 tp @s ~ ~ ~2

@@ -1,6 +1,6 @@
 # Choose next valid direction and give tag
 
-#===========================================================================================================
+#====================================================================================================
 
 # DEBUG
 #say Try choose direction
@@ -23,6 +23,6 @@ scoreboard players operation #compare Random %= 4 number
 # If runs into wall, retry
 # If matches previous, retry
 execute unless score #random Random = #compare Random unless function exigence:door/vault/silence/trial/platform/if_wall run return 1
+#----------------------------------------------------------------------------------------------------
 
 function exigence:door/vault/silence/trial/platform/random_direction
-

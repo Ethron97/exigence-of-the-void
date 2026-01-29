@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS Ravager
 
-#==================================================================================================================
+#====================================================================================================
 
 # Pick one random MenaceNode that does not have tag "Ravagered" and tp to it
 execute if score @s ObjectLevel matches 1 run teleport @s @e[scores={ObjectLevel=1},type=minecraft:armor_stand,tag=MenaceNode,tag=!Ravagered,tag=!RavagerBlacklist,limit=1,sort=random]

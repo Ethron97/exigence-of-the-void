@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS AltarNode
 
-#========================================================================================================
+#====================================================================================================
 
 # Set block to (soul) fire
 execute at @s run setblock ~ ~-1 ~ minecraft:soul_soil
@@ -23,7 +23,7 @@ scoreboard players set @s game.node.node_state 2
 execute if score @s ObjectLevel matches 10 in exigence:tutorial run function exigence:tutorial/flow/step
 execute if score @s ObjectLevel matches 10 run return 1
 execute unless data storage exigence:dungeon {is_active:1} run return 1
-#========================================================================================================
+#----------------------------------------------------------------------------------------------------
 
 # Give player score
 scoreboard players add @p[tag=Lighting] profile.data.altar.cr.altars_upgraded 1

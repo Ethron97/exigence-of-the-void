@@ -6,13 +6,13 @@
 ## INPUT:
 #   data: item.components."minecraft:custom_data"
 
-#=============================================================================================================
+#====================================================================================================
 
 #say Load difficulty selector
 
 # Summon item display
-summon item_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["CoopSelectorDisplay","MenuDisplay","NewItemDisplay","SizeClassMedium"],item:{id:"minecraft:sunflower",count:1},\
-transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.3f,0.3f,0.3f]}}
+summon minecraft:item_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["CoopSelectorDisplay","MenuDisplay","NewItemDisplay","SizeClassMedium"],item:{id:"minecraft:sunflower",count:1},\
+transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.3f,0.3f,0.3f]},CustomName:{text:"ItemDisplay | CoopSelector"}}
 
 # Assign data
 $data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".parent_idid set value '$(idid)'

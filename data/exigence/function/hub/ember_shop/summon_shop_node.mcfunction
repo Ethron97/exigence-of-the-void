@@ -3,7 +3,7 @@
 # /function exigence:hub/ember_shop/summon_shop_node {ember_cost:#,rarity:#,void:0/1}
 
 # Create a new node with tag "NewNode"
-execute at @s align x align y align z run summon minecraft:marker ~.5 ~ ~.5 {Tags:["NewMarker","Marker"]}
+execute at @s align x align y align z run summon minecraft:marker ~.5 ~ ~.5 {Tags:["NewMarker","Marker"],CustomName:{text:"Marker | EmberShopNode"}}
 
 # Give void tag if void
 $scoreboard players set #random Random $(void)

@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS profile display
 
-#=============================================================================================================
+#====================================================================================================
 
 #say Summon coop invitors
 
@@ -19,3 +19,5 @@ execute at @s positioned ~-0.21 ~1.91 ~ run function exigence:hub/profile_select
 execute at @s positioned ~-0.21 ~1.8 ~ run function exigence:hub/profile_selector/menu/display/coop_invitor/status/summon_status_display {num:2}
 execute if score max_coop_players global_settings matches 2.. at @s positioned ~-0.21 ~1.7 ~ run function exigence:hub/profile_selector/menu/display/coop_invitor/status/summon_status_display {num:3}
 execute if score max_coop_players global_settings matches 3.. at @s positioned ~-0.21 ~1.6 ~ run function exigence:hub/profile_selector/menu/display/coop_invitor/status/summon_status_display {num:4}
+
+tag @s add Inviting

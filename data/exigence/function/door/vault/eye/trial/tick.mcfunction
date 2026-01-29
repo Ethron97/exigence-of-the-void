@@ -1,6 +1,6 @@
 # Main "game loop" of the trial
 
-#==================================================================================================
+#====================================================================================================
 
 # DEBUG
 #execute unless entity @a[tag=ActivePlayer] run say No active player
@@ -22,7 +22,7 @@ execute as @a[tag=ActivePlayer,scores={dead=1,game.player.vault_code=4}] run fun
 # If no players with vault code = 1, return.
 #   (Loss function removes this code, so if player just lost the function will return immediately after)
 execute unless entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=4}] run return 1
-
+#----------------------------------------------------------------------------------------------------
 
 
 # Pre-trial time titles
@@ -41,7 +41,7 @@ execute if score Eye TrialTimer matches 659 as @a[tag=ActivePlayer,scores={dead=
 
 
 
-#==============================================================================================================
+#====================================================================================================
 ## TRIAL FUNCTIONALITY
 
 # Move monsters (after countdown)
@@ -62,7 +62,7 @@ execute if entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=4},t
 execute if score Eye TrialTimer matches 400 at @e[type=#exigence:eye_trial,tag=Monster,sort=random,limit=1,scores={TrialTimer=0}] run function exigence:door/vault/eye/trial/monster/new {Type:'endermite',Rotation:[180.0f,0.0f],Speed:4,Direction:3}
 #execute if entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=4},tag=Crucible] if score Eye TrialTimer matches 520 at @e[type=#exigence:eye_trial,tag=Monster,sort=random,limit=1,scores={TrialTimer=0}] run function exigence:door/vault/eye/trial/monster/new {Type:'endermite',Rotation:[180.0f,0.0f],Speed:4,Direction:3}
 
-#==============================================================================================================
+#====================================================================================================
 ## Tick cleanup
 
 # Countup trial clock

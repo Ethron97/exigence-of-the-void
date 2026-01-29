@@ -7,7 +7,7 @@
 #   STORAGE player_id
 #   SCORE #compare (profile.node.slot_id)
 
-#=============================================================================================================
+#====================================================================================================
 
 # If value is not within 1-5, initialize to 1
 scoreboard players operation #compare profile.node.slot_id > 1 number

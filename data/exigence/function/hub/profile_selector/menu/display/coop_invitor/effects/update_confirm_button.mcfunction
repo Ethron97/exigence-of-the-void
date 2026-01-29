@@ -6,7 +6,7 @@
 ## INPUT
 #   SCORE #filled_slots, gets populated by invite/accept or invite/cancel prior to this function
 
-#=============================================================================================================
+#====================================================================================================
 
 say Update confirm button
 

@@ -9,7 +9,7 @@
 #   STR/FLOAT ('1.0f') thickness - Line thickness
 #   STR/FLOAT ('1.0f') offset - To center the line, should be half the thickness in float (easier to input than calculate)
 
-#=============================================================================================================
+#====================================================================================================
 
 # DEBUG
 #$say drawing line $(texture) $(thickness) $(offset)

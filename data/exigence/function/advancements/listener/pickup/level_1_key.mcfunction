@@ -3,6 +3,7 @@ advancement revoke @s only exigence:listener/pickup/level_1_key
 
 # Return 1 if game is not active
 execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Replace key with give key
 clear @s trial_key[custom_data={key_level:"1"}]

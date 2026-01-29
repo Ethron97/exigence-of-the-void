@@ -1,6 +1,6 @@
 # Drops existing spires and spawns new ones
 
-#============================================================================================================
+#====================================================================================================
 
 # Drop all existing spires
 execute as @e[type=marker,tag=Spire] run function exigence:door/vault/spire/trial/spire/drop

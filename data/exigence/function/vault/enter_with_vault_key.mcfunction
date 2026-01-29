@@ -4,7 +4,7 @@
 ## CONSTRAINTS
 #   AS active player
 
-#====================================================================================
+#====================================================================================================
 
 # Level 1
 execute as @s[nbt={Inventory:[{id:"minecraft:host_armor_trim_smithing_template"}]}] run tag @e[type=minecraft:armor_stand,tag=VaultNode,tag=Vault_host] add PickedUp

@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#=============================================================================================================
+#====================================================================================================
 
 say Leaving profile selector
 
@@ -16,7 +16,6 @@ execute at @s run playsound minecraft:entity.enderman.teleport ambient @s ~ ~100
 team leave @s
 
 # Handle scores
-scoreboard players operation #compare profile.node.profile_id = @s profile.player.profile_id
 scoreboard players operation #compare hub.profile_selector_id = @s hub.player.profile_selector_id
 scoreboard players reset @s hub.player.profile_selector_id
 # Reset triggers
@@ -24,7 +23,15 @@ scoreboard players reset @s AcceptCoopInvite
 scoreboard players reset @s DeclineCoopInvite
 
 # Unload room
-execute in exigence:hub positioned 999.5 128 6.5 as @e[distance=..200,type=marker,tag=ProfileSelectorNode] if score @s hub.profile_selector_id = #compare hub.profile_selector_id at @s run function exigence:hub/profile_selector/node/unload_room
+execute in exigence:hub positioned 999.5 128 6.5 as @e[distance=..140,type=marker,tag=ProfileSelectorNode] \
+if score @s hub.profile_selector_id = #compare hub.profile_selector_id at @s run function exigence:hub/profile_selector/node/unload_room
 
 # If there was an invite pending on you, cancel it
 execute if score @s hub.player_entity.query_idid matches 1.. run function exigence:misc/triggers/hub/invite_coop_decline
+
+#====================================================================================================
+# Remove room node
+scoreboard players operation #compare hub.player.room_id = @s hub.player.room_id
+execute in exigence:hub positioned 0 153 0 as @e[distance=..1,type=marker,tag=RoomNode] if score @s hub.room.room_id = #compare hub.player.room_id run kill @s
+execute in exigence:profile_data positioned 8 0 8 as @e[distance=..20,type=armor_stand,tag=PlayerNode] if score @s player.node.room_id = #compare hub.player.room_id run scoreboard players reset @s player.node.room_id
+scoreboard players reset @s hub.player.room_id

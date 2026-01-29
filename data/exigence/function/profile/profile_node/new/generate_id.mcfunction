@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#=============================================================================================================
+#====================================================================================================
 
 # Make sure #sequence is current the highest or higher than all existing
 execute in exigence:profile_data as @e[distance=..1000,tag=ProfileNode] run scoreboard players operation #sequence profile.player.profile_id > @s profile.node.profile_id

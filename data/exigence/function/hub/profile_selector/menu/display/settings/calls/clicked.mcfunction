@@ -7,9 +7,14 @@
 ## INPUT
 #   data
 
-#=============================================================================================================
+#====================================================================================================
 
 #say Clicked settings
+
+# Shift click to show the description
+execute at @s if entity @p[distance=..16,tag=ProfileSelecting,tag=Interacting,predicate=exigence:player/sneaking] at @n[distance=..16,type=marker,tag=ProfileSelectorNode] positioned ~5.49 ~3.2 ~ run function exigence:hub/profile_selector/menu/display/settings/calls/private/show_description with entity @s item.components."minecraft:custom_data"
+execute at @s if entity @p[distance=..16,tag=ProfileSelecting,tag=Interacting,predicate=exigence:player/sneaking] run return 0
+#----------------------------------------------------------------------------------------------------
 
 # Call subfunction based on setting button type
 execute if entity @s[tag=Toggle] run function exigence:hub/profile_selector/menu/display/settings/calls/private/toggle_setting with entity @s item.components."minecraft:custom_data"

@@ -9,6 +9,7 @@ execute as @e[type=marker,tag=ClockMarker] if score @s game.item.clock_marker.id
 
 # If no target, return
 execute unless entity @e[type=marker,tag=ClockMarker,tag=NextMarker] run return 1
+#----------------------------------------------------------------------------------------------------
 
 # TP player
 execute at @e[type=marker,tag=ClockMarker,tag=NextMarker] run tp @a[tag=ActivePlayer] ~ ~ ~

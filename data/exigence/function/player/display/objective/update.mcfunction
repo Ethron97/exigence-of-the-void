@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#=============================================================================================================
+#====================================================================================================
 
 # Copy old score
 scoreboard players operation #old_holding_compass game.player.holding_compass = @s game.player.holding_compass

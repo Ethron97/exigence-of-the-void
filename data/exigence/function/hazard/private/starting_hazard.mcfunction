@@ -6,7 +6,7 @@
 #   SetupStartingHazard = hazard nodes from previous function
 #   StartingHazard = hazard nodes from other sources that created their own starting hazards
 
-#=============================================================================================================
+#====================================================================================================
 
 # Trigger hazard
 function exigence:hazard/node/trigger

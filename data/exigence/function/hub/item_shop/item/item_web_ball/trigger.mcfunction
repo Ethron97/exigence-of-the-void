@@ -4,7 +4,7 @@
 ## CONSTRAINTS
 #   AS/AT player
 
-#=============================================================================================================
+#====================================================================================================
 
 #say trigger web ball throw
 
@@ -14,9 +14,10 @@ scoreboard players set @s game.player.used.snowball 0
 # If there is no snowball, stop here!
 execute unless entity @e[distance=..32,type=minecraft:snowball] run say No snowball found?
 execute unless entity @e[distance=..32,type=minecraft:snowball] run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Spawn a Marker to track snowball's last position
-summon marker ~ ~ ~ {Tags:["NewSnowballMarker","SnowballMarker"]}
+summon minecraft:marker ~ ~ ~ {Tags:["NewSnowballMarker","SnowballMarker"],CustomName:{text:"Marker | Snowball"}}
 
 # Get snowball without tag, copy marker as Thrower
 execute as @e[distance=..32,type=snowball,tag=!AccountedFor] run data modify entity @s Owner set from entity @e[distance=..32,type=marker,tag=NewSnowballMarker,limit=1] UUID

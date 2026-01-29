@@ -3,19 +3,19 @@
 
 # AT location
 
-#=========================================================================================================
+#====================================================================================================
 
 # Summon markers with item names as data
-summon marker ~ ~ ~ {Tags:["RandomVoid","ender_pearl"]}
-summon marker ~ ~ ~ {Tags:["RandomVoid","golden_carrot"]}
-summon marker ~ ~ ~ {Tags:["RandomVoid","golden_apple"]}
-summon marker ~ ~ ~ {Tags:["RandomVoid","totem_of_undying"]}
-summon marker ~ ~ ~ {Tags:["RandomVoid","clock"]}
-summon marker ~ ~ ~ {Tags:["RandomVoid","master_key"]}
-summon marker ~ ~ ~ {Tags:["RandomVoid","boots_sculk"]}
-summon marker ~ ~ ~ {Tags:["RandomVoid","leggings_artifact"]}
-summon marker ~ ~ ~ {Tags:["RandomVoid","wings"]}
-summon marker ~ ~ ~ {Tags:["RandomVoid","helmet_deck"]}
+summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","ender_pearl"]}
+summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","golden_carrot"]}
+summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","golden_apple"]}
+summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","totem_of_undying"]}
+summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","clock"]}
+summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","master_key"]}
+summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","boots_sculk"]}
+summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","leggings_artifact"]}
+summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","wings"]}
+summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","helmet_deck"]}
 # ...
 
 # Select X random from the markers

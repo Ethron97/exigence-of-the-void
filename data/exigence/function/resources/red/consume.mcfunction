@@ -3,7 +3,7 @@
 ## INPUT
 #   Score RedCost - Resources
 
-#=====================================================================================================
+#====================================================================================================
 
 # Reduce resource
 scoreboard players operation Current.Red game.resources -= red.cost game.resources

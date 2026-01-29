@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AT location, bottom left most stair when facing up the staircase
 
-#==================================================================================================
+#====================================================================================================
 
 # Randomize 1-3
 execute store result score randomB Random run random value 1..3

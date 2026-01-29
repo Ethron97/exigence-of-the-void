@@ -8,7 +8,7 @@
 #   INT(1-7) tier (1-7, determines story beat required to unlock)
 
 
-#=============================================================================================================
+#====================================================================================================
 
 # Give tag if has parents
 execute if data entity @s item.components."minecraft:custom_data".parents[0] run tag @s add HasParents

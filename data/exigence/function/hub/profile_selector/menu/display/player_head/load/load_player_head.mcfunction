@@ -11,13 +11,13 @@
 #   INT profile_id
 #   INT player_id
 
-#=============================================================================================================
+#====================================================================================================
 
 #say Load player head selector
 
 # Summon item display
-summon item_display ~ ~ ~ {brightness:{sky:13,block:13},teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["PlayerHeadDisplay","MenuDisplay","NewItemDisplay","SizeClassMedium"],item:{id:"minecraft:player_head",count:1},\
-transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0.0f,0.125f,0.0f],scale:[0.5f,0.5f,0.2f]}}
+summon minecraft:item_display ~ ~ ~ {brightness:{sky:13,block:13},teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["PlayerHeadDisplay","MenuDisplay","NewItemDisplay","SizeClassMedium"],item:{id:"minecraft:player_head",count:1},\
+transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0.0f,0.125f,0.0f],scale:[0.5f,0.5f,0.2f]},CustomName:{text:"ItemDisplay | PlayerHead"}}
 
 # Assign data
 $data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".parent_idid set value '$(idid)'

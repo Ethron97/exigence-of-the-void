@@ -1,6 +1,6 @@
 # Called every second if at least one void cache exists
 
-#==========================================================================================================
+#====================================================================================================
 
 # Handle endermite spawning
 scoreboard players remove endermite.spawn.cooldown tick_counter 1

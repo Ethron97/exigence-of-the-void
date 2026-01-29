@@ -3,13 +3,14 @@
 ## CONSTRAINTS
 #   AS player
 
-#==============================================================================================================
+#====================================================================================================
 
 # Get current research count
 execute store result score #research Temp run clear @s minecraft:prize_pottery_sherd 0
 
 # If research is LE ResearchKeep, just return as there is nothing to drop
 execute if score #research Temp <= @s game.player.mod.research_keep run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Subtract ResearchKeep
 scoreboard players operation #research Temp -= @s game.player.mod.research_keep

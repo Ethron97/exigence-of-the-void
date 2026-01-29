@@ -11,7 +11,7 @@
 # out.m = Minutes
 # out.h = Hours
 
-#==========================================================================================================
+#====================================================================================================
 
 scoreboard players operation out.s tick_convert = in.ticks tick_convert
 scoreboard players operation out.s tick_convert /= 20 number

@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#=============================================================================================================
+#====================================================================================================
 
 #say Accept invite
 
@@ -27,10 +27,10 @@ run function exigence:hub/profile_selector/menu/display/coop_invitor/status/upda
 execute at @s as @n[distance=..20,tag=SlotDisplay,tag=Selected] run function exigence:hub/profile_selector/menu/display/profile/deselect with entity @s item.components."minecraft:custom_data"
 
 # Cancel in-process creation
-execute at @s as @n[distance=..20,type=item_display,tag=SlotDisplay,tag=CreationProcess] run function exigence:hub/profile_selector/menu/display/profile/create_new_cancel
+execute at @s as @n[distance=..20,type=item_display,tag=SlotDisplay,tag=CreationProcess] run function exigence:hub/profile_selector/menu/display/profile/create_new_cancel with entity @s item.components."minecraft:custom_data"
 
 # Remove chests
 execute at @s as @n[distance=..20,type=marker,tag=ProfileSelectorNode] at @s run function exigence:hub/profile_selector/load/remove_chests
 
 # Update all displays (incase they go limbo-ed off of a coop profile)
-function exigence:hub/profile_selector/menu/display/text_displays/player_list_display/update_all_displays
+function exigence:hub/profile_selector/menu/display/text_displays/player_list_display/reload_all_displays

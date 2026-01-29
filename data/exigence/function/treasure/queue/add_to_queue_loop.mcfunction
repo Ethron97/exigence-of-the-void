@@ -5,7 +5,7 @@
 #       Either "passive" or from card name
 #       ie "treasure_hunter", "circulation" etc
 
-#================================================================================================================
+#====================================================================================================
 
 # Append to queue
 $data modify storage exigence:treasure queue append value $(source)

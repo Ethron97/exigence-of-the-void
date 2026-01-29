@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player node
 
-#=============================================================================================================
+#====================================================================================================
 
 scoreboard players reset @s player.node.invited_player_1
 scoreboard players reset @s player.node.invited_player_2

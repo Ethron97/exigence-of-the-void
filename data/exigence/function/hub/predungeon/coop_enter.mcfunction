@@ -2,9 +2,6 @@
 
 say Enter predungeon (coop)
 
-# Save/remove chests
-function exigence:hub/locker_room/save_chests
-
 # Tag
 tag @s remove Lockerroom
 team leave @s

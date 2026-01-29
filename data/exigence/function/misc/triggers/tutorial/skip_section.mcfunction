@@ -3,7 +3,11 @@
 ## CONSTRAINTS
 #   AS player
 
-#=============================================================================================================
+#====================================================================================================
+execute unless entity @s[tag=Tutorial] run return fail
+#====================================================================================================
+
+say Trigger skip section
 
 execute if entity @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/flow/skip_section
 

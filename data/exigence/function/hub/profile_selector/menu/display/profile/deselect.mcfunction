@@ -6,7 +6,7 @@
 ## INPUT
 #   data: item.components."minecraft:custom_data"
 
-#=============================================================================================================
+#====================================================================================================
 
 say Deselect
 
@@ -20,10 +20,10 @@ tag @s remove Selected
 data modify entity @s item.components."minecraft:enchantments" set value {}
 
 # Item name
-data modify entity @s item.components."minecraft:custom_name" set value {text:"Load Profile",color:"green"}
+data modify entity @s item.components."minecraft:custom_name" set value {text:"Load Profile",color:"yellow"}
 
 # Lore
-data modify entity @s item.components."minecraft:lore" set value [{text:"Click to load",italic:false,color:"green"}]
+data modify entity @s item.components."minecraft:lore" set value [{text:"Click to load",italic:false,color:"yellow"}]
 data modify entity @s item.components."minecraft:lore" append value [{text:"Shift click to delete",italic:false,color:"red"}]
 
 # Change the block behind it
@@ -35,27 +35,27 @@ execute at @s align xyz positioned ~ ~ ~-0.95 run function exigence:hub/profile_
 execute at @s align xyz positioned ~0.5 ~0.5 ~0.5 run tp @s ~ ~ ~-0.43
 
 # Team for glow color
-team join Green
+team join Special
 
-#=============================================================================================================
-## SAVE CHESTS
+#====================================================================================================
+## SAVE CHESTS TEMPLATE
 # Chests -> data
 #   OUTPUTS chests_saved if there was data to save
-$execute in exigence:hub positioned 999.5 128 6.5 at @n[distance=..200,type=marker,tag=ProfileSelectorNode,scores={hub.profile_selector_id=$(profile_selector_id)}] \
+$execute in exigence:hub positioned 999.5 128 6.5 at @n[distance=..140,type=marker,tag=ProfileSelectorNode,scores={hub.profile_selector_id=$(profile_selector_id)}] \
 run function exigence:hub/profile_selector/load/save_chests
 
 # Data -> profile chest
 scoreboard players set #remove_tag Temp 1
-$execute if score #chests_saved Temp matches 1 \
-in exigence:profile_data positioned 8 128 8 as @n[distance=..200,type=marker,tag=ProfileNode,scores={profile.node.profile_id=$(profile_id)}] \
+#$execute if score #chests_saved Temp matches 1
+$execute in exigence:profile_data positioned 8 128 8 as @n[distance=..140,type=marker,tag=ProfileNode,scores={profile.node.profile_id=$(profile_id)}] \
 run function exigence:profile/profile_node/save/try_data_to_chest
 
 # Unload deck analyzer
-#   Don't un-load if called from switch_to
+#   Don't un-load if just switching profiles
 $execute unless score #switching Temp matches 1 if score #chests_saved Temp matches 1 at @s \
 run function exigence:hub/profile_selector/load/unload_deck_analyzer {profile_selector_id:$(profile_selector_id)}
 
-#=============================================================================================================
+#====================================================================================================
 
 # Save actual profile from player
 $execute at @s as @p[distance=..16,tag=ProfileSelecting,tag=ProfileSelecting,scores={hub.player.profile_selector_id=$(profile_selector_id)}] \

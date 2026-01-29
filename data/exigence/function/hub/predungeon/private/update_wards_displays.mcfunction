@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS primary player in predungeon
 
-#===============================================================================================================
+#====================================================================================================
 
 # Move scores to data
 execute store result storage exigence:temp SapphireWard int 1 run scoreboard players get @s profile.story.ward_sapphire

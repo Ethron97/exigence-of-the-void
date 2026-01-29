@@ -3,10 +3,10 @@
 ## CONSTRAINTS
 #    AT location
 
-#=============================================================================================================
+#====================================================================================================
 
 # Summon a new marker
-execute at @s align xyz run summon minecraft:marker ~0.5 ~ ~0.5 {Tags:["NewMarker","Marker","TutorialMarker"]}
+execute at @s align xyz run summon minecraft:marker ~0.5 ~ ~0.5 {Tags:["NewMarker","Marker","TutorialMarker"],CustomName:{text:"Marker | Tutorial"}}
 
 
 scoreboard players add _next TutorialMarkerID 1

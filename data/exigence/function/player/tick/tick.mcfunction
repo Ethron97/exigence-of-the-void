@@ -3,13 +3,13 @@
 ## CONSTRAINTS
 #   AS/AT Player
 
-#==============================================================================================================
+#====================================================================================================
 
 # Return if not active
 execute unless entity @s[tag=ActivePlayer] run return fail
 
 # COMMON FUNCTIONS (dead or alive)
-#========================================================
+#====================================================================================================
 # Snowball usage
 execute if score @s game.player.used.snowball matches 1.. run function exigence:hub/item_shop/item/item_web_ball/trigger
 execute if entity @e[distance=..1000,type=marker,tag=SnowballMarker] run function exigence:hub/item_shop/item/item_web_ball/private/tick_loop
@@ -30,5 +30,5 @@ advancement revoke @s[advancements={exigence:listener/step_on_sculk=true},scores
 execute if data storage exigence:dungeon {max_menace:0} run function exigence:player/display/resource_bar/tick
 
 # LIVING PLAYER FUNCTIONS:
-#========================================================
+#====================================================================================================
 execute if score @s dead matches 0 at @s run function exigence:player/tick/tick_alive

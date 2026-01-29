@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AT player
 
-#=============================================================================================================
+#====================================================================================================
 
 # Idenfity BerryNodes to glow
 execute as @e[distance=..16,type=minecraft:armor_stand,tag=BerryNode,tag=!BerryGlowing,tag=Grown] run function exigence:botany/node/glow

@@ -1,6 +1,6 @@
 # Main "game loop" of the trial
 
-#==================================================================================================
+#====================================================================================================
 
 # DEBUG
 #execute unless entity @a[tag=ActivePlayer] run say No active player
@@ -23,7 +23,7 @@ execute as @a[tag=ActivePlayer,scores={dead=1,game.player.vault_code=2}] run fun
 # If no players with vault code = 1, return.
 #   (Loss function removes this code, so if player just lost the function will return immediately after)
 execute unless entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=2}] run return 1
-
+#----------------------------------------------------------------------------------------------------
 
 
 # Pre-trial time titles
@@ -42,7 +42,7 @@ execute if score Dune TrialTimer matches 659 as @a[tag=ActivePlayer,scores={dead
 
 
 
-#==============================================================================================================
+#====================================================================================================
 ## TRIAL FUNCTIONALITY
 
 # Reduce SkullTimer
@@ -69,7 +69,7 @@ execute as @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=2}] at @s a
 execute as @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=2}] at @s anchored feet positioned ~ ~1.8 ~ if entity @e[distance=..1,type=minecraft:item_display,tag=DuneSkull] run function exigence:door/vault/dune/trial/loss
 
 
-#==============================================================================================================
+#====================================================================================================
 ## Tick cleanup
 
 # Countup trial clock

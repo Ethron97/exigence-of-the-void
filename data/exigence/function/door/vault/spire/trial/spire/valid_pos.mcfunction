@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AT position
 
-#==============================================================================================================
+#====================================================================================================
 
 # Must be within 6 blocks of center, and have no air beneath it
 execute unless entity @e[distance=..6,type=marker,tag=SpireCenter] run return 0

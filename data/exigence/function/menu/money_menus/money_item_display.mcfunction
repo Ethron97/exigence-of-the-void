@@ -13,7 +13,7 @@
 #   INT(1-7) tier (1-7, determines story beat required to unlock)
 # {item_name:'',money_cost:0,research_cost:0,parents:[],rarity:1,tier:1}
 
-#=============================================================================================================
+#====================================================================================================
 
 # DEBUG
 #$say money item display $(Rotation)

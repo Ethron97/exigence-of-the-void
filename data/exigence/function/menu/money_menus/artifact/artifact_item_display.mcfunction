@@ -14,7 +14,7 @@
 #   INT(1-7) tier (1-7, determines story beat required to unlock)
 # {item_name:'',money_cost:0,research_cost:0,parents:[],rarity:1,tier:1}
 
-#=============================================================================================================
+#====================================================================================================
 
 # Summon artifact item
 $function exigence:vault/artifact/summon_item {item_name:'$(item_name)'}

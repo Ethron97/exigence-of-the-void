@@ -6,14 +6,9 @@
 ## INPUT
 #   STR display_name
 
-#=============================================================================================================
+#====================================================================================================
 
-$tellraw @s [{text:"Error: Found more than 3 copies of ",color:"red"},{text:"$(display_name)",color:"gold"},{text:"",color:"red"}]
-
-$data modify storage exigence:deck_analysis errors append value [{text:"Error: Found more than 3 copies of ",color:"red"},{text:"$(display_name)",color:"gold"},{text:"",color:"red"}]
-data modify storage exigence:hub too_many_copies set value true
-
-# Tellraw to other players neraby who share a coop id (without repeating the message to this player)
-scoreboard players operation #compare profile.player.coop_profile_id = @s profile.player.coop_profile_id
-$execute at @s as @a[distance=0.01..10] if score @s profile.player.coop_profile_id = #compare profile.player.coop_profile_id \
-run tellraw @s [{text:"Error: Found more than 3 copies of ",color:"red"},{text:"$(display_name)",color:"gold"},{text:"",color:"red"}]
+$execute if score #rarity deck.process_card matches 1 run function exigence:deck/process/private/error/too_many_copies_m {display_name:'$(display_name)',rarity_color:"dark_aqua"}
+$execute if score #rarity deck.process_card matches 2 run function exigence:deck/process/private/error/too_many_copies_m {display_name:'$(display_name)',rarity_color:"green"}
+$execute if score #rarity deck.process_card matches 3 run function exigence:deck/process/private/error/too_many_copies_m {display_name:'$(display_name)',rarity_color:"blue"}
+$execute if score #rarity deck.process_card matches 4 run function exigence:deck/process/private/error/too_many_copies_m {display_name:'$(display_name)',rarity_color:"light_purple"}

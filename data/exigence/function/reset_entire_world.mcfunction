@@ -8,7 +8,7 @@
 #   5. Restore PROPERTY scores
 #   6. Revoke all player advancements (todo?)
 
-#=============================================================================================================
+#====================================================================================================
 
 say Saving entity property scores to entity data
 function exigence:scoreboard/save_score_to_property
@@ -28,3 +28,10 @@ function exigence:scoreboard/load_score_from_property
 
 say Loading default global settings
 function exigence:misc/setup_functions/initialize_global_settings
+
+# TODO move cooldown initializers
+# Delay after breaking ravager glass before it comes back
+scoreboard players set #RavagerGlassCooldownLimit game.entity.ravager_glass.cooldown 20
+
+# Prevent online players from needing to tp/remove tags
+scoreboard players set @a quits 0

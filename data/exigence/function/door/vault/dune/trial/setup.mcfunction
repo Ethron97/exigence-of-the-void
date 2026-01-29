@@ -1,6 +1,6 @@
 # Responsible for setting everything up required for the Dune Trial/Crucible
 
-#======================================================================================================
+#====================================================================================================
 
 # DEBUG
 say Setup Dune
@@ -11,9 +11,9 @@ scoreboard players set Skulls TrialTimer 70
 
 # Summon DuneCenter
 #   Marker at center of the chamber whose rotation is used to spawn stuff
-summon marker -413.5 152.0 -1.5 {Tags:["DuneTrialSetup","DuneCenter"]}
-summon marker -413.5 152.0 -1.5 {Tags:["DuneTrialSetup","DunePosA"]}
-summon marker -413.5 152.0 -1.5 {Tags:["DuneTrialSetup","DunePosB"]}
+summon minecraft:marker -413.5 152.0 -1.5 {Tags:["DuneTrialSetup","DuneCenter"],CustomName:{text:"Marker | DuneCenter"}}
+summon minecraft:marker -413.5 152.0 -1.5 {Tags:["DuneTrialSetup","DunePosA"],CustomName:{text:"Marker | DunePosA"}}
+summon minecraft:marker -413.5 152.0 -1.5 {Tags:["DuneTrialSetup","DunePosB"],CustomName:{text:"Marker | DunePosB"}}
 
 # Replace end portal
 fill -406 148 6 -422 148 -10 end_portal replace black_concrete

@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   None, applies to all players from here
 
-#======================================================================================================
+#====================================================================================================
 
 # If there are no triumph scores, return
 scoreboard players set tri.Total game.triumph 0
@@ -12,6 +12,7 @@ scoreboard players operation tri.Total game.triumph += tri.Joy game.triumph
 scoreboard players operation tri.Total game.triumph += tri.Gratification game.triumph
 scoreboard players operation tri.Total game.triumph += tri.TrueAscension game.triumph
 execute if score tri.Total game.triumph matches 0 run return 1
+#----------------------------------------------------------------------------------------------------
 
 # DEBUG
 say Triumph!

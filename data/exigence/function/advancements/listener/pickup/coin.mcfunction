@@ -8,6 +8,7 @@ execute as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/
 
 # Return if the game is not active
 execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
+#----------------------------------------------------------------------------------------------------
 
 scoreboard players set #stacksize game.treasure.picked_up_coin_handle 1
 # Get number of coins if it was a stack

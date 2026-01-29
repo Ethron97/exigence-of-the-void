@@ -4,7 +4,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#==================================================================================================
+#====================================================================================================
 
 # Delete the trim from their inventory
 clear @s #exigence:trim_templates[custom_data={vault_key_summoned:"true"}] 1

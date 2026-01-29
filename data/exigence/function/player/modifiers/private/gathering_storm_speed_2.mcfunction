@@ -4,7 +4,7 @@
 #   AT player
 #       Gathering Storm artifact with speed 2
 
-#=============================================================================================================
+#====================================================================================================
 
 # Store pickup delay
 execute as @e[distance=..10.5,type=minecraft:item] store result score @s Random run data get entity @s PickupDelay 1

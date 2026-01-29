@@ -7,7 +7,7 @@
 ## INPUT
 #   WITH item_display item.components."minecraft:custom_data" for id
 
-#=============================================================================================================
+#====================================================================================================
 
 # Interaction boxes
 $execute at @s as @e[type=minecraft:interaction,scores={IDID=$(idid)}] run tp @s ^ ^-0.15 ^

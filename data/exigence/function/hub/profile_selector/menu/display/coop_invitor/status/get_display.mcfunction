@@ -6,7 +6,7 @@
 ## INPUT
 #   SCORE #target career.player_id ->
 
-#=============================================================================================================
+#====================================================================================================
 
 say Get display
 
@@ -18,6 +18,7 @@ execute unless score @s player.node.invited_player_1 matches 1.. run scoreboard 
 
 # No empty slot found
 execute if score #temp2 Temp matches 0 run return fail
+#----------------------------------------------------------------------------------------------------
 
 # Update score
 execute if score #temp2 Temp matches 3 run scoreboard players operation @s player.node.invited_player_3 = #target career.player_id

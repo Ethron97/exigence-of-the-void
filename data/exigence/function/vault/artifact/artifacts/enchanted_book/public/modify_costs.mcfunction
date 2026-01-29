@@ -6,10 +6,11 @@
 #   red.cost game.resources
 #   aqua.cost game.resources
 
-#==================================================================================================
+#====================================================================================================
 
 # If all scores are 0, return
 execute if score green.cost game.resources matches 0 if score red.cost game.resources matches 0 if score aqua.cost game.resources matches 0 run return 1
+#----------------------------------------------------------------------------------------------------
 
 # DEBUG
 say Modifying costs

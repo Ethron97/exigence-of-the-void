@@ -1,8 +1,8 @@
 # DEBUG
 #say Drop treasure box
 
-# Summon marker to store movement
-execute at @s align xyz run summon marker ~0.5 ~0.5 ~0.5 {Tags:[TreasureWalking]}
+# summon minecraft:marker to store movement
+execute at @s align xyz run summon minecraft:marker ~0.5 ~0.5 ~0.5 {Tags:[TreasureWalking],CustomName:{text:"Marker | TreasureWalking"}}
 
 # Copy this node's BB scoreboards to working data
 execute store result storage exigence:treasure_drop working_x1 int 1 run scoreboard players get @s TreasureBBX1

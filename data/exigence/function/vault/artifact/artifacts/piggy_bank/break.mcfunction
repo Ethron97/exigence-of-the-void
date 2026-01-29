@@ -5,7 +5,7 @@
 #   UNLESS player with ConvertingCoins already exists
 #   UNLESS player with ActivePlayer exists
 
-#===================================================================================================
+#====================================================================================================
 
 # Convert coins to money as nearest player
 

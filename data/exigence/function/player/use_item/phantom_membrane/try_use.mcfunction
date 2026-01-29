@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 # AS player
 
-#=============================================================================================================
+#====================================================================================================
 
 # Check if player is invisible. If yes, call use
 execute if score @s game.player.effects.invisibility matches 1.. run function exigence:player/use_item/phantom_membrane/private/use

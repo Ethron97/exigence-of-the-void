@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AT location of chest to modify
 
-#==========================================================================================================
+#====================================================================================================
 
 # We have to /replace on each slot independentely :(
 execute if items block ~ ~ ~ container.0 blaze_powder run item replace block ~ ~ ~ container.0 with air

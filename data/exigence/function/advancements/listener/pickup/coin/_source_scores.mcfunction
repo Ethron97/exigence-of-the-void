@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#================================================================================================================
+#====================================================================================================
 
 execute if data entity @s {Inventory:[{id:"minecraft:large_amethyst_bud",components:{"minecraft:custom_data":{source:'passive'}}}]} run \
 function exigence:advancements/listener/pickup/coin/macro {source:'passive'}

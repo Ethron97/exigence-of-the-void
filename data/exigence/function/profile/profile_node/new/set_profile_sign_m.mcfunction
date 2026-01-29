@@ -9,7 +9,7 @@
 #   INT profile_id
 #   INT slot_id
 
-#=============================================================================================================
+#====================================================================================================
 
 $data modify block ~ ~ ~ front_text.messages[1] set value [{text:"Player ID: $(player_id)"}]
 $data modify block ~ ~ ~ front_text.messages[2] set value [{text:"Profile ID: $(profile_id)"}]

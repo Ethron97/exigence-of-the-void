@@ -7,7 +7,7 @@
 #   INT player_id
 #   INT profile_selector_id
 
-#=============================================================================================================
+#====================================================================================================
 
 ## TOGGLE
 #   Left side
@@ -30,6 +30,6 @@ $execute positioned ~5.49 ~1.8 ~1.3 run function exigence:hub/profile_selector/m
 $execute positioned ~5.49 ~1.4 ~1.3 run function exigence:hub/profile_selector/menu/display/settings/load/resource_actionbar_style {player_id:$(player_id),profile_selector_id:$(profile_selector_id)}
 
 
-#=============================================================================================================
+#====================================================================================================
 ## PREVIEW
 $execute positioned ~5.49 ~1.0 ~ run function exigence:hub/profile_selector/menu/display/settings/preview/setup_preview {profile_selector_id:$(profile_selector_id)}

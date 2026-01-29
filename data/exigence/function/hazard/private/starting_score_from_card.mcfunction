@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS HazardNode
 
-#=============================================================================================================
+#====================================================================================================
 
 execute if score @s ObjectLevel matches 1 run scoreboard players add @a[tag=ActivePlayer] cr_hazardCardL1 1
 execute if score @s ObjectLevel matches 2 run scoreboard players add @a[tag=ActivePlayer] cr_hazardCardL2 1

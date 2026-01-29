@@ -6,7 +6,7 @@
 ## INPUT
 #   STR resolving
 
-#==========================================================================================================
+#====================================================================================================
 
 # Increase source specific scores
 $scoreboard players add @s profile.data.treasure.cr.coindrop_$(resolving) 1

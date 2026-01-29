@@ -1,4 +1,4 @@
-# Try load
+# Check if player exists before loading text element
 
 ## CONSTRAINTS
 #   AS slot display
@@ -8,14 +8,14 @@
 #   INT coop_profile_id
 #   INT player_index
 
-#=============================================================================================================
+#====================================================================================================
 
 #$say Try load coop player list $(player_index) $(coop_profile_id)
 
 data remove storage exigence:temp profile
 
 scoreboard players reset #compare profile.node.player_id
-$execute in exigence:profile_data positioned 8 128 8 as @n[distance=..200,type=marker,tag=ProfileNode\
+$execute in exigence:profile_data positioned 8 128 8 as @n[distance=..140,type=marker,tag=ProfileNode\
 ,scores={profile.node.coop_profile_index=$(player_index),profile.node.coop_profile_id=$(coop_profile_id)}] \
 run scoreboard players operation #compare profile.node.player_id = @s profile.node.player_id
 

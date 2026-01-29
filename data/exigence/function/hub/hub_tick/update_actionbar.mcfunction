@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#=============================================================================================================
+#====================================================================================================
 
 # Reset piggy tag
 #tag @s[tag=PiggyBank,nbt=!{SelectedItem:{components:{"minecraft:custom_data":{item_name:'piggy_bank'}}}}] remove PiggyBank

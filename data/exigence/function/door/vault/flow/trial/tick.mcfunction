@@ -1,6 +1,6 @@
 # Main "game loop" of the trial
 
-#==================================================================================================
+#====================================================================================================
 
 # DEBUG
 #execute unless entity @a[tag=ActivePlayer] run say No active player
@@ -22,7 +22,7 @@ execute as @a[tag=ActivePlayer,scores={dead=1,game.player.vault_code=6}] run fun
 # If no players with vault code = 1, return.
 #   (Loss function removes this code, so if player just lost the function will return immediately after)
 execute unless entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=6}] run return 1
-
+#----------------------------------------------------------------------------------------------------
 
 
 # Pre-trial time titles
@@ -41,7 +41,7 @@ execute if score Flow TrialTimer matches 659 as @a[tag=ActivePlayer,scores={dead
 
 
 
-#==============================================================================================================
+#====================================================================================================
 ## TRIAL FUNCTIONALITY
 
 # Every 10 seconds add new pattern
@@ -73,7 +73,7 @@ execute if entity @a[tag=ActivePlayer,scores={game.player.vault_code=6},nbt={OnG
 
 
 
-#==============================================================================================================
+#====================================================================================================
 ## Tick cleanup
 
 # Countup trial clock

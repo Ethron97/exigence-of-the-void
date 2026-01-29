@@ -5,7 +5,7 @@
 #   AS trial/crucible altar node
 #   AT self
 
-#=========================================================================================================
+#====================================================================================================
 
 # Copy vault code from altarnode to player
 scoreboard players operation @p[tag=Lighting] game.player.vault_code = @s node.property.altar.vault_code

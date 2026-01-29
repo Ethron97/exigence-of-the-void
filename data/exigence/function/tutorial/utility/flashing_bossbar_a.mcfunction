@@ -9,7 +9,7 @@
 #   INT interval in ticks
 #   INT flashes
 
-#=============================================================================================================
+#====================================================================================================
 
 #$say a $(text) $(color0) $(color1) $(active_color) $(interval) $(flashes)
 
@@ -24,6 +24,7 @@ $execute if score $(active_color) number matches 1 run bossbar set exigence:tuto
 $scoreboard players set #temp Temp $(flashes)
 scoreboard players remove #temp Temp 1
 execute if score #temp Temp matches ..0 run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Flip the color bit
 $scoreboard players set #temp2 Temp $(active_color)

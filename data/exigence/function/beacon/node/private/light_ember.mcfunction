@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS BeaconNode
 
-#========================================================================================================
+#====================================================================================================
 
 # Increment node state
 scoreboard players add @s game.node.node_state 1
@@ -35,9 +35,9 @@ execute if score @s ObjectLevel matches 3 run clear @a[tag=Lighting] ghast_tear[
 execute if score @s ObjectLevel matches 4 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_4"]}] 1
 
 
-#========================================================================================================
 # Only run past here if the final state was lit
 execute if score @s game.node.node_state matches ..2 run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Remove interaction
 function exigence:beacon/node/remove_interaction

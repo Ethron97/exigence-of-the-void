@@ -1,7 +1,10 @@
+# Resets the state of the tutorial
+#   Built to be able to run while a player is in it
+
 ## CONSTRAINTS
 #   IN exigence:tutorial
 
-#=============================================================================================================
+#====================================================================================================
 
 # DEBUG
 say Reset tutorial

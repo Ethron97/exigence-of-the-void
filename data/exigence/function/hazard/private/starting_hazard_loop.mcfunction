@@ -1,7 +1,7 @@
 # Called by finishing the Variance setup loop
 # Loop over all starting hazards 1 tick at a time
 
-#=============================================================================================================
+#====================================================================================================
 
 # Trigger a random StartingHazard node
 execute if score #starting_hazard Temp matches 1 as @e[type=minecraft:armor_stand,tag=StartingHazard,limit=1,sort=random,scores={ObjectLevel=1}] run function exigence:hazard/private/starting_hazard

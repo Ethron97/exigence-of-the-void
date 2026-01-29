@@ -7,7 +7,7 @@
 ## INPUT
 #   data
 
-#=============================================================================================================
+#====================================================================================================
 
 # Summon text display
 summon minecraft:text_display ~ ~ ~ {teleport_duration:3,billboard:"fixed",alignment:"center",Tags:["StatusDisplay","StatusDisplayTitle","NewTextDisplay","ConfirmGroup"]\

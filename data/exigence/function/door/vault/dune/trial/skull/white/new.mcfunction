@@ -1,6 +1,6 @@
 # New normal projectile for trial
 
-#========================================================================================================
+#====================================================================================================
 
 # Move DunePosA to random rim location
 function exigence:door/vault/dune/trial/random_pos/rim_pos

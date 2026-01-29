@@ -9,6 +9,7 @@ execute as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/
 
 # Return if the game is not active
 execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Add score based on source
 scoreboard players set #is_pot Temp 0

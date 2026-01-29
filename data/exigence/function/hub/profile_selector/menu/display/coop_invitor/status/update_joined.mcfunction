@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS text_display
 
-#=============================================================================================================
+#====================================================================================================
 
 data modify entity @s text.extra[0].color set value "green"
 data modify entity @s text.extra[1].text set value " ✔"

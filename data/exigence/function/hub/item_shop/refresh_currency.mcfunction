@@ -1,7 +1,7 @@
 # Refreshes currency stats on players
 #   Amounts, changed, holding, total
 
-#===========================================================================================
+#====================================================================================================
 
 execute as @a[tag=ItemShopping] run function exigence:hub/item_shop/private/refresh_currency_player
 

@@ -7,13 +7,13 @@
 ## INPUT
 #   INT profile_id
 
-#=============================================================================================================
+#====================================================================================================
 
 say INTERFACE load deck analyzer
 
 # Summon temporary marker
 #   Used to easily standardize text gaps etc on displays
-summon marker ~ ~ ~ {Tags:["Telemarker"]}
+summon minecraft:marker ~ ~ ~ {Tags:["Telemarker"],CustomName:{text:"Marker | Telemarker"}}
 
 # Save the profile id for this load
 $scoreboard players set @s hub.entity.profile_id $(profile_id)

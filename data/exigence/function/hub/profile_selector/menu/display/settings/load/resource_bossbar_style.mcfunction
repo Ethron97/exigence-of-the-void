@@ -7,7 +7,7 @@
 #   INT player_id
 #   INT profile_selector_id
 
-#=============================================================================================================
+#====================================================================================================
 
 $function exigence:hub/profile_selector/menu/display/settings/load/private/summon_setting_display {player_id:$(player_id),profile_selector_id:$(profile_selector_id)}
 
@@ -23,6 +23,7 @@ data modify entity @n[distance=..0.1,type=item_display,tag=NewItemDisplay] item.
 data modify entity @n[distance=..0.1,type=item_display,tag=NewItemDisplay,scores={Random=0}] item.components."minecraft:custom_model_data".strings set value ["cycle_3_0"]
 data modify entity @n[distance=..0.1,type=item_display,tag=NewItemDisplay,scores={Random=1}] item.components."minecraft:custom_model_data".strings set value ["cycle_3_1"]
 data modify entity @n[distance=..0.1,type=item_display,tag=NewItemDisplay,scores={Random=2}] item.components."minecraft:custom_model_data".strings set value ["cycle_3_2"]
+data modify entity @n[distance=..0.1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".display set value [{text:"Resource Bossbar Style",color:"white"}]
 data modify entity @n[distance=..0.1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".display0 set value [{text:"Resource Bossbar Style: ",color:"white"},{text:"Never",color:"yellow"}]
 data modify entity @n[distance=..0.1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".display1 set value [{text:"Resource Bossbar Style: ",color:"white"},{text:"Dynamic",color:"yellow"}]
 data modify entity @n[distance=..0.1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".display2 set value [{text:"Resource Bossbar Style: ",color:"white"},{text:"Always",color:"yellow"}]

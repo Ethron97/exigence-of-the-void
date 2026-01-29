@@ -17,7 +17,6 @@ playsound minecraft:entity.enderman.teleport ambient @s ~ ~1000 ~ 1000 1
 # Clear buttons
 fill -263 18 -77 -259 18 -77 air
 
-function exigence:hub/locker_room/load_chests
 
 # Reset validation signs
 fill -263 17 -77 -259 17 -77 air

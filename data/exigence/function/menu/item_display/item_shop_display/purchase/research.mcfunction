@@ -6,7 +6,7 @@
 ## INPUT
 #   WITH item_display item.components."minecraft:custom_data"
 
-#=============================================================================================================
+#====================================================================================================
 
 # DEBUG
 #say research
@@ -28,5 +28,6 @@ function exigence:hub/item_shop/update_purchasability_full
 $advancement grant @a[tag=ItemShopping] only exigence:unlockables/shop_unlock_$(item_name)
 # Try and give advancement to COOP players who are outside the shop
 execute unless score @p[tag=ItemShopping,gamemode=!creative,tag=Interacting] profile.player.coop_profile_id matches 1.. run return 1
+#----------------------------------------------------------------------------------------------------
 scoreboard players operation #compare profile.player.coop_profile_id = @p[tag=ItemShopping,gamemode=!creative,tag=Interacting] profile.player.coop_profile_id
 $execute as @a if score @s profile.player.coop_profile_id = #compare profile.player.coop_profile_id run advancement grant @s only exigence:unlockables/shop_unlock_$(item_name)

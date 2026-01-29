@@ -4,7 +4,7 @@
 #   AS profile selector display
 #   AT profile node
 
-#=============================================================================================================
+#====================================================================================================
 
 #say Load profile to slot
 
@@ -14,13 +14,13 @@ tag @s add ProfileLoaded
 execute if score @n[distance=..0.1,type=marker,tag=ProfileNode] profile.node.coop_profile_id matches 1.. run tag @s add Coop
 
 # Team for glow color
-team join Green
+team join Special
 
 # Item name
-data modify entity @s item.components."minecraft:custom_name" set value {text:"Load Profile",color:"green"}
+data modify entity @s item.components."minecraft:custom_name" set value {text:"Load Profile",color:"yellow"}
 
 # Lore
-data modify entity @s item.components."minecraft:lore" set value [{text:"Click to load",italic:false,color:"green"}]
+data modify entity @s item.components."minecraft:lore" set value [{text:"Click to load",italic:false,color:"yellow"}]
 data modify entity @s item.components."minecraft:lore" append value [{text:"Shift click to delete",italic:false,color:"red"}]
 
 # Profile id
@@ -45,6 +45,7 @@ execute if score @n[distance=..0.1,type=marker,tag=ProfileNode] profile.story.ad
 execute if score @n[distance=..0.1,type=marker,tag=ProfileNode] profile.story.adv.win_difficulty_4 matches 1 run data modify entity @s item.id set value "minecraft:echo_shard"
 execute if score @n[distance=..0.1,type=marker,tag=ProfileNode] profile.story.adv.destroy_crystals matches 1 run data modify entity @s item.id set value "minecraft:amethyst_shard"
 execute if score @n[distance=..0.1,type=marker,tag=ProfileNode] profile.story.adv.light_beacons matches 1 run data modify entity @s item.id set value "minecraft:nether_star"
+#data modify entity @s item.id set value "minecraft:glass_pane"
 
 # Load profile info
 execute at @s run function exigence:hub/profile_selector/menu/display/profile/profile_info/load_profile_info with entity @s item.components."minecraft:custom_data"
@@ -58,7 +59,7 @@ function exigence:hub/profile_selector/menu/display/profile/effects/summon_stick
 execute at @s align xyz positioned ~ ~ ~-0.95 run function exigence:hub/profile_selector/menu/display/profile/effects/summon_pop_block
 
 # If co-op, load status list
-execute if score @n[distance=..0.1,type=marker,tag=ProfileNode] profile.node.coop_profile_id matches 1.. at @s run function exigence:hub/profile_selector/menu/display/profile/effects/refresh_coop_statuses with entity @s item.components."minecraft:custom_data"
+execute if score @n[distance=..0.1,type=marker,tag=ProfileNode] profile.node.coop_profile_id matches 1.. at @s run function exigence:hub/profile_selector/menu/display/profile/effects/reload_coop_statuses with entity @s item.components."minecraft:custom_data"
 
 # If profile node is active, start selected
 execute if score @n[distance=..0.1,type=marker,tag=ProfileNode] profile.node.profile_id = #compare profile.node.profile_id run function exigence:hub/profile_selector/menu/display/profile/select with entity @s item.components."minecraft:custom_data"

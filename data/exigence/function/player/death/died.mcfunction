@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#======================================================================================================
+#====================================================================================================
 
 # DEBUG
 #tellraw @a [{"score": {"name": "@s","objective": "game.player.active_level"}}]
@@ -17,7 +17,7 @@ execute store result storage exigence:give pos.list[0] double 1 run data get sto
 execute store result storage exigence:give pos.list[1] double 1 run data get storage exigence:give pos.int_array[1]
 execute store result storage exigence:give pos.list[2] double 1 run data get storage exigence:give pos.int_array[2]
 
-execute if data entity @s LastDeathLocation{dimension:"minecraft:overworld"} in minecraft:overworld run summon minecraft:marker -301.51 37.00 -133.41 {Tags:["DeathMarker"]}
+execute if data entity @s LastDeathLocation{dimension:"minecraft:overworld"} in minecraft:overworld run summon minecraft:marker -301.51 37.00 -133.41 {Tags:["DeathMarker"],CustomName:{text:"Marker | Death"}}
 
 execute as @e[type=minecraft:marker,tag=DeathMarker] run data modify entity @s Pos set from storage exigence:give pos.list
 

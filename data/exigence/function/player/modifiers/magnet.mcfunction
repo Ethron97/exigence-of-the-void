@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AT player
 
-#=============================================================================================================
+#====================================================================================================
 
 # Store pickup delay
 execute as @e[distance=..4,type=minecraft:item] store result score @s Random run data get entity @s PickupDelay 1

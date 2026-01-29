@@ -5,7 +5,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#==============================================================================================================
+#====================================================================================================
 
 # Full / standard (default)
 execute at @s unless score @s career.settings.resource_actionbar_style matches 1.. unless entity @e[distance=..2,type=minecraft:armor_stand,tag=ExitNode] run function exigence:player/display/resource_bar/full/update

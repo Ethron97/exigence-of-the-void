@@ -1,5 +1,5 @@
 # Summon new item display
-summon item_display -274.5 7.5 -228.03125 {Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["VaultHandle","NewVaultHandle"],\
+summon minecraft:item_display -274.5 7.5 -228.03125 {Rotation:[0.0f,0.0f],CustomName:{text:"ItemDisplay | VaultHandleRaiser"},billboard:"fixed",Tags:["VaultHandle","NewVaultHandle"],\
 item:{id:"minecraft:raiser_armor_trim_smithing_template",count:1,components:{"minecraft:custom_data":{vault:'raiser'},"minecraft:custom_model_data":{"strings":["vault_lock"]}}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.0f,1.0f,1.0f]}}
 

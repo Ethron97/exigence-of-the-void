@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#============================================================================
+#====================================================================================================
 
 # Tag the preview associated with this player
 scoreboard players operation #compare game.entity.profile_id = @s profile.player.profile_id

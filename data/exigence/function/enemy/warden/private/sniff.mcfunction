@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS Warden
 
-#=================================================================================================================
+#====================================================================================================
 
 # Play sniff at higher frequencies the closer they are to aggro
 execute if score @s game.warden.awareness matches ..10 run playsound minecraft:sniff hostile @a ~ ~ ~ 3 1

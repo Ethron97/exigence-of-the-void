@@ -1,6 +1,6 @@
 # Loop over all variances 1 tick at a time
 
-#=============================================================================================================
+#====================================================================================================
 
 # Trigger a random StartingHazard node
 execute if score #variance Temp matches 1 positioned -282 1 -118 as @e[type=armor_stand,tag=VarianceNode,tag=Setup,scores={ObjectLevel=1},limit=1,sort=nearest] at @s run function exigence:variance/node/setup

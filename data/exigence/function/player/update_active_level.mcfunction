@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#===========================================================================================================
+#====================================================================================================
 
 # Old active level
 scoreboard players operation #OldActiveLevel game.player.active_level = @s game.player.active_level

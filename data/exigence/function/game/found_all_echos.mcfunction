@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #    AS active player who has all echos/fragments in their inventory
 
-#==================================================================================================================
+#====================================================================================================
 
 say All echos collected! You are free to leave the dungeon.
 

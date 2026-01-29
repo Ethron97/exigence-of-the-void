@@ -2,8 +2,6 @@
 
 say Enter predungeon
 
-# Save/remove chests
-function exigence:hub/locker_room/save_chests
 
 function exigence:deck/process/analyze_deck
 

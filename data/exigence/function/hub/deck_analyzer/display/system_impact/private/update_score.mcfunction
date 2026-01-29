@@ -8,13 +8,14 @@
 #   SCORE #temp Temp (input class weight)
 #   SCORE #temp2 Temp (calculated length from update_bar function, which gets called before this)
 
-#=============================================================================================================
+#====================================================================================================
 
 # Preserve input
 scoreboard players operation #temp Temp = #input Temp
 
 execute if score #temp Temp matches 0 run data modify entity @s text.extra[0].text set value "\n"
 execute if score #temp Temp matches 0 run return fail
+#----------------------------------------------------------------------------------------------------
 
 # Get decimal pieces
 scoreboard players operation #temp3 Temp = #temp Temp

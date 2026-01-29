@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS Player
 
-#=============================================================================================================
+#====================================================================================================
 
 advancement revoke @s[advancements={exigence:listener/consume/eat_carrot=true}] only exigence:listener/consume/eat_carrot
 advancement revoke @s[advancements={exigence:listener/consume/eat_glow_berry=true}] only exigence:listener/consume/eat_glow_berry

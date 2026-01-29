@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS/AT AltarNode
 
-#==============================================================================================================
+#====================================================================================================
 
 # Unlit particles
 execute if score seconds.cooldown tick_counter matches 7 if score @s game.node.node_state matches 0 run particle minecraft:glow ~ ~0.5 ~ 0.5 0.2 0.5 0 2

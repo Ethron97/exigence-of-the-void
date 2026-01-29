@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS treasure node
 
-#================================================================================================================
+#====================================================================================================
 
 # Return 1 if there is not a player within 1 level based on this node's level
 execute if score @s ObjectLevel matches 1 unless entity @a[tag=ActivePlayer,scores={dead=0,game.player.active_level=1..2}] run return 1

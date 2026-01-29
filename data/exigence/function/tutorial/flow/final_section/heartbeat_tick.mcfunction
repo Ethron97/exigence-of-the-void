@@ -4,7 +4,7 @@
 ## CONSTRAINTS
 #   IN exigence:tutorial
 
-#=============================================================================================================
+#====================================================================================================
 
 # HEARTBEAT
 #   Heartbeat counter (#baseHeartbeatDelay - (2*menace)) is the tick delay. Ranges from 24 BPM to 120 BPM

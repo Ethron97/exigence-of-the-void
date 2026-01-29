@@ -3,12 +3,19 @@
 ## CONSTRAINTS
 #   AS player node of player that sent the invite
 
-#=============================================================================================================
+#====================================================================================================
 
 say Cancel invite FULL (from player node)
 
+execute as @a if score @s career.player_id = #compare profile.node.player_id run tag @s add CancelledBy
+
+scoreboard players set #temp67 Temp 0
+scoreboard players operation #temp67 Temp += @s player.node.invited_player_1
+scoreboard players operation #temp67 Temp += @s player.node.invited_player_2
+scoreboard players operation #temp67 Temp += @s player.node.invited_player_3
+# Only run cancel if there was an actual outgoing invite still
 scoreboard players operation #compare profile.node.player_id = @s profile.node.player_id
-function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/try_cancel_sender
+execute if score #temp67 Temp matches 1.. run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/try_cancel_sender
 
 scoreboard players operation #target player.node.invite_sent_to = @s player.node.invited_player_1
 execute at @s as @e[distance=..32,type=armor_stand,tag=PlayerNode] if score @s profile.node.player_id = #target player.node.invite_sent_to \

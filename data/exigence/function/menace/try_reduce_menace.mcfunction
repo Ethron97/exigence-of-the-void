@@ -8,13 +8,14 @@
 
 # ASSUMES THAT THIS IS ONLY BEING CALLED BY LIGHTING ALTARS
 
-#===========================================================================================================
+#====================================================================================================
 
 # If max menace, return
 execute if data storage exigence:dungeon {max_menace:1} run return 1
 
 # If current menace is at or below minimum, return
 execute if score Menace DungeonRun <= MinMenace DungeonRun run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Else, reduce by one
 scoreboard players remove Menace DungeonRun 1

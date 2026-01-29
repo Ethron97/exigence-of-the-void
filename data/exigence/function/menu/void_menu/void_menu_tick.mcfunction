@@ -4,7 +4,7 @@
 #   if difficulty = 3.. and active_level = 3
 #   AS/AT VoidMerchant?
 
-#=============================================================================================================
+#====================================================================================================
 
 # Give tag to previous LookingAt item display
 execute as @e[type=minecraft:item_display,tag=VoidShopDisplay,tag=Hover] run function exigence:menu/void_menu/void_menu_tick_b

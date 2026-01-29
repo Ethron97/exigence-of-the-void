@@ -1,7 +1,7 @@
 # New fast projectile for trial
 #   Faster and starts pointing at the player
 
-#========================================================================================================
+#====================================================================================================
 
 # Move DunePosA to random rim location
 function exigence:door/vault/dune/trial/random_pos/rim_pos

@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS/AT monster
 
-#==============================================================================================================
+#====================================================================================================
 
 # DEBUG
 #say Random direction
@@ -24,5 +24,6 @@ execute if score #random Random matches 0 unless score #compare Random = #random
 execute if score #random Random matches 1 unless score #compare Random = #random Random unless block ~ ~-1 ~1 air run return 1
 execute if score #random Random matches 2 unless score #compare Random = #random Random unless block ~-1 ~-1 ~ air run return 1
 execute if score #random Random matches 3 unless score #compare Random = #random Random unless block ~ ~-1 ~-1 air run return 1
+#----------------------------------------------------------------------------------------------------
 
 function exigence:door/vault/eye/trial/monster/random_direction

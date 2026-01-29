@@ -1,4 +1,4 @@
-# Cancel an outgoing invitation, bnly to a specific player
+# Cancel an outgoing invitation, only to a specific player
 #   Also called if a player declines or leaves the creation process
 
 ## CONSTRAINTS
@@ -9,7 +9,7 @@
 #   SCORE #from_ Temp; 1 = from decline, 2 = from leave
 #   SCORE #compare IDID; item display id of the player head display that called this function
 
-#=============================================================================================================
+#====================================================================================================
 
 say Cancel invite ONLY (from player node)
 scoreboard players operation #compare profile.node.player_id = @s profile.node.player_id
@@ -17,13 +17,15 @@ scoreboard players operation #compare profile.node.player_id = @s profile.node.p
 execute as @a if score @s career.player_id = #target player.node.invite_sent_to run tag @s add Inviteded
 execute as @a if score @s career.player_id = #compare profile.node.player_id run tag @s add CancelledBy
 
-execute if score @s player.node.invite_sent_to = #target player.node.invite_sent_to \
-run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/try_cancel_sender
-execute unless score @s player.node.invite_sent_to = #target player.node.invite_sent_to as @a[tag=CancelledBy] \
-run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/inform_sender
-
 execute at @s as @e[distance=..32,type=armor_stand,tag=PlayerNode] if score @s profile.node.player_id = #target player.node.invite_sent_to \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/try_cancel_invited
+
+# If the cancelled invite was the current outgoing invite:
+execute if score @s player.node.invite_sent_to = #target player.node.invite_sent_to \
+run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/try_cancel_sender
+
+execute unless score @s player.node.invite_sent_to = #target player.node.invite_sent_to as @p[tag=CancelledBy] \
+run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/inform_sender
 
 scoreboard players set #filled_slots_old Temp 0
 execute if score @s player.node.joined_player_1 matches 1.. run scoreboard players add #filled_slots_old Temp 1
@@ -37,7 +39,6 @@ execute if score @s player.node.invited_player_3 = #target player.node.invite_se
 execute if score @s player.node.joined_player_1 = #target player.node.invite_sent_to run scoreboard players reset @s player.node.joined_player_1
 execute if score @s player.node.joined_player_2 = #target player.node.invite_sent_to run scoreboard players reset @s player.node.joined_player_2
 execute if score @s player.node.joined_player_3 = #target player.node.invite_sent_to run scoreboard players reset @s player.node.joined_player_3
-execute if score @s player.node.invite_sent_to = #target player.node.invite_sent_to run scoreboard players reset @s player.node.invite_sent_to
 
 # Updating confirm button
 scoreboard players set #filled_slots Temp 0
@@ -46,6 +47,13 @@ execute if score @s player.node.joined_player_2 matches 1.. run scoreboard playe
 execute if score @s player.node.joined_player_3 matches 1.. run scoreboard players add #filled_slots Temp 1
 
 execute at @a[tag=CancelledBy,limit=1] as @n[distance=..16,type=item_display,tag=CoopInvitorDisplay,tag=Confirm] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/update_confirm_button
+
+# If there is no pending invite and no filled slots, cancel sender
+#   Ie a player leaved, but we still need to clear the stats
+execute if score #filled_slots Temp matches 0 unless score @s player.node.invite_sent_to matches 1.. if score #from_ Temp matches 2 run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/try_cancel_sender
+
+# Clear part 2
+execute if score @s player.node.invite_sent_to = #target player.node.invite_sent_to run scoreboard players reset @s player.node.invite_sent_to
 
 # Shift menu depending on state
 execute at @a[tag=CancelledBy,limit=1] as @e[distance=..16,type=item_display,tag=PlayerHeadDisplay] if score @s IDID = #compare IDID \

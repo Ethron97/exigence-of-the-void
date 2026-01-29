@@ -7,7 +7,7 @@
 #   INT AmethystWard
 #   INT RubyWard
 
-#===============================================================================================================
+#====================================================================================================
 
 $data modify block -259 17 -77 front_text.messages[0] set value "Amethyst: $(AmethystWard)"
 $data modify block -259 17 -77 front_text.messages[1] set value "Sapphire: $(SapphireWard)"

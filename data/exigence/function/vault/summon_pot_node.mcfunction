@@ -3,7 +3,7 @@
 
 # Called by player at location of where to put the node
 
-# Summon marker template
+# Summon marker
 function exigence:game/new_marker
 
 tag @e[type=minecraft:marker,tag=NewMarker] add PotMarker

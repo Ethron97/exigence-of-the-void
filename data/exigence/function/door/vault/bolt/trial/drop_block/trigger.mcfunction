@@ -3,10 +3,11 @@
 ## CONSTRAINTS
 #   AS drop block (block display)
 
-#========================================================================================================
+#====================================================================================================
 
 # Return if not drop block
 execute unless entity @s[type=block_display,tag=DropBlock] run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Remove block at position
 execute at @s run setblock ~ ~ ~ air

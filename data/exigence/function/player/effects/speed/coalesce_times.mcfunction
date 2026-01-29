@@ -10,7 +10,7 @@
 # will continue to tick in the background and will return once the higher level effects run out.
 # This function will re-apply all effects in order so that they are all tracked on the player.
 
-#=======================================================================================================
+#====================================================================================================
 
 # DEBVUG
 say Coalescing speed times

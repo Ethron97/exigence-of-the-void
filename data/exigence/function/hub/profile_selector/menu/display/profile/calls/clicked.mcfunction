@@ -4,12 +4,15 @@
 ## CONSTRAINTS:
 #   AS item shop display
 
-#=============================================================================================================
+#====================================================================================================
 
 #say clicked profile
 
+# Clicked current profile without sneaking to show stats
+execute at @s if entity @s[tag=ProfileLoaded,tag=Selected] as @p[distance=..16,tag=ProfileSelecting,tag=Interacting,predicate=!exigence:player/sneaking] run function exigence:player/stats/profile_stats
+
 # If clicked non-selected profile, switch to
-execute at @s if entity @s[tag=ProfileLoaded,tag=!Selected] unless entity @p[distance=..16,tag=ProfileSelecting,tag=Interacting,predicate=exigence:player/sneaking] run function exigence:hub/profile_selector/menu/display/profile/switch_to with entity @s item.components."minecraft:custom_data"
+execute at @s if entity @s[tag=ProfileLoaded,tag=!Selected] if entity @p[distance=..16,tag=ProfileSelecting,tag=Interacting,predicate=!exigence:player/sneaking] run function exigence:hub/profile_selector/menu/display/profile/switch_to with entity @s item.components."minecraft:custom_data"
 
 # If clicked non-selected and sneaking, queue delete
 data modify storage exigence:profile slot_id set from entity @s item.components."minecraft:custom_data".slot_id

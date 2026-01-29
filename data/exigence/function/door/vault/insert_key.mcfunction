@@ -8,7 +8,7 @@
 #   FLOAT rot0
 #   FLOAT rot1
 
-#======================================================================================================
+#====================================================================================================
 
 # DEBUG
 #$say inserting $(vault) key
@@ -21,7 +21,10 @@ $tag @a[tag=HandleInteracting] add Opening$(vault)
 
 # Summon new item_display with the key, will need to teleport
 #   Teleport on player, teleport with interpolating to the handle
-$execute at @a[tag=HandleInteracting] run summon item_display ^ ^1 ^0.5 {teleport_duration:20,Rotation:[$(rot0).0f,$(rot1).0f],billboard:"fixed",Tags:["VaultHandleKey","NewVaultHandleKey"],item:{id:"minecraft:$(vault)_armor_trim_smithing_template",count:1,"components":{"minecraft:custom_model_data":{"strings":["vault_key"]}}},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.0f,1.0f,1.0f]}}
+$execute at @a[tag=HandleInteracting] run summon minecraft:item_display ^ ^1 ^0.5 {teleport_duration:20,Rotation:[$(rot0).0f,$(rot1).0f]\
+,billboard:"fixed",Tags:["VaultHandleKey","NewVaultHandleKey"],CustomName:{text:"ItemDisplay | VaultHandleKey"}\
+,item:{id:"minecraft:$(vault)_armor_trim_smithing_template",count:1,"components":{"minecraft:custom_model_data":{"strings":["vault_key"]}}}\
+,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.0f,1.0f,1.0f]}}
 #$say Rotation:[$(rot0),$(rot1)]
 
 # Interpolate to handle

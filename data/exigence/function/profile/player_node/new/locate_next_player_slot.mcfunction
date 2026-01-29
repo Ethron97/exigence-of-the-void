@@ -3,13 +3,14 @@
 ## CONSTRAINTS
 #   AT starting/current position
 
-#=============================================================================================================
+#====================================================================================================
 
 # If we are above red glazed terracotta, just return and we stack them, whatever.
 execute at @s if block ~ ~-1 ~ minecraft:red_glazed_terracotta run return 1
 
 # If space is empty, place and return
 execute unless entity @e[distance=..0.5,tag=PlayerNode] if block ~ ~ ~ air run return 1
+#----------------------------------------------------------------------------------------------------
 
 # If there is a player node in the current space, move one over
 tp @s ~ ~ ~1

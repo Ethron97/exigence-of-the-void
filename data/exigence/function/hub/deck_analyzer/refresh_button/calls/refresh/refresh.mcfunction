@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS refresh button display
 
-#=============================================================================================================
+#====================================================================================================
 
 # Call subfunction to save current chests to deck
 execute if score @s hub.entity.profile_selector_id matches 1.. run function exigence:hub/deck_analyzer/refresh_button/calls/refresh/profile_selector with entity @s item.components."minecraft:custom_data"

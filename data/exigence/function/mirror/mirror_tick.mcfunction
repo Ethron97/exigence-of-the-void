@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   Requires that each active player has their own Reflection, Rotation, and RotationReflection armorstands
 
-#=================================================================================================
+#====================================================================================================
 
 # Mirror Vision
 execute if score seconds.cooldown tick_counter matches 3 as @a[tag=ActivePlayer,scores={game.player.mod.mirror_vision=1..,dead=0}] run function exigence:player/modifiers/mirror_vision

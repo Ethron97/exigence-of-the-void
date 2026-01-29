@@ -5,7 +5,7 @@
 ## CONSTRAINTS
 #   AS/AT armorstand with node.ember.embers_to_drop=1..
 
-#==============================================================================================================
+#====================================================================================================
 
 # Copy object level for reference
 scoreboard players operation #compare ObjectLevel = @s ObjectLevel

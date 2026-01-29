@@ -1,4 +1,4 @@
-# Load slot selector display
+# Load setting display
 
 ## CONSTRAINTS
 #   AT location
@@ -7,13 +7,13 @@
 #   INT player_id
 #   INT profile_selector_id
 
-#=============================================================================================================
+#====================================================================================================
 
 #say Load setting selector
 
 # Summon item display
-summon item_display ~ ~ ~ {brightness:{block:13,sky:13},Rotation:[90.0f,0.0f],billboard:"fixed",Tags:["SettingDisplay","MenuDisplay","NewItemDisplay","SizeClassB"],\
-item:{id:"minecraft:sunflower",count:1},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:item_display ~ ~ ~ {brightness:{block:13,sky:13},Rotation:[90.0f,0.0f],billboard:"fixed",Tags:["SettingDisplay","MenuDisplay","NewItemDisplay","SizeClassB"],\
+item:{id:"minecraft:sunflower",count:1},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.5f,0.5f,0.5f]},CustomName:{text:"ItemDisplay | SettingDisplay"}}
 
 # Assign data
 $data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".player_id set value '$(player_id)'

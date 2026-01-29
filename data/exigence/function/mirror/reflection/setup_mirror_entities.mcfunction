@@ -4,7 +4,7 @@
 #   AS player
 #   Assumes old entities have been removed
 
-#=================================================================================================
+#====================================================================================================
 
 # Summon reflection pieces
 summon armor_stand -388.5 62.00 -245.5 {Tags:["L2","Reflection","Debug","NewMirrorEntity","MirrorEntity"],NoGravity:1,Invisible:1,NoBasePlate:1,Silent:1}

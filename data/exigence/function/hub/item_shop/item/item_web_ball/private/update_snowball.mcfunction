@@ -4,7 +4,7 @@
 ## CONSTRAINTS
 #   AS/AT snowball marker
 
-#=============================================================================================================
+#====================================================================================================
 
 # Copy this marker's snowballid
 scoreboard players operation #compare game.entity.snowball.id = @s game.entity.snowball.id

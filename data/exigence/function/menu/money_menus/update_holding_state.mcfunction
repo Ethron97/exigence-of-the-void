@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#=======================================================================================================
+#====================================================================================================
 
 # Store old holding
 scoreboard players operation #old_holding_currency Temp = @s shop.player.holding_currency

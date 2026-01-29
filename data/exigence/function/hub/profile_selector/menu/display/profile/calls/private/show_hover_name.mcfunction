@@ -4,7 +4,7 @@
 #   AS profile display
 #   AT location
 
-#=============================================================================================================
+#====================================================================================================
 
 # Summon text display
 summon minecraft:text_display ~ ~ ~ {billboard:"fixed",alignment:"center",Tags:["HoverDetails","NewTextDisplay"],text:{text:""},background:1\

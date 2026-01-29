@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#==============================================================================================================
+#====================================================================================================
 
 tellraw @a [{text:"[!] ",color:"red"},{"selector":"@s",color:"yellow"},{text:" invokes the Price of Failure:",color:"gray"}]
 tellraw @a [{text:"    +3 Menace",color:"red"}]

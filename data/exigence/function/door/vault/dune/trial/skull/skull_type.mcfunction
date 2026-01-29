@@ -8,6 +8,7 @@ scoreboard players set #random Random 0
 execute if entity @e[type=item_display,tag=DuneSkull,tag=Black] store result score #random Random run random value 1..2
 execute if score #random Random matches 1 run function exigence:door/vault/dune/trial/skull/white/new
 execute if score #random Random matches 1 run return 1
+#----------------------------------------------------------------------------------------------------
 
 scoreboard players set #random Random 0
 execute store result score #random Random if score Dune TrialTimer matches ..200 run random value 1..5

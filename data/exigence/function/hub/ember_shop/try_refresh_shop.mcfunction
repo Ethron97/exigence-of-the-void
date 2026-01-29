@@ -3,10 +3,11 @@
 ## CONSTRAINTS
 #   AS Player
 
-#====
+#====================================================================================================
 
 execute unless entity @s[tag=EmberShopping] run say Not embershopping
 execute unless entity @s[tag=EmberShopping] run return 1
+#----------------------------------------------------------------------------------------------------
 
 # 1. Verify that the player can afford it
 execute store result storage exigence:shop money_cost int 1 run scoreboard players get EmberShopRefresh EmberShopCost

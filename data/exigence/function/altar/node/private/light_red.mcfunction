@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS AltarNode
 
-#========================================================================================================
+#====================================================================================================
 
 # Add tag
 tag @s add Red
@@ -27,7 +27,7 @@ damage @p[tag=Lighting] 2 minecraft:generic
 # If game is inactive, return here
 execute unless data storage exigence:dungeon {is_active:1} run return 1
 execute if score @s ObjectLevel matches 10 run return 1
-#========================================================================================================
+#----------------------------------------------------------------------------------------------------
 
 # Give player score
 scoreboard players add @p[tag=Lighting] profile.data.altar.cr.altars_red 1

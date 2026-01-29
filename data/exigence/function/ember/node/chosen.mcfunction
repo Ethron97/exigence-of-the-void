@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS/AT EchoNode (ChosenEchoNode)
 
-#==========================================================================================================
+#====================================================================================================
 
 # Spawn cake based on EchoCake
 execute if score EchoCake Modifiers matches 1.. run function exigence:cards/tasty_surprise/try_spawn_cake

@@ -3,12 +3,12 @@
 ## CONSTRAINTS
 #   AS/AT ActivePlayer, score dead=0
 
-#==============================================================================================================
+#====================================================================================================
 
 # STATUS EFFECT TICK
 function exigence:player/effects/player_effect_tick
 
-#==============================================================================================================
+#====================================================================================================
 
 # Clear spellbound cards dropped on the ground
 execute as @e[distance=..3,type=minecraft:item,tag=!SoulWarned,nbt={Item:{id:"minecraft:carrot_on_a_stick",components:{"minecraft:custom_data":{is_spellsling:"true"}}}}] run function exigence:player/dropped_soulbound

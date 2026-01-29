@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS AltarNode
 
-#======================================================================================================
+#====================================================================================================
 
 # Reset
 scoreboard players set @s game.node.node_state -1
@@ -13,6 +13,7 @@ tag @s remove ChooseLock
 
 # Return if not on active level
 execute unless score @s ObjectLevel <= Difficulty DungeonRun run return 1
+#----------------------------------------------------------------------------------------------------
 
 # 80% to be active, 20% to be ruined
 execute store result score @s Random run random value 1..5

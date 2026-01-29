@@ -3,6 +3,7 @@
 # If all echos have been picked up, objective is Return to start regardless of difficulty
 execute if data storage exigence:dungeon {all_echos_found:1} run function exigence:bossbar/objective/private/echos_found
 execute if data storage exigence:dungeon {all_echos_found:1} run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Default to "Find the Echo" if applicable
 execute if score EchosRequired DungeonRun matches 1 run bossbar set exigence:objective name [{text:"Find the Echo",color:"blue"}]

@@ -2,7 +2,7 @@
 #   Call as player
 
 # If there isn't a lookingvector Marker, summon one
-execute at @s unless entity @e[type=minecraft:marker,tag=LookingVector] run summon minecraft:marker ^ ^ ^ {Duration:999999,Tags:["LookingVector"]}
+execute at @s unless entity @e[type=minecraft:marker,tag=LookingVector] run summon minecraft:marker ^ ^ ^ {Tags:["LookingVector"],CustomName:{text:"Marker | LookingVector"}}
 
 # Summon marker
 execute as @s at @s anchored eyes positioned ^ ^ ^3 run tp @e[type=minecraft:marker,tag=LookingVector] ^ ^ ^

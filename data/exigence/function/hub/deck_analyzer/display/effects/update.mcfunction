@@ -6,7 +6,7 @@
 ## INPUT
 #   DATA deck_analysis
 
-#=============================================================================================================
+#====================================================================================================
 
 execute if score e.beastsenseSeconds deck.analysis matches 1.. run function exigence:hub/deck_analyzer/display/effects/private/update_a {index:0,effect:"beastsense"}
 execute if score e.invisibilitySeconds deck.analysis matches 1.. run function exigence:hub/deck_analyzer/display/effects/private/update_a {index:1,effect:"invisibility"}

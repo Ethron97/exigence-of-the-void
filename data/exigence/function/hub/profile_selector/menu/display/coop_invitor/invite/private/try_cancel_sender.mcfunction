@@ -5,7 +5,7 @@
 ## INPUT
 #   SCORE #compare profile.node.player_id
 
-#=============================================================================================================
+#====================================================================================================
 
 scoreboard players set #found_player Temp 0
 
@@ -13,6 +13,5 @@ scoreboard players set #found_player Temp 0
 execute as @a if score @s career.player_id = #compare profile.node.player_id run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/cancel_sender
 
 # Else, queue the cancel on the player node
-scoreboard players operation @s player.node.pending_invite_cancel = #found_player Temp
-
-# Reset node scores
+execute if score #found_player Temp matches 0 run scoreboard players set @s player.node.queue.coop_cancel 1
+execute if score #found_player Temp matches 0 run scoreboard players add @s player.node.queue 1

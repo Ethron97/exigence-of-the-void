@@ -4,7 +4,7 @@
 ## INPUT
 #   et.BaseTime game.effect_temp - score set to a base duration in ticks
 
-#================================================================================================
+#====================================================================================================
 
 # TODO fix going invisible while a warden is aware
 # IF there is any warden with Awareness

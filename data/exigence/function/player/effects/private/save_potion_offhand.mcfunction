@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#============================================================================================================
+#====================================================================================================
 
 # Copy player id for storage
 scoreboard players operation #compare profile.node.player_id = @s career.player_id

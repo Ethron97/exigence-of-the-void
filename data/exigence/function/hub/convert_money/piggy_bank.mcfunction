@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player that has a piggy bank in their inventory
 
-#=================================================================================
+#====================================================================================================
 
 # Modulo 5 and add leftovers to piggy bank
 scoreboard players operation #ToPiggyBank hub.coin_conversion = coins.converting hub.coin_conversion

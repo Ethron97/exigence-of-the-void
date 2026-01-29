@@ -6,7 +6,7 @@
 ## INPUT
 #   STR vault
 
-#=============================================================================================================
+#====================================================================================================
 
 # If trident, replace with custom item with model (because default trident renders dumb)
 execute as @s[nbt={Item:{id:"minecraft:trident"}}] run data modify entity @s Item.components."minecraft:custom_model_data" set value {"strings":["trident"]}

@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS coin item
 
-#================================================================================================================
+#====================================================================================================
 
 
 execute if score #Bonus Temp matches 1 run data modify entity @s Item.components."minecraft:custom_data".bonus_coin set value true

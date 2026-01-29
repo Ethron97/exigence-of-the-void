@@ -1,6 +1,6 @@
 # Responsible for setting everything up required for the Spire Trial/Crucible
 
-#======================================================================================================
+#====================================================================================================
 
 # Reset scores
 scoreboard players set Spire TrialTimer 0
@@ -13,15 +13,15 @@ fill -364 148 -18 -347 148 -2 end_portal replace black_concrete
 fill -355 155 -9 -357 155 -11 polished_tuff
 
 # Summon markers
-summon marker -355.5 155.0 -9.5 {Tags:["SpireTrialSetup","SpireCenter"]}
-#summon marker -355.5 155.0 -9.5 {Tags:["SpireTrialSetup","SpirePosA"]}
-#summon marker -355.5 155.0 -9.5 {Tags:["SpireTrialSetup","SpirePosB"]}
+summon minecraft:marker -355.5 155.0 -9.5 {Tags:["SpireTrialSetup","SpireCenter"],CustomName:{text:"Marker | SpireCenter"}}
+#summon minecraft:marker -355.5 155.0 -9.5 {Tags:["SpireTrialSetup","SpirePosA"],CustomName:{text:"Marker | SpirePosA"}}
+#summon minecraft:marker -355.5 155.0 -9.5 {Tags:["SpireTrialSetup","SpirePosB"],CustomName:{text:"Marker | SpirePosB"}}
 
 # First spires
-execute at @e[type=marker,tag=SpireCenter] run summon minecraft:marker ~3 ~ ~ {Tags:["SpireTrialSetup","Spire","NewSpire"]}
-execute at @e[type=marker,tag=SpireCenter] run summon minecraft:marker ~-3 ~ ~ {Tags:["SpireTrialSetup","Spire","NewSpire"]}
-#execute at @e[type=marker,tag=SpireCenter] run summon minecraft:marker ~ ~ ~4 {Tags:["SpireTrialSetup","Spire","NewSpire"]}
-#execute at @e[type=marker,tag=SpireCenter] run summon minecraft:marker ~ ~ ~-4 {Tags:["SpireTrialSetup","Spire","NewSpire"]}
+execute at @e[type=marker,tag=SpireCenter] run summon minecraft:marker ~3 ~ ~ {Tags:["SpireTrialSetup","Spire","NewSpire"],CustomName:{text:"Marker | Spire"}}
+execute at @e[type=marker,tag=SpireCenter] run summon minecraft:marker ~-3 ~ ~ {Tags:["SpireTrialSetup","Spire","NewSpire"],CustomName:{text:"Marker | Spire"}}
+#execute at @e[type=marker,tag=SpireCenter] run summon minecraft:marker ~ ~ ~4 {Tags:["SpireTrialSetup","Spire","NewSpire"],CustomName:{text:"Marker | Spire"}}
+#execute at @e[type=marker,tag=SpireCenter] run summon minecraft:marker ~ ~ ~-4 {Tags:["SpireTrialSetup","Spire","NewSpire"],CustomName:{text:"Marker | Spire"}}
 
 # Warning on starting platform
 # Summon block display

@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player who picked up key
 
-#==============================================================================================
+#====================================================================================================
 
 # Stopsound
 stopsound @a neutral minecraft:block.trial_spawner.detect_player

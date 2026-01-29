@@ -10,7 +10,7 @@
 #   STR/FLOAT ('1.0') length - Line length measured in blocks
 #   INT id - IDID from creator item display
 
-#=============================================================================================================
+#====================================================================================================
 
 # DEBUG
 #$say summoning line $(texture) $(thickness) $(offset) $(length)

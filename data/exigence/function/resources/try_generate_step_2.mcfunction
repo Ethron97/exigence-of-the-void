@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#=====================================================================================================
+#====================================================================================================
 
 # Reset title data based on settings
 execute if entity @s[scores={career.settings.show_resource_generate=0}] run data modify storage exigence:resource_hud green_generate set value {text:""}

@@ -8,11 +8,11 @@
 #   INT profile_selector_id
 #   INT slot_id
 
-#=============================================================================================================
+#====================================================================================================
 
 # Summon item display
-execute align xyz positioned ~0.5 ~0.5 ~0.5 run summon item_display ~ ~ ~-0.45 {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",\
-Tags:["SlotDisplay","MenuDisplay","NewItemDisplay","NewItemDisplays","SizeClassA"],item:{id:"minecraft:ghast_tear",count:1},\
+execute align xyz positioned ~0.5 ~0.5 ~0.5 run summon minecraft:item_display ~ ~ ~-0.45 {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",\
+Tags:["SlotDisplay","MenuDisplay","NewItemDisplay","NewItemDisplays","SizeClassA"],CustomName:{text:"ItemDisplay | SlotDisplay"},item:{id:"minecraft:ghast_tear",count:1},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.6f,0.6f,0.6f]}}
 
 # Assign data

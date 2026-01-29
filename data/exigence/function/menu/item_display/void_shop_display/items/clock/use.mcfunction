@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS active player
 
-#==================================================================================
+#====================================================================================================
 
 # DEBUG
 #say Use clock
@@ -17,7 +17,7 @@ scoreboard players set #remove Temp 1
 # If inside a vault, return
 execute if score @s game.player.vault_code matches 1..6 run tellraw @s [{text:"This item cannot be used during a Trial",color:"red"}]
 execute if score @s game.player.vault_code matches 1..6 run return 1
-#=========================================================================================================
+#----------------------------------------------------------------------------------------------------
 # The following only runs if successful
 
 # Add local tag

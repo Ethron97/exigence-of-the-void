@@ -3,6 +3,6 @@
 ## CONSTRAINTS
 #   AT player
 
-#=============================================================================================================
+#====================================================================================================
 
 execute as @e[distance=..10,type=minecraft:item,tag=Treasure] run scoreboard players operation @s game.entity.glow_remaining > 20 number

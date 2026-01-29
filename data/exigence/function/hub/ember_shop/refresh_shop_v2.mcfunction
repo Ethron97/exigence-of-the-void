@@ -1,7 +1,7 @@
 # v0.30 balance update redo
 # Fixed 3 cards total per rarity instead of random stuff.
 
-#==================================================================================================
+#====================================================================================================
 
 # Clear all existing buttons
 execute as @e[type=minecraft:marker,tag=EmberShopNode] at @s run setblock ~4 ~ ~ minecraft:air

@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS TutorialMarker
 
-#=============================================================================================================
+#====================================================================================================
 
 execute unless entity @s[tag=Dropped] at @s as @e[distance=..1,type=block_display] run team join Green @s
 execute if entity @s[tag=Dropped] at @s as @e[distance=..1,type=block_display] run team join Enemy @s

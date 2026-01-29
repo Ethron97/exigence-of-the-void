@@ -3,10 +3,10 @@
 ## CONSTRAINTS
 #   AS active player
 
-#=================================================================================
+#====================================================================================================
 
 # Summon new marker at player
-execute at @s run summon minecraft:marker ~ ~ ~ {Tags:["ClockMarker","NewClockMarker"]}
+execute at @s run summon minecraft:marker ~ ~ ~ {Tags:["ClockMarker","NewClockMarker"],CustomName:{text:"Marker | Clock"}}
 
 # Assign new score to new marker
 scoreboard players operation @e[type=minecraft:marker,tag=NewClockMarker,limit=1] game.item.clock_marker.id = #current game.item.clock_marker.id

@@ -1,7 +1,7 @@
 # Replace sculk with bedrock (red textured sculk)
 
 kill @e[type=minecraft:marker,tag=Redifier]
-summon minecraft:marker -374 -60 -120 {Tags:["Redifier"]}
+summon minecraft:marker -374 -60 -120 {Tags:["Redifier"],CustomName:{text:"Marker | Redifier"}}
 
 $scoreboard players set #Redify Temp $(redify)
 

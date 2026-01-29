@@ -1,6 +1,6 @@
 # Called by game on, setup altar nodes
 
-#======================================================================================================
+#====================================================================================================
 
 # Setup altar nodes
 execute as @e[type=armor_stand,tag=AltarNode] run function exigence:altar/node/setup

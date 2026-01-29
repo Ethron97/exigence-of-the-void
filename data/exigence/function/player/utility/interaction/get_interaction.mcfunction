@@ -4,7 +4,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#========================================================================================================
+#====================================================================================================
 
 # Store player id for comparison
 scoreboard players operation #compare game.entity.profile_id = @s profile.player.profile_id

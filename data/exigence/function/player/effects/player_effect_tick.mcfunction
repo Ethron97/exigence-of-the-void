@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS living player
 
-#==============================================================================================================
+#====================================================================================================
 
 # Check if player has drank a potion
 execute as @s[scores={game.player.used.potion=1..}] run function exigence:player/effects/private/drink_potion
@@ -64,7 +64,7 @@ scoreboard players remove @s[scores={game.player.effects.speed8=1..}] game.playe
 scoreboard players remove @s[scores={game.player.effects.speed9=1..}] game.player.effects.speed9 1
 scoreboard players remove @s[scores={game.player.effects.speed10=1..}] game.player.effects.speed10 1
 
-#================================================================================================
+#====================================================================================================
 
 execute as @s[scores={game.player.effects.beastsense=1..}] run function exigence:player/effects/beast_sense/beast_sense_tick
 execute as @s[scores={game.player.effects.flicker=1..}] at @s run function exigence:player/effects/flicker/flicker_tick
@@ -76,7 +76,7 @@ execute as @s[scores={game.player.effects.invisibility=1..}] at @s if entity @e[
 # If no longer invisible, but on enemy team, rejoin player
 execute as @s[scores={game.player.effects.invisibility=0},team=Enemy] run team join Player @s
 
-#================================================================================================
+#====================================================================================================
 ## MODIFIERS
 
 execute at @s[scores={game.player.mod.treasure_lantern=1..}] run function exigence:player/modifiers/treasure_lantern

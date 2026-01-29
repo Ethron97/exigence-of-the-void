@@ -8,11 +8,12 @@
 #   INT vault_code (1-6)
 #   STR type = 'Trial' or 'Crucible' CASE SENSETIVE
 
-#============================================================================================================
+#====================================================================================================
 
 # If game is active, return
 execute if data storage exigence:dungeon {is_active:1} run say The game is active, go play it
 execute if data storage exigence:dungeon {is_active:1} run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Set scores
 scoreboard players set @s dead 0

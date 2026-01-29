@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   should be called after activeplayers are assigned
 
-#=============================================================================================================
+#====================================================================================================
 
 # Reset DialogueTracker GAME scores
 scoreboard players set #Supplier game.dialogue 0

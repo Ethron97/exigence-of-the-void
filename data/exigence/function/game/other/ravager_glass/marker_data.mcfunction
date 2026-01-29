@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS Marker (NewRavagerGlass)
 
-#=======================================================================================================
+#====================================================================================================
 
 scoreboard players operation @s game.entity.ravager_glass.cooldown = #RavagerGlassCooldownLimit game.entity.ravager_glass.cooldown
 

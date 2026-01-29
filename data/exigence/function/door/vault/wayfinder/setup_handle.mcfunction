@@ -1,5 +1,5 @@
 # Summon new item display
-summon item_display -327.0 3.5 -186.5 {Rotation:[90.0f,0.0f],billboard:"fixed",Tags:["VaultHandle","NewVaultHandle"],\
+summon minecraft:item_display -327.0 3.5 -186.5 {Rotation:[90.0f,0.0f],CustomName:{text:"ItemDisplay | VaultHandleWayfinder"},billboard:"fixed",Tags:["VaultHandle","NewVaultHandle"],\
 item:{id:"minecraft:wayfinder_armor_trim_smithing_template",count:1,components:{"minecraft:custom_data":{vault:'wayfinder'},"minecraft:custom_model_data":{"strings":["vault_lock"]}}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.0f,1.0f,1.0f]}}
 

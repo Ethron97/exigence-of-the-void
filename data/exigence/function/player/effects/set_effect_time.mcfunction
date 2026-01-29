@@ -2,7 +2,7 @@
 # function exigence:player/effects/set_effect_time {effect:"",duration:}
 # Valid effects: regen, jump, darkVision, beastSense
 
-#================================================================================================
+#====================================================================================================
 
 #$say Set effect $(effect) $(duration)
 

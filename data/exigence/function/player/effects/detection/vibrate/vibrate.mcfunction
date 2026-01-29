@@ -5,7 +5,7 @@
 #   AT starting position
 #   ASSUMES player starting at has GetDistance tag
 
-#================================================================================================================
+#====================================================================================================
 
 # Store position of vibration target block as integer array
 execute store result storage exigence:vibration x int 1 run data get entity @s Pos[0] 1

@@ -7,7 +7,7 @@
 ## OPTIONAL
 #   Tag players with "CardEffecting" if we want to target specific players for some reason
 
-#=======================================================================================================
+#====================================================================================================
 
 # If no players have "CardEffecting" tag, give to all active players
 #   This lets us control it before hand if we want

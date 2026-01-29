@@ -6,7 +6,7 @@
 ## INPUT
 #   WITH item_display item.components."minecraft:custom_data"
 
-#=============================================================================================================
+#====================================================================================================
 
 # If not creative, clear X
 $clear @a[tag=ItemShopping,gamemode=!creative,tag=Interacting] diamond $(money_cost)

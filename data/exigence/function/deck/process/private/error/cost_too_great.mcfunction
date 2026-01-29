@@ -6,23 +6,11 @@
 ## INPUT
 #   STR display_name
 #   STR resource (eg "green", "red", "aqua")
+#   STR resource_color
 
-#=============================================================================================================
+#====================================================================================================
 
-$tellraw @s \
-[{text:"Warning: Cost of ",color:"#FFDD00"},{text:"$(display_name)",color:"gold"},{text:" ( ",color:"#FFDD00"},{score:{name:"$(resource).cost",objective:"game.resources"}\
-,color:"dark_$(resource)"},{text:" ) exceeds maximum supported by deck ( "},{score:{name:"resource.$(resource).max",objective:"deck.analysis"},color:"dark_$(resource)"}\
-,{text:" ).",color:"#FFDD00"}]
-
-$data modify storage exigence:deck_analysis warnings append value \
-[{text:"Warning: Cost of ",color:"#FFDD00"},{text:"$(display_name)",color:"gold"},{text:" ( ",color:"#FFDD00"},{score:{name:"$(resource).cost",objective:"game.resources"}\
-,color:"dark_$(resource)"},{text:" ) exceeds maximum supported by deck ( "},{score:{name:"resource.$(resource).max",objective:"deck.analysis"},color:"dark_$(resource)"}\
-,{text:" ).",color:"#FFDD00"}]
-
-# Tellraw to other players neraby who share a coop id (without repeating the message to this player)
-scoreboard players operation #compare profile.player.coop_profile_id = @s profile.player.coop_profile_id
-$execute at @s as @a[distance=0.01..10] if score @s profile.player.coop_profile_id = #compare profile.player.coop_profile_id \
-run tellraw @s \
-[{text:"Warning: Cost of ",color:"#FFDD00"},{text:"$(display_name)",color:"gold"},{text:" ( ",color:"#FFDD00"},{score:{name:"$(resource).cost",objective:"game.resources"}\
-,color:"dark_$(resource)"},{text:" ) exceeds maximum supported by deck ( "},{score:{name:"resource.$(resource).max",objective:"deck.analysis"},color:"dark_$(resource)"}\
-,{text:" ).",color:"#FFDD00"}]
+$execute if score #rarity deck.process_card matches 1 run function exigence:deck/process/private/error/cost_too_great_m {display_name:'$(display_name)',resource:'$(resource)',resource_color:'$(resource_color)',rarity_color:"dark_aqua"}
+$execute if score #rarity deck.process_card matches 2 run function exigence:deck/process/private/error/cost_too_great_m {display_name:'$(display_name)',resource:'$(resource)',resource_color:'$(resource_color)',rarity_color:"green"}
+$execute if score #rarity deck.process_card matches 3 run function exigence:deck/process/private/error/cost_too_great_m {display_name:'$(display_name)',resource:'$(resource)',resource_color:'$(resource_color)',rarity_color:"blue"}
+$execute if score #rarity deck.process_card matches 4 run function exigence:deck/process/private/error/cost_too_great_m {display_name:'$(display_name)',resource:'$(resource)',resource_color:'$(resource_color)',rarity_color:"light_purple"}

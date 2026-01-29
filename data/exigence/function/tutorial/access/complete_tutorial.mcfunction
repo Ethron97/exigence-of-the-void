@@ -3,11 +3,12 @@
 ## CONSTRAINTS
 #   AS player
 
-#=============================================================================================================
+#====================================================================================================
 
 say Won tutorial woah
 
 advancement grant @s only exigence:story/win_difficulty_0
 
-function exigence:tutorial/access/leave_tutorial
+# Leave (also unloads)
+function exigence:tutorial/access/leave
 

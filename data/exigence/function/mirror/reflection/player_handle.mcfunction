@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#==================================================================================================
+#====================================================================================================
 
 # DEBUG
 #say player handle
@@ -20,6 +20,7 @@ execute at @s run execute as @e[distance=..30,type=minecraft:armor_stand,tag=Mir
 
 # If there is no nomination (not close to any mirrors) return
 execute unless entity @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Nominate] run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Get active mirror
 #   Narrows down to one using predicates
@@ -40,6 +41,7 @@ execute as @e[type=minecraft:armor_stand,tag=MirrorEntity] if score @s game.enti
 # If there is no active mirror, hide reflection and return
 execute unless entity @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] run data modify entity @e[type=minecraft:armor_stand,tag=Reflection,tag=Active,limit=1] equipment set value {}
 execute unless entity @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] run return 1
+#----------------------------------------------------------------------------------------------------
 
 # If rotation armorstands are not near the active mirrornode, move them
 execute as @e[type=minecraft:armor_stand,tag=Active,tag=Rotation] at @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] if entity @s[distance=2..] run tp @s ~ ~ ~

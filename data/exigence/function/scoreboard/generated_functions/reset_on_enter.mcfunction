@@ -316,3 +316,4 @@ scoreboard players set @s profile.data.winloss.cr.deaths_total 0
 scoreboard players set @s profile.data.winloss.cr.max_menace_deaths 0
 scoreboard players set @s profile.data.winloss.cr.max_menace_reached 0
 scoreboard players set @s profile.data.winloss.cr.max_menace_wins 0
+scoreboard players set @s dead 0

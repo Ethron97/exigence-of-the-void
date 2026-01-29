@@ -6,7 +6,7 @@
 ## INPUT
 #   data: item.components."minecraft:custom_data"
 
-#=============================================================================================================
+#====================================================================================================
 
 # Save score to "query"
 $scoreboard players set @s hub.player.query_selector_slot_id $(slot_id)

@@ -8,7 +8,7 @@
 ## INPUT
 #   FLOAT[] - Rotation
 
-#========================================================================================================
+#====================================================================================================
 
 # Setup at randomized position
 $execute if score @s PatternSpeed matches 1 at @s align xyz run summon block_display ~ ~ ~ {brightness:{block:15,sky:15},teleport_duration:1,Rotation:$(Rotation),Tags:["FlowTrialSetup","Ripple","NewRipple"],\

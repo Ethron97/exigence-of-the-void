@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS active player with dead=0, game.player.effects.beastsense=1..
 
-#==================================================================================================
+#====================================================================================================
 
 # Call bi-secondly to reduce lag
 execute if score seconds.cooldown tick_counter matches 7 run function exigence:player/effects/beast_sense/private/beast_sense_level

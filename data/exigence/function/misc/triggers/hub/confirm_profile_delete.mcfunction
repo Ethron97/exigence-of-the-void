@@ -5,6 +5,7 @@ scoreboard players reset @s ProfileSelectorConfirmDelete
 
 # No queried slot, return fail
 execute unless score @s hub.player.query_selector_slot_id matches 1.. run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Store player_id + queried slot id
 execute store result storage exigence:profile player_id int 1 run scoreboard players get @s career.player_id

@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   IF flame of ardor run
 
-#=======================================================================================================
+#====================================================================================================
 
 # Ardor flame particles
 execute at @e[type=minecraft:item,tag=ArdorEmber] run function exigence:game/game_tick/ambient/private/flame_particles

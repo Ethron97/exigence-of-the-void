@@ -8,6 +8,7 @@ scoreboard players remove TreasureQueue DungeonRun 1
 # Return if there is nothing in the data queue
 execute unless data storage exigence:treasure queue[0] run say No data in the treasure queue?
 execute unless data storage exigence:treasure queue[0] run return 1
+#----------------------------------------------------------------------------------------------------
 
 execute store result score #random Random run random value 1..100
 execute if score DifficultyMod DungeonRun matches 0.. run function exigence:treasure/resolve_treasure

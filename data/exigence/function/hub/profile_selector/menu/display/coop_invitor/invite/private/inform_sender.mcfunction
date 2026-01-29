@@ -4,8 +4,11 @@
 ## CONSTRAINTS
 #   AS player who sent an invite
 
-#=============================================================================================================
+#====================================================================================================
 
-say Inform asender
+say Inform sender
 
-tellraw @s [{selector:"@a[tag=Inviteded,limit=1]",color:"gold"},{text:" revoked their co-op presence.",color:'red'}]
+tag @s add TempTagPlayer
+execute in exigence:profile_data positioned 8 3 8 as @e[distance=..20,type=armor_stand,tag=PlayerNode] if score @s profile.node.player_id = #target player.node.invite_sent_to \
+run tellraw @p[tag=TempTagPlayer] [{selector:"@s",color:"gold"},{text:" revoked their co-op presence.",color:'red'}]
+tag @s remove TempTagPlayer

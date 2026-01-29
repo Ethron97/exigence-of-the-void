@@ -10,7 +10,7 @@
 #   SCORE #creating_coop Temp (Optional)
 #   SCORE #coop_profile_id Temp (Optional)
 
-#=============================================================================================================
+#====================================================================================================
 
 ##say Try new profile
 
@@ -29,7 +29,7 @@ execute as @e[distance=..1000,tag=ProfileNode,scores={profile.node.slot_id=1..}]
 execute if score #temp Temp matches 5.. run tellraw @s {text:"Maximum number of profiles reached for this player (5)",color:"red"}
 execute if score #temp Temp matches 5.. run return 1
 
-#=============================================================================================================
+#----------------------------------------------------------------------------------------------------
 
 #say Creating new profile
 
@@ -37,7 +37,7 @@ execute if score #temp Temp matches 5.. run return 1
 scoreboard players add @s career.profiles_created 1
 
 # Call function to locate the next available slot to place a node (tps NewProfileNodeMarker to position)
-execute unless entity @e[distance=..1000,type=marker,tag=NewProfileNodeMarker] run summon minecraft:marker 0.5 5.0 0.5 {Tags:["NewProfileNodeMarker"]}
+execute unless entity @e[distance=..1000,type=marker,tag=NewProfileNodeMarker] run summon minecraft:marker 0.5 5.0 0.5 {Tags:["NewProfileNodeMarker"],CustomName:{text:"Marker | NewProfileNode"}}
 tp @e[distance=..1000,type=marker,tag=NewProfileNodeMarker] 0.5 5.0 0.5
 execute positioned 0.5 5.0 0.5 as @e[distance=..1,type=marker,tag=NewProfileNodeMarker] at @s run function exigence:profile/profile_node/new/locate_next_profile_slot
 

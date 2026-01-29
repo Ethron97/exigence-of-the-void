@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#=============================================================================================================
+#====================================================================================================
 
 # Display last card played in bossbar
 scoreboard players set @s career.settings.card_display_bossbar 0

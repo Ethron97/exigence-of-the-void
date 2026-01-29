@@ -6,7 +6,7 @@
 ## INPUT
 #   DATA deck_analysis
 
-#=============================================================================================================
+#====================================================================================================
 
 ## VALUES
 # GREEN
@@ -27,7 +27,7 @@ execute unless data storage exigence:deck_analysis {resource_aqua_consume:0} run
 execute if data storage exigence:deck_analysis {resource_aqua_consume:0} run data modify entity @n[distance=..5,type=text_display,tag=ResourceScores] text.extra[2].text set value "\n"
 $execute unless data storage exigence:deck_analysis {resource_aqua_consume:0} run data modify entity @n[distance=..5,type=text_display,tag=ResourceScores] text.extra[2].text set value "\n$(resource_aqua_consume)"
 
-#=============================================================================================================
+#====================================================================================================
 ## PIE CHART
 scoreboard players operation #total_resources deck.analysis = resource.green.consume deck.analysis
 scoreboard players operation #total_resources deck.analysis += resource.red.consume deck.analysis

@@ -6,18 +6,14 @@
 #   IN exigence:tutorial
 #   AS player
 
-#=============================================================================================================
+#====================================================================================================
 
 # DEBUG
 say Enter Tutorial
 effect clear @s night_vision
 
 # Reset scores
-function exigence:game/game_reset/reset_player_scores
-
-# Give room token
-function exigence:room/tutorial/new_token
-scoreboard players operation @s RoomToken = Tutorial RoomToken
+function exigence:scoreboard/generated_functions/reset_on_enter
 
 # Load tutorial
 execute in exigence:tutorial run function exigence:tutorial/load
@@ -30,9 +26,9 @@ item replace entity @s hotbar.7 with minecraft:carrot_on_a_stick[custom_name=[{t
 tp @s 76.5 100.0 15.5 -30 0
 
 effect clear @s regeneration
-tag @s add Tutorial
 gamemode adventure @s
 spawnpoint @s 75 100 15
+tag @s add Tutorial
 team join Tutorial @s
 attribute @s minecraft:safe_fall_distance modifier remove exigence:safe_fall
 
@@ -43,9 +39,21 @@ function exigence:bossbar/tutorial/initialize
 scoreboard players enable @s SkipSection
 scoreboard players enable @s ExitTutorial
 
-
 # TEMP TESTING
 #scoreboard players set Fallback Tutorial 1001
 #spawnpoint @a[tag=Tutorial] 80 123 143
 #execute as @n[distance=..1000,type=marker,tag=TutorialMarker,scores={TutorialMarkerID=37}] run tag @s add Fallback
 #kill @s
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Summon Room Node
+scoreboard players set #room_type Temp 1
+execute in exigence:hub positioned 0 153 0 run function exigence:room/node/new
+
+# Assign room ids
+#   PLAYER
+scoreboard players operation @s hub.player.room_id = #next hub.room.room_id
+execute in exigence:profile_data positioned 8 3 8 as @e[distance=..20,type=armor_stand,tag=PlayerNode] if score @s profile.node.player_id = #compare career.player_id \
+run scoreboard players operation @s player.node.room_id = #next hub.room.room_id
+#   FK (link room node to specific room node)
+scoreboard players operation @n[distance=..1,tag=ProfileSelectorNode] hub.entity.room_id = #next hub.room.room_id

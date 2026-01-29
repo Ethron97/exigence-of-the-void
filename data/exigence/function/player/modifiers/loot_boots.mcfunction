@@ -4,7 +4,7 @@
 #   AS player
 #   IF game.player.mod.loot_boots > 0
 
-#=============================================================================================================
+#====================================================================================================
 
 # Give speed based on loot boots
 execute if score @s game.player.mod.loot_boots matches 1 run function exigence:player/effects/speed/add_effect_time {level:1,duration:100}

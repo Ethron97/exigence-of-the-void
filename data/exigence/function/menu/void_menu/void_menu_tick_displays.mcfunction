@@ -1,6 +1,6 @@
 # Called by void_menu_tick if at least one void menu is loaded
 
-#=============================================================================================
+#====================================================================================================
 
 # Refresh currencies
 execute as @a[tag=VoidShopping] run function exigence:hub/item_shop/private/refresh_currency_player

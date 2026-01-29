@@ -1,6 +1,6 @@
 # Responsible for setting everything up required for the Bolt Trial/Crucible
 
-#======================================================================================================
+#====================================================================================================
 
 # DEBUG
 #say Setup bolt trial
@@ -13,9 +13,9 @@ clone -419 125 -23 -409 125 -13 -419 151 -23
 
 # Summon BoltThrower
 #   Marker at center of the chamber whose rotation is used to spawn pizza
-summon marker -413.5 152.1 -17.5 {Tags:["BoltTrialSetup","BoltThrower"]}
-summon marker -410.43 152.1 -14.47 {Tags:["BoltTrialSetup","PizzaA"]}
-summon marker -414.06 152.1 -22.46 {Tags:["BoltTrialSetup","PizzaB"]}
+summon minecraft:marker -413.5 152.1 -17.5 {Tags:["BoltTrialSetup","BoltThrower"],CustomName:{text:"Marker | BoltThrower"}}
+summon minecraft:marker -410.43 152.1 -14.47 {Tags:["BoltTrialSetup","PizzaA"],CustomName:{text:"Marker | PizzaA"}}
+summon minecraft:marker -414.06 152.1 -22.46 {Tags:["BoltTrialSetup","PizzaB"],CustomName:{text:"Marker | PizzaB"}}
 
 # Initialize pizza timer
 scoreboard players set Pizza TrialTimer 70

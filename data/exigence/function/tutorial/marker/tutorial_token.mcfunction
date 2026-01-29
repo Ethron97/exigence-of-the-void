@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS marker (TutorialMarker)
 
-#=============================================================================================================
+#====================================================================================================
 
 execute at @s run loot spawn ~ ~0.2 ~ loot exigence:tutorial_token
 #execute at @s as @e[distance=..2,type=item,nbt={Item:{id:"minecraft:flow_banner_pattern"}}] run data modify entity @s Glowing set value true

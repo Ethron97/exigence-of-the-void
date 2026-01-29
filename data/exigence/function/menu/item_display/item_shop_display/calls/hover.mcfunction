@@ -6,7 +6,7 @@
 ## INPUT
 #   WITH item.components."minecraft:custom_data" for hover_function
 
-#=============================================================================================================
+#====================================================================================================
 
 # Display item details
 function exigence:menu/item_display/display_item_details with entity @s item.components."minecraft:custom_data"

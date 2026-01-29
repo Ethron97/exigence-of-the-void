@@ -4,7 +4,7 @@
 ## CONSTRAINTS
 #   AS/AT ExitNode armor_stand
 
-#======================================================================================================
+#====================================================================================================
 
 # Call height circle based on
 #execute if score seconds.cooldown tick_counter matches 10 positioned ~ ~0.1 ~ run function exigence:game/exit/exit_node/ambient/particles

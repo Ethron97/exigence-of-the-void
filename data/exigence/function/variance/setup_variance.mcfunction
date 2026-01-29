@@ -1,6 +1,6 @@
 # Called by game setup
 
-#=============================================================================================================
+#====================================================================================================
 
 execute as @e[type=minecraft:armor_stand,tag=VarianceNode] run function exigence:variance/node/activate
 

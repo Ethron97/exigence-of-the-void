@@ -6,9 +6,9 @@
 ## INPUT
 #   DATA deck_analysis
 
-#=============================================================================================================
+#====================================================================================================
 
-#=============================================================================================================
+#====================================================================================================
 ## TOTAL + RARITY
 # TOTAL
 execute if data storage exigence:deck_analysis {cards_total:0} run data modify entity @n[distance=..5,type=text_display,tag=DeckLabelsA] text.extra[0].color set from storage exigence:temp color_a
@@ -50,7 +50,7 @@ execute if data storage exigence:deck_analysis {cards_legendary:0} run data modi
 execute unless data storage exigence:deck_analysis {cards_legendary:0} run data modify entity @n[distance=..5,type=text_display,tag=DeckScoresA] text.extra[5].color set from storage exigence:temp color_b
 
 
-#=============================================================================================================
+#====================================================================================================
 ## CARD TYPES
 # INSTANT
 execute if data storage exigence:deck_analysis {cards_instant:0} run data modify entity @n[distance=..5,type=text_display,tag=DeckLabelsB] text.extra[0].color set from storage exigence:temp color_a
@@ -94,7 +94,7 @@ $data modify entity @n[distance=..5,type=text_display,tag=DeckScoresB] text.extr
 execute if data storage exigence:deck_analysis {cards_spellbind:0} run data modify entity @n[distance=..5,type=text_display,tag=DeckScoresB] text.extra[5].color set from storage exigence:temp color_a
 execute unless data storage exigence:deck_analysis {cards_spellbind:0} run data modify entity @n[distance=..5,type=text_display,tag=DeckScoresB] text.extra[5].color set from storage exigence:temp color_b
 
-#=============================================================================================================
+#====================================================================================================
 ## DECK TIMES
 
 # DEFAULT TIME

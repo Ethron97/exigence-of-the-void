@@ -1,4 +1,4 @@
-# An outgoign invittation was declined
+# An outgoign invittation was accepted
 
 ## CONSTRAINTS
 #   AS player head display
@@ -6,7 +6,7 @@
 ## INPUT
 #   data
 
-#=============================================================================================================
+#====================================================================================================
 
 say Invite accepted
 

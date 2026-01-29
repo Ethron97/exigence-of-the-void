@@ -3,7 +3,7 @@
 ## CONSTRAINTS:
 # 
 
-#=============================================================================================================
+#====================================================================================================
 
 # Update whether player is holding currency or not
 execute as @a[tag=ItemShopping] run function exigence:menu/money_menus/update_holding_state

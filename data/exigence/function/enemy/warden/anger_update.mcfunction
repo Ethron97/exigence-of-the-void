@@ -7,7 +7,7 @@
 # Handles anger/awareness of player on all wardens
 #   game.warden.awareness measured in seconds
 
-#===============================================================================================================
+#====================================================================================================
 
 #say Anger Updating
 
@@ -20,6 +20,7 @@ execute if data entity @s {NoAI:true} if score @s ObjectLevel matches 4 if entit
 
 # Return if no ai
 execute if data entity @s {NoAI:true} run return 1
+#----------------------------------------------------------------------------------------------------
 
 # FIRST THING WE DO... if not angry, reset suspects
 # Overwrite in-game anger if not angry so it never uses vanilla methods of detection.

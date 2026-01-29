@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player who send the invite
 
-#=============================================================================================================
+#====================================================================================================
 
 tellraw @s [{text:"\nPENDING INVITE",bold:true,color:"yellow"}\
 ,{text:"\n - Leave this menu open while you wait for a response to your invitation.",color:"gray",bold:false}\

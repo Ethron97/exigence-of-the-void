@@ -9,9 +9,9 @@
 #   SCORE #creating_coop Temp (Optional)
 #   SCORE #coop_profile_id Temp (Optional)
 
-#=============================================================================================================
+#====================================================================================================
 
-summon minecraft:marker ~ ~ ~ {Tags:["NewProfileNode","ProfileNode"]}
+summon minecraft:marker ~ ~ ~ {Tags:["NewProfileNode","ProfileNode"],CustomName:[{text:"Marker | ProfileNode ",color:"gray"},{text:"a",color:"gold"}]}
 
 # Assign difficulty
 scoreboard players operation @n[distance=..1,type=minecraft:marker,tag=NewProfileNode] profile.profile_difficulty = #difficulty Temp
@@ -25,6 +25,8 @@ scoreboard players operation @n[distance=..1,type=marker,tag=NewProfileNode] pro
 # Copy co-op id
 execute if score #creating_coop Temp matches 1 as @n[distance=..1,type=marker,tag=NewProfileNode] run scoreboard players operation @s profile.node.coop_profile_id = @s profile.node.profile_id
 execute if score #creating_coop Temp matches 1 if score #coop_profile_id Temp matches 1.. as @n[distance=..1,type=marker,tag=NewProfileNode] run scoreboard players operation @s profile.node.coop_profile_id = #coop_profile_id Temp
+#   Save stable id, which persists original relationships even if something gets deleted
+execute if score #creating_coop Temp matches 1 as @n[distance=..1,type=marker,tag=NewProfileNode] run scoreboard players operation @s profile.node.coop_profile_id_original = @s profile.node.coop_profile_id
 
 # Get identifier (outputs to exigence:temp identifier)
 execute unless score #creating_coop Temp matches 1 run function exigence:profile/profile_node/new/identifier/generate_identifier
@@ -39,6 +41,7 @@ clone 0 0 0 15 3 0 ~ ~-1 ~
 # Edit sign data
 data modify block ~ ~1 ~ profile set from entity @n[distance=..1000,type=minecraft:item] Item.components."minecraft:profile"
 data modify block ~ ~ ~ front_text.messages[0] set from entity @n[distance=..1000,type=minecraft:item] Item.components."minecraft:profile".name
+data modify entity @n[distance=..1,type=minecraft:marker,tag=NewProfileNode] CustomName.extra[0].text set from entity @n[distance=..1000,type=minecraft:item] Item.components."minecraft:profile".name
 
 # Assign "local" profile id (sequence that increments each profile this player creates)
 scoreboard players operation @n[distance=..1,type=minecraft:marker,tag=NewProfileNode] profile.node.local_profile_id = @s career.profiles_created
@@ -53,6 +56,10 @@ scoreboard players operation @n[distance=..1,type=minecraft:marker,tag=NewProfil
 
 execute store result storage exigence:temp slot_id int 1 run scoreboard players get #compare profile.node.slot_id
 function exigence:profile/profile_node/new/set_profile_sign_m with storage exigence:temp
+
+# Add profile ID to the name
+execute store result storage exigence:temp profile_id int 1 run scoreboard players get #sequence profile.player.profile_id
+execute as @n[distance=..1,type=minecraft:marker,tag=NewProfileNode] run function exigence:profile/profile_node/new/private/add_profile_id_to_name with storage exigence:temp
 
 # Remove local tag
 tag @n[distance=..1,type=minecraft:marker,tag=NewProfileNode] remove NewProfileNode

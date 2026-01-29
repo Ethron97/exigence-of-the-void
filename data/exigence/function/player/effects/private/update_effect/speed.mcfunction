@@ -5,7 +5,7 @@
 #   INT level
 #   SCORE et.BaseTime game.effect_temp, ticks
 
-#================================================================================================
+#====================================================================================================
 
 # Copy base "add time"
 scoreboard players operation et.AddingTime game.effect_temp = et.BaseTime game.effect_temp

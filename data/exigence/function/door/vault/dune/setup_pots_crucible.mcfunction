@@ -4,7 +4,7 @@
 ## CONSTRAINTS
 #   AS/AT marker (PotMarker,dune)
 
-#============================================================================================================
+#====================================================================================================
 
 # Clear any existing pots
 setblock ~ ~ ~ minecraft:air
@@ -14,6 +14,7 @@ scoreboard players set @s Random 0
 # Chance of a pot spawning (2/3), return if fail
 execute store result score @s Random run random value 0..2
 execute if score @s Random matches 0 run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Place empty pot
 setblock ~ ~ ~ minecraft:decorated_pot

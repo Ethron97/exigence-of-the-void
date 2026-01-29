@@ -1,6 +1,6 @@
 # Root tick function
 
-#=============================================================================================================
+#====================================================================================================
 
 # === SECONDS CLOCK ===
 # Update seconds cooldown. Most /tick/ functions have at least one function that relies on this.
@@ -24,7 +24,7 @@ execute at @a as @e[distance=..8,type=minecraft:interaction] at @s run function 
 execute positioned -376.5 318.00 -119.5 run tp @a[distance=..5] -260.5 17.00 -44.5
 
 # Triggers
-execute as @a run function exigence:misc/trigger_check
+execute as @a run function exigence:misc/triggers/trigger_check
 
 # DEPRECATED
 #execute as @e[tag=UpdateCoords] run function exigence:misc/update_coords
@@ -32,8 +32,11 @@ execute as @a run function exigence:misc/trigger_check
 # Room ticks
 function exigence:room/room_tick
 
+# Profile ticks (check for player online/offline)
+function exigence:profile/profile_tick
+
 # DEBUG
-#=============================================================================================================
+#====================================================================================================
 # Temp testing
 #function exigence:door/detect_keys
 #function exigence:mirror/mirrors/detect_approaches
@@ -50,7 +53,7 @@ execute if data storage exigence:debug {void:1} if score seconds.cooldown tick_c
 execute if data storage exigence:debug {echo:1} if score seconds.cooldown tick_counter matches 0 as @e[type=minecraft:armor_stand,tag=EchoNode,team=!ActiveEcho,scores={EchoDifficulty=0}] run team join Green @s
 execute if data storage exigence:debug {echo:1} if score seconds.cooldown tick_counter matches 0 as @e[type=minecraft:armor_stand,tag=EchoNode,team=Green,scores={EchoDifficulty=1..}] run team join Echo @s
 
-#=============================================================================================================
+#====================================================================================================
 # Reset seconds clock if necessary, after executing ALL other tick functions
-#=============================================================================================================
+#====================================================================================================
 execute if score seconds.cooldown tick_counter matches ..0 run scoreboard players set seconds.cooldown tick_counter 20

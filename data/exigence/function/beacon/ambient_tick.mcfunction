@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS/AT player
 
-#================================================================================================
+#====================================================================================================
 
 # Nearby beacon ambience
 execute as @e[distance=..32,type=minecraft:armor_stand,tag=BeaconNode,scores={game.node.node_state=0..}] at @s run function exigence:beacon/node/ambient

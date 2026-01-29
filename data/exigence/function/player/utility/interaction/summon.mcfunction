@@ -5,7 +5,7 @@
 #   #compare game.entity.profile_id set
 #   AS/AT PlayerNode
 
-#========================================================================================================
+#====================================================================================================
 
 # Summon interaciton entity
 summon interaction ~ ~ ~ {Tags:["PlayerInteraction","FunctionInteraction","NEWI"],response:true}

@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS BerryNode
 
-#=============================================================================================================
+#====================================================================================================
 
 ## CONTROL
 # Reset berry nodes
@@ -26,7 +26,7 @@ execute if score @s Random matches 1..4 run function exigence:botany/node/berry_
 
 # Return if the bush is not active
 execute unless entity @s[tag=Active] run return 0
-
+#----------------------------------------------------------------------------------------------------
 
 
 ## GROW

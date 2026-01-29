@@ -10,7 +10,7 @@
 #   STR[] parents
 # {item_name:'',money_cost:0,research_cost:0,parents:[],rarity:1,tier:1}
 
-#=============================================================================================================
+#====================================================================================================
 
 # Give custom data for parents
 #   This will get copied to the item display in the next step

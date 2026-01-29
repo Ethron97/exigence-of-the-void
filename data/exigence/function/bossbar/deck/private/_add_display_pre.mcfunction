@@ -1,7 +1,7 @@
 ## CONSTRAINTS
 #   AS ArmorStand Card, !Played
 
-#======================================================================================
+#====================================================================================================
 
 execute as @s[scores={deck.card.rarity=4},tag=!Spellbound] run function exigence:bossbar/deck/private/add_display {color:"light_purple",italic:"false"}
 execute as @s[scores={deck.card.rarity=4},tag=Spellbound] run function exigence:bossbar/deck/private/add_display {color:"light_purple",italic:"true"}

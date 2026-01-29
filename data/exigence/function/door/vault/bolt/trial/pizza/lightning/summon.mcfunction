@@ -6,12 +6,12 @@
 ## INPUT
 #   FLOAT[] Rotation - (should be from Marker A)
 
-#==================================================================================================
+#====================================================================================================
 
 # DEBUG
 #say New lightning
 
-$summon minecraft:marker ~ ~ ~ {Tags:["PizzaLightning","NewPizzaLightning"],Rotation:$(Rotation)}
+$summon minecraft:marker ~ ~ ~ {Tags:["PizzaLightning","NewPizzaLightning"],Rotation:$(Rotation),CustomName:{text:"Marker | PizzaLightning"}}
 
 scoreboard players set @e[type=marker,tag=NewPizzaLightning] PizzaTimer 21
 scoreboard players operation @e[type=marker,tag=NewPizzaLightning] PizzaID = #next PizzaID

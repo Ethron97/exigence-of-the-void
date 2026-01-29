@@ -8,7 +8,7 @@
 #   STR/FLOAT ('1.0') offset - To center the line, should be half the thickness in float (easier to input than calculate)
 #   STR/FLOAT ('1.0') length - Line length measured in blocks
 
-#=============================================================================================================
+#====================================================================================================
 
 # Give score
 scoreboard players operation @s IDID = #compare IDID

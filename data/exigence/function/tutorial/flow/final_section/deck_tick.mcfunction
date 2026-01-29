@@ -1,6 +1,6 @@
 # called by tutorial/tick when player is in the final section
 
-#=============================================================================================================
+#====================================================================================================
 
 # CardDrawCooldown controls when cards get added to the draw queue
 scoreboard players remove CardDrawCooldown Tutorial 1
@@ -8,7 +8,7 @@ scoreboard players remove CardDrawCooldown Tutorial 1
 function exigence:bossbar/tutorial_deck/update_bar
 
 execute unless score CardDrawCooldown Tutorial matches ..0 run return 1
-#=============================================================================================================
+#----------------------------------------------------------------------------------------------------
 
 scoreboard players set CardDrawCooldown Tutorial 600
 tellraw @a[distance=..1000,tag=Tutorial] [{text:"[",color:"white"},{text:"Deck empty - Drawing Fatigue",color:"gray"},{text:"]",color:"white"},{text:" + Menace",color:"dark_purple"}]

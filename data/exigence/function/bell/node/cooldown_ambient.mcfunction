@@ -4,7 +4,7 @@
 ## CONSTRAINTS
 #   AS bell node with game.node.bell.ring_cooldown score 1..
 
-#================================================================================================================
+#====================================================================================================
 
 execute at @s[scores={game.node.bell.ring_cooldown=90..99}] run particle minecraft:electric_spark ~ ~0.3 ~ 1.5 1.5 1.5 0 3
 execute at @s[scores={game.node.bell.ring_cooldown=80..89}] run particle minecraft:electric_spark ~ ~0.3 ~ 1.4 1.4 1.4 0 3

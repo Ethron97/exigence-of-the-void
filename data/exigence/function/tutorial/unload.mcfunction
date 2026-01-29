@@ -4,12 +4,14 @@
 ## CONSTRAINTS
 #   IN exigence:tutorial
 
-#=============================================================================================================
+#====================================================================================================
+execute unless predicate exigence:dimension/location/tutorial run say Trying to unload tutorial not in hub
 
 # DEBUG
-say unload tutorial 
+say Unload tutorial 
 
-#forceload remove all
-data modify storage exigence:dungeon tutorial set value 0
-scoreboard players set Tutorial RoomToken 0
 function exigence:tutorial/reset
+
+function exigence:bossbar/tutorial/hide
+function exigence:bossbar/tutorial_deck/hide
+data modify storage exigence:dungeon tutorial set value 0

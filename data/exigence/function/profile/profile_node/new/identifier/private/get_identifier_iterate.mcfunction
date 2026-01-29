@@ -3,7 +3,7 @@
 ## INPUT
 #   INT i - current index
 
-#=============================================================================================================
+#====================================================================================================
 
 #$say Iterate $(i)
 
@@ -15,6 +15,7 @@ function exigence:profile/profile_node/new/identifier/private/is_valid with stor
 
 # Break recursion if valid identifier found
 execute if score #valid Temp matches 1 run return 0
+#----------------------------------------------------------------------------------------------------
 
 # Else, increment i and iterate
 scoreboard players add #i Temp 1

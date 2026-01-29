@@ -1,10 +1,10 @@
 ## CONSTRAINTS
 #   AS treasure node walk
 
-#=========================================================================================================
+#====================================================================================================
 
-# Summon marker to store walk movement
-execute at @s align xyz run summon marker ~0.5 ~0.5 ~0.5 {Tags:[TreasureWalking]}
+# summon minecraft:marker to store walk movement
+execute at @s align xyz run summon minecraft:marker ~0.5 ~0.5 ~0.5 {Tags:[TreasureWalking],CustomName:{text:"Marker | TreasureWalking"}}
 
 # Copy node id
 scoreboard players operation @e[type=marker,tag=TreasureWalking] NodeID = @s NodeID

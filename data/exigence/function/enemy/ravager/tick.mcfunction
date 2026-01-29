@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS Ravager
 
-#==================================================================================================================
+#====================================================================================================
 
 # Decrease all ravager's lookee scores by 1, but slowly
 execute if score seconds.cooldown tick_counter matches 5 run scoreboard players remove @s[scores={game.ravager.detect_thoughts=1..}] game.ravager.detect_thoughts 1

@@ -1,7 +1,7 @@
 # Iterate over each block above level 1 and iterate downward
 
 #kill @e[type=minecraft:marker,tag=Biomeifier]
-#summon minecraft:marker -261 70 -100 {Tags:["Biomeifier"]}
+#summon minecraft:marker -261 70 -100 {Tags:["Biomeifier"],CustomName:{text:"Marker | Biomeifier"}}
 
 scoreboard players set #x Temp 0
 scoreboard players set #z Temp 0

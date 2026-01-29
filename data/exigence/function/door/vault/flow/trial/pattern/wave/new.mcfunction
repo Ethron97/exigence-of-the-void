@@ -4,10 +4,10 @@
 ## INPUT
 #   FLOAT[] - Rotation
 
-#========================================================================================================
+#====================================================================================================
 
 # Setup at randomized position
-$execute at @e[type=marker,tag=FlowPosA] align xyz run summon marker ~ ~ ~ {Rotation:$(Rotation),Tags:["FlowTrialSetup","Pattern","NewPattern","Wave"],}
+$execute at @e[type=marker,tag=FlowPosA] align xyz run summon minecraft:marker ~ ~ ~ {Rotation:$(Rotation),Tags:["FlowTrialSetup","Pattern","NewPattern","Wave"],CustomName:{text:"Marker | Wave"}}
 
 # Initialize scores
 scoreboard players operation @e[type=marker,tag=Wave,tag=NewPattern] PatternSpeed = #next PatternSpeed

@@ -1,5 +1,5 @@
 # Summon new item display
-summon item_display -418.03125 67.5 -140.5 {Rotation:[-90.0f,0.0f],billboard:"fixed",Tags:["VaultHandle","NewVaultHandle"],\
+summon minecraft:item_display -418.03125 67.5 -140.5 {Rotation:[-90.0f,0.0f],CustomName:{text:"ItemDisplay | VaultHandleWard"},billboard:"fixed",Tags:["VaultHandle","NewVaultHandle"],\
 item:{id:"minecraft:ward_armor_trim_smithing_template",count:1,components:{"minecraft:custom_data":{vault:'ward'},"minecraft:custom_model_data":{"strings":["vault_lock"]}}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.0f,1.0f,1.0f]}}
 

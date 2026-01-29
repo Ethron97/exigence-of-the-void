@@ -7,7 +7,7 @@
 ## INPUT
 #   FLOAT[] Rotation 
 
-#=============================================================================================================
+#====================================================================================================
 
 ## BACKGROUND
 $summon block_display ^ ^ ^-0.025 {Rotation:$(Rotation),billboard:"fixed",Tags:["NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","Background","NewBlockDisplay"]\
@@ -19,7 +19,7 @@ $summon minecraft:text_display ^0.5625 ^1.70 ^0.027 {Rotation:$(Rotation),billbo
 background:1,brightness:{sky:9,block:9},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.4f,0.4f,0.4f]}\
 ,text:[{text:" Status Effects ",color:white,bold:true,underlined:true}]}
 
-#=============================================================================================================
+#====================================================================================================
 
 $summon minecraft:text_display ^0.43 ^0.23 ^0.027 {Rotation:$(Rotation),billboard:"fixed",alignment:"left",Tags:["NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","EffectLabels","NewTextDisplay"],\
 background:1,brightness:{sky:9,block:9},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.4f,0.4f,0.4f]}\
@@ -57,7 +57,7 @@ background:1,brightness:{sky:9,block:9},transformation:{left_rotation:[0f,0f,0f,
 ,{text:"\n",color:"$(color_a)"}\
 ,{text:"\n",color:"$(color_a)"}]}
 
-#=============================================================================================================
+#====================================================================================================
 # Assign scores
 scoreboard players operation @e[distance=..7,type=#exigence:display,tag=NewDeckAnalyzerDisplay] hub.entity.deck_analyzer_id = @s hub.deck_analyzer_id
 # Remove tags

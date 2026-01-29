@@ -7,7 +7,7 @@
 # Valid effects: regeneration, jump, beastsense, invisibility, detectthoughts, glimmer, flicker, circulation
 #   NOT speed
 
-#=======================================================================================================
+#====================================================================================================
 
 # Setup scores
 scoreboard players set et.FromCard game.effect_temp 0

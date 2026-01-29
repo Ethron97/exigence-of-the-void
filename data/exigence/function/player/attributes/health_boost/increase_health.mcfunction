@@ -6,7 +6,7 @@
 ## INPUT
 #   INT boost:
 
-#=========================================================================================================
+#====================================================================================================
 
 # If already at +20 hearts (40), return
 execute if score @s game.player.mod.health_boost matches 40.. run return 1
@@ -22,6 +22,7 @@ scoreboard players operation #adding game.player.mod.health_boost < #can_add gam
 
 # If adding 0, return
 execute if score #adding game.player.mod.health_boost matches 0 run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Add to current score
 scoreboard players operation @s game.player.mod.health_boost += #adding game.player.mod.health_boost

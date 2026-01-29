@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS VarianceNode
 
-#=============================================================================================================
+#====================================================================================================
 
 #say Setting up
 
@@ -12,6 +12,7 @@ tag @s remove Setup
 
 # Exclude CartCache as they already have a minecart placed with loot
 execute if entity @s[tag=CartCache] run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Pulse default state for all active Variance nodes
 execute as @s[tag=!CartCache] run function exigence:misc/node/pulse_state

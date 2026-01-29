@@ -1,5 +1,5 @@
 # Summon a new marker
-execute at @s align x align y align z run summon minecraft:marker ~.5 ~ ~.5 {Tags:["NewMarker","Marker"]}
+execute at @s align x align y align z run summon minecraft:marker ~.5 ~ ~.5 {Tags:["NewMarker","Marker"],CustomName:{text:"Marker | ?"}}
 
 # Copy object level
 scoreboard players operation @e[type=minecraft:marker,tag=NewMarker] ObjectLevel = @s ObjectLevel

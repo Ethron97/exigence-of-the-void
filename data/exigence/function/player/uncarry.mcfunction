@@ -4,7 +4,7 @@
 ## CONSTRAINTS
 #   AS player carrying NPC
 
-#=============================================================================================================
+#====================================================================================================
 
 # Kill Villager (after tping up so it doesn't look weird)
 execute as @e[type=minecraft:villager,tag=Carried] at @s run tp @s ~ ~1000 ~

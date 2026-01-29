@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   As player
 
-#========================================================================================================
+#====================================================================================================
 
 # Store duration/effect
 $execute store result storage exigence:player_effects ticks int 1 run scoreboard players get @s cr_effect_$(effect)

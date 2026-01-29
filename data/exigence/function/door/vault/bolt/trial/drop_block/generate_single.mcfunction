@@ -1,12 +1,13 @@
 # Generates a single drop block
 
-#========================================================================================================
+#====================================================================================================
 
 # DEUBG
 #say Generate drop block
 
 execute unless entity @e[type=marker,tag=BoltThrower] run say Bolt thrower not found
 execute unless entity @e[type=marker,tag=BoltThrower] run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Randomize rotation
 # Random rotation -180..180

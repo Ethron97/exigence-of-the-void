@@ -8,7 +8,7 @@
 #   SCORE #data_loaded Temp - if main got deleted, and chests were saved to data
 #   SCORE #remaining_profiles Temp - Number of remaining profiles on this coop
 
-#=============================================================================================================
+#====================================================================================================
 
 say Update coop index
 # Re-asign profile indexes (based on the removed one)
@@ -25,7 +25,12 @@ execute if score #old_index Temp matches 1 if score @s profile.node.coop_profile
 execute if score @s profile.node.coop_profile_index matches 1 run scoreboard players operation #new_main_id Temp = @s profile.node.profile_id
 
 # If this is the new main (and chests were saved), load chests
+scoreboard players set #remove_tag Temp 1
 execute if score #old_index Temp matches 1 if score #data_loaded Temp matches 1 if score @s profile.node.coop_profile_index matches 1 \
 at @s run function exigence:profile/profile_node/save/data_to_chest
+
+# If this is the new main and chests were NOT saved (because they were already loaded) move the chest loaded tag
+execute if score #old_index Temp matches 1 if score #data_loaded Temp matches 0 if score @s profile.node.coop_profile_index matches 1 \
+run tag @s add ChestsLoaded
 
 execute if score #remaining_profiles Temp matches 1 run function exigence:profile/profile_node/private/coop_to_sp

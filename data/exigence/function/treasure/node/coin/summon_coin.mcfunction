@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AT location
 
-#=========================================================================================================
+#====================================================================================================
 
 # Summon a new coin with tag "new coin"
 summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:large_amethyst_bud",count:1,components:{"minecraft:max_stack_size":1,"minecraft:custom_model_data":{"strings":["coin1"]}}},Tags:["NewCoin","Coin","Treasure"]}

@@ -6,7 +6,7 @@
 ## INPUT
 #   WITH item.components."minecraft:custom_data" for idid
 
-#=============================================================================================================
+#====================================================================================================
 
 #say Remove coop invitor
 
@@ -20,4 +20,8 @@ run function exigence:hub/profile_selector/menu/display/coop_invitor/calls/priva
 $execute at @s run kill @e[distance=..16,type=minecraft:item_display,tag=CoopInvitorDisplay,nbt={item:{components:{"minecraft:custom_data":{slot_id:"$(slot_id)"}}}}]
 
 # If there was an outgoing invitation, cancel it
-execute unless entity @s[tag=Creating] as @p[distance=..16,tag=ProfileSelecting,tag=InvitesSent] run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/cancel_from/unhover
+#execute unless entity @s[tag=Creating] as @p[distance=..16,tag=ProfileSelecting,tag=InvitesSent] run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/cancel_from/unhover
+# If the head menu has been open at all, call function
+execute unless entity @s[tag=Creating] if entity @s[tag=Inviting] run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/cancel_from/unhover
+
+tag @s remove Inviting

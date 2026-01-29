@@ -6,7 +6,7 @@
 ## INPUT
 #   SCORE #temp Temp - input class weight
 
-#=============================================================================================================
+#====================================================================================================
 
 # Preserve input
 scoreboard players operation #temp Temp = #input Temp
@@ -30,6 +30,7 @@ scoreboard players operation #temp2 Temp > 0 number
 
 # Early return if new position matches old position
 execute if score @s Random = #temp2 Temp run return fail
+#----------------------------------------------------------------------------------------------------
 
 # Save un-scaled int so we can check if it needs changed or not
 scoreboard players operation @s Random = #temp2 Temp

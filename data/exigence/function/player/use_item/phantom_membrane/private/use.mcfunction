@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 # AS player
 
-#=============================================================================================================
+#====================================================================================================
 
 #say trigger phantom membrane
 
@@ -13,8 +13,7 @@ function exigence:player/use_item/phantom_membrane/private/update_preview
 # If no VALID tag, we didn't find a node, so return
 execute unless entity @e[type=block_display,tag=ItemPreview,tag=Updating,tag=Valid] at @s run function exigence:player/use_item/phantom_membrane/private/failed_use
 execute unless entity @e[type=block_display,tag=ItemPreview,tag=Updating,tag=Valid] run return 1
-
-
+#----------------------------------------------------------------------------------------------------
 
 # Playsound to leave behind
 playsound minecraft:entity.phantom.ambient ambient @a ~ ~ ~ 1 1.0

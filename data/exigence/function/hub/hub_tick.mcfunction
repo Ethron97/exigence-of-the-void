@@ -4,7 +4,7 @@
 ## CONSTRAINTS
 #   IN exigence:hub
 
-#=============================================================================================================
+#====================================================================================================
 
 # Give everyone in the hub saturation
 effect give @a[predicate=exigence:dimension/entity/hub,predicate=!exigence:effects/saturation] saturation infinite 0 true
@@ -56,7 +56,7 @@ scoreboard players remove @a[scores={hub.player.interaction_cooldown=1..}] hub.p
 
 
 # DEPRECATED
-#=============================================================================================================
+#====================================================================================================
 # Tp players that fall back to hub
 #execute as @a[gamemode=adventure,tag=!Exalting,tag=EmberShopping,predicate=exigence:level/hub_lower] at @s run tp @s -274.5 17.00 -44.5
 #execute as @a[gamemode=adventure,tag=!Exalting,tag=EmberViewing,predicate=exigence:level/hub_lower] at @s run tp @s -274.5 17.00 -44.5

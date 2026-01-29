@@ -3,7 +3,7 @@
 ## INPUT
 #   Score GreenCost - Resources
 
-#=====================================================================================================
+#====================================================================================================
 
 # Reduce resource
 scoreboard players operation Current.Green game.resources -= green.cost game.resources

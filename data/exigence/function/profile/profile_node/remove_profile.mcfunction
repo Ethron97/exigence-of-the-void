@@ -5,13 +5,17 @@
 ## CONSTRAINTS
 #   AS profile node
 
-#=============================================================================================================
+#====================================================================================================
 scoreboard players operation #compare profile.node.profile_id = @s profile.node.profile_id
 execute as @a if score @s profile.player.profile_id = #compare profile.node.profile_id run tellraw @s {text:"Cannot remove a profile if a player has it loaded",color:"red"}
 execute as @a if score @s profile.player.profile_id = #compare profile.node.profile_id run return 1
-#=============================================================================================================
+#====================================================================================================
 
 say I have been removed
+
+# Add X to the name for debugging
+data modify entity @s CustomName.extra append value {text:" X",color:red,bold:true}
+#say And now my name should be different
 
 # If this was a co-op profile, run sub-function:
 execute if score @s profile.node.coop_profile_id matches 1.. run function exigence:profile/profile_node/private/remove_coop_profile

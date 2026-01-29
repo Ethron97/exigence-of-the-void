@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS interaction (tag=DoorHandle)
 
-#========================================================================================================
+#====================================================================================================
 
 # DEBUG
 say Level door handle interaction 
@@ -22,7 +22,7 @@ execute on target run tag @s add HandleInteracting
 execute unless items entity @a[tag=HandleInteracting,gamemode=adventure] weapon.mainhand #exigence:key run tellraw @a[tag=HandleInteracting] {text:"The door is sealed with ancient magic.",color:"red"}
 execute unless items entity @a[tag=HandleInteracting,gamemode=adventure] weapon.mainhand #exigence:key at @s run playsound minecraft:block.copper_grate.break ambient @a ~ ~ ~ 0.5 0.6
 execute unless items entity @a[tag=HandleInteracting,gamemode=adventure] weapon.mainhand #exigence:key run return 1
-
+#----------------------------------------------------------------------------------------------------
 
 
 ## CHECK MATCH
@@ -45,7 +45,7 @@ execute if entity @a[tag=HandleInteracting,gamemode=creative] run data modify st
 execute if data storage exigence:door {key_match:0} run tellraw @a[tag=HandleInteracting] {text:"That key does not fit.",color:"red"}
 execute if data storage exigence:door {key_match:0} at @s run playsound minecraft:block.copper_bulb.place ambient @a ~ ~ ~ 0.5 0.6
 execute if data storage exigence:door {key_match:0} run return 1
-
+#----------------------------------------------------------------------------------------------------
 
 
 ## SUCCESSFUL KEY

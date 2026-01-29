@@ -7,7 +7,7 @@
 ## INPUT
 #   FLOAT[] Rotation 
 
-#=============================================================================================================
+#====================================================================================================
 
 ## BACKGROUND
 $summon block_display ^ ^ ^-0.025 {Rotation:$(Rotation),Tags:["NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","Background","NewBlockDisplay"]\
@@ -19,7 +19,7 @@ $summon minecraft:text_display ^1.125 ^1.45 ^0.027 {Rotation:$(Rotation),billboa
 background:1,brightness:{sky:9,block:9},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.4f,0.4f,0.4f]}\
 ,text:[{text:"       System Impact Scores       ",color:white,bold:true,underlined:true}]}
 
-#=============================================================================================================
+#====================================================================================================
 
 # LABELS
 $summon minecraft:text_display ^0.4 ^1.25 ^0.027 {Rotation:$(Rotation),billboard:"fixed",alignment:"right",Tags:["Treasure","SystemLabels","NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","NewTextDisplay"],\
@@ -137,7 +137,7 @@ $summon block_display ^0.78125 ^0.125 ^0.025 {Rotation:$(Rotation),Tags:["BarCha
 ,billboard:"fixed",brightness:{sky:9,block:9},block_state:{Name:"minecraft:exposed_copper_grate",Properties:{axis:x}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,-0.03125f,0.0f],scale:[1.375f,0.1875f,0.01f]}}
 
-#=============================================================================================================
+#====================================================================================================
 # Assign scores
 scoreboard players operation @e[distance=..7,type=#exigence:display,tag=NewDeckAnalyzerDisplay] hub.entity.deck_analyzer_id = @s hub.deck_analyzer_id
 # Remove tags

@@ -1,6 +1,6 @@
 # Responsible for setting everything up required for the Silence Trial/Crucible
 
-#======================================================================================================
+#====================================================================================================
 
 # Reset scores
 scoreboard players set Silence TrialTimer 0
@@ -9,7 +9,7 @@ scoreboard players set SilencePlatform TrialTimer 60
 fill -413 151 15 -415 151 13 minecraft:magenta_glazed_terracotta
 
 # Summon setup markers
-summon marker -413.5 152.1 14.5 {Tags:["SilenceTrialSetup","SilencePlatform"]}
+summon minecraft:marker -413.5 152.1 14.5 {Tags:["SilenceTrialSetup","SilencePlatform"],CustomName:{text:"Marker | SilencePlatform"}}
 
 # Randomize starting direction and prep step
 execute store result score #silence_previous Random run random value 0..3

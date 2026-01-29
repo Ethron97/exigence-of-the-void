@@ -4,7 +4,7 @@
 #   AS echo node
 #   AT location
 
-#==============================================================================================================
+#====================================================================================================
 
 #say Drop normal
 
@@ -16,6 +16,7 @@ execute as @e[distance=..4,type=item,nbt={Item:{components:{"minecraft:custom_da
 
 # Early return if Tutorial
 execute if score @s ObjectLevel matches 10 run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Increase scores
 scoreboard players add @a[tag=ActivePlayer] profile.data.ember.cr.embers_echo_dropped 1

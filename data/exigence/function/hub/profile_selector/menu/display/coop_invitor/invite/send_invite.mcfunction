@@ -4,7 +4,7 @@
 #   AS player invited
 #   AT player inviting
 
-#=============================================================================================================
+#====================================================================================================
 
 ## RECEIVER
 scoreboard players enable @s AcceptCoopInvite
@@ -42,9 +42,18 @@ if score @s profile.node.player_id = #sending career.player_id run function exig
 scoreboard players operation @s player.node.invited_by = #sending career.player_id
 scoreboard players operation @p[distance=..0.1,tag=SendingInvite] player.node.invite_sent_to = #target career.player_id
 
-#=============================================================================================================
+#====================================================================================================
 ## SENDER
 tellraw @p[distance=..0.1,tag=SendingInvite] [{text:"An invite has been sent to ",color:"green"},{selector:"@s",color:"gold"},{text:"!",color:"green"}]
 playsound entity.experience_orb.pickup player @p[distance=..0.1,tag=SendingInvite] ~ ~100 ~ 100 1
+
+#====================================================================================================
+## Store player heads in hands to save player names for login situations
+#execute as @s run function exigence:player/get/player_head_data
+#execute as @p[distance=..0.1,tag=SendingInvite] run function exigence:player/set/hand_player_head_data
+
+#execute as @p[distance=..0.1,tag=SendingInvite] run function exigence:player/get/player_head_data
+#execute as @s run function exigence:player/set/hand_player_head_data
+#====================================================================================================
 
 # Start timeout? TODO

@@ -10,7 +10,7 @@
 #   - exigence:door/vault/summon_vault_key
 #   Valid functions assume AT location constraint
 
-#===============================================================================================================
+#====================================================================================================
 
 tag @s add Dropping
 #$execute as @e[type=minecraft:armor_stand,tag=Dropping] run say dropping $(function)

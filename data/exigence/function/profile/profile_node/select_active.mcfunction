@@ -8,7 +8,7 @@
 #   Possible profile with "ActiveCoop" tag
 #   Single profile with "ActiveChest" tag
 
-#=========================================================================================================================
+#====================================================================================================
 
 # Reset tags
 execute in exigence:profile_data positioned 8 128 8 run tag @e[distance=..200,tag=ProfileNode,tag=Active] remove Active

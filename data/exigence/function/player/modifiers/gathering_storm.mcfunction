@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player speed effect and Gathering Storm artifact
 
-#=============================================================================================================
+#====================================================================================================
 
 # Get players's speed modifier
 scoreboard players set @s Temp 0

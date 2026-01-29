@@ -1,7 +1,9 @@
 # Called by misc/tick
 
-execute if score Game RoomToken matches 1.. run function exigence:room/game/tick
-execute if score Game RoomToken matches 0 in minecraft:overworld if entity @a[tag=ActivePlayer] run function exigence:room/game/tick
+## CONSTRAINTS
+#   IN exigence:hub
+#   AT 0 153 0
 
-execute if score Tutorial RoomToken matches 1.. in exigence:tutorial run function exigence:room/tutorial/tick
-execute if score Tutorial RoomToken matches 0 in exigence:tutorial if entity @a[tag=Tutorial] run function exigence:room/tutorial/tick
+#====================================================================================================
+
+execute in exigence:hub positioned 0 153 0 as @e[distance=..1,type=marker,tag=RoomNode] run function exigence:room/node/tick

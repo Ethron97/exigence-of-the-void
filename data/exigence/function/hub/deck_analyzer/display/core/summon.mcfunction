@@ -9,7 +9,7 @@
 #   STR color_a
 #   STR color_b
 
-#=============================================================================================================
+#====================================================================================================
 
 ## BACKGROUND
 $summon block_display ^ ^ ^-0.025 {Rotation:$(Rotation),billboard:"fixed",Tags:["NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","Background","NewBlockDisplay"]\
@@ -21,7 +21,7 @@ $summon minecraft:text_display ^0.5625 ^1.45 ^0.027 {Rotation:$(Rotation),billbo
 background:1,brightness:{sky:9,block:9},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.4f,0.4f,0.4f]}\
 ,text:[{text:"  Core Effects  ",color:white,bold:true,underlined:true}]}
 
-#=============================================================================================================
+#====================================================================================================
 
 $summon minecraft:text_display ^0.44 ^0.17 ^0.027 {Rotation:$(Rotation),billboard:"fixed",alignment:"left",Tags:["NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","CoreLabels","NewTextDisplay"],\
 background:1,brightness:{sky:9,block:9},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.4f,0.4f,0.4f]}\
@@ -48,7 +48,7 @@ background:1,brightness:{sky:9,block:9},transformation:{left_rotation:[0f,0f,0f,
 background:1,brightness:{sky:9,block:9},line_width:150,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.25f,0.25f,0.25f]}\
 ,text:[{text:"*Number of card options available in card shop",color:"$(color_a)"}]}
 
-#=============================================================================================================
+#====================================================================================================
 
 # Update displays
 

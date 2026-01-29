@@ -8,7 +8,7 @@
 #   STR type - 'inventory' or 'hotbar'
 #   INT index - 0-8 for 'hotbar', 0-26 for 'inventory'
 
-#=========================================================================================================
+#====================================================================================================
 
 # DEBUG
 #$say Clearing all spellbound item loop $(type).$(index)
@@ -18,6 +18,7 @@ execute unless entity @e[type=minecraft:armor_stand,tag=intermediary] run summon
 
 # Return if index is too high
 $execute if score 27 number matches ..$(index) run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Copy item to imtermediary for data get
 $item replace entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] weapon.mainhand from entity @s $(type).$(index)

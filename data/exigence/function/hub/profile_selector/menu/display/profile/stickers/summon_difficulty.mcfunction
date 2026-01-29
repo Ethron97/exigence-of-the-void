@@ -8,13 +8,13 @@
 ## INPUT:
 #   data: item.components."minecraft:custom_data"
 
-#=============================================================================================================
+#====================================================================================================
 
 #say Load difficulty sticker
 
 # Summon item display
-summon item_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["ProfileSticker","NewItemDisplay","DifficultySticker"],item:{id:"minecraft:sunflower",count:1\
-},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.35f,0.35f,0.7f]}}
+summon minecraft:item_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["ProfileSticker","NewItemDisplay","DifficultySticker"],item:{id:"minecraft:sunflower",count:1\
+},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.35f,0.35f,0.7f]},CustomName:{text:"ItemDisplay | DifficultySticker"}}
 
 # Give model based on difficulty
 $execute if score $(difficulty) number matches 1 run data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_model_data".strings set value ["difficulty_radiant"]

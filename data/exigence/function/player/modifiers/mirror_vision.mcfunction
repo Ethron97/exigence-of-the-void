@@ -4,7 +4,7 @@
 #   AS player (not dead)
 #   IF game.player.mod.mirror_vision > 0
 
-#=============================================================================================================
+#====================================================================================================
 
 # Every second, get random hidden block and reveal it
 execute at @s as @e[distance=..5,type=minecraft:marker,tag=HiddenBlock,tag=ReflectionNO,tag=!Revealed,tag=!Appeared,limit=1,sort=random] at @s run function exigence:mirror/hidden_blocks/reveal_block

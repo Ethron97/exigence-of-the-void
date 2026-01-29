@@ -8,12 +8,14 @@
 #   FLOAT/STR scale - eg '0.5'
 #   FLOAT/STR hover_scale - eg '0.7'
 
-#=============================================================================================================
+#====================================================================================================
 
 #$say load item display $(Rotation)
 
 # Summon item display
-$summon item_display ~ ~ ~ {Rotation:$(Rotation),billboard:"fixed",Tags:["MenuDisplay","NewItemDisplay","NewItemDisplays","MergeRotation","$(menu_tag)"],item:{id:"minecraft:stone",count:1},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[$(scale)f,$(scale)f,$(scale)f]}}
+$summon minecraft:item_display ~ ~ ~ {Rotation:$(Rotation),billboard:"fixed",Tags:["MenuDisplay","NewItemDisplay","NewItemDisplays","MergeRotation","$(menu_tag)"]\
+,item:{id:"minecraft:stone",count:1},transformation:{left_rotation:[0f,0f,0f,1f]\
+,right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[$(scale)f,$(scale)f,$(scale)f]},CustomName:{text:"ItemDisplay | MenuDisplay"}}
 
 $data modify entity @s Item.components."minecraft:custom_data".scale set value '$(scale)'
 $data modify entity @s Item.components."minecraft:custom_data".hover_scale set value '$(hover_scale)'

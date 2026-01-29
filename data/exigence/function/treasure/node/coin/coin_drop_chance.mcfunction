@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS treasure node
 
-#==========================================================================================================
+#====================================================================================================
 
 # Reset score
 scoreboard players set @s Random 0
@@ -11,6 +11,7 @@ scoreboard players set @s Random 0
 # If LevelLimitedTreasure, limit treasure to +-1 level from any active player (or just on active levels, if value ==2)
 execute if data storage exigence:dungeon_settings {level_limit_treasure:1} if function exigence:treasure/node/level_limit_check_a run return 1
 execute if data storage exigence:dungeon_settings {level_limit_treasure:2} if function exigence:treasure/node/level_limit_check_b run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Proc drop chance
 execute if data storage exigence:dungeon_settings {stacked_coins:0} run function exigence:treasure/node/coin/private/no_stack_chance

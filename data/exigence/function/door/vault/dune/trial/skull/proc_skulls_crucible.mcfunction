@@ -1,6 +1,6 @@
 # Generates skulls based on trial time and difficulty
 
-#=======================================================================================================
+#====================================================================================================
 
 # First skull
 function exigence:door/vault/dune/trial/skull/skull_type

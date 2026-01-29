@@ -13,10 +13,10 @@
 #   BIT instant
 #   BIT persistent
 
-#=========================================================================================================================
+#====================================================================================================
 
-$execute in exigence:profile_data positioned 8 128 8 at @n[distance=..200,type=marker,tag=ProfileNode,tag=ActiveChest] store result score #cards_a deck.process_card if items block ~1 ~1 ~0 container.* minecraft:paper[custom_data={card_name:'$(card_name)'}]
-$execute in exigence:profile_data positioned 8 128 8 at @n[distance=..200,type=marker,tag=ProfileNode,tag=ActiveChest] store result score #cards_b deck.process_card if items block ~2 ~1 ~0 container.* minecraft:paper[custom_data={card_name:'$(card_name)'}]
+$execute in exigence:profile_data positioned 8 128 8 at @n[distance=..140,type=marker,tag=ProfileNode,tag=ActiveChest] store result score #cards_a deck.process_card if items block ~1 ~1 ~0 container.* minecraft:paper[custom_data={card_name:'$(card_name)'}]
+$execute in exigence:profile_data positioned 8 128 8 at @n[distance=..140,type=marker,tag=ProfileNode,tag=ActiveChest] store result score #cards_b deck.process_card if items block ~2 ~1 ~0 container.* minecraft:paper[custom_data={card_name:'$(card_name)'}]
 scoreboard players set #copies deck.process_card 0
 scoreboard players operation #copies deck.process_card += #cards_a deck.process_card
 scoreboard players operation #copies deck.process_card += #cards_b deck.process_card
@@ -24,7 +24,7 @@ scoreboard players operation #copies deck.process_card += #cards_b deck.process_
 # Early return if no copies found
 execute if score #copies deck.process_card matches 0 run return 0
 
-#=========================================================================================================================
+#----------------------------------------------------------------------------------------------------
 
 # DEBUG
 #$say analyze card $(card_name)
@@ -43,12 +43,12 @@ $execute if score #copies deck.process_card matches 1.. run function exigence:ca
 $execute if score #rarity deck.process_card matches 1..3 if score #copies deck.process_card matches 2.. run function exigence:cards/$(card_name)/analyze_b {copy:2}
 $execute if score #rarity deck.process_card matches 1..3 if score #copies deck.process_card matches 3.. run function exigence:cards/$(card_name)/analyze_b {copy:3}
 
-#=========================================================================================================================
+#====================================================================================================
 ## VALIDATION CHECKS
 # Check if cost is greater than max loaded resource
-$execute if score green.cost game.resources > resource.green.max deck.analysis run function exigence:deck/process/private/error/cost_too_great {display_name:'$(display_name)',resource:"green"}
-$execute if score red.cost game.resources > resource.red.max deck.analysis run function exigence:deck/process/private/error/cost_too_great {display_name:'$(display_name)',resource:"red"}
-$execute if score aqua.cost game.resources > resource.aqua.max deck.analysis run function exigence:deck/process/private/error/cost_too_great {display_name:'$(display_name)',resource:"aqua"}
+$execute if score green.cost game.resources > resource.green.max deck.analysis run function exigence:deck/process/private/error/cost_too_great {display_name:'$(display_name)',resource:"green",resource_color:"dark_green"}
+$execute if score red.cost game.resources > resource.red.max deck.analysis run function exigence:deck/process/private/error/cost_too_great {display_name:'$(display_name)',resource:"red",resource_color:"dark_red"}
+$execute if score aqua.cost game.resources > resource.aqua.max deck.analysis run function exigence:deck/process/private/error/cost_too_great {display_name:'$(display_name)',resource:"aqua",resource_color:"aqua"}
 
 # Check if too many copies (>3)
 $execute if score #rarity deck.process_card matches 1..3 if score #copies deck.process_card matches 4.. \
@@ -58,7 +58,11 @@ run function exigence:deck/process/private/error/too_many_copies {display_name:'
 $execute if score #rarity deck.process_card matches 4 if score #copies deck.process_card matches 2.. \
 run function exigence:deck/process/private/error/too_many_copies_legendary {display_name:'$(display_name)'}
 
-#=========================================================================================================================
+# Cap amount if above amount cap
+execute if score #rarity deck.process_card matches 4 if score #copies deck.process_card matches 2.. run scoreboard players set #copies deck.process_card 1
+execute if score #rarity deck.process_card matches 1..3 if score #copies deck.process_card matches 4.. run scoreboard players set #copies deck.process_card 3
+
+#====================================================================================================
 # Increase analysis scores
 scoreboard players operation cards.total deck.analysis += #copies deck.process_card
 execute if score #rarity deck.process_card matches 1 run scoreboard players operation cards.common deck.analysis += #copies deck.process_card

@@ -138,7 +138,7 @@ function exigence:treasure/keys/drop_level_keys
 # Initialize random rotation data
 data merge storage temp {Rotation:[0.0f,0.0f]}
 
-#=======================================================================================================
+#====================================================================================================
 # Initialize cooldowns
 scoreboard players set #RavagerAggroCooldownLimit tick_counter 100
 scoreboard players set ravager.aggro.cooldown tick_counter 50
@@ -166,15 +166,12 @@ scoreboard players set #MaxTreasureDroppingIterations node.treasure.drop_working
 # Delay before a menace node can trigger from player presence again
 scoreboard players set #MenaceNodeCooldownLimit game.node.menace.cooldown 200
 
-# Delay after breaking ravager glass before it comes back
-scoreboard players set #RavagerGlassCooldownLimit game.entity.ravager_glass.cooldown 20
-
 # Warden - Max Awareness
 scoreboard players set #max_awareness game.warden.awareness 75
 # Warden - Anger Threshold
 scoreboard players set #anger_threshold game.warden.awareness 30
 
-#=======================================================================================================
+#====================================================================================================
 
 
 # Load Game NPCs

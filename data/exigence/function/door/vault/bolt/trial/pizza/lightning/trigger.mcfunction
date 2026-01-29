@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS/AT pizza/lightning marker
 
-#==================================================================================================
+#====================================================================================================
 
 # Start iteration check
 function exigence:door/vault/bolt/trial/pizza/lightning/trigger_loop

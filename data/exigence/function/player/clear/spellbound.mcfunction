@@ -8,7 +8,7 @@
 #   STR type - 'inventory' or 'hotbar'
 #   INT index - 0-8 for 'hotbar', 0-26 for 'inventory'
 
-#=========================================================================================================
+#====================================================================================================
 
 # DEBUG
 #$say Give item loop $(type).$(index)
@@ -18,6 +18,7 @@ execute unless entity @e[type=minecraft:armor_stand,tag=intermediary] run summon
 
 # Return if index is too high
 $execute if score 27 number matches ..$(index) run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Reset score
 scoreboard players set #clear Temp 0
@@ -28,7 +29,7 @@ $execute if data entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] 
 
 $execute if score #clear Temp matches 1 run item replace entity @s $(type).$(index) with air
 execute if score #clear Temp matches 1 run return 1
-
+#----------------------------------------------------------------------------------------------------
 
 
 

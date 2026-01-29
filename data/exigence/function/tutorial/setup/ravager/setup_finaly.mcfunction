@@ -4,7 +4,7 @@
 #   IN exigence:tutorial
 #   AT location
 
-#=============================================================================================================
+#====================================================================================================
 
 summon minecraft:ravager ~ ~ ~ {Tags:["L10"],CustomName:{text:"Finaly",color:"dark_red",italic:false},PersistenceRequired:1b}
 

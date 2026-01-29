@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AT pizza/lightning marker
 
-#==================================================================================================
+#====================================================================================================
 
 # If player, loss
 execute positioned ^ ^ ^ as @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=1},distance=..1] run function exigence:door/vault/bolt/trial/loss
@@ -13,6 +13,7 @@ execute positioned ^ ^0.5 ^ as @a[tag=ActivePlayer,scores={dead=0,game.player.va
 
 # If block, return
 execute unless block ^ ^ ^ minecraft:air run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Particle
 particle electric_spark ^1 ^ ^ 0 0 0 0 1

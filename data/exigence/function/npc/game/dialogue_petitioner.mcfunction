@@ -1,7 +1,7 @@
 ## CONSTRAINTS
 #   AS petitioner
 
-#=============================================================================================================
+#====================================================================================================
 
 execute if score #Petitioner game.dialogue matches 0 unless items entity @a[advancements={exigence:listener/interact/npc_petitioner_game=true}] weapon.mainhand glow_ink_sac \
 run say The flame is gone, the Ardor have abandoned us.

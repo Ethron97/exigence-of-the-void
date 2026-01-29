@@ -2,7 +2,7 @@
 # Clears any currently actrive sound / schedule from another sample
 #   Basically allows the player to quickly button through if they want
 
-#=============================================================================================================
+#====================================================================================================
 
 scoreboard players set #i Tutorial 0
 

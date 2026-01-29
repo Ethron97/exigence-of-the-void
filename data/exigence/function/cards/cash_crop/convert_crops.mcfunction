@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS player
 
-#=================================================================================
+#====================================================================================================
 
 # Get berries in inventory
 execute store result score #berries Temp run clear @s #exigence:berry 0

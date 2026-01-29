@@ -1,7 +1,7 @@
 ## CONSTRAINTS
 #   AS Item (NewEcho)
 
-#==========================================================================================================
+#====================================================================================================
 
 # Set name to be the same as the EchoNode that spawned it
 data modify entity @s Item.components."minecraft:custom_name" set from entity @s CustomName

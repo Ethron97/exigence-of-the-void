@@ -6,7 +6,7 @@
 ## INPUT
 #   data: item.components."minecraft:"
 
-#=============================================================================================================
+#====================================================================================================
 
 #$say Input create new (profile_selector:$(profile_selector_id) slot:$(slot_id))
 
@@ -33,3 +33,6 @@ function exigence:hub/profile_selector/menu/display/profile/effects/summon_diffi
 # Effects
 execute at @s run playsound minecraft:entity.ender_eye.death ui @p[distance=..16,tag=ProfileSelecting,tag=Interacting] ~ ~ ~ 1 1
 execute at @s run particle glow ~ ~ ~0.1 0.1 0.1 0.0 0.001 5
+
+# Mark player node so we know it is creating
+$execute in exigence:profile_data positioned 8 3 8 run tag @n[distance=..20,type=armor_stand,tag=PlayerNode,scores={profile.node.player_id=$(player_id)}] add PlayerCreatingProfile

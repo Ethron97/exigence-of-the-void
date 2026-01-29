@@ -4,7 +4,7 @@
 ## INPUT
 #   STR scoreboard - Scoreboard objective in ticks for this player
 
-#==================================================================================================
+#====================================================================================================
 
 $scoreboard players operation $(scoreboard).S format_time = @s $(scoreboard)
 $scoreboard players operation $(scoreboard).S format_time /= 20 number

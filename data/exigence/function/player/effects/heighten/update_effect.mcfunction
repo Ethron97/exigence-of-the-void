@@ -2,7 +2,7 @@
 
 # Only needs to be called when heighten is used or gained
 
-#============================================================================================================
+#====================================================================================================
 
 # Clear so we can apply a lower level if needed
 effect clear @a[tag=ActivePlayer] haste

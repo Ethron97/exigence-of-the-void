@@ -8,13 +8,14 @@
 #   STR type - 'inventory' or 'hotbar'
 #   INT index - 0-8 for 'hotbar', 0-26 for 'inventory'
 
-#=========================================================================================================
+#====================================================================================================
 
 # DEBUG
 #$say Drop item loop $(type).$(index)
 
 # Return if index is too high
 $execute if score 27 number matches ..$(index) run return 1
+#----------------------------------------------------------------------------------------------------
 
 ## Funtionality
 # Copy current slot to intermediary for data compare

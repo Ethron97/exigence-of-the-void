@@ -1,7 +1,7 @@
 # Resets bossbars based on the current step
 #   So we can skip sections etc and get the correct bossbar states
 
-#=============================================================================================================
+#====================================================================================================
 
 # Re-order if past certain point
 execute if score Step Tutorial matches 107.. run function exigence:bossbar/tutorial/hide

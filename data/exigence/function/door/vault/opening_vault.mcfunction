@@ -6,6 +6,7 @@
 # Return if no one has InsertingKey score > 1
 #execute unless entity @e[type=minecraft:item_display,scores={InsertingKey=1..}] run say Done opening
 execute unless entity @e[type=minecraft:item_display,scores={InsertingKey=1..}] run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Playsound
 execute as @e[type=minecraft:item_display,scores={InsertingKey=60}] at @s run playsound minecraft:block.grindstone.use ambient @a ~ ~ ~ 1 0.1

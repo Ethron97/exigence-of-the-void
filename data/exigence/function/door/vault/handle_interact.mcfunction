@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS interaction
 
-#========================================================================================================
+#====================================================================================================
 
 # DEBUG
 #say Vault door handle interaction 
@@ -20,7 +20,7 @@ execute on target run tag @s add HandleInteracting
 execute unless items entity @a[tag=HandleInteracting] weapon.mainhand #exigence:trim_templates run tellraw @a[tag=HandleInteracting] {text:"The vault is sealed with an ancient rune.",color:"red"}
 execute unless items entity @a[tag=HandleInteracting] weapon.mainhand #exigence:trim_templates at @s run playsound minecraft:block.copper_grate.break ambient @a ~ ~ ~ 0.5 0.6
 execute unless items entity @a[tag=HandleInteracting] weapon.mainhand #exigence:trim_templates run return 1
-
+#----------------------------------------------------------------------------------------------------
 
 
 ## CHECK MATCH
@@ -44,7 +44,7 @@ execute store success storage exigence:door vault_not_match int 1 run data modif
 execute if data storage exigence:door {vault_not_match:1} run tellraw @a[tag=HandleInteracting] {text:"That key does not fit.",color:"red"}
 execute if data storage exigence:door {vault_not_match:1} at @s run playsound minecraft:block.copper_bulb.place ambient @a ~ ~ ~ 0.5 0.6
 execute if data storage exigence:door {vault_not_match:1} run return 1
-
+#----------------------------------------------------------------------------------------------------
 
 #execute if data storage exigence:door {vault_not_match:0} run say Key matches
 

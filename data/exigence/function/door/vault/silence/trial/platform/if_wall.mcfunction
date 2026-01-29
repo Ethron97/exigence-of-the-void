@@ -14,7 +14,7 @@
 #   1 = wall found (if function, proceed)
 #   0 = no wall
 
-#===============================================================================================================
+#====================================================================================================
 
 execute if score #random Random matches 0 unless block ~2 ~ ~ #exigence:silence_trial run return 1
 execute if score #random Random matches 0 unless block ~2 ~ ~-1 #exigence:silence_trial run return 1

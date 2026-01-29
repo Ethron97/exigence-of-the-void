@@ -3,11 +3,12 @@
 ## CONSTRAINTS
 #   AS living player
 
-#==========================================================================================================
+#====================================================================================================
 
 # If no speed, return
 execute unless entity @s[predicate=exigence:effects/speed] run tellraw @s [{text:" > No speed to transfer",color:"red"}]
 execute unless entity @s[predicate=exigence:effects/speed] run return fail
+#----------------------------------------------------------------------------------------------------
 
 # Store current speed amplifier for this player
 scoreboard players set #temp Temp -1

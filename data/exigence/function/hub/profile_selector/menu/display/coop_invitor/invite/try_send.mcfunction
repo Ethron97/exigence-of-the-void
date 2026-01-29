@@ -4,12 +4,12 @@
 #   AS player who was invited
 #   AT player who sent the invite (tag=SendingInvite)
 
-#=============================================================================================================
+#====================================================================================================
 
 say Try send invite
 
 # VALIDATE
-#=============================================================================================================
+#====================================================================================================
 # Fail if the player is NOT in the profile selector room
 scoreboard players set #temp Temp 0
 execute if entity @s[tag=ProfileSelecting] run scoreboard players set #temp Temp 1
@@ -46,12 +46,12 @@ scoreboard players set #temp Temp 0
 #   Count how many slot profiles (that aren't in Archive). If 5, bad fail.
 scoreboard players set #i Temp 0
 scoreboard players operation #compare profile.node.player_id = @s career.player_id
-execute in exigence:profile_data positioned 8 128 8 as @e[distance=..200,type=marker,tag=ProfileNode] if score @s profile.node.player_id = #compare profile.node.player_id run scoreboard players add #i Temp 1
+execute in exigence:profile_data positioned 8 128 8 as @e[distance=..140,type=marker,tag=ProfileNode] if score @s profile.node.player_id = #compare profile.node.player_id run scoreboard players add #i Temp 1
 execute if score #i Temp matches 5 run scoreboard players set #temp Temp 1
 execute if score #temp Temp matches 1 run tellraw @p[distance=..0.01,tag=SendingInvite] [{selector:"@s",color:gold},{text:" does not have an open profile slot.",color:"red"}]
 execute if score #temp Temp matches 1 run return fail
 
-#=============================================================================================================
+#====================================================================================================
 # Success:
 execute at @p[distance=..0.01,tag=SendingInvite] run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/send_invite
 

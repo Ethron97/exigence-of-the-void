@@ -1,6 +1,6 @@
 # Create and store random arc and length in storage for macro calls
 
-#=============================================================================================================
+#====================================================================================================
 
 # Random rotation -180..180
 execute store result storage exigence:trial RotA int 1 run random value -180..180

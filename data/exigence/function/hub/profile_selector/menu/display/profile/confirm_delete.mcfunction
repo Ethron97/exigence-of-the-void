@@ -9,7 +9,7 @@
 #   INT profile_selector_id
 #   INT slot_id
 
-#=============================================================================================================
+#====================================================================================================
 
 #say display - confirm delete
 
@@ -20,7 +20,7 @@ $execute at @s as @n[distance=..16,tag=SlotDisplay,scores={hub.entity.profile_se
 run function exigence:hub/profile_selector/menu/display/profile/confirm_delete_display with entity @s item
 
 # Archive/delete profile data
-$execute in exigence:profile_data positioned 8 128 8 as @n[distance=..200,type=marker,tag=ProfileNode,scores={profile.node.player_id=$(player_id),profile.node.slot_id=$(slot_id)}] \
+$execute in exigence:profile_data positioned 8 128 8 as @n[distance=..140,type=marker,tag=ProfileNode,scores={profile.node.player_id=$(player_id),profile.node.slot_id=$(slot_id)}] \
 run function exigence:profile/profile_node/remove_profile
 
 # Reset query

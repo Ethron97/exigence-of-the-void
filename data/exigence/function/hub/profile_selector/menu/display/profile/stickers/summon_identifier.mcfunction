@@ -8,13 +8,13 @@
 ## INPUT:
 #   data: item.components."minecraft:custom_data"
 
-#=============================================================================================================
+#====================================================================================================
 
 #say Load identifier sticker
 
 # Summon item display
-$summon item_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["ProfileSticker","NewItemDisplay","ProfileTypeSticker"],item:{id:"$(identifier)",count:1\
-},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.25f,0.25f,0.7f]}}
+$summon minecraft:item_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["ProfileSticker","NewItemDisplay","IdentifierSticker"],item:{id:"$(identifier)",count:1\
+},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.25f,0.25f,0.7f]},CustomName:{text:"ItemDisplay | IdentifierSticker"}}
 
 # Assign data
 $data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".parent_idid set value '$(idid)'

@@ -17,3 +17,4 @@ scoreboard objectives add TpProfileData trigger
 scoreboard objectives add TpTutorial trigger
 scoreboard objectives add ProfileSelectorConfirmDelete trigger
 scoreboard objectives add ProfileSelectorCancelDelete trigger
+scoreboard objectives add ProfileStats trigger
