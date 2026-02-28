@@ -17,3 +17,6 @@ scoreboard players set @n[distance=..1,type=marker,tag=NewMarker] hub.locker_roo
 
 # Remove local tag
 tag @n[distance=..1,type=marker,tag=NewMarker] remove NewMarker
+
+# Manually add South or West tag based on locker room orientation
+say Don't forget to add the South or West tag

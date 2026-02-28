@@ -16,9 +16,9 @@ execute as @s[tag=!ProfileSelecting] at @s if block ~ ~ ~ minecraft:cyan_stained
 # TUTORIAL (green stained glass)
 execute as @s[tag=!Tutorial] at @s if block ~ ~ ~ minecraft:lime_stained_glass_pane run function exigence:tutorial/access/try_enter_tutorial
 
-# If magenta stained glass (locker room):
-#execute as @s[tag=Lockerroom] at @s if block ~ ~ ~ minecraft:magenta_stained_glass_pane run function exigence:hub/locker_room/leave_room
-#execute as @s[tag=!Lockerroom,tag=!ItemShopping,tag=!EmberViewing] at @s if block ~ ~ ~ minecraft:magenta_stained_glass_pane run function exigence:hub/locker_room/try_enter_room
+# If yellow stained glass (locker room):
+execute as @s[tag=LockerRoom] at @s if block ~ ~ ~ minecraft:yellow_stained_glass_pane at @n[distance=..5,type=marker,tag=LockerRoomNode] run function exigence:hub/locker_room/access/leave
+execute as @s[tag=!LockerRoom] at @s if block ~ ~ ~ minecraft:yellow_stained_glass_pane at @n[distance=..5,type=marker,tag=LockerRoomNode] run function exigence:hub/locker_room/access/try_enter_door
 
 # ITEM SHOP (orange stained glass)
 #execute as @s[tag=ItemShopping] at @s if block ~ ~ ~ minecraft:orange_stained_glass_pane run function exigence:hub/item_shop/door/try_leave
@@ -36,7 +36,6 @@ execute as @s[tag=!Tutorial] at @s if block ~ ~ ~ minecraft:lime_stained_glass_p
 
 # If Coop in predungeon, and no one is in lockerroom, return to lockerroom
 #execute as @s[tag=!Lockerroom,tag=Coop] at @s unless entity @a[tag=Lockerroom] if block ~ ~ ~ minecraft:purple_stained_glass_pane run function exigence:hub/predungeon/coop_leave
-
 
 # Ember shop (viewing)
 #execute as @s[tag=EmberViewing] at @s if block ~ ~ ~ minecraft:light_blue_stained_glass_pane run function exigence:hub/ember_shop/door_viewing/try_leave

@@ -3,6 +3,9 @@
 ## CONSTRAINTS
 #   AS/AT locker room node
 
+## INPUT
+#   #compare profile.player.profile_id
+
 #====================================================================================================
 
 say Load room (locker room)
@@ -13,7 +16,21 @@ scoreboard players operation @s hub.locker_room_id = #sequence hub.locker_room_i
 
 # Update ID in the name
 execute store result storage exigence:temp id int 1 run scoreboard players get #sequence hub.locker_room_id
-function exigence:hub/locker_room/node/private/add_id_to_name with storage exigence:temp
+function exigence:hub/locker_room/node/private/set_id_to_name with storage exigence:temp
 
-# Load deck analyzer menu (just gets the node into position)
-execute positioned ^ ^ ^2.49 run function exigence:hub/profile_selector/load/setup_deck_analyzer
+#====================================================================================================
+## LOAD CHESTS
+scoreboard players operation @s hub.entity.profile_id = #compare profile.player.profile_id
+# Get dataa
+execute in exigence:profile_data positioned 8 128 8 as @e[distance=..140,type=marker,tag=ProfileNode] if score @s profile.node.profile_id = #compare profile.player.profile_id \
+run function exigence:profile/profile_node/load/try_chest_to_data
+
+execute at @s unless score #data_loaded Temp matches 1 run tellraw @p[distance=..20,tag=LockerRoom] [{text:"[CHESTS NOT LOADED] ",bold:true,color:"yellow"},{text:"Another player has already loaded the chests for this co-op profile.",color:"gray",italic:true,bold:false}]
+
+# Fill chests (if data was loaded successfully)
+execute if score #data_loaded Temp matches 1 at @s run function exigence:hub/locker_room/load/load_chests
+
+#====================================================================================================
+
+# Load deck analyzer menu
+#execute positioned ^ ^ ^2.49 run function exigence:hub/locker_room/load/setup_deck_analyzer

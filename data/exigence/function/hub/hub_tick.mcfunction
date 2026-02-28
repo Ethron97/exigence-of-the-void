@@ -14,9 +14,6 @@ effect give @a[predicate=exigence:dimension/entity/hub,predicate=!exigence:effec
 execute as @a[distance=..2000] run function exigence:hub/hub_tick/update_actionbar
 
 # Door checks for player warping throughout the hub
-#function exigence:hub/door_tick
-# TODO DISABVLED CHECK DOOR DURING HUB RENOVATIONS
-#execute as @a[gamemode=!spectator,predicate=exigence:level/hub] run function exigence:hub/player/check_door
 execute as @a[gamemode=!spectator,predicate=exigence:dimension/entity/hub] run function exigence:hub/player/check_door
 
 # Increase hub tick score for profile (if they are in adventure mode)
