@@ -33,4 +33,5 @@ execute if score #data_loaded Temp matches 1 at @s run function exigence:hub/loc
 #====================================================================================================
 
 # Load deck analyzer menu
-#execute positioned ^ ^ ^2.49 run function exigence:hub/locker_room/load/setup_deck_analyzer
+execute store result storage exigence:temp profile_id int 1 run scoreboard players get #compare profile.player.profile_id
+execute positioned ^ ^ ^2.49 run function exigence:hub/locker_room/load/setup_deck_analyzer

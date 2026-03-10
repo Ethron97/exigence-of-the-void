@@ -23,3 +23,7 @@ execute as @s[gamemode=!creative] store result score @s shop.player.research_to_
 scoreboard players set @s shop.player.currency_amounts_changed 0
 execute unless score @s shop.player.money_to_spend = #old_amount shop.player.money_to_spend run scoreboard players set @s shop.player.currency_amounts_changed 1
 execute unless score @s shop.player.research_to_spend = #old_amount shop.player.research_to_spend run scoreboard players set @s shop.player.currency_amounts_changed 1
+
+# Increase totals (assumes they were reset in a previous step)
+scoreboard players operation #Total shop.player.money_to_spend += @s shop.player.money_to_spend
+scoreboard players operation #Total shop.player.research_to_spend += @s shop.player.research_to_spend

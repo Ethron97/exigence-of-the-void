@@ -9,7 +9,7 @@
 execute at @s anchored eyes positioned ^ ^-0.5 ^ as @n[distance=..16,type=interaction,tag=ProfileSelectorInteraction] run tp @s ~ ~ ~
 
 # Swap Hover/OldHover tags
-execute as @e[distance=..16,type=minecraft:item_display,tag=MenuDisplay,tag=Hover] run function exigence:menu/menu_tick_b
+execute as @e[distance=..16,type=minecraft:item_display,tag=MenuDisplay,tag=Hover] run function exigence:menu/menu_tick_tag_swap
 
 #====================================================================================================
 # Detect which item_display(s) the player is looking at

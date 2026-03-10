@@ -1,13 +1,17 @@
 # Refreshes currency stats on players
 #   Amounts, changed, holding, total
 
+## CONSTRAINTS
+#   AT center of item shop ( -43.5 200.0 0.5 )
+
+# I believe this exists so that we can refresh everything the instant that someone purchases something
+
 #====================================================================================================
 
-execute as @a[tag=ItemShopping] run function exigence:hub/item_shop/private/refresh_currency_player
+say Refresh global currency
 
-# Combine all players money to total
 scoreboard players set #Total shop.player.money_to_spend 0
-execute as @a[tag=ItemShopping] run scoreboard players operation #Total shop.player.money_to_spend += @s shop.player.money_to_spend
-
 scoreboard players set #Total shop.player.research_to_spend 0
-execute as @a[tag=ItemShopping] run scoreboard players operation #Total shop.player.research_to_spend += @s shop.player.research_to_spend
+
+#   OUTPUTS: #Total ^
+execute as @a[distance=..24,tag=ItemShop] run function exigence:hub/item_shop/private/refresh_currency_player

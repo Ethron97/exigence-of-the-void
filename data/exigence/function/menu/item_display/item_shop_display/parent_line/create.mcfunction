@@ -18,7 +18,7 @@
 execute store result score x temp_coords run data get entity @s Pos[0] 100
 execute store result score y temp_coords run data get entity @s Pos[1] 100
 execute store result score z temp_coords run data get entity @s Pos[2] 100
-execute as @e[distance=..5,tag=DrawLineTo] run function exigence:menu/item_display/item_shop_display/parent_line/private/save_coords
+execute as @n[distance=..5,tag=DrawLineTo] run function exigence:menu/item_display/item_shop_display/parent_line/private/save_coords
 
 scoreboard players operation in0.x nnmath_vec = x temp_coords
 scoreboard players operation in0.y nnmath_vec = y temp_coords
@@ -43,4 +43,4 @@ execute store result storage exigence:menu id int 1 run scoreboard players get @
 execute at @s run function exigence:menu/item_display/item_shop_display/parent_line/summon_line with storage exigence:menu
  
 # Remove tag
-tag @e[distance=..5,tag=DrawLineTo] remove DrawLineTo
+tag @n[distance=..5,tag=DrawLineTo] remove DrawLineTo

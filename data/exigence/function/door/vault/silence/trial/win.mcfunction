@@ -17,8 +17,8 @@ execute if data storage exigence:dungeon {is_active:1} run scoreboard players ad
 execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Crucible] profile.data.vaults.cr.silence_crucible_win 1
 
 # Give advancement
-execute if data storage exigence:dungeon {is_active:1} run advancement grant @s[tag=Trial] only exigence:vault/trial_silence
-execute if data storage exigence:dungeon {is_active:1} run advancement grant @s[tag=Crucible] only exigence:vault/crucible_silence
+execute if data storage exigence:dungeon {is_active:1} as @s[tag=Trial] run function exigence:profile/profile_node/set/shop_unlock_vault {vault_string:"trial_silence"}
+execute if data storage exigence:dungeon {is_active:1} as @s[tag=Crucible] run function exigence:profile/profile_node/set/shop_unlock_vault {vault_string:"crucible_silence"}
 
 # Reset vault
 function exigence:door/vault/silence/trial/reset

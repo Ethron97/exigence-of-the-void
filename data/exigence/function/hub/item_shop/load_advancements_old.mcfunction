@@ -8,6 +8,8 @@
 #   AS player
 
 #====================================================================================================
+say DEPRECATED (load_advancements_old)
+#====================================================================================================
 
 # Reset array
 data modify storage exigence:shop shop_unlocked set value [] 

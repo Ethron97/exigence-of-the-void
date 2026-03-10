@@ -16,9 +16,7 @@ execute as @s[tag=Invited,tag=!Joined] run title @s actionbar ["",{text:"Pending
 execute as @s[tag=Invited,tag=Joined] run title @s actionbar ["",{text:"Pending Co-op Profile Creation",color:"green"}]
 execute as @s[tag=InviteSent] run title @s actionbar ["",{text:"Invite Sent",color:"green"}]
 execute as @s[tag=LockerRoom] run title @s actionbar ["",{text:"[Locker Room]",color:"yellow"}]
-
-#execute as @s[tag=MoneyShopping] run title @s actionbar ["",{text:"[Money Shop]",color:"gold"}]
-#execute as @s[tag=ItemShopping] run title @s actionbar ["",{text:"[Item Shop]",color:"gold"}]
+execute as @s[tag=ItemShop] run title @s actionbar ["",{text:"[Item Shop]",color:"gold"}]
 #execute as @s[tag=EmberShopping,tag=!CoopEmberShopping] run title @s actionbar ["",{text:"[Ember Shop]",color:"aqua"}]
 #execute as @s[tag=EmberShopping,tag=CoopEmberShopping] run title @s actionbar ["",{text:"[Ember Shop Coop]",color:"aqua"}]
 #execute as @s[tag=Predungeon] unless entity @s[tag=Coop,tag=!Lockerroom] run title @s actionbar ["",{text:"[Predungeon]",color:"dark_purple"}]
@@ -26,7 +24,7 @@ execute as @s[tag=LockerRoom] run title @s actionbar ["",{text:"[Locker Room]",c
 #execute as @s[tag=Coop,tag=!Lockerroom] run title @s actionbar ["",{text:"[Predungeon] ",color:"dark_purple"},{text:"Coop",color:"green"}]
 #execute as @s[tag=EmberViewing,tag=!CoopViewing] run title @s actionbar ["",{text:"[Ember View]",color:"aqua"}]
 #execute as @s[tag=EmberViewing,tag=CoopViewing] run title @s actionbar ["",{text:"[Ember View Coop]",color:"aqua"}]
-#execute as @s[tag=!MoneyShopping,tag=!EmberShopping,tag=!Lockerroom,tag=!Predungeon,tag=!EmberViewing,tag=!ItemShopping,tag=!PiggyBank,tag=!Coop] run title @s actionbar ["",""]
+#execute as @s[tag=!MoneyShopping,tag=!EmberShopping,tag=!Lockerroom,tag=!Predungeon,tag=!EmberViewing,tag=!ItemShop,tag=!PiggyBank,tag=!Coop] run title @s actionbar ["",""]
 
 # Piggy bank
 #execute as @s[tag=PiggyBank] run title @s actionbar ["",{text:"Piggy Bank",color:"gray",italic:false},{text:": ",color:"gray",italic:false},{"score":{"name":"@s","objective":"PiggyBank"},color:"gold"},{text:" coins",color:"gray",italic:false}]

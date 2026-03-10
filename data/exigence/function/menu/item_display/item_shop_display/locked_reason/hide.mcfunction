@@ -11,4 +11,4 @@
 # Remove tag
 tag @s remove DisplayingLockedReason
 
-$kill @e[type=minecraft:text_display,tag=LockedReasonDisplay,scores={IDID=$(idid)}]
+$execute at @s run kill @n[distance=..5,type=minecraft:text_display,tag=LockedReasonDisplay,scores={IDID=$(idid)}]

@@ -13,5 +13,5 @@
 # Remove tag
 tag @s remove DisplayingCost
 
-$kill @e[type=minecraft:text_display,tag=CostDisplay,scores={IDID=$(idid)}]
-$kill @e[type=minecraft:item_display,tag=ArtifactCostDisplay,scores={IDID=$(idid)}]
+$execute at @s run kill @n[distance=..5,type=minecraft:text_display,tag=CostDisplay,scores={IDID=$(idid)}]
+$execute at @s run kill @n[distance=..5,type=minecraft:item_display,tag=ArtifactCostDisplay,scores={IDID=$(idid)}]

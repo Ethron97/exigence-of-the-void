@@ -7,7 +7,7 @@
 
 #say New locker room node
 
-summon minecraft:marker ~ ~ ~ {Tags:["NewMarker","Marker","LockerRoomNode"],CustomName:[{text:"Marker | LockerRoomNode",color:"#aca927"},{text:" e",color:"#fffb00"}]}
+summon minecraft:marker ~ ~ ~ {Tags:["NewMarker","LockerRoomNode"],CustomName:[{text:"Marker | LockerRoomNode",color:"#aca927"},{text:" e",color:"#fffb00"}]}
 
 # Teleport to align and face
 execute align x align y align z run tp @n[distance=..1,type=marker,tag=NewMarker] ~.5 ~ ~.5 ~ ~

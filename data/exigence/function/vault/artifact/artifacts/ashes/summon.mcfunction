@@ -1,5 +1,5 @@
 $data merge entity @s {Item:{id:"minecraft:gunpowder",count:1,components:{"minecraft:custom_name":[{text:"✨",italic:false,bold:true,color:"white"},\
-{text:" Ashes ",italic:false,bold:true,color:"$(artifact)"},{text:"✨",italic:false,bold:true,color:"white"}]}}}
+{text:" Wither Ash ",italic:false,bold:true,color:"$(artifact)"},{text:"✨",italic:false,bold:true,color:"white"}]}}}
 
 data modify entity @s Item.components."minecraft:custom_data".item_name set value 'ashes'
 data modify entity @s Item.components."minecraft:custom_data".is_soulbound set value 1b

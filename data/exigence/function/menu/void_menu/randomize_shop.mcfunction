@@ -29,16 +29,16 @@ execute if score VoidShopSlots Modifiers matches 6 run tag @e[distance=..1,type=
 data modify storage exigence:void_shop selected set value []
 
 # Add item_names to array if selected
-execute if entity @e[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=ender_pearl] run data modify storage exigence:void_shop selected append value ender_pearl
-execute if entity @e[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=golden_carrot] run data modify storage exigence:void_shop selected append value golden_carrot
-execute if entity @e[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=golden_apple] run data modify storage exigence:void_shop selected append value golden_apple
-execute if entity @e[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=totem_of_undying] run data modify storage exigence:void_shop selected append value totem_of_undying
-execute if entity @e[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=clock] run data modify storage exigence:void_shop selected append value clock
-execute if entity @e[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=master_key] run data modify storage exigence:void_shop selected append value master_key
-execute if entity @e[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=boots_sculk] run data modify storage exigence:void_shop selected append value boots_sculk
-execute if entity @e[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=leggings_artifact] run data modify storage exigence:void_shop selected append value leggings_artifact
-execute if entity @e[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=wings] run data modify storage exigence:void_shop selected append value wings
-execute if entity @e[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=helmet_deck] run data modify storage exigence:void_shop selected append value helmet_deck
+execute if entity @n[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=ender_pearl] run data modify storage exigence:void_shop selected append value ender_pearl
+execute if entity @n[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=golden_carrot] run data modify storage exigence:void_shop selected append value golden_carrot
+execute if entity @n[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=golden_apple] run data modify storage exigence:void_shop selected append value golden_apple
+execute if entity @n[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=totem_of_undying] run data modify storage exigence:void_shop selected append value totem_of_undying
+execute if entity @n[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=clock] run data modify storage exigence:void_shop selected append value clock
+execute if entity @n[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=master_key] run data modify storage exigence:void_shop selected append value master_key
+execute if entity @n[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=boots_sculk] run data modify storage exigence:void_shop selected append value boots_sculk
+execute if entity @n[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=leggings_artifact] run data modify storage exigence:void_shop selected append value leggings_artifact
+execute if entity @n[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=wings] run data modify storage exigence:void_shop selected append value wings
+execute if entity @n[distance=..1,type=minecraft:marker,tag=SelectedVoid,tag=helmet_deck] run data modify storage exigence:void_shop selected append value helmet_deck
 # ...
 
 # Kill markers

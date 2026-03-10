@@ -22,6 +22,8 @@ execute in exigence:profile_data run function exigence:profile/profile_cleanup
 say Creating scoreboards
 function exigence:scoreboard/generated_functions/create_scoreboards
 scoreboard objectives modify game.cards_played displayname {text:"Cards Played"}
+scoreboard objectives setdisplay sidebar.team.gold hub.player.consumable_limit
+scoreboard objectives modify hub.player.consumable_limit displayname {text:"Consumable Item Limit"}
 
 say Loading entity property scores from entity data
 function exigence:scoreboard/load_score_from_property
@@ -33,5 +35,5 @@ function exigence:misc/setup_functions/initialize_global_settings
 # Delay after breaking ravager glass before it comes back
 scoreboard players set #RavagerGlassCooldownLimit game.entity.ravager_glass.cooldown 20
 
-# Prevent online players from needing to tp/remove tags
+# Prevent online players from needing to tp/remove tags (because when the scoreboard is replaced, it would detect null as != 0)
 scoreboard players set @a quits 0

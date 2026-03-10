@@ -14,6 +14,9 @@ execute if entity @n[distance=..0.1,tag=LockerRoomNode,tag=South] at @s run tp @
 execute if entity @n[distance=..0.1,tag=LockerRoomNode,tag=West] at @s run tp @s ~1 ~ ~
 execute at @s run playsound minecraft:entity.enderman.teleport ambient @s ~ ~1000 ~ 1000 1
 
+# Remove interaction
+function exigence:hub/locker_room/node/kill_interaction
+
 scoreboard players reset @s hub.player.locker_room_id
 
 #====================================================================================================

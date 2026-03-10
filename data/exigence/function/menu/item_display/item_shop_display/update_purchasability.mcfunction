@@ -1,7 +1,7 @@
 # Updates tags, colors, and displays associated with communicating purchasability
 
 ## CONSTRAINTS
-#   AS item_display
+#   AS/AT item_display
 
 ## INPUT
 #   WITH item_display item.components."minecraft:custom_data"
@@ -71,13 +71,13 @@ execute if entity @s[tag=!CanResearch,tag=!IsResearched] run data modify storage
 
 
 ## UPDATE PARENT LINES
-$execute if entity @s[tag=!IsParentResearched] as @e[type=minecraft:block_display,tag=MenuLine,scores={IDID=$(idid)}] run function exigence:menu/item_display/item_shop_display/parent_line/update {texture:"quartz_block"}
-$execute if entity @s[tag=!IsTierUnlocked] as @e[type=minecraft:block_display,tag=MenuLine,scores={IDID=$(idid)}] run function exigence:menu/item_display/item_shop_display/parent_line/update {texture:"quartz_block"}
+$execute if entity @s[tag=!IsParentResearched] as @e[distance=..5,type=minecraft:block_display,tag=MenuLine,scores={IDID=$(idid)}] run function exigence:menu/item_display/item_shop_display/parent_line/update {texture:"quartz_block"}
+$execute if entity @s[tag=!IsTierUnlocked] as @e[distance=..5,type=minecraft:block_display,tag=MenuLine,scores={IDID=$(idid)}] run function exigence:menu/item_display/item_shop_display/parent_line/update {texture:"quartz_block"}
 # Reset to quartz
-#$execute as @e[type=minecraft:block_display,tag=MenuLine,scores={IDID=$(idid)}] run function exigence:menu/item_display/item_shop_display/parent_line/update {texture:"quartz_block"}
+#$execute as @e[distance=..5,type=minecraft:block_display,tag=MenuLine,scores={IDID=$(idid)}] run function exigence:menu/item_display/item_shop_display/parent_line/update {texture:"quartz_block"}
 
-$execute if entity @s[tag=IsResearched] as @e[type=minecraft:block_display,tag=MenuLine,scores={IDID=$(idid)}] run function exigence:menu/item_display/item_shop_display/parent_line/update {texture:"diamond_block"}
-$execute if entity @s[tag=IsTierUnlocked,tag=!IsResearched,tag=IsParentResearched] as @e[type=minecraft:block_display,tag=MenuLine,scores={IDID=$(idid)}] run function exigence:menu/item_display/item_shop_display/parent_line/update {texture:"magenta_concrete"}
+$execute if entity @s[tag=IsResearched] as @e[distance=..5,type=minecraft:block_display,tag=MenuLine,scores={IDID=$(idid)}] run function exigence:menu/item_display/item_shop_display/parent_line/update {texture:"diamond_block"}
+$execute if entity @s[tag=IsTierUnlocked,tag=!IsResearched,tag=IsParentResearched] as @e[distance=..5,type=minecraft:block_display,tag=MenuLine,scores={IDID=$(idid)}] run function exigence:menu/item_display/item_shop_display/parent_line/update {texture:"magenta_concrete"}
 
 
 
@@ -86,14 +86,14 @@ $execute if entity @s[tag=IsTierUnlocked,tag=!IsResearched,tag=IsParentResearche
 data modify entity @s item.components."minecraft:custom_data".money_color set from storage exigence:shop money_color
 data modify entity @s item.components."minecraft:custom_data".research_color set from storage exigence:shop research_color
 
-$execute if entity @s[tag=IsResearched] as @e[type=minecraft:text_display,tag=CostDisplay,scores={IDID=$(idid)}] run function exigence:menu/item_display/item_shop_display/cost_display/update_researched with entity @e[type=minecraft:item_display,tag=ItemShopDisplay,tag=UpdatingPurchasability,limit=1] item.components."minecraft:custom_data"
-$execute if entity @s[tag=!IsResearched,tag=!Artifact] as @e[type=minecraft:text_display,tag=CostDisplay,scores={IDID=$(idid)}] run function exigence:menu/item_display/item_shop_display/cost_display/update with entity @e[type=minecraft:item_display,tag=ItemShopDisplay,tag=UpdatingPurchasability,limit=1] item.components."minecraft:custom_data"
+$execute if entity @s[tag=IsResearched] as @e[distance=..5,type=minecraft:text_display,tag=CostDisplay,scores={IDID=$(idid)}] run function exigence:menu/item_display/item_shop_display/cost_display/update_researched with entity @n[distance=..1,type=minecraft:item_display,tag=ItemShopDisplay,tag=UpdatingPurchasability] item.components."minecraft:custom_data"
+$execute if entity @s[tag=!IsResearched,tag=!Artifact] as @e[distance=..5,type=minecraft:text_display,tag=CostDisplay,scores={IDID=$(idid)}] run function exigence:menu/item_display/item_shop_display/cost_display/update with entity @n[distance=..1,type=minecraft:item_display,tag=ItemShopDisplay,tag=UpdatingPurchasability] item.components."minecraft:custom_data"
 
 
 
 # Update locked reason if currently hovering this
-#execute if entity @s[tag=Hover] run function exigence:menu/item_display/item_shop_display/locked_reason/update
-function exigence:menu/item_display/item_shop_display/locked_reason/update
+execute if entity @s[tag=Hover] run function exigence:menu/item_display/item_shop_display/locked_reason/update
+#function exigence:menu/item_display/item_shop_display/locked_reason/update
 
 
 tag @s remove UpdatingPurchasability

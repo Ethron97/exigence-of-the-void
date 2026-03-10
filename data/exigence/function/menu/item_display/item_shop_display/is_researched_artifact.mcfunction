@@ -10,8 +10,9 @@
 
 tag @s remove IsResearched
 
-$execute if entity @s[tag=Artifact,tag=!Trial,tag=!Crucible] if entity @a[tag=ItemShopping,advancements={exigence:vault/opened_$(vault)=true}] run tag @s add IsResearched
-$execute if entity @s[tag=Artifact,tag=Trial] if entity @a[tag=ItemShopping,advancements={exigence:vault/trial_$(vault)=true}] run tag @s add IsResearched
-$execute if entity @s[tag=Artifact,tag=Trial] if entity @a[tag=ItemShopping,advancements={exigence:vault/crucible_$(vault)=true}] run tag @s add IsResearched
-$execute if entity @s[tag=Artifact,tag=Crucible] if entity @a[tag=ItemShopping,advancements={exigence:vault/crucible_$(vault)=true}] run tag @s add IsResearched
+$execute if data storage exigence:shop {shop_unlocked:['$(vault_string)']} run tag @s add IsResearched
 
+#$execute at @s[tag=Artifact,tag=!Trial,tag=!Crucible] if entity @a[distance=..24,tag=ItemShop,advancements={exigence:vault/opened_$(vault)=true}] run tag @s add IsResearched
+#$execute at @s[tag=Artifact,tag=Trial] if entity @a[distance=..24,tag=ItemShop,advancements={exigence:vault/trial_$(vault)=true}] run tag @s add IsResearched
+#$execute at @s[tag=Artifact,tag=Trial] if entity @a[distance=..24,tag=ItemShop,advancements={exigence:vault/crucible_$(vault)=true}] run tag @s add IsResearched
+#$execute at @s[tag=Artifact,tag=Crucible] if entity @a[distance=..24,tag=ItemShop,advancements={exigence:vault/crucible_$(vault)=true}] run tag @s add IsResearched

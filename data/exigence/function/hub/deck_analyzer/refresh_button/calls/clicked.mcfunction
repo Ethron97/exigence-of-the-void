@@ -11,6 +11,8 @@
 
 say Clicked refresh button
 
+tag @p[distance=..16,tag=Interacting] add RefreshSource
+
 # Effects
 execute at @s run playsound minecraft:entity.ender_eye.death ui @a ~ ~ ~ 1 1
 execute at @s run particle glow ~ ~ ~0.1 0.1 0.1 0.0 0.001 5
@@ -20,3 +22,5 @@ function exigence:hub/deck_analyzer/refresh_button/calls/refresh/refresh
 
 # Increase cooldown score for player
 scoreboard players add @p[distance=..16,tag=Interacting] hub.player.interaction_cooldown 20
+
+tag @p[distance=..16,tag=Interacting] remove RefreshSource

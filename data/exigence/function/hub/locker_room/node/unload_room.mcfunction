@@ -9,6 +9,7 @@ say Unload locker room
 
 scoreboard players operation #compare hub.entity.profile_id = @s hub.entity.profile_id
 
+#====================================================================================================
 # Get storage from chest contents
 # Returns: #chests_saved Temp
 function exigence:hub/locker_room/load/save_chests
@@ -18,17 +19,20 @@ scoreboard players set #remove_tag Temp 1
 # Inputting: #chests_saved Temp
 execute in exigence:profile_data positioned 8 128 8 as @e[distance=..140,type=marker,tag=ProfileNode] \
 if score @s profile.node.profile_id = #compare hub.entity.profile_id at @s run function exigence:profile/profile_node/save/try_data_to_chest
+#====================================================================================================
 
-# Remove chests
-function exigence:hub/locker_room/load/remove_chests
+# Kill all menu entities
+execute store result storage exigence:temp locker_room_id int 1 run scoreboard players get @s hub.locker_room_id
+function exigence:hub/locker_room/menu/unload_menu with storage exigence:temp
 
 # Remove interactions
-#function exigence:hub/profile_selector/node/kill_interaction
+function exigence:hub/locker_room/node/kill_all_interactions
 
 # Clear number from name
 function exigence:hub/locker_room/node/private/set_id_to_name {id:""}
 
 # Reset id
 scoreboard players reset @s hub.entity.profile_id
+scoreboard players reset @s hub.entity.coop_profile_id
 scoreboard players set @s hub.locker_room_id 0
 scoreboard players reset @s hub.entity.room_id

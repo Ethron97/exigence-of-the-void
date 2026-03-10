@@ -35,5 +35,8 @@ scoreboard players operation @s shop.frame.rarity = #compare shop.frame.rarity
 # Tier (sub-rarity)
 scoreboard players operation @s shop.frame.tier = #compare shop.frame.tier
 
+# Initialize cooldown
+scoreboard players set @s shop.frame.purchase_cooldown 0
+
 # Remove local tag(s)
 tag @s remove NewItemDisplay

@@ -9,7 +9,8 @@ say Leaving profile selector
 
 tag @s remove ProfileSelecting
 
-tp @s -3.5 195.0 -65.5 -90 0
+#tp @s -3.5 195.0 -65.5 -90 0
+tp @s -2.5 200.0 -15.5 -90 0
 execute at @s run playsound minecraft:entity.enderman.teleport ambient @s ~ ~1000 ~ 1000 1
 
 # Reset team

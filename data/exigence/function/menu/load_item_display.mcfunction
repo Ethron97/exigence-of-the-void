@@ -1,6 +1,6 @@
 ## CONSTRAINTS
-# AS item that is to be converted to an item display 
-# AT where it should be placed
+#   AS item that is to be converted to an item display 
+#   AT where it should be placed
 
 ## INPUT:
 #   STR menu_tag - Tag to identify which menu this display belongs to
@@ -23,7 +23,7 @@ $data modify entity @s Item.components."minecraft:custom_data".menu_tag set valu
 
 # Assign new IDID
 scoreboard players add #highest IDID 1
-scoreboard players operation @e[type=minecraft:item_display,tag=NewItemDisplay,limit=1] IDID = #highest IDID
+scoreboard players operation @n[distance=..0.1,type=minecraft:item_display,tag=NewItemDisplay] IDID = #highest IDID
 
 # Add ID to item data
 execute store result entity @s Item.components."minecraft:custom_data".idid int 1 run scoreboard players get #highest IDID
@@ -36,6 +36,6 @@ data modify entity @s Item.components."minecraft:custom_data".Rot1 set from enti
 
 # Copy item data to item display
 #   Ie raw item info, so this is just the item id and model data
-data modify entity @e[type=minecraft:item_display,tag=NewItemDisplay,limit=1] item set from entity @s Item
+data modify entity @n[distance=..0.1,type=minecraft:item_display,tag=NewItemDisplay] item set from entity @s Item
 
 # Local tag to be removed by function that implements this

@@ -3,7 +3,7 @@
 #   priority 0 means max tries equal to config (default 10)
 # Valid functions:
 #   - exigence:treasure/node/summon_coin
-#   - exigence:door/level/LEVEL/summon_key
+#   - exigence:door/level/<LEVEL>/summon_key
 #   - exigence:treasure/sherd/summon_sherd
 #   - exigence:beacon/summon_ardor_flame
 #   - exigence:ember/summon_ember

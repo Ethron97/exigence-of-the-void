@@ -17,6 +17,8 @@ $summon minecraft:text_display ~ ~ ~ {Rotation:$(Rotation),billboard:"fixed",ali
 # Give matching scoreboard value
 scoreboard players operation @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] IDID = @s IDID
 scoreboard players operation @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id
+scoreboard players operation @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] hub.entity.locker_room_id = @s hub.entity.locker_room_id
+execute if entity @s[tag=ItemShopAnalyzerDisplay] run tag @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] add ItemShopAnalyzerDisplay
 
 # Merge text based on how many lore lines there are
 data modify entity @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] text set from entity @s item.components."minecraft:custom_name"

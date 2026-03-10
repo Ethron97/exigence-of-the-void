@@ -21,8 +21,8 @@ execute as @s[tag=LockerRoom] at @s if block ~ ~ ~ minecraft:yellow_stained_glas
 execute as @s[tag=!LockerRoom] at @s if block ~ ~ ~ minecraft:yellow_stained_glass_pane at @n[distance=..5,type=marker,tag=LockerRoomNode] run function exigence:hub/locker_room/access/try_enter_door
 
 # ITEM SHOP (orange stained glass)
-#execute as @s[tag=ItemShopping] at @s if block ~ ~ ~ minecraft:orange_stained_glass_pane run function exigence:hub/item_shop/door/try_leave
-#execute as @s[tag=!ItemShopping,tag=!Lockerroom,tag=!Predungeon,tag=!EmberViewing] at @s if block ~ ~ ~ minecraft:orange_stained_glass_pane run function exigence:hub/item_shop/door/try_enter
+execute as @s[tag=ItemShop] at @s if block ~ ~ ~ minecraft:orange_stained_glass_pane run function exigence:hub/item_shop/access/leave
+execute as @s[tag=!ItemShop] at @s if block ~ ~ ~ minecraft:orange_stained_glass_pane run function exigence:hub/item_shop/access/try_enter_door
 
 # Predungeon
 #execute as @s[tag=Lockerroom,tag=!Predungeon,tag=!Coop] at @s if block ~ ~ ~ minecraft:purple_stained_glass_pane run function exigence:hub/predungeon/try_enter_room
@@ -39,7 +39,7 @@ execute as @s[tag=!LockerRoom] at @s if block ~ ~ ~ minecraft:yellow_stained_gla
 
 # Ember shop (viewing)
 #execute as @s[tag=EmberViewing] at @s if block ~ ~ ~ minecraft:light_blue_stained_glass_pane run function exigence:hub/ember_shop/door_viewing/try_leave
-#execute as @s[tag=!ItemShopping,tag=!Lockerroom,tag=!Predungeon,tag=!EmberViewing,tag=!EmberShopping] at @s if block ~ ~ ~ minecraft:light_blue_stained_glass_pane run function exigence:hub/ember_shop/door_viewing/try_enter
+#execute as @s[tag=!ItemShop,tag=!Lockerroom,tag=!Predungeon,tag=!EmberViewing,tag=!EmberShopping] at @s if block ~ ~ ~ minecraft:light_blue_stained_glass_pane run function exigence:hub/ember_shop/door_viewing/try_enter
 
 # Ember shop (shopping)
 #execute as @s[tag=EmberShopping] at @s if block ~ ~ ~ minecraft:light_blue_stained_glass_pane run function exigence:hub/ember_shop/door_shopping/try_leave

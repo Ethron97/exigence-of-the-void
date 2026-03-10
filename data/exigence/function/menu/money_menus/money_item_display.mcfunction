@@ -19,11 +19,11 @@
 #$say money item display $(Rotation)
 
 # Summon item (unless existing NSS exists)
-$execute unless entity @e[type=item,tag=NSS] run function exigence:hub/item_shop/item/summon_item {item_name:'$(item_name)'}
+$execute unless entity @n[distance=..0.01,type=item,tag=NSS] run function exigence:hub/item_shop/item/summon_item {item_name:'$(item_name)'}
 
 # Setup item data
 #   This also summons the NewItemDisplay
-$execute as @e[distance=..0.01,type=minecraft:item,tag=NSS] run function exigence:menu/money_menus/money_item_display_item {menu_tag:'$(menu_tag)',money_cost:$(money_cost),research_cost:$(research_cost),parents:$(parents),Rotation:'$(Rotation)'}
+$execute as @n[distance=..0.01,type=minecraft:item,tag=NSS] run function exigence:menu/money_menus/money_item_display_item {menu_tag:'$(menu_tag)',money_cost:$(money_cost),research_cost:$(research_cost),parents:$(parents),Rotation:'$(Rotation)'}
 
 
 # shop.frame.rarity (1=Common, 2=Uncommon, 3=Rare, 4=Legendary)
@@ -31,5 +31,5 @@ $scoreboard players set #compare shop.frame.rarity $(rarity)
 # Tier (sub-rarity)
 $scoreboard players set #compare shop.frame.tier $(tier)
 
-execute as @e[distance=..1,type=minecraft:item_display,tag=NewItemDisplay] run function exigence:menu/money_menus/money_item_display_data
+execute as @n[distance=..1,type=minecraft:item_display,tag=NewItemDisplay] run function exigence:menu/money_menus/money_item_display_data
 

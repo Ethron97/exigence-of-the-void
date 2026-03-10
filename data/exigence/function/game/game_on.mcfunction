@@ -134,7 +134,6 @@ execute as @e[tag=Silence] run data modify entity @s Silent set value false
 # Drop level keys
 function exigence:treasure/keys/drop_level_keys
 
-
 # Initialize random rotation data
 data merge storage temp {Rotation:[0.0f,0.0f]}
 
@@ -172,7 +171,6 @@ scoreboard players set #max_awareness game.warden.awareness 75
 scoreboard players set #anger_threshold game.warden.awareness 30
 
 #====================================================================================================
-
 
 # Load Game NPCs
 function exigence:npc/game/load_npcs

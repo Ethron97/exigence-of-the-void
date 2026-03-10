@@ -35,4 +35,4 @@ execute as @e[type=minecraft:item_display,tag=VaultHandleKey] if score @s game.v
 scoreboard players add @s profile.data.vaults.cr.vaults_opened 1
 
 # Give "opened_" advancement
-$advancement grant @s only exigence:vault/opened_$(vault)
+$execute if score @s game.player.active_level matches 1..2 run function exigence:profile/profile_node/set/shop_unlock_vault {vault_string:"opened_$(vault)"}

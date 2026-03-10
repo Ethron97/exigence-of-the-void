@@ -1,10 +1,11 @@
 # Implements money_item_display
 
 ## CONSTRAINTS:
-# AT where to place item display
+#   AT where to place item display
 
 ## INPUT:
 #   STR vault
+#   STR unlock <opened,trial,crucible>, forms vault_string together with vault
 #   STR menu_tag
 #   STR item_name
 #   INT money_cost
@@ -20,7 +21,7 @@
 $function exigence:vault/artifact/summon_item {item_name:'$(item_name)'}
 
 # Artifact related data
-$execute as @e[type=item,tag=NAS] run function exigence:menu/money_menus/artifact/data {vault:'$(vault)'}
+$execute as @n[distance=..0.1,type=item,tag=NAS] run function exigence:menu/money_menus/artifact/data {vault:'$(vault)',unlock:'$(unlock)'}
 
 # Call money item display
 $function exigence:menu/money_menus/money_item_display {menu_tag:'$(menu_tag)',item_name:'',rarity:$(rarity),tier:$(tier),money_cost:$(money_cost),research_cost:$(research_cost),parents:[],Rotation:'$(Rotation)'}

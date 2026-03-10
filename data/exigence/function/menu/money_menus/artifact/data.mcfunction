@@ -5,6 +5,7 @@
 
 ## INPUT
 #   STR vault
+#   STR unlock
 
 #====================================================================================================
 
@@ -14,6 +15,7 @@ execute as @s[nbt={Item:{id:"minecraft:trident"}}] run data modify entity @s Ite
 
 data modify entity @s Item.components."minecraft:custom_data".is_artifact set value 1
 $data modify entity @s Item.components."minecraft:custom_data".vault set value $(vault)
+$data modify entity @s Item.components."minecraft:custom_data".vault_string set value '$(unlock)_$(vault)'
 
 # Give NSS tag so the money_item_display knows what to do
 tag @s add NSS

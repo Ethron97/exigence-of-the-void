@@ -9,8 +9,8 @@
 #say I have been right clicked
 
 # If foreign key does not match return
-execute unless score @s IDID = @a[tag=ItemShopping,tag=Interacting,limit=1] shop.player.looking_at_idid run say Not the one I am looking at
-execute unless score @s IDID = @a[tag=ItemShopping,tag=Interacting,limit=1] shop.player.looking_at_idid run return 1
+execute at @s unless score @s IDID = @p[tag=ItemShop,tag=Interacting] shop.player.looking_at_idid run say Not the one I am looking at
+execute at @s unless score @s IDID = @p[tag=ItemShop,tag=Interacting] shop.player.looking_at_idid run return 1
 #----------------------------------------------------------------------------------------------------
 
 # call purchase handler

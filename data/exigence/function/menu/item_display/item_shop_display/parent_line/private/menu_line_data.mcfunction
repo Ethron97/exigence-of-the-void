@@ -14,7 +14,7 @@
 scoreboard players operation @s IDID = #compare IDID
 
 # Teleport facing DrawLineTo facing second entity
-execute as @e[distance=..1,type=minecraft:block_display,tag=NewMenuLine] at @s anchored eyes facing entity @e[distance=..10,tag=DrawLineTo,limit=1] eyes run tp @s ~ ~ ~ ~ ~
+execute as @n[distance=..1,type=minecraft:block_display,tag=NewMenuLine] at @s anchored eyes facing entity @n[distance=..10,tag=DrawLineTo] eyes run tp @s ~ ~ ~ ~ ~
 
 # Merge translation
 $data merge entity @s {transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-$(offset),-$(offset),0.0f],scale:[$(thickness),$(thickness),$(length)f]}}
@@ -23,7 +23,7 @@ $data merge entity @s {transformation:{left_rotation:[0f,0f,0f,1f],right_rotatio
 data modify storage exigence:menu rotation set from entity @s Rotation
 
 # Merge rotation with MenuAnchor
-execute at @s run data modify entity @s Rotation set from entity @e[distance=..10,type=minecraft:armor_stand,tag=MenuAnchor,limit=1] Rotation
+execute at @s run data modify entity @s Rotation set from entity @n[distance=..10,type=minecraft:marker,tag=MenuAnchor] Rotation
 
 # Teleport back so it is behind the item displays
 execute at @s run tp @s ^ ^ ^-0.1

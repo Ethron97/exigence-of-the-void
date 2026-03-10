@@ -19,12 +19,12 @@ execute as @a[gamemode=!spectator,predicate=exigence:dimension/entity/hub] run f
 # Increase hub tick score for profile (if they are in adventure mode)
 execute as @a[gamemode=adventure,predicate=exigence:dimension/entity/hub] run scoreboard players add @s profile.hub_ticks 1
 
-# Profile menu tick
+# Room menu tick(s)
 execute as @a[scores={hub.player.profile_selector_id=1..}] at @s run function exigence:hub/profile_selector/menu/profile_menu_tick
+execute positioned 0 100 0 as @e[distance=..200,type=marker,tag=LockerRoomNode,scores={hub.locker_room_id=1..}] at @s run function exigence:hub/locker_room/menu/locker_menu_tick
+execute positioned -43.5 200.0 0.5 if entity @a[distance=..50,tag=ItemShop] run function exigence:hub/item_shop/menu/shop_menu_tick
 scoreboard players remove @a[scores={hub.player.interaction_cooldown=1..}] hub.player.interaction_cooldown 1
 
-# Item shop tick if someone is shopping
-#execute if entity @a[distance=..1000,tag=ItemShopping] run function exigence:hub/item_shop/item_shop_tick
 
 # Animate coin conversion
 #execute if entity @a[distance=..1000,tag=ConvertingCoins,scores={career.settings.coin_conversion_style=2}] run function exigence:hub/convert_money/display_hud/tick

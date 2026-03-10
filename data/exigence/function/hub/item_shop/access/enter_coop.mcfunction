@@ -1,0 +1,31 @@
+# Handle player entering the room
+
+## CONSTRAINTS
+#   AS/AT player
+
+#====================================================================================================
+
+say Entering item shop (COOP)
+
+tag @s add ItemShop
+team join ItemShop @s
+
+tp @s ~-3 ~ ~
+playsound minecraft:entity.enderman.teleport ambient @s ~ ~1000 ~ 1000 1
+
+# Store ids
+scoreboard players operation #compare career.player_id = @s career.player_id
+scoreboard players operation #compare profile.player.profile_id = @s profile.player.profile_id
+ 
+# Summon interaction
+function exigence:hub/item_shop/node/setup_interaction
+
+#====================================================================================================
+# Assign room ids
+scoreboard players operation #compare hub.entity.room_id = @n[distance=..1,tag=LockerRoomNode] hub.entity.room_id
+#   PLAYER
+scoreboard players operation @s hub.player.room_id = #compare hub.entity.room_id
+execute in exigence:profile_data positioned 8 3 8 as @e[distance=..20,type=armor_stand,tag=PlayerNode] if score @s profile.node.player_id = #compare career.player_id \
+run scoreboard players operation @s player.node.room_id = #compare hub.entity.room_id
+#   FK (link room node to specific room node)
+scoreboard players operation @n[distance=..1,tag=LockerRoomNode] hub.entity.room_id = #compare hub.entity.room_id

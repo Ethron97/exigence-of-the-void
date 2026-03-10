@@ -2,7 +2,7 @@
 #   ALT for smaller
 
 ## CONSTRAINTS
-# AS item_display
+#   AS item_display
 
 ## INPUT
 #   FLOAT Rot0 - 0.0f
@@ -12,42 +12,40 @@
 
 # DEBUG
 #say QUestio nkarm
+#$say loring Rotation:[$(Rot0),$(Rot1)]
 
 # Decrement lore lines
 scoreboard players remove @s shop.frame.lore_lines 1
 
-#$say loring Rotation:[$(Rot0),$(Rot1)]
-
 # Summon text display
 $summon minecraft:text_display ~ ~ ~ {background:-936902616,billboard:"fixed",alignment:"left",Tags:["ItemDetails","NewTextDisplay","MergeRotation"],text:{text:""},Rotation:[$(Rot0),$(Rot1)],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.5f,0.5f,0.5f]}}
 
-
 # Merge text based on how many lore lines there are
-execute if score @s shop.frame.lore_lines matches -1 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:custom_name"
-execute if score @s shop.frame.lore_lines matches 0 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[0]
-execute if score @s shop.frame.lore_lines matches 1 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[1]
-execute if score @s shop.frame.lore_lines matches 2 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[2]
-execute if score @s shop.frame.lore_lines matches 3 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[3]
-execute if score @s shop.frame.lore_lines matches 4 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[4]
-execute if score @s shop.frame.lore_lines matches 5 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[5]
-execute if score @s shop.frame.lore_lines matches 6 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[6]
-execute if score @s shop.frame.lore_lines matches 7 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[7]
-execute if score @s shop.frame.lore_lines matches 8 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[8]
-execute if score @s shop.frame.lore_lines matches 9 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[9]
-execute if score @s shop.frame.lore_lines matches 10 run data modify entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] text set from entity @s item.components."minecraft:lore"[10]
+execute if score @s shop.frame.lore_lines matches -1 run data modify entity @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] text set from entity @s item.components."minecraft:custom_name"
+execute if score @s shop.frame.lore_lines matches 0 run data modify entity @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] text set from entity @s item.components."minecraft:lore"[0]
+execute if score @s shop.frame.lore_lines matches 1 run data modify entity @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] text set from entity @s item.components."minecraft:lore"[1]
+execute if score @s shop.frame.lore_lines matches 2 run data modify entity @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] text set from entity @s item.components."minecraft:lore"[2]
+execute if score @s shop.frame.lore_lines matches 3 run data modify entity @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] text set from entity @s item.components."minecraft:lore"[3]
+execute if score @s shop.frame.lore_lines matches 4 run data modify entity @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] text set from entity @s item.components."minecraft:lore"[4]
+execute if score @s shop.frame.lore_lines matches 5 run data modify entity @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] text set from entity @s item.components."minecraft:lore"[5]
+execute if score @s shop.frame.lore_lines matches 6 run data modify entity @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] text set from entity @s item.components."minecraft:lore"[6]
+execute if score @s shop.frame.lore_lines matches 7 run data modify entity @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] text set from entity @s item.components."minecraft:lore"[7]
+execute if score @s shop.frame.lore_lines matches 8 run data modify entity @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] text set from entity @s item.components."minecraft:lore"[8]
+execute if score @s shop.frame.lore_lines matches 9 run data modify entity @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] text set from entity @s item.components."minecraft:lore"[9]
+execute if score @s shop.frame.lore_lines matches 10 run data modify entity @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] text set from entity @s item.components."minecraft:lore"[10]
 
 scoreboard players set #skip Temp 0
 
 # Give matching scoreboard value
-scoreboard players operation @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] IDID = @s IDID
+scoreboard players operation @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] IDID = @s IDID
 
 # Skip if text is still empty after adding lore
-execute if data entity @e[type=minecraft:text_display,tag=NewTextDisplay,limit=1] {text:""} run scoreboard players set #skip Temp 1
+execute if data entity @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] {text:""} run scoreboard players set #skip Temp 1
 
-execute if score #skip Temp matches 1 run kill @e[type=minecraft:text_display,tag=NewTextDisplay]
+execute if score #skip Temp matches 1 run kill @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay]
 
 # Remove local tag
-tag @e[type=minecraft:text_display,tag=NewTextDisplay] remove NewTextDisplay
+tag @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] remove NewTextDisplay
 
 # Continue loop if lore remains
 #   If skip, don't move upwards

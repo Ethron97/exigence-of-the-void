@@ -58,7 +58,7 @@ $execute positioned ^-0.5 ^5 ^ run function exigence:menu/money_menus/money_item
 
 
 # Add MenuConsumable
-tag @e[type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay] add MenuConsumable
+tag @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay] add MenuConsumable
 # Order important to exclude one time upgrade from FILL POTS
 
 # Permanent upgrade
@@ -66,5 +66,5 @@ $execute positioned ^ ^5.75 ^ run function exigence:menu/money_menus/money_item_
 
 
 # Connect parents
-execute as @e[type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay] run function exigence:menu/item_display/item_shop_display/connect_parents
+execute as @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay] run function exigence:menu/item_display/item_shop_display/connect_parents
 

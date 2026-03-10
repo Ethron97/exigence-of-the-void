@@ -24,7 +24,7 @@ tag @e[distance=..10,type=item_display,tag=NewItemDisplay] remove NewItemDisplay
 
 # Edit text displays
 scoreboard players operation @e[distance=..10,type=text_display,tag=NewTextDisplay] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id
-tag @e[distance=..10,type=text_display,tag=NewTextDisplay] remove NewItemDisplay
+tag @e[distance=..10,type=text_display,tag=NewTextDisplay] remove NewTextDisplay
 
 # Edit block displays
 scoreboard players operation @e[distance=..10,type=block_display,tag=NewBlockDisplay] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id

@@ -1,0 +1,41 @@
+# Unload all shop menus, called when player leaves the shop
+
+## CONSTRAINTS
+#   AT position (center of item shop)
+#   IN exigence:hub
+
+#====================================================================================================
+
+# DEBUG
+say Unload item shop
+
+# Any menu item that is loaded, tp back up to be "unloaded"
+execute as @e[distance=..32,type=minecraft:item_display,tag=ItemShopDisplay,tag=Loaded] run function exigence:menu/item_display/item_shop_display/load/unload
+
+execute in exigence:hub positioned 0 153 0 as @n[distance=..1,type=marker,tag=RoomNode,scores={hub.room.room_type=4}] \
+run scoreboard players operation #compare hub.entity.profile_id = @s hub.entity.profile_id
+
+#====================================================================================================
+# Get storage from chest contents
+#   RETURNS: #chests_saved Temp
+execute positioned -27.5 200.0 0.5 run function exigence:hub/item_shop/load/save_chests
+
+# Store data
+scoreboard players set #remove_tag Temp 1
+#   INPUT: #chests_saved Temp
+execute in exigence:profile_data positioned 8 128 8 as @e[distance=..140,type=marker,tag=ProfileNode] \
+if score @s profile.node.profile_id = #compare hub.entity.profile_id at @s run function exigence:profile/profile_node/save/try_data_to_chest
+
+#====================================================================================================
+
+# Remove deck analyzer
+execute positioned -27.5 200.0 0.5 run kill @e[distance=..8,type=#exigence:display,tag=ItemShopAnalyzerDisplay]
+execute positioned -27.5 200.0 0.5 run kill @e[distance=..8,type=marker,tag=ItemShopAnalyzerDisplay]
+
+# Remove interactions
+function exigence:hub/item_shop/node/kill_all_interactions
+
+# Remove all items off the ground (so other people can't pick them up when entering)
+# TODO
+#   Or, teleport all items to the player that left? But then what do we do on room kick?
+
