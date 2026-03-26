@@ -10,7 +10,7 @@
 #====================================================================================================
 
 # DEBUG
-say update purchasability a
+#say update purchasability a
 
 # Load advancements
 execute as @r[distance=..24,tag=ItemShop] run function exigence:hub/item_shop/load_unlocks

@@ -18,6 +18,7 @@ execute at @s run playsound minecraft:entity.enderman.teleport ambient @s ~ ~100
 function exigence:hub/locker_room/node/kill_interaction
 
 scoreboard players reset @s hub.player.locker_room_id
+scoreboard players reset @s shop.player.looking_at_idid
 
 #====================================================================================================
 # Remove THIS player from room node

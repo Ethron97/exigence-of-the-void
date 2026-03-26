@@ -9,7 +9,9 @@ say Node close triage
 
 # Triage
 execute if score @s hub.room.room_type matches 1 run function exigence:room/tutorial/close_from_timeout
-execute if score @s hub.room.room_type matches 4 run function exigence:room/item_shop/close_from_timeout
+execute if score @s hub.room.room_type matches 2 run function exigence:room/predungeon/close_from_timeout
+
+execute if score @s hub.room.room_type matches 9 run function exigence:room/item_shop/close_from_timeout
 execute if score @s hub.room.room_type matches 10 run function exigence:room/profile_selector/close_from_timeout
 execute if score @s hub.room.room_type matches 11 run function exigence:room/locker_room/close_from_timeout
 # ...

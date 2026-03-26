@@ -4,14 +4,16 @@
 #   AS/AT deck analyzer
 
 ## INPUT
-#   INT profile_id
+#   SCORE #profile_id Temp
+#   SCORE #coop_profile_id Temp
 
 #====================================================================================================
 
-$say Load deck analyzer from ITEM SHOP room [profile:$(profile_id)]
+say Load deck analyzer from ITEM SHOP room
 
 # Call interface
-$function exigence:hub/deck_analyzer/load_deck_anaylzer {profile_id:$(profile_id)}
+#   INPUT: #profile_id Temp, #coop_profile_id Temp
+function exigence:hub/deck_analyzer/load_deck_anaylzer
 
 # Item Displays
 tag @e[distance=..8,type=item_display,tag=NewItemDisplay] add ItemShopAnalyzerDisplay

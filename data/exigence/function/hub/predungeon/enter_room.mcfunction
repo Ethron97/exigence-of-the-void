@@ -3,7 +3,7 @@
 say Enter predungeon
 
 
-function exigence:deck/process/analyze_deck
+#function exigence:deck/process/analyze_deck
 
 # Tag swap
 tag @s remove Lockerroom

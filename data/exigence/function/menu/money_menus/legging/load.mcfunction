@@ -46,4 +46,4 @@ $execute positioned ^ ^5 ^ run function exigence:menu/money_menus/money_item_dis
 #$execute positioned ^ ^5.75 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuLeggings',item_name:'pants_vault_b',rarity:4,tier:8,money_cost:15,research_cost:64,parents:['pants_vault_a'],Rotation:'$(Rotation)'}
 
 # Connect parents
-execute as @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay] run function exigence:menu/item_display/item_shop_display/connect_parents
+execute as @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay] run function exigence:menu/item_display/item_shop_display/create/connect_parents

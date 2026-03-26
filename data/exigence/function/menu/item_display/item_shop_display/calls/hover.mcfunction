@@ -17,7 +17,7 @@ function exigence:menu/item_display/display_item_details with entity @s item.com
 # Display costs
 execute as @s[tag=ItemShopDisplay,tag=!IsOneTimePurchased] at @s run function exigence:menu/item_display/item_shop_display/cost_display/create with entity @s
 execute as @s[tag=ItemShopDisplay,tag=!IsOneTimePurchased,tag=Artifact,tag=!IsResearched,tag=IsTierUnlocked] at @s run function exigence:menu/item_display/item_shop_display/cost_display/create_artifact with entity @s item.components."minecraft:custom_data"
-execute as @s[tag=ItemShopDisplay,tag=!IsOneTimePurchased] at @s run function exigence:menu/item_display/item_shop_display/update_purchasability with entity @s item.components."minecraft:custom_data"
+execute as @s[tag=ItemShopDisplay,tag=!IsOneTimePurchased] at @s unless entity @s[tag=!IsTierUnlocked,tag=!IsParentResearched] run function exigence:menu/item_display/item_shop_display/update_purchasability_displays with entity @s item.components."minecraft:custom_data"
 
 # Update locked reason
 execute as @s[tag=ItemShopDisplay,tag=!CanPurchase] run function exigence:menu/item_display/item_shop_display/locked_reason/update

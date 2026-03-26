@@ -11,6 +11,8 @@
 execute unless predicate exigence:dimension/entity/profile_data run return 1
 #====================================================================================================
 
+say Load profile
+
 # Load inventory
 $execute positioned 8 128 8 at @n[distance=..140,tag=ProfileNode,scores={profile.node.profile_id=$(profile_id)}] positioned ~1 ~ ~ run function exigence:profile/profile_node/load/load_inventory
 

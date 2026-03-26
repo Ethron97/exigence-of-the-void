@@ -9,7 +9,6 @@
 say Entering Locker Room
 
 tag @s add LockerRoom
-tag @s add RefreshSource
 
 execute if entity @n[distance=..0.1,tag=LockerRoomNode,tag=South] at @s run tp @s ~ ~ ~1
 execute if entity @n[distance=..0.1,tag=LockerRoomNode,tag=West] at @s run tp @s ~-1 ~ ~
@@ -41,5 +40,3 @@ execute in exigence:profile_data positioned 8 3 8 as @e[distance=..20,type=armor
 run scoreboard players operation @s player.node.room_id = #next hub.room.room_id
 #   FK (link room node to specific room node)
 scoreboard players operation @n[distance=..1,tag=LockerRoomNode] hub.entity.room_id = #next hub.room.room_id
-
-tag @s remove RefreshSource

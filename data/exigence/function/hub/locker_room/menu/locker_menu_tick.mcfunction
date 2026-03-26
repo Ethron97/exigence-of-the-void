@@ -13,7 +13,7 @@ execute as @e[distance=..8,type=minecraft:item_display,tag=MenuDisplay,tag=Hover
 if score @s hub.entity.locker_room_id = #compare hub.locker_room_id run function exigence:menu/menu_tick_tag_swap
 
 # Handle player functions
-execute as @a[distance=..8,tag=LockerRoom] if score @s hub.player.locker_room_id = #compare hub.locker_room_id run function exigence:hub/locker_room/menu/locker_player_tick
+execute as @a[distance=..8,tag=LockerRoom] if score @s hub.player.locker_room_id = #compare hub.locker_room_id at @s run function exigence:hub/locker_room/menu/locker_player_tick
 
 # Hover logic
 execute as @e[distance=..8,type=minecraft:item_display,tag=MenuDisplay] \

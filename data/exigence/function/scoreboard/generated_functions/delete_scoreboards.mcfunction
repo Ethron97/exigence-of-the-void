@@ -996,3 +996,4 @@ scoreboard objectives remove player.node.queue.timeout_profile_selector
 scoreboard objectives remove player.node.queue.timeout_tutorial
 scoreboard objectives remove player.node.queue.timeout_locker_room
 scoreboard objectives remove player.node.queue.timeout_item_shop
+scoreboard objectives remove player.node.queue.timeout_predungeon

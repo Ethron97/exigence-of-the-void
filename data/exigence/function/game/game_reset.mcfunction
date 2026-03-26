@@ -73,8 +73,8 @@ execute as @e[type=armor_stand,tag=BerryNode] run function exigence:botany/node/
 function exigence:mirror/hidden_blocks/reset_hidden_blocks
 
 # After player gets their deck back, reanalyze so ember shop info is updated
-execute as @a[tag=PrimaryPlayer] run function exigence:deck/process/analyze_deck
-function exigence:hub/predungeon/private/update_analysis_display
+#execute as @a[tag=PrimaryPlayer] run function exigence:deck/process/analyze_deck
+#function exigence:hub/predungeon/private/update_analysis_display
 
 # Clear cake from all echo nodes
 execute at @e[type=minecraft:armor_stand,tag=EchoNode] run fill ~-1 ~ ~-1 ~1 ~ ~1 minecraft:air replace minecraft:cake

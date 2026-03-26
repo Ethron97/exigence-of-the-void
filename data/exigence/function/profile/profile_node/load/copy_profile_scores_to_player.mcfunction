@@ -8,6 +8,7 @@
 #   SCORE #online Temp
 
 #====================================================================================================
+execute unless entity @s[type=player] run return run say Tried to copy profile scores to a non player?
 
 scoreboard players operation @s profile.player.profile_id = @n[distance=..0.1,tag=ProfileNode] profile.node.profile_id
 scoreboard players operation @s profile.player.coop_profile_index = @n[distance=..0.1,tag=ProfileNode] profile.node.coop_profile_index

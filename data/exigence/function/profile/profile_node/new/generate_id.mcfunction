@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # Make sure #sequence is current the highest or higher than all existing
-execute in exigence:profile_data as @e[distance=..1000,tag=ProfileNode] run scoreboard players operation #sequence profile.player.profile_id > @s profile.node.profile_id
+execute in exigence:profile_data positioned 8 128 8 as @e[distance=..1000,type=marker,tag=ProfileNode] run scoreboard players operation #sequence profile.player.profile_id > @s profile.node.profile_id
 
 # Then add 1 to make it unique
 scoreboard players add #sequence profile.player.profile_id 1

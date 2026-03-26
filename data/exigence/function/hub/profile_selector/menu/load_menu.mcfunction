@@ -19,13 +19,6 @@ $execute positioned ~0 ~1.5 ~-5.4 run function exigence:hub/profile_selector/men
 $execute positioned ~1 ~1.5 ~-5.4 run function exigence:hub/profile_selector/menu/try_load_slot_ {player_id:$(player_id),slot_id:4,profile_selector_id:$(profile_selector_id)}
 $execute positioned ~2 ~1.5 ~-5.4 run function exigence:hub/profile_selector/menu/try_load_slot_ {player_id:$(player_id),slot_id:5,profile_selector_id:$(profile_selector_id)}
 
-# Load player id display
-#   Deprecated because we don't need the player id for invites anymore
-#$$execute positioned ~ ~4.2 ~-5.49 run summon minecraft:text_display ~ ~ ~ \
-{alignment:"center",background:1,line_width:150,Rotation:[0.0f,0.0f],Tags:["MenuTextDisplay","NewMenuDisplay"],billboard:'fixed',text:\
-[{text:"[ ",color:"dark_gray"},{text:"Player Code: ",color:"yellow"},{text:"$(player_id)",color:"yellow",bold:true,underlined:true},{text:" ]",color:"dark_gray",bold:false,underlined:false}]\
-,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.5f,0.5f,0.5f]}}
-
 #====================================================================================================
 # Load titles
 summon minecraft:item_display ~ ~5.25 ~-4.5 {brightness:{block:13,sky:13},CustomName:{text:"ItemDisplay | TitleProfiles"},Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["MenuTitleDisplay","NewMenuDisplay"],\

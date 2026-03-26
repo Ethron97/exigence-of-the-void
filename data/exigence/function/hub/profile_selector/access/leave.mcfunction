@@ -19,6 +19,7 @@ team leave @s
 # Handle scores
 scoreboard players operation #compare hub.profile_selector_id = @s hub.player.profile_selector_id
 scoreboard players reset @s hub.player.profile_selector_id
+scoreboard players reset @s shop.player.looking_at_idid
 # Reset triggers
 scoreboard players reset @s AcceptCoopInvite
 scoreboard players reset @s DeclineCoopInvite

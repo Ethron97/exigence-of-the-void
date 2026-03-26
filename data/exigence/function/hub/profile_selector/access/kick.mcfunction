@@ -24,3 +24,4 @@ scoreboard players reset @s AcceptCoopInvite
 scoreboard players reset @s DeclineCoopInvite
 
 scoreboard players reset @s hub.player.room_id
+scoreboard players reset @s shop.player.looking_at_idid

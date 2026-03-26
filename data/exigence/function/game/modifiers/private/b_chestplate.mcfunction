@@ -5,34 +5,33 @@
 
 #====================================================================================================
 
-## ====================== CHESTPLATES ======================
 # Resource
-execute if predicate exigence:equipment/chestplate/get_all run function exigence:resources/try_generate {green:1,red:1,aqua:1}
-execute if predicate exigence:equipment/chestplate/get_green run function exigence:resources/try_generate {green:3,red:0,aqua:0}
-execute if predicate exigence:equipment/chestplate/get_red run function exigence:resources/try_generate {green:0,red:3,aqua:0}
-execute if predicate exigence:equipment/chestplate/get_aqua run function exigence:resources/try_generate {green:0,red:0,aqua:3}
+execute if predicate exigence:equipment/chestplate/get_all run return run function exigence:resources/try_generate {green:1,red:1,aqua:1}
+execute if predicate exigence:equipment/chestplate/get_green run return run function exigence:resources/try_generate {green:3,red:0,aqua:0}
+execute if predicate exigence:equipment/chestplate/get_red run return run function exigence:resources/try_generate {green:0,red:3,aqua:0}
+execute if predicate exigence:equipment/chestplate/get_aqua run return run function exigence:resources/try_generate {green:0,red:0,aqua:3}
 
 # Invisibility
-execute if predicate exigence:equipment/chestplate/invis_a run scoreboard players set @s game.player.mod.phantom_scales 1
-execute if predicate exigence:equipment/chestplate/invis_b run scoreboard players set @s game.player.mod.phantom_scales 2
-execute if predicate exigence:equipment/chestplate/invis_c run scoreboard players set @s game.player.mod.phantom_scales 3
-execute if predicate exigence:equipment/chestplate/invis_d run scoreboard players set @s game.player.mod.phantom_scales 4
-execute if predicate exigence:equipment/chestplate/invis_e run scoreboard players set @s game.player.mod.phantom_scales 5
-execute if predicate exigence:equipment/chestplate/invis_f run scoreboard players set @s game.player.mod.phantom_scales 6
-execute if predicate exigence:equipment/chestplate/invis_g run scoreboard players set @s game.player.mod.phantom_scales 7
+execute if predicate exigence:equipment/chestplate/invis_a run return run scoreboard players set @s game.player.mod.phantom_scales 1
+execute if predicate exigence:equipment/chestplate/invis_b run return run scoreboard players set @s game.player.mod.phantom_scales 2
+execute if predicate exigence:equipment/chestplate/invis_c run return run scoreboard players set @s game.player.mod.phantom_scales 3
+execute if predicate exigence:equipment/chestplate/invis_d run return run scoreboard players set @s game.player.mod.phantom_scales 4
+execute if predicate exigence:equipment/chestplate/invis_e run return run scoreboard players set @s game.player.mod.phantom_scales 5
+execute if predicate exigence:equipment/chestplate/invis_f run return run scoreboard players set @s game.player.mod.phantom_scales 6
+execute if predicate exigence:equipment/chestplate/invis_g run return run scoreboard players set @s game.player.mod.phantom_scales 7
 
 # Regeneration
-execute if predicate exigence:equipment/chestplate/regen_a run scoreboard players set @s game.player.mod.regen_mantle 1
-execute if predicate exigence:equipment/chestplate/regen_b run scoreboard players set @s game.player.mod.regen_mantle 2
-execute if predicate exigence:equipment/chestplate/regen_c run scoreboard players set @s game.player.mod.regen_mantle 3
-execute if predicate exigence:equipment/chestplate/regen_d run scoreboard players set @s game.player.mod.regen_mantle 4
-execute if predicate exigence:equipment/chestplate/regen_e run scoreboard players set @s game.player.mod.regen_mantle 5
-execute if predicate exigence:equipment/chestplate/regen_f run scoreboard players set @s game.player.mod.regen_mantle 6
-execute if predicate exigence:equipment/chestplate/regen_g run scoreboard players set @s game.player.mod.regen_mantle 7
+execute if predicate exigence:equipment/chestplate/regen_a run return run scoreboard players set @s game.player.mod.regen_mantle 1
+execute if predicate exigence:equipment/chestplate/regen_b run return run scoreboard players set @s game.player.mod.regen_mantle 2
+execute if predicate exigence:equipment/chestplate/regen_c run return run scoreboard players set @s game.player.mod.regen_mantle 3
+execute if predicate exigence:equipment/chestplate/regen_d run return run scoreboard players set @s game.player.mod.regen_mantle 4
+execute if predicate exigence:equipment/chestplate/regen_e run return run scoreboard players set @s game.player.mod.regen_mantle 5
+execute if predicate exigence:equipment/chestplate/regen_f run return run scoreboard players set @s game.player.mod.regen_mantle 6
+execute if predicate exigence:equipment/chestplate/regen_g run return run scoreboard players set @s game.player.mod.regen_mantle 7
 
 # Shield
-execute if predicate exigence:equipment/chestplate/shield_a run scoreboard players set @s game.player.mod.sun_plate 1
-execute if predicate exigence:equipment/chestplate/shield_b run scoreboard players set @s game.player.mod.sun_plate 2
-execute if predicate exigence:equipment/chestplate/shield_c run scoreboard players set @s game.player.mod.sun_plate 3
-execute if predicate exigence:equipment/chestplate/shield_d run scoreboard players set @s game.player.mod.sun_plate 4
-execute if predicate exigence:equipment/chestplate/shield_e run scoreboard players set @s game.player.mod.sun_plate 5
+execute if predicate exigence:equipment/chestplate/shield_a run return run scoreboard players set @s game.player.mod.sun_plate 1
+execute if predicate exigence:equipment/chestplate/shield_b run return run scoreboard players set @s game.player.mod.sun_plate 2
+execute if predicate exigence:equipment/chestplate/shield_c run return run scoreboard players set @s game.player.mod.sun_plate 3
+execute if predicate exigence:equipment/chestplate/shield_d run return run scoreboard players set @s game.player.mod.sun_plate 4
+execute if predicate exigence:equipment/chestplate/shield_e run return run scoreboard players set @s game.player.mod.sun_plate 5

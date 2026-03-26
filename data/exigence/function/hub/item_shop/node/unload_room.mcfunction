@@ -1,7 +1,7 @@
 # Unload all shop menus, called when player leaves the shop
 
 ## CONSTRAINTS
-#   AT position (center of item shop)
+#   AT center of item shop ( -43.5 200.0 0.5 )
 #   IN exigence:hub
 
 #====================================================================================================
@@ -9,10 +9,13 @@
 # DEBUG
 say Unload item shop
 
+# Cancel if any items are mid-load
+scoreboard players set #cancel_item_shop_iterate Temp 1
+
 # Any menu item that is loaded, tp back up to be "unloaded"
 execute as @e[distance=..32,type=minecraft:item_display,tag=ItemShopDisplay,tag=Loaded] run function exigence:menu/item_display/item_shop_display/load/unload
 
-execute in exigence:hub positioned 0 153 0 as @n[distance=..1,type=marker,tag=RoomNode,scores={hub.room.room_type=4}] \
+execute in exigence:hub positioned 0 153 0 as @n[distance=..1,type=marker,tag=RoomNode,scores={hub.room.room_type=9}] \
 run scoreboard players operation #compare hub.entity.profile_id = @s hub.entity.profile_id
 
 #====================================================================================================
@@ -34,6 +37,9 @@ execute positioned -27.5 200.0 0.5 run kill @e[distance=..8,type=marker,tag=Item
 
 # Remove interactions
 function exigence:hub/item_shop/node/kill_all_interactions
+
+# Remove locked reason displays if they got orphaned
+kill @e[distance=..32,type=text_display,tag=LockedReasonDisplay]
 
 # Remove all items off the ground (so other people can't pick them up when entering)
 # TODO

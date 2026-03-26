@@ -2,7 +2,7 @@
 #   (Currently we don't care which type of click you did)
 
 ## CONSTRAINTS:
-#   AS item shop display
+#   AS/AT item shop display
 
 ## INPUT
 #   data
@@ -11,16 +11,18 @@
 
 say Clicked refresh button
 
-tag @p[distance=..16,tag=Interacting] add RefreshSource
-
-# Effects
-execute at @s run playsound minecraft:entity.ender_eye.death ui @a ~ ~ ~ 1 1
-execute at @s run particle glow ~ ~ ~0.1 0.1 0.1 0.0 0.001 5
-
-# Try refresh, depending on where the button is
-function exigence:hub/deck_analyzer/refresh_button/calls/refresh/refresh
-
 # Increase cooldown score for player
 scoreboard players add @p[distance=..16,tag=Interacting] hub.player.interaction_cooldown 20
 
-tag @p[distance=..16,tag=Interacting] remove RefreshSource
+# If there is no chest directly beside it, then don't call anything
+execute unless block ^1 ^ ^ minecraft:chest run return run tellraw @p[distance=..16,tag=Interacting] [{text:"No chests loaded",color:red}]
+#----------------------------------------------------------------------------------------------------
+
+# Effects
+playsound minecraft:entity.ender_eye.death ui @a ~ ~ ~ 1 1
+particle glow ~ ~ ~0.1 0.1 0.1 0.0 0.001 5
+
+scoreboard players operation #relay_to_room_id Temp = @p[distance=..16,tag=Interacting] hub.player.room_id
+
+# Try refresh, depending on where the button is
+function exigence:hub/deck_analyzer/refresh_button/calls/refresh/refresh

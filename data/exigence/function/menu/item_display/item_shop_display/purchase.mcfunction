@@ -9,7 +9,8 @@
 #====================================================================================================
 
 # DEBUG
-say purchase
+#say purchase
+#scoreboard players set #ttttt Temp 1
 
 $execute at @s[tag=CanBuy,tag=OneTime,tag=!IsOneTimePurchased] if score @p[distance=..16,tag=ItemShop,tag=Interacting] shop.player.money_to_spend matches $(money_cost).. run function exigence:menu/item_display/item_shop_display/purchase/money_one_time with entity @s item.components."minecraft:custom_data"
 $execute at @s[tag=CanBuy,tag=!OneTime,tag=!Artifact] if score @p[distance=..16,tag=ItemShop,tag=Interacting] shop.player.money_to_spend matches $(money_cost).. run function exigence:menu/item_display/item_shop_display/purchase/money with entity @s item.components."minecraft:custom_data"
@@ -18,5 +19,4 @@ $execute at @s[tag=CanResearch,tag=!Artifact] if score @p[distance=..16,tag=Item
 
 scoreboard players set @s shop.frame.purchase_cooldown 5
 
-# Update purchasability
-execute at @s run function exigence:menu/item_display/item_shop_display/update_purchasability with entity @s item.components."minecraft:custom_data"
+#scoreboard players set #ttttt Temp 0

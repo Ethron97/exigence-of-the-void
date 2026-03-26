@@ -2,7 +2,7 @@
 #   Teleports all associated objects along with the item display
 
 ## CONSTRAINTS
-#   AS item_display without "Loaded" tag
+#   AS item_display
 
 ## INPUT
 #   WITH item_display item.components."minecraft:custom_data" for id

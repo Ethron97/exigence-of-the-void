@@ -17,6 +17,7 @@ playsound minecraft:entity.enderman.teleport ambient @s ~ ~1000 ~ 1000 1
 function exigence:hub/item_shop/node/kill_interaction
 
 scoreboard players reset @s hub.player.consumable_limit
+scoreboard players reset @s shop.player.looking_at_idid
 
 #====================================================================================================
 # Remove THIS player from room node
@@ -33,5 +34,5 @@ run return 0
 #----------------------------------------------------------------------------------------------------
 
 # If this player was the last one, kill room node and unload room
-function exigence:hub/item_shop/node/unload_room
+execute in exigence:hub positioned -43.5 200.0 0.5 run function exigence:hub/item_shop/node/unload_room
 execute in exigence:hub positioned 0 153 0 as @e[distance=..1,type=marker,tag=RoomNode] if score @s hub.room.room_id = #compare hub.player.room_id run kill @s

@@ -1,0 +1,16 @@
+# generated from trapdoor.schem
+# size: 3 x 2 x 3
+# schematic offset: [-3, -3, -6]
+execute positioned ~0 ~0 ~0 run data merge entity @n[distance=..1,type=block_display,tag=WarpN1] {start_interpolation:-1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[1.0f,1.0f,4.0f]}}
+execute positioned ~1 ~0 ~0 run data merge entity @n[distance=..1,type=block_display,tag=WarpN2] {start_interpolation:-1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[1.0f,1.0f,4.0f]}}
+execute positioned ~2 ~0 ~0 run data merge entity @n[distance=..1,type=block_display,tag=WarpN3] {start_interpolation:-1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[1.0f,1.0f,4.0f]}}
+execute positioned ~0 ~0 ~1 run data merge entity @n[distance=..1,type=block_display,tag=WarpN4] {start_interpolation:-1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,3.0f],scale:[1.0f,1.0f,4.0f]}}
+execute positioned ~1 ~0 ~1 run data merge entity @n[distance=..1,type=block_display,tag=WarpN5] {start_interpolation:-1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,3.0f],scale:[1.0f,1.0f,4.0f]}}
+execute positioned ~2 ~0 ~1 run data merge entity @n[distance=..1,type=block_display,tag=WarpN6] {start_interpolation:-1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,3.0f],scale:[1.0f,1.0f,4.0f]}}
+execute positioned ~0 ~0 ~2 run data merge entity @n[distance=..1,type=block_display,tag=WarpN7] {start_interpolation:-1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,6.0f],scale:[1.0f,1.0f,4.0f]}}
+execute positioned ~1 ~0 ~2 run data merge entity @n[distance=..1,type=block_display,tag=WarpN8] {start_interpolation:-1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,6.0f],scale:[1.0f,1.0f,4.0f]}}
+execute positioned ~2 ~0 ~2 run data merge entity @n[distance=..1,type=block_display,tag=WarpN9] {start_interpolation:-1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,6.0f],scale:[1.0f,1.0f,4.0f]}}
+execute positioned ~0 ~1 ~0 run data merge entity @n[distance=..1,type=block_display,tag=WarpN10] {start_interpolation:-1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[1.0f,1.0f,4.0f]}}
+execute positioned ~2 ~1 ~0 run data merge entity @n[distance=..1,type=block_display,tag=WarpN11] {start_interpolation:-1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[1.0f,1.0f,4.0f]}}
+execute positioned ~1 ~1 ~1 run data merge entity @n[distance=..1,type=block_display,tag=WarpN12] {start_interpolation:-1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,3.0f],scale:[1.0f,1.0f,4.0f]}}
+execute positioned ~0 ~1 ~2 run data merge entity @n[distance=..1,type=block_display,tag=WarpN13] {start_interpolation:-1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,6.0f],scale:[1.0f,1.0f,4.0f]}}

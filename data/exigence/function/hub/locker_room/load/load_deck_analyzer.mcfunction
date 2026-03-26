@@ -4,14 +4,16 @@
 #   AS/AT deck analyzer
 
 ## INPUT
-#   INT profile_id
+#   SCORE #profile_id Temp
+#   SCORE #coop_profile_id Temp
 
 #====================================================================================================
 
-$say Load deck analyzer from locker room room [profile:$(profile_id)]
+say Load deck analyzer from locker room room
 
 # Call interface
-$function exigence:hub/deck_analyzer/load_deck_anaylzer {profile_id:$(profile_id)}
+#   INPUT: #profile_id Temp, #coop_profile_id Temp
+function exigence:hub/deck_analyzer/load_deck_anaylzer
 
 # Item Displays
 scoreboard players operation @e[distance=..10,type=item_display,tag=NewItemDisplay] hub.entity.locker_room_id = @s hub.entity.locker_room_id

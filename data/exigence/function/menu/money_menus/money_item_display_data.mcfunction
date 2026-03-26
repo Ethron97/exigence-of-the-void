@@ -7,7 +7,6 @@
 #   INT(1-4) rarity (1=common,2=uncommon etc)
 #   INT(1-7) tier (1-7, determines story beat required to unlock)
 
-
 #====================================================================================================
 
 # Give tag if has parents
@@ -37,6 +36,9 @@ scoreboard players operation @s shop.frame.tier = #compare shop.frame.tier
 
 # Initialize cooldown
 scoreboard players set @s shop.frame.purchase_cooldown 0
+
+# Append item name to item display name
+data modify entity @s CustomName set from storage exigence:temp custom_name
 
 # Remove local tag(s)
 tag @s remove NewItemDisplay

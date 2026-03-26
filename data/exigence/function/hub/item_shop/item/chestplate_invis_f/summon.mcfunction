@@ -1,17 +1,14 @@
 $data merge entity @s {Item:{id:"minecraft:chainmail_chestplate",count:1,components:{"minecraft:custom_name":[{text:"🥋 ",italic:false,color:"white"},\
-{text:"Ghost Scales",italic:false,color:"$(legendary)",bold:true},{text:" 🥋",italic:false,color:"white"}]}}}
-
-data modify entity @s Item.components."minecraft:custom_data".item_name set value 'chestplate_invis_f'
-data modify entity @s Item.components."minecraft:custom_data".is_soulbound set value 1b
-data modify entity @s Item.components."minecraft:unbreakable" set value {}
-#data modify entity @s Item.components."minecraft:dyed_color" set value 8361091
-data modify entity @s Item.components."minecraft:trim" set value {pattern:'minecraft:raiser',material:"netherite"}
-data modify entity @s Item.components."minecraft:attribute_modifiers" set value [{type:'minecraft:armor',id:'exigence:remove',amount:0.0,operation:'add_multiplied_base',slot:'chest'}]
-
-$data modify entity @s Item.components."minecraft:lore" append value [$(legendary_stars),{text:"Chestplate ",italic:false,color:"white"},{text:"(Soulbound)",color:"dark_gray",italic:false}]
-data modify entity @s Item.components."minecraft:lore" append value {text:""}
-$data modify entity @s Item.components."minecraft:lore" append value [{text:"While you are ",italic:false,color:"gray"},{text:"Invisible",italic:false,color:"$(effect)"},{text:", you are",italic:false,color:"gray"}]
-data modify entity @s Item.components."minecraft:lore" append value [{text:"undetectable by sculk and Menace",italic:false,color:"gray"}]
-data modify entity @s Item.components."minecraft:lore" append value {text:""}
-$data modify entity @s Item.components."minecraft:lore" append value [{text:"Increase duration of ",italic:false,color:"gray"},{text:"Invisibility",italic:false,color:"$(effect)"}]
-data modify entity @s Item.components."minecraft:lore" append value [{text:"from cards by +60 seconds",italic:false,color:"gray"}]
+{text:"Ghost Scales",italic:false,color:"$(legendary)",bold:true},{text:" 🥋",italic:false,color:"white"}]\
+,"minecraft:tooltip_display":{hidden_components:["unbreakable","attribute_modifiers","trim"]}\
+,"minecraft:unbreakable":{}\
+,"minecraft:trim":{pattern:'minecraft:raiser',material:"netherite"}\
+,"minecraft:attribute_modifiers":[{type:'minecraft:armor',id:'exigence:remove',amount:0.0,operation:'add_multiplied_base',slot:'chest'}]\
+,"minecraft:lore":[[$(legendary_stars),{text:"Chestplate ",italic:false,color:"white"},{text:"(Soulbound)",color:"dark_gray",italic:false}]\
+,{text:""}\
+,[{text:"While you are ",italic:false,color:"gray"},{text:"Invisible",italic:false,color:"$(effect)"},{text:", you are",italic:false,color:"gray"}]\
+,[{text:"undetectable by sculk and Menace",italic:false,color:"gray"}]\
+,{text:""}\
+,[{text:"Increase duration of ",italic:false,color:"gray"},{text:"Invisibility",italic:false,color:"$(effect)"}]\
+,[{text:"from cards by +60 seconds",italic:false,color:"gray"}]\
+],"minecraft:custom_data":{item_name:"chestplate_invis_f",is_soulbound:true}}}}

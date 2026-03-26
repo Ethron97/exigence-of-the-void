@@ -996,3 +996,4 @@ scoreboard objectives add player.node.queue.timeout_profile_selector dummy
 scoreboard objectives add player.node.queue.timeout_tutorial dummy
 scoreboard objectives add player.node.queue.timeout_locker_room dummy
 scoreboard objectives add player.node.queue.timeout_item_shop dummy
+scoreboard objectives add player.node.queue.timeout_predungeon dummy

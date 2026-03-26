@@ -23,6 +23,7 @@ say Creating scoreboards
 function exigence:scoreboard/generated_functions/create_scoreboards
 scoreboard objectives modify game.cards_played displayname {text:"Cards Played"}
 scoreboard objectives setdisplay sidebar.team.gold hub.player.consumable_limit
+scoreboard objectives setdisplay sidebar.team.dark_purple hub.player.consumable_limit
 scoreboard objectives modify hub.player.consumable_limit displayname {text:"Consumable Item Limit"}
 
 say Loading entity property scores from entity data
@@ -30,6 +31,9 @@ function exigence:scoreboard/load_score_from_property
 
 say Loading default global settings
 function exigence:misc/setup_functions/initialize_global_settings
+
+say Recreating item shop
+execute positioned -43.5 200.0 0.5 run function exigence:hub/item_shop/recreate
 
 # TODO move cooldown initializers
 # Delay after breaking ravager glass before it comes back

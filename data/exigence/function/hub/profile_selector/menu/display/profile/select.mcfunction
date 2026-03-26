@@ -47,10 +47,12 @@ $execute if score #data_loaded Temp matches 1 at @s at @n[distance=..32,type=mar
 run function exigence:hub/profile_selector/load/load_chests
 
 # Load deck analyzer (if data was loaded successfully)
+$scoreboard players set #profile_id Temp $(profile_id)
+$scoreboard players set #coop_profile_id Temp $(coop_profile_id)
 #$execute if score #data_loaded Temp matches 1 at @s as @n[distance=..32,type=marker,tag=DeckAnalyzer,scores={hub.entity.profile_selector_id=$(profile_selector_id)}] \
-at @s run function exigence:hub/profile_selector/load/load_deck_analyzer {profile_id:$(profile_id)}
+at @s run function exigence:hub/profile_selector/load/load_deck_analyzer
 $execute at @s as @n[distance=..32,type=marker,tag=DeckAnalyzer,scores={hub.entity.profile_selector_id=$(profile_selector_id)}] \
-at @s run function exigence:hub/profile_selector/load/load_deck_analyzer {profile_id:$(profile_id)}
+at @s run function exigence:hub/profile_selector/load/load_deck_analyzer
 
 #====================================================================================================
 

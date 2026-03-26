@@ -29,5 +29,5 @@ tag @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays,tag=ItemSho
 $execute positioned ^-0.5 ^5.75 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuBag',item_name:'one_time_bag_a',rarity:4,tier:8,money_cost:16,research_cost:64,parents:['item_resonance_crystal','item_glow_ink_sac','item_wind_line','item_phantom_membrane'],Rotation:'$(Rotation)'}
 
 # Connect parents
-execute as @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay] run function exigence:menu/item_display/item_shop_display/connect_parents
+execute as @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay] run function exigence:menu/item_display/item_shop_display/create/connect_parents
 

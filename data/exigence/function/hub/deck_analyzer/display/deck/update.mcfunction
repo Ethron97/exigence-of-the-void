@@ -17,9 +17,9 @@ $data modify entity @n[distance=..5,type=text_display,tag=DeckScoresA] text.extr
 execute if data storage exigence:deck_analysis {cards_total:0} run data modify entity @n[distance=..5,type=text_display,tag=DeckScoresA] text.extra[0].color set from storage exigence:temp color_a
 execute unless data storage exigence:deck_analysis {cards_total:0} run data modify entity @n[distance=..5,type=text_display,tag=DeckScoresA] text.extra[0].color set from storage exigence:temp color_b
 
-# If deck total is above 40, make yellow
-execute if score cards.total deck.analysis matches 41.. run data modify entity @n[distance=..5,type=text_display,tag=DeckLabelsA] text.extra[0].color set value "#DA4A42"
-execute if score cards.total deck.analysis matches 41.. run data modify entity @n[distance=..5,type=text_display,tag=DeckScoresA] text.extra[0].color set value "#DA4A42"
+# If deck total is above 40 (after void discount), make yellow
+execute if score cards.count deck.analysis matches 41.. run data modify entity @n[distance=..5,type=text_display,tag=DeckLabelsA] text.extra[0].color set value "#DA4A42"
+execute if score cards.count deck.analysis matches 41.. run data modify entity @n[distance=..5,type=text_display,tag=DeckScoresA] text.extra[0].color set value "#DA4A42"
 
 # COMMON
 execute if data storage exigence:deck_analysis {cards_common:0} run data modify entity @n[distance=..5,type=text_display,tag=DeckLabelsA] text.extra[2].color set from storage exigence:temp color_a

@@ -11,7 +11,7 @@ say load chestplate_2 menu
 # Load display pieces
 
 # Resources
-$execute positioned ^ ^1.25 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuChest',item_name:'chestplate_get_all',rarity:2,tier:1,money_cost:4,research_cost:2,parents:[],Rotation:'$(Rotation)'}
+$execute positioned ^ ^1.25 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuChest',item_name:'chestplate_get_all',rarity:2,tier:2,money_cost:4,research_cost:2,parents:[],Rotation:'$(Rotation)'}
 
 # Phantom Scales
 $execute positioned ^-0.90 ^2 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuChest',item_name:'chestplate_invis_a',rarity:2,tier:3,money_cost:5,research_cost:5,parents:['chestplate_get_all'],Rotation:'$(Rotation)'}
@@ -58,4 +58,4 @@ $execute positioned ^0.4 ^5.75 ^ run function exigence:menu/money_menus/money_it
 
 
 # Connect parents
-execute as @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay] run function exigence:menu/item_display/item_shop_display/connect_parents
+execute as @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay] run function exigence:menu/item_display/item_shop_display/create/connect_parents

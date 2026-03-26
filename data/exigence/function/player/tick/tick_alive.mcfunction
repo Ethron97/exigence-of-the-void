@@ -11,8 +11,8 @@ function exigence:player/effects/player_effect_tick
 #====================================================================================================
 
 # Clear spellbound cards dropped on the ground
-execute as @e[distance=..3,type=minecraft:item,tag=!SoulWarned,nbt={Item:{id:"minecraft:carrot_on_a_stick",components:{"minecraft:custom_data":{is_spellsling:"true"}}}}] run function exigence:player/dropped_soulbound
-execute as @e[distance=..3,type=minecraft:item,tag=!SoulWarned,nbt={Item:{components:{"minecraft:custom_data":{is_soulbound:1b}}}}] run function exigence:player/dropped_soulbound
+execute as @n[distance=..3,type=minecraft:item,tag=!SoulWarned,nbt={Item:{id:"minecraft:carrot_on_a_stick",components:{"minecraft:custom_data":{is_spellsling:"true"}}}}] run function exigence:player/dropped_soulbound
+execute as @n[distance=..3,type=minecraft:item,tag=!SoulWarned,nbt={Item:{components:{"minecraft:custom_data":{is_soulbound:1b}}}}] run function exigence:player/dropped_soulbound
 
 # Check for looking at pot if they don't have a pot breaker
 function exigence:player/utility/pot/pot_check

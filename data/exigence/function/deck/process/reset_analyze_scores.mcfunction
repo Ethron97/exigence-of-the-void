@@ -47,6 +47,7 @@ scoreboard players set hazard.echo deck.analysis 0
 
 scoreboard players set cards.total deck.analysis 0
 scoreboard players set cards.void deck.analysis 0
+scoreboard players set cards.void_discount deck.analysis 0
 scoreboard players set cards.ascend deck.analysis 0
 scoreboard players set cards.instant deck.analysis 0
 scoreboard players set cards.persistent deck.analysis 0

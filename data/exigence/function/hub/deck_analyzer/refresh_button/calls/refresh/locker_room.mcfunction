@@ -1,4 +1,4 @@
-# Refresh FROM LOCKER ROOM ROOM
+# Refresh from locker room
 
 ## CONSTRAINTS
 #   AS refresh button display
@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-$say Refresh FROM LOCKER ROOM ROOM $(profile_id) $(locker_room_id)
+$say Refresh from LOCKER ROOM room $(profile_id) $(locker_room_id)
 
 #====================================================================================================
 ## SAVE CHESTS FOR REFRESH

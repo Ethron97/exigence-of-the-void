@@ -44,6 +44,13 @@ execute store result storage exigence:deck_analysis cards_persistent int 1 run s
 execute store result storage exigence:deck_analysis cards_recycle int 1 run scoreboard players get cards.recycle deck.analysis
 execute store result storage exigence:deck_analysis cards_spellbind int 1 run scoreboard players get cards.spellbind deck.analysis
 
+# Get "effective" deck size
+scoreboard players operation cards.count deck.analysis = cards.total deck.analysis
+# Reduce card total by min(void, void_discount)
+scoreboard players operation #reduce_count Temp = cards.void_discount deck.analysis
+scoreboard players operation #reduce_count Temp < cards.void deck.analysis
+scoreboard players operation cards.count deck.analysis -= #reduce_count deck.analysis
+
 execute store result storage exigence:deck_analysis cards_common int 1 run scoreboard players get cards.common deck.analysis
 execute store result storage exigence:deck_analysis cards_uncommon int 1 run scoreboard players get cards.uncommon deck.analysis
 execute store result storage exigence:deck_analysis cards_rare int 1 run scoreboard players get cards.rare deck.analysis

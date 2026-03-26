@@ -11,4 +11,4 @@
 # DEBUG
 #$say call function right $(function_right)
 
-$execute as @s run function $(function_right)
+$function $(function_right)

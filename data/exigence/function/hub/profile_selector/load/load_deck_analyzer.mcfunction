@@ -4,7 +4,8 @@
 #   AS/AT deck analyzer
 
 ## INPUT
-#   INT profile_id
+#   SCORE #profile_id Temp
+#   SCORE #coop_profile_id Temp
 
 #====================================================================================================
 
@@ -12,9 +13,10 @@ say Load deck analyzer from profile selector room
 
 # Call interface
 #   If switching, just update the profile_id
-$execute if score #switching Temp matches 1 run function exigence:hub/deck_analyzer/update_deck_analyzer_profile {profile_id:$(profile_id)}
+execute if score #switching Temp matches 1 run function exigence:hub/deck_analyzer/update_deck_analyzer_profile
 #   Otherwise, load new
-$execute unless score #switching Temp matches 1 run function exigence:hub/deck_analyzer/load_deck_anaylzer {profile_id:$(profile_id)}
+#   INPUT #profile_id Temp, #coop_profile_id Temp
+execute unless score #switching Temp matches 1 run function exigence:hub/deck_analyzer/load_deck_anaylzer
 
 # Item Displays
 scoreboard players operation @e[distance=..10,type=item_display,tag=NewItemDisplay] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id

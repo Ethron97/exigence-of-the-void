@@ -21,8 +21,8 @@ data modify storage exigence:profile chests.blue_right set from block ~1 ~ ~3 It
 data modify storage exigence:profile chests.orange_left set from block ~-1 ~ ~3 Items
 data modify storage exigence:profile chests.orange_right set from block ~-2 ~ ~3 Items
 
-data modify storage exigence:profile chests.deck_left set from block ~-2 ~ ~-3 Items
-data modify storage exigence:profile chests.deck_right set from block ~-1 ~ ~-3 Items
+data modify storage exigence:profile chests.green_left set from block ~-2 ~ ~-3 Items
+data modify storage exigence:profile chests.green_right set from block ~-1 ~ ~-3 Items
 
-data modify storage exigence:profile chests.green_left set from block ~1 ~ ~-3 Items
-data modify storage exigence:profile chests.green_right set from block ~2 ~ ~-3 Items
+data modify storage exigence:profile chests.deck_left set from block ~1 ~ ~-3 Items
+data modify storage exigence:profile chests.deck_right set from block ~2 ~ ~-3 Items

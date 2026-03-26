@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-$say Refresh FROM PROFILE SELECTOR ROOM $(profile_id)
+$say Refresh from PROFILE SELECTOR room $(profile_id)
 
 #====================================================================================================
 ## SAVE CHESTS FOR REFRESH

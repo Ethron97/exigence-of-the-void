@@ -21,7 +21,8 @@
 $function exigence:vault/artifact/summon_item {item_name:'$(item_name)'}
 
 # Artifact related data
+#   Replaces NAS tag with NSS so money_item_display works
 $execute as @n[distance=..0.1,type=item,tag=NAS] run function exigence:menu/money_menus/artifact/data {vault:'$(vault)',unlock:'$(unlock)'}
 
 # Call money item display
-$function exigence:menu/money_menus/money_item_display {menu_tag:'$(menu_tag)',item_name:'',rarity:$(rarity),tier:$(tier),money_cost:$(money_cost),research_cost:$(research_cost),parents:[],Rotation:'$(Rotation)'}
+$function exigence:menu/money_menus/money_item_display {menu_tag:'$(menu_tag)',item_name:'$(item_name)',rarity:$(rarity),tier:$(tier),money_cost:$(money_cost),research_cost:$(research_cost),parents:[],Rotation:'$(Rotation)'}

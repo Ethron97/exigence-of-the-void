@@ -4,6 +4,10 @@
 #   AS locker room node
 #   AT location
 
+## INPUT
+#   SCORE #profile_id Temp
+#   SCORE #coop_profile_id Temp
+
 #====================================================================================================
 
 say Setup deck analyzer from locker room
@@ -16,7 +20,8 @@ execute facing entity @s feet run function exigence:hub/deck_analyzer/summon_dec
 scoreboard players operation @n[distance=..1,type=marker,tag=NewDeckAnalyzer] hub.entity.locker_room_id = @s hub.locker_room_id
 
 # Load load
-execute as @n[distance=..1,type=marker,tag=NewDeckAnalyzer] at @s run function exigence:hub/locker_room/load/load_deck_analyzer with storage exigence:temp
+#   INPUT: #profile_id Temp, #coop_profile_id Temp
+execute as @n[distance=..1,type=marker,tag=NewDeckAnalyzer] at @s run function exigence:hub/locker_room/load/load_deck_analyzer
 
 # Remove local tag
 tag @n[distance=..1,type=marker,tag=NewDeckAnalyzer] remove NewDeckAnalyzer

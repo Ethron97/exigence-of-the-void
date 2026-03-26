@@ -23,3 +23,6 @@ tag @n[distance=..0.1,type=minecraft:item,tag=NSS] remove NSS
 
 # Playsound
 playsound minecraft:block.vault.insert_item ambient @a ~ ~ ~ 1 1
+
+# Update displays
+execute at @s run function exigence:menu/item_display/item_shop_display/update_purchasability_displays with entity @s item.components."minecraft:custom_data"

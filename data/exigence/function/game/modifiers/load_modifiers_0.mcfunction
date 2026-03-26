@@ -1,12 +1,13 @@
 # Call as player to load from
 #   Called on game on, before deck is processed
+#   Primarily for any items that can impact deck analysis
+
+#====================================================================================================
 
 # Quartz Core
-execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'quartz_core'}}}]}] run scoreboard players add Max.Green game.resources 1
-execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'quartz_core'}}}]}] run scoreboard players add Max.Red game.resources 1
-execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'quartz_core'}}}]}] run scoreboard players add Max.Aqua game.resources 1
+execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'quartz_core'}}}]}] run function exigence:vault/artifact/artifacts/quartz_core/trigger
 
-
+# TODO move void deck helmet here too?
 
 
 ## ====================== CHESTPLATES ======================

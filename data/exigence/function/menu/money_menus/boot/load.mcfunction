@@ -42,4 +42,4 @@ $execute positioned ^1.5 ^5 ^ run function exigence:menu/money_menus/money_item_
 $execute positioned ^1.5 ^5.75 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuBoots',item_name:'boots_sculk_c',rarity:4,tier:7,money_cost:20,research_cost:64,parents:['boots_sculk_b'],Rotation:'$(Rotation)'}
 
 # Connect parents
-execute as @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay] run function exigence:menu/item_display/item_shop_display/connect_parents
+execute as @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay] run function exigence:menu/item_display/item_shop_display/create/connect_parents

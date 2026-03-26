@@ -1,7 +1,7 @@
-# Get how many of the card are in the player's deck
+# Get how many of the card are in the deck
 
 ## CONTRAINTS
-#   AS player
+#   AT profile node
 
 ## INPUT
 #   STR card_name (snake case)
@@ -14,9 +14,10 @@
 #   BIT persistent
 
 #====================================================================================================
+say DEPRECATED
 
-$execute in exigence:profile_data positioned 8 128 8 at @n[distance=..140,type=marker,tag=ProfileNode,tag=ActiveChest] store result score #cards_a deck.process_card if items block ~1 ~1 ~0 container.* minecraft:paper[custom_data={card_name:'$(card_name)'}]
-$execute in exigence:profile_data positioned 8 128 8 at @n[distance=..140,type=marker,tag=ProfileNode,tag=ActiveChest] store result score #cards_b deck.process_card if items block ~2 ~1 ~0 container.* minecraft:paper[custom_data={card_name:'$(card_name)'}]
+$execute store result score #cards_a deck.process_card if items block ~1 ~1 ~0 container.* minecraft:paper[custom_data={card_name:'$(card_name)'}]
+$execute store result score #cards_b deck.process_card if items block ~2 ~1 ~0 container.* minecraft:paper[custom_data={card_name:'$(card_name)'}]
 scoreboard players set #copies deck.process_card 0
 scoreboard players operation #copies deck.process_card += #cards_a deck.process_card
 scoreboard players operation #copies deck.process_card += #cards_b deck.process_card

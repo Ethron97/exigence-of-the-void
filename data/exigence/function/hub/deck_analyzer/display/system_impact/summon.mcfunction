@@ -110,31 +110,31 @@ transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],transla
 
 # BAR BACKGROUNDS
 $summon block_display ^0.78125 ^1.25 ^0.025 {Rotation:$(Rotation),Tags:["BarChartBack","NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","NewBlockDisplay"]\
-,billboard:"fixed",brightness:{sky:9,block:9},block_state:{Name:"minecraft:exposed_copper_grate",Properties:{axis:x}},\
+,billboard:"fixed",brightness:{sky:9,block:9},block_state:{Name:"minecraft:glass",Properties:{axis:x}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,-0.03125f,0.0f],scale:[1.375f,0.1875f,0.01f]}}
 
 $summon block_display ^0.78125 ^1.0625 ^0.025 {Rotation:$(Rotation),Tags:["BarChartBack","NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","NewBlockDisplay"]\
-,billboard:"fixed",brightness:{sky:9,block:9},block_state:{Name:"minecraft:exposed_copper_grate",Properties:{axis:x}},\
+,billboard:"fixed",brightness:{sky:9,block:9},block_state:{Name:"minecraft:glass",Properties:{axis:x}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,-0.03125f,0.0f],scale:[1.375f,0.1875f,0.01f]}}
 
 $summon block_display ^0.78125 ^0.875 ^0.025 {Rotation:$(Rotation),Tags:["BarChartBack","NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","NewBlockDisplay"]\
-,billboard:"fixed",brightness:{sky:9,block:9},block_state:{Name:"minecraft:exposed_copper_grate",Properties:{axis:x}},\
+,billboard:"fixed",brightness:{sky:9,block:9},block_state:{Name:"minecraft:glass",Properties:{axis:x}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,-0.03125f,0.0f],scale:[1.375f,0.1875f,0.01f]}}
 
 $summon block_display ^0.78125 ^0.6875 ^0.025 {Rotation:$(Rotation),Tags:["BarChartBack","NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","NewBlockDisplay"]\
-,billboard:"fixed",brightness:{sky:9,block:9},block_state:{Name:"minecraft:exposed_copper_grate",Properties:{axis:x}},\
+,billboard:"fixed",brightness:{sky:9,block:9},block_state:{Name:"minecraft:glass",Properties:{axis:x}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,-0.03125f,0.0f],scale:[1.375f,0.1875f,0.01f]}}
 
 $summon block_display ^0.78125 ^0.5 ^0.025 {Rotation:$(Rotation),Tags:["BarChartBack","NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","NewBlockDisplay"]\
-,billboard:"fixed",brightness:{sky:9,block:9},block_state:{Name:"minecraft:exposed_copper_grate",Properties:{axis:x}},\
+,billboard:"fixed",brightness:{sky:9,block:9},block_state:{Name:"minecraft:glass",Properties:{axis:x}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,-0.03125f,0.0f],scale:[1.375f,0.1875f,0.01f]}}
 
 $summon block_display ^0.78125 ^0.3125 ^0.025 {Rotation:$(Rotation),Tags:["BarChartBack","NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","NewBlockDisplay"]\
-,billboard:"fixed",brightness:{sky:9,block:9},block_state:{Name:"minecraft:exposed_copper_grate",Properties:{axis:x}},\
+,billboard:"fixed",brightness:{sky:9,block:9},block_state:{Name:"minecraft:glass",Properties:{axis:x}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,-0.03125f,0.0f],scale:[1.375f,0.1875f,0.01f]}}
 
 $summon block_display ^0.78125 ^0.125 ^0.025 {Rotation:$(Rotation),Tags:["BarChartBack","NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","NewBlockDisplay"]\
-,billboard:"fixed",brightness:{sky:9,block:9},block_state:{Name:"minecraft:exposed_copper_grate",Properties:{axis:x}},\
+,billboard:"fixed",brightness:{sky:9,block:9},block_state:{Name:"minecraft:glass",Properties:{axis:x}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,-0.03125f,0.0f],scale:[1.375f,0.1875f,0.01f]}}
 
 #====================================================================================================

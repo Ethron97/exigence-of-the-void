@@ -5,16 +5,14 @@
 
 #====================================================================================================
 
-# Call subfunction to save current chests to deck
-execute if score @s hub.entity.profile_selector_id matches 1.. run function exigence:hub/deck_analyzer/refresh_button/calls/refresh/profile_selector with entity @s item.components."minecraft:custom_data"
-execute if score @s hub.entity.locker_room_id matches 1.. run function exigence:hub/deck_analyzer/refresh_button/calls/refresh/locker_room with entity @s item.components."minecraft:custom_data"
-execute if entity @s[tag=ItemShopAnalyzerDisplay] run function exigence:hub/deck_analyzer/refresh_button/calls/refresh/item_shop with entity @s item.components."minecraft:custom_data"
-# ...
+# Call triage function to save chests depending on which room this is in
+function exigence:hub/deck_analyzer/refresh_button/calls/refresh/_case
 
-# Call analyze
-execute at @s run tag @p[distance=..9,tag=ProfileSelecting,tag=!RefreshSource] add RefreshSource
-execute at @s as @p[distance=..9,tag=RefreshSource] run function exigence:deck/process/analyze_deck
-execute at @s run tag @p[distance=..9,tag=RefreshSource] remove RefreshSource
+# Call deck analyze as (main) profile node
+scoreboard players operation #compare hub.entity.profile_id = @s hub.entity.profile_id
+execute if score @s hub.entity.coop_profile_id matches 1.. run scoreboard players operation #compare hub.entity.profile_id = @s hub.entity.coop_profile_id
+execute in exigence:profile_data positioned 8 128 8 as @e[distance=..140,type=marker,tag=ProfileNode] \
+if score @s profile.node.profile_id = #compare hub.entity.profile_id at @s run function exigence:deck/process/analyze_deck
 
 # update displays
 execute at @s as @n[distance=..9,type=marker,tag=DeckAnalyzer] run function exigence:hub/deck_analyzer/update_displays

@@ -25,17 +25,8 @@ execute as @s[tag=ItemShop] at @s if block ~ ~ ~ minecraft:orange_stained_glass_
 execute as @s[tag=!ItemShop] at @s if block ~ ~ ~ minecraft:orange_stained_glass_pane run function exigence:hub/item_shop/access/try_enter_door
 
 # Predungeon
-#execute as @s[tag=Lockerroom,tag=!Predungeon,tag=!Coop] at @s if block ~ ~ ~ minecraft:purple_stained_glass_pane run function exigence:hub/predungeon/try_enter_room
-#execute as @s[tag=Lockerroom,tag=!Predungeon,tag=Coop] at @s if block ~ ~ ~ minecraft:purple_stained_glass_pane run function exigence:hub/predungeon/coop_try_enter_room
-
-# If in predungeon, and there is no coop with you and no one in locker room, normal leave
-#execute as @s[tag=!Lockerroom,tag=Predungeon] at @s unless entity @a[tag=Coop] unless entity @a[tag=Lockerroom] if block ~ ~ ~ minecraft:purple_stained_glass_pane run function exigence:hub/predungeon/leave_room
-
-# If in predungeon, and there is a coop with you, tp everyone back to hub
-#execute as @s[tag=!Lockerroom,tag=Predungeon] at @s if entity @a[tag=Coop,tag=!Lockerroom] if block ~ ~ ~ minecraft:purple_stained_glass_pane run function exigence:hub/predungeon/group_leave
-
-# If Coop in predungeon, and no one is in lockerroom, return to lockerroom
-#execute as @s[tag=!Lockerroom,tag=Coop] at @s unless entity @a[tag=Lockerroom] if block ~ ~ ~ minecraft:purple_stained_glass_pane run function exigence:hub/predungeon/coop_leave
+execute as @s[tag=!Predungeon] at @s if block ~ ~ ~ minecraft:purple_stained_glass_pane run function exigence:hub/predungeon/access/try_enter_door
+execute as @s[tag=Predungeon] at @s if block ~ ~ ~ minecraft:purple_stained_glass_pane run function exigence:hub/predungeon/access/leave
 
 # Ember shop (viewing)
 #execute as @s[tag=EmberViewing] at @s if block ~ ~ ~ minecraft:light_blue_stained_glass_pane run function exigence:hub/ember_shop/door_viewing/try_leave

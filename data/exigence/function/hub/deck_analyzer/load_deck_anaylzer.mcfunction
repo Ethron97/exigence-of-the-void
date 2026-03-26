@@ -5,7 +5,8 @@
 #   AS deck analyzer node
 
 ## INPUT
-#   INT profile_id
+#   SCORE #profile_id Temp
+#   SCORE #coop_profile_id Temp
 
 #====================================================================================================
 
@@ -16,7 +17,8 @@ say INTERFACE load deck analyzer
 summon minecraft:marker ~ ~ ~ {Tags:["Telemarker"],CustomName:{text:"Marker | Telemarker"}}
 
 # Save the profile id for this load
-$scoreboard players set @s hub.entity.profile_id $(profile_id)
+scoreboard players operation @s hub.entity.profile_id = #profile_id Temp
+scoreboard players operation @s hub.entity.coop_profile_id = #coop_profile_id Temp
 
 # Copy rotation to storage
 data modify storage exigence:temp Rotation set from entity @s Rotation

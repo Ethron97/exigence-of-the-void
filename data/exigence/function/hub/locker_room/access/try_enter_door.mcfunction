@@ -10,17 +10,17 @@
 say Try enter locker room
 
 # Make sure player has profile loaded
-execute unless score @s profile.player.profile_id matches 1.. run function exigence:hub/locker_room/access/fail/no_profile
-execute unless score @s profile.player.profile_id matches 1.. run return fail
+execute unless score @s profile.player.profile_id matches 1.. run return run function exigence:hub/locker_room/access/fail/no_profile
+#----------------------------------------------------------------------------------------------------
 
 # If CO-OP profile, check if co-op member is in ANY of the other locker rooms (don't let co-op members split across locker rooms)
+scoreboard players set #did_coop_enter Temp 0
 #   OUTPUTS: #did_coop_enter Temp=1 if it found a coop lockerroom to follow
 execute if score @s profile.player.coop_profile_id matches 1.. run function exigence:hub/locker_room/access/try_enter_coop
 execute if score #did_coop_enter Temp matches 1 run return 0
 
 # Node is in use
-execute if score @n[distance=..0.1,type=marker,tag=LockerRoomNode] hub.locker_room_id matches 1.. run function exigence:hub/locker_room/access/fail/in_use
-execute if score @n[distance=..0.1,type=marker,tag=LockerRoomNode] hub.locker_room_id matches 1.. run return fail
+execute if score @n[distance=..0.1,type=marker,tag=LockerRoomNode] hub.locker_room_id matches 1.. run return run function exigence:hub/locker_room/access/fail/in_use
 #----------------------------------------------------------------------------------------------------
 
 # Enter room as first player

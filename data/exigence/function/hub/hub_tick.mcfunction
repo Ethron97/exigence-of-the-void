@@ -23,6 +23,7 @@ execute as @a[gamemode=adventure,predicate=exigence:dimension/entity/hub] run sc
 execute as @a[scores={hub.player.profile_selector_id=1..}] at @s run function exigence:hub/profile_selector/menu/profile_menu_tick
 execute positioned 0 100 0 as @e[distance=..200,type=marker,tag=LockerRoomNode,scores={hub.locker_room_id=1..}] at @s run function exigence:hub/locker_room/menu/locker_menu_tick
 execute positioned -43.5 200.0 0.5 if entity @a[distance=..50,tag=ItemShop] run function exigence:hub/item_shop/menu/shop_menu_tick
+execute positioned 0.5 209.0 104.5 if entity @a[distance=..16,tag=Predungeon] run function exigence:hub/predungeon/menu/predungeon_menu_tick
 scoreboard players remove @a[scores={hub.player.interaction_cooldown=1..}] hub.player.interaction_cooldown 1
 
 

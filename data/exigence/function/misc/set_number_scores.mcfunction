@@ -1,3 +1,4 @@
+scoreboard objectives add number dummy
 scoreboard players set 0 number 0
 scoreboard players set 1 number 1
 scoreboard players set -1 number -1

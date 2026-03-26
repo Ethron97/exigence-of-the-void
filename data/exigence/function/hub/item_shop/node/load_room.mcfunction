@@ -25,12 +25,14 @@ execute if score #data_loaded Temp matches 1 positioned -27.5 200.0 0.5 run func
 #====================================================================================================
 
 # Load deck analyzer menu
-execute store result storage exigence:temp profile_id int 1 run scoreboard players get #compare profile.player.profile_id
+scoreboard players operation #profile_id Temp = @s profile.player.profile_id
+scoreboard players operation #coop_profile_id Temp = @s profile.player.coop_profile_id
 execute positioned -27.5 200.0 0.5 positioned ~ ~ ~-3.49 rotated 0 0 run function exigence:hub/item_shop/load/setup_deck_analyzer
 
 # Update purchasability
 function exigence:hub/item_shop/update_purchasability_full
 
 # Load menus
+scoreboard players set #cancel_item_shop_iterate Temp 0
 scoreboard players set #i Temp 1
 schedule function exigence:hub/item_shop/load/load_handler/schedule 10t

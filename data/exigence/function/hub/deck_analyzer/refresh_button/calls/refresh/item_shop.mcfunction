@@ -1,4 +1,4 @@
-# Refresh FROM ITEM SHOP ROOM
+# Refresh from item shop
 
 ## CONSTRAINTS
 #   AS refresh button display
@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-$say Refresh FROM ITEM SHOP ROOM $(profile_id)
+$say Refresh from ITEM SHOP room $(profile_id)
 
 #====================================================================================================
 ## SAVE CHESTS FOR REFRESH

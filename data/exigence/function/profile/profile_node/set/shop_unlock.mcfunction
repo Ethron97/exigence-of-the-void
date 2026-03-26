@@ -11,7 +11,7 @@ execute unless entity @s[tag=ItemShop] run tellraw @s [{text:"You should not be 
 execute unless entity @s[tag=ItemShop] run return fail
 #====================================================================================================
 
-$say Shop unlock $(item_name)
+#$say Shop unlock $(item_name)
 
 # Update the scores of this player's profile node, and any coop profile nodes if applicable
 scoreboard players operation #compare profile.node.profile_id = @s profile.player.profile_id
@@ -23,7 +23,7 @@ if score @s profile.node.profile_id = #compare profile.node.profile_id run score
 
 # Coop profiles
 $execute in exigence:profile_data positioned 8 128 8 as @e[distance=..140,type=marker,tag=ProfileNode] \
-if score @s profile.player.coop_profile_id = #compare profile.node.profile_id run scoreboard players set @s profile.shop_unlock.$(item_name) 1
+if score @s profile.node.coop_profile_id = #compare profile.node.profile_id run scoreboard players set @s profile.shop_unlock.$(item_name) 1
 
 # Give advancement to player(s)
 $advancement grant @s only exigence:unlockables/shop_unlock_$(item_name)

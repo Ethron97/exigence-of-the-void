@@ -66,5 +66,5 @@ $execute positioned ^ ^5.75 ^ run function exigence:menu/money_menus/money_item_
 
 
 # Connect parents
-execute as @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay] run function exigence:menu/item_display/item_shop_display/connect_parents
+execute as @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay] run function exigence:menu/item_display/item_shop_display/create/connect_parents
 

@@ -22,10 +22,9 @@ function exigence:hub/item_shop/node/setup_interaction
 
 #====================================================================================================
 # Assign room ids
-scoreboard players operation #compare hub.entity.room_id = @n[distance=..1,tag=LockerRoomNode] hub.entity.room_id
+execute in exigence:hub positioned 0 153 0 run scoreboard players operation #compare hub.entity.room_id \
+= @n[distance=..1,tag=RoomNode,scores={hub.room.room_type=9}] hub.room.room_id
 #   PLAYER
 scoreboard players operation @s hub.player.room_id = #compare hub.entity.room_id
 execute in exigence:profile_data positioned 8 3 8 as @e[distance=..20,type=armor_stand,tag=PlayerNode] if score @s profile.node.player_id = #compare career.player_id \
 run scoreboard players operation @s player.node.room_id = #compare hub.entity.room_id
-#   FK (link room node to specific room node)
-scoreboard players operation @n[distance=..1,tag=LockerRoomNode] hub.entity.room_id = #compare hub.entity.room_id

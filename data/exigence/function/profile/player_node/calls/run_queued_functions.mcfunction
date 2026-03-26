@@ -17,6 +17,7 @@ execute if score @s player.node.queue.timeout_profile_selector matches 1.. at @s
 execute if score @s player.node.queue.timeout_tutorial matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_timeout_tutorial
 execute if score @s player.node.queue.timeout_locker_room matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_timeout_locker_room
 execute if score @s player.node.queue.timeout_item_shop matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_timeout_item_shop
+execute if score @s player.node.queue.timeout_predungeon matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_timeout_predungeon
 
 # ...
 execute if score @s player.node.queue.mail matches 1.. run function exigence:profile/player_node/calls/private/run_read_mail

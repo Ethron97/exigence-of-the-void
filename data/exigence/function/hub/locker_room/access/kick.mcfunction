@@ -22,3 +22,4 @@ scoreboard players operation #compare hub.locker_room_id = @s hub.player.locker_
 scoreboard players reset @s hub.player.locker_room_id
 
 scoreboard players reset @s hub.player.room_id
+scoreboard players reset @s shop.player.looking_at_idid
