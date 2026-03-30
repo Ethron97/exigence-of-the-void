@@ -32,7 +32,7 @@ execute store result entity @s item.components."minecraft:custom_data".profile_i
 execute store result entity @s item.components."minecraft:custom_data".coop_profile_id int 1 run scoreboard players get @s hub.entity.coop_profile_id
 
 # Difficulty
-execute store result entity @s item.components."minecraft:custom_data".difficulty int 1 run scoreboard players get @n[distance=..0.1,type=marker,tag=ProfileNode] profile.profile_difficulty
+execute store result entity @s item.components."minecraft:custom_data".difficulty int 1 run scoreboard players get @n[distance=..0.1,type=marker,tag=ProfileNode] profile.node.profile_difficulty
 
 # Item type
 data modify entity @s item.id set value "minecraft:map"

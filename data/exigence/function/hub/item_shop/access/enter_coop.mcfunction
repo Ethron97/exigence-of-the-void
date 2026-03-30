@@ -20,6 +20,8 @@ scoreboard players operation #compare profile.player.profile_id = @s profile.pla
 # Summon interaction
 function exigence:hub/item_shop/node/setup_interaction
 
+function exigence:hub/item_shop/refresh_currency
+
 #====================================================================================================
 # Assign room ids
 execute in exigence:hub positioned 0 153 0 run scoreboard players operation #compare hub.entity.room_id \

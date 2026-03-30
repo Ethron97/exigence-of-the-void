@@ -3,6 +3,9 @@
 ## CONSTRAINTS
 #   AS/AT profile selector node
 
+## INPUT
+#   exigence:temp INT profile_selector_id
+
 #====================================================================================================
 
 # Frame
@@ -38,5 +41,5 @@ item:{id:"minecraft:sunflower",count:1,components:{"minecraft:custom_model_data"
 ,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[1.0f,1.0f,0.01f]}}
 
 # Give all new item displays selector score
-$scoreboard players set @e[distance=..16,tag=NewDisplay] hub.entity.profile_selector_id $(profile_selector_id)
+execute as @e[distance=..16,tag=NewDisplay] store result score @s hub.entity.profile_selector_id run data get storage exigence:temp profile_selector_id
 tag @e[distance=..16,tag=NewDisplay] remove NewDisplay

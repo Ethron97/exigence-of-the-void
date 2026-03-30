@@ -15,6 +15,4 @@ execute at @s run playsound minecraft:block.bamboo_wood_trapdoor.open ambient @a
 #execute at @s run playsound minecraft:block.ender_chest.open ui @a ~ ~ ~ 1 1.5
 
 # Display item details
-#execute at @s positioned ^ ^0.3 ^0 run function exigence:hub/profile_selector/menu/display/profile/calls/private/show_hover_name
-#execute at @s positioned ^ ^-0.4 ^0 run function exigence:hub/profile_selector/menu/display/profile/calls/private/show_hover_line {line:0}
-#execute at @s[tag=!Selected] positioned ^ ^-0.48 ^0 run function exigence:hub/profile_selector/menu/display/profile/calls/private/show_hover_line {line:1}
+execute at @s run function exigence:hub/predungeon/menu/display/level_chooser/calls/hover/load_hover_details

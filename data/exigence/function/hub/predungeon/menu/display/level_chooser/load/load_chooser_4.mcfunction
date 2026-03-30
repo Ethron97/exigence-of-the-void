@@ -5,8 +5,18 @@
 
 #====================================================================================================
 
-execute at @n[distance=..5,type=marker,tag=DoorSlotMarker4] positioned ~ ~ ~-0.01 run function exigence:hub/predungeon/menu/display/level_chooser/load/4/summon_chooser_4
-execute as @n[distance=..5,type=item_display,tag=DoorSlotFill4,tag=Closed] run function exigence:hub/predungeon/menu/display/warp_door/slot/open_slot
+execute at @n[distance=..5,type=marker,tag=DoorSlotMarker4] positioned ~ ~ ~0.01 \
+run function exigence:hub/predungeon/menu/display/level_chooser/load/4/summon_chooser_bg
+
+execute at @n[distance=..5,type=marker,tag=DoorSlotMarker4] positioned ~ ~ ~-0.02125 \
+run function exigence:hub/predungeon/menu/display/level_chooser/load/4/summon_chooser_mg
+
+execute at @n[distance=..5,type=marker,tag=DoorSlotMarker4] positioned ~ ~ ~-0.0525 \
+run function exigence:hub/predungeon/menu/display/level_chooser/load/4/summon_chooser_fg
+
+execute as @n[distance=..5,type=item_display,tag=DoorSlotFill4,tag=Closed] \
+run function exigence:hub/predungeon/menu/display/warp_door/slot/open_slot
 
 # Update visual / selectability state
-execute as @n[distance=..5,type=item_display,tag=LevelChooserDisplay,tag=Level4] run function exigence:hub/predungeon/menu/display/level_chooser/load/4/set_selectability
+execute as @n[distance=..5,type=item_display,tag=LevelChooserDisplayFG,tag=Level4] \
+run function exigence:hub/predungeon/menu/display/level_chooser/load/4/set_selectability

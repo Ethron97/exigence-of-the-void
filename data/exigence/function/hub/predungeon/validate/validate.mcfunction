@@ -13,7 +13,6 @@
 # Default to VALID
 scoreboard players set #predungeon_validate_total Temp 1
 
-
 # COOP CHECK
 function exigence:hub/predungeon/validate/coop/check
 

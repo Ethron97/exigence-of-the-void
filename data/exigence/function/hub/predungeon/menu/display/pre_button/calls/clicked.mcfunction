@@ -27,10 +27,11 @@ execute at @s as @n[distance=..5,type=item_display,tag=DoorSlotFill0,tag=Open] r
 #execute at @s at @n[distance=..5,type=marker,tag=PredungeonMenuNode] run
 schedule function exigence:hub/predungeon/menu/display/level_chooser/schedule_load 20t
 
-# Change background?
-# TODO
+# Update state
+scoreboard players set #predungeon_state Temp 1
 
 # Close this menu (do last so we retainer executor)
+execute at @s run function exigence:hub/predungeon/menu/display/pre_button/calls/hover/remove_hover_details with entity @s item.components."minecraft:custom_data"
 kill @s[type=item_display,tag=PreButtonDisplay]
 
 # Save and remove chests

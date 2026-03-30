@@ -22,5 +22,5 @@ execute positioned -27.5 200.0 0.5 as @n[distance=..5,type=minecraft:item_displa
 execute as @e[distance=..24,type=minecraft:item_display,tag=MenuDisplay,tag=ItemShopDisplay] at @s run function exigence:hub/item_shop/menu/display/shop_display_tick
 
 
-# If either spend amounts changed for any player, update purchasabilitya
-execute if entity @a[distance=..24,tag=ItemShop,scores={shop.player.currency_amounts_changed=1}] run function exigence:hub/item_shop/update_purchasability_b
+# If either spend amounts changed for any player, update purchasability
+execute if entity @a[distance=..24,tag=ItemShop,scores={shop.player.currency_amounts_changed=1}] run function exigence:hub/item_shop/update_all_purchasability_displays

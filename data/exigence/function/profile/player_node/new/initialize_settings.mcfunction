@@ -36,3 +36,5 @@ scoreboard players set @s career.settings.show_resource_overflow 0
 scoreboard players set @s career.settings.show_resource_underflow 1
 
 scoreboard players set @s career.settings.allow_coop_invites 1
+
+scoreboard players set @s career.settings.currency_warn 1

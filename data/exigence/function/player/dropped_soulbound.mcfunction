@@ -8,8 +8,8 @@
 #====================================================================================================
 
 # Tellraw (origin of item)
-execute on origin run tellraw @s[tag=ActivePlayer] [{text:"You cannot drop Soulbound items",color:"red"}]
-execute on origin run tellraw @s[tag=!ActivePlayer] [{text:"You cannot drop items here",color:"red"}]
+execute on origin run tellraw @s[tag=ActivePlayer] [{text:"✖ You cannot drop Soulbound items!",color:"red"}]
+execute on origin run tellraw @s[tag=!ActivePlayer] [{text:"✖ You cannot drop items now!",color:"red"}]
 
 # Tag entity so we guarantee pick it
 tag @s add DroppedSoulbounding

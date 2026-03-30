@@ -11,18 +11,6 @@ execute if entity @a[tag=Coop] run data modify storage exigence:dungeon is_coop 
 tag @a[tag=Coop] add ActivePlayer
 tag @a[tag=Coop] remove Coop
 
-# Give room token
-function exigence:room/game/new_token
-scoreboard players operation @a[tag=ActivePlayer] RoomToken = Game RoomToken
-
-# Reset validation signs
-fill -263 17 -77 -259 17 -77 air
-fill -263 19 -77 -259 19 -77 air
-fill -263 17 -77 -259 17 -77 bamboo_wall_sign[facing=south]{front_text:{has_glowing_text:0b,color:"red",messages:["","","",""]}}
-fill -263 19 -77 -259 19 -77 bamboo_wall_sign[facing=south]{front_text:{has_glowing_text:0b,color:"red",messages:["","","",""]}}
-
-# Clear buttons
-fill -263 18 -77 -259 18 -77 air
 
 # Begin game
 function exigence:game/game_on

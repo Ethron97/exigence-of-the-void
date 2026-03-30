@@ -10,10 +10,9 @@
 #   STR item_name
 #   INT money_cost
 #   INT research_cost
-#   STR[] parents
 #   INT(1-4) rarity (1=common,2=uncommon etc)
 #   INT(1-7) tier (1-7, determines story beat required to unlock)
-# {item_name:'',money_cost:0,research_cost:0,parents:[],rarity:1,tier:1}
+# {item_name:'',money_cost:0,research_cost:0,rarity:1,tier:1}
 
 #====================================================================================================
 
@@ -25,4 +24,4 @@ $function exigence:vault/artifact/summon_item {item_name:'$(item_name)'}
 $execute as @n[distance=..0.1,type=item,tag=NAS] run function exigence:menu/money_menus/artifact/data {vault:'$(vault)',unlock:'$(unlock)'}
 
 # Call money item display
-$function exigence:menu/money_menus/money_item_display {menu_tag:'$(menu_tag)',item_name:'$(item_name)',rarity:$(rarity),tier:$(tier),money_cost:$(money_cost),research_cost:$(research_cost),parents:[],Rotation:'$(Rotation)'}
+$function exigence:menu/money_menus/money_item_display {menu_tag:'$(menu_tag)',item_name:'$(item_name)',rarity:$(rarity),tier:$(tier),money_cost:$(money_cost),research_cost:$(research_cost),parents:[],num_parents:0,Rotation:'$(Rotation)'}

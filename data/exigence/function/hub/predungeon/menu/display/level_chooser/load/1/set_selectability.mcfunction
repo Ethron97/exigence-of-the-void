@@ -10,11 +10,26 @@
 #   And cards.count JUST got updated from the validation step.
 # CARD COUNT:
 execute if score cards.count deck.analysis matches ..10 run tag @s add GoodCards
-# BEAT LEVEL:
-execute if entity @p[distance=..16,tag=Predungeon,advancements={exigence:story/win_difficulty_1=true}] run tag @s add GoodUnlock
-# TODO attempted level profile.data.winless.attempted_D1
+# ATTEMPTED LEVEL:
+execute if score #attempts_d1 Temp matches 1.. run tag @s add GoodKnown
+# GOT PREVIOUS ACHIEVEMENT:
+execute if entity @p[distance=..16,tag=Predungeon,advancements={exigence:story/win_difficulty_0=true}] run tag @s add GoodUnlock
 
-#   Once you've at least ATTEMPTED (TODO) leve1 1, the level icon is known.
-data modify entity @s[tag=GoodUnlock] item.components."minecraft:custom_model_data".strings set value ["level_1"]
+# Update models
+execute at @s[tag=GoodUnlock,tag=GoodCards,tag=!GoodKnown] run function exigence:hub/predungeon/menu/display/level_chooser/load/general/model_unknown
+execute at @s[tag=GoodUnlock,tag=GoodKnown,tag=!GoodCards] run function exigence:hub/predungeon/menu/display/level_chooser/load/1/model_locked
+execute at @s[tag=GoodUnlock,tag=GoodKnown,tag=GoodCards] run function exigence:hub/predungeon/menu/display/level_chooser/load/1/model_available
+
+# Set color
 team join Yellow @s[tag=!GoodCards,tag=GoodUnlock]
 team join Green @s[tag=GoodCards,tag=GoodUnlock]
+
+# Set name (lore 0)
+data modify entity @s[tag=GoodKnown] item.components."minecraft:lore"[0] set value [{text:"Ruins of Solstice",color:"#c7c1c1"}]
+
+# Set locked reason (lore 1)
+data modify entity @s[tag=!GoodUnlock] item.components."minecraft:lore"[1] set value [{text:"Complete Tutorial!",color:"#cf4f4f"}]
+data modify entity @s[tag=GoodUnlock,tag=!GoodCards] item.components."minecraft:lore"[1] set value [{text:"Too Many Cards!",color:"#e9d45b"}]
+
+execute if entity @s[tag=GoodUnlock] at @n[distance=..5,type=marker,tag=DoorSlotMarker1] positioned ~-0.15625 ~ ~-0.0525 \
+run function exigence:hub/predungeon/menu/display/level_chooser/load/1/summon_deck_size

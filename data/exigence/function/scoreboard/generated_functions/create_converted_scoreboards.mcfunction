@@ -873,7 +873,6 @@ scoreboard objectives add profile.data.winloss.wins_D3 dummy
 scoreboard objectives add profile.data.winloss.wins_D4 dummy
 scoreboard objectives add profile.hub_ticks dummy
 scoreboard objectives add profile.piggy_bank dummy
-scoreboard objectives add profile.profile_difficulty dummy
 scoreboard objectives add profile.story.puzzle_candles dummy
 scoreboard objectives add profile.story.ward_amethyst dummy
 scoreboard objectives add profile.story.ward_emerald dummy

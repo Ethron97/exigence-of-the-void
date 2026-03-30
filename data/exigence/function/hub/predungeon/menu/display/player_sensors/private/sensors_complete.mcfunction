@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-say Sensors complete
+#say Sensors complete
 
 # Set state
 scoreboard players set #predungeon_state Temp 3

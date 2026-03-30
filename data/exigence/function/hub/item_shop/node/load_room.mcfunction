@@ -29,8 +29,14 @@ scoreboard players operation #profile_id Temp = @s profile.player.profile_id
 scoreboard players operation #coop_profile_id Temp = @s profile.player.coop_profile_id
 execute positioned -27.5 200.0 0.5 positioned ~ ~ ~-3.49 rotated 0 0 run function exigence:hub/item_shop/load/setup_deck_analyzer
 
+# Load player unlocks
+function exigence:hub/item_shop/load_unlocks
+# Update #total currencies
+function exigence:hub/item_shop/refresh_currency
+
 # Update purchasability
-function exigence:hub/item_shop/update_purchasability_full
+# MOVED to triggering per-display on the load iteration
+#function exigence:hub/item_shop/update_purchasability_full
 
 # Load menus
 scoreboard players set #cancel_item_shop_iterate Temp 0

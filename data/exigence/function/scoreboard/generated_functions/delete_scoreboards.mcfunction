@@ -807,6 +807,7 @@ scoreboard objectives remove career.settings.show_resource_generate
 scoreboard objectives remove career.settings.show_resource_overflow
 scoreboard objectives remove career.settings.show_resource_underflow
 scoreboard objectives remove career.settings.allow_coop_invites
+scoreboard objectives remove career.settings.currency_warn
 scoreboard objectives remove debug.node_counter
 scoreboard objectives remove debug.vault_pots_1
 scoreboard objectives remove debug.vault_pots_2
@@ -949,7 +950,8 @@ scoreboard objectives remove profile.node.player_id
 scoreboard objectives remove profile.node.profile_id
 scoreboard objectives remove profile.node.slot_id
 scoreboard objectives remove profile.piggy_bank
-scoreboard objectives remove profile.profile_difficulty
+scoreboard objectives remove profile.node.profile_difficulty
+scoreboard objectives remove profile.player.profile_difficulty
 scoreboard objectives remove profile.node.coop_profile_id
 scoreboard objectives remove profile.node.coop_profile_index
 scoreboard objectives remove profile.node.coop_profile_id_original
@@ -968,6 +970,7 @@ scoreboard objectives remove shop.frame.lore_lines
 scoreboard objectives remove shop.frame.purchase_cooldown
 scoreboard objectives remove shop.frame.rarity
 scoreboard objectives remove shop.frame.tier
+scoreboard objectives remove shop.frame.parents
 scoreboard objectives remove shop.player.currency_amounts_changed
 scoreboard objectives remove shop.player.holding_currency
 scoreboard objectives remove shop.player.holding_currency_changed

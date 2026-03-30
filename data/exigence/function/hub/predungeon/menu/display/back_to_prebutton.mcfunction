@@ -14,6 +14,7 @@ execute if score #predungeon_state Temp matches 0 run return fail
 scoreboard players set #predungeon_state Temp 0
 
 # Kill whatever current menu exists
+kill @e[distance=..5,type=#exigence:display,tag=FromHover]
 kill @e[distance=..5,type=#exigence:display,tag=PredungeonMenuDisplay]
 kill @e[distance=..5,type=#exigence:display,tag=PlayerSensorPupil]
 

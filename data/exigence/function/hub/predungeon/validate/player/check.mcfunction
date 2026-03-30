@@ -16,6 +16,7 @@ scoreboard players set #predungeon_validate_player Temp 1
 # Because we know we run this step only if validate/coop/check succeeds, we know
 #   we just have to check the current @a[tag=Predungeon] list
 
+execute as @a[distance=..32,tag=Predungeon] run function exigence:hub/predungeon/validate/player/check_thrown_items
 execute as @a[distance=..32,tag=Predungeon] run function exigence:hub/predungeon/validate/player/check_player_consumables
 execute as @a[distance=..32,tag=Predungeon] run function exigence:hub/predungeon/validate/player/check_player_card
 
@@ -29,5 +30,7 @@ execute as @a[distance=..32,tag=Predungeon] run function exigence:hub/predungeon
 # Check artifacts
 execute as @a[distance=..32,tag=Predungeon] run function exigence:hub/predungeon/validate/player/check_player_artifacts
 
+
+
 # Not validation issues, but good time to check inventory.
-execute as @a[distance=..32,tag=Predungeon] run function exigence:hub/predungeon/validate/player/check_non_essentials
+execute as @a[distance=..32,tag=Predungeon,scores={career.settings.currency_warn=1}] run function exigence:hub/predungeon/validate/player/check_player_currency

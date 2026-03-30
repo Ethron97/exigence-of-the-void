@@ -15,6 +15,7 @@ execute if score @s ProfileSelectorConfirmDelete matches -2147483647..2147483647
 execute if score @s ProfileSelectorCancelDelete matches -2147483647..2147483647 unless score @s ProfileSelectorCancelDelete matches 0 run function exigence:misc/triggers/hub/cancel_profile_delete
 execute if score @s AcceptCoopInvite matches -2147483647..2147483647 unless score @s AcceptCoopInvite matches 0 run function exigence:misc/triggers/hub/invite_coop_accept
 execute if score @s DeclineCoopInvite matches -2147483647..2147483647 unless score @s DeclineCoopInvite matches 0 run function exigence:misc/triggers/hub/invite_coop_decline
+execute if score @s DisableCurrencyWarning matches -2147483647..2147483647 unless score @s DisableCurrencyWarning matches 0 run function exigence:misc/triggers/hub/disable_currency_warn
 
 # Admin
 execute as @s[tag=Admin] run function exigence:misc/triggers/trigger_check_admin

@@ -1,5 +1,7 @@
 # Load deck analysis data into storage
 
+#====================================================================================================
+
 #data modify storage exigence:deck_analysis
 execute store result storage exigence:deck_analysis resource_green_consume int 1 run scoreboard players get resource.green.consume deck.analysis
 execute store result storage exigence:deck_analysis resource_red_consume int 1 run scoreboard players get resource.red.consume deck.analysis
@@ -82,14 +84,14 @@ execute store result storage exigence:deck_analysis cards_time int 1 run scorebo
 execute store result storage exigence:deck_analysis cards_time_expected int 1 run scoreboard players get cards.time_expected deck.analysis
 
 # Calcuate minute/second amounts for each potion effect. Function feeds it into the data path given
-function exigence:hub/predungeon/private/format_effect_time {effect:speed}
-function exigence:hub/predungeon/private/format_effect_time {effect:speed2}
-function exigence:hub/predungeon/private/format_effect_time {effect:regen}
-function exigence:hub/predungeon/private/format_effect_time {effect:jump}
-function exigence:hub/predungeon/private/format_effect_time {effect:invisibility}
+function exigence:misc/general/format_effect_time {effect:speed}
+function exigence:misc/general/format_effect_time {effect:speed2}
+function exigence:misc/general/format_effect_time {effect:regen}
+function exigence:misc/general/format_effect_time {effect:jump}
+function exigence:misc/general/format_effect_time {effect:invisibility}
 
-function exigence:hub/predungeon/private/format_effect_time {effect:beastsense}
-function exigence:hub/predungeon/private/format_effect_time {effect:glimmer}
-function exigence:hub/predungeon/private/format_effect_time {effect:detection}
-function exigence:hub/predungeon/private/format_effect_time {effect:flicker}
-function exigence:hub/predungeon/private/format_effect_time {effect:circulation}
+function exigence:misc/general/format_effect_time {effect:beastsense}
+function exigence:misc/general/format_effect_time {effect:glimmer}
+function exigence:misc/general/format_effect_time {effect:detection}
+function exigence:misc/general/format_effect_time {effect:flicker}
+function exigence:misc/general/format_effect_time {effect:circulation}

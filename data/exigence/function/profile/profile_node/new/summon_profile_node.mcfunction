@@ -14,7 +14,7 @@
 summon minecraft:marker ~ ~ ~ {Tags:["NewProfileNode","ProfileNode"],CustomName:[{text:"Marker | ProfileNode ",color:"gray"},{text:"a",color:"gold"}]}
 
 # Assign difficulty
-scoreboard players operation @n[distance=..1,type=minecraft:marker,tag=NewProfileNode] profile.profile_difficulty = #difficulty Temp
+scoreboard players operation @n[distance=..1,type=minecraft:marker,tag=NewProfileNode] profile.node.profile_difficulty = #difficulty Temp
 
 # Assign player id
 execute as @n[distance=..1,type=minecraft:marker,tag=NewProfileNode] run scoreboard players operation @s profile.node.profile_id = #sequence profile.player.profile_id

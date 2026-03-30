@@ -23,7 +23,7 @@ $execute as @p[distance=..16,tag=ItemShop,tag=Interacting] run function exigence
 playsound minecraft:block.vault.open_shutter ambient @a ~ ~ ~ 1 1
 
 # Update purchasability lines to this and child frames
-execute as @e[distance=..3,type=item_display,tag=ItemShopDisplay,tag=!IsResearched] run function exigence:hub/item_shop/private/update_purchasability_a_
+execute as @e[distance=..3,type=item_display,tag=ItemShopDisplay,tag=!IsResearched] run function exigence:hub/item_shop/private/update_purchasability_tags
 execute as @e[distance=..3,type=item_display,tag=ItemShopDisplay,tag=!IsResearched] run function exigence:menu/item_display/item_shop_display/update_purchasability_displays with entity @s item.components."minecraft:custom_data"
 execute as @e[distance=..3,type=item_display,tag=ItemShopDisplay,tag=!IsResearched] unless entity @s[tag=!IsTierUnlocked,tag=!IsParentResearched] run function exigence:menu/item_display/item_shop_display/update_parent_line_colors with entity @s item.components."minecraft:custom_data"
 function exigence:menu/item_display/item_shop_display/update_purchasability_displays with entity @s item.components."minecraft:custom_data"

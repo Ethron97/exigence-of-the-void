@@ -4,12 +4,13 @@
 #   AT location
 
 ## INPUT:
-#   INT player_id
-#   INT profile_selector_id
+#   exigence:temp INT player_id
+#   exigence:temp INT profile_selector_id
 
 #====================================================================================================
 
-$function exigence:hub/profile_selector/menu/display/settings/load/private/summon_setting_display {player_id:$(player_id),profile_selector_id:$(profile_selector_id)}
+# INPUT player_id, profile_selector_id
+function exigence:hub/profile_selector/menu/display/settings/load/private/summon_setting_display
 
 # Get value player
 scoreboard players operation @n[distance=..0.1,type=item_display,tag=NewItemDisplay] Random = @p[distance=..16,tag=ProfileSelecting] career.settings.coin_conversion_style

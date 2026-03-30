@@ -12,4 +12,4 @@
 #say Unhover pre button
 
 # Remove item details
-#function exigence:hub/profile_selector/menu/display/profile/calls/private/remove_hover_details with entity @s item.components."minecraft:custom_data"
+execute at @s run function exigence:hub/predungeon/menu/display/level_chooser/calls/hover/remove_hover_details with entity @s item.components."minecraft:custom_data"

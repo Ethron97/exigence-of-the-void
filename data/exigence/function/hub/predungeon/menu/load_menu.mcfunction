@@ -16,6 +16,8 @@ say Load predungeon menu node
 # Load menu node
 summon minecraft:marker ~ ~ ~ {Tags:["PredungeonMenuNode"]}
 
+scoreboard players operation #compare profile.player.profile_difficulty = @s profile.player.profile_difficulty
+
 scoreboard players operation @n[distance=..0.01,type=marker,tag=PredungeonMenuNode] hub.entity.room_id = @s hub.player.room_id
 # Copy scores
 scoreboard players operation @n[distance=..0.01,type=marker,tag=PredungeonMenuNode] hub.entity.profile_id = @s profile.player.profile_id
@@ -27,4 +29,3 @@ execute as @n[distance=..0.01,type=marker,tag=PredungeonMenuNode] at @s run func
 
 # Load menu a
 execute as @n[distance=..0.01,type=marker,tag=PredungeonMenuNode] at @s run function exigence:hub/predungeon/menu/display/pre_button/load
-#schedule function exigence:hub/predungeon/menu/display/pre_button/schedule_load 20t

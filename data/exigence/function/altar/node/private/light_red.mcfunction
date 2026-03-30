@@ -14,9 +14,9 @@ execute at @s run clone -394 -43 -123 -392 -42 -121 ~-1 ~-1 ~-1 masked
 # Playsound(s)
 execute at @s run playsound minecraft:entity.player.hurt_sweet_berry_bush neutral @a ~ ~ ~ 1 1.3
 execute at @s run playsound minecraft:block.stone.break block @a ~ ~ ~ 1 1
-execute at @s run playsound minecraft:block.nether_bricks.place block @a ~ ~ ~ 1 0.8
-execute at @s run playsound minecraft:block.nether_bricks.place block @a ~ ~ ~ 1 0.8
-execute at @s run playsound minecraft:block.nether_bricks.place block @a ~ ~ ~ 1 0.8
+execute at @s run playsound minecraft:block.nether_bricks.place block @a ~1 ~-1 ~ 1 0.8
+execute at @s run playsound minecraft:block.nether_bricks.place block @a ~-1 ~-1 ~-1 1 0.8
+execute at @s run playsound minecraft:block.nether_bricks.place block @a ~ ~-1 ~1 1 0.8
 
 # Remove interaction if already max node state (ugpraded)
 execute if score @s game.node.node_state matches 2 run function exigence:altar/node/remove_interaction

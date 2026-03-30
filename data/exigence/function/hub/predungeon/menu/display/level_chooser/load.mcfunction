@@ -8,16 +8,17 @@
 # Playsound
 playsound minecraft:block.ender_chest.open ui @a ~ ~ ~ 1 1
 
-# Update state
-scoreboard players set #predungeon_state Temp 1
-
-# Open middel slot
+# Open middle slot
 execute as @n[distance=..5,type=item_display,tag=DoorSlotFill0,tag=Closed] run function exigence:hub/predungeon/menu/display/warp_door/slot/open_slot
 
 # Summon cancel button
 execute at @n[distance=..5,type=marker,tag=DoorSlotMarker0] positioned ~ ~ ~-0.01 run function exigence:hub/predungeon/menu/display/level_chooser/load/summon_cancel
 
+# Outputs: #attempts_d#1-6 Temp
+execute as @p[distance=..16,tag=Predungeon] run function exigence:player/get/attempts_d
+
 # Call load functions to load the chooser buttons depending on the advancements of the profile
+#   Once you beat a level, the next one shows up as unknown, so you have a goal to shoot for.
 execute if entity @p[distance=..16,tag=Predungeon,advancements={exigence:story/root=true}] \
 run function exigence:hub/predungeon/menu/display/level_chooser/load/load_chooser_1
 

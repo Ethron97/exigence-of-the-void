@@ -18,6 +18,7 @@ function exigence:hub/predungeon/node/kill_interaction
 
 scoreboard players reset @s hub.player.consumable_limit
 scoreboard players reset @s shop.player.looking_at_idid
+scoreboard players reset @s DisableCurrencyWarning
 
 #====================================================================================================
 # Remove THIS player from room node

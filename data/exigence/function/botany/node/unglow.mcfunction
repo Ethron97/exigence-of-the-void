@@ -12,4 +12,4 @@
 tag @s remove BerryGlowing
 
 # Kill "BerryGlow" block display within 1 block
-execute at @s run kill @e[distance=..1,type=minecraft:block_display,tag=BerryGlow]
+execute at @s run kill @n[distance=..1,type=minecraft:block_display,tag=BerryGlow]

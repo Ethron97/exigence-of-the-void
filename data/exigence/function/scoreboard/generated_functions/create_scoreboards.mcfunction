@@ -807,6 +807,7 @@ scoreboard objectives add career.settings.show_resource_generate dummy
 scoreboard objectives add career.settings.show_resource_overflow dummy
 scoreboard objectives add career.settings.show_resource_underflow dummy
 scoreboard objectives add career.settings.allow_coop_invites dummy
+scoreboard objectives add career.settings.currency_warn dummy
 scoreboard objectives add debug.node_counter dummy
 scoreboard objectives add debug.vault_pots_1 dummy
 scoreboard objectives add debug.vault_pots_2 dummy
@@ -949,7 +950,8 @@ scoreboard objectives add profile.node.player_id dummy
 scoreboard objectives add profile.node.profile_id dummy
 scoreboard objectives add profile.node.slot_id dummy
 scoreboard objectives add profile.piggy_bank dummy
-scoreboard objectives add profile.profile_difficulty dummy
+scoreboard objectives add profile.node.profile_difficulty dummy
+scoreboard objectives add profile.player.profile_difficulty dummy
 scoreboard objectives add profile.node.coop_profile_id dummy
 scoreboard objectives add profile.node.coop_profile_index dummy
 scoreboard objectives add profile.node.coop_profile_id_original dummy
@@ -968,6 +970,7 @@ scoreboard objectives add shop.frame.lore_lines dummy
 scoreboard objectives add shop.frame.purchase_cooldown dummy
 scoreboard objectives add shop.frame.rarity dummy
 scoreboard objectives add shop.frame.tier dummy
+scoreboard objectives add shop.frame.parents dummy
 scoreboard objectives add shop.player.currency_amounts_changed dummy
 scoreboard objectives add shop.player.holding_currency dummy
 scoreboard objectives add shop.player.holding_currency_changed dummy

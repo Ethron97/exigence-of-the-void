@@ -22,7 +22,7 @@ scoreboard players operation #predungeon_validate_player Temp < 0 number
 
 # Message this player
 tellraw @s [{text:"✖ You cannot bring ",color:red},{text:"Cards",color:white},{text:" into the Dungeon!",color:"red"}]
-execute at @s run playsound minecraft:block.sculk_sensor.clicking ui @s ~ ~10 ~ 2 1.4
+#execute at @s run playsound minecraft:block.sculk_sensor.clicking ui @s ~ ~10 ~ 2 1.4
 
 # Message other players
 tellraw @a[distance=..32,tag=Predungeon,tag=!LocalLocal] \

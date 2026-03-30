@@ -34,6 +34,10 @@ scoreboard players operation @s shop.frame.rarity = #compare shop.frame.rarity
 # Tier (sub-rarity)
 scoreboard players operation @s shop.frame.tier = #compare shop.frame.tier
 
+# Number of parents
+scoreboard players operation @s shop.frame.parents = #compare shop.frame.parents
+execute store result entity @s item.components."minecraft:custom_data".num_parents int 1 run scoreboard players get #compare shop.frame.parents
+
 # Initialize cooldown
 scoreboard players set @s shop.frame.purchase_cooldown 0
 

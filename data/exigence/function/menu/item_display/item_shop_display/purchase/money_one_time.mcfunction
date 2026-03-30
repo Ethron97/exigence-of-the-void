@@ -20,7 +20,7 @@ $execute as @p[distance=..16,tag=ItemShop,tag=Interacting] run function exigence
 playsound minecraft:block.vault.insert_item ambient @a ~ ~ ~ 1 1
 
 # Update display
-function exigence:hub/item_shop/private/update_purchasability_a_
+function exigence:hub/item_shop/private/update_purchasability_tags
 function exigence:menu/item_display/item_shop_display/cost_display/delete with entity @s item.components."minecraft:custom_data"
 function exigence:menu/item_display/item_shop_display/calls/unhover
 function exigence:menu/item_display/item_shop_display/calls/hover

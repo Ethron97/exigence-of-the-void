@@ -21,7 +21,7 @@ run function exigence:profile/player_node/calls/player_logged_in
 scoreboard players operation #compare profile.player.profile_id = @s profile.player.profile_id
 execute if score @s profile.player.coop_profile_id matches 1.. in exigence:profile_data positioned 8 128 8 as @e[distance=..140,type=marker,tag=ProfileNode] \
 if score @s profile.node.profile_id = #compare profile.player.profile_id at @s as @a if score @s profile.player.profile_id = #compare profile.player.profile_id \
-run function exigence:scoreboard/generated_functions/grant_advancements_from_scores
+run function exigence:profile/player/call_grant_advancements_from_scores
 
 # Remove loca ltag
 tag @s remove JustLoggedIn

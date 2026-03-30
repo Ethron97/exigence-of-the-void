@@ -10,18 +10,19 @@
 scoreboard players operation #compare career.player_id = @s career.player_id
 
 # Mark interaction
-execute as @e[distance=..8,type=interaction,tag=LockerRoomInteraction] \
+execute as @e[type=interaction,tag=LockerRoomInteraction,distance=..8] \
 if score @s hub.entity.player_id = #compare career.player_id run tag @s add CurrentCheckingInteraction
 
 # Teleport your interaction to player
-execute anchored eyes positioned ^ ^-0.5 ^ as @n[distance=..8,type=interaction,tag=CurrentCheckingInteraction] run tp @s ~ ~ ~
+execute anchored eyes positioned ^ ^-0.5 ^ as @n[type=interaction,tag=CurrentCheckingInteraction,distance=..8] run tp @s ~ ~ ~
 
 # Detect which item_display(s) the player is looking at
+scoreboard players operation #old_idid shop.player.looking_at_idid = @s shop.player.looking_at_idid
 scoreboard players set @s shop.player.looking_at_idid 0
 function exigence:hub/locker_room/menu/display/get_looking
 
 # Reset interaction size if player are not looking
-execute as @s[scores={shop.player.looking_at_idid=0}] run data merge entity @n[distance=..3,type=interaction,tag=CurrentCheckingInteraction] {width:0.01,height:0.01}
+execute if score #old_idid shop.player.looking_at_idid matches 1.. if score @s shop.player.looking_at_idid matches 0 run data merge entity @n[type=minecraft:interaction,tag=CurrentCheckingInteraction,distance=..3] {width:0.01,height:0.01}
 
 # Remove local tag
-tag @n[distance=..8,type=interaction,tag=CurrentCheckingInteraction] remove CurrentCheckingInteraction
+tag @n[type=interaction,tag=CurrentCheckingInteraction,distance=..8] remove CurrentCheckingInteraction

@@ -26,7 +26,7 @@ scoreboard players operation @s shop.player.looking_at_idid = @n[distance=..6,ty
 scoreboard players operation #compare IDID = @s shop.player.looking_at_idid
 
 # If looking at was found, make interaction of this player big enough to use
-execute as @n[distance=..3,type=interaction,tag=LockerRoomInteraction,tag=CurrentCheckingInteraction] run data merge entity @s {width:1,height:1}
+execute if score @s shop.player.looking_at_idid matches 1.. as @n[distance=..3,type=interaction,tag=LockerRoomInteraction,tag=CurrentCheckingInteraction] run data merge entity @s {width:1,height:1}
 
 # Remove local tag
 tag @s remove IAmLooking

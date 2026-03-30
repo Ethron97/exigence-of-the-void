@@ -10,7 +10,7 @@ scoreboard players remove seconds.cooldown tick_counter 1
 # If game is active, game tick
 execute if data storage exigence:dungeon {is_active:1} run function exigence:game/game_tick
 # If any players are in the hub dimension, hub tick
-execute in exigence:hub positioned 0 200 0 if entity @a[predicate=exigence:dimension/entity/hub,limit=1] run function exigence:hub/hub_tick
+execute in exigence:hub positioned 0 200 0 if entity @a[distance=..2000,limit=1] run function exigence:hub/hub_tick
 # If tutorial is active, tutorial tick
 execute if data storage exigence:dungeon {tutorial:1} in exigence:tutorial run function exigence:tutorial/tick
 
@@ -38,10 +38,10 @@ function exigence:profile/profile_tick
 # DEBUG
 #====================================================================================================
 # Temp testing
-#function exigence:door/detect_keys
 #function exigence:mirror/mirrors/detect_approaches
 
-function exigence:hub/hub_tick/predicate_debug
+# Position debug
+execute as @a[tag=Admin,tag=!ActivePlayer] run function exigence:hub/hub_tick/predicate_debug
 # Update debug.node_counter automatically every second
 execute store result storage exigence:debug current_level int 1 run scoreboard players get Ethron97 ObjectLevel
 execute if data storage exigence:debug {void:1} if score seconds.cooldown tick_counter matches 0 run function exigence:misc/update_node_counter with storage exigence:debug

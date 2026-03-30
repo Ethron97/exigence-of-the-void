@@ -9,6 +9,7 @@
 #   INT money_cost
 #   INT research_cost
 #   STR[] parents
+#   INT num_parents
 #   INT(1-4) rarity (1=common,2=uncommon etc)
 #   INT(1-7) tier (1-7, determines story beat required to unlock)
 # {item_name:'',money_cost:0,research_cost:0,parents:[],rarity:1,tier:1}
@@ -31,6 +32,10 @@ $data modify storage exigence:temp custom_name set value {text:"ItemDisplay | Me
 $scoreboard players set #compare shop.frame.rarity $(rarity)
 # Tier (sub-rarity)
 $scoreboard players set #compare shop.frame.tier $(tier)
+# Number of parents
+$scoreboard players set #compare shop.frame.parents $(num_parents)
+# Store item name as tag because its faster than nbt
+$tag @n[distance=..1,type=minecraft:item_display,tag=NewItemDisplay] add $(item_name)
 
 execute as @n[distance=..1,type=minecraft:item_display,tag=NewItemDisplay] run function exigence:menu/money_menus/money_item_display_data
 

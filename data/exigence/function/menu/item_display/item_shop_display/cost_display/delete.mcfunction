@@ -1,7 +1,7 @@
 # Delete cost display
 
 ## CONSTRAINTS
-#   AS item_display
+#   AS item_display (tag=DisplayingCost)
 
 ## INPUT
 #   WITH item.components."minecraft:custom_data" for id

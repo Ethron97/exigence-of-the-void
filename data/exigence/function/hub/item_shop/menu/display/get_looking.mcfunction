@@ -24,7 +24,7 @@ scoreboard players operation #compare IDID = @s shop.player.looking_at_idid
 
 # If looking at was found, make interaction of this player big enough to use
 #   TODO Emergency check if interaction is not within 8 blocks
-execute as @n[distance=..8,type=interaction,tag=ItemShopInteraction,tag=CurrentCheckingInteraction] run data merge entity @s {width:1,height:1}
+execute if score @s shop.player.looking_at_idid matches 1.. as @n[distance=..8,type=interaction,tag=ItemShopInteraction,tag=CurrentCheckingInteraction] run data merge entity @s {width:1,height:1}
 
 # Remove local tag
 tag @s remove IAmLooking

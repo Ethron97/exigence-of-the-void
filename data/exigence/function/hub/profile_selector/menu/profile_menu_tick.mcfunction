@@ -13,11 +13,12 @@ execute as @e[distance=..16,type=minecraft:item_display,tag=MenuDisplay,tag=Hove
 
 #====================================================================================================
 # Detect which item_display(s) the player is looking at
+scoreboard players operation #old_idid shop.player.looking_at_idid = @s shop.player.looking_at_idid
 scoreboard players set @s shop.player.looking_at_idid 0
 function exigence:hub/profile_selector/menu/display/get_looking
 
 # Reset interaction if player are not looking
-execute as @s[scores={shop.player.looking_at_idid=0}] run data merge entity @n[distance=..3,type=interaction,tag=ProfileSelectorInteraction] {width:0.01,height:0.01}
+execute if score #old_idid shop.player.looking_at_idid matches 1.. if score @s shop.player.looking_at_idid matches 0 run data merge entity @n[distance=..3,type=interaction,tag=ProfileSelectorInteraction] {width:0.01,height:0.01}
 
 # Unhover old entity (unless it is the same as current)
 execute as @e[distance=..16,type=minecraft:item_display,tag=MenuDisplay,tag=OldHover,tag=!Hover] run function exigence:hub/profile_selector/menu/display/unhover with entity @s item.components."minecraft:custom_data"
