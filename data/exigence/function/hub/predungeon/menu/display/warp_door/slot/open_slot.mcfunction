@@ -9,6 +9,6 @@
 
 tag @s remove Closed
 tag @s add Open
-execute at @s at @n[distance=..0.5,type=marker,tag=DoorSlotMarker] run tp @s ~ ~ ~0.115
+execute at @s at @n[type=marker,tag=DoorSlotMarker,distance=..0.5] run tp @s ~ ~ ~0.115
 
 playsound block.grindstone.use ui @a ~ ~ ~ 0.5 1.5

@@ -25,5 +25,5 @@ scoreboard players remove @s[scores={hub.player.interaction_cooldown=1..}] hub.p
 function exigence:hub/hub_tick/dropped_item/check_for_items
 
 # Room ticks (part 1)
-execute at @s[scores={hub.player.profile_selector_id=1..}] run return run function exigence:hub/profile_selector/menu/profile_menu_tick
-execute at @s[scores={hub.player.locker_room_id=1..}] as @n[distance=..6,type=marker,tag=LockerRoomNode,scores={hub.locker_room_id=1..}] at @s run function exigence:hub/locker_room/menu/locker_menu_tick
+execute at @s[scores={hub.player.profile_selector_id=1..}] run function exigence:hub/profile_selector/menu/profile_menu_tick
+execute at @s[scores={hub.player.locker_room_id=1..}] as @n[type=marker,scores={hub.locker_room_id=1..},tag=LockerRoomNode,distance=..6] at @s run function exigence:hub/locker_room/menu/locker_menu_tick

@@ -31,7 +31,7 @@ execute if entity @s[tag=!CanAfford] run data modify entity @s item.components."
 
 
 ## UPDATE COST DISPLAY
-$execute as @n[distance=..10,type=minecraft:text_display,tag=CostDisplay,scores={IDID=$(idid)}] run function exigence:menu/item_display/void_shop_display/cost_display/update with entity @n[distance=..10,type=minecraft:item_display,tag=VoidShopDisplay,tag=UpdatingPurchasability] item.components."minecraft:custom_data"
+$execute as @n[type=minecraft:text_display,scores={IDID=$(idid)},tag=CostDisplay,distance=..10] run function exigence:menu/item_display/void_shop_display/cost_display/update with entity @n[type=minecraft:item_display,tag=VoidShopDisplay,tag=UpdatingPurchasability,distance=..10] item.components."minecraft:custom_data"
 
 # Remove local tag
 tag @s remove UpdatingPurchasability

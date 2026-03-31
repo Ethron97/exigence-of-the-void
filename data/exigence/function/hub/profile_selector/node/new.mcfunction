@@ -8,7 +8,7 @@
 execute align x align y align z run summon minecraft:marker ~.5 ~ ~.5 {Tags:["NewMarker","Marker","ProfileSelectorNode"],CustomName:{text:"Marker | ProfileSelectorNode"}}
 
 # Initialize id
-scoreboard players set @n[distance=..1,tag=NewMarker] hub.profile_selector_id 0
+scoreboard players set @n[tag=NewMarker,distance=..1] hub.profile_selector_id 0
 
 # Remove local tag
-tag @n[distance=..1,tag=NewMarker] remove NewMarker
+tag @n[tag=NewMarker,distance=..1] remove NewMarker

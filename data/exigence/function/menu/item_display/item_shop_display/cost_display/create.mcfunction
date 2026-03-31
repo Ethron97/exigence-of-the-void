@@ -19,10 +19,10 @@ tag @s add DisplayingCost
 $execute positioned ^ ^-0.45 ^0.1 run summon minecraft:text_display ~ ~ ~ {Rotation:$(Rotation),Tags:["CostDisplay","NewCostDisplay"],text:{text:""},billboard:"fixed",alignment:"center",background:1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.75f,0.75f,0.75f]}}
 
 # Copy scoreboard value
-scoreboard players operation @n[distance=..1,type=minecraft:text_display,tag=NewCostDisplay] IDID = @s IDID
+scoreboard players operation @n[type=minecraft:text_display,tag=NewCostDisplay,distance=..1] IDID = @s IDID
 
 # Merge rotation
 #data modify entity @e[distance=..1,type=minecraft:text_display,tag=NewCostDisplay,limit=1] Rotation set from entity @s Rotation
 
 # Remove local tag
-tag @n[distance=..1,type=minecraft:text_display,tag=NewCostDisplay] remove NewCostDisplay
+tag @n[type=minecraft:text_display,tag=NewCostDisplay,distance=..1] remove NewCostDisplay

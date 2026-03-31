@@ -12,15 +12,15 @@
 #say Clicked coop invitor
 
 # Page flippers
-$execute at @s[tag=PageFlipperDisplay,tag=Left] as @n[distance=..5,type=item_display,tag=SlotDisplay,scores={IDID=$(parent_idid)}] at @s \
+$execute at @s[tag=PageFlipperDisplay,tag=Left] as @n[type=item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..5] at @s \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/calls/private/page_left
 
-$execute at @s[tag=PageFlipperDisplay,tag=Right] as @n[distance=..5,type=item_display,tag=SlotDisplay,scores={IDID=$(parent_idid)}] at @s \
+$execute at @s[tag=PageFlipperDisplay,tag=Right] as @n[type=item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..5] at @s \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/calls/private/page_right
 
 # Confirm button
 execute if entity @s[tag=Confirm] run say Clicked confirm
-$execute at @s[tag=CanConfirm] as @n[distance=..5,type=item_display,tag=SlotDisplay,scores={IDID=$(parent_idid)}] at @s \
+$execute at @s[tag=CanConfirm] as @n[type=item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..5] at @s \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/calls/private/confirm_coop_creation with entity @s item.components."minecraft:custom_data"
 
 # Effects

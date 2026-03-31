@@ -12,7 +12,7 @@ summon minecraft:item_display ~ ~ ~ {Rotation:[180.0f,0.0f],billboard:"fixed",in
 ,item:{id:"minecraft:iron_ingot",count:1,components:{"minecraft:custom_model_data":{strings:["channel_inside_0"]}\
 ,"minecraft:enchantments":{protection:1}}}}
 
-team join LightPurple @n[distance=..0.1,type=item_display,tag=NewItemDisplay]
+team join LightPurple @n[type=item_display,tag=NewItemDisplay,distance=..0.1]
 
 # Remove local tag
-tag @n[distance=..0.1,type=item_display,tag=NewItemDisplay] remove NewItemDisplay
+tag @n[type=item_display,tag=NewItemDisplay,distance=..0.1] remove NewItemDisplay

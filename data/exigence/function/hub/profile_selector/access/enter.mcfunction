@@ -25,9 +25,9 @@ scoreboard players operation #compare career.player_id = @s career.player_id
 scoreboard players operation #compare profile.node.profile_id = @s profile.player.profile_id
 
 # Load room as chosen profile selector node (validation done in previous function)
-execute as @n[distance=..1,tag=ProfileSelectorNode] at @s run function exigence:hub/profile_selector/node/load_room
+execute as @n[tag=ProfileSelectorNode,distance=..1] at @s run function exigence:hub/profile_selector/node/load_room
 
-scoreboard players operation @s hub.player.profile_selector_id = @n[distance=..1,tag=ProfileSelectorNode] hub.profile_selector_id
+scoreboard players operation @s hub.player.profile_selector_id = @n[tag=ProfileSelectorNode,distance=..1] hub.profile_selector_id
 
 #====================================================================================================
 # Summon Room Node
@@ -40,4 +40,4 @@ scoreboard players operation @s hub.player.room_id = #next hub.room.room_id
 execute in exigence:profile_data positioned 8 3 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] if score @s profile.node.player_id = #compare career.player_id \
 run scoreboard players operation @s player.node.room_id = #next hub.room.room_id
 #   FK (link room node to specific room node)
-scoreboard players operation @n[distance=..1,tag=ProfileSelectorNode] hub.entity.room_id = #next hub.room.room_id
+scoreboard players operation @n[tag=ProfileSelectorNode,distance=..1] hub.entity.room_id = #next hub.room.room_id

@@ -19,7 +19,7 @@ execute if score @s profile.player.coop_profile_id matches 1.. run function exig
 execute if score #did_coop_enter Temp matches 1 run return 0
 
 # Shop is in use
-execute positioned 0 153 0 if entity @n[distance=..1,type=marker,tag=RoomNode,scores={hub.room.room_type=2}] at @s run return run function exigence:hub/predungeon/access/fail/in_use
+execute positioned 0 153 0 if entity @n[type=marker,scores={hub.room.room_type=2},tag=RoomNode,distance=..1] at @s run return run function exigence:hub/predungeon/access/fail/in_use
 #----------------------------------------------------------------------------------------------------
 
 # Enter room as first player

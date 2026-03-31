@@ -4,7 +4,7 @@ execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon 
 #----------------------------------------------------------------------------------------------------
 
 # Advance dialogue
-execute at @s as @n[distance=..32,type=minecraft:villager,tag=NPC_Supplier,tag=Game] run function exigence:npc/game/dialogue_supplier
+execute at @s as @n[type=minecraft:villager,tag=NPC_Supplier,tag=Game,distance=..32] run function exigence:npc/game/dialogue_supplier
 
 # Reset advancement
 advancement revoke @s only exigence:listener/supplier_interact_game

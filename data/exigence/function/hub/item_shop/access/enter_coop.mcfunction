@@ -25,7 +25,7 @@ function exigence:hub/item_shop/refresh_currency
 #====================================================================================================
 # Assign room ids
 execute in exigence:hub positioned 0 153 0 run scoreboard players operation #compare hub.entity.room_id \
-= @n[distance=..1,tag=RoomNode,scores={hub.room.room_type=9}] hub.room.room_id
+= @n[scores={hub.room.room_type=9},tag=RoomNode,distance=..1] hub.room.room_id
 #   PLAYER
 scoreboard players operation @s hub.player.room_id = #compare hub.entity.room_id
 execute in exigence:profile_data positioned 8 3 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] if score @s profile.node.player_id = #compare career.player_id \

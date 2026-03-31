@@ -12,7 +12,7 @@
 #say Clicked settings
 
 # Shift click to show the description
-execute at @s if entity @p[tag=ProfileSelecting,tag=Interacting,distance=..16,predicate=exigence:player/sneaking] at @n[distance=..16,type=marker,tag=ProfileSelectorNode] positioned ~5.49 ~3.2 ~ run function exigence:hub/profile_selector/menu/display/settings/calls/private/show_description with entity @s item.components."minecraft:custom_data"
+execute at @s if entity @p[tag=ProfileSelecting,tag=Interacting,distance=..16,predicate=exigence:player/sneaking] at @n[type=marker,tag=ProfileSelectorNode,distance=..16] positioned ~5.49 ~3.2 ~ run function exigence:hub/profile_selector/menu/display/settings/calls/private/show_description with entity @s item.components."minecraft:custom_data"
 execute at @s if entity @p[tag=ProfileSelecting,tag=Interacting,distance=..16,predicate=exigence:player/sneaking] run return 0
 #----------------------------------------------------------------------------------------------------
 

@@ -12,10 +12,10 @@ say Setup locker room interaction
 summon interaction ~ ~ ~ {Tags:["LockerRoomInteraction","NewLockerRoomInteraction","FunctionInteraction"],response:true,width:0.01,height:0.01}
 
 # Assign locker room id to interaction
-scoreboard players operation @n[distance=..0.1,type=interaction,tag=NewLockerRoomInteraction] hub.entity.locker_room_id = @n[distance=..0.1,type=marker,tag=LockerRoomNode] hub.locker_room_id
+scoreboard players operation @n[type=interaction,tag=NewLockerRoomInteraction,distance=..0.1] hub.entity.locker_room_id = @n[type=marker,tag=LockerRoomNode,distance=..0.1] hub.locker_room_id
 
 # Assign player id to interaction
-scoreboard players operation @n[distance=..0.1,type=interaction,tag=NewLockerRoomInteraction] hub.entity.player_id = @s career.player_id
+scoreboard players operation @n[type=interaction,tag=NewLockerRoomInteraction,distance=..0.1] hub.entity.player_id = @s career.player_id
 
 # Remove local tag
-tag @n[distance=..0.1,type=interaction,tag=NewLockerRoomInteraction] remove NewLockerRoomInteraction
+tag @n[type=interaction,tag=NewLockerRoomInteraction,distance=..0.1] remove NewLockerRoomInteraction

@@ -9,7 +9,7 @@
 # DEBUG
 #say open Door 2
 
-tag @n[distance=..10,type=minecraft:armor_stand,tag=DoorNode,tag=Door2] add Open
+tag @n[type=minecraft:armor_stand,tag=DoorNode,tag=Door2,distance=..10] add Open
 scoreboard players set 2.opened game.level_doors 1
 
 #====================================================================================================

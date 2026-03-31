@@ -10,8 +10,8 @@ say Leaving Locker Room
 
 tag @s remove LockerRoom
 
-execute if entity @n[distance=..0.1,tag=LockerRoomNode,tag=South] at @s run tp @s ~ ~ ~-1
-execute if entity @n[distance=..0.1,tag=LockerRoomNode,tag=West] at @s run tp @s ~1 ~ ~
+execute if entity @n[tag=LockerRoomNode,tag=South,distance=..0.1] at @s run tp @s ~ ~ ~-1
+execute if entity @n[tag=LockerRoomNode,tag=West,distance=..0.1] at @s run tp @s ~1 ~ ~
 execute at @s run playsound minecraft:entity.enderman.teleport ambient @s ~ ~1000 ~ 1000 1
 
 # Remove interaction
@@ -35,5 +35,5 @@ run return 0
 #----------------------------------------------------------------------------------------------------
 
 # If this player was the last one, kill room node and unload room
-execute as @n[distance=..0.1,type=marker,tag=LockerRoomNode] at @s run function exigence:hub/locker_room/node/unload_room
+execute as @n[type=marker,tag=LockerRoomNode,distance=..0.1] at @s run function exigence:hub/locker_room/node/unload_room
 execute in exigence:hub positioned 0 153 0 as @e[type=marker,tag=RoomNode,distance=..1] if score @s hub.room.room_id = #compare hub.player.room_id run kill @s

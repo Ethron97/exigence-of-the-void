@@ -39,7 +39,7 @@ run function exigence:hub/profile_selector/menu/display/profile/load_profile_to_
 function exigence:hub/profile_selector/menu/display/profile/switch_to with entity @s item.components."minecraft:custom_data"
 
 # Remove creating tag from player node
-$execute in exigence:profile_data positioned 8 3 8 run tag @n[distance=..20,type=armor_stand,tag=PlayerNode,scores={profile.node.player_id=$(player_id)}] remove PlayerCreatingProfile
+$execute in exigence:profile_data positioned 8 3 8 run tag @n[type=armor_stand,scores={profile.node.player_id=$(player_id)},tag=PlayerNode,distance=..20] remove PlayerCreatingProfile
 
 # Remove local tag
 tag @s remove Creating

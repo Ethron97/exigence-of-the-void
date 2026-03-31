@@ -46,7 +46,7 @@ execute if score @s player.node.joined_player_1 matches 1.. run scoreboard playe
 execute if score @s player.node.joined_player_2 matches 1.. run scoreboard players add #filled_slots Temp 1
 execute if score @s player.node.joined_player_3 matches 1.. run scoreboard players add #filled_slots Temp 1
 
-execute at @a[tag=CancelledBy,limit=1] as @n[distance=..16,type=item_display,tag=CoopInvitorDisplay,tag=Confirm] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/update_confirm_button
+execute at @a[tag=CancelledBy,limit=1] as @n[type=item_display,tag=CoopInvitorDisplay,tag=Confirm,distance=..16] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/update_confirm_button
 
 # If there is no pending invite and no filled slots, cancel sender
 #   Ie a player leaved, but we still need to clear the stats

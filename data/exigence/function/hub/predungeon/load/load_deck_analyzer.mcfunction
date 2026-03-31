@@ -28,4 +28,4 @@ tag @e[type=block_display,tag=NewBlockDisplay,distance=..8] add PredungeonAnalyz
 tag @e[type=block_display,tag=NewBlockDisplay,distance=..8] remove NewBlockDisplay
 
 # Call analyze
-execute at @s as @n[distance=..3,type=item_display,tag=RefreshButton] run function exigence:hub/deck_analyzer/refresh_button/calls/refresh/refresh
+execute at @s as @n[type=item_display,tag=RefreshButton,distance=..3] run function exigence:hub/deck_analyzer/refresh_button/calls/refresh/refresh

@@ -6,4 +6,4 @@
 #====================================================================================================
 
 scoreboard players operation #compare hub.entity.profile_selector_id = @s hub.profile_selector_id
-execute as @n[distance=..32,type=interaction,tag=ProfileSelectorInteraction] if score @s hub.entity.profile_selector_id = #compare hub.entity.profile_selector_id run kill @s
+execute as @n[type=interaction,tag=ProfileSelectorInteraction,distance=..32] if score @s hub.entity.profile_selector_id = #compare hub.entity.profile_selector_id run kill @s

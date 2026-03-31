@@ -26,4 +26,4 @@ $execute at @s[tag=Crucible,tag=Hover] positioned ^-0.43 ^-0.67 ^0.1 run summon 
 scoreboard players operation #compare IDID = @s IDID
 
 # Handle data
-execute as @n[distance=..5,type=minecraft:item_display,tag=NewArtifactCostDisplay] run function exigence:menu/item_display/item_shop_display/cost_display/create_artifact_b
+execute as @n[type=minecraft:item_display,tag=NewArtifactCostDisplay,distance=..5] run function exigence:menu/item_display/item_shop_display/cost_display/create_artifact_b

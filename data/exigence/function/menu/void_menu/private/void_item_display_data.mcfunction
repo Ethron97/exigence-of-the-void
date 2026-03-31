@@ -28,13 +28,13 @@ execute store result entity @s Item.components."minecraft:custom_data".VoidShopI
 $function exigence:menu/load_item_display {menu_tag:'MenuVoid',Rotation:'$(Rotation)',scale:'0.3',hover_scale:'0.4'}
 
 # Assign game.void_merchant.shop_id
-scoreboard players operation @n[distance=..0.1,type=minecraft:item_display,tag=NewItemDisplay] game.void_merchant.shop_id = #highest game.void_merchant.shop_id
+scoreboard players operation @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] game.void_merchant.shop_id = #highest game.void_merchant.shop_id
 
 # Give ItemShopDisplay tag
-tag @n[distance=..0.1,type=minecraft:item_display,tag=NewItemDisplay] add VoidShopDisplay
+tag @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] add VoidShopDisplay
 
 # Kill summoned item (no longer needed)
-kill @n[distance=..0.1,type=minecraft:item,tag=NVS]
+kill @n[type=minecraft:item,tag=NVS,distance=..0.1]
 
 # Remove local tag(s)
-tag @n[distance=..0.1,type=minecraft:item_display,tag=NewItemDisplay] remove NewItemDisplay
+tag @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] remove NewItemDisplay

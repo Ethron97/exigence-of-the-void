@@ -15,7 +15,7 @@ scoreboard players set #cancel_item_shop_iterate Temp 1
 # Any menu item that is loaded, tp back up to be "unloaded"
 execute as @e[type=minecraft:item_display,tag=ItemShopDisplay,tag=Loaded,distance=..32] run function exigence:menu/item_display/item_shop_display/load/unload
 
-execute in exigence:hub positioned 0 153 0 as @n[distance=..1,type=marker,tag=RoomNode,scores={hub.room.room_type=9}] \
+execute in exigence:hub positioned 0 153 0 as @n[type=marker,scores={hub.room.room_type=9},tag=RoomNode,distance=..1] \
 run scoreboard players operation #compare hub.entity.profile_id = @s hub.entity.profile_id
 
 #====================================================================================================

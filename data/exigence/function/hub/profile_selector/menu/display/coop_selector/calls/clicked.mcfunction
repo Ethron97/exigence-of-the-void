@@ -20,7 +20,7 @@ execute at @s run particle glow ~ ~ ~0.1 0.1 0.1 0.0 0.001 5
 
 # Create profile
 #   Automatically removes coop_selectors
-$execute at @s[tag=Solo] as @n[distance=..5,type=item_display,tag=SlotDisplay,scores={IDID=$(parent_idid)}] \
+$execute at @s[tag=Solo] as @n[type=item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..5] \
 run function exigence:hub/profile_selector/menu/display/profile/create_new with entity @s item.components."minecraft:custom_data"
 
 #====================================================================================================
@@ -36,12 +36,12 @@ execute at @s unless score max_coop_players global_settings matches 1..3 run ret
 #----------------------------------------------------------------------------------------------------
 
 # Setup invite selector / player head menu
-$execute at @s as @n[distance=..5,type=item_display,tag=SlotDisplay,scores={IDID=$(parent_idid)}] \
+$execute at @s as @n[type=item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..5] \
 run function exigence:hub/profile_selector/menu/display/profile/effects/summon_coop_invitors
 
-$execute at @s as @n[distance=..5,type=item_display,tag=SlotDisplay,scores={IDID=$(parent_idid)}] at @s \
+$execute at @s as @n[type=item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..5] at @s \
 run function exigence:hub/profile_selector/menu/display/profile/effects/summon_player_head_selectors
 
 # Remove coop selectors
-$execute at @s as @n[distance=..5,type=item_display,tag=SlotDisplay,scores={IDID=$(parent_idid)}] \
+$execute at @s as @n[type=item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..5] \
 run function exigence:hub/profile_selector/menu/display/profile/effects/remove_coop_selectors with entity @s item.components."minecraft:custom_data"

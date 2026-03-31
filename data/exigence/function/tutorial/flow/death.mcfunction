@@ -28,8 +28,8 @@ execute if score Step Tutorial matches 1500 run fill 175 131 49 177 134 47 struc
 rotate @s ~180 ~
 
 # Reset all dropped/fallback tags
-tag @n[distance=..1000,type=marker,tag=TutorialMarker,tag=Fallback] add LastDropped
-scoreboard players operation #compare TutorialMarkerID = @n[distance=..1000,type=marker,tag=TutorialMarker,tag=Fallback] TutorialMarkerID
+tag @n[type=marker,tag=TutorialMarker,tag=Fallback,distance=..1000] add LastDropped
+scoreboard players operation #compare TutorialMarkerID = @n[type=marker,tag=TutorialMarker,tag=Fallback,distance=..1000] TutorialMarkerID
 execute as @e[type=marker,tag=TutorialMarker,distance=..1000] if score @s TutorialMarkerID <= #compare TutorialMarkerID run tag @s add Dropped
 
 # Give "exit" button and "skip" button

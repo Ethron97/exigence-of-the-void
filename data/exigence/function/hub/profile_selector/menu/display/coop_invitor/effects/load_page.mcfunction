@@ -29,4 +29,4 @@ execute as @e[type=item_display,tag=PlayerHeadDisplay,distance=..7] if score @s 
 # Update page counter in the middle (ie Page: 1/2)
 execute store result storage exigence:temp x int 1 run scoreboard players get #current_page Temp
 execute store result storage exigence:temp y int 1 run scoreboard players get #pages Temp
-execute as @n[distance=..16,type=text_display,tag=PageLabel] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/update_page_label with storage exigence:temp
+execute as @n[type=text_display,tag=PageLabel,distance=..16] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/update_page_label with storage exigence:temp

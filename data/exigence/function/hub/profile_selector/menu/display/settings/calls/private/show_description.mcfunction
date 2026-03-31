@@ -12,8 +12,8 @@
 #say Show description
 
 # Kill description if exists (so they don't pile up.)
-kill @n[distance=..1,type=text_display,tag=SettingDescription]
-kill @n[distance=..1,type=text_display,tag=SettingDescriptionTitle]
+kill @n[type=text_display,tag=SettingDescription,distance=..1]
+kill @n[type=text_display,tag=SettingDescriptionTitle,distance=..1]
 
 # Summon text display
 #,background:2017213500
@@ -28,7 +28,7 @@ scoreboard players operation @e[type=minecraft:text_display,tag=NewTextDisplay,d
 scoreboard players operation @e[type=minecraft:text_display,tag=NewTextDisplay,distance=..1] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id
 
 # Run function to assign specific text
-$execute as @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay,tag=SettingDescription] run function exigence:hub/profile_selector/menu/display/settings/calls/description/$(scoreboard)
+$execute as @n[type=minecraft:text_display,tag=NewTextDisplay,tag=SettingDescription,distance=..0.1] run function exigence:hub/profile_selector/menu/display/settings/calls/description/$(scoreboard)
 
 # Remove local tag
 tag @e[type=minecraft:text_display,tag=NewTextDisplay,distance=..1] remove NewTextDisplay

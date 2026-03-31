@@ -16,15 +16,15 @@ summon minecraft:marker ~ ~ ~ {Tags:["NewMarker"],CustomName:{text:"Marker | Alt
 
 # Copy scores
 #   These will get captured in "copy data" step if we migrate them all to data before converting
-scoreboard players operation @n[distance=..0.01,type=marker,tag=NewMarker] NodeID = @s NodeID
-scoreboard players operation @n[distance=..0.01,type=marker,tag=NewMarker] ObjectLevel = @s ObjectLevel
-execute if score @s VaultID matches 1.. run scoreboard players operation @n[distance=..0.01,type=marker,tag=NewMarker] VaultID = @s VaultID
+scoreboard players operation @n[type=marker,tag=NewMarker,distance=..0.01] NodeID = @s NodeID
+scoreboard players operation @n[type=marker,tag=NewMarker,distance=..0.01] ObjectLevel = @s ObjectLevel
+execute if score @s VaultID matches 1.. run scoreboard players operation @n[type=marker,tag=NewMarker,distance=..0.01] VaultID = @s VaultID
 
 # Copy data
-data modify entity @n[distance=..0.01,type=marker,tag=NewMarker] data.custom_data set from entity @s data.custom_data
+data modify entity @n[type=marker,tag=NewMarker,distance=..0.01] data.custom_data set from entity @s data.custom_data
 
 # Team?
-team join Special @n[distance=..0.01,type=marker,tag=NewMarker]
+team join Special @n[type=marker,tag=NewMarker,distance=..0.01]
 
 # Copy tags (also removes local tag)
-data modify entity @n[distance=..0.01,type=marker,tag=NewMarker] Tags set from entity @s Tags
+data modify entity @n[type=marker,tag=NewMarker,distance=..0.01] Tags set from entity @s Tags

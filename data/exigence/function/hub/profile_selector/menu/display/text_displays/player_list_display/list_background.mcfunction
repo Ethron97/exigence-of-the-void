@@ -15,8 +15,8 @@ summon minecraft:item_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],bi
 
 # Assign data
 # Give matching scoreboard value
-scoreboard players operation @n[distance=..0.1,type=minecraft:item_display,tag=NewItemDisplay] IDID = @s IDID
-scoreboard players operation @n[distance=..0.1,type=minecraft:item_display,tag=NewItemDisplay] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id
+scoreboard players operation @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] IDID = @s IDID
+scoreboard players operation @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id
 
 # Remove local tag
-tag @n[distance=..1,type=item_display,tag=NewItemDisplay] remove NewItemDisplay
+tag @n[type=item_display,tag=NewItemDisplay,distance=..1] remove NewItemDisplay

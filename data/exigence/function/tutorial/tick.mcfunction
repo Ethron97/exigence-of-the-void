@@ -61,8 +61,8 @@ execute at @e[type=minecraft:armor_stand,tag=BellNode,tag=Active,distance=..1000
 execute at @e[type=minecraft:armor_stand,tag=BellNode,tag=Active,distance=..1000] if score seconds.cooldown tick_counter matches 17 run particle minecraft:glow ~ ~0.5 ~ 0.2 0.2 0.2 0 1
 
 # CLIMBY DOOR OPEN
-execute if score Step Tutorial matches 1103 at @n[distance=..1000,type=armor_stand,tag=Bait1] if entity @n[distance=..2,type=ravager] run function exigence:tutorial/flow/private/open_climby_door
-execute if score Step Tutorial matches 1308 at @n[distance=..1000,type=armor_stand,tag=Bait2] if entity @n[distance=..2,type=ravager] run function exigence:tutorial/flow/private/open_glassy_door
+execute if score Step Tutorial matches 1103 at @n[type=armor_stand,tag=Bait1,distance=..1000] if entity @n[type=ravager,distance=..2] run function exigence:tutorial/flow/private/open_climby_door
+execute if score Step Tutorial matches 1308 at @n[type=armor_stand,tag=Bait2,distance=..1000] if entity @n[type=ravager,distance=..2] run function exigence:tutorial/flow/private/open_glassy_door
 
 execute if score Step Tutorial matches 1501.. run function exigence:tutorial/flow/final_section/tick
 

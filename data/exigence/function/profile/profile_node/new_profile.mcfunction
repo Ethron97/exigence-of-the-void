@@ -52,7 +52,7 @@ execute at @e[type=marker,tag=NewProfileNodeMarker,distance=..1000] run setblock
 execute at @e[type=marker,tag=NewProfileNodeMarker,distance=..1000] run function exigence:profile/profile_node/new/summon_profile_node
 
 # Kill item
-execute positioned 0.5 1.0 2.5 run kill @n[distance=..1,type=minecraft:item]
+execute positioned 0.5 1.0 2.5 run kill @n[type=minecraft:item,distance=..1]
 
 # Remove temp marker
 kill @e[type=marker,tag=NewProfileNodeMarker,distance=..1000]

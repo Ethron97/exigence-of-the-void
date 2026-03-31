@@ -19,6 +19,6 @@ execute in exigence:hub positioned -27.5 200.0 0.5 run function exigence:hub/ite
 # Data -> profile chest
 scoreboard players set #remove_tag Temp 0
 $execute if score #chests_saved Temp matches 1 \
-in exigence:profile_data positioned 8 128 8 as @n[distance=..140,type=marker,tag=ProfileNode,scores={profile.node.profile_id=$(profile_id)}] \
+in exigence:profile_data positioned 8 128 8 as @n[type=marker,scores={profile.node.profile_id=$(profile_id)},tag=ProfileNode,distance=..140] \
 run function exigence:profile/profile_node/save/try_data_to_chest
 #====================================================================================================

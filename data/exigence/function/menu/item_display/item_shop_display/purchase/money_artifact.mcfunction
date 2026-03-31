@@ -14,8 +14,8 @@ $scoreboard players remove #Total shop.player.money_to_spend $(money_cost)
 
 # Call item summon
 $function exigence:vault/artifact/summon_item {item_name:$(item_name)}
-execute as @n[distance=..0.1,type=minecraft:item,tag=NAS] at @s run tp @s @p[tag=ItemShop,tag=Interacting,distance=..16]
-tag @n[distance=..0.1,type=minecraft:item,tag=NAS] remove NAS
+execute as @n[type=minecraft:item,tag=NAS,distance=..0.1] at @s run tp @s @p[tag=ItemShop,tag=Interacting,distance=..16]
+tag @n[type=minecraft:item,tag=NAS,distance=..0.1] remove NAS
 
 # Playsound
 playsound minecraft:block.vault.insert_item ambient @a ~ ~ ~ 1 1

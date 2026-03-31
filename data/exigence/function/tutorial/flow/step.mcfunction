@@ -50,7 +50,7 @@ execute if score Step Tutorial matches 6 run scoreboard players set Step Tutoria
 
 execute if score Step Tutorial matches 102 run tellraw @p[tag=Tutorial,distance=..1000] [{color:"green",text:"\n-> Here's one now. It appears to be too tall to fit through the hole."}]
 
-execute if score Step Tutorial matches 103 run effect clear @n[type=minecraft:ravager,tag=L10,name=Loopy] slowness
+execute if score Step Tutorial matches 103 run effect clear @n[type=minecraft:ravager,name=Loopy,tag=L10] slowness
 execute if score Step Tutorial matches 103 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Get past the ravager",text:">>> Get past the ravager <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
 execute if score Step Tutorial matches 103 run bossbar set exigence:tutorial value 0
 execute if score Step Tutorial matches 103 run tellraw @p[tag=Tutorial,distance=..1000] [{color:"green",text:"\n-> See if you can find a way around the ravager."}]
@@ -73,7 +73,7 @@ execute if score Step Tutorial matches 105..201 run function exigence:tutorial/f
 ## BERRIES
 #====================================================================================================
 
-execute if score Step Tutorial matches 106 run kill @n[distance=..1000,type=minecraft:ravager,tag=L10,name=Loopy]
+execute if score Step Tutorial matches 106 run kill @n[type=minecraft:ravager,name=Loopy,tag=L10,distance=..1000]
 execute if score Step Tutorial matches 106 run function exigence:tutorial/flow/reset_bossbars
 execute if score Step Tutorial matches 106 run tellraw @p[tag=Tutorial,distance=..1000] [{color:"green",text:"\n-> Though you cannot fight them directly, many things can aid you in avoiding the ravagers."}]
 execute if score Step Tutorial matches 106 run fill 126 103 29 130 109 33 ice replace structure_void
@@ -274,9 +274,9 @@ execute if score Step Tutorial matches 1102 run summon armor_stand 124.50 128.00
 execute if score Step Tutorial matches 1102 run effect give @p[tag=Tutorial,distance=..1000] luck infinite 0
 
 execute if score Step Tutorial matches 1103 run tellraw @p[tag=Tutorial,distance=..1000] [{color:"green",text:"\n-> Ravagers may be slower than you, but they can climb up 2 block high steps."}]
-execute if score Step Tutorial matches 1103 as @n[distance=..1000,type=armor_stand,tag=Bait1] run item replace entity @s weapon.mainhand with minecraft:beef
-execute if score Step Tutorial matches 1103 as @n[distance=..1000,type=ravager,name=Climby] at @s run damage @s 0.0 arrow by @n[distance=..100,type=armor_stand,tag=Bait1]
-execute if score Step Tutorial matches 1103 run effect clear @n[type=minecraft:ravager,tag=L10,name=Climby] slowness
+execute if score Step Tutorial matches 1103 as @n[type=armor_stand,tag=Bait1,distance=..1000] run item replace entity @s weapon.mainhand with minecraft:beef
+execute if score Step Tutorial matches 1103 as @n[type=ravager,name=Climby,distance=..1000] at @s run damage @s 0.0 arrow by @n[type=armor_stand,tag=Bait1,distance=..100]
+execute if score Step Tutorial matches 1103 run effect clear @n[type=minecraft:ravager,name=Climby,tag=L10] slowness
 # Emergency clock, but otherwise we use Tick to open door as soon as Climby is next to the Bait1
 execute if score Step Tutorial matches 1103 run schedule function exigence:tutorial/flow/private/open_climby_door 200t
 
@@ -287,8 +287,8 @@ execute if score Step Tutorial matches 1104 run scoreboard players set Step Tuto
 ## BELL / VARIANCE
 #====================================================================================================
 execute if score Step Tutorial matches 1201 run tellraw @p[tag=Tutorial,distance=..1000] [{color:"green",text:"\n-> The third and final ❂ resource is Red."}]
-execute if score Step Tutorial matches 1201 run kill @n[distance=..1000,type=ravager,name=Climby]
-execute if score Step Tutorial matches 1201 run kill @n[distance=..1000,type=armor_stand,name=Bait1]
+execute if score Step Tutorial matches 1201 run kill @n[type=ravager,name=Climby,distance=..1000]
+execute if score Step Tutorial matches 1201 run kill @n[type=armor_stand,name=Bait1,distance=..1000]
 execute if score Step Tutorial matches 1201 run function exigence:tutorial/flow/next_token
 execute if score Step Tutorial matches 1201 run effect clear @p[tag=Tutorial,distance=..1000] luck
 
@@ -356,9 +356,9 @@ execute if score Step Tutorial matches 1307 run summon armor_stand 181.5 125.0 7
 
 execute if score Step Tutorial matches 1308 run tellraw @p[tag=Tutorial,distance=..1000] [{color:"green",text:"\n-> Here is an example of one such case."}]
 # RELEASE RAVAGER
-execute if score Step Tutorial matches 1308 as @n[distance=..1000,type=armor_stand,tag=Bait2] run item replace entity @s weapon.mainhand with minecraft:beef
-execute if score Step Tutorial matches 1308 as @n[distance=..1000,type=ravager,name=Glassy] at @s run damage @s 0.0 arrow by @n[distance=..100,type=armor_stand,tag=Bait2]
-execute if score Step Tutorial matches 1308 run effect clear @n[type=minecraft:ravager,tag=L10,name=Glassy] slowness
+execute if score Step Tutorial matches 1308 as @n[type=armor_stand,tag=Bait2,distance=..1000] run item replace entity @s weapon.mainhand with minecraft:beef
+execute if score Step Tutorial matches 1308 as @n[type=ravager,name=Glassy,distance=..1000] at @s run damage @s 0.0 arrow by @n[type=armor_stand,tag=Bait2,distance=..100]
+execute if score Step Tutorial matches 1308 run effect clear @n[type=minecraft:ravager,name=Glassy,tag=L10] slowness
 # Emergency clock, but otherwise we use Tick to open door as soon as Ravager is next to the Bait2
 execute if score Step Tutorial matches 1308 run schedule function exigence:tutorial/flow/private/open_glassy_door 200t
 
@@ -375,8 +375,8 @@ execute if score Step Tutorial matches 1401 run bossbar set exigence:tutorial_de
 execute if score Step Tutorial matches 1401 run title @p[tag=Tutorial,distance=..1000] subtitle [{text:"✖",color:"dark_red"}]
 execute if score Step Tutorial matches 1401 run title @p[tag=Tutorial,distance=..1000] title [{text:""}]
 execute if score Step Tutorial matches 1401 as @p[tag=Tutorial,distance=..1000] run playsound minecraft:entity.lightning_bolt.thunder ambient @s ~ ~1000 ~ 1000 1
-execute if score Step Tutorial matches 1401 run kill @n[distance=..1000,type=ravager,name=Glassy]
-execute if score Step Tutorial matches 1401 run kill @n[distance=..1000,type=armor_stand,name=Bait2]
+execute if score Step Tutorial matches 1401 run kill @n[type=ravager,name=Glassy,distance=..1000]
+execute if score Step Tutorial matches 1401 run kill @n[type=armor_stand,name=Bait2,distance=..1000]
 execute if score Step Tutorial matches 1401..1405 run function exigence:tutorial/flow/next_token
 
 execute if score Step Tutorial matches 1402 run tellraw @p[tag=Tutorial,distance=..1000] [{color:"green",text:"\n-> You are approaching the final test."}]
@@ -389,7 +389,7 @@ execute if score Step Tutorial matches 1405 run tellraw @p[tag=Tutorial,distance
 
 execute if score Step Tutorial matches 1406 run tellraw @p[tag=Tutorial,distance=..1000] [{color:"green",text:"\n-> We've simulated part of the dungeon up ahead. Are you ready?"}]
 execute if score Step Tutorial matches 1406 run fill 175 131 49 177 135 47 structure_void replace ice destroy
-execute if score Step Tutorial matches 1406 as @n[distance=..1000,type=marker,tag=TutorialMarker,tag=LastDropped,tag=Checkpoint] run function exigence:tutorial/flow/last_dropped_fallback
+execute if score Step Tutorial matches 1406 as @n[type=marker,tag=TutorialMarker,tag=LastDropped,tag=Checkpoint,distance=..1000] run function exigence:tutorial/flow/last_dropped_fallback
 
 #====================================================================================================
 ## THE FINAL TEST
@@ -400,7 +400,7 @@ execute if score Step Tutorial matches 1501 run fill 175 131 49 177 135 47 ice r
 execute if score Step Tutorial matches 1501 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Find the echo shard",text:">>> Find the echo shard <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
 execute if score Step Tutorial matches 1501 run bossbar set exigence:tutorial value 0
 execute if score Step Tutorial matches 1501 run function exigence:tutorial/setup/choose_echo_node
-execute if score Step Tutorial matches 1501 at @n[distance=..1000,tag=ChosenEchoNode] run function exigence:tutorial/setup/ravager/setup_finaly
+execute if score Step Tutorial matches 1501 at @n[tag=ChosenEchoNode,distance=..1000] run function exigence:tutorial/setup/ravager/setup_finaly
 execute if score Step Tutorial matches 1501 run effect clear @p[tag=Tutorial,distance=..1000]
 
 # Next trigger when the player picks up the echo shard

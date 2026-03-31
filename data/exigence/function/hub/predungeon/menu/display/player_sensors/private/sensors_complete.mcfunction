@@ -19,7 +19,7 @@ kill @e[type=item_display,tag=PlayerSensorPupil,distance=..5]
 execute as @e[type=item_display,tag=DoorSlotFill,tag=Open,distance=..5] run function exigence:hub/predungeon/menu/display/warp_door/slot/close_slot
 
 # Glow the door channels
-data modify entity @n[distance=..5,type=item_display,tag=DoorChannels] Glowing set value true
+data modify entity @n[type=item_display,tag=DoorChannels,distance=..5] Glowing set value true
 
 # Playsound
 playsound block.beacon.activate ui @a ~ ~ ~ 1 1.7

@@ -31,5 +31,5 @@ data modify entity @s[tag=GoodKnown] item.components."minecraft:lore"[0] set val
 data modify entity @s[tag=!GoodUnlock] item.components."minecraft:lore"[1] set value [{text:"Rescue Petitioner!",color:"#cf4f4f"}]
 data modify entity @s[tag=GoodUnlock,tag=!GoodCards] item.components."minecraft:lore"[1] set value [{text:"Too Many Cards!",color:"#e9d45b"}]
 
-execute if entity @s[tag=GoodUnlock] at @n[distance=..5,type=marker,tag=DoorSlotMarker4] positioned ~-0.15625 ~ ~-0.0525 \
+execute if entity @s[tag=GoodUnlock] at @n[type=marker,tag=DoorSlotMarker4,distance=..5] positioned ~-0.15625 ~ ~-0.0525 \
 run function exigence:hub/predungeon/menu/display/level_chooser/load/4/summon_deck_size

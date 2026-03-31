@@ -12,9 +12,9 @@ execute unless predicate exigence:dimension/location/profile_data run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Call function to locate the next available slot to place a node (tps NewPlayerNodeMarker to position)
-execute unless entity @n[distance=..1000,type=marker,tag=NewPlayerNodeMarker] run summon minecraft:marker 1.5 1.0 2.5 {Tags:["NewPlayerNodeMarker"],CustomName:{text:"Marker | NewPlayer"}}
-tp @n[distance=..1000,type=marker,tag=NewPlayerNodeMarker] 1.5 1.0 2.5
-execute positioned 1.5 1.0 2.5 as @n[distance=..1,type=marker,tag=NewPlayerNodeMarker] at @s run function exigence:profile/player_node/new/locate_next_player_slot
+execute unless entity @n[type=marker,tag=NewPlayerNodeMarker,distance=..1000] run summon minecraft:marker 1.5 1.0 2.5 {Tags:["NewPlayerNodeMarker"],CustomName:{text:"Marker | NewPlayer"}}
+tp @n[type=marker,tag=NewPlayerNodeMarker,distance=..1000] 1.5 1.0 2.5
+execute positioned 1.5 1.0 2.5 as @n[type=marker,tag=NewPlayerNodeMarker,distance=..1] at @s run function exigence:profile/player_node/new/locate_next_player_slot
 
 # Generate player id
 function exigence:profile/player_node/new/generate_id
@@ -23,14 +23,14 @@ function exigence:profile/player_node/new/generate_id
 loot spawn 0.5 1.0 2.5 loot exigence:get_player_head
 
 # Summon new node at position and handle data assignmets
-execute at @n[distance=..1000,type=marker,tag=NewPlayerNodeMarker] run setblock ~ ~ ~ diamond_block
-execute at @n[distance=..1000,type=marker,tag=NewPlayerNodeMarker] run function exigence:profile/player_node/new/summon_player_node
+execute at @n[type=marker,tag=NewPlayerNodeMarker,distance=..1000] run setblock ~ ~ ~ diamond_block
+execute at @n[type=marker,tag=NewPlayerNodeMarker,distance=..1000] run function exigence:profile/player_node/new/summon_player_node
 
 # Kill item
-execute positioned 0.5 1.0 2.5 run kill @n[distance=..1,type=minecraft:item]
+execute positioned 0.5 1.0 2.5 run kill @n[type=minecraft:item,distance=..1]
 
 # Remove temp marker
-kill @n[distance=..1000,type=marker,tag=NewPlayerNodeMarker]
+kill @n[type=marker,tag=NewPlayerNodeMarker,distance=..1000]
 
 # Enable trigger
 scoreboard players enable @s MyPlayerID

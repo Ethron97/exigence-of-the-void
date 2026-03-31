@@ -28,7 +28,7 @@ scoreboard players operation #coop_profile_id Temp = #sequence profile.player.pr
 
 # Create profiles for co-op players
 #   INPUT: Passing in SCORE #coop_profile_id Temp
-$execute in exigence:profile_data positioned 8 3 8 as @n[distance=..32,type=armor_stand,tag=PlayerNode,scores={profile.node.player_id=$(player_id)}] \
+$execute in exigence:profile_data positioned 8 3 8 as @n[type=armor_stand,scores={profile.node.player_id=$(player_id)},tag=PlayerNode,distance=..32] \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/calls/private/create_coop_profiles
 
 # Reset saved profile.node.profile_id

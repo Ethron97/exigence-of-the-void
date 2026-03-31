@@ -44,6 +44,6 @@ execute at @s positioned ^-1.375 ^1.125 ^ run function exigence:hub/deck_analyze
 execute at @s positioned ^1.0 ^1.125 ^ run function exigence:hub/deck_analyzer/display/resources/summon with storage exigence:temp
 
 # Kill temp marker
-kill @n[distance=..10,type=marker,tag=Telemarker]
+kill @n[type=marker,tag=Telemarker,distance=..10]
 
 # (local tags get removed by the function that calls this)

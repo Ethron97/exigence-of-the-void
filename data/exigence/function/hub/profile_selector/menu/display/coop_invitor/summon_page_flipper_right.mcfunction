@@ -10,17 +10,17 @@
 
 # Summon display
 function exigence:hub/profile_selector/menu/display/coop_invitor/load_page_flipper with entity @s item.components."minecraft:custom_data"
-tag @n[distance=..1,type=item_display,tag=NewItemDisplay] add Right
+tag @n[type=item_display,tag=NewItemDisplay,distance=..1] add Right
 
 # Team for glow color
-team join Special @n[distance=..1,type=item_display,tag=NewItemDisplay]
+team join Special @n[type=item_display,tag=NewItemDisplay,distance=..1]
 
 # Item data
-data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_model_data".strings set value ["page_forward"]
-data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_name" set value {text:"Right",color:"yellow"}
+data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..1] item.components."minecraft:custom_model_data".strings set value ["page_forward"]
+data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..1] item.components."minecraft:custom_name" set value {text:"Right",color:"yellow"}
 
 # Teleport (so the interpolate happens)
-execute as @n[distance=..5,type=item_display,tag=NewItemDisplay] run tp @s ~0.32 ~1.0 ~
+execute as @n[type=item_display,tag=NewItemDisplay,distance=..5] run tp @s ~0.32 ~1.0 ~
 
 # Remove local display tag
-tag @n[distance=..5,type=item_display,tag=NewItemDisplay] remove NewItemDisplay
+tag @n[type=item_display,tag=NewItemDisplay,distance=..5] remove NewItemDisplay

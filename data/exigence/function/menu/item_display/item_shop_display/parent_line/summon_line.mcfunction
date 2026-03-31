@@ -24,4 +24,4 @@ $execute if score #random Random matches 2 run summon minecraft:block_display ^0
 $scoreboard players set #compare IDID $(id)
 
 # Handle data
-execute as @n[distance=..1,type=block_display,tag=NewMenuLine] run function exigence:menu/item_display/item_shop_display/parent_line/private/menu_line_data with storage exigence:menu
+execute as @n[type=block_display,tag=NewMenuLine,distance=..1] run function exigence:menu/item_display/item_shop_display/parent_line/private/menu_line_data with storage exigence:menu

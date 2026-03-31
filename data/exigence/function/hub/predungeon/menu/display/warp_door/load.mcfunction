@@ -15,5 +15,5 @@ execute positioned ~ ~2.5 ~0.875 run function exigence:hub/predungeon/menu/displ
 execute positioned ~ ~2.5 ~0.875 run function exigence:hub/predungeon/menu/display/warp_door/summon_door_channels_inv
 
 # Summon square fills
-execute at @n[distance=..3,tag=DoorSquares] run function exigence:hub/predungeon/menu/display/warp_door/slot/summon_slot_markers
+execute at @n[tag=DoorSquares,distance=..3] run function exigence:hub/predungeon/menu/display/warp_door/slot/summon_slot_markers
 function exigence:hub/predungeon/menu/display/warp_door/slot/summon_slot_fills

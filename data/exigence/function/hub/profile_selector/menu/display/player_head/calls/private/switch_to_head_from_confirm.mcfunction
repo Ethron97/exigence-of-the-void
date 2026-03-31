@@ -12,7 +12,7 @@
 say Switch from confirm to head
 
 # Load player head menu
-$execute at @s as @n[distance=..16,type=item_display,tag=SlotDisplay,scores={IDID=$(parent_idid)}] at @s \
+$execute at @s as @n[type=item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..16] at @s \
 run function exigence:hub/profile_selector/menu/display/profile/effects/summon_player_head_selectors
 
 # Shift confirm up

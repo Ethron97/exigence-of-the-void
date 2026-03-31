@@ -5,4 +5,4 @@
 
 #====================================================================================================
 
-execute at @s align xyz as @n[distance=..30,type=minecraft:marker,tag=TutorialMarker] run function exigence:tutorial/marker/private/moving
+execute at @s align xyz as @n[type=minecraft:marker,tag=TutorialMarker,distance=..30] run function exigence:tutorial/marker/private/moving

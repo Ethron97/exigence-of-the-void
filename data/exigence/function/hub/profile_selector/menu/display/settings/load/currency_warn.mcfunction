@@ -13,22 +13,22 @@
 function exigence:hub/profile_selector/menu/display/settings/load/private/summon_setting_display
 
 # Get value player
-scoreboard players operation @n[distance=..0.1,type=item_display,tag=NewItemDisplay] Random = @p[tag=ProfileSelecting,distance=..16] career.settings.currency_warn
+scoreboard players operation @n[type=item_display,tag=NewItemDisplay,distance=..0.1] Random = @p[tag=ProfileSelecting,distance=..16] career.settings.currency_warn
 
 # Set type to Toggle
-tag @n[distance=..0.1,type=item_display,tag=NewItemDisplay] add Toggle
+tag @n[type=item_display,tag=NewItemDisplay,distance=..0.1] add Toggle
 
 # Set data
-data modify entity @n[distance=..0.1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".scoreboard set value "currency_warn"
-data modify entity @n[distance=..0.1,type=item_display,tag=NewItemDisplay,scores={Random=0}] item.components."minecraft:custom_model_data".strings set value ["toggle_off"]
-data modify entity @n[distance=..0.1,type=item_display,tag=NewItemDisplay,scores={Random=1}] item.components."minecraft:custom_model_data".strings set value ["toggle_on"]
-data modify entity @n[distance=..0.1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".display set value {text:"Enable Currency Warning"}
-data modify entity @n[distance=..0.1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".display0 set value {text:" Currency Warning"}
-data modify entity @n[distance=..0.1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".display1 set value {text:" Currency Warning"}
+data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_data".scoreboard set value "currency_warn"
+data modify entity @n[type=item_display,scores={Random=0},tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_model_data".strings set value ["toggle_off"]
+data modify entity @n[type=item_display,scores={Random=1},tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_model_data".strings set value ["toggle_on"]
+data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_data".display set value {text:"Enable Currency Warning"}
+data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_data".display0 set value {text:" Currency Warning"}
+data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_data".display1 set value {text:" Currency Warning"}
 
 # Load text
-execute as @n[distance=..0.1,type=item_display,tag=NewItemDisplay] at @s positioned ^-0.7 ^-0.1 ^ \
+execute as @n[type=item_display,tag=NewItemDisplay,distance=..0.1] at @s positioned ^-0.7 ^-0.1 ^ \
 run function exigence:hub/profile_selector/menu/display/settings/calls/private/show_text
 
 # Remove local tag
-tag @n[distance=..0.1,type=item_display,tag=NewItemDisplay] remove NewItemDisplay
+tag @n[type=item_display,tag=NewItemDisplay,distance=..0.1] remove NewItemDisplay

@@ -32,5 +32,5 @@ execute if score #temp Temp matches 1.. in exigence:profile_data positioned 8 12
 
 
 # Give master tag for who has the chests, for analyzing/loading
-execute in exigence:profile_data positioned 8 128 8 run tag @n[distance=..200,tag=ProfileNode,tag=ActiveCoop] add ActiveChest
-execute in exigence:profile_data positioned 8 128 8 unless entity @n[distance=..200,tag=ProfileNode,tag=ActiveChest] run tag @n[distance=..200,tag=ProfileNode,tag=Active] add ActiveChest
+execute in exigence:profile_data positioned 8 128 8 run tag @n[tag=ProfileNode,tag=ActiveCoop,distance=..200] add ActiveChest
+execute in exigence:profile_data positioned 8 128 8 unless entity @n[tag=ProfileNode,tag=ActiveChest,distance=..200] run tag @n[tag=ProfileNode,tag=Active,distance=..200] add ActiveChest

@@ -9,7 +9,7 @@
 say Run timeout locker room
 
 # Reset score
-scoreboard players reset @n[distance=..0.1,type=armor_stand,tag=PlayerNode] player.node.queue.timeout_locker_room
+scoreboard players reset @n[type=armor_stand,tag=PlayerNode,distance=..0.1] player.node.queue.timeout_locker_room
 
 # Call function
 tellraw @s [{text:"Exceeded Locker Room timeout limit",color:red}]

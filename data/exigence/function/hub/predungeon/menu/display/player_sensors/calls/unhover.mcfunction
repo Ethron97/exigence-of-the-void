@@ -20,7 +20,7 @@ data modify entity @s Glowing set value true
 execute at @s run playsound minecraft:block.end_portal_frame.fill ui @a ~ ~ ~ 1 0.7
 
 # Move pupil back to rest
-execute at @s run tp @n[distance=..0.5,type=item_display,tag=PlayerSensorPupil] ~ ~ ~-0.0325
+execute at @s run tp @n[type=item_display,tag=PlayerSensorPupil,distance=..0.5] ~ ~ ~-0.0325
 
 # Remove item details
 #function exigence:hub/profile_selector/menu/display/profile/calls/private/remove_hover_details with entity @s item.components."minecraft:custom_data"

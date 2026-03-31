@@ -9,7 +9,7 @@ say Unload room
 
 # Get loaded profile
 scoreboard players reset #compare profile.node.profile_id
-execute at @s as @n[distance=..16,type=item_display,tag=ProfileLoaded,tag=Selected] store result score #compare profile.node.profile_id run data get entity @s item.components."minecraft:custom_data".profile_id
+execute at @s as @n[type=item_display,tag=ProfileLoaded,tag=Selected,distance=..16] store result score #compare profile.node.profile_id run data get entity @s item.components."minecraft:custom_data".profile_id
 
 # Get storage from chest contents
 # Returns: #chests_saved Temp

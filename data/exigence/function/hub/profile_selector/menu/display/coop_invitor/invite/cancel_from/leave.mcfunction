@@ -14,5 +14,5 @@ say Cancel invite from leave
 $scoreboard players set #target player.node.invite_sent_to $(head_player_id)
 scoreboard players set #from_ Temp 2
 scoreboard players operation #compare IDID = @s IDID
-$execute in exigence:profile_data positioned 8 0 8 as @n[distance=..32,type=armor_stand,tag=PlayerNode,scores={profile.node.player_id=$(player_id)}] \
+$execute in exigence:profile_data positioned 8 0 8 as @n[type=armor_stand,scores={profile.node.player_id=$(player_id)},tag=PlayerNode,distance=..32] \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/cancel_only

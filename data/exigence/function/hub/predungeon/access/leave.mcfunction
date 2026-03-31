@@ -36,7 +36,7 @@ run scoreboard players set #other_players Temp 1
 
 #   Also reset to the pre-button menu if there are other players in the room
 execute if score #other_players Temp matches 1 unless score #predungeon_state Temp matches 0 positioned 0.5 209.0 104.5 \
-as @n[distance=..10,type=marker,tag=PredungeonMenuNode] at @s run function exigence:hub/predungeon/menu/display/back_to_prebutton
+as @n[type=marker,tag=PredungeonMenuNode,distance=..10] at @s run function exigence:hub/predungeon/menu/display/back_to_prebutton
 
 execute if score #other_players Temp matches 1 run return 0
 #----------------------------------------------------------------------------------------------------

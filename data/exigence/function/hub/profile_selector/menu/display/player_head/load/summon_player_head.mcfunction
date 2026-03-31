@@ -13,19 +13,19 @@
 
 # Summon display
 function exigence:hub/profile_selector/menu/display/player_head/load/load_player_head with storage exigence:temp
-tag @n[distance=..1,type=item_display,tag=NewItemDisplay] add HidingHead
+tag @n[type=item_display,tag=NewItemDisplay,distance=..1] add HidingHead
 
 # Team for glow color
-team join Special @n[distance=..1,type=item_display,tag=NewItemDisplay]
+team join Special @n[type=item_display,tag=NewItemDisplay,distance=..1]
 
 # Item data
 scoreboard players operation #compare career.player_id = @s career.player_id
 execute in exigence:profile_data positioned 8 0 8 as @e[type=armor_stand,tag=PlayerNode,distance=..32] if score @s profile.node.player_id = #compare career.player_id \
 run data modify storage exigence:temp profile set from entity @s equipment.head.components."minecraft:profile"
-data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:profile" set from storage exigence:temp profile
+data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..1] item.components."minecraft:profile" set from storage exigence:temp profile
 
-execute store result entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".head_player_id int 1 run scoreboard players get @s career.player_id
-scoreboard players operation @n[distance=..1,type=item_display,tag=NewItemDisplay] hub.entity.player_id = @s career.player_id
+execute store result entity @n[type=item_display,tag=NewItemDisplay,distance=..1] item.components."minecraft:custom_data".head_player_id int 1 run scoreboard players get @s career.player_id
+scoreboard players operation @n[type=item_display,tag=NewItemDisplay,distance=..1] hub.entity.player_id = @s career.player_id
 
 # Remove local display tag
-tag @n[distance=..1,type=item_display,tag=NewItemDisplay] remove NewItemDisplay
+tag @n[type=item_display,tag=NewItemDisplay,distance=..1] remove NewItemDisplay

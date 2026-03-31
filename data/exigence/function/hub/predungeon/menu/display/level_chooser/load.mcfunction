@@ -9,10 +9,10 @@
 playsound minecraft:block.ender_chest.open ui @a ~ ~ ~ 1 1
 
 # Open middle slot
-execute as @n[distance=..5,type=item_display,tag=DoorSlotFill0,tag=Closed] run function exigence:hub/predungeon/menu/display/warp_door/slot/open_slot
+execute as @n[type=item_display,tag=DoorSlotFill0,tag=Closed,distance=..5] run function exigence:hub/predungeon/menu/display/warp_door/slot/open_slot
 
 # Summon cancel button
-execute at @n[distance=..5,type=marker,tag=DoorSlotMarker0] positioned ~ ~ ~-0.01 run function exigence:hub/predungeon/menu/display/level_chooser/load/summon_cancel
+execute at @n[type=marker,tag=DoorSlotMarker0,distance=..5] positioned ~ ~ ~-0.01 run function exigence:hub/predungeon/menu/display/level_chooser/load/summon_cancel
 
 # Outputs: #attempts_d#1-6 Temp
 execute as @p[tag=Predungeon,distance=..16] run function exigence:player/get/attempts_d

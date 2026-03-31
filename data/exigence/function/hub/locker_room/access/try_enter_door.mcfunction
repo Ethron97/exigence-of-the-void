@@ -20,7 +20,7 @@ execute if score @s profile.player.coop_profile_id matches 1.. run function exig
 execute if score #did_coop_enter Temp matches 1 run return 0
 
 # Node is in use
-execute if score @n[distance=..0.1,type=marker,tag=LockerRoomNode] hub.locker_room_id matches 1.. run return run function exigence:hub/locker_room/access/fail/in_use
+execute if score @n[type=marker,tag=LockerRoomNode,distance=..0.1] hub.locker_room_id matches 1.. run return run function exigence:hub/locker_room/access/fail/in_use
 #----------------------------------------------------------------------------------------------------
 
 # Enter room as first player

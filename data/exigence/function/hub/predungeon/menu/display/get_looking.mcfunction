@@ -22,14 +22,14 @@ execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=LevelChooserDispla
 @p[tag=IAmLooking,distance=..16] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=IAmLooking,distance=..16] positioned ^ ^ ^1 if entity @s[distance=..0.07] run tag @s add HoverCandidate
 
 # Get closest of HoverCandidates
-execute anchored eyes run tag @n[distance=..6,type=minecraft:item_display,tag=HoverCandidate] add Hover
+execute anchored eyes run tag @n[type=minecraft:item_display,tag=HoverCandidate,distance=..6] add Hover
 
 # Copy IDID to foreign key so we know which IDID which player is looking at
-scoreboard players operation @s shop.player.looking_at_idid = @n[distance=..6,type=minecraft:item_display,tag=HoverCandidate,tag=Hover] IDID
+scoreboard players operation @s shop.player.looking_at_idid = @n[type=minecraft:item_display,tag=HoverCandidate,tag=Hover,distance=..6] IDID
 scoreboard players operation #compare IDID = @s shop.player.looking_at_idid
 
 # If looking at was found, make interaction of this player big enough to use
-execute if score @s shop.player.looking_at_idid matches 1.. run data merge entity @n[distance=..3,type=interaction,tag=PredungeonInteraction,tag=CurrentCheckingInteraction] {width:1,height:1}
+execute if score @s shop.player.looking_at_idid matches 1.. run data merge entity @n[type=interaction,tag=PredungeonInteraction,tag=CurrentCheckingInteraction,distance=..3] {width:1,height:1}
 
 # Remove local tag
 tag @s remove IAmLooking

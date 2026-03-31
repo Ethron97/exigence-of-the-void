@@ -21,4 +21,4 @@ execute as @e[type=item_display,tag=PlayerHeadDisplay,tag=!Ordered,tag=!Ignore,d
 execute as @e[type=item_display,tag=PlayerHeadDisplay,tag=!Ordered,tag=!Ignore,distance=..16] if score @s hub.entity.player_id = #temp Temp run function exigence:hub/profile_selector/menu/display/player_head/order/order_head
 
 # If there is still unordered displays, run again
-execute if entity @n[distance=..16,type=item_display,tag=PlayerHeadDisplay,tag=!Ordered,tag=!Ignore] run function exigence:hub/profile_selector/menu/display/player_head/order/next_head
+execute if entity @n[type=item_display,tag=PlayerHeadDisplay,tag=!Ordered,tag=!Ignore,distance=..16] run function exigence:hub/profile_selector/menu/display/player_head/order/next_head

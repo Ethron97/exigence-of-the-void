@@ -15,13 +15,13 @@ execute on origin run tellraw @s[tag=!ActivePlayer] [{text:"✖ You cannot drop 
 tag @s add DroppedSoulbounding
 
 # Set owner
-execute at @s on origin run data modify entity @n[distance=..0.1,type=item,tag=DroppedSoulbounding] Owner set from entity @s UUID
+execute at @s on origin run data modify entity @n[type=item,tag=DroppedSoulbounding,distance=..0.1] Owner set from entity @s UUID
 
 # Set pickup delay to 0 so they can instantly pick it up again
 data modify entity @s PickupDelay set value 0s
 
 # Teleport it to the player to guarantee they pick it up
-execute at @s on origin run tp @n[distance=..0.1,type=item,tag=DroppedSoulbounding] @s
+execute at @s on origin run tp @n[type=item,tag=DroppedSoulbounding,distance=..0.1] @s
 
 # Tag item so it doesn't "double proc"
 tag @s add SoulWarned

@@ -15,10 +15,10 @@ scoreboard players set #predungeon_state Temp 2
 scoreboard players set #sensor_state Temp 0
 
 # Open middel slot
-execute as @n[distance=..5,type=item_display,tag=DoorSlotFill0,tag=Closed] run function exigence:hub/predungeon/menu/display/warp_door/slot/open_slot
+execute as @n[type=item_display,tag=DoorSlotFill0,tag=Closed,distance=..5] run function exigence:hub/predungeon/menu/display/warp_door/slot/open_slot
 
 # Summon cancel button
-execute at @n[distance=..5,type=marker,tag=DoorSlotMarker0] positioned ~ ~ ~-0.01 run function exigence:hub/predungeon/menu/display/level_chooser/load/summon_cancel
+execute at @n[type=marker,tag=DoorSlotMarker0,distance=..5] positioned ~ ~ ~-0.01 run function exigence:hub/predungeon/menu/display/level_chooser/load/summon_cancel
 
 # Get profile size
 #   OUTPUTS: #profile_size Temp

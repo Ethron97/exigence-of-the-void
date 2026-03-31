@@ -40,7 +40,7 @@ scoreboard players reset @s player.node.invite_sent_to
 
 # Updating confirm button
 scoreboard players set #filled_slots Temp 0
-execute at @a[tag=CancelledBy,limit=1] as @n[distance=..16,type=item_display,tag=CoopInvitorDisplay,tag=Confirm] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/update_confirm_button
+execute at @a[tag=CancelledBy,limit=1] as @n[type=item_display,tag=CoopInvitorDisplay,tag=Confirm,distance=..16] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/update_confirm_button
 
 # Remove local tag (added by cancel_sender)
 tag @a[tag=CancelledBy] remove InvitesSent

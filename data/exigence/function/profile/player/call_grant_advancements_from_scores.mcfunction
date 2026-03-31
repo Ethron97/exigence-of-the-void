@@ -7,5 +7,5 @@
 #====================================================================================================
 
 tag @s add GrantingLocal
-execute as @n[distance=..0.01,type=marker,tag=ProfileNode] as @a[tag=GrantingLocal,limit=1] run function exigence:scoreboard/generated_functions/grant_advancements_from_scores
+execute as @n[type=marker,tag=ProfileNode,distance=..0.01] as @a[tag=GrantingLocal,limit=1] run function exigence:scoreboard/generated_functions/grant_advancements_from_scores
 tag @s remove GrantingLocal

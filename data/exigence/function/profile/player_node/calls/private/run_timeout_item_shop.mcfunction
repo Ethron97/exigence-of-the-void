@@ -9,7 +9,7 @@
 say Run timeout item shop
 
 # Reset score
-scoreboard players reset @n[distance=..0.1,type=armor_stand,tag=PlayerNode] player.node.queue.timeout_item_shop
+scoreboard players reset @n[type=armor_stand,tag=PlayerNode,distance=..0.1] player.node.queue.timeout_item_shop
 
 # Call function
 tellraw @s [{text:"Exceeded Item Shop timeout limit",color:red}]

@@ -81,8 +81,8 @@ execute as @e[type=minecraft:marker,tag=RavagerGlass,tag=TutorialGlass,distance=
 
 schedule clear exigence:tutorial/flow/private/ravager_loop
 
-execute as @n[tag=BellNode,scores={ObjectLevel=10}] run function exigence:bell/node/deactivate
-execute as @n[tag=BellNode,scores={ObjectLevel=10}] run function exigence:bell/node/activate
+execute as @n[scores={ObjectLevel=10},tag=BellNode] run function exigence:bell/node/deactivate
+execute as @n[scores={ObjectLevel=10},tag=BellNode] run function exigence:bell/node/activate
 
 # Reset nodes
 execute as @e[type=minecraft:armor_stand,scores={ObjectLevel=10},tag=BerryNode,distance=..1000] at @s run function exigence:botany/node/berry_bush_inactive

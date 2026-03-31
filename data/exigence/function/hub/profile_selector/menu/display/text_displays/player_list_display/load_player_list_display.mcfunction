@@ -21,17 +21,17 @@ $summon minecraft:text_display ~ ~ ~ {line_width:115,billboard:"fixed",alignment
 #,background:1,text:[{text:"P$(num): ",color:"white"},{text:"1234567890123456",color:"yellow"}]\
 
 # Give scoreboard value
-scoreboard players operation @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] IDID = @s IDID
-scoreboard players operation @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id
-scoreboard players operation @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] hub.entity.player_id = #compare profile.node.player_id
-$scoreboard players set @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] Random $(coop_profile_id)
+scoreboard players operation @n[type=minecraft:text_display,tag=NewTextDisplay,distance=..0.1] IDID = @s IDID
+scoreboard players operation @n[type=minecraft:text_display,tag=NewTextDisplay,distance=..0.1] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id
+scoreboard players operation @n[type=minecraft:text_display,tag=NewTextDisplay,distance=..0.1] hub.entity.player_id = #compare profile.node.player_id
+$scoreboard players set @n[type=minecraft:text_display,tag=NewTextDisplay,distance=..0.1] Random $(coop_profile_id)
 
 # Set name from storage
-data modify entity @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] text.extra[0].text set from storage exigence:temp profile.name
+data modify entity @n[type=minecraft:text_display,tag=NewTextDisplay,distance=..0.1] text.extra[0].text set from storage exigence:temp profile.name
 
 # Update color
-execute as @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] \
+execute as @n[type=minecraft:text_display,tag=NewTextDisplay,distance=..0.1] \
 run function exigence:hub/profile_selector/menu/display/text_displays/player_list_display/private/update_display
 
 # Remove local tag
-tag @n[distance=..0.1,type=minecraft:text_display,tag=NewTextDisplay] remove NewTextDisplay
+tag @n[type=minecraft:text_display,tag=NewTextDisplay,distance=..0.1] remove NewTextDisplay

@@ -11,7 +11,7 @@ say Setup Predungeon interaction
 summon interaction ~ ~ ~ {Tags:["PredungeonInteraction","NewPredungeonInteraction","FunctionInteraction"],response:true,width:0.01,height:0.01}
 
 # Assign player id to interaction
-scoreboard players operation @n[distance=..0.1,type=interaction,tag=NewPredungeonInteraction] hub.entity.player_id = @s career.player_id
+scoreboard players operation @n[type=interaction,tag=NewPredungeonInteraction,distance=..0.1] hub.entity.player_id = @s career.player_id
 
 # Remove local tag
-tag @n[distance=..0.1,type=interaction,tag=NewPredungeonInteraction] remove NewPredungeonInteraction
+tag @n[type=interaction,tag=NewPredungeonInteraction,distance=..0.1] remove NewPredungeonInteraction

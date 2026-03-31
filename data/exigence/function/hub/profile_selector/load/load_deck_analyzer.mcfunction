@@ -21,7 +21,7 @@ execute unless score #switching Temp matches 1 run function exigence:hub/deck_an
 # Item Displays
 scoreboard players operation @e[type=item_display,tag=NewItemDisplay,distance=..10] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id
 #   Refresh button
-execute store result entity @n[distance=..10,type=item_display,tag=NewItemDisplay,tag=RefreshButton] item.components."minecraft:custom_data".profile_selector_id int 1 run scoreboard players get @s hub.entity.profile_selector_id
+execute store result entity @n[type=item_display,tag=NewItemDisplay,tag=RefreshButton,distance=..10] item.components."minecraft:custom_data".profile_selector_id int 1 run scoreboard players get @s hub.entity.profile_selector_id
 tag @e[type=item_display,tag=NewItemDisplay,distance=..10] remove NewItemDisplay
 
 # Edit text displays
@@ -33,4 +33,4 @@ scoreboard players operation @e[type=block_display,tag=NewBlockDisplay,distance=
 tag @e[type=block_display,tag=NewBlockDisplay,distance=..10] remove NewBlockDisplay
 
 # Call analyze
-execute at @s as @n[distance=..3,type=item_display,tag=RefreshButton] run function exigence:hub/deck_analyzer/refresh_button/calls/refresh/refresh
+execute at @s as @n[type=item_display,tag=RefreshButton,distance=..3] run function exigence:hub/deck_analyzer/refresh_button/calls/refresh/refresh

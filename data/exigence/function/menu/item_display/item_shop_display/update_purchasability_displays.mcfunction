@@ -68,8 +68,8 @@ execute if entity @s[tag=!CanResearch,tag=!IsResearched] run data modify entity 
 
 
 ## UPDATE COST DISPLAY
-$execute if entity @s[tag=IsResearched] as @n[distance=..1,type=minecraft:text_display,tag=CostDisplay,scores={IDID=$(idid)}] run function exigence:menu/item_display/item_shop_display/cost_display/update_researched with entity @n[distance=..1,type=minecraft:item_display,tag=ItemShopDisplay,tag=UpdatingPurchasability] item.components."minecraft:custom_data"
-$execute if entity @s[tag=!IsResearched,tag=!Artifact] as @n[distance=..1,type=minecraft:text_display,tag=CostDisplay,scores={IDID=$(idid)}] run function exigence:menu/item_display/item_shop_display/cost_display/update with entity @n[distance=..1,type=minecraft:item_display,tag=ItemShopDisplay,tag=UpdatingPurchasability] item.components."minecraft:custom_data"
+$execute if entity @s[tag=IsResearched] as @n[type=minecraft:text_display,scores={IDID=$(idid)},tag=CostDisplay,distance=..1] run function exigence:menu/item_display/item_shop_display/cost_display/update_researched with entity @n[type=minecraft:item_display,tag=ItemShopDisplay,tag=UpdatingPurchasability,distance=..1] item.components."minecraft:custom_data"
+$execute if entity @s[tag=!IsResearched,tag=!Artifact] as @n[type=minecraft:text_display,scores={IDID=$(idid)},tag=CostDisplay,distance=..1] run function exigence:menu/item_display/item_shop_display/cost_display/update with entity @n[type=minecraft:item_display,tag=ItemShopDisplay,tag=UpdatingPurchasability,distance=..1] item.components."minecraft:custom_data"
 
 
 # Update locked reason if currently hovering this

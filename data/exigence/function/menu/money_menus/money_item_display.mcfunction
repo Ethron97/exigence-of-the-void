@@ -20,11 +20,11 @@
 #$say money item display $(Rotation)
 
 # Summon item (unless existing NSS exists)
-$execute unless entity @n[distance=..0.01,type=item,tag=NSS] run function exigence:hub/item_shop/item/summon_item {item_name:'$(item_name)'}
+$execute unless entity @n[type=item,tag=NSS,distance=..0.01] run function exigence:hub/item_shop/item/summon_item {item_name:'$(item_name)'}
 
 # Setup item data
 #   This also summons the NewItemDisplay
-$execute as @n[distance=..0.01,type=minecraft:item,tag=NSS] run function exigence:menu/money_menus/money_item_display_item {menu_tag:'$(menu_tag)',money_cost:$(money_cost),research_cost:$(research_cost),parents:$(parents),Rotation:'$(Rotation)'}
+$execute as @n[type=minecraft:item,tag=NSS,distance=..0.01] run function exigence:menu/money_menus/money_item_display_item {menu_tag:'$(menu_tag)',money_cost:$(money_cost),research_cost:$(research_cost),parents:$(parents),Rotation:'$(Rotation)'}
 
 # Store useful item name for debugging
 $data modify storage exigence:temp custom_name set value {text:"ItemDisplay | MenuDisplay | $(item_name)"}
@@ -35,7 +35,7 @@ $scoreboard players set #compare shop.frame.tier $(tier)
 # Number of parents
 $scoreboard players set #compare shop.frame.parents $(num_parents)
 # Store item name as tag because its faster than nbt
-$tag @n[distance=..1,type=minecraft:item_display,tag=NewItemDisplay] add $(item_name)
+$tag @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..1] add $(item_name)
 
-execute as @n[distance=..1,type=minecraft:item_display,tag=NewItemDisplay] run function exigence:menu/money_menus/money_item_display_data
+execute as @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..1] run function exigence:menu/money_menus/money_item_display_data
 

@@ -37,13 +37,13 @@ team join Green
 #====================================================================================================
 ## LOAD CHESTS
 # Get data
-$execute in exigence:profile_data positioned 8 128 8 as @n[distance=..140,type=marker,tag=ProfileNode,scores={profile.node.profile_id=$(profile_id)}] \
+$execute in exigence:profile_data positioned 8 128 8 as @n[type=marker,scores={profile.node.profile_id=$(profile_id)},tag=ProfileNode,distance=..140] \
 run function exigence:profile/profile_node/load/try_chest_to_data
 
 execute at @s unless score #data_loaded Temp matches 1 run tellraw @p[tag=ProfileSelecting,distance=..20] [{text:"[CHESTS NOT LOADED] ",bold:true,color:"yellow"},{text:"Another player has already loaded the chests for this co-op profile.",color:"gray",italic:true,bold:false}]
 
 # Fill chests (if data was loaded successfully)
-$execute if score #data_loaded Temp matches 1 at @s at @n[distance=..32,type=marker,tag=ProfileSelectorNode,scores={hub.profile_selector_id=$(profile_selector_id)}] \
+$execute if score #data_loaded Temp matches 1 at @s at @n[type=marker,scores={hub.profile_selector_id=$(profile_selector_id)},tag=ProfileSelectorNode,distance=..32] \
 run function exigence:hub/profile_selector/load/load_chests
 
 # Load deck analyzer (if data was loaded successfully)
@@ -51,7 +51,7 @@ $scoreboard players set #profile_id Temp $(profile_id)
 $scoreboard players set #coop_profile_id Temp $(coop_profile_id)
 #$execute if score #data_loaded Temp matches 1 at @s as @n[distance=..32,type=marker,tag=DeckAnalyzer,scores={hub.entity.profile_selector_id=$(profile_selector_id)}] \
 at @s run function exigence:hub/profile_selector/load/load_deck_analyzer
-$execute at @s as @n[distance=..32,type=marker,tag=DeckAnalyzer,scores={hub.entity.profile_selector_id=$(profile_selector_id)}] \
+$execute at @s as @n[type=marker,scores={hub.entity.profile_selector_id=$(profile_selector_id)},tag=DeckAnalyzer,distance=..32] \
 at @s run function exigence:hub/profile_selector/load/load_deck_analyzer
 
 #====================================================================================================

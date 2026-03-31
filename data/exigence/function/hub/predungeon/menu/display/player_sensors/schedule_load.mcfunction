@@ -6,5 +6,5 @@
 
 #====================================================================================================
 
-execute in exigence:hub positioned 0.5 209.0 104.5 at @n[distance=..32,type=marker,tag=PredungeonMenuNode] \
+execute in exigence:hub positioned 0.5 209.0 104.5 at @n[type=marker,tag=PredungeonMenuNode,distance=..32] \
 run function exigence:hub/predungeon/menu/display/player_sensors/load

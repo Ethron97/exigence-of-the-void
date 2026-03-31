@@ -12,7 +12,7 @@
 execute in exigence:profile_data run loot spawn 0.5 1.0 2.5 loot exigence:get_player_head
 
 # Store data
-execute positioned 0.5 1.0 2.5 run data modify storage exigence:temp player_head set from entity @n[distance=..2,type=minecraft:item] Item
+execute positioned 0.5 1.0 2.5 run data modify storage exigence:temp player_head set from entity @n[type=minecraft:item,distance=..2] Item
 
 # Kill item
-execute positioned 0.5 1.0 2.5 run kill @n[distance=..2,type=minecraft:item]
+execute positioned 0.5 1.0 2.5 run kill @n[type=minecraft:item,distance=..2]

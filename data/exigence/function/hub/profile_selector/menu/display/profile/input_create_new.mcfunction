@@ -35,4 +35,4 @@ execute at @s run playsound minecraft:entity.ender_eye.death ui @p[tag=ProfileSe
 execute at @s run particle glow ~ ~ ~0.1 0.1 0.1 0.0 0.001 5
 
 # Mark player node so we know it is creating
-$execute in exigence:profile_data positioned 8 3 8 run tag @n[distance=..20,type=armor_stand,tag=PlayerNode,scores={profile.node.player_id=$(player_id)}] add PlayerCreatingProfile
+$execute in exigence:profile_data positioned 8 3 8 run tag @n[type=armor_stand,scores={profile.node.player_id=$(player_id)},tag=PlayerNode,distance=..20] add PlayerCreatingProfile

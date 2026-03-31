@@ -22,14 +22,14 @@ function exigence:hub/deck_analyzer/display/resources/update with storage exigen
 function exigence:hub/deck_analyzer/display/system_impact/update with storage exigence:deck_analysis
 
 # Update refresh button based on error/warnings
-data modify entity @n[distance=..5,type=item_display,tag=RefreshButton] item.components."minecraft:custom_model_data".strings set value ["refresh_green"]
-data modify entity @n[distance=..5,type=item_display,tag=RefreshButton] item.components."minecraft:lore" set value [{text:""}]
-team join Green @n[distance=..5,type=item_display,tag=RefreshButton]
-execute if score warnings deck.analysis matches 1.. run data modify entity @n[distance=..5,type=item_display,tag=RefreshButton] item.components."minecraft:custom_model_data".strings set value ["refresh_yellow"]
-execute if score warnings deck.analysis matches 1.. run data modify entity @n[distance=..5,type=item_display,tag=RefreshButton] item.components."minecraft:lore" set value [{text:"Warnings found",color:"yellow"}]
-execute if score warnings deck.analysis matches 1.. run team join Special @n[distance=..5,type=item_display,tag=RefreshButton]
-execute if score errors deck.analysis matches 1.. run data modify entity @n[distance=..5,type=item_display,tag=RefreshButton] item.components."minecraft:custom_model_data".strings set value ["refresh_red"]
-execute if score errors deck.analysis matches 1.. run data modify entity @n[distance=..5,type=item_display,tag=RefreshButton] item.components."minecraft:lore" set value [{text:"Errors found",color:"red"}]
-execute if score errors deck.analysis matches 1.. run team join Enemy @n[distance=..5,type=item_display,tag=RefreshButton]
+data modify entity @n[type=item_display,tag=RefreshButton,distance=..5] item.components."minecraft:custom_model_data".strings set value ["refresh_green"]
+data modify entity @n[type=item_display,tag=RefreshButton,distance=..5] item.components."minecraft:lore" set value [{text:""}]
+team join Green @n[type=item_display,tag=RefreshButton,distance=..5]
+execute if score warnings deck.analysis matches 1.. run data modify entity @n[type=item_display,tag=RefreshButton,distance=..5] item.components."minecraft:custom_model_data".strings set value ["refresh_yellow"]
+execute if score warnings deck.analysis matches 1.. run data modify entity @n[type=item_display,tag=RefreshButton,distance=..5] item.components."minecraft:lore" set value [{text:"Warnings found",color:"yellow"}]
+execute if score warnings deck.analysis matches 1.. run team join Special @n[type=item_display,tag=RefreshButton,distance=..5]
+execute if score errors deck.analysis matches 1.. run data modify entity @n[type=item_display,tag=RefreshButton,distance=..5] item.components."minecraft:custom_model_data".strings set value ["refresh_red"]
+execute if score errors deck.analysis matches 1.. run data modify entity @n[type=item_display,tag=RefreshButton,distance=..5] item.components."minecraft:lore" set value [{text:"Errors found",color:"red"}]
+execute if score errors deck.analysis matches 1.. run team join Enemy @n[type=item_display,tag=RefreshButton,distance=..5]
 
-execute as @n[distance=..5,type=item_display,tag=RefreshButton] run data modify entity @n[distance=..1,type=minecraft:text_display,tag=RefreshButtonDetails] text set from entity @s item.components."minecraft:lore"[0]
+execute as @n[type=item_display,tag=RefreshButton,distance=..5] run data modify entity @n[type=minecraft:text_display,tag=RefreshButtonDetails,distance=..1] text set from entity @s item.components."minecraft:lore"[0]

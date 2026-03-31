@@ -22,4 +22,4 @@ execute at @s[tag=!Selected] positioned ^ ^-0.48 ^0 run function exigence:hub/pr
 $data modify entity @s transformation set value {left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[$(hover_scale)f,$(hover_scale)f,$(hover_scale)f]}
 
 # If another Slot Display is mid-creation, cancel it
-execute at @s as @n[distance=..16,type=item_display,tag=SlotDisplay,tag=CreationProcess] run function exigence:hub/profile_selector/menu/display/profile/create_new_cancel with entity @s item.components."minecraft:custom_data"
+execute at @s as @n[type=item_display,tag=SlotDisplay,tag=CreationProcess,distance=..16] run function exigence:hub/profile_selector/menu/display/profile/create_new_cancel with entity @s item.components."minecraft:custom_data"

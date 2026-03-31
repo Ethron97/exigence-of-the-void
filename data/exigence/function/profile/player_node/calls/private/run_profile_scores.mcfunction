@@ -9,7 +9,7 @@
 say Run copy profile scores
 
 # Reset score
-scoreboard players reset @n[distance=..0.1,type=armor_stand,tag=PlayerNode] player.node.queue.profile_scores
+scoreboard players reset @n[type=armor_stand,tag=PlayerNode,distance=..0.1] player.node.queue.profile_scores
 
 # Call player function:
 scoreboard players operation #compare profile.player.profile_id = @s profile.player.profile_id

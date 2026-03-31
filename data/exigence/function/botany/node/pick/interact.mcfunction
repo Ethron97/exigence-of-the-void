@@ -7,7 +7,7 @@
 
 # TUTORIAL:
 execute if data storage exigence:dungeon {tutorial:1} as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/flow/step
-execute if data storage exigence:dungeon {tutorial:1} at @s[tag=Tutorial] as @n[distance=..10,type=minecraft:armor_stand,tag=BerryNode] if score @s NodeID = #compare NodeID run function exigence:botany/node/pick/pick_bush_tutorial
+execute if data storage exigence:dungeon {tutorial:1} at @s[tag=Tutorial] as @n[type=minecraft:armor_stand,tag=BerryNode,distance=..10] if score @s NodeID = #compare NodeID run function exigence:botany/node/pick/pick_bush_tutorial
 execute if data storage exigence:dungeon {tutorial:1} as @s[tag=Tutorial] run return 1
 
 # Return if dungeon is off
@@ -22,5 +22,5 @@ execute if score @s game.player.active_level matches 3 run scoreboard players ad
 execute if score @s game.player.active_level matches 4 run scoreboard players add @s profile.data.berry.cr.berry_bushes_picked_L4 1
 
 # Pick berry bush
-execute at @s[nbt={SelectedItem:{id:"minecraft:golden_hoe"}}] run execute as @n[distance=..10,type=minecraft:armor_stand,tag=BerryNode] if score @s NodeID = #compare NodeID run function exigence:botany/node/pick/pick_bush_harvest_b
-execute at @s[nbt=!{SelectedItem:{id:"minecraft:golden_hoe"}}] run execute as @n[distance=..10,type=minecraft:armor_stand,tag=BerryNode] if score @s NodeID = #compare NodeID run function exigence:botany/node/pick/pick_bush
+execute at @s[nbt={SelectedItem:{id:"minecraft:golden_hoe"}}] run execute as @n[type=minecraft:armor_stand,tag=BerryNode,distance=..10] if score @s NodeID = #compare NodeID run function exigence:botany/node/pick/pick_bush_harvest_b
+execute at @s[nbt=!{SelectedItem:{id:"minecraft:golden_hoe"}}] run execute as @n[type=minecraft:armor_stand,tag=BerryNode,distance=..10] if score @s NodeID = #compare NodeID run function exigence:botany/node/pick/pick_bush

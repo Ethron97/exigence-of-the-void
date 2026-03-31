@@ -36,11 +36,11 @@ run function exigence:hub/predungeon/menu/display/level_chooser/calls/private/to
 
 ## SWITCH TO PLAYER SENSORS
 # Kill level choosers (except this one)
-tag @s add NotMe
-kill @e[type=#exigence:display,tag=PredungeonMenuDisplay,tag=!NotMe,distance=..5]
+execute at @s run kill @e[type=#exigence:display,tag=PredungeonMenuDisplay,distance=0.5..5]
 
-# Close all (open) slots
-execute as @e[type=item_display,tag=Open,distance=..5] at @s unless entity @n[distance=..0.2,type=item_display,tag=NotMe] run function exigence:hub/predungeon/menu/display/warp_door/slot/close_slot
+# Close all (open) slots (except this one)
+tag @s add NotMe
+execute as @e[type=item_display,tag=Open,distance=..5] at @s unless entity @n[type=item_display,tag=NotMe,distance=..0.2] run function exigence:hub/predungeon/menu/display/warp_door/slot/close_slot
 tag @s remove NotMe
 
 # Load prebutton (schedule)

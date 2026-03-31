@@ -11,6 +11,6 @@
 
 say Unload deck analyzer
 
-$execute as @n[distance=..24,tag=DeckAnalyzer,scores={hub.entity.profile_selector_id=$(profile_selector_id)}] \
+$execute as @n[scores={hub.entity.profile_selector_id=$(profile_selector_id)},tag=DeckAnalyzer,distance=..24] \
 run function exigence:hub/deck_analyzer/unload_deck_analyzer with entity @s data.custom_data
 $kill @e[scores={hub.entity.profile_selector_id=$(profile_selector_id)},tag=DeckAnalyzerDisplay,distance=..24]

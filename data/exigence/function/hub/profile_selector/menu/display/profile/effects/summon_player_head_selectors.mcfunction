@@ -15,8 +15,8 @@ function exigence:hub/profile_selector/menu/display/coop_invitor/summon_page_fli
 # Summon page label
 summon minecraft:text_display ~ ~0.95 ~ {billboard:"fixed",alignment:"center",Tags:["PageLabel","NewTextDisplay"],text:[{text:"Page #"}],background:1\
 ,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.3f,0.3f,0.3f]}}
-scoreboard players operation @n[distance=..5,type=text_display,tag=NewTextDisplay] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id
-tag @n[distance=..5,type=text_display,tag=NewTextDisplay] remove NewTextDisplay
+scoreboard players operation @n[type=text_display,tag=NewTextDisplay,distance=..5] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id
+tag @n[type=text_display,tag=NewTextDisplay,distance=..5] remove NewTextDisplay
 
 # Summon "slots"
 execute positioned ~0.31 ~1.35 ~-1.15 run function exigence:hub/profile_selector/menu/display/coop_invitor/load_slot_background with entity @s item.components."minecraft:custom_data"

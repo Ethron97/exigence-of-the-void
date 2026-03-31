@@ -26,4 +26,4 @@ execute at @s run playsound minecraft:block.wooden_trapdoor.close block @p[tag=P
 execute at @s run particle smoke ~ ~ ~0.1 0.3 0.3 0.0 0.01 5
 
 # Remove creating tag
-$execute in exigence:profile_data positioned 8 3 8 run tag @n[distance=..20,type=armor_stand,tag=PlayerNode,scores={profile.node.player_id=$(player_id)}] remove PlayerCreatingProfile
+$execute in exigence:profile_data positioned 8 3 8 run tag @n[type=armor_stand,scores={profile.node.player_id=$(player_id)},tag=PlayerNode,distance=..20] remove PlayerCreatingProfile

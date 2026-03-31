@@ -19,4 +19,4 @@ if score @s hub.entity.coop_profile_id = #compare profile.player.coop_profile_id
 
 # Returns #did_coop_enter Temp
 #   Local tag gets removed by function
-execute in exigence:hub positioned 0 200 0 at @n[distance=..100,type=marker,tag=LockerRoomNode,tag=TeleportToThisOne] run function exigence:hub/locker_room/access/enter_coop
+execute in exigence:hub positioned 0 200 0 at @n[type=marker,tag=LockerRoomNode,tag=TeleportToThisOne,distance=..100] run function exigence:hub/locker_room/access/enter_coop

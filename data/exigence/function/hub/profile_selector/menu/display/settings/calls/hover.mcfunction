@@ -17,5 +17,5 @@ execute at @s run playsound minecraft:block.bamboo_wood_trapdoor.open ambient @a
 $data modify entity @s transformation set value {left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[$(hover_scale)f,$(hover_scale)f,$(hover_scale)f]}
 
 # Glow preview
-$execute if entity @s[tag=HasPreview] at @s as @n[distance=..10,type=text_display,tag=SettingPreview,scores={IDID=$(idid)}] run \
+$execute if entity @s[tag=HasPreview] at @s as @n[type=text_display,scores={IDID=$(idid)},tag=SettingPreview,distance=..10] run \
 data modify entity @s transformation set value {left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,$(preview_shift)f,0f],scale:[$(preview_hover_scale)f,$(preview_hover_scale)f,$(preview_hover_scale)f]}

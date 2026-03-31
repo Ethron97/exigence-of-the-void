@@ -11,8 +11,8 @@
 say Switch to
 
 # If there is entity to deselect... switching = true
-execute at @s if entity @n[distance=..16,tag=SlotDisplay,tag=Selected] run scoreboard players set #switching Temp 1
-execute at @s as @n[distance=..16,tag=SlotDisplay,tag=Selected] run function exigence:hub/profile_selector/menu/display/profile/deselect with entity @s item.components."minecraft:custom_data"
+execute at @s if entity @n[tag=SlotDisplay,tag=Selected,distance=..16] run scoreboard players set #switching Temp 1
+execute at @s as @n[tag=SlotDisplay,tag=Selected,distance=..16] run function exigence:hub/profile_selector/menu/display/profile/deselect with entity @s item.components."minecraft:custom_data"
 
 # Load actual profile to player
 $execute as @p[scores={hub.player.profile_selector_id=$(profile_selector_id)},tag=ProfileSelecting,distance=..16] \

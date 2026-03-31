@@ -4,7 +4,7 @@
 #   AS/AT profile node
 
 #====================================================================================================
-execute unless entity @n[distance=..0.01,type=marker,tag=ProfileNode] run return run say Analyze deck was not run on a profile node
+execute unless entity @n[type=marker,tag=ProfileNode,distance=..0.01] run return run say Analyze deck was not run on a profile node
 #====================================================================================================
 
 say Analyze deck (new)

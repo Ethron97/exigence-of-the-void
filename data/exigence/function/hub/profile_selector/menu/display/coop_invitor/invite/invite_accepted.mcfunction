@@ -11,7 +11,7 @@
 say Invite accepted
 
 # Call the full cancel function from the player node
-$execute in exigence:profile_data positioned 8 0 8 as @n[distance=..20,type=armor_stand,tag=PlayerNode,scores={profile.node.player_id=$(player_id)}] \
+$execute in exigence:profile_data positioned 8 0 8 as @n[type=armor_stand,scores={profile.node.player_id=$(player_id)},tag=PlayerNode,distance=..20] \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/accept
 
 # Shift menu depending on number of total invited players
@@ -23,6 +23,6 @@ execute if score #filled_slots Temp < max_coop_players global_settings run funct
 execute if score #filled_slots Temp = max_coop_players global_settings run function exigence:hub/profile_selector/menu/display/player_head/calls/private/switch_from_pending_to_confirm with entity @s item.components."minecraft:custom_data"
 
 # Call "confirm button update"
-execute at @s as @n[distance=..5,type=item_display,tag=CoopInvitorDisplay,tag=Confirm] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/update_confirm_button
+execute at @s as @n[type=item_display,tag=CoopInvitorDisplay,tag=Confirm,distance=..5] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/update_confirm_button
 
 execute at @s run playsound entity.player.levelup player @a ~ ~ ~ 1 1

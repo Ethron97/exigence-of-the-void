@@ -7,7 +7,7 @@
 
 # Handle tags
 execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=ItemShopDisplay,tag=Hover,distance=..24] run function exigence:menu/menu_tick_tag_swap
-execute positioned -27.5 200.0 0.5 as @n[distance=..5,type=minecraft:item_display,tag=MenuDisplay,tag=RefreshButton,tag=Hover] at @s run function exigence:menu/menu_tick_tag_swap
+execute positioned -27.5 200.0 0.5 as @n[type=minecraft:item_display,tag=MenuDisplay,tag=RefreshButton,tag=Hover,distance=..5] at @s run function exigence:menu/menu_tick_tag_swap
 
 
 # Player functions
@@ -17,7 +17,7 @@ execute as @a[tag=ItemShop,distance=..24] at @s run function exigence:hub/item_s
 
 
 # Refresh button hover logic
-execute positioned -27.5 200.0 0.5 as @n[distance=..5,type=minecraft:item_display,tag=MenuDisplay,tag=RefreshButton] at @s run function exigence:hub/locker_room/menu/display_hover_logic
+execute positioned -27.5 200.0 0.5 as @n[type=minecraft:item_display,tag=MenuDisplay,tag=RefreshButton,distance=..5] at @s run function exigence:hub/locker_room/menu/display_hover_logic
 # Display tick
 execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=ItemShopDisplay,distance=..24] at @s run function exigence:hub/item_shop/menu/display/shop_display_tick
 

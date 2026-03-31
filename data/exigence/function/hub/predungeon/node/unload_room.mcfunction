@@ -11,7 +11,7 @@ say Unload predungeon
 
 fill 1 207 35 -1 209 35 minecraft:end_gateway
 
-execute in exigence:hub positioned 0 153 0 as @n[distance=..1,type=marker,tag=RoomNode,scores={hub.room.room_type=2}] \
+execute in exigence:hub positioned 0 153 0 as @n[type=marker,scores={hub.room.room_type=2},tag=RoomNode,distance=..1] \
 run scoreboard players operation #compare hub.entity.profile_id = @s hub.entity.profile_id
 
 #====================================================================================================
@@ -35,7 +35,7 @@ kill @e[type=marker,tag=PredungeonAnalyzerDisplay,distance=..10]
 function exigence:hub/predungeon/node/kill_all_interactions
 
 # Unload predungeon menu
-execute positioned ~ ~ ~5 run kill @n[distance=..5,type=marker,tag=PredungeonMenuNode]
+execute positioned ~ ~ ~5 run kill @n[type=marker,tag=PredungeonMenuNode,distance=..5]
 
 execute positioned ~ ~ ~5 run kill @e[type=#exigence:display,tag=PredungeonDisplay,distance=..5]
 execute positioned ~ ~ ~5 run kill @e[type=marker,tag=PredungeonDisplay,distance=..5]

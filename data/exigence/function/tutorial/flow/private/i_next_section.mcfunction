@@ -23,5 +23,5 @@ execute as @s[tag=Checkpoint] run function exigence:tutorial/flow/next_token
 execute as @e[type=marker,tag=TutorialMarker,distance=..1000] run function exigence:tutorial/marker/private/update_debug_color
 
 # If not checkpoint, iterate
-execute in exigence:tutorial at @s[tag=!Checkpoint] as @n[distance=..100,type=marker,tag=TutorialMarker,tag=!Dropped] run function exigence:tutorial/flow/private/i_next_section
+execute in exigence:tutorial at @s[tag=!Checkpoint] as @n[type=marker,tag=TutorialMarker,tag=!Dropped,distance=..100] run function exigence:tutorial/flow/private/i_next_section
 

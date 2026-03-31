@@ -8,8 +8,8 @@ scoreboard objectives add Version dummy
 
 # Increase version number by 1
 #   Player = "major version", must be changed manually
-scoreboard players add 0.59 Version 1
-tellraw @a [{text:">>>Loading Exigence v0.59",bold: false,italic: false,color: "light_purple"}]
+scoreboard players add 0.60 Version 1
+tellraw @a [{text:">>>Loading Exigence v0.60",bold: false,italic: false,color: "light_purple"}]
 
 # Recreate "full rarity star/color combos"
 function exigence:misc/setup_functions/redo_lore_colors with storage exigence:colors
