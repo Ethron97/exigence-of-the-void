@@ -18,7 +18,7 @@ function exigence:hub/profile_selector/load/save_chests
 # Store data
 scoreboard players set #remove_tag Temp 1
 # Inputting: #chests_saved Temp
-execute in exigence:profile_data positioned 8 128 8 as @e[distance=..140,type=marker,tag=ProfileNode] \
+execute in exigence:profile_data positioned 8 128 8 as @e[type=marker,tag=ProfileNode,distance=..140] \
 if score @s profile.node.profile_id = #compare profile.node.profile_id at @s run function exigence:profile/profile_node/save/try_data_to_chest
 
 # Remove chests

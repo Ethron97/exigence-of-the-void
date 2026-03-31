@@ -8,10 +8,10 @@
 
 #say clicked eyeball sensors
 
-tellraw @p[distance=..16,tag=Interacting,tag=Predungeon] [{text:"You are being sensed! Keep looking until the door powers up.",color:"light_purple"}]
+tellraw @p[tag=Interacting,tag=Predungeon,distance=..16] [{text:"You are being sensed! Keep looking until the door powers up.",color:"light_purple"}]
 
 # Increase cooldown score for player
-scoreboard players add @p[distance=..16,tag=Interacting] hub.player.interaction_cooldown 20
+scoreboard players add @p[tag=Interacting,distance=..16] hub.player.interaction_cooldown 20
 
 # Just let the player know that once all players are looking at a sensor, the door will open
 # TODO

@@ -9,7 +9,7 @@
 execute at @s if block ~ ~-1 ~ minecraft:red_glazed_terracotta run return 1
 
 # If space is empty, place and return
-execute unless entity @e[distance=..0.5,tag=PlayerNode] if block ~ ~ ~ air run return 1
+execute unless entity @e[tag=PlayerNode,distance=..0.5] if block ~ ~ ~ air run return 1
 #----------------------------------------------------------------------------------------------------
 
 # If there is a player node in the current space, move one over

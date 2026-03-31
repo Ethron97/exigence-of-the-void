@@ -35,7 +35,7 @@ $execute at @s as @n[distance=..5,type=item_display,tag=SlotDisplay,scores={IDID
 run function exigence:hub/profile_selector/menu/display/profile/effects/summon_coop_selectors with entity @s item.components."minecraft:custom_data"
 
 # Effects
-execute at @s run playsound minecraft:entity.ender_eye.death ui @p[distance=..16,tag=ProfileSelecting,tag=Interacting] ~ ~ ~ 1 1
+execute at @s run playsound minecraft:entity.ender_eye.death ui @p[tag=ProfileSelecting,tag=Interacting,distance=..16] ~ ~ ~ 1 1
 execute at @s run particle glow ~ ~ ~0.1 0.1 0.1 0.0 0.001 5
 
 # Remove difficulty selectors

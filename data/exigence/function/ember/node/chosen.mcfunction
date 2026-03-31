@@ -11,7 +11,7 @@ execute if score EchoCake Modifiers matches 2.. run function exigence:cards/tast
 execute if score EchoCake Modifiers matches 3.. run function exigence:cards/tasty_surprise/try_spawn_cake
 
 # If player has not disabled echo win tracking, add 1 to node.data.echo.times_chosen
-execute unless entity @a[tag=ActivePlayer,scores={career.settings.echo_win_tracking=0}] run scoreboard players add @s node.data.echo.times_chosen 1
+execute unless entity @a[scores={career.settings.echo_win_tracking=0},tag=ActivePlayer] run scoreboard players add @s node.data.echo.times_chosen 1
 
 # Setblock above echonodes to light
 setblock ~ ~1 ~ light

@@ -28,6 +28,6 @@ function exigence:hub/profile_selector/menu/display/player_head/refresh_heads
 
 # Load page 1
 scoreboard players set #current_page Temp 1
-execute as @e[distance=..5,type=item_display,tag=PlayerHeadDisplay,tag=!Ignore] unless score @s hub.entity.player_head_page = #current_page Temp run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/hide_head
-execute as @e[distance=..5,type=item_display,tag=PlayerHeadDisplay,tag=Ignore] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/hide_head
+execute as @e[type=item_display,tag=PlayerHeadDisplay,tag=!Ignore,distance=..5] unless score @s hub.entity.player_head_page = #current_page Temp run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/hide_head
+execute as @e[type=item_display,tag=PlayerHeadDisplay,tag=Ignore,distance=..5] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/hide_head
 function exigence:hub/profile_selector/menu/display/coop_invitor/effects/load_page

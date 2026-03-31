@@ -4,7 +4,7 @@
 #   AS item shop display
 
 #====================================================================================================
-execute at @s as @p[distance=..16,tag=ProfileSelecting,tag=Interacting] unless function exigence:hub/profile_selector/menu/display/profile/calls/validate_click run return fail
+execute at @s as @p[tag=ProfileSelecting,tag=Interacting,distance=..16] unless function exigence:hub/profile_selector/menu/display/profile/calls/validate_click run return fail
 #====================================================================================================
 
 #say Right click profile

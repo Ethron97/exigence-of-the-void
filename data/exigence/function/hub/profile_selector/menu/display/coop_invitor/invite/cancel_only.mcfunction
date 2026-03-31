@@ -17,7 +17,7 @@ scoreboard players operation #compare profile.node.player_id = @s profile.node.p
 execute as @a if score @s career.player_id = #target player.node.invite_sent_to run tag @s add Inviteded
 execute as @a if score @s career.player_id = #compare profile.node.player_id run tag @s add CancelledBy
 
-execute at @s as @e[distance=..32,type=armor_stand,tag=PlayerNode] if score @s profile.node.player_id = #target player.node.invite_sent_to \
+execute at @s as @e[type=armor_stand,tag=PlayerNode,distance=..32] if score @s profile.node.player_id = #target player.node.invite_sent_to \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/try_cancel_invited
 
 # If the cancelled invite was the current outgoing invite:
@@ -56,7 +56,7 @@ execute if score #filled_slots Temp matches 0 unless score @s player.node.invite
 execute if score @s player.node.invite_sent_to = #target player.node.invite_sent_to run scoreboard players reset @s player.node.invite_sent_to
 
 # Shift menu depending on state
-execute at @a[tag=CancelledBy,limit=1] as @e[distance=..16,type=item_display,tag=PlayerHeadDisplay] if score @s IDID = #compare IDID \
+execute at @a[tag=CancelledBy,limit=1] as @e[type=item_display,tag=PlayerHeadDisplay,distance=..16] if score @s IDID = #compare IDID \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/update_menu_from_cancel_only with entity @s item.components."minecraft:custom_data"
 
 # Remove local tag(s)

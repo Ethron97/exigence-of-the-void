@@ -35,4 +35,4 @@ execute if score #random Random matches 0 run title @a[tag=ActivePlayer] title "
 scoreboard players remove exit.portal.countdown tick_counter 1
 
 # If tick counter reaches 0, kill all players still in the dungeon
-execute if score exit.portal.countdown tick_counter matches 0 as @a[tag=ActivePlayer,tag=!Won,scores={dead=0}] run function exigence:game/exit/exit_portal/portal_close
+execute if score exit.portal.countdown tick_counter matches 0 as @a[scores={dead=0},tag=ActivePlayer,tag=!Won] run function exigence:game/exit/exit_portal/portal_close

@@ -9,4 +9,4 @@
 tag @s add PortalDiscovered
 
 # Glow the display entities
-execute at @s as @e[distance=..5,type=block_display,tag=ExitPortalDisplay] run data modify entity @s Glowing set value true
+execute at @s as @e[type=block_display,tag=ExitPortalDisplay,distance=..5] run data modify entity @s Glowing set value true

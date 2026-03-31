@@ -2,7 +2,7 @@
 
 # Get random entity in Deck
 #   Spellbound = card that has been Spellbind'd but hasn't been played yet
-execute as @e[type=minecraft:armor_stand,tag=Card,scores={Deck=1..},tag=!Played,tag=!Spellbound,limit=1,sort=random] run tag @s add Drawing
+execute as @e[type=minecraft:armor_stand,scores={Deck=1..},tag=Card,tag=!Played,tag=!Spellbound,sort=random,limit=1] run tag @s add Drawing
 
 # If no cards left in deck, fatigue triggers
 execute unless entity @e[type=minecraft:armor_stand,tag=Drawing] run function exigence:deck/draw_card_fatigue

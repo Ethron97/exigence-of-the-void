@@ -7,4 +7,4 @@ execute if score #random Random matches 3 positioned -339.5 13.0 -190.5 run func
 execute if score #random Random matches 4 positioned -339.5 13.0 -190.5 run function exigence:cards/summon_card {card_name:"delve"}
 
 # Handle
-execute positioned -339.5 13.0 -190.5 as @e[distance=..1,type=item,tag=NCS] run function exigence:cards/forgotten_belonging/private/handle
+execute positioned -339.5 13.0 -190.5 as @e[type=item,tag=NCS,distance=..1] run function exigence:cards/forgotten_belonging/private/handle

@@ -21,5 +21,5 @@ execute at @s run playsound minecraft:entity.evoker.cast_spell ambient @a ~ ~100
 
 # If 50.. are now lit, puzzle complete
 #execute if score @a[tag=ActivePlayer,tag=PrimaryPlayer,limit=1] profile.story.puzzle_candles >= 50 number run advancement grant @a[tag=ActivePlayer,advancements={exigence:story/light_altars=false}] only exigence:story/light_altars
-execute if score @a[tag=ActivePlayer,tag=PrimaryPlayer,limit=1] profile.story.puzzle_candles >= 50 number as @a[tag=ActivePlayer,limit=1,sort=arbitrary] run function exigence:profile/profile_node/story/grant {story:'light_altars'}
+execute if score @a[tag=ActivePlayer,tag=PrimaryPlayer,limit=1] profile.story.puzzle_candles >= 50 number as @a[tag=ActivePlayer,sort=arbitrary,limit=1] run function exigence:profile/profile_node/story/grant {story:'light_altars'}
 execute if score @a[tag=ActivePlayer,tag=PrimaryPlayer,limit=1] profile.story.puzzle_candles >= 50 number run scoreboard players set #Petitioner game.dialogue 2

@@ -16,6 +16,6 @@ scoreboard players operation #baseHeartbeatDelay Tutorial -= Menace Tutorial
 scoreboard players operation #baseHeartbeatDelay Tutorial > #minHeartbeatDelay tick_counter
 execute store result score #heartbeatModulus Tutorial run scoreboard players get ticks Tutorial
 scoreboard players operation #heartbeatModulus Tutorial %= #baseHeartbeatDelay Tutorial
-execute at @a[distance=..1000,tag=Tutorial] if score #heartbeatModulus Tutorial matches 0 if score Menace Tutorial matches ..7 run playsound minecraft:heartbeat ambient @a ~ ~1000 ~ 1000 0.9
-execute at @a[distance=..1000,tag=Tutorial] if score #heartbeatModulus Tutorial matches 0 if score Menace Tutorial matches 8..14 run playsound minecraft:heartbeat ambient @a ~ ~1000 ~ 1000 1
-execute at @a[distance=..1000,tag=Tutorial] if score #heartbeatModulus Tutorial matches 0 if score Menace Tutorial matches 15.. run playsound minecraft:heartbeat ambient @a ~ ~1000 ~ 1000 1.1
+execute at @a[tag=Tutorial,distance=..1000] if score #heartbeatModulus Tutorial matches 0 if score Menace Tutorial matches ..7 run playsound minecraft:heartbeat ambient @a ~ ~1000 ~ 1000 0.9
+execute at @a[tag=Tutorial,distance=..1000] if score #heartbeatModulus Tutorial matches 0 if score Menace Tutorial matches 8..14 run playsound minecraft:heartbeat ambient @a ~ ~1000 ~ 1000 1
+execute at @a[tag=Tutorial,distance=..1000] if score #heartbeatModulus Tutorial matches 0 if score Menace Tutorial matches 15.. run playsound minecraft:heartbeat ambient @a ~ ~1000 ~ 1000 1.1

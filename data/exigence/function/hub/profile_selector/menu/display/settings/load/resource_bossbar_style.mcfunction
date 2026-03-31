@@ -13,7 +13,7 @@
 function exigence:hub/profile_selector/menu/display/settings/load/private/summon_setting_display
 
 # Get value player
-scoreboard players operation @n[distance=..0.1,type=item_display,tag=NewItemDisplay] Random = @p[distance=..16,tag=ProfileSelecting] career.settings.resource_bossbar_style
+scoreboard players operation @n[distance=..0.1,type=item_display,tag=NewItemDisplay] Random = @p[tag=ProfileSelecting,distance=..16] career.settings.resource_bossbar_style
 
 # Set cycle count
 tag @n[distance=..0.1,type=item_display,tag=NewItemDisplay] add Cycle

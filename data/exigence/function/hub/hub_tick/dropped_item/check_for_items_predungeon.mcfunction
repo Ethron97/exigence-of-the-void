@@ -5,4 +5,4 @@
 
 #====================================================================================================
 
-execute at @s as @e[type=item,distance=..5,tag=!SoulWarned] run function exigence:player/dropped_soulbound
+execute at @s as @e[type=item,tag=!SoulWarned,distance=..5] run function exigence:player/dropped_soulbound

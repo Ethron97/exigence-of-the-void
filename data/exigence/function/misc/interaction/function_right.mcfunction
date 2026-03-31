@@ -18,7 +18,7 @@ execute on target unless function exigence:misc/interaction/check_cooldown run r
 #----------------------------------------------------------------------------------------------------
 
 # Call macro using the IDID of the itemdisplay that the player is looking at
-execute at @s as @e[distance=..20,type=minecraft:item_display] if score @s IDID = #compare shop.player.looking_at_idid run function exigence:misc/interaction/call_function_right with entity @s item.components."minecraft:custom_data"
+execute at @s as @e[type=minecraft:item_display,distance=..20] if score @s IDID = #compare shop.player.looking_at_idid run function exigence:misc/interaction/call_function_right with entity @s item.components."minecraft:custom_data"
 
 # Remove local tags
 execute on target run tag @s remove Interacting

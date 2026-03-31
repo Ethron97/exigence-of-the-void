@@ -8,7 +8,7 @@ execute unless score coins.converting hub.coin_conversion matches 5.. run return
 #----------------------------------------------------------------------------------------------------
 
 # Select 5 coins to smash
-tag @e[type=minecraft:item,tag=ConvertMoneyCoinItem,limit=5,sort=random,tag=!Smashing] add NewSmashing
+tag @e[type=minecraft:item,tag=ConvertMoneyCoinItem,tag=!Smashing,sort=random,limit=5] add NewSmashing
 
 execute as @e[type=minecraft:item,tag=ConvertMoneyCoinItem,tag=NewSmashing] run function exigence:misc/update_coords
 

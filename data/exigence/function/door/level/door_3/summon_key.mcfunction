@@ -12,4 +12,4 @@ summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:trial_key",count:1,components:{
 scoreboard players operation #compare ObjectLevel = @s ObjectLevel
 
 # Generic function to handle the rest of the key stuffs
-execute as @e[distance=..1,type=item,tag=NewLevelKey] run function exigence:treasure/keys/summon_level_key
+execute as @e[type=item,tag=NewLevelKey,distance=..1] run function exigence:treasure/keys/summon_level_key

@@ -9,7 +9,7 @@
 #====================================================================================================
 
 # If not creative, clear X
-$clear @a[tag=ActivePlayer,gamemode=!creative,scores={shop.player.void_shopping_id=$(VoidShopID)}] diamond $(money_cost)
+$clear @a[scores={shop.player.void_shopping_id=$(VoidShopID)},tag=ActivePlayer,gamemode=!creative] diamond $(money_cost)
 
 # Call item summon
 $execute at @s run function exigence:menu/item_display/void_shop_display/items/summon_item {item_name:$(item_name)}

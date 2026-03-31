@@ -16,4 +16,4 @@ $execute at @s as @n[distance=..16,type=item_display,tag=SlotDisplay,scores={IDI
 run function exigence:hub/profile_selector/menu/display/profile/effects/summon_player_head_selectors
 
 # Shift confirm up
-execute at @s as @e[distance=..5,tag=ConfirmGroup] at @s run tp @s ~ ~0.65 ~
+execute at @s as @e[tag=ConfirmGroup,distance=..5] at @s run tp @s ~ ~0.65 ~

@@ -1,7 +1,7 @@
 say Consume half of the berries in your inventory. Gain +3 🍪 per berry consumed.
 
 # Convert crops
-execute as @a[tag=ActivePlayer,scores={dead=0}] run function exigence:cards/cash_crop/convert_crops
+execute as @a[scores={dead=0},tag=ActivePlayer] run function exigence:cards/cash_crop/convert_crops
 
 # Multiply by 3 to get treasure to add
 scoreboard players operation #cash Temp = #highest_berries Temp

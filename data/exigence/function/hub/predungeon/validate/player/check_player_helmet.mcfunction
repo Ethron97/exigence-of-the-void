@@ -26,7 +26,7 @@ tellraw @s [{text:"✖ You have too many helmets! (",color:"red"}\
 #execute at @s run playsound minecraft:block.sculk_sensor.clicking ui @s ~ ~10 ~ 2 1.5
 
 # Message other players
-tellraw @a[distance=..32,tag=Predungeon,tag=!LocalLocal] \
+tellraw @a[tag=Predungeon,tag=!LocalLocal,distance=..32] \
 [{text:"✖ ",color:red},{selector:"@p[tag=LocalLocal]",color:gold},{text:" has too many helmets in their inventory! ",color:"red"}]
 
 tag @s remove LocalLocal

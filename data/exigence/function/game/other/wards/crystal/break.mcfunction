@@ -22,7 +22,7 @@ scoreboard players operation #total game.story.wards += ward.Topaz game.story.wa
 scoreboard players operation #total game.story.wards += ward.Amethyst game.story.wards
 
 execute if score #total game.story.wards matches 0 run say ALL WARDS BROKEN
-execute if score #total game.story.wards matches 0 as @a[tag=ActivePlayer,limit=1,sort=arbitrary] run function exigence:profile/profile_node/story/grant {story:'destroy_crystals'}
+execute if score #total game.story.wards matches 0 as @a[tag=ActivePlayer,sort=arbitrary,limit=1] run function exigence:profile/profile_node/story/grant {story:'destroy_crystals'}
 #execute if score #total game.story.wards matches 0 run advancement grant @a[tag=ActivePlayer] only exigence:story/destroy_crystals
 
 # Remove this crystal

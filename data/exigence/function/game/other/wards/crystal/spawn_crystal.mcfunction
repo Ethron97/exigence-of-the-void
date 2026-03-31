@@ -6,8 +6,8 @@
 #====================================================================================================
 
 # Select random level 4 echo or menace node
-tag @e[type=armor_stand,tag=EchoNode,scores={ObjectLevel=4},tag=!ChosenEchoNode,tag=!ChosenCrystal] add CrystalCandidate
-tag @e[type=armor_stand,tag=MenaceNode,scores={ObjectLevel=4},tag=!Ravagered,tag=!ChosenCrystal] add CrystalCandidate
+tag @e[type=armor_stand,scores={ObjectLevel=4},tag=EchoNode,tag=!ChosenEchoNode,tag=!ChosenCrystal] add CrystalCandidate
+tag @e[type=armor_stand,scores={ObjectLevel=4},tag=MenaceNode,tag=!Ravagered,tag=!ChosenCrystal] add CrystalCandidate
 
 execute unless entity @e[tag=CrystalCandidate] run say No crystal candidate found
 execute unless entity @e[tag=CrystalCandidate] run return 1

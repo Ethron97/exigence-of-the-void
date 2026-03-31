@@ -9,19 +9,19 @@
 #say clicked profile
 
 # Clicked current profile without sneaking to show stats
-execute at @s if entity @s[tag=ProfileLoaded,tag=Selected] as @p[distance=..16,tag=ProfileSelecting,tag=Interacting,predicate=!exigence:player/sneaking] run function exigence:player/stats/profile_stats
+execute at @s if entity @s[tag=ProfileLoaded,tag=Selected] as @p[tag=ProfileSelecting,tag=Interacting,distance=..16,predicate=!exigence:player/sneaking] run function exigence:player/stats/profile_stats
 
 # If clicked non-selected profile, switch to
-execute at @s if entity @s[tag=ProfileLoaded,tag=!Selected] if entity @p[distance=..16,tag=ProfileSelecting,tag=Interacting,predicate=!exigence:player/sneaking] run function exigence:hub/profile_selector/menu/display/profile/switch_to with entity @s item.components."minecraft:custom_data"
+execute at @s if entity @s[tag=ProfileLoaded,tag=!Selected] if entity @p[tag=ProfileSelecting,tag=Interacting,distance=..16,predicate=!exigence:player/sneaking] run function exigence:hub/profile_selector/menu/display/profile/switch_to with entity @s item.components."minecraft:custom_data"
 
 # If clicked non-selected and sneaking, queue delete
 data modify storage exigence:profile slot_id set from entity @s item.components."minecraft:custom_data".slot_id
 data modify storage exigence:profile coop_profile_id set from entity @s item.components."minecraft:custom_data".coop_profile_id
-execute at @s if entity @s[tag=ProfileLoaded,tag=!Selected] as @p[distance=..16,tag=ProfileSelecting,tag=Interacting,predicate=exigence:player/sneaking] run function exigence:hub/profile_selector/menu/display/profile/input_delete with storage exigence:profile
-execute at @s if entity @s[tag=ProfileLoaded,tag=Selected] as @p[distance=..16,tag=ProfileSelecting,tag=Interacting,predicate=exigence:player/sneaking] run tellraw @s {text:"✖ Cannot delete an active profile.",color:"red"}
+execute at @s if entity @s[tag=ProfileLoaded,tag=!Selected] as @p[tag=ProfileSelecting,tag=Interacting,distance=..16,predicate=exigence:player/sneaking] run function exigence:hub/profile_selector/menu/display/profile/input_delete with storage exigence:profile
+execute at @s if entity @s[tag=ProfileLoaded,tag=Selected] as @p[tag=ProfileSelecting,tag=Interacting,distance=..16,predicate=exigence:player/sneaking] run tellraw @s {text:"✖ Cannot delete an active profile.",color:"red"}
 
 # If currently blank, create new profile
 execute if entity @s[tag=Blank,tag=!ProfileLoaded,tag=!Selected] run function exigence:hub/profile_selector/menu/display/profile/input_create_new with entity @s item.components."minecraft:custom_data"
 
 # Increase cooldown score for player
-scoreboard players add @p[distance=..16,tag=ProfileSelecting,tag=Interacting] hub.player.interaction_cooldown 20
+scoreboard players add @p[tag=ProfileSelecting,tag=Interacting,distance=..16] hub.player.interaction_cooldown 20

@@ -22,13 +22,13 @@ execute at @n[distance=..5,type=marker,tag=DoorSlotMarker0] positioned ~ ~ ~-0.0
 
 # Get profile size
 #   OUTPUTS: #profile_size Temp
-execute as @p[distance=..16,tag=Predungeon] run function exigence:player/get/profile_size
+execute as @p[tag=Predungeon,distance=..16] run function exigence:player/get/profile_size
 # Chooser X number of random slots to reveal a player sensor, where X is number of members on the profile
-execute if score #profile_size Temp matches 1 as @e[distance=..5,type=item_display,tag=DoorSlotFill,sort=random,limit=1,tag=!DoorSlotFill0,tag=!Open] \
+execute if score #profile_size Temp matches 1 as @e[type=item_display,tag=DoorSlotFill,tag=!DoorSlotFill0,tag=!Open,distance=..5,sort=random,limit=1] \
 run function exigence:hub/predungeon/menu/display/player_sensors/load_player_sensor
-execute if score #profile_size Temp matches 2 as @e[distance=..5,type=item_display,tag=DoorSlotFill,sort=random,limit=2,tag=!DoorSlotFill0,tag=!Open] \
+execute if score #profile_size Temp matches 2 as @e[type=item_display,tag=DoorSlotFill,tag=!DoorSlotFill0,tag=!Open,distance=..5,sort=random,limit=2] \
 run function exigence:hub/predungeon/menu/display/player_sensors/load_player_sensor
-execute if score #profile_size Temp matches 3 as @e[distance=..5,type=item_display,tag=DoorSlotFill,sort=random,limit=3,tag=!DoorSlotFill0,tag=!Open] \
+execute if score #profile_size Temp matches 3 as @e[type=item_display,tag=DoorSlotFill,tag=!DoorSlotFill0,tag=!Open,distance=..5,sort=random,limit=3] \
 run function exigence:hub/predungeon/menu/display/player_sensors/load_player_sensor
-execute if score #profile_size Temp matches 4 as @e[distance=..5,type=item_display,tag=DoorSlotFill,sort=random,limit=4,tag=!DoorSlotFill0,tag=!Open] \
+execute if score #profile_size Temp matches 4 as @e[type=item_display,tag=DoorSlotFill,tag=!DoorSlotFill0,tag=!Open,distance=..5,sort=random,limit=4] \
 run function exigence:hub/predungeon/menu/display/player_sensors/load_player_sensor

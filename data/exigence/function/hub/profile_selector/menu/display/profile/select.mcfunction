@@ -11,7 +11,7 @@
 say Select
 
 # Change player score
-$execute at @s run scoreboard players set @p[distance=..16,tag=ProfileSelecting,scores={hub.player.profile_selector_id=$(profile_selector_id)}] profile.player.profile_id $(profile_id)
+$execute at @s run scoreboard players set @p[scores={hub.player.profile_selector_id=$(profile_selector_id)},tag=ProfileSelecting,distance=..16] profile.player.profile_id $(profile_id)
 
 # Tag
 tag @s add Selected
@@ -40,7 +40,7 @@ team join Green
 $execute in exigence:profile_data positioned 8 128 8 as @n[distance=..140,type=marker,tag=ProfileNode,scores={profile.node.profile_id=$(profile_id)}] \
 run function exigence:profile/profile_node/load/try_chest_to_data
 
-execute at @s unless score #data_loaded Temp matches 1 run tellraw @p[distance=..20,tag=ProfileSelecting] [{text:"[CHESTS NOT LOADED] ",bold:true,color:"yellow"},{text:"Another player has already loaded the chests for this co-op profile.",color:"gray",italic:true,bold:false}]
+execute at @s unless score #data_loaded Temp matches 1 run tellraw @p[tag=ProfileSelecting,distance=..20] [{text:"[CHESTS NOT LOADED] ",bold:true,color:"yellow"},{text:"Another player has already loaded the chests for this co-op profile.",color:"gray",italic:true,bold:false}]
 
 # Fill chests (if data was loaded successfully)
 $execute if score #data_loaded Temp matches 1 at @s at @n[distance=..32,type=marker,tag=ProfileSelectorNode,scores={hub.profile_selector_id=$(profile_selector_id)}] \
@@ -58,7 +58,7 @@ at @s run function exigence:hub/profile_selector/load/load_deck_analyzer
 
 # Effects (particle sound)
 #   "Creating" tag added by create_new to prevent overlapping effects
-execute at @s[tag=!Creating] run playsound minecraft:block.ender_chest.open block @p[distance=..16,tag=ProfileSelecting] ~ ~ ~ 1.0 1.4
+execute at @s[tag=!Creating] run playsound minecraft:block.ender_chest.open block @p[tag=ProfileSelecting,distance=..16] ~ ~ ~ 1.0 1.4
 execute at @s[tag=!Creating] run particle end_rod ~ ~ ~0.1 0.3 0.3 0.0 0.01 5
 
 # Un/rehover for display entities (if currently hovering)

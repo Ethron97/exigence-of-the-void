@@ -6,11 +6,11 @@
 #====================================================================================================
 
 # Mirror Vision
-execute if score seconds.cooldown tick_counter matches 3 as @a[tag=ActivePlayer,scores={game.player.mod.mirror_vision=1..,dead=0}] run function exigence:player/modifiers/mirror_vision
+execute if score seconds.cooldown tick_counter matches 3 as @a[scores={game.player.mod.mirror_vision=1..,dead=0},tag=ActivePlayer] run function exigence:player/modifiers/mirror_vision
 function exigence:mirror/hidden_blocks/hidden_block_tick
 
 # Detect approaches
 function exigence:mirror/mirrors/detect_approaches
 
 # For each living player, update their Reflection
-execute as @a[tag=ActivePlayer,scores={dead=0}] run function exigence:mirror/reflection/player_handle
+execute as @a[scores={dead=0},tag=ActivePlayer] run function exigence:mirror/reflection/player_handle

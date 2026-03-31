@@ -8,5 +8,5 @@
 #say Remove invite displays
 
 # Remove display
-kill @e[distance=..16,type=minecraft:text_display,tag=PendingTitle]
-kill @e[distance=..16,type=minecraft:text_display,tag=PendingList]
+kill @e[type=minecraft:text_display,tag=PendingTitle,distance=..16]
+kill @e[type=minecraft:text_display,tag=PendingList,distance=..16]

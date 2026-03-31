@@ -20,4 +20,4 @@ $execute positioned -313.5 3.00 -96.5 run function exigence:cards/summon_card {c
 $execute as @e[type=minecraft:armor_stand,tag=NewCards] run function exigence:deck/process/private/load_card_b {card_name:'$(card_name)',display_name:'$(display_name)',rarity:$(rarity),void:$(void),recycler:$(recycler),spellbinder:$(spellbinder),instant:$(instant),persistent:$(persistent)}
 
 # Delete summoned card
-execute positioned -313.5 3.00 -96.5 run kill @e[distance=..1,type=minecraft:item,tag=NCS]
+execute positioned -313.5 3.00 -96.5 run kill @e[type=minecraft:item,tag=NCS,distance=..1]

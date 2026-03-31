@@ -30,4 +30,4 @@ execute if score #spellbinding Temp matches 1 run data modify storage exigence:c
 summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:stone",count:1},Tags:["CardSummon","NCS"]}
 
 # Apply data to the card
-$execute as @e[distance=..1,type=item,tag=NCS] run function exigence:cards/$(card_name)/summon with storage exigence:colors
+$execute as @e[type=item,tag=NCS,distance=..1] run function exigence:cards/$(card_name)/summon with storage exigence:colors

@@ -10,7 +10,7 @@
 
 # If no players have "CardEffecting" tag, give to all active players
 #   This lets us control it before hand if we want
-execute unless entity @a[tag=ActivePlayer,tag=CardEffecting] run tag @a[tag=ActivePlayer,scores={dead=0}] add CardEffecting
+execute unless entity @a[tag=ActivePlayer,tag=CardEffecting] run tag @a[scores={dead=0},tag=ActivePlayer] add CardEffecting
 
 # Setup scores
 scoreboard players set et.FromCard game.effect_temp 1
@@ -18,7 +18,7 @@ scoreboard players set et.FromPotion game.effect_temp 0
 scoreboard players set et.FromSpellsling game.effect_temp 0
 execute as @a[tag=ActivePlayer] run function exigence:player/effects/private/calc_heighten
 # If any heighten is getting used, reduce everyone's heighten level
-execute if entity @a[tag=ActivePlayer,tag=CardEffecting,scores={dead=0,game.player.heighten=1..}] run schedule function exigence:player/effects/heighten/decrease 1t replace
+execute if entity @a[scores={dead=0,game.player.heighten=1..},tag=ActivePlayer,tag=CardEffecting] run schedule function exigence:player/effects/heighten/decrease 1t replace
 
 # Store given duration in temp variable
 $scoreboard players set et.BaseTime game.effect_temp $(duration)

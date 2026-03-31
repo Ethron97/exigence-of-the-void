@@ -8,4 +8,4 @@
 
 #====================================================================================================
 
-$kill @e[distance=..20,scores={hub.entity.locker_room_id=$(locker_room_id)}]
+$kill @e[scores={hub.entity.locker_room_id=$(locker_room_id)},distance=..20]

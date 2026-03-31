@@ -8,13 +8,13 @@
 #say predungeon menu tick
 
 # Swap Hover/OldHover tags
-execute as @e[distance=..16,type=minecraft:item_display,tag=MenuDisplay,tag=Hover] run function exigence:menu/menu_tick_tag_swap
+execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=Hover,distance=..16] run function exigence:menu/menu_tick_tag_swap
 
 # Handle player functions
-execute as @a[distance=..16,tag=Predungeon] at @s run function exigence:hub/predungeon/menu/predungeon_player_tick
+execute as @a[tag=Predungeon,distance=..16] at @s run function exigence:hub/predungeon/menu/predungeon_player_tick
 
 # Hover logic
-execute as @e[distance=..16,type=minecraft:item_display,tag=MenuDisplay] run function exigence:hub/predungeon/menu/display_hover_logic
+execute as @e[type=minecraft:item_display,tag=MenuDisplay,distance=..16] run function exigence:hub/predungeon/menu/display_hover_logic
 
 # If the dungeon is in state 2, check player sensors
 execute if score #predungeon_state Temp matches 2 at @n[distance=..10,type=marker,tag=PredungeonMenuNode] \

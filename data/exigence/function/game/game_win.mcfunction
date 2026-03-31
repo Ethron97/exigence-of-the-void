@@ -5,10 +5,10 @@ say You won!
 title @a[tag=ActivePlayer] title {text:"Victory",color:"green"}
 
 # Give appropriate advancements
-execute if score Difficulty DungeonRun matches 1 as @a[tag=ActivePlayer,limit=1,sort=arbitrary] run function exigence:profile/profile_node/story/grant {story:'win_difficulty_1'}
-execute if score Difficulty DungeonRun matches 2 as @a[tag=ActivePlayer,limit=1,sort=arbitrary] run function exigence:profile/profile_node/story/grant {story:'win_difficulty_2'}
-execute if score Difficulty DungeonRun matches 3 as @a[tag=ActivePlayer,limit=1,sort=arbitrary] run function exigence:profile/profile_node/story/grant {story:'win_difficulty_3'}
-execute if score Difficulty DungeonRun matches 4 as @a[tag=ActivePlayer,limit=1,sort=arbitrary] run function exigence:profile/profile_node/story/grant {story:'win_difficulty_4'}
+execute if score Difficulty DungeonRun matches 1 as @a[tag=ActivePlayer,sort=arbitrary,limit=1] run function exigence:profile/profile_node/story/grant {story:'win_difficulty_1'}
+execute if score Difficulty DungeonRun matches 2 as @a[tag=ActivePlayer,sort=arbitrary,limit=1] run function exigence:profile/profile_node/story/grant {story:'win_difficulty_2'}
+execute if score Difficulty DungeonRun matches 3 as @a[tag=ActivePlayer,sort=arbitrary,limit=1] run function exigence:profile/profile_node/story/grant {story:'win_difficulty_3'}
+execute if score Difficulty DungeonRun matches 4 as @a[tag=ActivePlayer,sort=arbitrary,limit=1] run function exigence:profile/profile_node/story/grant {story:'win_difficulty_4'}
 
 # Track win scores
 execute if score Difficulty DungeonRun matches 1 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.wins_D1 1
@@ -46,7 +46,7 @@ execute as @e[type=minecraft:armor_stand,tag=ChosenEchoNode] run scoreboard play
 scoreboard players operation @a[tag=ActivePlayer] profile.data.winloss.highest_win > #Highest DungeonRun
 
 # Update the win score of the chosen Echo Nodes
-execute unless entity @a[tag=ActivePlayer,scores={career.settings.echo_win_tracking=0}] run scoreboard players add @e[type=minecraft:armor_stand,tag=ChosenEchoNode] node.data.echo.times_won 1
+execute unless entity @a[scores={career.settings.echo_win_tracking=0},tag=ActivePlayer] run scoreboard players add @e[type=minecraft:armor_stand,tag=ChosenEchoNode] node.data.echo.times_won 1
 
 # Save primary player id before resetting the game
 scoreboard players operation #compare profile.player.profile_id = @a[tag=ActivePlayer,tag=PrimaryPlayer,limit=1] profile.player.profile_id

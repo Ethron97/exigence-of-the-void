@@ -15,5 +15,5 @@ execute unless score @s profile.node.coop_profile_id matches 1.. run return run 
 scoreboard players operation #compare profile.node.coop_profile_id = @s profile.node.coop_profile_id
 
 scoreboard players set #profile_size Temp 0
-execute in exigence:profile_data positioned 8 128 8 as @e[distance=..140,type=marker,tag=ProfileNode] \
+execute in exigence:profile_data positioned 8 128 8 as @e[type=marker,tag=ProfileNode,distance=..140] \
 if score @s profile.node.coop_profile_id = #compare profile.node.coop_profile_id run scoreboard players add #profile_size Temp 1

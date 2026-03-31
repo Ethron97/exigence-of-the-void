@@ -9,7 +9,7 @@
 say clicked pre button
 
 # Increase cooldown score for player
-scoreboard players add @p[distance=..16,tag=Interacting] hub.player.interaction_cooldown 20
+scoreboard players add @p[tag=Interacting,distance=..16] hub.player.interaction_cooldown 20
 
 # VALIDATE
 #   OUTPUTS: #predungeon_validate_total Temp
@@ -43,5 +43,5 @@ execute positioned 0.5 209.0 104.5 run function exigence:hub/predungeon/load/sav
 # Store data
 scoreboard players set #remove_tag Temp 1
 #   INPUT: #chests_saved Temp
-execute in exigence:profile_data positioned 8 128 8 as @e[distance=..140,type=marker,tag=ProfileNode] \
+execute in exigence:profile_data positioned 8 128 8 as @e[type=marker,tag=ProfileNode,distance=..140] \
 if score @s profile.node.profile_id = #compare hub.entity.profile_id at @s run function exigence:profile/profile_node/save/try_data_to_chest

@@ -17,7 +17,7 @@ execute if score #random Random matches 1 run function exigence:menace/trigger/f
 scoreboard players operation @s game.node.menace.cooldown = #MenaceNodeCooldownLimit game.node.menace.cooldown
 
 # Update nearest player scores
-scoreboard players add @p[tag=ActivePlayer,scores={dead=0}] profile.data.menace.cr.menace_nodes 1
+scoreboard players add @p[scores={dead=0},tag=ActivePlayer] profile.data.menace.cr.menace_nodes 1
 
 # Update node scores
 scoreboard players add @s node.data.menace.times_triggered 1

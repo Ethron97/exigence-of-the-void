@@ -13,10 +13,10 @@
 
 
 # If warden has NO AI and there is a player on their level, un-ai
-execute if data entity @s {NoAI:true} if score @s ObjectLevel matches 1 if entity @a[tag=ActivePlayer,scores={dead=0,game.player.active_level=1}] run data modify entity @s NoAI set value false
-execute if data entity @s {NoAI:true} if score @s ObjectLevel matches 2 if entity @a[tag=ActivePlayer,scores={dead=0,game.player.active_level=2}] run data modify entity @s NoAI set value false
-execute if data entity @s {NoAI:true} if score @s ObjectLevel matches 3 if entity @a[tag=ActivePlayer,scores={dead=0,game.player.active_level=3}] run data modify entity @s NoAI set value false
-execute if data entity @s {NoAI:true} if score @s ObjectLevel matches 4 if entity @a[tag=ActivePlayer,scores={dead=0,game.player.active_level=4}] run data modify entity @s NoAI set value false
+execute if data entity @s {NoAI:true} if score @s ObjectLevel matches 1 if entity @a[scores={dead=0,game.player.active_level=1},tag=ActivePlayer] run data modify entity @s NoAI set value false
+execute if data entity @s {NoAI:true} if score @s ObjectLevel matches 2 if entity @a[scores={dead=0,game.player.active_level=2},tag=ActivePlayer] run data modify entity @s NoAI set value false
+execute if data entity @s {NoAI:true} if score @s ObjectLevel matches 3 if entity @a[scores={dead=0,game.player.active_level=3},tag=ActivePlayer] run data modify entity @s NoAI set value false
+execute if data entity @s {NoAI:true} if score @s ObjectLevel matches 4 if entity @a[scores={dead=0,game.player.active_level=4},tag=ActivePlayer] run data modify entity @s NoAI set value false
 
 # Return if no ai
 execute if data entity @s {NoAI:true} run return 1
@@ -46,9 +46,9 @@ scoreboard players remove @s[scores={game.warden.awareness=1..}] game.warden.awa
 #execute at @s[scores={game.warden.awareness=1..}] if entity @a[tag=ActivePlayer,distance=30..] run scoreboard players remove @s game.warden.awareness 1
 
 # Increment awareness based on how close player is (unless awareness is at max)
-execute as @s[tag=!Angry] if score @s game.warden.awareness < #max_awareness game.warden.awareness at @s if entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=0},distance=..24] run scoreboard players add @s game.warden.awareness 2
-execute as @s[tag=!Angry] if score @s game.warden.awareness < #max_awareness game.warden.awareness at @s if entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=0},distance=..12] run scoreboard players add @s game.warden.awareness 2
-execute as @s[tag=!Angry] if score @s game.warden.awareness < #max_awareness game.warden.awareness at @s if entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=0},distance=..5] run scoreboard players add @s game.warden.awareness 30
+execute as @s[tag=!Angry] if score @s game.warden.awareness < #max_awareness game.warden.awareness at @s if entity @a[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer,distance=..24] run scoreboard players add @s game.warden.awareness 2
+execute as @s[tag=!Angry] if score @s game.warden.awareness < #max_awareness game.warden.awareness at @s if entity @a[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer,distance=..12] run scoreboard players add @s game.warden.awareness 2
+execute as @s[tag=!Angry] if score @s game.warden.awareness < #max_awareness game.warden.awareness at @s if entity @a[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer,distance=..5] run scoreboard players add @s game.warden.awareness 30
 execute if data storage exigence:dungeon {max_menace:1} as @s if score @s game.warden.awareness < #max_awareness game.warden.awareness run scoreboard players add @s game.warden.awareness 20
 
 # If max menace, set awareness to max
@@ -64,7 +64,7 @@ execute if score @s Random matches 1 at @s run function exigence:enemy/warden/pr
 
 # Maintain aggro (or re-aggro if in coop)
 #execute as @s[tag=Angry] if score @s game.warden.anger matches ..100 if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run damage @s 0 generic by @p[tag=ActivePlayer,scores={dead=0,game.player.vault_code=0}]
-execute as @s[scores={game.warden.anger=..100},tag=Angry] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run function exigence:enemy/warden/private/set_target with entity @p[tag=ActivePlayer,scores={dead=0,game.player.vault_code=0},sort=nearest,limit=1]
+execute as @s[scores={game.warden.anger=..100},tag=Angry] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run function exigence:enemy/warden/private/set_target with entity @p[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer,sort=nearest,limit=1]
 
 # Update anger value
 #   If first time at threshold, give +X awareness so it doesn't insta-deaggro
@@ -74,8 +74,8 @@ execute as @s[tag=!Angry] if score @s game.warden.awareness >= #anger_threshold 
 # un-aggroed warden basically a 50/50 for when the ping happens. Because it goes from 0 to you're dead in 0.1 seconds
 #   Get target
 tag @a[tag=NewTarget] remove NewTarget
-execute as @s[tag=!Angry] if entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=0,game.player.sculk_step_cooldown=1..}] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run tag @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=0,game.player.sculk_step_cooldown=1..},sort=nearest,limit=1] add NewTarget
-execute as @s[tag=!Angry] unless entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=0,game.player.sculk_step_cooldown=1..}] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run tag @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=0},sort=nearest,limit=1] add NewTarget
+execute as @s[tag=!Angry] if entity @a[scores={dead=0,game.player.vault_code=0,game.player.sculk_step_cooldown=1..},tag=ActivePlayer] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run tag @a[scores={dead=0,game.player.vault_code=0,game.player.sculk_step_cooldown=1..},tag=ActivePlayer,sort=nearest,limit=1] add NewTarget
+execute as @s[tag=!Angry] unless entity @a[scores={dead=0,game.player.vault_code=0,game.player.sculk_step_cooldown=1..},tag=ActivePlayer] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run tag @a[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer,sort=nearest,limit=1] add NewTarget
 # Increment "wardens aggrod" score
 scoreboard players add @a[tag=NewTarget] profile.data.enemy.cr.wardens_angered 1
 
@@ -85,7 +85,7 @@ execute as @s[tag=!Angry] if score @s game.warden.awareness >= #anger_threshold 
 tag @a[tag=NewTarget] remove NewTarget
 
 # If any warden is aggro, break invis
-execute if score @s game.warden.awareness >= #anger_threshold game.warden.awareness as @a[tag=ActivePlayer,team=Enemy] run function exigence:player/effects/break_invisibility
+execute if score @s game.warden.awareness >= #anger_threshold game.warden.awareness as @a[team=Enemy,tag=ActivePlayer] run function exigence:player/effects/break_invisibility
 
 # If aware at all, unsilence
 execute as @s[scores={game.warden.awareness=1..},tag=Silenced] run function exigence:enemy/warden/unsilence

@@ -13,7 +13,7 @@ execute if score cards.count deck.analysis matches ..10 run tag @s add GoodCards
 # ATTEMPTED LEVEL:
 execute if score #attempts_d1 Temp matches 1.. run tag @s add GoodKnown
 # GOT PREVIOUS ACHIEVEMENT:
-execute if entity @p[distance=..16,tag=Predungeon,advancements={exigence:story/win_difficulty_0=true}] run tag @s add GoodUnlock
+execute if entity @p[tag=Predungeon,distance=..16,advancements={exigence:story/win_difficulty_0=true}] run tag @s add GoodUnlock
 
 # Update models
 execute at @s[tag=GoodUnlock,tag=GoodCards,tag=!GoodKnown] run function exigence:hub/predungeon/menu/display/level_chooser/load/general/model_unknown

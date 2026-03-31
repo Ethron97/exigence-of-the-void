@@ -8,4 +8,4 @@
 
 #====================================================================================================
 
-$kill @e[distance=..50,scores={hub.entity.profile_selector_id=$(profile_selector_id)}]
+$kill @e[scores={hub.entity.profile_selector_id=$(profile_selector_id)},distance=..50]

@@ -5,6 +5,6 @@
 
 #====================================================================================================
 
-kill @e[distance=..2,type=block_display,tag=TutorialMarkerGlow]
-kill @e[distance=..2,type=marker,tag=TutorialMarker]
-kill @e[distance=..2,type=text_display,tag=TutorialMarkerID]
+kill @e[type=block_display,tag=TutorialMarkerGlow,distance=..2]
+kill @e[type=marker,tag=TutorialMarker,distance=..2]
+kill @e[type=text_display,tag=TutorialMarkerID,distance=..2]

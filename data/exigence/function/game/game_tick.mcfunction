@@ -11,9 +11,9 @@ execute if data storage exigence:dungeon {max_menace:0} run scoreboard players a
 execute if data storage exigence:dungeon {max_menace:1} run scoreboard players add @a[tag=ActivePlayer] profile.data.gametime.cr.max_menace_ticks 1
 
 # Other tick/time stat updates
-execute if data storage exigence:dungeon {max_menace:0} as @a[tag=ActivePlayer,scores={dead=0}] run function exigence:player/stats/time/public/update_time_stats_alive
-execute if data storage exigence:dungeon {max_menace:1} as @a[tag=ActivePlayer,scores={dead=0}] run function exigence:player/stats/time/public/update_time_stats_alive_mm
-execute as @a[tag=ActivePlayer,scores={dead=1..}] run function exigence:player/stats/time/public/update_time_stats_dead
+execute if data storage exigence:dungeon {max_menace:0} as @a[scores={dead=0},tag=ActivePlayer] run function exigence:player/stats/time/public/update_time_stats_alive
+execute if data storage exigence:dungeon {max_menace:1} as @a[scores={dead=0},tag=ActivePlayer] run function exigence:player/stats/time/public/update_time_stats_alive_mm
+execute as @a[scores={dead=1..},tag=ActivePlayer] run function exigence:player/stats/time/public/update_time_stats_dead
 
 # Call tick functions (inactive at max menace)
 execute if data storage exigence:dungeon {max_menace:0} run function exigence:ember/ember_tick
@@ -47,7 +47,7 @@ execute if score Difficulty DungeonRun matches 0 run function exigence:game/game
 execute if score EchosRequired DungeonRun matches 2.. if score seconds.cooldown tick_counter matches 9 if data storage exigence:dungeon {all_echos_found:0} run function exigence:game/game_tick/detect_all_echos
 
 # Move any carried entities along with the player
-execute as @e[type=minecraft:villager,tag=Carried] at @s at @a[tag=ActivePlayer,sort=nearest,limit=1,tag=Carrying] run tp @s ~ ~2 ~
+execute as @e[type=minecraft:villager,tag=Carried] at @s at @a[tag=ActivePlayer,tag=Carrying,sort=nearest,limit=1] run tp @s ~ ~2 ~
 
 # Initialize glow score
 #scoreboard players add @e[type=minecraft:item] game.entity.glow_remaining 0
@@ -61,7 +61,7 @@ execute if score Difficulty DungeonRun matches 3.. run function exigence:menu/vo
 execute if score seconds.cooldown tick_counter matches 3 run function exigence:menu/item_display/void_shop_display/items/clock/update
 
 # Claustrophobia tick
-execute if score Claustrophobia Modifiers matches 1 if score seconds.cooldown tick_counter matches 6 as @a[tag=ActivePlayer,scores={dead=0}] run function exigence:cards/claustrophobia/update
+execute if score Claustrophobia Modifiers matches 1 if score seconds.cooldown tick_counter matches 6 as @a[scores={dead=0},tag=ActivePlayer] run function exigence:cards/claustrophobia/update
 
 # If exit portal is open, tick
 execute if data storage exigence:dungeon {escape_portal:1} if score exit.portal.countdown tick_counter matches 1.. run function exigence:game/exit/exit_portal/tick
@@ -70,9 +70,9 @@ execute if data storage exigence:dungeon {escape_portal:1} if score exit.portal.
 execute if score VoidCache DungeonRun matches 1.. if score seconds.cooldown tick_counter matches 10 run function exigence:cards/void_cache/update
 
 # Check which players are viewing objective bossbar (by holding compass)
-execute as @a[tag=ActivePlayer,scores={dead=0}] run function exigence:player/display/objective/update
+execute as @a[scores={dead=0},tag=ActivePlayer] run function exigence:player/display/objective/update
 # Update objective bossbar if at least one player is viewing
-execute if entity @a[tag=ActivePlayer,scores={dead=0},tag=DisplayObjective] run function exigence:bossbar/objective/update_title
+execute if entity @a[scores={dead=0},tag=ActivePlayer,tag=DisplayObjective] run function exigence:bossbar/objective/update_title
 
 # TESTING
 #execute as @e[type=minecraft:item] run data modify entity @s Glowing set value 1

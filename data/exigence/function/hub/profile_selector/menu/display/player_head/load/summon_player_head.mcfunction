@@ -20,7 +20,7 @@ team join Special @n[distance=..1,type=item_display,tag=NewItemDisplay]
 
 # Item data
 scoreboard players operation #compare career.player_id = @s career.player_id
-execute in exigence:profile_data positioned 8 0 8 as @e[distance=..32,type=armor_stand,tag=PlayerNode] if score @s profile.node.player_id = #compare career.player_id \
+execute in exigence:profile_data positioned 8 0 8 as @e[type=armor_stand,tag=PlayerNode,distance=..32] if score @s profile.node.player_id = #compare career.player_id \
 run data modify storage exigence:temp profile set from entity @s equipment.head.components."minecraft:profile"
 data modify entity @n[distance=..1,type=item_display,tag=NewItemDisplay] item.components."minecraft:profile" set from storage exigence:temp profile
 

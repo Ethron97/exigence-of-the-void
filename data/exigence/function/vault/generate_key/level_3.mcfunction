@@ -3,11 +3,11 @@
 #say Generate vault key (level 3)
 
 # Pick treasure node to drop key on
-execute as @e[type=minecraft:armor_stand,tag=TreasureNode,scores={ObjectLevel=3},tag=!KeyBlacklist,limit=1,sort=random] run tag @s add VaultKeyDropper
+execute as @e[type=minecraft:armor_stand,scores={ObjectLevel=3},tag=TreasureNode,tag=!KeyBlacklist,sort=random,limit=1] run tag @s add VaultKeyDropper
 
 # Pick which vault to drop a key for
 #   Nodes are disqualified if the vault has been opened, or the key has been picked up already
-execute as @e[type=minecraft:armor_stand,tag=VaultNode,scores={ObjectLevel=3},tag=!PickedUp,tag=!Opened,sort=random,limit=1] run tag @s add SelectedVaultNode
+execute as @e[type=minecraft:armor_stand,scores={ObjectLevel=3},tag=VaultNode,tag=!PickedUp,tag=!Opened,sort=random,limit=1] run tag @s add SelectedVaultNode
 
 ## LEVEL 3
 execute if entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode,tag=Vault_bolt] run data modify storage exigence:treasure_drop vault_name set value bolt

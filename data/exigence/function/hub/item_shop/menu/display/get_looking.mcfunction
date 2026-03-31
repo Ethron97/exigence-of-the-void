@@ -9,11 +9,11 @@
 tag @s add IAmLooking
 
 # Reset tag
-tag @e[distance=..8,type=minecraft:item_display,tag=HoverCandidate] remove HoverCandidate
+tag @e[type=minecraft:item_display,tag=HoverCandidate,distance=..8] remove HoverCandidate
 
 # Check
-execute as @e[distance=4..8,type=minecraft:item_display,tag=MenuDisplay] at @s anchored eyes facing entity @p[distance=..16,tag=IAmLooking] eyes anchored feet positioned ^ ^ ^1 rotated as @p[distance=..16,tag=IAmLooking] positioned ^ ^ ^1 if entity @s[distance=..0.05] run tag @s add HoverCandidate
-execute as @e[distance=..4,type=minecraft:item_display,tag=MenuDisplay] at @s anchored eyes facing entity @p[distance=..16,tag=IAmLooking] eyes anchored feet positioned ^ ^ ^1 rotated as @p[distance=..16,tag=IAmLooking] positioned ^ ^ ^1 if entity @s[distance=..0.08] run tag @s add HoverCandidate
+execute as @e[type=minecraft:item_display,tag=MenuDisplay,distance=4..8] at @s anchored eyes facing entity @p[tag=IAmLooking,distance=..16] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=IAmLooking,distance=..16] positioned ^ ^ ^1 if entity @s[distance=..0.05] run tag @s add HoverCandidate
+execute as @e[type=minecraft:item_display,tag=MenuDisplay,distance=..4] at @s anchored eyes facing entity @p[tag=IAmLooking,distance=..16] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=IAmLooking,distance=..16] positioned ^ ^ ^1 if entity @s[distance=..0.08] run tag @s add HoverCandidate
 
 # Get closest of HoverCandidates
 execute as @n[distance=..8,type=minecraft:item_display,tag=HoverCandidate] run tag @s add Hover

@@ -25,7 +25,7 @@ tellraw @s [{text:"✖ You cannot bring ",color:red},{text:"Cards",color:white},
 #execute at @s run playsound minecraft:block.sculk_sensor.clicking ui @s ~ ~10 ~ 2 1.4
 
 # Message other players
-tellraw @a[distance=..32,tag=Predungeon,tag=!LocalLocal] \
+tellraw @a[tag=Predungeon,tag=!LocalLocal,distance=..32] \
 [{text:"✖ ",color:red},{selector:"@p[tag=LocalLocal]",color:gold},{text:" has at least 1 ",color:red},{text:"Card",color:white},{text:" in their inventory!",color:"red"}]
 
 tag @s remove LocalLocal

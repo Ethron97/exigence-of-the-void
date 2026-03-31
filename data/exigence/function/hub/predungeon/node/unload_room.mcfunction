@@ -22,14 +22,14 @@ function exigence:hub/predungeon/load/save_chests
 # Store data
 scoreboard players set #remove_tag Temp 1
 #   INPUT: #chests_saved Temp
-execute in exigence:profile_data positioned 8 128 8 as @e[distance=..140,type=marker,tag=ProfileNode] \
+execute in exigence:profile_data positioned 8 128 8 as @e[type=marker,tag=ProfileNode,distance=..140] \
 if score @s profile.node.profile_id = #compare hub.entity.profile_id at @s run function exigence:profile/profile_node/save/try_data_to_chest
 
 #====================================================================================================
 
 # Remove deck analyzer
-kill @e[distance=..10,type=#exigence:display,tag=PredungeonAnalyzerDisplay]
-kill @e[distance=..10,type=marker,tag=PredungeonAnalyzerDisplay]
+kill @e[type=#exigence:display,tag=PredungeonAnalyzerDisplay,distance=..10]
+kill @e[type=marker,tag=PredungeonAnalyzerDisplay,distance=..10]
 
 # Remove interactions
 function exigence:hub/predungeon/node/kill_all_interactions
@@ -37,12 +37,12 @@ function exigence:hub/predungeon/node/kill_all_interactions
 # Unload predungeon menu
 execute positioned ~ ~ ~5 run kill @n[distance=..5,type=marker,tag=PredungeonMenuNode]
 
-execute positioned ~ ~ ~5 run kill @e[distance=..5,type=#exigence:display,tag=PredungeonDisplay]
-execute positioned ~ ~ ~5 run kill @e[distance=..5,type=marker,tag=PredungeonDisplay]
+execute positioned ~ ~ ~5 run kill @e[type=#exigence:display,tag=PredungeonDisplay,distance=..5]
+execute positioned ~ ~ ~5 run kill @e[type=marker,tag=PredungeonDisplay,distance=..5]
 
 # Remove all items off the ground (so other people can't pick them up when entering)
 # TODO
 #   Or, teleport all items to the player that left? But then what do we do on room kick?
 
 # Clean up the warp stuff
-kill @e[distance=..150,type=block_display,tag=schem_display]
+kill @e[type=block_display,tag=schem_display,distance=..150]

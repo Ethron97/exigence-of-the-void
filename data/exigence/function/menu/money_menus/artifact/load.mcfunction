@@ -50,6 +50,6 @@ $execute positioned ^1 ^5 ^ run function exigence:menu/money_menus/artifact/arti
 $execute positioned ^1.66 ^5 ^ run function exigence:menu/money_menus/artifact/artifact_item_display {menu_tag:'MenuArtifact',item_name:'gathering_storm',vault:'flow',rarity:4,tier:8,money_cost:40,research_cost:9999,parents:[],Rotation:'$(Rotation)',unlock:'crucible'}
 
 # Give artifact displays tag
-tag @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays] add Artifact
-tag @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays,scores={shop.frame.rarity=3}] add Trial
-tag @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays,scores={shop.frame.rarity=4}] add Crucible
+tag @e[type=minecraft:item_display,tag=NewItemDisplays,distance=..16] add Artifact
+tag @e[type=minecraft:item_display,scores={shop.frame.rarity=3},tag=NewItemDisplays,distance=..16] add Trial
+tag @e[type=minecraft:item_display,scores={shop.frame.rarity=4},tag=NewItemDisplays,distance=..16] add Crucible

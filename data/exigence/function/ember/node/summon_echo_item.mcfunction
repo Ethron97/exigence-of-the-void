@@ -10,4 +10,4 @@ execute at @s run summon minecraft:item ~ ~1 ~ {Item:{id:"minecraft:music_disc_r
 scoreboard players operation #compare ObjectLevel = @s ObjectLevel
 
 # Add data
-execute at @s as @e[distance=..1,type=item,tag=NewEcho] run function exigence:ember/node/summon_echo_item_data
+execute at @s as @e[type=item,tag=NewEcho,distance=..1] run function exigence:ember/node/summon_echo_item_data

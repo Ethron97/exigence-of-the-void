@@ -11,10 +11,10 @@
 tag @e[type=item,tag=ClosestVaultKey] remove ClosestVaultKey
 
 # Tag closest Vault Key on same level
-execute at @s[scores={game.player.active_level=1}] run tag @e[type=minecraft:item,tag=VaultKey,scores={ObjectLevel=1},sort=nearest,limit=1] add ClosestVaultKey
-execute at @s[scores={game.player.active_level=2}] run tag @e[type=minecraft:item,tag=VaultKey,scores={ObjectLevel=2},sort=nearest,limit=1] add ClosestVaultKey
-execute at @s[scores={game.player.active_level=3}] run tag @e[type=minecraft:item,tag=VaultKey,scores={ObjectLevel=3},sort=nearest,limit=1] add ClosestVaultKey
-execute at @s[scores={game.player.active_level=4}] run tag @e[type=minecraft:item,tag=VaultKey,scores={ObjectLevel=4},sort=nearest,limit=1] add ClosestVaultKey
+execute at @s[scores={game.player.active_level=1}] run tag @e[type=minecraft:item,scores={ObjectLevel=1},tag=VaultKey,sort=nearest,limit=1] add ClosestVaultKey
+execute at @s[scores={game.player.active_level=2}] run tag @e[type=minecraft:item,scores={ObjectLevel=2},tag=VaultKey,sort=nearest,limit=1] add ClosestVaultKey
+execute at @s[scores={game.player.active_level=3}] run tag @e[type=minecraft:item,scores={ObjectLevel=3},tag=VaultKey,sort=nearest,limit=1] add ClosestVaultKey
+execute at @s[scores={game.player.active_level=4}] run tag @e[type=minecraft:item,scores={ObjectLevel=4},tag=VaultKey,sort=nearest,limit=1] add ClosestVaultKey
 
 # If no Vault Key shard on same level, return
 #execute unless entity @e[type=item,tag=ClosestVaultKey] run say No Vault Key on same level found
@@ -25,12 +25,12 @@ scoreboard players operation #old_distance game.player.sound_ping.vault_key_dist
 
 # Determine distance bracket
 scoreboard players set @s game.player.sound_ping.vault_key_distance 10
-execute at @e[distance=..16,type=item,tag=ClosestVaultKey] run scoreboard players set @s game.player.sound_ping.vault_key_distance -1
-execute at @e[distance=16..32,type=item,tag=ClosestVaultKey] if score @s game.player.effects.detection matches 1.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 0
-execute at @e[distance=32..48,type=item,tag=ClosestVaultKey] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 1.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 1
-execute at @e[distance=48..64,type=item,tag=ClosestVaultKey] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 2.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 2
-execute at @e[distance=64..80,type=item,tag=ClosestVaultKey] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 3.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 3
-execute at @e[distance=80..96,type=item,tag=ClosestVaultKey] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 4.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 4
+execute at @e[type=item,tag=ClosestVaultKey,distance=..16] run scoreboard players set @s game.player.sound_ping.vault_key_distance -1
+execute at @e[type=item,tag=ClosestVaultKey,distance=16..32] if score @s game.player.effects.detection matches 1.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 0
+execute at @e[type=item,tag=ClosestVaultKey,distance=32..48] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 1.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 1
+execute at @e[type=item,tag=ClosestVaultKey,distance=48..64] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 2.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 2
+execute at @e[type=item,tag=ClosestVaultKey,distance=64..80] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 3.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 3
+execute at @e[type=item,tag=ClosestVaultKey,distance=80..96] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 4.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 4
 
 # PING SOUND IF:
 #   1. Player got closer since last ping OR
@@ -50,12 +50,12 @@ execute if score @s game.player.sound_ping.vault_key_distance matches 10 run ret
 # Stop old ping (if exists) so we don't overlap when they are running forward
 stopsound @s neutral minecraft:block.beacon.ambient
 # Determine bracket
-execute at @e[distance=..16,type=item,tag=ClosestVaultKey] run function exigence:player/effects/detection/vault_key/-1
-execute at @e[distance=16..32,type=item,tag=ClosestVaultKey] if score @s game.player.effects.detection matches 1.. run function exigence:player/effects/detection/vault_key/0
-execute at @e[distance=32..48,type=item,tag=ClosestVaultKey] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 1.. run function exigence:player/effects/detection/vault_key/1
-execute at @e[distance=48..64,type=item,tag=ClosestVaultKey] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 2.. run function exigence:player/effects/detection/vault_key/2
-execute at @e[distance=64..80,type=item,tag=ClosestVaultKey] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 3.. run function exigence:player/effects/detection/vault_key/3
-execute at @e[distance=80..96,type=item,tag=ClosestVaultKey] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 4.. run function exigence:player/effects/detection/vault_key/4
+execute at @e[type=item,tag=ClosestVaultKey,distance=..16] run function exigence:player/effects/detection/vault_key/-1
+execute at @e[type=item,tag=ClosestVaultKey,distance=16..32] if score @s game.player.effects.detection matches 1.. run function exigence:player/effects/detection/vault_key/0
+execute at @e[type=item,tag=ClosestVaultKey,distance=32..48] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 1.. run function exigence:player/effects/detection/vault_key/1
+execute at @e[type=item,tag=ClosestVaultKey,distance=48..64] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 2.. run function exigence:player/effects/detection/vault_key/2
+execute at @e[type=item,tag=ClosestVaultKey,distance=64..80] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 3.. run function exigence:player/effects/detection/vault_key/3
+execute at @e[type=item,tag=ClosestVaultKey,distance=80..96] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 4.. run function exigence:player/effects/detection/vault_key/4
 
 # Call vibration
 tag @s add GetDistance

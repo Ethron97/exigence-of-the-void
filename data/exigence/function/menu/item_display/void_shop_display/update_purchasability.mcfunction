@@ -16,8 +16,8 @@ tag @s add UpdatingPurchasability
 
 ## ASSIGN TAGS
 # Has enough money amount or is in creative
-$execute if entity @a[distance=..10,tag=ActivePlayer,scores={shop.player.money_to_spend=$(money_cost)..,shop.player.void_shopping_id=$(VoidShopID)},gamemode=!creative] run tag @s add CanAfford
-$execute if entity @a[distance=..10,tag=ActivePlayer,gamemode=creative,scores={shop.player.void_shopping_id=$(VoidShopID)}] run tag @s add CanAfford
+$execute if entity @a[scores={shop.player.money_to_spend=$(money_cost)..,shop.player.void_shopping_id=$(VoidShopID)},tag=ActivePlayer,distance=..10,gamemode=!creative] run tag @s add CanAfford
+$execute if entity @a[scores={shop.player.void_shopping_id=$(VoidShopID)},tag=ActivePlayer,distance=..10,gamemode=creative] run tag @s add CanAfford
 
 
 ## GLOW COLOR

@@ -18,7 +18,7 @@ execute if score #online Temp matches 1 run return 0
 #----------------------------------------------------------------------------------------------------
 
 # If player not found, queue function on player node
-execute in exigence:profile_data positioned 8 0 3 as @e[distance=..20,type=armor_stand,tag=PlayerNode] if score @s profile.node.player_id = #compare career.player_id \
+execute in exigence:profile_data positioned 8 0 3 as @e[type=armor_stand,tag=PlayerNode,distance=..20] if score @s profile.node.player_id = #compare career.player_id \
 run scoreboard players add @s player.node.queue.profile_scores 1
-execute in exigence:profile_data positioned 8 0 3 as @e[distance=..20,type=armor_stand,tag=PlayerNode] if score @s profile.node.player_id = #compare career.player_id \
+execute in exigence:profile_data positioned 8 0 3 as @e[type=armor_stand,tag=PlayerNode,distance=..20] if score @s profile.node.player_id = #compare career.player_id \
 run scoreboard players add @s player.node.queue 1

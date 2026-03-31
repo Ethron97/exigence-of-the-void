@@ -5,7 +5,7 @@
 #====================================================================================================
 
 # Say locked
-tellraw @p[distance=..16,tag=ProfileSelecting,tag=Interacting] {text:"✖ You must beat the game at least once to unlock this difficulty.",color:"red"}
+tellraw @p[tag=ProfileSelecting,tag=Interacting,distance=..16] {text:"✖ You must beat the game at least once to unlock this difficulty.",color:"red"}
 
 # Sound
-execute at @s run playsound block.fire.extinguish ui @p[distance=..16,tag=ProfileSelecting,tag=Interacting] ~ ~ ~
+execute at @s run playsound block.fire.extinguish ui @p[tag=ProfileSelecting,tag=Interacting,distance=..16] ~ ~ ~

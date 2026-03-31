@@ -16,7 +16,7 @@ execute at @s run tag @e[type=minecraft:armor_stand,tag=MenaceNode,tag=OnActiveL
 execute at @s run tag @e[type=minecraft:armor_stand,tag=EchoNode,tag=OnActiveLevel,sort=nearest,limit=8] add ChorusCandidate
 
 # Eliminate anything with a nearby enemy (nonplayer)
-execute as @e[type=minecraft:armor_stand,tag=ChorusCandidate] at @s if entity @e[distance=..10,team=Enemy,type=!player] run tag @s remove ChorusCandidate
+execute as @e[type=minecraft:armor_stand,tag=ChorusCandidate] at @s if entity @e[type=!player,team=Enemy,distance=..10] run tag @s remove ChorusCandidate
 
 # Eliminate the closest X (so you don't teleport right next to where you are)
 #   Increase to affect minimum teleportation distance
@@ -26,7 +26,7 @@ execute at @s run tag @e[type=minecraft:armor_stand,tag=ChorusCandidate,sort=nea
 execute at @s unless entity @e[type=minecraft:armor_stand,tag=ChorusCandidate] at @e[type=minecraft:armor_stand,tag=MenaceNode,sort=nearest,limit=1] run tp @s ~ ~ ~
 
 # Tp to a random one
-execute at @e[type=minecraft:armor_stand,tag=ChorusCandidate,limit=1,sort=random] run tp @s ~ ~ ~
+execute at @e[type=minecraft:armor_stand,tag=ChorusCandidate,sort=random,limit=1] run tp @s ~ ~ ~
 
 # Playsound
 execute at @s run playsound minecraft:entity.enderman.teleport

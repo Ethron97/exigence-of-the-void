@@ -12,7 +12,7 @@
 loot spawn ~ ~0.5 ~ loot exigence:ember/ember_echo_big
 
 # Execute common functions
-execute as @e[distance=..4,type=item,nbt={Item:{components:{"minecraft:custom_data":{just_spawned:'true'}}}}] run function exigence:ember/echo_embers/ember_data
+execute as @e[type=item,distance=..4,nbt={Item:{components:{"minecraft:custom_data":{just_spawned:'true'}}}}] run function exigence:ember/echo_embers/ember_data
 
 # Early return if Tutorial
 execute if score @s ObjectLevel matches 10 run return 1

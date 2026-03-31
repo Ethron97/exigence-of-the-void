@@ -7,7 +7,7 @@
 
 # Find armorstand to use as portal
 #   1 random non-active echo node on level 2 that isn't already a portal
-tag @e[type=armor_stand,tag=EchoNode,tag=!ChosenEchoNode,tag=!HasPortal,sort=random,limit=1,scores={ObjectLevel=2}] add NewHasPortal
+tag @e[type=armor_stand,scores={ObjectLevel=2},tag=EchoNode,tag=!ChosenEchoNode,tag=!HasPortal,sort=random,limit=1] add NewHasPortal
 
 # Teleport exit to selected node
 execute at @e[type=armor_stand,tag=NewHasPortal] run tp @s ~ ~ ~

@@ -234,10 +234,10 @@ execute as @e[type=minecraft:armor_stand,tag=Card,tag=Instant] run function exig
 
 # Add ReturnCard to all non-void cards
 #   Only cards added to the deck at the very start will ever get returned, so we can load new cards freely during the run without worrying about it.
-tag @e[type=minecraft:armor_stand,tag=Card,scores={deck.card.is_void=0}] add ReturnCard
+tag @e[type=minecraft:armor_stand,scores={deck.card.is_void=0},tag=Card] add ReturnCard
 
 # If void debug on, return void cards
-execute if data storage exigence:debug {void:1} run tag @e[type=minecraft:armor_stand,tag=Card,scores={deck.card.is_void=1}] add ReturnCard
+execute if data storage exigence:debug {void:1} run tag @e[type=minecraft:armor_stand,scores={deck.card.is_void=1},tag=Card] add ReturnCard
 
 
 ## OBLIVION

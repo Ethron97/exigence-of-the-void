@@ -13,10 +13,10 @@
 $summon minecraft:marker ~ ~ ~ {Invisible:0b,Tags:["MenuAnchor"],NoGravity:1b,Rotation:$(Rotation)}
 
 # Execute sub function at anchor
-$execute at @e[distance=..1,type=minecraft:marker,tag=MenuAnchor] run function exigence:menu/$(menu_path) {Rotation:'$(Rotation)'}
+$execute at @e[type=minecraft:marker,tag=MenuAnchor,distance=..1] run function exigence:menu/$(menu_path) {Rotation:'$(Rotation)'}
 
 # Remove tags
-tag @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays] remove NewItemDisplays
+tag @e[type=minecraft:item_display,tag=NewItemDisplays,distance=..16] remove NewItemDisplays
 
 # Kill menu anchor
-kill @e[distance=..1,type=minecraft:marker,tag=MenuAnchor]
+kill @e[type=minecraft:marker,tag=MenuAnchor,distance=..1]

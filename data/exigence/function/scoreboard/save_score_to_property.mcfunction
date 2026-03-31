@@ -3,4 +3,4 @@
 #====================================================================================================
 
 # Altar vault codes
-execute as @e[tag=AltarNode,scores={node.property.altar.vault_code=1..}] store result entity @s data.custom_data.vault_code int 1 run scoreboard players get @s node.property.altar.vault_code
+execute as @e[scores={node.property.altar.vault_code=1..},tag=AltarNode] store result entity @s data.custom_data.vault_code int 1 run scoreboard players get @s node.property.altar.vault_code

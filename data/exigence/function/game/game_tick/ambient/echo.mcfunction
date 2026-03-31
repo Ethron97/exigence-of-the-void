@@ -10,8 +10,8 @@
 execute at @e[type=minecraft:item,tag=EchoShard] if score seconds.cooldown tick_counter matches 5 run particle minecraft:end_rod ~ ~0.5 ~ 0.5 0.3 0.5 0 2
 
 # Ambient tinkle around the Echo Shard
-scoreboard players remove @a[tag=ActivePlayer,scores={dead=0,game.player.sound_ping.echo_cooldown=1..}] game.player.sound_ping.echo_cooldown 1
+scoreboard players remove @a[scores={dead=0,game.player.sound_ping.echo_cooldown=1..},tag=ActivePlayer] game.player.sound_ping.echo_cooldown 1
 
-execute as @a[tag=ActivePlayer,scores={dead=0,game.player.sound_ping.echo_cooldown=0}] at @s run function exigence:player/effects/detection/echo/ping_echo
+execute as @a[scores={dead=0,game.player.sound_ping.echo_cooldown=0},tag=ActivePlayer] at @s run function exigence:player/effects/detection/echo/ping_echo
 # Call every second also, to catch cases where player is moving towards echo but the sound delay is too long
-execute if score seconds.cooldown tick_counter matches 11 as @a[tag=ActivePlayer,scores={dead=0,game.player.sound_ping.echo_cooldown=1..}] at @s run function exigence:player/effects/detection/echo/ping_echo
+execute if score seconds.cooldown tick_counter matches 11 as @a[scores={dead=0,game.player.sound_ping.echo_cooldown=1..},tag=ActivePlayer] at @s run function exigence:player/effects/detection/echo/ping_echo

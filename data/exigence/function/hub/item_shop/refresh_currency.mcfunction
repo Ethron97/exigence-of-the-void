@@ -11,4 +11,4 @@ scoreboard players set #Total shop.player.money_to_spend 0
 scoreboard players set #Total shop.player.research_to_spend 0
 
 #   OUTPUTS: #Total ^
-execute positioned -43.5 200.0 0.5 as @a[distance=..24,tag=ItemShop] run function exigence:hub/item_shop/private/refresh_currency_player
+execute positioned -43.5 200.0 0.5 as @a[tag=ItemShop,distance=..24] run function exigence:hub/item_shop/private/refresh_currency_player

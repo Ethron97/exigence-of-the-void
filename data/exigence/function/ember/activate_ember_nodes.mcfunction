@@ -10,4 +10,4 @@ execute if score Difficulty DungeonRun matches 0 as @e[type=minecraft:armor_stan
 # Activate if lower or equal to difficulty
 execute if score Difficulty DungeonRun matches 1.. as @e[type=minecraft:armor_stand,tag=EmberNode] if score @s ObjectLevel <= Difficulty DungeonRun run scoreboard players set @s Random 1
 
-execute as @e[type=minecraft:armor_stand,tag=EmberNode,scores={Random=1}] run tag @s add Active
+execute as @e[type=minecraft:armor_stand,scores={Random=1},tag=EmberNode] run tag @s add Active

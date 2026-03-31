@@ -38,6 +38,6 @@ team leave @a[team=EmberView]
 tag @a[tag=EmberViewing] remove EmberViewing
 
 # Give appropriate advancement if rescued NPC
-execute if entity @s[tag=Carrying] if score #Supplier game.dialogue matches 5.. as @a[tag=ActivePlayer,limit=1,sort=arbitrary] run function exigence:profile/profile_node/story/grant {story:'rescue_supplier'}
-execute if entity @s[tag=Carrying] if score #Scientist game.dialogue matches 8.. as @a[tag=ActivePlayer,limit=1,sort=arbitrary] run function exigence:profile/profile_node/story/grant {story:'rescue_scientist'}
-execute if entity @s[tag=Carrying] if score #Petitioner game.dialogue matches 7.. as @a[tag=ActivePlayer,limit=1,sort=arbitrary] run function exigence:profile/profile_node/story/grant {story:'rescue_petitioner'}
+execute if entity @s[tag=Carrying] if score #Supplier game.dialogue matches 5.. as @a[tag=ActivePlayer,sort=arbitrary,limit=1] run function exigence:profile/profile_node/story/grant {story:'rescue_supplier'}
+execute if entity @s[tag=Carrying] if score #Scientist game.dialogue matches 8.. as @a[tag=ActivePlayer,sort=arbitrary,limit=1] run function exigence:profile/profile_node/story/grant {story:'rescue_scientist'}
+execute if entity @s[tag=Carrying] if score #Petitioner game.dialogue matches 7.. as @a[tag=ActivePlayer,sort=arbitrary,limit=1] run function exigence:profile/profile_node/story/grant {story:'rescue_petitioner'}

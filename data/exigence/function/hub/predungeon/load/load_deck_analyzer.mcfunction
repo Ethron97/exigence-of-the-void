@@ -16,16 +16,16 @@ say Load deck analyzer from PREDUNGEON room
 function exigence:hub/deck_analyzer/load_deck_anaylzer
 
 # Item Displays
-tag @e[distance=..8,type=item_display,tag=NewItemDisplay] add PredungeonAnalyzerDisplay
-tag @e[distance=..6,type=item_display,tag=NewItemDisplay] remove NewItemDisplay
+tag @e[type=item_display,tag=NewItemDisplay,distance=..8] add PredungeonAnalyzerDisplay
+tag @e[type=item_display,tag=NewItemDisplay,distance=..6] remove NewItemDisplay
 
 # Edit text displays
-tag @e[distance=..8,type=text_display,tag=NewTextDisplay] add PredungeonAnalyzerDisplay
-tag @e[distance=..8,type=text_display,tag=NewTextDisplay] remove NewTextDisplay
+tag @e[type=text_display,tag=NewTextDisplay,distance=..8] add PredungeonAnalyzerDisplay
+tag @e[type=text_display,tag=NewTextDisplay,distance=..8] remove NewTextDisplay
 
 # Edit block displays
-tag @e[distance=..8,type=block_display,tag=NewBlockDisplay] add PredungeonAnalyzerDisplay
-tag @e[distance=..8,type=block_display,tag=NewBlockDisplay] remove NewBlockDisplay
+tag @e[type=block_display,tag=NewBlockDisplay,distance=..8] add PredungeonAnalyzerDisplay
+tag @e[type=block_display,tag=NewBlockDisplay,distance=..8] remove NewBlockDisplay
 
 # Call analyze
 execute at @s as @n[distance=..3,type=item_display,tag=RefreshButton] run function exigence:hub/deck_analyzer/refresh_button/calls/refresh/refresh

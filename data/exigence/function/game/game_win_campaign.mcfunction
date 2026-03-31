@@ -28,7 +28,7 @@ kill @e[type=#exigence:enemy]
 time set 6000
 
 # Set dead players to adventure
-execute as @a[tag=ActivePlayer,scores={dead=2}] run function exigence:player/death/revive
+execute as @a[scores={dead=2},tag=ActivePlayer] run function exigence:player/death/revive
 
 # Give all players resistance/fire resistance/regen so they can't die (for simplicity)
 effect give @a[tag=ActivePlayer] resistance infinite 4 true

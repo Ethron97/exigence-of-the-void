@@ -10,10 +10,10 @@ execute at @s run playsound minecraft:entity.breeze.jump hostile @a ~ ~ ~ 2 1
 execute at @s run particle minecraft:electric_spark ~ ~1 ~ 1 1 1 0.01 50
 
 # Mark menace node based on level
-execute if score @s ObjectLevel matches 1 as @e[scores={ObjectLevel=1},type=minecraft:armor_stand,tag=MenaceNode,tag=!RavagerBlacklist,limit=1,sort=random] run tag @s add RedistributePoint
-execute if score @s ObjectLevel matches 2 as @e[scores={ObjectLevel=2},type=minecraft:armor_stand,tag=MenaceNode,tag=!RavagerBlacklist,limit=1,sort=random] run tag @s add RedistributePoint
-execute if score @s ObjectLevel matches 3 as @e[scores={ObjectLevel=3},type=minecraft:armor_stand,tag=MenaceNode,tag=!RavagerBlacklist,limit=1,sort=random] run tag @s add RedistributePoint
-execute if score @s ObjectLevel matches 4 as @e[scores={ObjectLevel=4},type=minecraft:armor_stand,tag=MenaceNode,tag=!RavagerBlacklist,limit=1,sort=random] run tag @s add RedistributePoint
+execute if score @s ObjectLevel matches 1 as @e[type=minecraft:armor_stand,scores={ObjectLevel=1},tag=MenaceNode,tag=!RavagerBlacklist,sort=random,limit=1] run tag @s add RedistributePoint
+execute if score @s ObjectLevel matches 2 as @e[type=minecraft:armor_stand,scores={ObjectLevel=2},tag=MenaceNode,tag=!RavagerBlacklist,sort=random,limit=1] run tag @s add RedistributePoint
+execute if score @s ObjectLevel matches 3 as @e[type=minecraft:armor_stand,scores={ObjectLevel=3},tag=MenaceNode,tag=!RavagerBlacklist,sort=random,limit=1] run tag @s add RedistributePoint
+execute if score @s ObjectLevel matches 4 as @e[type=minecraft:armor_stand,scores={ObjectLevel=4},tag=MenaceNode,tag=!RavagerBlacklist,sort=random,limit=1] run tag @s add RedistributePoint
 
 # Teleport ravager to "RedistributePoint" MenaceNode
 teleport @s @e[type=minecraft:armor_stand,tag=RedistributePoint,limit=1]

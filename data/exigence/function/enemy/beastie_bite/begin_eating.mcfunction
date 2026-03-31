@@ -4,7 +4,7 @@ say Om nom nom (cookie)
 data merge entity @s {NoAI:true}
 
 # Kill cookie item
-execute at @s run kill @e[distance=..5,type=minecraft:item,nbt={Item:{id:"minecraft:cookie"}},sort=nearest,limit=1]
+execute at @s run kill @e[type=minecraft:item,distance=..5,nbt={Item:{id:"minecraft:cookie"}},sort=nearest,limit=1]
 
 # Give eating score (ticks)
 scoreboard players set @s game.ravager.eating_cookie 100

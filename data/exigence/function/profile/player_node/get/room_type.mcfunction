@@ -11,7 +11,7 @@
 
 scoreboard players operation #compare player.node.room_id = @s player.node.room_id
 
-execute in exigence:hub positioned 0 153 0 as @e[distance=..1,type=marker,tag=RoomNode] \
+execute in exigence:hub positioned 0 153 0 as @e[type=marker,tag=RoomNode,distance=..1] \
 if score @s hub.room.room_id = #compare player.node.room_id run scoreboard players operation #room_type Temp = @s hub.room.room_type
 
 scoreboard players operation #room_id Temp = @s player.node.room_id

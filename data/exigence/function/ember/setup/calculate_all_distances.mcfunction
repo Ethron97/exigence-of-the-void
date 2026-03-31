@@ -1,7 +1,7 @@
 # Calcuate the distance of each Echo node from the start
 
 tag @e[tag=Start] add DeltaCompare
-tag @e[tag=EchoNode,scores={ObjectLevel=1}] add DistanceCalc
+tag @e[scores={ObjectLevel=1},tag=EchoNode] add DistanceCalc
 
 # Get deltas
 execute as @e[tag=DistanceCalc] run function exigence:ember/setup/calc_distance

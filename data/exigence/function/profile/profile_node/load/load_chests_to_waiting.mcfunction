@@ -21,11 +21,11 @@ execute if score #room_type Temp matches 9 run say Loading chests to waiting ITE
 execute if score #room_type Temp matches 9 in exigence:hub positioned -27.5 200.0 0.5 run function exigence:hub/item_shop/load/load_chests
 
 execute if score #room_type Temp matches 10 run say Loading chests to waiting PROFILE SELECTOR
-execute if score #room_type Temp matches 10 in exigence:hub positioned 999 129 6 as @e[distance=..140,type=marker,tag=ProfileSelectorNode] \
+execute if score #room_type Temp matches 10 in exigence:hub positioned 999 129 6 as @e[type=marker,tag=ProfileSelectorNode,distance=..140] \
 if score @s hub.entity.room_id = #room_id Temp at @s run function exigence:hub/profile_selector/load/load_chests
 
 execute if score #room_type Temp matches 11 run say Loading chests to waiting LOCKER ROOM
-execute if score #room_type Temp matches 11 in exigence:hub positioned 0 100 0 as @e[distance=..200,type=marker,tag=LockerRoomNode] \
+execute if score #room_type Temp matches 11 in exigence:hub positioned 0 100 0 as @e[type=marker,tag=LockerRoomNode,distance=..200] \
 if score @s hub.entity.room_id = #room_id Temp at @s run function exigence:hub/locker_room/load/load_chests
 
 # ...

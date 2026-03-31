@@ -8,7 +8,7 @@
 # DEBUG
 #say open Door 1
 
-tag @e[distance=..10,type=minecraft:armor_stand,tag=DoorNode,tag=Door1] add Open
+tag @e[type=minecraft:armor_stand,tag=DoorNode,tag=Door1,distance=..10] add Open
 scoreboard players set 1.opened game.level_doors 1
 
 #====================================================================================================
@@ -27,8 +27,8 @@ function exigence:door/level/common/open_particles
 
 #====================================================================================================
 ## CLEANUP
-kill @e[distance=..10,type=minecraft:item_display,tag=Door1]
-kill @e[distance=..10,type=minecraft:interaction,tag=Door1Handle]
+kill @e[type=minecraft:item_display,tag=Door1,distance=..10]
+kill @e[type=minecraft:interaction,tag=Door1Handle,distance=..10]
 
 # Clear level key from other players (if it was opened by a non-key method)
 clear @a trial_key[custom_model_data={strings:["level_1_key"]}]

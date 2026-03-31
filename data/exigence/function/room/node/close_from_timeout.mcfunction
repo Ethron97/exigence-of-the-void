@@ -18,7 +18,7 @@ execute if score @s hub.room.room_type matches 11 run function exigence:room/loc
 
 scoreboard players operation #compare hub.room.room_id = @s hub.room.room_id
 # Clear room id from player and player node
-execute in exigence:profile_data positioned 8 0 8 as @e[distance=..20,type=armor_stand,tag=PlayerNode] if score @s player.node.room_id = #compare hub.player.room_id run scoreboard players reset @s player.node.room_id
+execute in exigence:profile_data positioned 8 0 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] if score @s player.node.room_id = #compare hub.player.room_id run scoreboard players reset @s player.node.room_id
 execute as @a if score @s hub.player.room_id = #compare hub.room.room_id run scoreboard players reset @s hub.player.room_id
 
 # Kill room node

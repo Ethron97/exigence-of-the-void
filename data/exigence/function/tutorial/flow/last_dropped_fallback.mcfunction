@@ -7,13 +7,13 @@
 #====================================================================================================
 
 # Reset tag
-tag @e[distance=..1000,type=marker,tag=TutorialMarker,tag=Fallback] remove Fallback
+tag @e[type=marker,tag=TutorialMarker,tag=Fallback,distance=..1000] remove Fallback
 
 # Give tag to the current LastDropped
 tag @s add Fallback
 
 # Set spawnpoint to checkpoint
-execute at @s as @a[distance=..1000,tag=Tutorial] run spawnpoint @s ~ ~ ~
+execute at @s as @a[tag=Tutorial,distance=..1000] run spawnpoint @s ~ ~ ~
 
 # Call function to update fallback score
 execute if score @s TutorialMarkerID matches 10 run scoreboard players set Fallback Tutorial 5

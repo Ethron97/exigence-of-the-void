@@ -53,8 +53,8 @@ execute if score aqua.cost game.resources matches 1.. if score #LastConsumeResul
 execute if score #LastConsumeResult game.resources matches 1 run say Successful consume
 
 # Update title
-execute if score #LastConsumeResult game.resources matches 1 as @a[tag=ActivePlayer,scores={career.settings.show_resource_consume=1}] run function exigence:resources/display_consume_success with storage exigence:resource_hud
-execute if score #LastConsumeResult game.resources matches 0 as @a[tag=ActivePlayer,scores={career.settings.show_resource_underflow=1}] run function exigence:resources/display_consume_fail with storage exigence:resource_hud
+execute if score #LastConsumeResult game.resources matches 1 as @a[scores={career.settings.show_resource_consume=1},tag=ActivePlayer] run function exigence:resources/display_consume_success with storage exigence:resource_hud
+execute if score #LastConsumeResult game.resources matches 0 as @a[scores={career.settings.show_resource_underflow=1},tag=ActivePlayer] run function exigence:resources/display_consume_fail with storage exigence:resource_hud
 title @a title ""
 
 # If failed consume, add tag

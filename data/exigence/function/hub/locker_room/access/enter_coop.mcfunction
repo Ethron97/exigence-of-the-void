@@ -38,7 +38,7 @@ scoreboard players set #did_coop_enter Temp 1
 scoreboard players operation #compare hub.entity.room_id = @n[distance=..1,tag=LockerRoomNode] hub.entity.room_id
 #   PLAYER
 scoreboard players operation @s hub.player.room_id = #compare hub.entity.room_id
-execute in exigence:profile_data positioned 8 3 8 as @e[distance=..20,type=armor_stand,tag=PlayerNode] if score @s profile.node.player_id = #compare career.player_id \
+execute in exigence:profile_data positioned 8 3 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] if score @s profile.node.player_id = #compare career.player_id \
 run scoreboard players operation @s player.node.room_id = #compare hub.entity.room_id
 #   FK (link room node to specific room node)
 scoreboard players operation @n[distance=..1,tag=LockerRoomNode] hub.entity.room_id = #compare hub.entity.room_id

@@ -11,5 +11,5 @@ scoreboard players operation #compare hub.player.locker_room_id = @s hub.player.
 scoreboard players operation #compare career.player_id = @s career.player_id
 
 # Kill intearction with matching locker room AND player id
-execute as @e[distance=..16,type=interaction,tag=LockerRoomInteraction] if score @s hub.entity.locker_room_id = #compare hub.player.locker_room_id \
+execute as @e[type=interaction,tag=LockerRoomInteraction,distance=..16] if score @s hub.entity.locker_room_id = #compare hub.player.locker_room_id \
 if score @s hub.entity.player_id = #compare career.player_id run kill @s

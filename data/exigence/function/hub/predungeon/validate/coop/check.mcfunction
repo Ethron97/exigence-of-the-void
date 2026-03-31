@@ -21,17 +21,17 @@ scoreboard players operation #compare profile.node.coop_profile_id = @s hub.enti
 
 # Get how many players SHOULD be here:
 scoreboard players set #count_a Temp 0
-execute in exigence:profile_data positioned 8 128 8 as @e[distance=..140,type=marker,tag=ProfileNode,scores={profile.node.coop_profile_id=1..}] \
+execute in exigence:profile_data positioned 8 128 8 as @e[type=marker,scores={profile.node.coop_profile_id=1..},tag=ProfileNode,distance=..140] \
 if score @s profile.node.coop_profile_id = #compare profile.node.coop_profile_id run scoreboard players add #count_a Temp 1
 
 # Count how many players ARE here:
 scoreboard players set #count_b Temp 0
-execute as @a[distance=..30,tag=Predungeon] if score @s profile.player.coop_profile_id = #compare profile.node.coop_profile_id run scoreboard players add #count_b Temp 1
+execute as @a[tag=Predungeon,distance=..30] if score @s profile.player.coop_profile_id = #compare profile.node.coop_profile_id run scoreboard players add #count_b Temp 1
 
 execute store result score #predungeon_validate_coop Temp if score #count_b Temp = #count_a Temp
 execute if score #predungeon_validate_coop Temp matches 1 run return 0
 #----------------------------------------------------------------------------------------------------
 
 # If not all players are present, run sub-function to call out the specific players:
-execute in exigence:profile_data positioned 8 128 8 as @e[distance=..140,type=marker,tag=ProfileNode,scores={profile.node.coop_profile_id=1..}] \
+execute in exigence:profile_data positioned 8 128 8 as @e[type=marker,scores={profile.node.coop_profile_id=1..},tag=ProfileNode,distance=..140] \
 if score @s profile.node.coop_profile_id = #compare profile.node.coop_profile_id run function exigence:hub/predungeon/validate/coop/is_online_player

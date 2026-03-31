@@ -6,18 +6,18 @@
 scoreboard players operation #ActiveLevelOld DungeonRun = ActiveLevel DungeonRun
 
 # Update player's active levels
-execute as @a[tag=ActivePlayer,scores={dead=0}] run function exigence:player/update_active_level
+execute as @a[scores={dead=0},tag=ActivePlayer] run function exigence:player/update_active_level
 
 
 
 ## DUNGEON LEVEL LOGIC
 # If echo has not been retrieved, active dungeon level = lowest active level with a living player
 #   This is to incentivize players to ascend together instead of leaving someone behind to loot or something
-execute if data storage exigence:dungeon {all_echos_found:0} if entity @a[tag=ActivePlayer,scores={dead=0}] run scoreboard players set ActiveLevel DungeonRun 10 
-execute if data storage exigence:dungeon {all_echos_found:0} as @a[tag=ActivePlayer,scores={dead=0}] run scoreboard players operation ActiveLevel DungeonRun < @s game.player.active_level
+execute if data storage exigence:dungeon {all_echos_found:0} if entity @a[scores={dead=0},tag=ActivePlayer] run scoreboard players set ActiveLevel DungeonRun 10 
+execute if data storage exigence:dungeon {all_echos_found:0} as @a[scores={dead=0},tag=ActivePlayer] run scoreboard players operation ActiveLevel DungeonRun < @s game.player.active_level
 
 # If echo has been retrieved, active dungeon level = active level of player with the echo (or that last had the echo)
-execute if data storage exigence:dungeon {all_echos_found:1} as @a[tag=ActivePlayer,scores={game.player.echo_fragments=1}] run scoreboard players operation ActiveLevel DungeonRun = @s game.player.active_level
+execute if data storage exigence:dungeon {all_echos_found:1} as @a[scores={game.player.echo_fragments=1},tag=ActivePlayer] run scoreboard players operation ActiveLevel DungeonRun = @s game.player.active_level
 
 
 ## LEVEL CHANGE LOGIC

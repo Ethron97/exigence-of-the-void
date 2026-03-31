@@ -36,8 +36,8 @@ scoreboard players operation @s profile.data.ember.cr.echo_fragment_lost += #tem
 execute at @e[type=minecraft:marker,tag=DeathMarker] positioned ~ ~1.1 ~ run function exigence:player/death/drop_items
 
 # Gamemode spectator if there is another player alive
-execute if entity @a[tag=ActivePlayer,scores={dead=0}] run gamemode spectator @s
-execute if entity @a[tag=ActivePlayer,scores={dead=0}] run schedule function exigence:player/game/refresh_spectate 5t
+execute if entity @a[scores={dead=0},tag=ActivePlayer] run gamemode spectator @s
+execute if entity @a[scores={dead=0},tag=ActivePlayer] run schedule function exigence:player/game/refresh_spectate 5t
 
 # "You Died"
 title @s subtitle {text:"You died",color:"red"}
@@ -86,5 +86,5 @@ execute if entity @s[tag=Carrying] run function exigence:player/uncarry
 tag @s remove Carrying
 
 # Title to alert teammates
-title @a[tag=ActivePlayer,scores={dead=0}] subtitle [{"selector":"@s"},{text:" died",color:"red"}]
-title @a[tag=ActivePlayer,scores={dead=0}] title ""
+title @a[scores={dead=0},tag=ActivePlayer] subtitle [{"selector":"@s"},{text:" died",color:"red"}]
+title @a[scores={dead=0},tag=ActivePlayer] title ""

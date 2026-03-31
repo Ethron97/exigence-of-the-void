@@ -9,7 +9,7 @@ execute as @e[type=minecraft:armor_stand,tag=AltarNode,tag=Trial] if score @s Va
 execute as @e[type=minecraft:armor_stand,tag=AltarNode,tag=Crucible] if score @s VaultID = @e[type=minecraft:armor_stand,tag=VaultNode,tag=Vault_flow,limit=1] NodeID run tag @s add AltarCrucibleDisplay
 
 # Summon displays above altars
-execute as @e[type=minecraft:armor_stand,tag=AltarNode,tag=Trial,tag=AltarTrialDisplay,scores={game.node.node_state=0}] at @s run function exigence:door/vault/flow/summon_trial_displays with entity @s
+execute as @e[type=minecraft:armor_stand,scores={game.node.node_state=0},tag=AltarNode,tag=Trial,tag=AltarTrialDisplay] at @s run function exigence:door/vault/flow/summon_trial_displays with entity @s
 execute as @e[type=minecraft:armor_stand,tag=AltarNode,tag=Crucible,tag=AltarCrucibleDisplay] at @s run function exigence:door/vault/flow/summon_crucible_displays with entity @s
 
 # Main display

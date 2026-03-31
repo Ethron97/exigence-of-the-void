@@ -21,7 +21,7 @@ scoreboard players operation #predungeon_validate_player Temp < 0 number
 tellraw @s [{text:"✖ ",color:"red"},{text:"Leggins ",color:"dark_red"},{text:"must be equipped when entering the dungeon!",color:"red"}]
 
 # Message other players
-tellraw @a[distance=..32,tag=Predungeon,tag=!LocalLocal] \
+tellraw @a[tag=Predungeon,tag=!LocalLocal,distance=..32] \
 [{text:"✖ ",color:red},{selector:"@p[tag=LocalLocal]",color:gold},{text:" is not wearing their leggings! ",color:"red"}]
 
 tag @s remove LocalLocal

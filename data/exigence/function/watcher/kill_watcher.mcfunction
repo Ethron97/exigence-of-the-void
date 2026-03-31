@@ -1,7 +1,7 @@
 # Execute as watcher being killed
 
 # Trigger all remaining hazards on this level
-$execute as @e[type=minecraft:armor_stand,tag=HazardNode,scores={ObjectLevel=$(level)},tag=Active] run function exigence:hazard/node/trigger
+$execute as @e[type=minecraft:armor_stand,scores={ObjectLevel=$(level)},tag=HazardNode,tag=Active] run function exigence:hazard/node/trigger
 
 # Alert ravagers once
 #$execute as @e[type=minecraft:ravager,scores={ObjectLevel=$(level)}] run function exigence:enemy/aggro_enemy

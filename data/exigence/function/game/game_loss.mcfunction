@@ -30,9 +30,9 @@ scoreboard players reset @a[tag=ActivePlayer] hub.coin_conversion
 # Clear inventory
 clear @a[tag=ActivePlayer] #exigence:win_clear
 clear @a[tag=ActivePlayer] #exigence:loss_clear
-clear @a[tag=ActivePlayer,scores={game.player.mod.void_bundle=0}] #exigence:consumable
+clear @a[scores={game.player.mod.void_bundle=0},tag=ActivePlayer] #exigence:consumable
 # If VaultKeep is 1, do not clear vault keys
-clear @a[tag=ActivePlayer,scores={game.player.mod.vault_keep=0}] #exigence:trim_templates
+clear @a[scores={game.player.mod.vault_keep=0},tag=ActivePlayer] #exigence:trim_templates
 
 # COINKEEP PART 2 - start after we've cleared their junk
 # Choose lesser of how many coins they picked up vs how many CoinKeep they have

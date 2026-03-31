@@ -10,7 +10,7 @@
 
 # Update to % based on sensor state
 
-execute at @e[distance=..5,type=item_display,tag=PlayerSensor] run particle dragon_breath ~ ~ ~ 0.1 0.1 0.1 0.03 1
+execute at @e[type=item_display,tag=PlayerSensor,distance=..5] run particle dragon_breath ~ ~ ~ 0.1 0.1 0.1 0.03 1
 
 # Update the door channels
 execute as @n[distance=..5,type=item_display,tag=DoorChannels] run function exigence:hub/predungeon/menu/display/player_sensors/private/update_channels_inside

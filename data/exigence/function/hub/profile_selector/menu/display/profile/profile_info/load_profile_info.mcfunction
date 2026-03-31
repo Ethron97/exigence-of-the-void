@@ -53,8 +53,8 @@ data modify entity @n[distance=..5,type=text_display,tag=NewDisplay,tag=Time] te
 
 #====================================================================================================
 # Give matching scoreboard value
-scoreboard players operation @e[distance=..5,type=#exigence:display,tag=NewDisplay] IDID = @s IDID
-$scoreboard players set @e[distance=..5,type=#exigence:display,tag=NewDisplay] hub.entity.profile_selector_id $(profile_selector_id)
+scoreboard players operation @e[type=#exigence:display,tag=NewDisplay,distance=..5] IDID = @s IDID
+$scoreboard players set @e[type=#exigence:display,tag=NewDisplay,distance=..5] hub.entity.profile_selector_id $(profile_selector_id)
 #execute store result score @e[distance=..5,type=text_display,tag=NewDisplay] hub.entity.profile_selector_id run data get entity @s item.components."minecraft:custom_data".profile_selector_id
 
-tag @e[distance=..5,type=#exigence:display,tag=NewDisplay] remove NewDisplay
+tag @e[type=#exigence:display,tag=NewDisplay,distance=..5] remove NewDisplay

@@ -6,4 +6,4 @@
 #====================================================================================================
 
 scoreboard players operation #compare NodeID = @s NodeID
-execute at @s as @e[distance=..3,type=minecraft:interaction,tag=BerryInteract] if score @s NodeID = #compare NodeID run kill @s
+execute at @s as @e[type=minecraft:interaction,tag=BerryInteract,distance=..3] if score @s NodeID = #compare NodeID run kill @s

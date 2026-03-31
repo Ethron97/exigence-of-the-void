@@ -37,7 +37,7 @@ execute in exigence:hub positioned 0 153 0 run function exigence:room/node/new
 # Assign room ids
 #   PLAYER
 scoreboard players operation @s hub.player.room_id = #next hub.room.room_id
-execute in exigence:profile_data positioned 8 3 8 as @e[distance=..20,type=armor_stand,tag=PlayerNode] if score @s profile.node.player_id = #compare career.player_id \
+execute in exigence:profile_data positioned 8 3 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] if score @s profile.node.player_id = #compare career.player_id \
 run scoreboard players operation @s player.node.room_id = #next hub.room.room_id
 #   FK (link room node to specific room node)
 scoreboard players operation @n[distance=..1,tag=ProfileSelectorNode] hub.entity.room_id = #next hub.room.room_id

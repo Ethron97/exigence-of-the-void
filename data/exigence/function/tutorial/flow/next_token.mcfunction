@@ -16,9 +16,9 @@ execute in exigence:tutorial at @n[distance=..1000,type=marker,tag=TutorialMarke
 as @n[distance=..100,type=marker,tag=TutorialMarker,tag=!Dropped] run function exigence:tutorial/marker/tutorial_token
 
 # Base case: First node
-execute in exigence:tutorial unless entity @e[distance=..1000,type=marker,tag=TutorialMarker,tag=LastDropped] \
+execute in exigence:tutorial unless entity @e[type=marker,tag=TutorialMarker,tag=LastDropped,distance=..1000] \
 at @n[distance=..1000,type=marker,tag=TutorialMarker,scores={TutorialMarkerID=6}] \
 as @n[distance=..100,type=marker,tag=TutorialMarker,tag=!Dropped] run function exigence:tutorial/marker/tutorial_token
 
 # Update debug colors
-execute as @e[distance=..1000,type=marker,tag=TutorialMarker] run function exigence:tutorial/marker/private/update_debug_color
+execute as @e[type=marker,tag=TutorialMarker,distance=..1000] run function exigence:tutorial/marker/private/update_debug_color

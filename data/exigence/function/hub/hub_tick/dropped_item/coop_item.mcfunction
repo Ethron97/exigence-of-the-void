@@ -12,8 +12,8 @@ scoreboard players operation #compare profile.player.coop_profile_id = @s hub.en
 execute at @s as @a[distance=..5] if score @s profile.player.coop_profile_id = #compare profile.player.coop_profile_id \
 run tag @s add NearbyCoop
 
-execute at @s as @p[distance=..5,tag=NearbyCoop] run data modify storage exigence:temp UUID set from entity @s UUID
+execute at @s as @p[tag=NearbyCoop,distance=..5] run data modify storage exigence:temp UUID set from entity @s UUID
 
-execute at @s run tag @a[distance=..5,tag=NearbyCoop] remove NearbyCoop
+execute at @s run tag @a[tag=NearbyCoop,distance=..5] remove NearbyCoop
 
 data modify entity @s Owner set from storage exigence:temp UUID

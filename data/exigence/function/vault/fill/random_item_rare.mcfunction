@@ -21,7 +21,7 @@
 #execute positioned -310.5 3.0 -96.5 if score #random Random matches 16 run function exigence:hub/item_shop/item/summon_item {item_name:'dust_heighten'}
 
 # Call as random item shop display
-execute positioned -310.5 3.0 -96.5 as @e[type=item_display,tag=ItemShopDisplay,scores={shop.frame.rarity=3},tag=MenuConsumable,sort=random,limit=1] run \
+execute positioned -310.5 3.0 -96.5 as @e[type=item_display,scores={shop.frame.rarity=3},tag=ItemShopDisplay,tag=MenuConsumable,sort=random,limit=1] run \
 function exigence:hub/item_shop/item/summon_item with entity @s item.components."minecraft:custom_data"
 
 # Call fill/from_item

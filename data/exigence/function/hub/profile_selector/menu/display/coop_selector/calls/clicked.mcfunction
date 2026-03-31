@@ -12,7 +12,7 @@
 say Clicked coop selector
 
 # Effects
-execute at @s run playsound minecraft:entity.ender_eye.death ui @p[distance=..16,tag=ProfileSelecting,tag=Interacting] ~ ~ ~ 1 1
+execute at @s run playsound minecraft:entity.ender_eye.death ui @p[tag=ProfileSelecting,tag=Interacting,distance=..16] ~ ~ ~ 1 1
 execute at @s run particle glow ~ ~ ~0.1 0.1 0.1 0.0 0.001 5
 
 #====================================================================================================
@@ -31,7 +31,7 @@ execute unless entity @s[tag=Coop] run return 0
 #----------------------------------------------------------------------------------------------------
 
 # Early return if coop is disabled
-execute at @s unless score max_coop_players global_settings matches 1..3 run tellraw @p[distance=..16,tag=ProfileSelecting,tag=Interacting] {text:"Co-op profiles are disabled",color:"red"}
+execute at @s unless score max_coop_players global_settings matches 1..3 run tellraw @p[tag=ProfileSelecting,tag=Interacting,distance=..16] {text:"Co-op profiles are disabled",color:"red"}
 execute at @s unless score max_coop_players global_settings matches 1..3 run return fail
 #----------------------------------------------------------------------------------------------------
 

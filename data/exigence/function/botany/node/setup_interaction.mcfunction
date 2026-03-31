@@ -16,7 +16,7 @@ execute as @e[type=minecraft:interaction,tag=BerryInteract] if score @s NodeID =
 execute at @s run summon minecraft:interaction ~ ~ ~ {width:1.1,height:1.1,Tags:["NewBerryInteract","BerryInteract"],response:1b}
 
 # Assign id
-execute at @s run scoreboard players operation @e[distance=..3,type=minecraft:interaction,tag=NewBerryInteract] NodeID = #compare NodeID
+execute at @s run scoreboard players operation @e[type=minecraft:interaction,tag=NewBerryInteract,distance=..3] NodeID = #compare NodeID
 
 # Remove local tag
-execute at @s run tag @e[distance=..3,type=minecraft:interaction,tag=NewBerryInteract] remove NewBerryInteract
+execute at @s run tag @e[type=minecraft:interaction,tag=NewBerryInteract,distance=..3] remove NewBerryInteract

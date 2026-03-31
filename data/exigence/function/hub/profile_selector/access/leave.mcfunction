@@ -25,7 +25,7 @@ scoreboard players reset @s AcceptCoopInvite
 scoreboard players reset @s DeclineCoopInvite
 
 # Unload room
-execute in exigence:hub positioned 999.5 128 6.5 as @e[distance=..140,type=marker,tag=ProfileSelectorNode] \
+execute in exigence:hub positioned 999.5 128 6.5 as @e[type=marker,tag=ProfileSelectorNode,distance=..140] \
 if score @s hub.profile_selector_id = #compare hub.profile_selector_id at @s run function exigence:hub/profile_selector/node/unload_room
 
 # If there was an invite pending on you, cancel it
@@ -34,6 +34,6 @@ execute if score @s hub.player_entity.query_idid matches 1.. run function exigen
 #====================================================================================================
 # Remove room node
 scoreboard players operation #compare hub.player.room_id = @s hub.player.room_id
-execute in exigence:hub positioned 0 153 0 as @e[distance=..1,type=marker,tag=RoomNode] if score @s hub.room.room_id = #compare hub.player.room_id run kill @s
-execute in exigence:profile_data positioned 8 0 8 as @e[distance=..20,type=armor_stand,tag=PlayerNode] if score @s player.node.room_id = #compare hub.player.room_id run scoreboard players reset @s player.node.room_id
+execute in exigence:hub positioned 0 153 0 as @e[type=marker,tag=RoomNode,distance=..1] if score @s hub.room.room_id = #compare hub.player.room_id run kill @s
+execute in exigence:profile_data positioned 8 0 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] if score @s player.node.room_id = #compare hub.player.room_id run scoreboard players reset @s player.node.room_id
 scoreboard players reset @s hub.player.room_id

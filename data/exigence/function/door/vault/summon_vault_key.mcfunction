@@ -16,4 +16,4 @@ $summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:$(vault_name)_armor_trim_smith
 scoreboard players operation #compare ObjectLevel = @s ObjectLevel
 
 # Handle data
-execute as @e[distance=..1,type=item,tag=NewVaultKey] at @s run function exigence:door/vault/summon_vault_key_data
+execute as @e[type=item,tag=NewVaultKey,distance=..1] at @s run function exigence:door/vault/summon_vault_key_data

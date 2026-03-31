@@ -9,4 +9,4 @@ execute as @e[type=minecraft:item_display,tag=DoorHandle] at @s if score seconds
 #execute if score Difficulty DungeonRun matches 4.. run function exigence:door/level/ardors_bane/detect_key
 
 # Redistribute ravagers that get too close to door nodes
-execute at @e[type=armor_stand,tag=DoorNode,tag=Open] as @e[distance=..2,type=minecraft:ravager] run function exigence:enemy/ravager/redistribute
+execute at @e[type=armor_stand,tag=DoorNode,tag=Open] as @e[type=minecraft:ravager,distance=..2] run function exigence:enemy/ravager/redistribute

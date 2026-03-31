@@ -100,12 +100,12 @@ function exigence:vault/enter_with_vault_key
 function exigence:beacon/activate_beacon_nodes
 # If difficulty 5, drop Ardor Flames/Embers
 #   One flame if type 0
-execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:0} run execute as @e[type=minecraft:armor_stand,tag=BeaconNode,scores={game.node.node_state=0}] run function exigence:beacon/node/spawn_flame
+execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:0} run execute as @e[type=minecraft:armor_stand,scores={game.node.node_state=0},tag=BeaconNode] run function exigence:beacon/node/spawn_flame
 #   Three embers if type 1
-execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:1} run execute as @e[type=minecraft:armor_stand,tag=BeaconNode,scores={game.node.node_state=0}] run function exigence:beacon/node/spawn_ember
-execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:1} run execute as @e[type=minecraft:armor_stand,tag=BeaconNode,scores={game.node.node_state=0}] run function exigence:beacon/node/spawn_ember
-execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:1} run execute as @e[type=minecraft:armor_stand,tag=BeaconNode,scores={game.node.node_state=0}] run function exigence:beacon/node/spawn_ember
-execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:1} run execute as @e[type=minecraft:armor_stand,tag=BeaconNode,scores={game.node.node_state=0}] run function exigence:beacon/node/spawn_ember
+execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:1} run execute as @e[type=minecraft:armor_stand,scores={game.node.node_state=0},tag=BeaconNode] run function exigence:beacon/node/spawn_ember
+execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:1} run execute as @e[type=minecraft:armor_stand,scores={game.node.node_state=0},tag=BeaconNode] run function exigence:beacon/node/spawn_ember
+execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:1} run execute as @e[type=minecraft:armor_stand,scores={game.node.node_state=0},tag=BeaconNode] run function exigence:beacon/node/spawn_ember
+execute if score Difficulty DungeonRun matches 5 if data storage exigence:dungeon_settings {ardor_flame_type:1} run execute as @e[type=minecraft:armor_stand,scores={game.node.node_state=0},tag=BeaconNode] run function exigence:beacon/node/spawn_ember
 
 # If LBAL (led by ancient light): call it now
 execute if score LBAL DungeonRun matches 1.. run function exigence:cards/led_by_ancient_light/trigger
@@ -186,8 +186,8 @@ function exigence:bossbar/resource/initialize
 function exigence:bossbar/objective/initialize
 
 # Set team based sidebar based on primary player settings
-execute if entity @a[tag=PrimaryPlayer,scores={career.settings.card_display_sidebar=1}] run scoreboard objectives setdisplay sidebar.team.dark_aqua game.cards_played
-execute if entity @a[tag=PrimaryPlayer,scores={career.settings.card_display_sidebar=1}] run scoreboard objectives setdisplay sidebar.team.dark_red game.cards_played
+execute if entity @a[scores={career.settings.card_display_sidebar=1},tag=PrimaryPlayer] run scoreboard objectives setdisplay sidebar.team.dark_aqua game.cards_played
+execute if entity @a[scores={career.settings.card_display_sidebar=1},tag=PrimaryPlayer] run scoreboard objectives setdisplay sidebar.team.dark_red game.cards_played
 
 # Setup PHANTOM preview entities
 kill @e[type=block_display,tag=ItemPreview]

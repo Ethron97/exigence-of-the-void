@@ -15,7 +15,7 @@ execute in exigence:hub positioned 0 200 0 if entity @a[distance=..2000,limit=1]
 execute if data storage exigence:dungeon {tutorial:1} in exigence:tutorial run function exigence:tutorial/tick
 
 # Interaction handling
-execute at @a as @e[distance=..8,type=minecraft:interaction] at @s run function exigence:misc/interaction/check_interaction
+execute at @a as @e[type=minecraft:interaction,distance=..8] at @s run function exigence:misc/interaction/check_interaction
 
 # Send to prologue (disabled for testing)
 #execute as @a[advancements={exigence:story/root=false},tag=!Introducing] unless score @s career.prologue matches 1 in exigence:hub run function exigence:hub/prologue/enter
@@ -50,8 +50,8 @@ execute if data storage exigence:debug {void:1} if score seconds.cooldown tick_c
 execute if data storage exigence:debug {void:1} if score seconds.cooldown tick_counter matches 0 run function exigence:misc/update_vault_counter
 
 # This is for difficulty setup
-execute if data storage exigence:debug {echo:1} if score seconds.cooldown tick_counter matches 0 as @e[type=minecraft:armor_stand,tag=EchoNode,team=!ActiveEcho,scores={EchoDifficulty=0}] run team join Green @s
-execute if data storage exigence:debug {echo:1} if score seconds.cooldown tick_counter matches 0 as @e[type=minecraft:armor_stand,tag=EchoNode,team=Green,scores={EchoDifficulty=1..}] run team join Echo @s
+execute if data storage exigence:debug {echo:1} if score seconds.cooldown tick_counter matches 0 as @e[type=minecraft:armor_stand,team=!ActiveEcho,scores={EchoDifficulty=0},tag=EchoNode] run team join Green @s
+execute if data storage exigence:debug {echo:1} if score seconds.cooldown tick_counter matches 0 as @e[type=minecraft:armor_stand,team=Green,scores={EchoDifficulty=1..},tag=EchoNode] run team join Echo @s
 
 #====================================================================================================
 # Reset seconds clock if necessary, after executing ALL other tick functions

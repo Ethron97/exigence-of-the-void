@@ -14,4 +14,4 @@ $function exigence:cards/summon_card {card_name:$(card_name)}
 scoreboard players set #spellbinding Temp 0
 
 # Apply spellbind data / force give
-execute as @e[distance=..1,type=minecraft:item,tag=NCS,limit=1] run function exigence:cards/spellbind_data
+execute as @e[type=minecraft:item,tag=NCS,distance=..1,limit=1] run function exigence:cards/spellbind_data

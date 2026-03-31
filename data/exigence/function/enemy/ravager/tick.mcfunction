@@ -13,7 +13,7 @@ execute if score @s game.ravager.detect_thoughts matches 1.. at @s run particle 
 
 
 # Beastie Bite Check
-execute if data storage exigence:dungeon {max_menace:0} at @s if entity @e[distance=..3,type=minecraft:item,nbt={Item:{id:"minecraft:cookie"}}] run function exigence:enemy/beastie_bite/begin_eating
+execute if data storage exigence:dungeon {max_menace:0} at @s if entity @e[type=minecraft:item,distance=..3,nbt={Item:{id:"minecraft:cookie"}}] run function exigence:enemy/beastie_bite/begin_eating
 execute if score @s game.ravager.eating_cookie matches 1.. at @s run function exigence:enemy/beastie_bite/eat
 # When eating cookie runs and they aren't pacified out, regain AI
 #   Re-ai at 1 instead of 0 so we don't keep re-running this command each tick

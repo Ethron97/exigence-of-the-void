@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # If space is empty, place and return
-execute unless entity @e[distance=..0.5,tag=ProfileNode] run return 1
+execute unless entity @e[tag=ProfileNode,distance=..0.5] run return 1
 #----------------------------------------------------------------------------------------------------
 
 # If there is a player node in the current space, move one over

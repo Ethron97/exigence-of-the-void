@@ -25,10 +25,10 @@ function exigence:ember/private/choose_echo_nodes_a with storage exigence:echo_s
 # Activate chosen nodes (in order)
 #   I think the order is nice for compass position in inventory..? But why else?
 #   So we can get rid of this restraint once we switch to the bar-locator
-execute as @e[type=minecraft:armor_stand,tag=ChosenEchoNode,scores={ObjectLevel=1}] run function exigence:ember/node/activate
-execute as @e[type=minecraft:armor_stand,tag=ChosenEchoNode,scores={ObjectLevel=2}] run function exigence:ember/node/activate
-execute as @e[type=minecraft:armor_stand,tag=ChosenEchoNode,scores={ObjectLevel=3}] run function exigence:ember/node/activate
-execute as @e[type=minecraft:armor_stand,tag=ChosenEchoNode,scores={ObjectLevel=4}] run function exigence:ember/node/activate
+execute as @e[type=minecraft:armor_stand,scores={ObjectLevel=1},tag=ChosenEchoNode] run function exigence:ember/node/activate
+execute as @e[type=minecraft:armor_stand,scores={ObjectLevel=2},tag=ChosenEchoNode] run function exigence:ember/node/activate
+execute as @e[type=minecraft:armor_stand,scores={ObjectLevel=3},tag=ChosenEchoNode] run function exigence:ember/node/activate
+execute as @e[type=minecraft:armor_stand,scores={ObjectLevel=4},tag=ChosenEchoNode] run function exigence:ember/node/activate
 
 # Chosen echo functions
 execute as @e[type=armor_stand,tag=ChosenEchoNode] at @s run function exigence:ember/node/chosen

@@ -22,7 +22,7 @@ execute positioned -200 1000 -200 if score #heartbeatModulus tick_counter matche
 execute if score #heartbeatModulus tick_counter matches 0 run execute as @e[type=armor_stand,tag=HeartbeatSculk] run function exigence:hazard/node/heartbeat_sculk/flip
 
 # Update menace node cooldowns
-execute as @e[type=minecraft:armor_stand,tag=MenaceNode,scores={game.node.menace.cooldown=1..}] run scoreboard players remove @s game.node.menace.cooldown 1
+execute as @e[type=minecraft:armor_stand,scores={game.node.menace.cooldown=1..},tag=MenaceNode] run scoreboard players remove @s game.node.menace.cooldown 1
 
 # Check menace nodes for nearby players
 function exigence:menace/detect_menace_nodes

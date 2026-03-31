@@ -12,11 +12,11 @@
 scoreboard players set #predungeon_state Temp 3
 
 # Kill menu buttons
-kill @e[distance=..5,type=item_display,tag=PredungeonMenuDisplay]
-kill @e[distance=..5,type=item_display,tag=PlayerSensorPupil]
+kill @e[type=item_display,tag=PredungeonMenuDisplay,distance=..5]
+kill @e[type=item_display,tag=PlayerSensorPupil,distance=..5]
 
 # Close door slots
-execute as @e[distance=..5,type=item_display,tag=DoorSlotFill,tag=Open] run function exigence:hub/predungeon/menu/display/warp_door/slot/close_slot
+execute as @e[type=item_display,tag=DoorSlotFill,tag=Open,distance=..5] run function exigence:hub/predungeon/menu/display/warp_door/slot/close_slot
 
 # Glow the door channels
 data modify entity @n[distance=..5,type=item_display,tag=DoorChannels] Glowing set value true

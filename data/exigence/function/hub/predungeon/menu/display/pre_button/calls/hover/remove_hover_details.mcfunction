@@ -8,4 +8,4 @@
 
 #====================================================================================================
 
-$execute at @s run kill @e[distance=..1,type=minecraft:text_display,tag=PredungeonDisplay,tag=FromHover,scores={IDID=$(idid)}]
+$execute at @s run kill @e[type=minecraft:text_display,scores={IDID=$(idid)},tag=PredungeonDisplay,tag=FromHover,distance=..1]

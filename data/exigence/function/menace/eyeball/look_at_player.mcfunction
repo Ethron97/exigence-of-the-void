@@ -1,5 +1,5 @@
 # Makes this armorstand look at the nearest active player
-execute as @s at @s anchored eyes facing entity @p[tag=ActivePlayer,scores={dead=0}] eyes run tp @s ~ ~ ~ ~ ~
+execute as @s at @s anchored eyes facing entity @p[scores={dead=0},tag=ActivePlayer] eyes run tp @s ~ ~ ~ ~ ~
 
 # FOR THE VERTICAL HEAD MOVEMENT:
 # Update pose to make sure data exists

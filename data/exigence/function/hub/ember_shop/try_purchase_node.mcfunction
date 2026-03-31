@@ -7,7 +7,7 @@ tag @s add TryPurchase
 scoreboard players operation #cost EmberShopCost = @s EmberShopCost
 
 # If void crystal held by anyone in the shop, half price
-execute if entity @s[tag=Void] as @a[tag=EmberShopping,scores={game.player.mod.void_crystal=1}] run scoreboard players operation #cost EmberShopCost /= 2 number
+execute if entity @s[tag=Void] as @a[scores={game.player.mod.void_crystal=1},tag=EmberShopping] run scoreboard players operation #cost EmberShopCost /= 2 number
 
 # Make sure cost is minimum of 1
 scoreboard players operation #cost EmberShopCost > 1 number
@@ -20,7 +20,7 @@ execute as @p[tag=!EmberShopping,gamemode=creative] run function exigence:hub/em
 execute as @p[tag=EmberShopping] run function exigence:hub/ember_shop/try_purchase_macro with storage exigence:shop
 
 # 3. If yes, delete button from wall
-execute at @s if score @p[gamemode=!creative,tag=EmberShopping] HasEnoughEmbers matches 1 run setblock ~4 ~ ~ minecraft:air
+execute at @s if score @p[tag=EmberShopping,gamemode=!creative] HasEnoughEmbers matches 1 run setblock ~4 ~ ~ minecraft:air
 execute at @s if score @p[tag=EmberShopping] HasEnoughEmbers matches 1 run playsound minecraft:block.respawn_anchor.charge neutral @a
 
 # Remove local tag

@@ -11,7 +11,7 @@
 summon interaction ~ ~ ~ {Tags:["PlayerInteraction","FunctionInteraction","NEWI"],response:true}
 
 # Copy player id score
-execute as @e[distance=..1,type=interaction,tag=NEWI] run scoreboard players operation @s game.entity.profile_id = #compare game.entity.profile_id
+execute as @e[type=interaction,tag=NEWI,distance=..1] run scoreboard players operation @s game.entity.profile_id = #compare game.entity.profile_id
 
 # Remove local tag
-execute as @e[distance=..1,type=interaction,tag=NEWI] run tag @s remove NEWI
+execute as @e[type=interaction,tag=NEWI,distance=..1] run tag @s remove NEWI

@@ -17,10 +17,10 @@ scoreboard players add #highest game.void_merchant.shop_id 1
 scoreboard players operation @s game.void_merchant.shop_id = #highest game.void_merchant.shop_id
 
 # Assign FK to nearest player
-execute at @s run scoreboard players operation @p[tag=ActivePlayer,scores={dead=0}] shop.player.void_shopping_id = #highest game.void_merchant.shop_id
+execute at @s run scoreboard players operation @p[scores={dead=0},tag=ActivePlayer] shop.player.void_shopping_id = #highest game.void_merchant.shop_id
 
 # Give tag to nearest player
-tag @p[tag=ActivePlayer,scores={dead=0}] add VoidShopping
+tag @p[scores={dead=0},tag=ActivePlayer] add VoidShopping
 
 # Playsound
 execute at @s run playsound minecraft:block.ender_chest.open ambient @a ~ ~ ~ 1

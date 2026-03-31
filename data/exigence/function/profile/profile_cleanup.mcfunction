@@ -10,8 +10,8 @@ execute unless predicate exigence:dimension/location/profile_data run return 1
 #====================================================================================================
 
 # Remove entites
-kill @e[distance=..1000,tag=PlayerNode]
-kill @e[distance=..1000,tag=ProfileNode]
+kill @e[tag=PlayerNode,distance=..1000]
+kill @e[tag=ProfileNode,distance=..1000]
 
 # Reset scoreboards
 scoreboard players reset * career.player_id

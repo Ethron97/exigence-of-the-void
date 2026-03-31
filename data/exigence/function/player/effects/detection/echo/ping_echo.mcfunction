@@ -11,11 +11,11 @@
 tag @e[type=item,tag=ClosestEchoShard] remove ClosestEchoShard
 
 # Tag closest echo on same level
-execute at @s[scores={game.player.active_level=1}] run tag @e[type=minecraft:item,tag=EchoShard,scores={ObjectLevel=1},sort=nearest,limit=1] add ClosestEchoShard
-execute at @s[scores={game.player.active_level=2}] run tag @e[type=minecraft:item,tag=EchoShard,scores={ObjectLevel=2},sort=nearest,limit=1] add ClosestEchoShard
-execute at @s[scores={game.player.active_level=3}] run tag @e[type=minecraft:item,tag=EchoShard,scores={ObjectLevel=3},sort=nearest,limit=1] add ClosestEchoShard
-execute at @s[scores={game.player.active_level=4}] run tag @e[type=minecraft:item,tag=EchoShard,scores={ObjectLevel=4},sort=nearest,limit=1] add ClosestEchoShard
-execute at @s[tag=Tutorial] run tag @e[type=minecraft:item,tag=EchoShard,scores={ObjectLevel=10},sort=nearest,limit=1] add ClosestEchoShard
+execute at @s[scores={game.player.active_level=1}] run tag @e[type=minecraft:item,scores={ObjectLevel=1},tag=EchoShard,sort=nearest,limit=1] add ClosestEchoShard
+execute at @s[scores={game.player.active_level=2}] run tag @e[type=minecraft:item,scores={ObjectLevel=2},tag=EchoShard,sort=nearest,limit=1] add ClosestEchoShard
+execute at @s[scores={game.player.active_level=3}] run tag @e[type=minecraft:item,scores={ObjectLevel=3},tag=EchoShard,sort=nearest,limit=1] add ClosestEchoShard
+execute at @s[scores={game.player.active_level=4}] run tag @e[type=minecraft:item,scores={ObjectLevel=4},tag=EchoShard,sort=nearest,limit=1] add ClosestEchoShard
+execute at @s[tag=Tutorial] run tag @e[type=minecraft:item,scores={ObjectLevel=10},tag=EchoShard,sort=nearest,limit=1] add ClosestEchoShard
 
 # If no echo shard on same level, return
 #execute unless entity @e[type=item,tag=ClosestEchoShard] run say No echo on same level found
@@ -26,13 +26,13 @@ scoreboard players operation #old_distance game.player.sound_ping.echo_distance 
 
 # Determine distance bracket
 scoreboard players set @s game.player.sound_ping.echo_distance 10
-execute at @e[distance=..8,type=item,tag=ClosestEchoShard] run scoreboard players set @s game.player.sound_ping.echo_distance -2
-execute at @e[distance=8..16,type=item,tag=ClosestEchoShard] run scoreboard players set @s game.player.sound_ping.echo_distance -1
-execute at @e[distance=16..32,type=item,tag=ClosestEchoShard] if score @s game.player.effects.detection matches 1.. run scoreboard players set @s game.player.sound_ping.echo_distance 0
-execute at @e[distance=32..48,type=item,tag=ClosestEchoShard] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 1.. run scoreboard players set @s game.player.sound_ping.echo_distance 1
-execute at @e[distance=48..64,type=item,tag=ClosestEchoShard] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 2.. run scoreboard players set @s game.player.sound_ping.echo_distance 2
-execute at @e[distance=64..80,type=item,tag=ClosestEchoShard] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 3.. run scoreboard players set @s game.player.sound_ping.echo_distance 3
-execute at @e[distance=80..96,type=item,tag=ClosestEchoShard] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 4.. run scoreboard players set @s game.player.sound_ping.echo_distance 4
+execute at @e[type=item,tag=ClosestEchoShard,distance=..8] run scoreboard players set @s game.player.sound_ping.echo_distance -2
+execute at @e[type=item,tag=ClosestEchoShard,distance=8..16] run scoreboard players set @s game.player.sound_ping.echo_distance -1
+execute at @e[type=item,tag=ClosestEchoShard,distance=16..32] if score @s game.player.effects.detection matches 1.. run scoreboard players set @s game.player.sound_ping.echo_distance 0
+execute at @e[type=item,tag=ClosestEchoShard,distance=32..48] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 1.. run scoreboard players set @s game.player.sound_ping.echo_distance 1
+execute at @e[type=item,tag=ClosestEchoShard,distance=48..64] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 2.. run scoreboard players set @s game.player.sound_ping.echo_distance 2
+execute at @e[type=item,tag=ClosestEchoShard,distance=64..80] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 3.. run scoreboard players set @s game.player.sound_ping.echo_distance 3
+execute at @e[type=item,tag=ClosestEchoShard,distance=80..96] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 4.. run scoreboard players set @s game.player.sound_ping.echo_distance 4
 
 # PING SOUND IF:
 #   1. Player got closer since last ping OR
@@ -52,13 +52,13 @@ execute if score @s game.player.sound_ping.echo_distance matches 10 run return 1
 # Stop old ping (if exists) so we don't overlap when they are running forward
 stopsound @s neutral minecraft:block.amethyst_block.resonate
 # Determine bracket
-execute at @e[distance=..8,type=item,tag=ClosestEchoShard] run function exigence:player/effects/detection/echo/-2
-execute at @e[distance=8..16,type=item,tag=ClosestEchoShard] run function exigence:player/effects/detection/echo/-1
-execute at @e[distance=16..32,type=item,tag=ClosestEchoShard] if score @s game.player.effects.detection matches 1.. run function exigence:player/effects/detection/echo/0
-execute at @e[distance=32..48,type=item,tag=ClosestEchoShard] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 1.. run function exigence:player/effects/detection/echo/1
-execute at @e[distance=48..64,type=item,tag=ClosestEchoShard] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 2.. run function exigence:player/effects/detection/echo/2
-execute at @e[distance=64..80,type=item,tag=ClosestEchoShard] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 3.. run function exigence:player/effects/detection/echo/3
-execute at @e[distance=80..96,type=item,tag=ClosestEchoShard] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 4.. run function exigence:player/effects/detection/echo/4
+execute at @e[type=item,tag=ClosestEchoShard,distance=..8] run function exigence:player/effects/detection/echo/-2
+execute at @e[type=item,tag=ClosestEchoShard,distance=8..16] run function exigence:player/effects/detection/echo/-1
+execute at @e[type=item,tag=ClosestEchoShard,distance=16..32] if score @s game.player.effects.detection matches 1.. run function exigence:player/effects/detection/echo/0
+execute at @e[type=item,tag=ClosestEchoShard,distance=32..48] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 1.. run function exigence:player/effects/detection/echo/1
+execute at @e[type=item,tag=ClosestEchoShard,distance=48..64] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 2.. run function exigence:player/effects/detection/echo/2
+execute at @e[type=item,tag=ClosestEchoShard,distance=64..80] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 3.. run function exigence:player/effects/detection/echo/3
+execute at @e[type=item,tag=ClosestEchoShard,distance=80..96] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 4.. run function exigence:player/effects/detection/echo/4
 
 # Call vibration
 tag @s add GetDistance

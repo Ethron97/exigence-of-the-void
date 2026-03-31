@@ -12,7 +12,7 @@ execute store result score #sequence career.player_id run random value 1000..999
 
 # Ensure that no other nodes have this number
 scoreboard players set #temp Temp 0
-execute in exigence:profile_data positioned 8 3 8 as @e[distance=..24,tag=PlayerNode] if score @s profile.node.player_id = #sequence career.player_id run scoreboard players set #temp Temp 1
+execute in exigence:profile_data positioned 8 3 8 as @e[tag=PlayerNode,distance=..24] if score @s profile.node.player_id = #sequence career.player_id run scoreboard players set #temp Temp 1
 
 # If it doesn't already exist, assign to player.
 execute if score #temp Temp matches 0 run scoreboard players operation @s career.player_id = #sequence career.player_id

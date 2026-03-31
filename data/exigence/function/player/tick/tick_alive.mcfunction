@@ -20,7 +20,7 @@ function exigence:player/utility/pot/pot_check
 # Check for important items nearby
 #   FUN TIMES
 #   If you do not check "if data entity @s Thrower", then it will DUPLICATE the item and throw an un-pickup-able item on the ground
-execute as @e[distance=..4,type=minecraft:item,tag=!PreventItemDespawn] if items entity @s contents #exigence:important if data entity @s Thrower run function exigence:player/drop/dropped_important
+execute as @e[type=minecraft:item,tag=!PreventItemDespawn,distance=..4] if items entity @s contents #exigence:important if data entity @s Thrower run function exigence:player/drop/dropped_important
 
 # Phantom item update (if they have one anywhere in their inventory, or a far stepper)
 execute store result score @s Temp run clear @s carrot_on_a_stick[custom_data={item_name:"item_phantom_membrane"}] 0

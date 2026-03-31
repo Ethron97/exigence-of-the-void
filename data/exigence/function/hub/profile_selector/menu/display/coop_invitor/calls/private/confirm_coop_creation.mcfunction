@@ -11,9 +11,9 @@
 say Confirm coop creation
 
 # Reset invite-sent scores
-execute at @s run tag @p[distance=..16,tag=Interacting] remove InviteSent
-execute at @s run tag @p[distance=..16,tag=Interacting] remove InvitesSent
-execute at @s run scoreboard players reset @p[distance=..16,tag=Interacting] player.node.invite_sent_to
+execute at @s run tag @p[tag=Interacting,distance=..16] remove InviteSent
+execute at @s run tag @p[tag=Interacting,distance=..16] remove InvitesSent
+execute at @s run scoreboard players reset @p[tag=Interacting,distance=..16] player.node.invite_sent_to
 
 # Flag for profile creations
 scoreboard players set #creating_coop Temp 1
@@ -37,8 +37,8 @@ scoreboard players reset #creating_coop Temp
 scoreboard players set #player_index Temp 0
 
 # Reset invite related scores
-scoreboard players operation #compare career.player_id = @p[distance=..16,tag=ProfileSelecting] career.player_id
-execute in exigence:profile_data positioned 8 0 8 as @e[distance=..20,type=armor_stand,tag=PlayerNode] \
+scoreboard players operation #compare career.player_id = @p[tag=ProfileSelecting,distance=..16] career.player_id
+execute in exigence:profile_data positioned 8 0 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] \
 if score @s profile.node.player_id = #compare career.player_id run function exigence:profile/player_node/reset_invite_scores
 
 # Re-summon all coop player lists (needed, but currently overkill)

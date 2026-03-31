@@ -13,4 +13,4 @@ summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:burn_pottery_sherd",count:1,com
 scoreboard players operation #compare ObjectLevel = @s ObjectLevel
 
 # Data
-execute as @e[distance=..1,type=item,tag=NewSherd] run function exigence:treasure/sherd/sherd_data
+execute as @e[type=item,tag=NewSherd,distance=..1] run function exigence:treasure/sherd/sherd_data

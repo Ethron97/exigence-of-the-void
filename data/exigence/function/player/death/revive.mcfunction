@@ -8,14 +8,14 @@
 say I am reviving
 
 # Teleport to revive station that matches new active level
-execute if score ActiveLevel DungeonRun matches 2 at @e[type=minecraft:armor_stand,tag=RespawnNode,scores={ObjectLevel=2}] run tp @s ~ ~5 ~ ~ ~
-execute if score ActiveLevel DungeonRun matches 3 at @e[type=minecraft:armor_stand,tag=RespawnNode,scores={ObjectLevel=3}] run tp @s ~ ~5 ~ ~ ~
-execute if score ActiveLevel DungeonRun matches 4 at @e[type=minecraft:armor_stand,tag=RespawnNode,scores={ObjectLevel=4}] run tp @s ~ ~5 ~ ~ ~
+execute if score ActiveLevel DungeonRun matches 2 at @e[type=minecraft:armor_stand,scores={ObjectLevel=2},tag=RespawnNode] run tp @s ~ ~5 ~ ~ ~
+execute if score ActiveLevel DungeonRun matches 3 at @e[type=minecraft:armor_stand,scores={ObjectLevel=3},tag=RespawnNode] run tp @s ~ ~5 ~ ~ ~
+execute if score ActiveLevel DungeonRun matches 4 at @e[type=minecraft:armor_stand,scores={ObjectLevel=4},tag=RespawnNode] run tp @s ~ ~5 ~ ~ ~
 
 # Particles
-execute if score ActiveLevel DungeonRun matches 2 at @e[type=minecraft:armor_stand,tag=RespawnNode,scores={ObjectLevel=2}] run function exigence:player/death/private/revive_particles
-execute if score ActiveLevel DungeonRun matches 3 at @e[type=minecraft:armor_stand,tag=RespawnNode,scores={ObjectLevel=3}] run function exigence:player/death/private/revive_particles
-execute if score ActiveLevel DungeonRun matches 4 at @e[type=minecraft:armor_stand,tag=RespawnNode,scores={ObjectLevel=4}] run function exigence:player/death/private/revive_particles
+execute if score ActiveLevel DungeonRun matches 2 at @e[type=minecraft:armor_stand,scores={ObjectLevel=2},tag=RespawnNode] run function exigence:player/death/private/revive_particles
+execute if score ActiveLevel DungeonRun matches 3 at @e[type=minecraft:armor_stand,scores={ObjectLevel=3},tag=RespawnNode] run function exigence:player/death/private/revive_particles
+execute if score ActiveLevel DungeonRun matches 4 at @e[type=minecraft:armor_stand,scores={ObjectLevel=4},tag=RespawnNode] run function exigence:player/death/private/revive_particles
 
 # Give slowfall 5 seconds
 effect give @s slow_falling 5 0 true

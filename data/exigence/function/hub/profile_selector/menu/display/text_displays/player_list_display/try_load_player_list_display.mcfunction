@@ -19,7 +19,7 @@ $execute in exigence:profile_data positioned 8 128 8 as @n[distance=..140,type=m
 ,scores={profile.node.coop_profile_index=$(player_index),profile.node.coop_profile_id=$(coop_profile_id)}] \
 run scoreboard players operation #compare profile.node.player_id = @s profile.node.player_id
 
-execute in exigence:profile_data positioned 8 0 8 as @e[distance=..32,type=armor_stand,tag=PlayerNode] if score @s profile.node.player_id = #compare profile.node.player_id \
+execute in exigence:profile_data positioned 8 0 8 as @e[type=armor_stand,tag=PlayerNode,distance=..32] if score @s profile.node.player_id = #compare profile.node.player_id \
 run data modify storage exigence:temp profile set from entity @s equipment.head.components."minecraft:profile"
 
 $execute if data storage exigence:temp profile \

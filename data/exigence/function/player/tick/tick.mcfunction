@@ -12,7 +12,7 @@ execute unless entity @s[tag=ActivePlayer] run return fail
 #====================================================================================================
 # Snowball usage
 execute if score @s game.player.used.snowball matches 1.. run function exigence:hub/item_shop/item/item_web_ball/trigger
-execute if entity @e[distance=..1000,type=marker,tag=SnowballMarker] run function exigence:hub/item_shop/item/item_web_ball/private/tick_loop
+execute if entity @e[type=marker,tag=SnowballMarker,distance=..1000] run function exigence:hub/item_shop/item/item_web_ball/private/tick_loop
 
 # Check for right click on items
 execute if score @s CarrotOnStick matches 1.. run function exigence:player/use_item/use_item

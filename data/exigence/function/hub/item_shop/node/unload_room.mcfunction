@@ -13,7 +13,7 @@ say Unload item shop
 scoreboard players set #cancel_item_shop_iterate Temp 1
 
 # Any menu item that is loaded, tp back up to be "unloaded"
-execute as @e[distance=..32,type=minecraft:item_display,tag=ItemShopDisplay,tag=Loaded] run function exigence:menu/item_display/item_shop_display/load/unload
+execute as @e[type=minecraft:item_display,tag=ItemShopDisplay,tag=Loaded,distance=..32] run function exigence:menu/item_display/item_shop_display/load/unload
 
 execute in exigence:hub positioned 0 153 0 as @n[distance=..1,type=marker,tag=RoomNode,scores={hub.room.room_type=9}] \
 run scoreboard players operation #compare hub.entity.profile_id = @s hub.entity.profile_id
@@ -26,20 +26,20 @@ execute positioned -27.5 200.0 0.5 run function exigence:hub/item_shop/load/save
 # Store data
 scoreboard players set #remove_tag Temp 1
 #   INPUT: #chests_saved Temp
-execute in exigence:profile_data positioned 8 128 8 as @e[distance=..140,type=marker,tag=ProfileNode] \
+execute in exigence:profile_data positioned 8 128 8 as @e[type=marker,tag=ProfileNode,distance=..140] \
 if score @s profile.node.profile_id = #compare hub.entity.profile_id at @s run function exigence:profile/profile_node/save/try_data_to_chest
 
 #====================================================================================================
 
 # Remove deck analyzer
-execute positioned -27.5 200.0 0.5 run kill @e[distance=..8,type=#exigence:display,tag=ItemShopAnalyzerDisplay]
-execute positioned -27.5 200.0 0.5 run kill @e[distance=..8,type=marker,tag=ItemShopAnalyzerDisplay]
+execute positioned -27.5 200.0 0.5 run kill @e[type=#exigence:display,tag=ItemShopAnalyzerDisplay,distance=..8]
+execute positioned -27.5 200.0 0.5 run kill @e[type=marker,tag=ItemShopAnalyzerDisplay,distance=..8]
 
 # Remove interactions
 function exigence:hub/item_shop/node/kill_all_interactions
 
 # Remove locked reason displays if they got orphaned
-kill @e[distance=..32,type=text_display,tag=LockedReasonDisplay]
+kill @e[type=text_display,tag=LockedReasonDisplay,distance=..32]
 
 # Remove all items off the ground (so other people can't pick them up when entering)
 # TODO

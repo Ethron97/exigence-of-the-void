@@ -34,5 +34,5 @@ item:{id:"minecraft:sunflower",count:1,components:{"minecraft:custom_model_data"
 ,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[3.0f,3.0f,1f]}}
 
 # Assign id (so it gets cleaned up upon leaving)
-$execute as @e[distance=..16,tag=NewMenuDisplay] run scoreboard players set @s hub.entity.profile_selector_id $(profile_selector_id)
-tag @e[distance=..16,tag=NewMenuDisplay] remove NewMenuDisplay
+$execute as @e[tag=NewMenuDisplay,distance=..16] run scoreboard players set @s hub.entity.profile_selector_id $(profile_selector_id)
+tag @e[tag=NewMenuDisplay,distance=..16] remove NewMenuDisplay

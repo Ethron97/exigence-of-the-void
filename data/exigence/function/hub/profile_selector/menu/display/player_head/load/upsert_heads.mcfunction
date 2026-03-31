@@ -8,7 +8,7 @@
 #say Upsert heads
 
 # As all existing heads, delete if player is not online
-execute as @e[distance=..16,type=item_display,tag=PlayerHeadDisplay] run function exigence:hub/profile_selector/menu/display/player_head/load/downsert_head with entity @s item.components."minecraft:custom_data"
+execute as @e[type=item_display,tag=PlayerHeadDisplay,distance=..16] run function exigence:hub/profile_selector/menu/display/player_head/load/downsert_head with entity @s item.components."minecraft:custom_data"
 
 # Store data to temp
 data modify storage exigence:temp profile_selector_id set from entity @s item.components."minecraft:custom_data".profile_selector_id

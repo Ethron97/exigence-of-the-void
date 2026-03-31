@@ -5,7 +5,7 @@
 #   Activate waiting_for_respawn listener (detect_player_respawned)
 #   But still end the game as soon as the player dies so that cards don't draw, etc
 #execute unless entity @a[tag=ActivePlayer,scores={dead=0}] run data modify storage exigence:dungeon waiting_for_respawn set value 1
-execute unless entity @a[tag=ActivePlayer,scores={dead=0}] if entity @a[tag=ActivePlayer,scores={dead=2}] run function exigence:game/game_loss
+execute unless entity @a[scores={dead=0},tag=ActivePlayer] if entity @a[scores={dead=2},tag=ActivePlayer] run function exigence:game/game_loss
 
 # If game is no longer active, return
 execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
@@ -13,23 +13,23 @@ execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon 
 
 # Spectate
 #   Cancel old spectate else player glitches or something
-execute as @a[tag=ActivePlayer,scores={dead=2}] at @s run spectate @p[tag=ActivePlayer,scores={dead=0}]
+execute as @a[scores={dead=2},tag=ActivePlayer] at @s run spectate @p[scores={dead=0},tag=ActivePlayer]
 #execute as @a[tag=ActivePlayer,scores={dead=2}] at @s unless entity @a[tag=ActivePlayer,scores={dead=0},distance=0] run say Away!
 #execute as @a[tag=ActivePlayer,scores={dead=2}] at @s unless entity @a[tag=ActivePlayer,scores={dead=0},distance=0] run spectate
 #execute as @a[tag=ActivePlayer,scores={dead=2}] at @s unless entity @a[tag=ActivePlayer,scores={dead=0},distance=0] run spectate @p[tag=ActivePlayer,scores={dead=0}]
 
 # Call death command
-execute as @a[tag=ActivePlayer,scores={dead=1}] run function exigence:player/death/died
+execute as @a[scores={dead=1},tag=ActivePlayer] run function exigence:player/death/died
 
 # Refresh score to track who has echos
 execute as @a[tag=ActivePlayer] store result score @s game.player.echo_fragments run clear @s #exigence:echo 0
 
 ## WIN CHECK
 # The player is at the start/exit with an Echo shard in their inventory (victory)
-execute as @a[tag=ActivePlayer,scores={dead=0}] at @s if entity @e[distance=..2,type=minecraft:armor_stand,tag=ExitNode] run function exigence:game/exit/exit_portal/exit_check
+execute as @a[scores={dead=0},tag=ActivePlayer] at @s if entity @e[type=minecraft:armor_stand,tag=ExitNode,distance=..2] run function exigence:game/exit/exit_portal/exit_check
 
 # If portal is open, escape dead players
-execute if data storage exigence:dungeon {escape_portal:1} as @a[tag=ActivePlayer,scores={dead=2},tag=!Won] run function exigence:player/game/escape
+execute if data storage exigence:dungeon {escape_portal:1} as @a[scores={dead=2},tag=ActivePlayer,tag=!Won] run function exigence:player/game/escape
 
 # If all active players have Won tag, game win
 execute if data storage exigence:dungeon {escape_portal:1} unless entity @a[tag=ActivePlayer,tag=!Won] run function exigence:game/game_win

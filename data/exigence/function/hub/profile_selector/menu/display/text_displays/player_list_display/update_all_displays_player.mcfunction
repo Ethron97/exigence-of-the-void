@@ -7,5 +7,5 @@
 
 #say Update all displays PLAYER
 
-execute in exigence:hub positioned 999.5 128 6.5 as @e[distance=..200,type=text_display,tag=CoopPlayerDisplay] \
+execute in exigence:hub positioned 999.5 128 6.5 as @e[type=text_display,tag=CoopPlayerDisplay,distance=..200] \
 if score @s hub.entity.player_id = #player_id Temp run function exigence:hub/profile_selector/menu/display/text_displays/player_list_display/private/update_display

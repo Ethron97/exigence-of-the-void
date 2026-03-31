@@ -9,7 +9,7 @@
 #say Remove player head selectors
 
 # Remove display
-kill @e[distance=..16,type=minecraft:text_display,tag=PageLabel]
-kill @e[distance=..16,type=minecraft:item_display,tag=PageFlipperDisplay]
-kill @e[distance=..16,type=minecraft:text_display,tag=PlayerHeadDetails]
-kill @e[distance=..16,type=minecraft:block_display,tag=PlayerHeadSlot]
+kill @e[type=minecraft:text_display,tag=PageLabel,distance=..16]
+kill @e[type=minecraft:item_display,tag=PageFlipperDisplay,distance=..16]
+kill @e[type=minecraft:text_display,tag=PlayerHeadDetails,distance=..16]
+kill @e[type=minecraft:block_display,tag=PlayerHeadSlot,distance=..16]

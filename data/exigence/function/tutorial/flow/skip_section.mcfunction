@@ -14,14 +14,14 @@ tag @n[distance=..1000,type=marker,tag=TutorialMarker,tag=LastDropped] add SaveL
 # Reset tutorial
 function exigence:tutorial/reset
 
-clear @a[distance=..1000,tag=Tutorial] compass
-clear @a[distance=..1000,tag=Tutorial] echo_shard
-clear @a[distance=..1000,tag=Tutorial] blaze_powder
+clear @a[tag=Tutorial,distance=..1000] compass
+clear @a[tag=Tutorial,distance=..1000] echo_shard
+clear @a[tag=Tutorial,distance=..1000] blaze_powder
 
 # Restore saved last dropped
 tag @n[distance=..1000,type=marker,tag=TutorialMarker,tag=SaveLastDropped] add LastDropped
 tag @n[distance=..1000,type=marker,tag=TutorialMarker,tag=SaveLastDropped] remove SaveLastDropped
-execute as @e[distance=..1000,type=marker,tag=TutorialMarker] if score @s TutorialMarkerID < @n[distance=..1000,type=marker,tag=TutorialMarker,tag=LastDropped] TutorialMarkerID run tag @s add Dropped
+execute as @e[type=marker,tag=TutorialMarker,distance=..1000] if score @s TutorialMarkerID < @n[distance=..1000,type=marker,tag=TutorialMarker,tag=LastDropped] TutorialMarkerID run tag @s add Dropped
 
 execute as @n[distance=..1000,type=marker,tag=TutorialMarker,tag=LastDropped] run function exigence:tutorial/flow/private/i_next_section
 

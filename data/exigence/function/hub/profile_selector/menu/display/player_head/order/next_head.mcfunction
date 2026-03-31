@@ -15,10 +15,10 @@ scoreboard players add #pages Temp 1
 
 # Get the next lowest player id
 scoreboard players set #temp Temp 999999
-execute as @e[distance=..16,type=item_display,tag=PlayerHeadDisplay,tag=!Ordered,tag=!Ignore] run scoreboard players operation #temp Temp < @s hub.entity.player_id
+execute as @e[type=item_display,tag=PlayerHeadDisplay,tag=!Ordered,tag=!Ignore,distance=..16] run scoreboard players operation #temp Temp < @s hub.entity.player_id
 
 # Order the head that matches the lowest score
-execute as @e[distance=..16,type=item_display,tag=PlayerHeadDisplay,tag=!Ordered,tag=!Ignore] if score @s hub.entity.player_id = #temp Temp run function exigence:hub/profile_selector/menu/display/player_head/order/order_head
+execute as @e[type=item_display,tag=PlayerHeadDisplay,tag=!Ordered,tag=!Ignore,distance=..16] if score @s hub.entity.player_id = #temp Temp run function exigence:hub/profile_selector/menu/display/player_head/order/order_head
 
 # If there is still unordered displays, run again
 execute if entity @n[distance=..16,type=item_display,tag=PlayerHeadDisplay,tag=!Ordered,tag=!Ignore] run function exigence:hub/profile_selector/menu/display/player_head/order/next_head

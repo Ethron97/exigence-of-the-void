@@ -25,7 +25,7 @@ data modify storage exigence:temp invalid_identifiers set value []
 function exigence:profile/profile_node/new/identifier/get_invalid_identifiers
 # Get other identifiers (if creating coop)
 scoreboard players operation #compare career.player_id = @s career.player_id
-execute if score #creating_coop Temp matches 1 in exigence:profile_data positioned 8 3 8 as @e[distance=..32,type=armor_stand,tag=PlayerNode] \
+execute if score #creating_coop Temp matches 1 in exigence:profile_data positioned 8 3 8 as @e[type=armor_stand,tag=PlayerNode,distance=..32] \
 if score @s profile.node.player_id = #compare career.player_id run function exigence:profile/profile_node/new/identifier/get_other_invalid_identifiers
 
 # Start iteration to get first valid identifier

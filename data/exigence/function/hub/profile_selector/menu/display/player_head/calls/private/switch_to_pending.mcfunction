@@ -14,7 +14,7 @@ say Switch to pending
 #   (This info is repeated if you click the head)
 #   1. Keep this menu open while you wait for a response
 #   2. Close this menu or shift click the player head again to cancel the invitation
-execute at @s as @p[distance=..16,tag=Interacting] run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/message/pending
+execute at @s as @p[tag=Interacting,distance=..16] run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/message/pending
 
 tag @s remove DisplayingHead
 tag @s add Pending

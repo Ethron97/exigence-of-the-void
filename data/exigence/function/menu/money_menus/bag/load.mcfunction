@@ -22,12 +22,12 @@ $execute positioned ^-0.7 ^5 ^ run function exigence:menu/money_menus/money_item
 $execute positioned ^0.6 ^5 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuBag',item_name:'item_wind_line',rarity:4,tier:7,money_cost:1,research_cost:40,parents:['item_web_ball'],num_parents:1,Rotation:'$(Rotation)'}
 
 # Add MenuConsumable
-tag @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay] add MenuConsumable
+tag @e[type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay,distance=..16] add MenuConsumable
 # Order important to exclude one time upgrade from FILL POTS
 
 # Permanent upgrade
 $execute positioned ^-0.5 ^5.75 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuBag',item_name:'one_time_bag_a',rarity:4,tier:8,money_cost:16,research_cost:64,parents:['item_resonance_crystal','item_glow_ink_sac','item_wind_line','item_phantom_membrane'],num_parents:4,Rotation:'$(Rotation)'}
 
 # Connect parents
-execute as @e[distance=..16,type=minecraft:item_display,tag=NewItemDisplays,tag=ItemShopDisplay,scores={shop.frame.parents=1..}] run function exigence:menu/item_display/item_shop_display/parent/connect_parents
+execute as @e[type=minecraft:item_display,scores={shop.frame.parents=1..},tag=NewItemDisplays,tag=ItemShopDisplay,distance=..16] run function exigence:menu/item_display/item_shop_display/parent/connect_parents
 

@@ -8,4 +8,4 @@
 
 #====================================================================================================
 
-$execute at @s run kill @e[distance=..16,type=minecraft:text_display,tag=HoverDetails,scores={IDID=$(idid)}]
+$execute at @s run kill @e[type=minecraft:text_display,scores={IDID=$(idid)},tag=HoverDetails,distance=..16]

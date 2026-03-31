@@ -30,26 +30,26 @@ scoreboard players reset @s profile.node.coop_profile_id
 # Store number of remaining profiles (after this one got deleted)
 scoreboard players set #remaining_profiles Temp 0
 execute in exigence:profile_data positioned 8 128 8 \
-as @e[distance=..140,type=marker,tag=ProfileNode,scores={profile.node.coop_profile_id=1..}] if score @s profile.node.coop_profile_id = #old_coop_id Temp \
+as @e[type=marker,scores={profile.node.coop_profile_id=1..},tag=ProfileNode,distance=..140] if score @s profile.node.coop_profile_id = #old_coop_id Temp \
 run scoreboard players add #remaining_profiles Temp 1
 
 # Reassign index scores (and chests)
 #   Outputs #new_main_id Temp
 execute in exigence:profile_data positioned 8 128 8 \
-as @e[distance=..140,type=marker,tag=ProfileNode,scores={profile.node.coop_profile_id=1..}] if score @s profile.node.coop_profile_id = #old_coop_id Temp \
+as @e[type=marker,scores={profile.node.coop_profile_id=1..},tag=ProfileNode,distance=..140] if score @s profile.node.coop_profile_id = #old_coop_id Temp \
 run function exigence:profile/profile_node/private/update_coop_index
 
 #====================================================================================================
 # These effectively only fire if there are at least 2 remaining profiles
 # Reassign new coop profile id
 execute if score #remaining_profiles Temp matches 2.. in exigence:profile_data positioned 8 128 8 \
-as @e[distance=..140,type=marker,tag=ProfileNode,scores={profile.node.coop_profile_id=1..}] if score @s profile.node.coop_profile_id = #old_coop_id Temp \
+as @e[type=marker,scores={profile.node.coop_profile_id=1..},tag=ProfileNode,distance=..140] if score @s profile.node.coop_profile_id = #old_coop_id Temp \
 run scoreboard players operation @s profile.node.coop_profile_id = #new_main_id Temp
 
 # Update all player's coop_ scores (or queue it if they are offline)
 #   We only need to do this if the MAIN changed.
 execute if score #remaining_profiles Temp matches 2.. if score #old_index Temp matches 1 in exigence:profile_data positioned 8 128 8 \
-as @e[distance=..140,type=marker,tag=ProfileNode,scores={profile.node.coop_profile_index=1..}] if score @s profile.node.coop_profile_id = #new_main_id Temp \
+as @e[type=marker,scores={profile.node.coop_profile_index=1..},tag=ProfileNode,distance=..140] if score @s profile.node.coop_profile_id = #new_main_id Temp \
 run function exigence:profile/profile_node/load/try_profile_scores_to_player
 #====================================================================================================
 

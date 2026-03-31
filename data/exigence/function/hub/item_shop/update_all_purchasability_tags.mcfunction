@@ -12,7 +12,7 @@
 #say update purchasability a
 
 # Load advancements
-execute as @r[distance=..24,tag=ItemShop] run function exigence:hub/item_shop/load_unlocks
+execute as @r[tag=ItemShop,distance=..24] run function exigence:hub/item_shop/load_unlocks
 
 # Sub-call as ItemShopDisplays
-execute as @e[distance=..24,type=minecraft:item_display,tag=ItemShopDisplay] run function exigence:hub/item_shop/private/update_purchasability_tags
+execute as @e[type=minecraft:item_display,tag=ItemShopDisplay,distance=..24] run function exigence:hub/item_shop/private/update_purchasability_tags

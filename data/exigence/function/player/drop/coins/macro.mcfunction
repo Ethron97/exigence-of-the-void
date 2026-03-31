@@ -15,7 +15,7 @@ $clear @s minecraft:gold_nugget $(amount)
 loot spawn ~ ~ ~ loot exigence:coin_dropped_on_death
 
 # Modify data to set amount
-$execute as @e[distance=..6,type=item,nbt={Item:{components:{"minecraft:custom_data":{dropped_on_death:'true'}}}}] run data modify entity @s Item.count set value $(amount)
+$execute as @e[type=item,distance=..6,nbt={Item:{components:{"minecraft:custom_data":{dropped_on_death:'true'}}}}] run data modify entity @s Item.count set value $(amount)
 
 # Clear dropped on death so it stacks
-execute as @e[distance=..6,type=item,nbt={Item:{components:{"minecraft:custom_data":{dropped_on_death:'true'}}}}] run data remove entity @s Item.components."minecraft:custom_data"
+execute as @e[type=item,distance=..6,nbt={Item:{components:{"minecraft:custom_data":{dropped_on_death:'true'}}}}] run data remove entity @s Item.components."minecraft:custom_data"

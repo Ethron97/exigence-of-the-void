@@ -10,4 +10,4 @@
 #====================================================================================================
 
 # Menu lines
-$execute at @s as @e[distance=..16,type=minecraft:block_display,scores={IDID=$(idid)}] run tp @s ^ ^ ^-0.1
+$execute at @s as @e[type=minecraft:block_display,scores={IDID=$(idid)},distance=..16] run tp @s ^ ^ ^-0.1

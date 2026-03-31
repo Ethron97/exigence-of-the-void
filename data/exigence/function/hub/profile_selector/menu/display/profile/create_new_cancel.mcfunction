@@ -19,10 +19,10 @@ execute at @s run function exigence:hub/profile_selector/menu/display/profile/ef
 
 # Reset invite related scores
 scoreboard players operation #compare career.player_id = @s hub.entity.player_id
-execute in exigence:profile_data positioned 8 0 8 as @e[distance=..20,type=armor_stand,tag=PlayerNode] \
+execute in exigence:profile_data positioned 8 0 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] \
 if score @s profile.node.player_id = #compare career.player_id run function exigence:profile/player_node/reset_invite_scores
 
-execute at @s run playsound minecraft:block.wooden_trapdoor.close block @p[distance=..16,tag=ProfileSelecting] ~ ~ ~ 0.5 0.8
+execute at @s run playsound minecraft:block.wooden_trapdoor.close block @p[tag=ProfileSelecting,distance=..16] ~ ~ ~ 0.5 0.8
 execute at @s run particle smoke ~ ~ ~0.1 0.3 0.3 0.0 0.01 5
 
 # Remove creating tag

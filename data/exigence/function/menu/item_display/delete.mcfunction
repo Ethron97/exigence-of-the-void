@@ -8,4 +8,4 @@
 
 #====================================================================================================
 
-$execute at @s run kill @e[distance=..32,scores={IDID=$(idid)}]
+$execute at @s run kill @e[scores={IDID=$(idid)},distance=..32]

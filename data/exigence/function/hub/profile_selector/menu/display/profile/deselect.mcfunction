@@ -11,8 +11,8 @@
 say Deselect
 
 # Change player score
-$execute at @s run scoreboard players reset @p[distance=..16,tag=ProfileSelecting,scores={hub.player.profile_selector_id=$(profile_selector_id)}] profile.player.profile_id
-$execute at @s run scoreboard players reset @p[distance=..16,tag=ProfileSelecting,scores={hub.player.profile_selector_id=$(profile_selector_id)}] profile.player.coop_profile_id
+$execute at @s run scoreboard players reset @p[scores={hub.player.profile_selector_id=$(profile_selector_id)},tag=ProfileSelecting,distance=..16] profile.player.profile_id
+$execute at @s run scoreboard players reset @p[scores={hub.player.profile_selector_id=$(profile_selector_id)},tag=ProfileSelecting,distance=..16] profile.player.coop_profile_id
 
 tag @s remove Selected
 
@@ -58,5 +58,5 @@ run function exigence:hub/profile_selector/load/unload_deck_analyzer {profile_se
 #====================================================================================================
 
 # Save actual profile from player
-$execute at @s as @p[distance=..16,tag=ProfileSelecting,tag=ProfileSelecting,scores={hub.player.profile_selector_id=$(profile_selector_id)}] \
+$execute at @s as @p[scores={hub.player.profile_selector_id=$(profile_selector_id)},tag=ProfileSelecting,tag=ProfileSelecting,distance=..16] \
 in exigence:profile_data run function exigence:profile/profile_node/save_profile {profile_id:$(profile_id)}

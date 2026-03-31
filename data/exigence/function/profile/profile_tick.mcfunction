@@ -12,7 +12,7 @@ execute store result score #player_count Temp if entity @a[scores={quit=0}]
 
 # Check for player nodes with a player offline
 execute unless score #old_player_count Temp = #player_count Temp in exigence:profile_data positioned 8 2 8 \
-as @e[distance=..20,type=armor_stand,tag=PlayerNode,scores={profile.node.player_is_online=1}] run function exigence:profile/player_node/calls/check_if_online
+as @e[type=armor_stand,scores={profile.node.player_is_online=1},tag=PlayerNode,distance=..20] run function exigence:profile/player_node/calls/check_if_online
 
 # Check for players that just logged in
 execute as @a[scores={quit=1..}] run function exigence:profile/player/logged_in

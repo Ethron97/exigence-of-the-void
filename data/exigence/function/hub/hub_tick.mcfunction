@@ -9,8 +9,8 @@
 execute as @a[distance=..2000] run function exigence:hub/hub_tick_player
 
 # Room menu ticks (part 2, part 1 is in hub_tick_player because it's easier)
-execute positioned -43.5 200.0 0.5 if entity @a[distance=..50,tag=ItemShop,limit=1] run function exigence:hub/item_shop/menu/shop_menu_tick
-execute positioned 0.5 209.0 104.5 if entity @a[distance=..16,tag=Predungeon,limit=1] run function exigence:hub/predungeon/menu/predungeon_menu_tick
+execute positioned -43.5 200.0 0.5 if entity @a[tag=ItemShop,distance=..50,limit=1] run function exigence:hub/item_shop/menu/shop_menu_tick
+execute positioned 0.5 209.0 104.5 if entity @a[tag=Predungeon,distance=..16,limit=1] run function exigence:hub/predungeon/menu/predungeon_menu_tick
 
 # Animate coin conversion
 #execute if entity @a[distance=..1000,tag=ConvertingCoins,scores={career.settings.coin_conversion_style=2}] run function exigence:hub/convert_money/display_hud/tick

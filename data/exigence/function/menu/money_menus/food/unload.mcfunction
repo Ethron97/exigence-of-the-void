@@ -9,4 +9,4 @@
 #====================================================================================================
 
 # Delete display entities
-execute as @e[distance=..64,type=minecraft:item_display,tag=MenuDisplay,tag=MenuFood] run function exigence:menu/item_display/delete with entity @s item.components."minecraft:custom_data"
+execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=MenuFood,distance=..64] run function exigence:menu/item_display/delete with entity @s item.components."minecraft:custom_data"

@@ -7,11 +7,11 @@ tag @s add CheckLooking
 tag @e[type=minecraft:ravager,tag=RavagerLookee] remove RavagerLookee
 tag @e[type=minecraft:ravager,tag=RavagerLookeeNearest] remove RavagerLookeeNearest
 
-execute at @s as @e[distance=..30,type=minecraft:ravager] at @s anchored eyes facing entity @p[tag=ActivePlayer,tag=CheckLooking] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=ActivePlayer,tag=CheckLooking] positioned ^ ^ ^1 if entity @s[distance=..0.2] run tag @s add RavagerLookee
-execute at @s as @e[distance=..10,type=minecraft:ravager] at @s anchored eyes facing entity @p[tag=ActivePlayer,tag=CheckLooking] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=ActivePlayer,tag=CheckLooking] positioned ^ ^ ^1 if entity @s[distance=..0.4] run tag @s add RavagerLookee
+execute at @s as @e[type=minecraft:ravager,distance=..30] at @s anchored eyes facing entity @p[tag=ActivePlayer,tag=CheckLooking] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=ActivePlayer,tag=CheckLooking] positioned ^ ^ ^1 if entity @s[distance=..0.2] run tag @s add RavagerLookee
+execute at @s as @e[type=minecraft:ravager,distance=..10] at @s anchored eyes facing entity @p[tag=ActivePlayer,tag=CheckLooking] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=ActivePlayer,tag=CheckLooking] positioned ^ ^ ^1 if entity @s[distance=..0.4] run tag @s add RavagerLookee
 
 # Get the nearest ravager the player is looking at (in case there are a couple in a line, or bunched)
-execute at @s as @e[type=minecraft:ravager,sort=nearest,limit=1,tag=RavagerLookee] run tag @s add RavagerLookeeNearest 
+execute at @s as @e[type=minecraft:ravager,tag=RavagerLookee,sort=nearest,limit=1] run tag @s add RavagerLookeeNearest 
 
 # Increase selected lookee's detect thoughts score by 2
 scoreboard players add @e[type=minecraft:ravager,tag=RavagerLookeeNearest] game.ravager.detect_thoughts 2

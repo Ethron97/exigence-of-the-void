@@ -9,7 +9,7 @@
 execute at @s anchored eyes positioned ^ ^-0.5 ^ as @n[distance=..16,type=interaction,tag=ProfileSelectorInteraction] run tp @s ~ ~ ~
 
 # Swap Hover/OldHover tags
-execute as @e[distance=..16,type=minecraft:item_display,tag=MenuDisplay,tag=Hover] run function exigence:menu/menu_tick_tag_swap
+execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=Hover,distance=..16] run function exigence:menu/menu_tick_tag_swap
 
 #====================================================================================================
 # Detect which item_display(s) the player is looking at
@@ -21,13 +21,13 @@ function exigence:hub/profile_selector/menu/display/get_looking
 execute if score #old_idid shop.player.looking_at_idid matches 1.. if score @s shop.player.looking_at_idid matches 0 run data merge entity @n[distance=..3,type=interaction,tag=ProfileSelectorInteraction] {width:0.01,height:0.01}
 
 # Unhover old entity (unless it is the same as current)
-execute as @e[distance=..16,type=minecraft:item_display,tag=MenuDisplay,tag=OldHover,tag=!Hover] run function exigence:hub/profile_selector/menu/display/unhover with entity @s item.components."minecraft:custom_data"
+execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=OldHover,tag=!Hover,distance=..16] run function exigence:hub/profile_selector/menu/display/unhover with entity @s item.components."minecraft:custom_data"
 
 # Hover new entity (unless it is the same as old)
-execute as @e[distance=..16,type=minecraft:item_display,tag=MenuDisplay,tag=!OldHover,tag=Hover] run function exigence:hub/profile_selector/menu/display/hover with entity @s item.components."minecraft:custom_data"
+execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=!OldHover,tag=Hover,distance=..16] run function exigence:hub/profile_selector/menu/display/hover with entity @s item.components."minecraft:custom_data"
 
 # Remove OldHover tag
-tag @e[distance=..16,type=minecraft:item_display,tag=OldHover] remove OldHover
+tag @e[type=minecraft:item_display,tag=OldHover,distance=..16] remove OldHover
 #====================================================================================================
 # Deselect any open menus if the player walks away
 execute as @n[distance=..16,type=item_display,tag=CreationProcess] at @s unless entity @a[distance=..6] run function exigence:hub/profile_selector/menu/display/profile/create_new_cancel with entity @s item.components."minecraft:custom_data"

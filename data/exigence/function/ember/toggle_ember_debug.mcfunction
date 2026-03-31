@@ -13,5 +13,5 @@ data modify storage exigence:debug ember set from storage temp debug
 
 # 2. Run commands depending on debug state
 # Glow ember items on the ground
-$execute if data storage exigence:debug {ember:1} as @e[type=minecraft:item,tag=Ember,scores={ObjectLevel=$(levels)}] run data modify entity @s Glowing set value true
+$execute if data storage exigence:debug {ember:1} as @e[type=minecraft:item,scores={ObjectLevel=$(levels)},tag=Ember] run data modify entity @s Glowing set value true
 execute if data storage exigence:debug {ember:0} as @e[type=minecraft:item,tag=Ember] run data modify entity @s Glowing set value false

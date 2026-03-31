@@ -1,7 +1,7 @@
 # Called from hub_tick if players are "exalting" in the dungeon after a campaign win
 
 # Check if they clicked with the carrot on a stick
-execute if entity @a[tag=Exalting,scores={CarrotOnStick=1..}] as @a[tag=Exalting] run function exigence:hub/hub_tick/private/done_exalting
+execute if entity @a[scores={CarrotOnStick=1..},tag=Exalting] as @a[tag=Exalting] run function exigence:hub/hub_tick/private/done_exalting
 
 # kill carrot on stick on ground
 kill @e[type=minecraft:item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}]

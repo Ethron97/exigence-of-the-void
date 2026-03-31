@@ -16,7 +16,7 @@ tag @s add CreationProcess
 tag @s remove Hover
 
 # Mark player as querying
-$execute at @s run scoreboard players set @p[distance=..16,tag=ProfileSelecting,tag=Interacting] hub.player.query_selector_slot_id $(slot_id)
+$execute at @s run scoreboard players set @p[tag=ProfileSelecting,tag=Interacting,distance=..16] hub.player.query_selector_slot_id $(slot_id)
 
 # Un-hover
 function exigence:hub/profile_selector/menu/display/profile/calls/unhover with entity @s item.components."minecraft:custom_data"
@@ -31,7 +31,7 @@ function exigence:hub/profile_selector/menu/display/profile/effects/summon_diffi
 #   (So, it is always four slots.)
 
 # Effects
-execute at @s run playsound minecraft:entity.ender_eye.death ui @p[distance=..16,tag=ProfileSelecting,tag=Interacting] ~ ~ ~ 1 1
+execute at @s run playsound minecraft:entity.ender_eye.death ui @p[tag=ProfileSelecting,tag=Interacting,distance=..16] ~ ~ ~ 1 1
 execute at @s run particle glow ~ ~ ~0.1 0.1 0.1 0.0 0.001 5
 
 # Mark player node so we know it is creating

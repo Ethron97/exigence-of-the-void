@@ -1,7 +1,7 @@
 #say Convert money loop
 
 # Kill spiral coins in the center
-kill @e[type=minecraft:item_display,tag=ConvertMoneyCoinDisplay,tag=Spiral,scores={HoldingRingRadius=18..}]
+kill @e[type=minecraft:item_display,scores={HoldingRingRadius=18..},tag=ConvertMoneyCoinDisplay,tag=Spiral]
 
 # Give player one Money
 execute as @a[tag=ConvertingCoins] run function exigence:hub/convert_money/give_money

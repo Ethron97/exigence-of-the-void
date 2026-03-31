@@ -35,6 +35,6 @@ background:1,brightness:{sky:9,block:9},transformation:{left_rotation:[0f,0f,0f,
 
 #====================================================================================================
 # Assign scores
-scoreboard players operation @e[distance=..7,type=#exigence:display,tag=NewDeckAnalyzerDisplay] hub.entity.deck_analyzer_id = @s hub.deck_analyzer_id
+scoreboard players operation @e[type=#exigence:display,tag=NewDeckAnalyzerDisplay,distance=..7] hub.entity.deck_analyzer_id = @s hub.deck_analyzer_id
 # Remove tags
-tag @e[distance=..7,type=#exigence:display,tag=NewDeckAnalyzerDisplay] remove NewDeckAnalyzerDisplay
+tag @e[type=#exigence:display,tag=NewDeckAnalyzerDisplay,distance=..7] remove NewDeckAnalyzerDisplay

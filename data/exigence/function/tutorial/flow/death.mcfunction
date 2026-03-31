@@ -13,12 +13,12 @@ effect give @s night_vision infinite 0 true
 function exigence:scoreboard/generated_functions/reset_on_enter
 
 # Save fallback
-execute as @e[distance=..1000,type=marker,tag=TutorialMarker,tag=Fallback] run tag @s add SuperFallback
+execute as @e[type=marker,tag=TutorialMarker,tag=Fallback,distance=..1000] run tag @s add SuperFallback
 # Reset tutorial
 function exigence:tutorial/reset
 # Restore fallback
-execute as @e[distance=..1000,type=marker,tag=TutorialMarker,tag=SuperFallback] run tag @s add Fallback
-execute as @e[distance=..1000,type=marker,tag=TutorialMarker,tag=SuperFallback] run tag @s remove SuperFallback
+execute as @e[type=marker,tag=TutorialMarker,tag=SuperFallback,distance=..1000] run tag @s add Fallback
+execute as @e[type=marker,tag=TutorialMarker,tag=SuperFallback,distance=..1000] run tag @s remove SuperFallback
 
 clear @s
 
@@ -30,7 +30,7 @@ rotate @s ~180 ~
 # Reset all dropped/fallback tags
 tag @n[distance=..1000,type=marker,tag=TutorialMarker,tag=Fallback] add LastDropped
 scoreboard players operation #compare TutorialMarkerID = @n[distance=..1000,type=marker,tag=TutorialMarker,tag=Fallback] TutorialMarkerID
-execute as @e[distance=..1000,type=marker,tag=TutorialMarker] if score @s TutorialMarkerID <= #compare TutorialMarkerID run tag @s add Dropped
+execute as @e[type=marker,tag=TutorialMarker,distance=..1000] if score @s TutorialMarkerID <= #compare TutorialMarkerID run tag @s add Dropped
 
 # Give "exit" button and "skip" button
 item replace entity @s hotbar.8 with minecraft:carrot_on_a_stick[custom_name=[{text:"Exit Tutorial",color:"red",italic:false}],custom_data={item_name:'exit_tutorial'},custom_model_data={strings:["exit_button"]}]

@@ -11,8 +11,8 @@
 scoreboard players remove #i Temp 1
 
 # Teleport all items back to player
-execute at @e[distance=..4,type=minecraft:item] run particle minecraft:small_gust ~ ~ ~ 0.1 0.1 0.1 0.1 1
-tp @e[distance=..4,type=minecraft:item] @s
+execute at @e[type=minecraft:item,distance=..4] run particle minecraft:small_gust ~ ~ ~ 0.1 0.1 0.1 0.1 1
+tp @e[type=minecraft:item,distance=..4] @s
 
 # Gust here
 particle minecraft:small_gust ~ ~ ~ 0.2 0.2 0.2 0.1 1

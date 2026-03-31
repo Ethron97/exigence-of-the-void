@@ -16,7 +16,7 @@ execute as @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] run tag @s r
 execute as @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Nominate] run tag @s remove Nominate
 
 # Nominate nearest mirrornode to be active
-execute at @s run execute as @e[distance=..30,type=minecraft:armor_stand,tag=MirrorNode] run tag @s add Nominate
+execute at @s run execute as @e[type=minecraft:armor_stand,tag=MirrorNode,distance=..30] run tag @s add Nominate
 
 # If there is no nomination (not close to any mirrors) return
 execute unless entity @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Nominate] run return 1

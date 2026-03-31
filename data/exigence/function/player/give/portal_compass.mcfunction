@@ -22,4 +22,4 @@ data modify storage exigence:compass lore append value [{text:"(Soulbound)",colo
 data modify storage exigence:compass echo_id set value -2
 
 # Call sub-function
-execute as @a[tag=ActivePlayer,scores={dead=0}] run function exigence:player/give/compass with storage exigence:compass
+execute as @a[scores={dead=0},tag=ActivePlayer] run function exigence:player/give/compass with storage exigence:compass
