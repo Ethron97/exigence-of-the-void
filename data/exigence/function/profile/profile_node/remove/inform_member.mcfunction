@@ -16,7 +16,7 @@ say Inform member
 
 tag @s add Private_InformingPlayer
 
-$execute in exigence:profile_data positioned 8 0 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] if score @s profile.node.player_id = #player_left_id profile.node.player_id \
+$execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] if score @s profile.node.player_id = #player_left_id profile.node.player_id \
 run tellraw @a[tag=Private_InformingPlayer,limit=1] [{text:"[CO-OP PROFILE] ",color:red,bold:true},{selector:"@s",bold:false,color:gold},{text:" has left co-op profile <",color:gray,italic:true,bold:false}\
 ,{text:"$(profile_identifier)",color:aqua,bold:false},{text:">",color:gray,bold:false}]
 

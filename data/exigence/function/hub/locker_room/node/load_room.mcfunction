@@ -22,7 +22,7 @@ function exigence:hub/locker_room/node/private/set_id_to_name with storage exige
 ## LOAD CHESTS
 scoreboard players operation @s hub.entity.profile_id = #compare profile.player.profile_id
 # Get dataa
-execute in exigence:profile_data positioned 8 128 8 as @e[type=marker,tag=ProfileNode,distance=..140] if score @s profile.node.profile_id = #compare profile.player.profile_id \
+execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] if score @s profile.node.profile_id = #compare profile.player.profile_id \
 run function exigence:profile/profile_node/load/try_chest_to_data
 
 execute at @s unless score #data_loaded Temp matches 1 run tellraw @p[tag=LockerRoom,distance=..20] [{text:"[CHESTS NOT LOADED] ",bold:true,color:"yellow"},{text:"Another player has already loaded the chests for this co-op profile.",color:"gray",italic:true,bold:false}]

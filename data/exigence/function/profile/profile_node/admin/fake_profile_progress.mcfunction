@@ -56,5 +56,5 @@ execute if score #temp Temp matches 16 run say Destroy Crystals
 
 execute if score #temp Temp matches 17 run say Attempt Level 5
 
-execute in exigence:profile_data positioned 8 128 8 as @e[type=marker,tag=ProfileNode,distance=..140] \
+execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] \
 if score @s profile.node.profile_id = #compare profile.player.profile_id run function exigence:profile/profile_node/admin/fake_profile_progress_b

@@ -39,5 +39,5 @@ execute if score @s profile.player.coop_profile_id matches 1.. in exigence:hub p
 run scoreboard players operation @n[type=marker,scores={hub.room.room_type=9},tag=RoomNode,distance=..1] hub.entity.coop_profile_id = @s profile.player.coop_profile_id
 #   PLAYER/NODE
 scoreboard players operation @s hub.player.room_id = #next hub.room.room_id
-execute in exigence:profile_data positioned 8 3 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] if score @s profile.node.player_id = #compare career.player_id \
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15] if score @s profile.node.player_id = #compare career.player_id \
 run scoreboard players operation @s player.node.room_id = #next hub.room.room_id

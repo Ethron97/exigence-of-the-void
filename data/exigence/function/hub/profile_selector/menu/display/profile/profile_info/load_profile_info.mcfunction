@@ -35,14 +35,16 @@ execute if score #temp Temp matches 3 run data modify entity @n[type=text_displa
 #====================================================================================================
 ## RUNS
 #   TODO if exigence, runs/100
-$execute in exigence:profile_data positioned 8 128 8 as @n[type=marker,scores={profile.node.profile_id=$(profile_id)},tag=ProfileNode,distance=..140] run scoreboard players operation #temp2 Temp = @s profile.data.winloss.attempts_total
+$execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,scores={profile.node.profile_id=$(profile_id)},tag=ProfileNode,limit=1] \
+run scoreboard players operation #temp2 Temp = @s profile.data.winloss.attempts_total
 data modify entity @n[type=text_display,tag=NewDisplay,tag=Main,distance=..5] text.extra[3] set value {score:{name:"#temp2",objective:"Temp"},color:white}
 execute if score #temp Temp matches 1.. run data modify entity @n[type=text_display,tag=NewDisplay,tag=Main,distance=..5] text.extra[4] set value {text:"/",color:"#DAD2BC"}
 execute if score #temp Temp matches 1.. run data modify entity @n[type=text_display,tag=NewDisplay,tag=Main,distance=..5] text.extra[5] set value {text:"100",color:"dark_purple"}
 
 #====================================================================================================
 ## PLAY TIME
-$execute in exigence:profile_data positioned 8 128 8 as @n[type=marker,scores={profile.node.profile_id=$(profile_id)},tag=ProfileNode,distance=..140] run scoreboard players operation in.ticks tick_convert = @s profile.data.gametime.t.ticks_playtime
+$execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,scores={profile.node.profile_id=$(profile_id)},tag=ProfileNode,limit=1] \
+run scoreboard players operation in.ticks tick_convert = @s profile.data.gametime.t.ticks_playtime
 function exigence:misc/general/convert_tick_to_time
 
 data modify entity @n[type=text_display,tag=NewDisplay,tag=Time,distance=..5] text set value \

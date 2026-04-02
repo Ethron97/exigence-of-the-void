@@ -20,7 +20,7 @@ $execute at @s as @n[scores={hub.entity.profile_selector_id=$(profile_selector_i
 run function exigence:hub/profile_selector/menu/display/profile/confirm_delete_display with entity @s item
 
 # Archive/delete profile data
-$execute in exigence:profile_data positioned 8 128 8 as @n[type=marker,scores={profile.node.player_id=$(player_id),profile.node.slot_id=$(slot_id)},tag=ProfileNode,distance=..140] \
+$execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,scores={profile.node.player_id=$(player_id),profile.node.slot_id=$(slot_id)},tag=ProfileNode,limit=1] \
 run function exigence:profile/profile_node/remove_profile
 
 # Reset query

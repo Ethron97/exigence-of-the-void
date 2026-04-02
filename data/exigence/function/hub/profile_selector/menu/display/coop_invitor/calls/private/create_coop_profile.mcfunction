@@ -26,5 +26,5 @@ execute at @s as @n[type=item_display,tag=SlotDisplay,tag=!ProfileLoaded,distanc
 run function exigence:hub/profile_selector/menu/display/profile/create_new with entity @s item.components."minecraft:custom_data"
 
 # Clear scores for player node
-execute in exigence:profile_data positioned 8 0 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] if score @s profile.node.player_id = #compare player.node.joined_player_1 \
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] if score @s profile.node.player_id = #compare player.node.joined_player_1 \
 run function exigence:profile/player_node/set/clear_invited_by_scores

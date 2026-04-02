@@ -18,15 +18,15 @@ scoreboard players operation #compare profile.node.player_id = @s profile.node.p
 execute if score #temp67 Temp matches 1.. run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/try_cancel_sender
 
 scoreboard players operation #target player.node.invite_sent_to = @s player.node.invited_player_1
-execute at @s as @e[type=armor_stand,tag=PlayerNode,distance=..32] if score @s profile.node.player_id = #target player.node.invite_sent_to \
+execute at @s as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] if score @s profile.node.player_id = #target player.node.invite_sent_to \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/try_cancel_invited
 
 scoreboard players operation #target player.node.invite_sent_to = @s player.node.invited_player_2
-execute at @s as @e[type=armor_stand,tag=PlayerNode,distance=..32] if score @s profile.node.player_id = #target player.node.invite_sent_to \
+execute at @s as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] if score @s profile.node.player_id = #target player.node.invite_sent_to \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/try_cancel_invited
 
 scoreboard players operation #target player.node.invite_sent_to = @s player.node.invited_player_3
-execute at @s as @e[type=armor_stand,tag=PlayerNode,distance=..32] if score @s profile.node.player_id = #target player.node.invite_sent_to \
+execute at @s as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] if score @s profile.node.player_id = #target player.node.invite_sent_to \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/try_cancel_invited
 
 # Clear scoreboards

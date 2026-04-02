@@ -12,7 +12,7 @@ scoreboard players operation #player_left_id profile.node.player_id = @s profile
 scoreboard players operation #compare profile.node.coop_profile_id_original = @s profile.node.coop_profile_id_original
 scoreboard players operation #compare profile.node.profile_id = @s profile.node.profile_id
 
-execute in exigence:profile_data positioned 8 128 8 as @e[type=marker,tag=ProfileNode,distance=..140] \
+execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] \
 if score @s profile.node.coop_profile_id_original = #compare profile.node.coop_profile_id_original \
 unless score @s profile.node.profile_id = #compare profile.node.profile_id \
 run function exigence:profile/profile_node/remove/try_inform_member_1

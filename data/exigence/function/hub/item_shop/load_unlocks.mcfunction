@@ -21,10 +21,10 @@ data modify storage exigence:shop one_time_purchased set value []
 scoreboard players operation #compare profile.node.profile_id = @s profile.player.profile_id
 
 # Call generated unlock function
-execute in exigence:profile_data positioned 8 128 8 as @e[type=marker,tag=ProfileNode,distance=..140] \
+execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] \
 if score @s profile.node.profile_id = #compare profile.node.profile_id run function exigence:scoreboard/generated_functions/shop_unlocks
 
 # Get tier threshold based on progression
 #   OUTPUTS: #tier Temp
-execute in exigence:profile_data positioned 8 128 8 as @e[type=marker,tag=ProfileNode,distance=..140] \
+execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] \
 if score @s profile.node.profile_id = #compare profile.node.profile_id run function exigence:profile/profile_node/get/tier_threshold

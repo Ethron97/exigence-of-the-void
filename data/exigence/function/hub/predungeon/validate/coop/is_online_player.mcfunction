@@ -16,11 +16,11 @@ scoreboard players set #player_found Temp 0
 execute as @a if score @s career.player_id = #compare career.player_id run function exigence:hub/predungeon/validate/coop/is_present_player
 
 # Message player who pressed the validate button
-execute if score #player_found Temp matches 1 in exigence:profile_data positioned 8 3 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] \
+execute if score #player_found Temp matches 1 in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] \
 if score @s profile.node.player_id = #compare career.player_id run tellraw @a[tag=Predungeon] \
 [{text:"ALL co-op members must be present. ",color:red},{selector:"@s",color:gold}\
 ,{text:" is not in the ",color:red},{text:"Predungeon",color:dark_purple}]
 
-execute if score #player_found Temp matches 0 in exigence:profile_data positioned 8 3 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] \
+execute if score #player_found Temp matches 0 in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] \
 if score @s profile.node.player_id = #compare career.player_id run tellraw @a[tag=Predungeon] \
 [{text:"ALL co-op members must be present. ",color:red},{selector:"@s",color:gold},{text:" is not online.",color:red}]

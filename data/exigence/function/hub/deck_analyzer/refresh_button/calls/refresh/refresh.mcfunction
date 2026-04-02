@@ -11,7 +11,7 @@ function exigence:hub/deck_analyzer/refresh_button/calls/refresh/_case
 # Call deck analyze as (main) profile node
 scoreboard players operation #compare hub.entity.profile_id = @s hub.entity.profile_id
 execute if score @s hub.entity.coop_profile_id matches 1.. run scoreboard players operation #compare hub.entity.profile_id = @s hub.entity.coop_profile_id
-execute in exigence:profile_data positioned 8 128 8 as @e[type=marker,tag=ProfileNode,distance=..140] \
+execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] \
 if score @s profile.node.profile_id = #compare hub.entity.profile_id at @s run function exigence:deck/process/analyze_deck
 
 # update displays

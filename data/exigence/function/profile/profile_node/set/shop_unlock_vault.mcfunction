@@ -16,11 +16,11 @@ scoreboard players operation #compare profile.node.profile_id = @s profile.playe
 execute if score @s profile.player.coop_profile_id matches 1.. run scoreboard players operation #compare profile.node.profile_id = @s profile.player.coop_profile_id
 
 # Main profile
-$execute in exigence:profile_data positioned 8 128 8 as @e[type=marker,tag=ProfileNode,distance=..140] \
+$execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] \
 if score @s profile.node.profile_id = #compare profile.node.profile_id run scoreboard players set @s profile.shop_unlock.vault.$(vault_string) 1
 
 # Coop profiles
-$execute in exigence:profile_data positioned 8 128 8 as @e[type=marker,tag=ProfileNode,distance=..140] \
+$execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] \
 if score @s profile.node.coop_profile_id = #compare profile.node.profile_id run scoreboard players set @s profile.shop_unlock.vault.$(vault_string) 1
 
 # Give advancement to player(s)

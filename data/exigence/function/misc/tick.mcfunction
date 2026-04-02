@@ -41,7 +41,7 @@ function exigence:profile/profile_tick
 #function exigence:mirror/mirrors/detect_approaches
 
 # Position debug
-execute as @a[tag=Admin,tag=!ActivePlayer] run function exigence:hub/hub_tick/predicate_debug
+execute as @a[tag=Admin,tag=!ActivePlayer] run function exigence:misc/predicate_debug
 # Update debug.node_counter automatically every second
 execute store result storage exigence:debug current_level int 1 run scoreboard players get Ethron97 ObjectLevel
 execute if data storage exigence:debug {void:1} if score seconds.cooldown tick_counter matches 0 run function exigence:misc/update_node_counter with storage exigence:debug

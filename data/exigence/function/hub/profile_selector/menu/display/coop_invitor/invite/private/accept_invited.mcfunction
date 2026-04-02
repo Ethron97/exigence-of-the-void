@@ -16,5 +16,5 @@ Please wait for them to confirm profile creation. If you wish to leave, you may 
 # Copy score to joined_by (and on player node)
 scoreboard players operation @s player.node.joined_by = @s player.node.invited_by
 scoreboard players operation #compare career.player_id = @s career.player_id
-execute in exigence:profile_data positioned 8 0 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] if score @s profile.node.player_id = #compare career.player_id \
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] if score @s profile.node.player_id = #compare career.player_id \
 run scoreboard players operation @s player.node.joined_by = @s player.node.invited_by

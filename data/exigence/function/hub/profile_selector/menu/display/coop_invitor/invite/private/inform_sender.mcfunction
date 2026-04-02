@@ -9,6 +9,6 @@
 say Inform sender
 
 tag @s add TempTagPlayer
-execute in exigence:profile_data positioned 8 3 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] if score @s profile.node.player_id = #target player.node.invite_sent_to \
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15] if score @s profile.node.player_id = #target player.node.invite_sent_to \
 run tellraw @p[tag=TempTagPlayer] [{selector:"@s",color:"gold"},{text:" revoked their co-op presence.",color:'red'}]
 tag @s remove TempTagPlayer

@@ -13,7 +13,7 @@ tag @s remove Joined
 
 tag @s add TempTagPlayer
 scoreboard players operation #compare player.node.invited_by = @s player.node.invited_by
-execute in exigence:profile_data positioned 8 3 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] if score @s profile.node.player_id = #compare player.node.invited_by \
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15] if score @s profile.node.player_id = #compare player.node.invited_by \
 run tellraw @p[tag=TempTagPlayer] [{text:"A co-op invitation from ",color:"red"},{selector:"@s",color:"gold"},{text:" was cancelled.",color:"red"}]
 tag @s remove TempTagPlayer
 

@@ -17,7 +17,7 @@ scoreboard players operation #compare profile.node.player_id = @s profile.node.p
 execute as @a if score @s career.player_id = #target player.node.invite_sent_to run tag @s add Inviteded
 execute as @a if score @s career.player_id = #compare profile.node.player_id run tag @s add CancelledBy
 
-execute at @s as @e[type=armor_stand,tag=PlayerNode,distance=..32] if score @s profile.node.player_id = #target player.node.invite_sent_to \
+execute as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] if score @s profile.node.player_id = #target player.node.invite_sent_to \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/try_cancel_invited
 
 # If the cancelled invite was the current outgoing invite:

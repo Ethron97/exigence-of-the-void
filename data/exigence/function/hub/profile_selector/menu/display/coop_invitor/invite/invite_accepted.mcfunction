@@ -11,7 +11,7 @@
 say Invite accepted
 
 # Call the full cancel function from the player node
-$execute in exigence:profile_data positioned 8 0 8 as @n[type=armor_stand,scores={profile.node.player_id=$(player_id)},tag=PlayerNode,distance=..20] \
+$execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,scores={profile.node.player_id=$(player_id)},tag=PlayerNode,limit=1] \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/accept
 
 # Shift menu depending on number of total invited players

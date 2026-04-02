@@ -8,6 +8,8 @@
 
 say Player logged in after world reset
 
+team leave @s
+
 scoreboard players set @s quits 0
 
 # List of all room tags they could have been in

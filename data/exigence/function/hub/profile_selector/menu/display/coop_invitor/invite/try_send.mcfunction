@@ -46,7 +46,7 @@ scoreboard players set #temp Temp 0
 #   Count how many slot profiles (that aren't in Archive). If 5, bad fail.
 scoreboard players set #i Temp 0
 scoreboard players operation #compare profile.node.player_id = @s career.player_id
-execute in exigence:profile_data positioned 8 128 8 as @e[type=marker,tag=ProfileNode,distance=..140] if score @s profile.node.player_id = #compare profile.node.player_id run scoreboard players add #i Temp 1
+execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] if score @s profile.node.player_id = #compare profile.node.player_id run scoreboard players add #i Temp 1
 execute if score #i Temp matches 5 run scoreboard players set #temp Temp 1
 execute if score #temp Temp matches 1 run tellraw @p[tag=SendingInvite,distance=..0.01] [{selector:"@s",color:gold},{text:" does not have an open profile slot.",color:"red"}]
 execute if score #temp Temp matches 1 run return fail

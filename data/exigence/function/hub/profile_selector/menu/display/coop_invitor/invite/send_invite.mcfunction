@@ -29,14 +29,14 @@ tag @p[tag=SendingInvite,distance=..0.1] add InvitesSent
 scoreboard players operation #target career.player_id = @s career.player_id
 scoreboard players operation #sending career.player_id = @p[tag=SendingInvite,distance=..0.1] career.player_id
 
-execute in exigence:profile_data positioned 8 0 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] \
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] \
 if score @s profile.node.player_id = #target career.player_id run scoreboard players operation @s player.node.invited_by = #sending career.player_id
-execute in exigence:profile_data positioned 8 0 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] \
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] \
 if score @s profile.node.player_id = #target career.player_id run scoreboard players operation @s hub.player_entity.query_idid = #compare hub.player_entity.query_idid
 
-execute in exigence:profile_data positioned 8 0 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] \
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] \
 if score @s profile.node.player_id = #sending career.player_id run scoreboard players operation @s player.node.invite_sent_to = #target career.player_id
-execute in exigence:profile_data positioned 8 0 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] \
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] \
 if score @s profile.node.player_id = #sending career.player_id run function exigence:hub/profile_selector/menu/display/coop_invitor/status/get_display
 
 scoreboard players operation @s player.node.invited_by = #sending career.player_id

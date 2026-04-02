@@ -16,8 +16,6 @@ execute at @s run playsound minecraft:entity.breeze.land ambient @a[tag=ItemShop
 
 # Add loaded tag
 tag @s add Loaded
-# Remove iteration candidate for load tracking
-tag @s remove IterateCandidate
 
 # Handle display initialization commands:
 function exigence:hub/item_shop/private/update_purchasability_tags

@@ -18,7 +18,7 @@ team join ProfileSelecting @s
 
 # Enforce player node exists
 scoreboard players add @s career.player_id 0
-execute unless score @s career.player_id matches 1.. in exigence:profile_data positioned 8 3 8 run function exigence:profile/player_node/new_player
+execute unless score @s career.player_id matches 1.. in exigence:profile_data run function exigence:profile/player_node/new_player
 
 # Store ids
 scoreboard players operation #compare career.player_id = @s career.player_id
@@ -37,7 +37,7 @@ execute in exigence:hub positioned 0 153 0 run function exigence:room/node/new
 # Assign room ids
 #   PLAYER
 scoreboard players operation @s hub.player.room_id = #next hub.room.room_id
-execute in exigence:profile_data positioned 8 3 8 as @e[type=armor_stand,tag=PlayerNode,distance=..20] if score @s profile.node.player_id = #compare career.player_id \
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15] if score @s profile.node.player_id = #compare career.player_id \
 run scoreboard players operation @s player.node.room_id = #next hub.room.room_id
 #   FK (link room node to specific room node)
 scoreboard players operation @n[tag=ProfileSelectorNode,distance=..1] hub.entity.room_id = #next hub.room.room_id

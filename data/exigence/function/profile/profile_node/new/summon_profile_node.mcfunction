@@ -11,55 +11,30 @@
 
 #====================================================================================================
 
-summon minecraft:marker ~ ~ ~ {Tags:["NewProfileNode","ProfileNode"],CustomName:[{text:"Marker | ProfileNode ",color:"gray"},{text:"a",color:"gold"}]}
+# Clone blocks
+clone 0 0 0 15 3 0 ~ ~-1 ~
+setblock ~ ~-1 ~ gold_block
 
-# Assign difficulty
-scoreboard players operation @n[type=minecraft:marker,tag=NewProfileNode,distance=..1] profile.node.profile_difficulty = #difficulty Temp
-
-# Assign player id
-execute as @n[type=minecraft:marker,tag=NewProfileNode,distance=..1] run scoreboard players operation @s profile.node.profile_id = #sequence profile.player.profile_id
-
-# Copy player id from profile
-scoreboard players operation @n[type=marker,tag=NewProfileNode,distance=..1] profile.node.player_id = @s career.player_id
-scoreboard players operation @n[type=marker,tag=NewProfileNode,distance=..1] profile.node.coop_profile_index = #player_index Temp
-# Copy co-op id
-execute if score #creating_coop Temp matches 1 as @n[type=marker,tag=NewProfileNode,distance=..1] run scoreboard players operation @s profile.node.coop_profile_id = @s profile.node.profile_id
-execute if score #creating_coop Temp matches 1 if score #coop_profile_id Temp matches 1.. as @n[type=marker,tag=NewProfileNode,distance=..1] run scoreboard players operation @s profile.node.coop_profile_id = #coop_profile_id Temp
-#   Save stable id, which persists original relationships even if something gets deleted
-execute if score #creating_coop Temp matches 1 as @n[type=marker,tag=NewProfileNode,distance=..1] run scoreboard players operation @s profile.node.coop_profile_id_original = @s profile.node.coop_profile_id
+# Prep data
+execute store result storage exigence:temp profile_id int 1 run scoreboard players get @s profile.player.profile_id
+execute store result storage exigence:temp player_id int 1 run scoreboard players get @s career.player_id
+scoreboard players operation #compare career.player_id = @s career.player_id
+scoreboard players operation #compare career.profiles_created = @s career.profiles_created
 
 # Get identifier (outputs to exigence:temp identifier)
 execute unless score #creating_coop Temp matches 1 run function exigence:profile/profile_node/new/identifier/generate_identifier
 #   IF COOP: Only generate new one if there is not one already popualated
 execute if score #creating_coop Temp matches 1 unless data storage exigence:temp identifier run function exigence:profile/profile_node/new/identifier/generate_identifier
-# Assign to marker customdata
-data modify entity @n[type=marker,tag=NewProfileNode,distance=..1] data.custom_data.profile_identifier set from storage exigence:temp identifier
 
-# Clone blocks
-clone 0 0 0 15 3 0 ~ ~-1 ~
+
+## SUMMON ENTITY
+#   with setups
+execute summon minecraft:marker run function exigence:profile/profile_node/new/private/profile_node_data
+
 
 # Edit sign data
-data modify block ~ ~1 ~ profile set from entity @n[type=minecraft:item,distance=..1000] Item.components."minecraft:profile"
-data modify block ~ ~ ~ front_text.messages[0] set from entity @n[type=minecraft:item,distance=..1000] Item.components."minecraft:profile".name
-data modify entity @n[type=minecraft:marker,tag=NewProfileNode,distance=..1] CustomName.extra[0].text set from entity @n[type=minecraft:item,distance=..1000] Item.components."minecraft:profile".name
-
-# Assign "local" profile id (sequence that increments each profile this player creates)
-scoreboard players operation @n[type=minecraft:marker,tag=NewProfileNode,distance=..1] profile.node.local_profile_id = @s career.profiles_created
-
-execute store result storage exigence:temp profile_id int 1 run scoreboard players get @s profile.player.profile_id
-execute store result storage exigence:temp player_id int 1 run scoreboard players get @s career.player_id
-execute store result storage exigence:temp local_profile_id int 1 run scoreboard players get @n[type=minecraft:marker,tag=NewProfileNode,distance=..1] profile.node.local_profile_id
-
-# Assign "slot" id after validating (value 1-5, determines where it shows in the profile selector)
-function exigence:profile/profile_node/new/validate_slot_id with storage exigence:temp
-scoreboard players operation @n[type=minecraft:marker,tag=NewProfileNode,distance=..1] profile.node.slot_id = #compare profile.node.slot_id
+data modify block ~ ~1 ~ profile set from entity @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,type=minecraft:item,limit=1] Item.components."minecraft:profile"
+data modify block ~ ~ ~ front_text.messages[0] set from entity @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,type=minecraft:item,limit=1] Item.components."minecraft:profile".name
 
 execute store result storage exigence:temp slot_id int 1 run scoreboard players get #compare profile.node.slot_id
 function exigence:profile/profile_node/new/set_profile_sign_m with storage exigence:temp
-
-# Add profile ID to the name
-execute store result storage exigence:temp profile_id int 1 run scoreboard players get #sequence profile.player.profile_id
-execute as @n[type=minecraft:marker,tag=NewProfileNode,distance=..1] run function exigence:profile/profile_node/new/private/add_profile_id_to_name with storage exigence:temp
-
-# Remove local tag
-tag @n[type=minecraft:marker,tag=NewProfileNode,distance=..1] remove NewProfileNode

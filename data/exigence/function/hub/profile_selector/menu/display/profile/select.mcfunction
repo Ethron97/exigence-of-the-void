@@ -37,7 +37,7 @@ team join Green
 #====================================================================================================
 ## LOAD CHESTS
 # Get data
-$execute in exigence:profile_data positioned 8 128 8 as @n[type=marker,scores={profile.node.profile_id=$(profile_id)},tag=ProfileNode,distance=..140] \
+$execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,scores={profile.node.profile_id=$(profile_id)},tag=ProfileNode,limit=1] \
 run function exigence:profile/profile_node/load/try_chest_to_data
 
 execute at @s unless score #data_loaded Temp matches 1 run tellraw @p[tag=ProfileSelecting,distance=..20] [{text:"[CHESTS NOT LOADED] ",bold:true,color:"yellow"},{text:"Another player has already loaded the chests for this co-op profile.",color:"gray",italic:true,bold:false}]

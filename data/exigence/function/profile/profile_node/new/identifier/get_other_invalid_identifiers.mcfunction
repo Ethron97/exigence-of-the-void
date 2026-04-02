@@ -6,16 +6,16 @@
 #====================================================================================================
 
 scoreboard players operation #compare player.node.joined_player_1 = @s player.node.joined_player_1
-execute if score @s player.node.joined_player_1 matches 1.. in exigence:profile_data positioned 8 128 8 \
-as @e[type=marker,tag=ProfileNode,distance=..140] if score @s profile.node.player_id = #compare player.node.joined_player_1 \
+execute if score @s player.node.joined_player_1 matches 1.. in exigence:profile_data \
+as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] if score @s profile.node.player_id = #compare player.node.joined_player_1 \
 run data modify storage exigence:temp invalid_identifiers append from entity @s data.custom_data.profile_identifier
 
 scoreboard players operation #compare player.node.joined_player_2 = @s player.node.joined_player_2
-execute if score @s player.node.joined_player_2 matches 1.. in exigence:profile_data positioned 8 128 8 \
-as @e[type=marker,tag=ProfileNode,distance=..140] if score @s profile.node.player_id = #compare player.node.joined_player_2 \
+execute if score @s player.node.joined_player_2 matches 1.. in exigence:profile_data \
+as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] if score @s profile.node.player_id = #compare player.node.joined_player_2 \
 run data modify storage exigence:temp invalid_identifiers append from entity @s data.custom_data.profile_identifier
 
 scoreboard players operation #compare player.node.joined_player_3 = @s player.node.joined_player_3
-execute if score @s player.node.joined_player_3 matches 1.. in exigence:profile_data positioned 8 128 8 \
-as @e[type=marker,tag=ProfileNode,distance=..140] if score @s profile.node.player_id = #compare player.node.joined_player_3 \
+execute if score @s player.node.joined_player_3 matches 1.. in exigence:profile_data \
+as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] if score @s profile.node.player_id = #compare player.node.joined_player_3 \
 run data modify storage exigence:temp invalid_identifiers append from entity @s data.custom_data.profile_identifier

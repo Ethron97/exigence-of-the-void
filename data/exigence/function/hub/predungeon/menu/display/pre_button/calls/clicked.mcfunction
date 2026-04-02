@@ -43,5 +43,5 @@ execute positioned 0.5 209.0 104.5 run function exigence:hub/predungeon/load/sav
 # Store data
 scoreboard players set #remove_tag Temp 1
 #   INPUT: #chests_saved Temp
-execute in exigence:profile_data positioned 8 128 8 as @e[type=marker,tag=ProfileNode,distance=..140] \
+execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] \
 if score @s profile.node.profile_id = #compare hub.entity.profile_id at @s run function exigence:profile/profile_node/save/try_data_to_chest

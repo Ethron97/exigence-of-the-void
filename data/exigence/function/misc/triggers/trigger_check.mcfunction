@@ -19,6 +19,3 @@ execute if score @s DisableCurrencyWarning matches -2147483647..2147483647 unles
 
 # Admin
 execute as @s[tag=Admin] run function exigence:misc/triggers/trigger_check_admin
-
-## DEPRECATED
-#execute if score @s MyPlayerID matches 1.. run function exigence:misc/triggers/my_player_id

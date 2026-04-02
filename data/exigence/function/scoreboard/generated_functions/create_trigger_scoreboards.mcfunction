@@ -8,7 +8,6 @@ scoreboard objectives add DebugMenu trigger
 scoreboard objectives add ExitTutorial trigger
 scoreboard objectives add AcceptCoopInvite trigger
 scoreboard objectives add DeclineCoopInvite trigger
-scoreboard objectives add MyPlayerID trigger
 scoreboard objectives add SkipSection trigger
 scoreboard objectives add TpGame trigger
 scoreboard objectives add TpHub trigger

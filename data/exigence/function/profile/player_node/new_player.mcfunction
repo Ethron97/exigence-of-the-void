@@ -12,28 +12,27 @@ execute unless predicate exigence:dimension/location/profile_data run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Call function to locate the next available slot to place a node (tps NewPlayerNodeMarker to position)
-execute unless entity @n[type=marker,tag=NewPlayerNodeMarker,distance=..1000] run summon minecraft:marker 1.5 1.0 2.5 {Tags:["NewPlayerNodeMarker"],CustomName:{text:"Marker | NewPlayer"}}
-tp @n[type=marker,tag=NewPlayerNodeMarker,distance=..1000] 1.5 1.0 2.5
-execute positioned 1.5 1.0 2.5 as @n[type=marker,tag=NewPlayerNodeMarker,distance=..1] at @s run function exigence:profile/player_node/new/locate_next_player_slot
+#   Ensure that (one) NewPlayerNodeMarker exists
+execute unless entity @n[x=0,y=0,z=32,dx=15,dy=15,dz=15,type=marker,tag=NewPlayerNodeMarker] run summon minecraft:marker 1.5 1.0 33.5 {Tags:["NewPlayerNodeMarker"],CustomName:{text:"Marker | NewPlayer"}}
+#   Reset position to start
+tp @n[x=0,y=0,z=32,dx=15,dy=15,dz=15,type=marker,tag=NewPlayerNodeMarker] 1.5 1.0 33.5
+#   Iterate until we find an open slot
+execute as @n[x=0,y=0,z=32,dx=15,dy=15,dz=15,type=marker,tag=NewPlayerNodeMarker] at @s run function exigence:profile/player_node/new/locate_next_player_slot
 
 # Generate player id
 function exigence:profile/player_node/new/generate_id
 
 # Summon player head
-loot spawn 0.5 1.0 2.5 loot exigence:get_player_head
+loot spawn 0.5 1.5 32.5 loot exigence:get_player_head
 
 # Summon new node at position and handle data assignmets
-execute at @n[type=marker,tag=NewPlayerNodeMarker,distance=..1000] run setblock ~ ~ ~ diamond_block
-execute at @n[type=marker,tag=NewPlayerNodeMarker,distance=..1000] run function exigence:profile/player_node/new/summon_player_node
+execute at @n[x=0,y=0,z=32,dx=15,dy=15,dz=15,type=marker,tag=NewPlayerNodeMarker] run function exigence:profile/player_node/new/summon_player_node
 
 # Kill item
-execute positioned 0.5 1.0 2.5 run kill @n[type=minecraft:item,distance=..1]
+kill @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,type=minecraft:item]
 
 # Remove temp marker
-kill @n[type=marker,tag=NewPlayerNodeMarker,distance=..1000]
-
-# Enable trigger
-scoreboard players enable @s MyPlayerID
+kill @n[x=0,y=0,z=32,dx=15,dy=15,dz=15,type=marker,tag=NewPlayerNodeMarker]
 
 # Initialize settings
 function exigence:profile/player_node/new/initialize_settings
