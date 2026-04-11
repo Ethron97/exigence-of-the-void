@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say Next token
+#say (D3) Next token
 
 
 # If node that was marked as LastDropped also has tag "Checkpoint"

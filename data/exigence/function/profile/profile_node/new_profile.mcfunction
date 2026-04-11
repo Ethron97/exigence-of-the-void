@@ -12,10 +12,10 @@
 
 #====================================================================================================
 
-##say Try new profile
+#say (D3) Try new profile
 
 ## VALIDATE
-execute unless predicate exigence:dimension/location/profile_data run return run tellraw @s {text:"Not in exigence:profile_data, aborting",color:"red"}
+execute unless dimension exigence:profile_data run return run tellraw @s {text:"Not in exigence:profile_data, aborting",color:"red"}
 
 # If there are already 1008 total, fail
 execute if score #sequence profile.player.profile_id matches 1008.. run return run tellraw @s {text:"Maximum number of TOTAL profiles reached (1008)",color:"red"}
@@ -28,7 +28,7 @@ execute if score #temp Temp matches 5.. run return run tellraw @s {text:"Maximum
 
 #----------------------------------------------------------------------------------------------------
 
-#say Creating new profile
+#say (D3) Creating new profile
 
 # Increase number of profiles created
 scoreboard players add @s career.profiles_created 1

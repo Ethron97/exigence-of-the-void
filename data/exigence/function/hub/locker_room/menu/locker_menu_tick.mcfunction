@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say locker menu tick
+#say (D3) locker menu tick
 
 # Swap Hover/OldHover tags (only for this locker room)
 scoreboard players operation #compare hub.locker_room_id = @s hub.locker_room_id

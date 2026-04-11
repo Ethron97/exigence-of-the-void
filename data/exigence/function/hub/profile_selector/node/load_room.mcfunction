@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Load room
+#say (D3) Load room
 
 # Generate new id
 scoreboard players add #sequence hub.profile_selector_id 1
@@ -15,7 +15,8 @@ scoreboard players operation @s hub.profile_selector_id = #sequence hub.profile_
 function exigence:hub/profile_selector/node/setup_interaction
 
 # Load deck analyzer menu (just gets the node into position)
-execute positioned ~-5.49 ~ ~ run function exigence:hub/profile_selector/load/setup_deck_analyzer
+scoreboard players operation #input hub.profile_selector_id = @s hub.profile_selector_id
+execute positioned ~-5.49 ~ ~ facing entity @s feet summon marker run function exigence:hub/profile_selector/load/setup_deck_analyzer
 
 # Load profile menu
 execute store result storage exigence:temp player_id int 1 run scoreboard players get #compare career.player_id

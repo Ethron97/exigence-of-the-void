@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Accept invite (from player node)
+#say (D3) Accept invite (from player node)
 
 scoreboard players operation #target player.node.invite_sent_to = @s player.node.invite_sent_to
 scoreboard players operation #compare profile.node.player_id = @s profile.node.player_id

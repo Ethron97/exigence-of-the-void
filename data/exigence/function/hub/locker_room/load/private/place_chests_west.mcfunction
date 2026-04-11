@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Place chests (West)
+#say (D3) Place chests (West) [locker room]
 
 # Place blank chests
 setblock ^3 ^ ^ chest[type=right,facing=north]

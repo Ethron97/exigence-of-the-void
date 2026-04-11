@@ -9,7 +9,7 @@
 #====================================================================================================
 
 # DEBUG
-say Enter Tutorial
+#say (D3) Enter Tutorial
 effect clear @s night_vision
 
 # Reset scores
@@ -39,6 +39,9 @@ function exigence:bossbar/tutorial/initialize
 scoreboard players enable @s SkipSection
 scoreboard players enable @s ExitTutorial
 
+# Playsound(s)
+execute at @s run playsound minecraft:entity.enderman.teleport ui @s ~ ~100 ~ 100 1
+
 # TEMP TESTING
 #scoreboard players set Fallback Tutorial 1001
 #spawnpoint @a[tag=Tutorial] 80 123 143
@@ -48,7 +51,7 @@ scoreboard players enable @s ExitTutorial
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Summon Room Node
 scoreboard players set #room_type Temp 1
-execute in exigence:hub positioned 0 153 0 run function exigence:room/node/new
+execute in exigence:hub positioned 100 200 100 run function exigence:room/node/new
 
 # Assign room ids
 #   PLAYER

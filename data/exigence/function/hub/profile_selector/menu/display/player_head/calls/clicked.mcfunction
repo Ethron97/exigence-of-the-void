@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say clicked head
+#say (D3) clicked head
 
 # Store ahead of time to avoid flip flip
 execute store success score #o Temp run execute if entity @s[tag=DisplayingHead]

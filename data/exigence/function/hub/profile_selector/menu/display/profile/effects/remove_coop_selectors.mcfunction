@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say Remove coop selectors
+#say (D3) Remove coop selectors
 
 # Remove display details
 $execute at @s as @e[type=minecraft:item_display,tag=CoopSelectorDisplay,distance=..16,nbt={item:{components:{"minecraft:custom_data":{slot_id:"$(slot_id)"}}}}] \

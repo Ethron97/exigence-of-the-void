@@ -2,11 +2,12 @@
 #   Called by access/use_item_hand
 
 ## CONSTRAINTS
+#   AS player
 #   IN exigence:tutorial
 
 #====================================================================================================
 
-say Skip section
+#say (D3) Skip section
 
 # Save current last dropped
 tag @n[type=marker,tag=TutorialMarker,tag=LastDropped,distance=..1000] add SaveLastDropped
@@ -30,3 +31,9 @@ tp @s @n[type=marker,tag=TutorialMarker,tag=Fallback,distance=..1000]
 function exigence:tutorial/flow/reset_bossbars
 
 execute if score Step Tutorial matches 1500 run fill 175 131 49 177 134 47 structure_void replace ice
+
+# Playsound
+execute at @s run playsound minecraft:entity.enderman.teleport ui @s ~ ~100 ~ 100 1
+
+# Message player
+tellraw @s [{text:"-> Skipped section",color:yellow}]

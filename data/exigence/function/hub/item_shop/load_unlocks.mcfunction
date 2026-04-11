@@ -11,7 +11,7 @@
 
 #====================================================================================================
 
-say Load unlocks (initialize)
+#say (D3) Load unlocks (initialize)
 
 # Reset array
 data modify storage exigence:shop shop_unlocked set value [] 

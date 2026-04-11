@@ -5,8 +5,7 @@
 
 #====================================================================================================
 
-execute unless entity @p[tag=Tutorial,distance=..1000] run say Called tutorial.step without in exigence:tutorial, cancelling
-execute unless entity @p[tag=Tutorial,distance=..1000] run return 1
+execute unless entity @p[tag=Tutorial,distance=..1000] run return run say (C) Called tutorial.step without in exigence:tutorial, cancelling
 #----------------------------------------------------------------------------------------------------
 
 scoreboard players add Step Tutorial 1

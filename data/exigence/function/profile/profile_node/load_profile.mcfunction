@@ -8,10 +8,10 @@
 #   INT profile_id
 
 #====================================================================================================
-execute unless predicate exigence:dimension/entity/profile_data run return 1
+execute unless dimension exigence:profile_data run return run say (C) Not in dimension Profile Data?
 #====================================================================================================
 
-say Load profile
+#say (D3) Load profile
 
 # Load inventory
 $execute at @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,scores={profile.node.profile_id=$(profile_id)},tag=ProfileNode,limit=1] positioned ~1 ~ ~ run function exigence:profile/profile_node/load/load_inventory

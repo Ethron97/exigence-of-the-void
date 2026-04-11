@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-say Load deck analyzer from profile selector room
+#say (D3) Load deck analyzer from profile selector room
 
 # Call interface
 #   If switching, just update the profile_id

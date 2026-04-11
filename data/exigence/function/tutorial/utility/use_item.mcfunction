@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say Use Item
+#say (D3) Use Item
 
 # Reset score
 scoreboard players set @s CarrotOnStick 0

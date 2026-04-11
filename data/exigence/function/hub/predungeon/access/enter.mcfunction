@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Entering predungeon
+#say (D3) Entering predungeon
 
 tag @s add Predungeon
 team join Predungeon @s
@@ -26,14 +26,14 @@ function exigence:player/utility/calculate_item_limit
 #====================================================================================================
 # Summon Room Node
 scoreboard players set #room_type Temp 2
-execute in exigence:hub positioned 0 153 0 run function exigence:room/node/new
+execute in exigence:hub positioned 100 200 100 run function exigence:room/node/new
 
 # Assign room ids
 #   Add profile_id/coop_profile_id to the room node
-execute in exigence:hub positioned 0 153 0 \
-run scoreboard players operation @n[type=marker,scores={hub.room.room_type=2},tag=RoomNode,distance=..1] hub.entity.profile_id = @s profile.player.profile_id
-execute if score @s profile.player.coop_profile_id matches 1.. in exigence:hub positioned 0 153 0 \
-run scoreboard players operation @n[type=marker,scores={hub.room.room_type=2},tag=RoomNode,distance=..1] hub.entity.coop_profile_id = @s profile.player.coop_profile_id
+execute in exigence:hub \
+run scoreboard players operation @n[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=marker,scores={hub.room.room_type=2},tag=RoomNode] hub.entity.profile_id = @s profile.player.profile_id
+execute if score @s profile.player.coop_profile_id matches 1.. in exigence:hub \
+run scoreboard players operation @n[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=marker,scores={hub.room.room_type=2},tag=RoomNode] hub.entity.coop_profile_id = @s profile.player.coop_profile_id
 #   PLAYER/NODE
 scoreboard players operation @s hub.player.room_id = #next hub.room.room_id
 execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15] if score @s profile.node.player_id = #compare career.player_id \

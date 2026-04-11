@@ -7,8 +7,7 @@
 
 #====================================================================================================
 # This shouldn't bec alled if state is currently 0
-execute if score #predungeon_state Temp matches 0 run say State is 0, why run back_to_prebutton?
-execute if score #predungeon_state Temp matches 0 run return fail
+execute if score #predungeon_state Temp matches 0 run return run tellraw @a {text:"? State is already 0, why run back_to_prebutton?",color:yellow}
 #----------------------------------------------------------------------------------------------------
 
 scoreboard players set #predungeon_state Temp 0

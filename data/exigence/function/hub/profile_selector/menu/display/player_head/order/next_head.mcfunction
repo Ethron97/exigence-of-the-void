@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say Next head
+#say (D3) Next head
 
 scoreboard players add #order_index Temp 1
 # Use #index_order to get number of pages

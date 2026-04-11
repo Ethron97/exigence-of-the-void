@@ -4,10 +4,10 @@
 #   AS/AT profile node
 
 #====================================================================================================
-execute unless entity @n[type=marker,tag=ProfileNode,distance=..0.01] run return run say Analyze deck was not run on a profile node
+execute unless entity @n[type=marker,tag=ProfileNode,distance=..0.01] run return run tellraw @a {text:"Analyze deck was not run on a profile node",color:"red"}
 #====================================================================================================
 
-say Analyze deck (new)
+#say (D3) Analyze deck (new)
 
 # Reset
 data modify storage exigence:hub too_many_copies set value false

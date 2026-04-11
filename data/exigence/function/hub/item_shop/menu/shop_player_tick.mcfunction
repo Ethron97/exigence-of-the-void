@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say Item Shop tick player
+#say (D3) Item Shop tick player
 
 scoreboard players operation #compare career.player_id = @s career.player_id
 

@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say Summon coop invitors
+#say (D3) Summon coop invitors
 
 # Update step details
 execute at @s run data modify entity @n[type=text_display,tag=StepDetails,distance=..5] text set value {text:"Invite Players",color:"yellow"}

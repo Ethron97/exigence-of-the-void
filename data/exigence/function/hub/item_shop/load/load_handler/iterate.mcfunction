@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say load handler iterate
+#say (D3) load handler iterate
 #tellraw @a [{score:{name:"#item_shop_load_iterate",objective:"Temp"}}]
 
 # Load the ones that match the current tier iteration

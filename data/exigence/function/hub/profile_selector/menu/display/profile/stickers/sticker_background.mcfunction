@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say Load slot background
+#say (D3) Load slot background
 
 # Summon item display
 summon block_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["NewBlockDisplay","StickerBackground","ProfileSticker"],block_state:{Name:"minecraft:stripped_birch_wood"},\

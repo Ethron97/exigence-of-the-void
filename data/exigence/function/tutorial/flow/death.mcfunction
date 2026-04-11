@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-say Tutorial Deathed
+#say (D3) Tutorial Deathed
 effect give @s night_vision infinite 0 true
 
 # Reset scores

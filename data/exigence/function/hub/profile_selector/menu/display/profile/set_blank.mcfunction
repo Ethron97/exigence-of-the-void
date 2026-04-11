@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say Set blank
+#say (D3) Set blank
 
 # Change the block behind it
 execute at @s run setblock ~ ~ ~-1 purpur_block

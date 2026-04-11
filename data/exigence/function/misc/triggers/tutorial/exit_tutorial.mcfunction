@@ -4,16 +4,16 @@
 #   AS player
 
 #====================================================================================================
-execute unless entity @s[tag=Tutorial] run return fail
+execute unless entity @s[tag=Tutorial] run return run say (C) Player does not have tutorial tag (triggers/tutorial/exit_tutorial)
 #====================================================================================================
 
-say Trigger exit tutorial
+#say (D3) Trigger exit tutorial
 
-# TODO
-# DIfferent logic based on if the player has not completed it yet. Ie skip tutorial rather than exit.
-# [?] This may have been a note from before we split exit/skip?
+# Message player
+tellraw @s [{text:"-> Exit Tutorial",color:red}]
 
 execute if entity @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/access/leave
+execute at @s run playsound minecraft:block.copper_door.close ui @s ~ ~100 ~ 100 1
 
 # Reset trigger
 scoreboard players reset @s ExitTutorial

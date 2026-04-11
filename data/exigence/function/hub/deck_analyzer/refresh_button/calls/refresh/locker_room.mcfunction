@@ -8,13 +8,13 @@
 
 #====================================================================================================
 
-$say Refresh from LOCKER ROOM room $(profile_id) $(locker_room_id)
+#$say (D3) Refresh from LOCKER ROOM room $(profile_id) $(locker_room_id)
 
 #====================================================================================================
 ## SAVE CHESTS FOR REFRESH
 # Chests -> data
 #   OUTPUTS chests_saved if there was data to save
-$execute in exigence:hub positioned 0 100 0 at @n[type=marker,scores={hub.locker_room_id=$(locker_room_id)},tag=LockerRoomNode,distance=..200] \
+$execute in exigence:hub positioned 0 100 0 at @n[x=-29,y=197,z=6,dx=24,dy=8,dz=24,type=marker,scores={hub.locker_room_id=$(locker_room_id)},tag=LockerRoomNode] \
 run function exigence:hub/locker_room/load/save_chests_no_remove
 
 # Data -> profile chest

@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-say Load chests
+#say (D3) Load chests [predungeon]
 
 # Make sure chests are placed
 function exigence:hub/predungeon/load/place_chests

@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say validate/coop/is_online_player
+#say (D3) validate/coop/is_online_player
 
 scoreboard players operation #compare career.player_id = @s profile.node.player_id
 

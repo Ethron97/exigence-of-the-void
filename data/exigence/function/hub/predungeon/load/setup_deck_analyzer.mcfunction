@@ -1,6 +1,7 @@
 # Load deck analyzer for this room
 
 ## CONSTRAINTS
+#   AS marker (blank)
 #   AT location (+facing)
 
 ## INPUT
@@ -9,17 +10,13 @@
 
 #====================================================================================================
 
-say Setup deck analyzer from PREDUNGEON
+#say (D3) Setup deck analyzer [predungeon]
 
-# Summon deck analyzer menu
-#   Summons node, refresh button, and displays
-function exigence:hub/deck_analyzer/summon_deck_analyzer_node
+# Call interface-summon
+function exigence:hub/deck_analyzer/setup_deck_analyzer_node
 
-tag @n[type=marker,tag=NewDeckAnalyzer,distance=..1] add PredungeonAnalyzerDisplay
+tag @s add PredungeonAnalyzerDisplay
 
 # Load load
 #   INPUT: #profile_id Temp, #coop_profile_id Temp
-execute as @n[type=marker,tag=NewDeckAnalyzer,distance=..1] at @s run function exigence:hub/predungeon/load/load_deck_analyzer
-
-# Remove local tag
-tag @n[type=marker,tag=NewDeckAnalyzer,distance=..1] remove NewDeckAnalyzer
+function exigence:hub/predungeon/load/load_deck_analyzer

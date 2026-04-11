@@ -5,6 +5,6 @@
 
 #====================================================================================================
 
-#say Right click pre button
+#say (D3) Right click pre button
 
 execute at @s run function exigence:hub/predungeon/menu/display/player_sensors/calls/clicked

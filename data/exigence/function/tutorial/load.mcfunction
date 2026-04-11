@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # DEBUG
-say load tutorial
+#say (D3) Load tutorial
 
 #execute positioned 64 100 0 run forceload add ~ ~ ~180 ~200
 #execute positioned 181 131 -69 run forceload add ~ ~ ~70 ~130

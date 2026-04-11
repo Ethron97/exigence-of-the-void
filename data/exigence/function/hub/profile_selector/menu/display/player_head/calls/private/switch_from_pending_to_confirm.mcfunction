@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-say Switch from pending to confirm
+#say (D3) Switch from pending to confirm
 
 # Kill pending title
 execute at @s run kill @n[type=text_display,tag=PendingTitle,distance=..5]

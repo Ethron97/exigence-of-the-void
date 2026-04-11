@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say trigger web ball throw
+#say (D3) trigger web ball throw
 
 # Reset snowball score
 scoreboard players set @s game.player.used.snowball 0

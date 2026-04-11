@@ -4,8 +4,10 @@
 #   AT center of item shop ( -43.5 200.0 0.5 )
 
 #====================================================================================================
+execute unless dimension exigence:hub run return run say (C) Failed to recreate: Not in hub
+#----------------------------------------------------------------------------------------------------
 
-say Recreate item shop menus
+#say (D3) Recreate item shop menus
 
 # Unload menus
 function exigence:menu/money_menus/food/unload
@@ -26,3 +28,6 @@ execute positioned ~-11.5 ~-0.6 ~ run function exigence:menu/load_menu {Rotation
 execute positioned ~-8 ~-0.6 ~-8 run function exigence:menu/load_menu {Rotation:[-45.0f,0.0f],menu_path:'money_menus/chestplate_2/load'}
 execute positioned ~ ~-0.6 ~-11.5 run function exigence:menu/load_menu {Rotation:[0.0f,0.0f],menu_path:'money_menus/helmet/load'}
 execute positioned ~8 ~-0.6 ~-8 run function exigence:menu/load_menu {Rotation:[45.0f,0.0f],menu_path:'money_menus/artifact/load'}
+
+# So unload them
+execute as @e[type=minecraft:item_display,tag=ItemShopDisplay,tag=Loaded,distance=..32] run function exigence:menu/item_display/item_shop_display/load/unload

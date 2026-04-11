@@ -8,7 +8,7 @@
 #   INT profile_id
 
 #====================================================================================================
-execute unless predicate exigence:dimension/location/profile_data run return 1
+execute unless dimension exigence:profile_data run return run tellraw @a {text:"(C) Not run in profile_data dimension, aborting",color:"red"}
 #====================================================================================================
 
 # Save inventory to chests

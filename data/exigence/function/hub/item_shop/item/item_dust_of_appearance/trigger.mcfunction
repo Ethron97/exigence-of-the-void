@@ -1,5 +1,5 @@
 # Execute at active player
-#say trigger dust of appearance
+#say (D3) trigger dust of appearance
 
 # Playsound
 playsound minecraft:item.firecharge.use ambient @a ^ ^ ^3 1 1.5

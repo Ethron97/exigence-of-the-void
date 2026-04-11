@@ -8,6 +8,6 @@
 
 #====================================================================================================
 
-say UNload deck analyzer
+#say (D3) Unload deck analyzer
 
 $execute at @s run kill @e[type=#exigence:display,scores={hub.entity.deck_analyzer_id=$(deck_analyzer_id)},tag=DeckAnalyzerDisplay,distance=..10]

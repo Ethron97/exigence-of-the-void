@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say validate/validate
+#say (D3) validate/validate
 
 # Default to VALID
 scoreboard players set #predungeon_validate_total Temp 1

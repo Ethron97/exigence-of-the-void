@@ -11,7 +11,7 @@ execute unless entity @s[tag=ItemShop] run tellraw @s [{text:"You should not be 
 execute unless entity @s[tag=ItemShop] run return fail
 #====================================================================================================
 
-#$say Shop one-time-purchase $(item_name)
+#$say (D3) Shop one-time-purchase $(item_name)
 
 # Update the scores of this player's profile node, and any coop profile nodes if applicable
 scoreboard players operation #compare profile.node.profile_id = @s profile.player.profile_id

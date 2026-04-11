@@ -11,7 +11,7 @@
 
 #====================================================================================================
 
-#say display - confirm delete
+#say (D3) display - confirm delete
 
 tag @s add ConfirmingDelete
 

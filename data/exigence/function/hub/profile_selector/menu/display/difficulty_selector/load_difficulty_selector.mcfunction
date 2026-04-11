@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say Load difficulty selector
+#say (D3) Load difficulty selector
 
 # Summon item display
 summon minecraft:item_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["DifficultySelectorDisplay","MenuDisplay","NewItemDisplay","SizeClassB"],item:{id:"minecraft:sunflower",count:1},\

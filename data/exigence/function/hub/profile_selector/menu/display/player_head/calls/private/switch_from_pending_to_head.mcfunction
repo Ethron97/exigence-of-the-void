@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-say Switch from pending to head
+#say (D3) Switch from pending to head
 
 # Kill pending title
 execute at @s run kill @n[type=text_display,tag=PendingTitle,distance=..5]

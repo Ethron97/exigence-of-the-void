@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-say Clicked coop selector
+#say (D3) Clicked coop selector
 
 # Effects
 execute at @s run playsound minecraft:entity.ender_eye.death ui @p[tag=ProfileSelecting,tag=Interacting,distance=..16] ~ ~ ~ 1 1

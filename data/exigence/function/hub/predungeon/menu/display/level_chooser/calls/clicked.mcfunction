@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say clicked level chooser
+#say (D3) clicked level chooser
 
 # Increase cooldown score for player
 scoreboard players add @p[tag=Interacting,distance=..16] hub.player.interaction_cooldown 20
@@ -24,7 +24,7 @@ execute if score #predungeon_state Temp matches 2 run return run tellraw @p[tag=
 # REVALIDATE EVERYTHING?
 #   The way we built the menu means we shouldn't need to ever re-call player/deck validate function
 
-# If not unlocked, say "x Unknown level. Complete the required Advancements to unlock."
+# If not unlocked, inform "x Unknown level. Complete the required Advancements to unlock."
 execute unless entity @s[tag=GoodUnlock] run return run execute as @p[tag=Interacting,distance=..16] \
 run function exigence:hub/predungeon/menu/display/level_chooser/calls/private/not_unlocked
 #----------------------------------------------------------------------------------------------------

@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say Summon page flipper right
+#say (D3) Summon page flipper right
 
 # Summon display
 function exigence:hub/profile_selector/menu/display/coop_invitor/load_page_flipper with entity @s item.components."minecraft:custom_data"

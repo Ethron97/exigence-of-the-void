@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-say Player logged in after world reset
+#say (D3) Player logged in after world reset
 
 team leave @s
 

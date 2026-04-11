@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#$say Shop unlock $(vault_string)
+#$say (D3) Shop unlock $(vault_string)
 
 # Update the scores of this player's profile node, and any coop profile nodes if applicable
 scoreboard players operation #compare profile.node.profile_id = @s profile.player.profile_id

@@ -8,7 +8,8 @@
 #   SCORE #online Temp
 
 #====================================================================================================
-execute unless entity @s[type=player] run return run say Tried to copy profile scores to a non player?
+execute unless entity @s[type=player] run return run say (C) Tried to copy profile scores to a non player?
+#====================================================================================================
 
 scoreboard players operation @s profile.player.profile_id = @n[tag=ProfileNode,distance=..0.1] profile.node.profile_id
 scoreboard players operation @s profile.player.profile_difficulty = @n[tag=ProfileNode,distance=..0.1] profile.node.profile_difficulty

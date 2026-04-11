@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Kicking from locker room
+#say (D3) Kicking from locker room
 
 tag @s remove LockerRoom
 

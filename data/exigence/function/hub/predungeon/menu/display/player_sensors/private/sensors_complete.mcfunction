@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say Sensors complete
+say (D3) Sensors complete
 
 # Set state
 scoreboard players set #predungeon_state Temp 3
@@ -30,5 +30,8 @@ execute in exigence:hub positioned 0.0 209 104.0 run function exigence:generated
 # Schedule function to blow out the door
 schedule function exigence:hub/predungeon/menu/display/warp_door/warp_the_door 4t
 
-# Update the room related stuff:
-# TODO
+# Protect the predungeon room during load
+execute positioned 0.5 209.0 104.5 run function exigence:hub/predungeon/node/protect_room
+
+# Start game loading sequence
+schedule function exigence:game/load/start_loading_sequence 1t

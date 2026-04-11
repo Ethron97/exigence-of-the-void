@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Node close triage
+#say (D3) Node close triage
 
 # Triage
 execute if score @s hub.room.room_type matches 1 run function exigence:room/tutorial/close_from_timeout

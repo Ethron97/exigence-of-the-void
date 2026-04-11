@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-say Claim display
+#say (D3) Claim display
 
 scoreboard players operation @s hub.entity.player_id = #target career.player_id
 

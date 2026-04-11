@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Kill Predungeon interaction
+#say (D3) Kill Predungeon interaction
 
 scoreboard players operation #compare career.player_id = @s career.player_id
 

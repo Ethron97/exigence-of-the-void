@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say validate/coop/is_present_player
+#say (D3) validate/coop/is_present_player
 
 scoreboard players set #player_found Temp 1
 

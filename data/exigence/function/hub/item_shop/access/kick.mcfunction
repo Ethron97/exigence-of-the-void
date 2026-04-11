@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Kicking from item shop
+#say (D3) Kicking from item shop
 
 tag @s remove ItemShop
 

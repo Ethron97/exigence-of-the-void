@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-say Load deck analyzer from PREDUNGEON room
+#say (D3) Load deck analyzer [predungeon]
 
 # Call interface
 #   INPUT: #profile_id Temp, #coop_profile_id Temp

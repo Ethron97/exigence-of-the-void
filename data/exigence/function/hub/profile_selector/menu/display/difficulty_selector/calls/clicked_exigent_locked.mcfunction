@@ -4,7 +4,7 @@
 
 #====================================================================================================
 
-# Say locked
+# Inform locked
 tellraw @p[tag=ProfileSelecting,tag=Interacting,distance=..16] {text:"✖ You must beat the game at least once to unlock this difficulty.",color:"red"}
 
 # Sound

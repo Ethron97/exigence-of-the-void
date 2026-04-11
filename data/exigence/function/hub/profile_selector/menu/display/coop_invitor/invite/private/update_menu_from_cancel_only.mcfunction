@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-say Checking update menu from cancel-only
+#say (D3) Checking update menu from cancel-only
 
 execute if score #from_ Temp matches 1 run function exigence:hub/profile_selector/menu/display/player_head/calls/private/switch_from_pending_to_head with entity @s item.components."minecraft:custom_data"
 execute if score #from_ Temp matches 2 if score #filled_slots_old Temp = max_coop_players global_settings \

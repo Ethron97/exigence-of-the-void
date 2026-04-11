@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Kill locker room interaction
+#say (D3) Kill locker room interaction
 
 scoreboard players operation #compare hub.player.locker_room_id = @s hub.player.locker_room_id
 scoreboard players operation #compare career.player_id = @s career.player_id

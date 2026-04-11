@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-say Load chests
+#say (D3) Load chests (profile selector)
 
 # Make sure chests are placed
 function exigence:hub/profile_selector/load/place_chests

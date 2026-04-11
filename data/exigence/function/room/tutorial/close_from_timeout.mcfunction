@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Close tutorial (player timed out)
+#say (D3) Close tutorial (player timed out)
 
 scoreboard players operation #compare hub.room.room_id = @s hub.room.room_id
 

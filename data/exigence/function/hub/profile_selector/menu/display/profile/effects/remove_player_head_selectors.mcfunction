@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say Remove player head selectors
+#say (D3) Remove player head selectors
 
 # Remove display
 kill @e[type=minecraft:text_display,tag=PageLabel,distance=..16]

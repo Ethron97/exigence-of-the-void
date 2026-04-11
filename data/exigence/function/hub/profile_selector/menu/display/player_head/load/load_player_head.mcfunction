@@ -13,7 +13,7 @@
 
 #====================================================================================================
 
-#say Load player head selector
+#say (D3) Load player head selector
 
 # Summon item display
 summon minecraft:item_display ~ ~ ~ {brightness:{sky:13,block:13},teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["PlayerHeadDisplay","MenuDisplay","NewItemDisplay","SizeClassMedium"],item:{id:"minecraft:player_head",count:1},\

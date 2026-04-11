@@ -1,10 +1,10 @@
 
 # Return if game is not active
-execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
+execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return fail
 #----------------------------------------------------------------------------------------------------
 
 # Advancee dialogue
-execute at @s as @n[type=minecraft:villager,tag=NPC_Scientist,tag=Game,distance=..32] run function exigence:npc/game/dialogue_scientist
+execute at @s as @e[type=minecraft:villager,tag=NPC_Scientist,tag=Game,distance=..16,limit=1] run function exigence:npc/game/dialogue_scientist
 
 # Reset advancement
 advancement revoke @s only exigence:listener/scientist_interact_game

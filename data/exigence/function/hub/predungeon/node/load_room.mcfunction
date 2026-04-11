@@ -8,7 +8,7 @@
 #====================================================================================================
 
 # DEBUG
-say Load predungeon
+#say (D3) Load predungeon
 
 fill 1 207 35 -1 209 35 minecraft:air
 
@@ -29,7 +29,7 @@ execute if score #data_loaded Temp matches 1 run function exigence:hub/predungeo
 # Load deck analyzer menu
 scoreboard players operation #profile_id Temp = @s profile.player.profile_id
 scoreboard players operation #coop_profile_id Temp = @s profile.player.coop_profile_id
-execute positioned ~-6.49 ~ ~ rotated -90 0 run function exigence:hub/predungeon/load/setup_deck_analyzer
+execute positioned ~-6.49 ~ ~ rotated -90 0 summon marker run function exigence:hub/predungeon/load/setup_deck_analyzer
 
 # Load predungeon menu
 execute positioned ~ ~ ~5.49 run function exigence:hub/predungeon/menu/load_menu

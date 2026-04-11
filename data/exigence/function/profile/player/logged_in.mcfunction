@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Player logged in
+#say (D3) Player logged in
 
 scoreboard players set @s quit 0
 

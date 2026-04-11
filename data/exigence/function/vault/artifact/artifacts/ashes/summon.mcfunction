@@ -6,3 +6,4 @@ $data merge entity @s {Item:{id:"minecraft:gunpowder",count:1,components:{"minec
 ,{text:""}\
 ,[{text:"Player Passive",color:"dark_gray"}]\
 ],"minecraft:custom_data":{item_name:"ashes",is_soulbound:true}}}}
+say summon bell breaker

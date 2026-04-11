@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-say Save chests
+#say (D3) Save chests [item shop]
 
 #   OUTPUT
 execute store success score #chests_saved Temp if block ~2 ~ ~3 minecraft:chest

@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say predungeon menu tick
+#say (D3) predungeon menu tick
 
 # Swap Hover/OldHover tags
 execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=Hover,distance=..16] run function exigence:menu/menu_tick_tag_swap

@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-say Switch to pending
+#say (D3) Switch to pending
 
 # Inform player:
 #   (This info is repeated if you click the head)

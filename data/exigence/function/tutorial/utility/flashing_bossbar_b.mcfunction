@@ -3,7 +3,7 @@
 
 #====================================================================================================
 
-#say part b
+#say (D3) part b
 
 # Re-call part A
 function exigence:tutorial/utility/flashing_bossbar_a with storage exigence:tutorial flashing_bossbar

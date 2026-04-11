@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#$say Toggle setting $(scoreboard)
+#$say (D3) Toggle setting $(scoreboard)
 
 # Increase this random score by 1
 scoreboard players add @s Random 1

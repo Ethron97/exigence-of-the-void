@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-say PLAYER NODE creating coop profiles
+#say (D3) PLAYER NODE creating coop profiles
 
 scoreboard players set #player_index Temp 2
 scoreboard players operation #compare player.node.joined_player_1 = @s player.node.joined_player_1

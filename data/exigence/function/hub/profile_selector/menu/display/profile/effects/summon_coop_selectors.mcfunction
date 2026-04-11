@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say Summon coop selectors
+#say (D3) Summon coop selectors
 
 # Clear previous step details
 # Show step details

@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-say clicked pre button
+#say (D3) clicked pre button
 
 # Increase cooldown score for player
 scoreboard players add @p[tag=Interacting,distance=..16] hub.player.interaction_cooldown 20

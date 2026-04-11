@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say New locker room node
+#say (D3) New locker room node
 
 summon minecraft:marker ~ ~ ~ {Tags:["NewMarker","LockerRoomNode"],CustomName:[{text:"Marker | LockerRoomNode",color:"#aca927"},{text:" e",color:"#fffb00"}]}
 
@@ -19,4 +19,4 @@ scoreboard players set @n[type=marker,tag=NewMarker,distance=..1] hub.locker_roo
 tag @n[type=marker,tag=NewMarker,distance=..1] remove NewMarker
 
 # Manually add South or West tag based on locker room orientation
-say Don't forget to add the South or West tag
+tellraw @s {text:"Don't forget to add the South or West tag"}

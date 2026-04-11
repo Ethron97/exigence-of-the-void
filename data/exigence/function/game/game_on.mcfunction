@@ -53,9 +53,6 @@ execute as @a[tag=ActivePlayer] run function exigence:game/modifiers/load_modifi
 #   Setups of the dungeon should happen after deck processing so the deck can potentially influence it.
 execute as @a[tag=PrimaryPlayer] run function exigence:deck/process/process_deck
 
-# Reset advancements
-advancement revoke @a[advancements={exigence:listener/step_on_sculk=true}] only exigence:listener/step_on_sculk
-
 # Load enchantments from player items
 execute as @a[tag=ActivePlayer] run function exigence:game/modifiers/load_modifiers_a
 execute as @a[tag=ActivePlayer] run function exigence:game/modifiers/load_modifiers_b

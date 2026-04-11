@@ -11,7 +11,7 @@
 
 #====================================================================================================
 
-#$say a $(text) $(color0) $(color1) $(active_color) $(interval) $(flashes)
+#$say (D3) a $(text) $(color0) $(color1) $(active_color) $(interval) $(flashes)
 
 # Do the flash
 $execute if score $(active_color) number matches 0 if score $(flashes) number matches ..1 run bossbar set exigence:tutorial name {text:'$(final_text)',color:'$(color0)'}

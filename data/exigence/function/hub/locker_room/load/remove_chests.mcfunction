@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Remove chests
+#say (D3) Remove chests [locker room]
 
 # Remove chests
 setblock ^3 ^ ^ air

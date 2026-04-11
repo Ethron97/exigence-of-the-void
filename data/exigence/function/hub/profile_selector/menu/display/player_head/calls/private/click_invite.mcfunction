@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-say Click invite
+#say (D3) Click invite
 
 scoreboard players operation #compare hub.player_entity.query_idid = @s IDID
 

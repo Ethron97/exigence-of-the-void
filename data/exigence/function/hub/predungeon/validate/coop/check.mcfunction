@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say validate/coop/check
+#say (D3) validate/coop/check
 
 # Default to VALID
 scoreboard players set #predungeon_validate_coop Temp 1

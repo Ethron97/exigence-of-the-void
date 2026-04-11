@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Place chests
+#say (D3) Place chests
 
 # Place blank chests
 setblock ~-4 ~ ~4 chest[type=right,facing=east]

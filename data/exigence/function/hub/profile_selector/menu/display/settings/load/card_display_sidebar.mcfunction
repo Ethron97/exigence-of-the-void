@@ -12,35 +12,12 @@
 # INPUT player_id, profile_selector_id
 function exigence:hub/profile_selector/menu/display/settings/load/private/summon_setting_display
 
-# Get value player
-scoreboard players operation @n[type=item_display,tag=NewItemDisplay,distance=..0.1] Random = @p[tag=ProfileSelecting,distance=..16] career.settings.card_display_sidebar
-
-# Set type to Toggle
-tag @n[type=item_display,tag=NewItemDisplay,distance=..0.1] add Toggle
-
 # Set data
-data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_data".scoreboard set value "card_display_sidebar"
-data modify entity @n[type=item_display,scores={Random=0},tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_model_data".strings set value ["toggle_off"]
-data modify entity @n[type=item_display,scores={Random=1},tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_model_data".strings set value ["toggle_on"]
-data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_data".display set value {text:"Card history sidebar"}
-data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_data".display0 set value {text:"Card history sidebar"}
-data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_data".display1 set value {text:"Card history sidebar"}
-
-data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_data".preview0 set value [{text:""}]
-data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_data".preview1 set value \
-[{text:"Cards Played",color:"white"},{text:"\nTreasure Hunter",color:"dark_aqua"},{text:"\n(2/2) ",color:"dark_gray"},{text:"Green Thumb",color:"dark_aqua"}\
-,{text:"\n(1/2) ",color:"dark_gray"},{text:"Green Thumb",color:"dark_aqua"}]
-
-# Overwrite hover data
-data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_data".preview_scale set value '0.2'
-data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_data".preview_hover_scale set value '0.25'
-data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_data".preview_shift set value '-0.005'
-
-# Load text
-execute as @n[type=item_display,tag=NewItemDisplay,distance=..0.1] at @s positioned ^0.7 ^-0.1 ^ \
-run function exigence:hub/profile_selector/menu/display/settings/calls/private/show_text
+execute as @n[type=item_display,tag=NewItemDisplay,distance=..0.1] \
+run function exigence:hub/profile_selector/menu/display/settings/load/load_data/card_display_sidebar
 
 # Summon preview
 execute at @s positioned ~5.47 ~2.0 ~0.57 as @n[type=item_display,tag=NewItemDisplay,distance=..16] run function exigence:hub/profile_selector/menu/display/settings/calls/private/create_preview with entity @s item.components."minecraft:custom_data"
+
 # Remove local tag
 tag @n[type=item_display,tag=NewItemDisplay,distance=..0.1] remove NewItemDisplay

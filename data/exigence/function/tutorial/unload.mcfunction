@@ -5,10 +5,11 @@
 #   IN exigence:tutorial
 
 #====================================================================================================
-execute unless predicate exigence:dimension/location/tutorial run say Trying to unload tutorial not in hub
+execute unless dimension exigence:tutorial run return run say (C) Trying to unload tutorial not in tutorial
+#----------------------------------------------------------------------------------------------------
 
 # DEBUG
-say Unload tutorial 
+#say (D3) Unload tutorial 
 
 function exigence:tutorial/reset
 

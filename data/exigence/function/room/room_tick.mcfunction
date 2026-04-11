@@ -1,9 +1,5 @@
 # Called by misc/tick
 
-## CONSTRAINTS
-#   IN exigence:hub
-#   AT 0 153 0
-
 #====================================================================================================
 
-execute in exigence:hub positioned 0 153 0 as @e[type=marker,tag=RoomNode,distance=..1] run function exigence:room/node/tick
+execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=marker,tag=RoomNode] run function exigence:room/node/tick

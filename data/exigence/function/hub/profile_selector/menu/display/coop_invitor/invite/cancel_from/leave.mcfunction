@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-say Cancel invite from leave
+#say (D3) Cancel invite from leave
 
 # Call the full cancel function from the player node
 $scoreboard players set #target player.node.invite_sent_to $(head_player_id)

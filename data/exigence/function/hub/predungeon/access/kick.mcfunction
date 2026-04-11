@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Kicking from predungeon
+#say (D3) Kicking from predungeon
 
 tag @s remove Predungeon
 

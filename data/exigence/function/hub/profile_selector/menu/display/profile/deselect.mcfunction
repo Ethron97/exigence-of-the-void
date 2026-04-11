@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-say Deselect
+#say (D3) Deselect
 
 # Change player score
 $execute at @s run scoreboard players reset @p[scores={hub.player.profile_selector_id=$(profile_selector_id)},tag=ProfileSelecting,distance=..16] profile.player.profile_id
@@ -41,13 +41,13 @@ team join Special
 ## SAVE CHESTS TEMPLATE
 # Chests -> data
 #   OUTPUTS chests_saved if there was data to save
-$execute in exigence:hub positioned 999.5 128 6.5 at @n[type=marker,scores={hub.profile_selector_id=$(profile_selector_id)},tag=ProfileSelectorNode,distance=..140] \
+$execute in exigence:hub at @n[x=-98,y=0,z=798,dx=244,dy=256,dz=16,type=marker,scores={hub.profile_selector_id=$(profile_selector_id)},tag=ProfileSelectorNode] \
 run function exigence:hub/profile_selector/load/save_chests
 
 # Data -> profile chest
 scoreboard players set #remove_tag Temp 1
 #$execute if score #chests_saved Temp matches 1
-$execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,scores={profile.node.profile_id=$(profile_id)},tag=ProfileNode,limit=1] \
+$execute in exigence:profile_data as @n[x=0,y=0,z=0,dx=15,dy=256,dz=15,scores={profile.node.profile_id=$(profile_id)},tag=ProfileNode] \
 run function exigence:profile/profile_node/save/try_data_to_chest
 
 # Unload deck analyzer

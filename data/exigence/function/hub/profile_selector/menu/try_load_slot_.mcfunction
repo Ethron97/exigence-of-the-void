@@ -10,7 +10,7 @@
 
 #====================================================================================================
 
-#$say Try load slot $(slot_id)
+#$say (D3) Try load slot $(slot_id)
 
 # 1. Load the item display
 $function exigence:hub/profile_selector/menu/load_slot_display {player_id:$(player_id),slot_id:$(slot_id),profile_selector_id:$(profile_selector_id)}

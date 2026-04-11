@@ -26,7 +26,7 @@ scoreboard players operation #temp Temp /= #highest Temp
 scoreboard players set #temp2 Temp 13125
 scoreboard players operation #temp2 Temp *= #temp Temp
 scoreboard players operation #temp2 Temp > 0 number
-# Let's say 100%... this is now 1312500; we want 1.3125, so 6 decimal moves
+# Let's do 100%... this is now 1312500; we want 1.3125, so 6 decimal moves
 
 # Early return if new position matches old position
 execute if score @s Random = #temp2 Temp run return fail

@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-say Save chests (no remove)
+#say (D3) Save chests (no remove) [predungeon]
 
 #   OUTPUT
 execute store success score #chests_saved Temp if block ~-4 ~ ~3 minecraft:chest

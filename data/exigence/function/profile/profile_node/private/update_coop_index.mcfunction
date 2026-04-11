@@ -10,7 +10,8 @@
 
 #====================================================================================================
 
-say Update coop index
+#say (D3) Update coop index
+
 # Re-asign profile indexes (based on the removed one)
 # Old index 4 = no changes
 

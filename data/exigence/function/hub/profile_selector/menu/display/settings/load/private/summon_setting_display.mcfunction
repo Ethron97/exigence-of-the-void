@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say Load setting selector
+#say (D3) Load setting selector
 
 # Summon item display
 summon minecraft:item_display ~ ~ ~ {brightness:{block:13,sky:13},Rotation:[90.0f,0.0f],billboard:"fixed"\
@@ -29,18 +29,6 @@ function_right:'exigence:hub/profile_selector/menu/display/settings/calls/right_
 }}}}
 
 # Assign data
-data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..1] item.components."minecraft:custom_data".player_id set from storage exigence:temp player_id
-data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..1] item.components."minecraft:custom_data".profile_selector_id set from storage exigence:temp profile_selector_id
-
-# Give right and left click functions
-# Assign new IDID
-scoreboard players add #highest IDID 1
-scoreboard players operation @n[type=item_display,tag=NewItemDisplay,distance=..1] IDID = #highest IDID
-
-# Copy profile selector id
-execute store result score @n[type=item_display,tag=NewItemDisplay,distance=..1] hub.entity.profile_selector_id run data get storage exigence:temp profile_selector_id
-
-# Add ID to item data
-execute store result entity @n[type=item_display,tag=NewItemDisplay,distance=..1] item.components."minecraft:custom_data".idid int 1 run scoreboard players get #highest IDID
+execute as @n[type=item_display,tag=NewItemDisplay,distance=..1] run function exigence:hub/profile_selector/menu/display/settings/load/private/summon_setting_display_data
 
 # Local tag to be removed by function that implements this

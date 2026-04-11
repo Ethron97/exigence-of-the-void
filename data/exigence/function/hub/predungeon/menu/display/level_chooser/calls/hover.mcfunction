@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say Hover call
+#say (D3) Hover call
 
 # Playsound
 execute at @s run playsound minecraft:block.bamboo_wood_trapdoor.open ambient @a ~ ~ ~ 1 1.2

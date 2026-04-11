@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say Predungeon tick player
+#say (D3) Predungeon tick player
 
 scoreboard players operation #compare career.player_id = @s career.player_id
 

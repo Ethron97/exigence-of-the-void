@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say Exploding web ball
+#say (D3) Exploding web ball
 
 # Set max march distance
 scoreboard players set #max_march game.entity.snowball.id 40

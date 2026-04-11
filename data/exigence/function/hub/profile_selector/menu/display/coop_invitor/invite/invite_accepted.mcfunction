@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-say Invite accepted
+#say (D3) Invite accepted
 
 # Call the full cancel function from the player node
 $execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,scores={profile.node.player_id=$(player_id)},tag=PlayerNode,limit=1] \

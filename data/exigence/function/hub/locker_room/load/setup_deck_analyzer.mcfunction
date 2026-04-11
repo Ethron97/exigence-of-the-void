@@ -1,27 +1,24 @@
 # Load deck analyzer for the locker room room
 
 ## CONSTRAINTS
-#   AS locker room node
-#   AT location
+#   AS marker (blank)
+#   AT location (+facing)
 
 ## INPUT
 #   SCORE #profile_id Temp
 #   SCORE #coop_profile_id Temp
+#   SCORE #input hub.locker_room_id
 
 #====================================================================================================
 
-say Setup deck analyzer from locker room
+#say (D3) Setup deck analyzer [locker room]
 
-# Summon deck analyzer menu
-#   Summons node, refresh button, and displays
-execute facing entity @s feet run function exigence:hub/deck_analyzer/summon_deck_analyzer_node
+# Call interface-summon
+function exigence:hub/deck_analyzer/setup_deck_analyzer_node
 
 # Copy score(s)
-scoreboard players operation @n[type=marker,tag=NewDeckAnalyzer,distance=..1] hub.entity.locker_room_id = @s hub.locker_room_id
+scoreboard players operation @s hub.entity.locker_room_id = #input hub.locker_room_id
 
 # Load load
 #   INPUT: #profile_id Temp, #coop_profile_id Temp
-execute as @n[type=marker,tag=NewDeckAnalyzer,distance=..1] at @s run function exigence:hub/locker_room/load/load_deck_analyzer
-
-# Remove local tag
-tag @n[type=marker,tag=NewDeckAnalyzer,distance=..1] remove NewDeckAnalyzer
+execute as @s at @s run function exigence:hub/locker_room/load/load_deck_analyzer

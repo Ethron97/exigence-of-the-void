@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Player logged in (node)
+#say (D3) Player logged in (node)
 
 scoreboard players set @s profile.node.player_is_online 1
 

@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-say Setup locker room interaction
+#say (D3) Setup locker room interaction
 
 # Summon interaction
 summon interaction ~ ~ ~ {Tags:["LockerRoomInteraction","NewLockerRoomInteraction","FunctionInteraction"],response:true,width:0.01,height:0.01}

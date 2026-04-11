@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-say Entering Locker Room (COOP)
+#say (D3) Entering Locker Room (COOP)
 
 tag @s add LockerRoom
 

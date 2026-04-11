@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say Locker tick player
+#say (D3) Locker tick player
 
 scoreboard players operation #compare career.player_id = @s career.player_id
 

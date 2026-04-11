@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#$say Cycle setting $(scoreboard)
+#$say (D3) Cycle setting $(scoreboard)
 
 # Increase this random score by 1
 scoreboard players add @s Random 1

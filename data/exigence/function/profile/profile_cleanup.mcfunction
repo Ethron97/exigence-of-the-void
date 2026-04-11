@@ -6,7 +6,7 @@
 #====================================================================================================
 # !!! CAUTION !!!
 #====================================================================================================
-execute unless predicate exigence:dimension/location/profile_data run return 1
+execute unless dimension exigence:profile_data run return run say (C) profile/profile_cleanup not run in profile_data dimension
 #====================================================================================================
 
 # Remove entites

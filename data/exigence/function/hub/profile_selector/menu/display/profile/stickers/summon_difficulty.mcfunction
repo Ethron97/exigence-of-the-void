@@ -10,7 +10,7 @@
 
 #====================================================================================================
 
-#say Load difficulty sticker
+#say (D3) Load difficulty sticker
 
 # Summon item display
 summon minecraft:item_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["ProfileSticker","NewItemDisplay","DifficultySticker"],item:{id:"minecraft:sunflower",count:1\

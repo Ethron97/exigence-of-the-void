@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say Summon invitor confirm
+#say (D3) Summon invitor confirm
 
 # Summon display
 function exigence:hub/profile_selector/menu/display/coop_invitor/load_coop_invitor with entity @s item.components."minecraft:custom_data"

@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say Show description
+#say (D3) Show description
 
 # Kill description if exists (so they don't pile up.)
 kill @n[type=text_display,tag=SettingDescription,distance=..1]

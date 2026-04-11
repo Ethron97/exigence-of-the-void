@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Cancel invite FULL (from player node)
+#say (D3) Cancel invite FULL (from player node)
 
 execute as @a if score @s career.player_id = #compare profile.node.player_id run tag @s add CancelledBy
 

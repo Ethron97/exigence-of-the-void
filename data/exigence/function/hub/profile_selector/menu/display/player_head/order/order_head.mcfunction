@@ -5,7 +5,8 @@
 
 #====================================================================================================
 
-#say Ordered
+#say (D3) Ordered
+
 tag @s add Ordered
 
 scoreboard players operation @s hub.entity.player_head_order = #order_index Temp

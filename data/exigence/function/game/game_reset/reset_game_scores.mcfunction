@@ -6,11 +6,11 @@
 #====================================================================================================
 
 # Reset DialogueTracker GAME scores
-scoreboard players set #Supplier game.dialogue 0
-execute if entity @a[tag=ActivePlayer,advancements={exigence:story/match_bookshelf=false}] run scoreboard players set #Scientist game.dialogue 0
-execute if entity @a[tag=ActivePlayer,advancements={exigence:story/match_bookshelf=true}] run scoreboard players set #Scientist game.dialogue 6
-execute if entity @a[tag=ActivePlayer,advancements={exigence:story/light_altars=false}] run scoreboard players set #Petitioner game.dialogue 0
-execute if entity @a[tag=ActivePlayer,advancements={exigence:story/light_altars=true}] run scoreboard players set #Petitioner game.dialogue 4
+scoreboard players set npc.supplier game.dialogue 0
+execute if entity @a[tag=ActivePlayer,advancements={exigence:story/match_bookshelf=false}] run scoreboard players set npc.scientist game.dialogue 0
+execute if entity @a[tag=ActivePlayer,advancements={exigence:story/match_bookshelf=true}] run scoreboard players set npc.scientist game.dialogue 6
+execute if entity @a[tag=ActivePlayer,advancements={exigence:story/light_altars=false}] run scoreboard players set npc.petitioner game.dialogue 0
+execute if entity @a[tag=ActivePlayer,advancements={exigence:story/light_altars=true}] run scoreboard players set npc.petitioner game.dialogue 4
 
 ## GAME TIME
 scoreboard players set game.ticks tick_counter 0

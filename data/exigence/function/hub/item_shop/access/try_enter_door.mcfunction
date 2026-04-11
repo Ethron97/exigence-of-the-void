@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-say Try enter item shop
+#say (D3) Try enter item shop
 
 # Make sure player has profile loaded
 execute unless score @s profile.player.profile_id matches 1.. run return run function exigence:hub/item_shop/access/fail/no_profile
@@ -19,7 +19,7 @@ execute if score @s profile.player.coop_profile_id matches 1.. run function exig
 execute if score #did_coop_enter Temp matches 1 run return 0
 
 # Shop is in use
-execute positioned 0 153 0 if entity @n[type=marker,scores={hub.room.room_type=9},tag=RoomNode,distance=..1] at @s run return run function exigence:hub/item_shop/access/fail/in_use
+execute in exigence:hub if entity @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=marker,scores={hub.room.room_type=9},tag=RoomNode] at @s run return run function exigence:hub/item_shop/access/fail/in_use
 #----------------------------------------------------------------------------------------------------
 
 # Enter room as first player

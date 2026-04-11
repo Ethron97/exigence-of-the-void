@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say Summon player head
+#say (D3) Summon player head
 
 # Summon display
 function exigence:hub/profile_selector/menu/display/player_head/load/load_player_head with storage exigence:temp

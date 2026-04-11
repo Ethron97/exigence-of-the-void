@@ -11,7 +11,7 @@
 
 #====================================================================================================
 
-$say Create new slot:$(slot_id) profile_selector:$(profile_selector_id) player:$(player_id)
+#$say (D3) Create new slot:$(slot_id) profile_selector:$(profile_selector_id) player:$(player_id)
 
 # Add local tag (to prevent overlapping effects from the "select" function)
 tag @s add Creating

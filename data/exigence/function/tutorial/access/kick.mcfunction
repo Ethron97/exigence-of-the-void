@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Exit tutorial (kick)
+#say (D3) Exit tutorial (kick)
 
 # Tp back to spawn
 execute in exigence:hub run spawnpoint @s 0 200 0

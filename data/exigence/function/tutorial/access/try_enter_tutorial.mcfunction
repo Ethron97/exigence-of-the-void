@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-say Try enter tutorial
+#say (D3) Try enter tutorial
 
 # Check that no one else is currently in the tutorial
 execute if data storage exigence:dungeon {tutorial:1} run tellraw @s [{text:"The Tutorial is in use",color:"red"}]

@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Setup Predungeon interaction
+#say (D3) Setup Predungeon interaction
 
 # Summon interaction
 summon interaction ~ ~ ~ {Tags:["PredungeonInteraction","NewPredungeonInteraction","FunctionInteraction"],response:true,width:0.01,height:0.01}

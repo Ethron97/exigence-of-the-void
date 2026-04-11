@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-say Cancel invite -  sender
+#say (D3) Cancel invite -  sender
 
 tag @s remove InviteSent
 tag @s add CancelledBy

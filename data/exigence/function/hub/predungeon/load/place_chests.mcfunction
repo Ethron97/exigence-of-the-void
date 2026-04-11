@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Place chests
+#say (D3) Place chests [predungeon]
 
 # Place blank chests
 setblock ~-4 ~ ~3 chest[type=right,facing=north]

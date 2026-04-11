@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say clicked eyeball sensors
+#say (D3) clicked eyeball sensors
 
 tellraw @p[tag=Interacting,tag=Predungeon,distance=..16] [{text:"You are being sensed! Keep looking until the door powers up.",color:"light_purple"}]
 

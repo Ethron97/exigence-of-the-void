@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-say Try inform member 2
+#say (D3) Try inform member 2
 
 scoreboard players set #player_found2 Temp 0
 

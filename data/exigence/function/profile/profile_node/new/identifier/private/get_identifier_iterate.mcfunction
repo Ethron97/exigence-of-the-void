@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#$say Iterate $(i)
+#$say (D3) Iterate $(i)
 
 # Get element i
 $data modify storage exigence:temp identifier set from storage exigence:temp identifiers[$(i)]

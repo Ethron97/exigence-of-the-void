@@ -8,8 +8,8 @@
 
 #====================================================================================================
 
-#$say Unhover (profile) (profile_selector:$(profile_selector_id) slot:$(slot_id))
-#say Unhover pre button
+#$say (D3) Unhover (profile) (profile_selector:$(profile_selector_id) slot:$(slot_id))
+#say (D3) Unhover pre button
 
 # Remove item details
 execute at @s run function exigence:hub/predungeon/menu/display/pre_button/calls/hover/remove_hover_details with entity @s item.components."minecraft:custom_data"

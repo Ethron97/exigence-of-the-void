@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Remove coop profile
+#say (D3) Remove coop profile
 
 # Save profile index
 scoreboard players operation #old_index Temp = @s profile.node.coop_profile_index

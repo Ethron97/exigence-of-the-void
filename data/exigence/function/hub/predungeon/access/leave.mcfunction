@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Leaving Predungeon
+#say (D3) Leaving Predungeon
 
 tag @s remove Predungeon
 team leave @s
@@ -43,4 +43,4 @@ execute if score #other_players Temp matches 1 run return 0
 
 # If this player was the last one, kill room node and unload room
 execute in exigence:hub positioned 0.5 209.0 104.5 run function exigence:hub/predungeon/node/unload_room
-execute in exigence:hub positioned 0 153 0 as @e[type=marker,tag=RoomNode,distance=..1] if score @s hub.room.room_id = #compare hub.player.room_id run kill @s
+execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=marker,tag=RoomNode] if score @s hub.room.room_id = #compare hub.player.room_id run kill @s

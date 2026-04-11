@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Remove chests
+#say (D3) Remove chests [predungeon]
 
 # Remove chests
 setblock ~-4 ~ ~3 air

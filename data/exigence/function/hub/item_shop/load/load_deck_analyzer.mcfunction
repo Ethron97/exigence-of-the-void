@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-say Load deck analyzer from ITEM SHOP room
+#say (D3) Load deck analyzer from ITEM SHOP room
 
 # Call interface
 #   INPUT: #profile_id Temp, #coop_profile_id Temp

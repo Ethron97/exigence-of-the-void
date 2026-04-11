@@ -12,7 +12,7 @@
 
 #====================================================================================================
 
-#say Load coop player list
+#say (D3) Load coop player list
 
 # Summon text display
 $summon minecraft:text_display ~ ~ ~ {line_width:115,billboard:"fixed",alignment:"center",Tags:["CoopPlayerDisplay","CoopPlayerDisplay$(num)","NewTextDisplay"]\

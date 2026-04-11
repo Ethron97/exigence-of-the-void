@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-say Leaving Locker Room
+#say (D3) Leaving Locker Room
 
 tag @s remove LockerRoom
 
@@ -36,4 +36,4 @@ run return 0
 
 # If this player was the last one, kill room node and unload room
 execute as @n[type=marker,tag=LockerRoomNode,distance=..0.1] at @s run function exigence:hub/locker_room/node/unload_room
-execute in exigence:hub positioned 0 153 0 as @e[type=marker,tag=RoomNode,distance=..1] if score @s hub.room.room_id = #compare hub.player.room_id run kill @s
+execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=marker,tag=RoomNode] if score @s hub.room.room_id = #compare hub.player.room_id run kill @s

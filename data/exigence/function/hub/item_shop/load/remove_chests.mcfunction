@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Remove chests
+#say (D3) Remove chests [item shop]
 
 # Remove chests
 setblock ~2 ~ ~3 air

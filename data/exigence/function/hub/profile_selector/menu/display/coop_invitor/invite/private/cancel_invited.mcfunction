@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-say Cancel invite - invited
+#say (D3) Cancel invite - invited
 
 tag @s remove Invited
 tag @s remove Joined

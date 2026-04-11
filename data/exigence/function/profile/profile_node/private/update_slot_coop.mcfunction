@@ -6,6 +6,6 @@
 
 #====================================================================================================
 
-$execute in exigence:hub positioned 999 128 6 \
-as @e[type=item_display,tag=SlotDisplay,distance=..200,nbt={item:{components:{"minecraft:custom_data":{coop_profile_id:$(old_coop_id)}}}}] \
+$execute in exigence:hub as @e[x=-98,y=0,z=798,dx=244,dy=256,dz=16,type=item_display\
+,tag=SlotDisplay,nbt={item:{components:{"minecraft:custom_data":{coop_profile_id:$(old_coop_id)}}}}] \
 run function exigence:profile/profile_node/private/update_slot_b

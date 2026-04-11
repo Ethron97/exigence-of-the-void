@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say Load difficulty selector
+#say (D3) Load difficulty selector
 
 # Summon item display
 #   Change item texture and scale depending on is coop or not

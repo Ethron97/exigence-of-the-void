@@ -15,7 +15,6 @@ advancement revoke @s[advancements={exigence:listener/interact/bookshelf=true}] 
 advancement revoke @s[advancements={exigence:listener/interact/npc_petitioner_game=true}] only exigence:listener/interact/npc_petitioner_game
 advancement revoke @s[advancements={exigence:listener/scientist_interact_game=true}] only exigence:listener/scientist_interact_game
 advancement revoke @s[advancements={exigence:listener/supplier_interact_game=true}] only exigence:listener/supplier_interact_game
-advancement revoke @s[advancements={exigence:listener/shop_interact=true}] only exigence:listener/shop_interact
 
 advancement revoke @s[advancements={exigence:listener/pickup/ardor_ember=true}] only exigence:listener/pickup/ardor_ember
 advancement revoke @s[advancements={exigence:listener/pickup/ardor_flame=true}] only exigence:listener/pickup/ardor_flame
@@ -33,7 +32,6 @@ advancement revoke @s[advancements={exigence:listener/pickup/vault_key=true}] on
 
 advancement revoke @s[advancements={exigence:listener/fall_from_height=true}] only exigence:listener/fall_from_height
 advancement revoke @s[advancements={exigence:listener/look_at_ravager=true}] only exigence:listener/look_at_ravager
-advancement revoke @s[advancements={exigence:listener/pick_berry_bush=true}] only exigence:listener/pick_berry_bush
 advancement revoke @s[advancements={exigence:listener/sonic_boom=true}] only exigence:listener/sonic_boom
 advancement revoke @s[advancements={exigence:listener/step_on_sculk=true}] only exigence:listener/step_on_sculk
 advancement revoke @s[advancements={exigence:listener/use_totem=true}] only exigence:listener/use_totem

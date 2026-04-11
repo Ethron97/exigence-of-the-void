@@ -5,10 +5,11 @@
 
 #====================================================================================================
 
-say Won tutorial woah
+#say (D3) Won tutorial woah
+
+tellraw @s [{text:"-> Tutorial complete!",color:green}]
 
 advancement grant @s only exigence:story/win_difficulty_0
 
 # Leave (also unloads)
 function exigence:tutorial/access/leave
-

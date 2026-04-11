@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say Clicked difficulty selecotr
+#say (D3) Clicked difficulty selecotr
 
 # Copy scoreboard score to the parent
 $execute at @s as @n[type=item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..5] \

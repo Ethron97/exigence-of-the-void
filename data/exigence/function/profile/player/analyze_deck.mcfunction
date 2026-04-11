@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Analyze deck
+#say (D3) Analyze deck
 
 scoreboard players operation #temp Temp = @s profile.player.profile_id
 execute if score @s profile.player.coop_profile_id matches 1.. run scoreboard players operation #temp Temp = @s profile.player.coop_profile_id

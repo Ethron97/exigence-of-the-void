@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say Load player sensor
+#say (D3) Load player sensor
 
 # Summon sensor
 execute at @s positioned ~-0.015625 ~0.015625 ~-0.01 run function exigence:hub/predungeon/menu/display/player_sensors/summon_player_sensor

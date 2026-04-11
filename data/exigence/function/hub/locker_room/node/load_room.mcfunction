@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-say Load room (locker room)
+#say (D3) Load room [locker room]
 
 # Generate new id
 scoreboard players add #sequence hub.locker_room_id 1
@@ -35,4 +35,5 @@ execute if score #data_loaded Temp matches 1 at @s run function exigence:hub/loc
 # Load deck analyzer menu
 scoreboard players operation #profile_id Temp = @s hub.entity.profile_id
 scoreboard players operation #coop_profile_id Temp = @s hub.entity.coop_profile_id
-execute positioned ^ ^ ^2.49 run function exigence:hub/locker_room/load/setup_deck_analyzer
+scoreboard players operation #input hub.locker_room_id = @s hub.locker_room_id
+execute positioned ^ ^ ^2.49 facing entity @s feet summon marker run function exigence:hub/locker_room/load/setup_deck_analyzer

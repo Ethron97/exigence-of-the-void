@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say trigger wind line item
+#say (D3) trigger wind line item
 
 # Playsound
 playsound minecraft:entity.breeze.idle_ground ambient @a ^ ^ ^4 1 1.0

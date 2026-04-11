@@ -11,7 +11,7 @@
 
 #====================================================================================================
 
-say Load predungeon menu node
+#say (D3) Load predungeon menu node
 
 # Load menu node
 summon minecraft:marker ~ ~ ~ {Tags:["PredungeonMenuNode"]}

@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say Load profile display background
+#say (D3) Load profile display background
 
 # Summon item display
 summon block_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["NewBlockDisplay","ProfileInfoBackground","ProfileDetails","NewDisplay"],block_state:{Name:"minecraft:stripped_birch_wood"},\

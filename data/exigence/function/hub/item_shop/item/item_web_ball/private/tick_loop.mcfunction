@@ -2,7 +2,7 @@
 
 #====================================================================================================
 
-#say Snowball tick loop
+#say (D3) Snowball tick loop
 
 # TP markers to snowballs
 #execute as @e[type=snowball] at @s run function exigence:hub/item_shop/item/item_web_ball/private/tp_marker_to_snowball

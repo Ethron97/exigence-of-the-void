@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Close locker room (player(s) timed out)
+#say (D3) Close locker room (player(s) timed out)
 
 scoreboard players operation #compare hub.room.room_id = @s hub.room.room_id
 

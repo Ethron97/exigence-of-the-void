@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#$say Hover call $(preview_hover_scale)
+#$say (D3) Hover call $(preview_hover_scale)
 
 # Playsound
 execute at @s run playsound minecraft:block.bamboo_wood_trapdoor.open ambient @a ~ ~ ~ 1 1.6

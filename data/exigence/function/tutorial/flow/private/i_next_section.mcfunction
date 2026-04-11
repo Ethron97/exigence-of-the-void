@@ -8,7 +8,7 @@
 #====================================================================================================
 
 # DEBUG
-#say Next section iterate
+#say (D3) Next section iterate
 
 # Reset token
 execute as @e[type=marker,tag=TutorialMarker,tag=LastDropped,distance=..1000] run tag @s remove LastDropped

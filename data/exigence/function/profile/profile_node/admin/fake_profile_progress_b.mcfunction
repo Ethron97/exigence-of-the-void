@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say Fake progress B
+#say (D3) Fake progress B
 
 #execute if score #temp Temp matches 1 run function exigence:profile/profile_node/story/grant {story:'win_difficulty_0'}
 execute if score #temp Temp matches 2 run scoreboard players add @s profile.data.winloss.attempts_D1 1

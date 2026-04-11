@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-say Confirm coop creation
+#say (D3) Confirm coop creation
 
 # Reset invite-sent scores
 execute at @s run tag @p[tag=Interacting,distance=..16] remove InviteSent
@@ -28,7 +28,7 @@ scoreboard players operation #coop_profile_id Temp = #sequence profile.player.pr
 
 # Create profiles for co-op players
 #   INPUT: Passing in SCORE #coop_profile_id Temp
-$execute in exigence:profile_data as @n[x=0,y=0,z=32,dx=15,dy=15,dz=15s,scores={profile.node.player_id=$(player_id)},tag=PlayerNode] \
+$execute in exigence:profile_data as @n[x=0,y=0,z=32,dx=15,dy=15,dz=15,scores={profile.node.player_id=$(player_id)},tag=PlayerNode] \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/calls/private/create_coop_profiles
 
 # Reset saved profile.node.profile_id

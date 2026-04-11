@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Try scores to player
+#say (D3) Try scores to player
 
 scoreboard players operation #compare career.player_id = @s profile.node.player_id
 scoreboard players set #online Temp 0

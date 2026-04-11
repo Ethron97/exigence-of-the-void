@@ -7,7 +7,7 @@
 
 #====================================================================================================
 
-say Try enter locker room
+#say (D3) Try enter locker room
 
 # Make sure player has profile loaded
 execute unless score @s profile.player.profile_id matches 1.. run return run function exigence:hub/locker_room/access/fail/no_profile

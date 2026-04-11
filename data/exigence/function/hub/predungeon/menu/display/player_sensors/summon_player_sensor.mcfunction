@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say Summon player sensor
+#say (D3) Summon player sensor
 
 # Summon item display
 summon minecraft:item_display ~ ~ ~ {Rotation:[180.0f,0.0f],billboard:"fixed",Tags:["PlayerSensor","MenuDisplay","NewItemDisplay","PredungeonDisplay","PredungeonMenuDisplay"]\

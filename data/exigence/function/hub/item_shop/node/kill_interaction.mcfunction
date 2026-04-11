@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Kill item shop interaction
+#say (D3) Kill item shop interaction
 
 scoreboard players operation #compare career.player_id = @s career.player_id
 

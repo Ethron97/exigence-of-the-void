@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say Load profile to slot
+#say (D3) Load profile to slot
 
 # Mark
 tag @s remove Blank

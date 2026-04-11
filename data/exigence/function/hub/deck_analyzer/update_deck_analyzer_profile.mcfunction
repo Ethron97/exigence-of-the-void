@@ -10,12 +10,9 @@
 
 #====================================================================================================
 
-say UPDATE DECK ANALYZER
+#say (D3) UPDATE DECK ANALYZER
 
 # Save the profile id for this load
 scoreboard players operation @s hub.entity.profile_id = #profile_id Temp
 scoreboard players operation @s hub.entity.coop_profile_id = #coop_profile_id Temp
-execute at @s run scoreboard players operation @n[type=item_display,tag=RefreshButton,distance=..3] hub.entity.profile_id = #profile_id Temp
-execute at @s run scoreboard players operation @n[type=item_display,tag=RefreshButton,distance=..3] hub.entity.coop_profile_id = #coop_profile_id Temp
-execute at @s store result entity @n[type=item_display,tag=RefreshButton,distance=..3] item.components."minecraft:custom_data".profile_id int 1 run scoreboard players get #profile_id Temp
-execute at @s store result entity @n[type=item_display,tag=RefreshButton,distance=..3] item.components."minecraft:custom_data".coop_profile_id int 1 run scoreboard players get #coop_profile_id Temp
+execute at @s as @e[type=item_display,tag=RefreshButton,distance=..1,limit=1] run function exigence:hub/deck_analyzer/refresh_button/update_keys

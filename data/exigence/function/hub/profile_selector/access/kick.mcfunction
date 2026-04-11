@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Kicking from profile selector
+#say (D3) Kicking from profile selector
 
 tag @s remove ProfileSelecting
 

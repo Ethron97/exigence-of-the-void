@@ -4,7 +4,9 @@
 #   AS player
 
 #====================================================================================================
-say check currency
+
+#say (D3) check currency
+
 # Clear currency
 execute store result score #temp Temp run clear @s #exigence:currency 0
 

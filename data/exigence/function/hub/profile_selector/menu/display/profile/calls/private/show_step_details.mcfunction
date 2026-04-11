@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-$say Show step details $(step_text)
+#$say (D3) Show step details $(step_text)
 
 # Summon text display
 $summon minecraft:text_display ~ ~ ~0.03 {billboard:"fixed",alignment:"center",Tags:["StepDetails","NewTextDisplay"],text:{text:"$(step_text)",color:"yellow"},background:1\

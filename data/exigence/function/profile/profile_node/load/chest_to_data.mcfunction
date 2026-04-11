@@ -8,10 +8,10 @@
 
 #====================================================================================================
 
-say Chest to data
+#say (D3) Chest to data
 
 tag @s add ChestsLoaded
-execute if entity @s[tag=ChestsLoaded] run say YES WE ADDED THE CHEST LOADED TAG
+#execute if entity @s[tag=ChestsLoaded] run say (D3) YES WE ADDED THE CHEST LOADED TAG
 
 data modify storage exigence:profile chests.blue_left set from block ~4 ~ ~ Items
 data modify storage exigence:profile chests.blue_right set from block ~5 ~ ~ Items

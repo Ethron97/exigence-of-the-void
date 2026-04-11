@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-say CREATE COOP PROFILE FOR MEEEEEEE
+#say (D3) CREATE COOP PROFILE FOR MEEEEEEE
 
 tellraw @s [{text:"Co-op profile successfully created",color:green}]
 tag @s remove Invited

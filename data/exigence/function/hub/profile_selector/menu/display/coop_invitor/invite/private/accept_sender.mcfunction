@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Accept invite -  sender
+#say (D3) Accept invite -  sender
 
 tag @s remove InviteSent
 tag @s add InvitedBy

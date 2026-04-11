@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say Refresh heads
+#say (D3) Refresh heads
 
 # Initialize all player heads
 function exigence:hub/profile_selector/menu/display/player_head/load/upsert_heads

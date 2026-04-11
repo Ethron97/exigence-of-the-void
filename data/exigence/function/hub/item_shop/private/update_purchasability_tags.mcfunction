@@ -8,8 +8,7 @@
 
 #====================================================================================================
 
-#execute if score #ttttt Temp matches 1 run say Update purchasability TAGS (is_researched, etc)
-#say Update purchsability dependencies (is researched, etc)
+#say (D3) Update purchsability dependencies (is researched, etc)
 
 # Update is researched
 execute as @s[tag=!Artifact] run function exigence:menu/item_display/item_shop_display/is_researched with entity @s item.components."minecraft:custom_data"

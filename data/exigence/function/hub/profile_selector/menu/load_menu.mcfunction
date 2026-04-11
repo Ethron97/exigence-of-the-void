@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-$say Load profile selector menu $(profile_selector_id)
+#$say (D3) Load profile selector menu $(profile_selector_id)
 
 # Load the 5 slots:
 # Call function to load slot #

@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-say Cancel invite from decline
+#say (D3) Cancel invite from decline
 
 # Call the full cancel function from the player node
 $scoreboard players set #target player.node.invite_sent_to $(head_player_id)

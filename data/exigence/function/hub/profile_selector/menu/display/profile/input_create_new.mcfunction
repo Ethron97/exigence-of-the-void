@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#$say Input create new (profile_selector:$(profile_selector_id) slot:$(slot_id))
+#$say (D3) Input create new (profile_selector:$(profile_selector_id) slot:$(slot_id))
 
 # Tag self
 #   This tag also makes this unhoverable, so you don't mess up the creation process

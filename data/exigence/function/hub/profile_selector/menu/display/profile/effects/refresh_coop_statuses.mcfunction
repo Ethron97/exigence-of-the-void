@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-say Refresh coop statuses
+#say (D3) Refresh coop statuses
 
 execute positioned ~ ~-1 ~ as @e[type=text_display,tag=CoopPlayerDisplay,distance=..1] \
 run function exigence:hub/profile_selector/menu/display/text_displays/player_list_display/private/update_display

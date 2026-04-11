@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-say Entering Locker Room
+#say (D3) Entering Locker Room
 
 tag @s add LockerRoom
 
@@ -31,7 +31,7 @@ function exigence:hub/locker_room/node/setup_interaction
 #====================================================================================================
 # Summon Room Node
 scoreboard players set #room_type Temp 11
-execute in exigence:hub positioned 0 153 0 run function exigence:room/node/new
+execute in exigence:hub positioned 100 200 100 run function exigence:room/node/new
 
 # Assign room ids
 #   PLAYER

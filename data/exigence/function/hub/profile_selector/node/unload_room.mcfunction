@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Unload room
+#say (D3) Unload room
 
 # Get loaded profile
 scoreboard players reset #compare profile.node.profile_id

@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-say Switch to
+#say (D3) Switch to
 
 # If there is entity to deselect... switching = true
 execute at @s if entity @n[tag=SlotDisplay,tag=Selected,distance=..16] run scoreboard players set #switching Temp 1

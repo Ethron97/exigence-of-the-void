@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Cancel invite from unhover
+#say (D3) Cancel invite from unhover
 
 scoreboard players operation #compare hub.entity.player_id = @s hub.entity.player_id
 

@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say Summon selector 2
+#say (D3) Summon selector 2
 
 # Summon display
 function exigence:hub/profile_selector/menu/display/difficulty_selector/load_difficulty_selector with entity @s item.components."minecraft:custom_data"

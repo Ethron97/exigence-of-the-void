@@ -12,7 +12,7 @@
 
 #====================================================================================================
 
-say Inform member
+#say (D3) Inform member
 
 tag @s add Private_InformingPlayer
 

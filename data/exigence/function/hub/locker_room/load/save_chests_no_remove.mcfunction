@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-say Save chests (no remove)
+#say (D3) Save chests (no remove) [locker room]
 
 #   OUTPUT
 execute store success score #chests_saved Temp if block ^3 ^ ^ minecraft:chest

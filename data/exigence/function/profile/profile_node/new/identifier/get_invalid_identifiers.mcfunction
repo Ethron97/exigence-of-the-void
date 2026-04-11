@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say Get invalid identifiers
+#say (D3) Get invalid identifiers
 
 scoreboard players operation #compare profile.node.player_id = @s career.player_id
 

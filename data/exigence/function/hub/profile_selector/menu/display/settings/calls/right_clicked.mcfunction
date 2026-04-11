@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say Right click settings
+#say (D3) Right click settings
 
 function exigence:hub/profile_selector/menu/display/settings/calls/clicked
 # with entity @s item.components."minecraft:custom_data"

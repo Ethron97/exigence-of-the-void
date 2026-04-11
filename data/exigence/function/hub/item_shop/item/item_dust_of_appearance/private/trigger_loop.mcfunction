@@ -1,4 +1,4 @@
-#say Dust of appearnace looping
+#say (D3) Dust of appearnace looping
 
 # Reveal closest block that hasn't been revealed
 tag @e[type=minecraft:marker,tag=HiddenBlock,tag=ReflectionNO,tag=Appearing,tag=!Appeared,sort=nearest,limit=1] add NewAppeared

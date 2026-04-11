@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Unload locker room
+#say (D3) Unload locker room
 
 scoreboard players operation #compare hub.entity.profile_id = @s hub.entity.profile_id
 

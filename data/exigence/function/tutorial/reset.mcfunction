@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # DEBUG
-say Reset tutorial
+#say (D3) Reset tutorial
 
 # Markers
 execute as @e[type=marker,tag=TutorialMarker,tag=LastDropped,distance=..1000] run tag @s remove LastDropped

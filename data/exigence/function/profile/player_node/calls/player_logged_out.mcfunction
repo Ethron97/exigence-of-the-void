@@ -25,7 +25,7 @@ execute if entity @s[tag=PlayerCreatingProfile] run function exigence:profile/pl
 execute if entity @a[tag=ProfileSelecting,limit=1] run function exigence:hub/profile_selector/menu/display/text_displays/player_list_display/update_all_displays_player
 
 #   If Predungeon room exists, is not state 0, and this player was in that room, reset to prebutton
-execute if score @s player.node.room_id matches 1.. unless score #predungeon_state Temp matches 0 in exigence:hub positioned 0 153 0 \
-as @e[type=marker,scores={hub.room.room_type=2},tag=RoomNode,distance=..1] if score @s hub.room.room_id = #compare player.node.room_id \
+execute if score @s player.node.room_id matches 1.. unless score #predungeon_state Temp matches 0 in exigence:hub \
+as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=marker,scores={hub.room.room_type=2},tag=RoomNode] if score @s hub.room.room_id = #compare player.node.room_id \
 positioned 0.5 209.0 104.5 as @n[type=marker,tag=PredungeonMenuNode,distance=..10] at @s run function exigence:hub/predungeon/menu/display/back_to_prebutton
 

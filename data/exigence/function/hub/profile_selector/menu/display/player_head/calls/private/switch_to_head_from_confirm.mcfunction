@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-say Switch from confirm to head
+#say (D3) Switch from confirm to head
 
 # Load player head menu
 $execute at @s as @n[type=item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..16] at @s \

@@ -10,7 +10,7 @@
 
 #====================================================================================================
 
-#$say Try load coop player list $(player_index) $(coop_profile_id)
+#$say (D3) Try load coop player list $(player_index) $(coop_profile_id)
 
 data remove storage exigence:temp profile
 

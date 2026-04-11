@@ -10,11 +10,7 @@
 
 #====================================================================================================
 
-say INTERFACE load deck analyzer
-
-# Summon temporary marker
-#   Used to easily standardize text gaps etc on displays
-summon minecraft:marker ~ ~ ~ {Tags:["Telemarker"],CustomName:{text:"Marker | Telemarker"}}
+#say (D3) INTERFACE load deck analyzer
 
 # Save the profile id for this load
 scoreboard players operation @s hub.entity.profile_id = #profile_id Temp
@@ -42,8 +38,5 @@ execute at @s positioned ^1.25 ^2.0 ^ run function exigence:hub/deck_analyzer/di
 execute at @s positioned ^-2.375 ^1.125 ^ run function exigence:hub/deck_analyzer/display/hazard/summon with storage exigence:temp
 execute at @s positioned ^-1.375 ^1.125 ^ run function exigence:hub/deck_analyzer/display/deck/summon with storage exigence:temp
 execute at @s positioned ^1.0 ^1.125 ^ run function exigence:hub/deck_analyzer/display/resources/summon with storage exigence:temp
-
-# Kill temp marker
-kill @n[type=marker,tag=Telemarker,distance=..10]
 
 # (local tags get removed by the function that calls this)

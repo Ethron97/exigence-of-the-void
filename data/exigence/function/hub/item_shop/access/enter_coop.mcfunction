@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Entering item shop (COOP)
+#say (D3) Entering item shop (COOP)
 
 tag @s add ItemShop
 team join ItemShop @s
@@ -24,8 +24,8 @@ function exigence:hub/item_shop/refresh_currency
 
 #====================================================================================================
 # Assign room ids
-execute in exigence:hub positioned 0 153 0 run scoreboard players operation #compare hub.entity.room_id \
-= @n[scores={hub.room.room_type=9},tag=RoomNode,distance=..1] hub.room.room_id
+execute in exigence:hub run scoreboard players operation #compare hub.entity.room_id \
+= @n[x=100,y=199,z=100,dx=0,dy=1,dz=0,scores={hub.room.room_type=9},tag=RoomNode] hub.room.room_id
 #   PLAYER
 scoreboard players operation @s hub.player.room_id = #compare hub.entity.room_id
 execute in exigence:profile_data as @n[x=0,y=0,z=32,dx=15,dy=15,dz=15,type=minecraft:armor_stand] if score @s profile.node.player_id = #compare career.player_id \

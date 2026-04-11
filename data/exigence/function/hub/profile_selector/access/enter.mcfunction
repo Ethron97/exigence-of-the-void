@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-say Entering profile selector
+#say (D3) Entering profile selector
 
 tag @s add ProfileSelecting
 
@@ -32,7 +32,7 @@ scoreboard players operation @s hub.player.profile_selector_id = @n[tag=ProfileS
 #====================================================================================================
 # Summon Room Node
 scoreboard players set #room_type Temp 10
-execute in exigence:hub positioned 0 153 0 run function exigence:room/node/new
+execute in exigence:hub positioned 100 200 100 run function exigence:room/node/new
 
 # Assign room ids
 #   PLAYER
