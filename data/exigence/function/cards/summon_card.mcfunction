@@ -11,7 +11,7 @@ function exigence:cards/get_cost with storage exigence:colors
 
 # If this was summoned from SPELLBIND, and Spellbook modifier active, modify the costs
 scoreboard players set #CostReduced game.resources 0
-execute if score #spellbinding Temp matches 1 if score Spellbook Modifiers matches 1 run function exigence:vault/artifact/artifacts/enchanted_book/public/modify_costs
+execute if score #spellbinding Temp matches 1 if score mod.spellbook game.modifiers matches 1 run function exigence:vault/artifact/artifacts/enchanted_book/public/modify_costs
 
 # Convert costs to strings for reference
 function exigence:cards/get_cost_strings
@@ -30,4 +30,4 @@ execute if score #spellbinding Temp matches 1 run data modify storage exigence:c
 summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:stone",count:1},Tags:["CardSummon","NCS"]}
 
 # Apply data to the card
-$execute as @e[type=item,tag=NCS,distance=..1] run function exigence:cards/$(card_name)/summon with storage exigence:colors
+$execute as @e[type=minecraft:item,tag=NCS,distance=..1] run function exigence:cards/$(card_name)/summon with storage exigence:colors

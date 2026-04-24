@@ -11,6 +11,6 @@ scoreboard players operation #compare IDID = @s IDID
 
 execute as @a[tag=Predungeon,distance=..10] if score @s shop.player.looking_at_idid = #compare IDID run tag @s add MeMeMe
 
-execute facing entity @p[tag=MeMeMe,distance=..16] eyes positioned ^ ^ ^0.15 as @n[type=item_display,tag=PlayerSensorPupil,distance=..0.5] align z run tp @s ~ ~ ~0.82
+execute facing entity @p[tag=MeMeMe,distance=..16] eyes positioned ^ ^ ^0.15 as @n[type=minecraft:item_display,tag=PlayerSensorPupil,distance=..0.5] align z run tp @s ~ ~ ~0.82
 
 tag @p[tag=Predungeon,tag=MeMeMe,distance=..10] remove MeMeMe

@@ -9,7 +9,7 @@ scoreboard players set #temp Temp 0
 
 tag @s add LocalTagIAm
 
-execute at @s as @e[type=item,distance=..50] on origin if entity @s[tag=LocalTagIAm] run scoreboard players add #temp Temp 1
+execute at @s as @e[type=minecraft:item,distance=..50] on origin if entity @s[tag=LocalTagIAm] run scoreboard players add #temp Temp 1
 
 tag @s remove LocalTagIAm
 

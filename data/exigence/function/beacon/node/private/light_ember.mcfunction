@@ -29,10 +29,10 @@ execute if score @s game.node.node_state matches 1..2 run title @a[tag=ActivePla
 execute at @s run playsound minecraft:item.flintandsteel.use neutral @a ~ ~ ~
 
 # Clear ardor ember
-execute if score @s ObjectLevel matches 1 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_1"]}] 1
-execute if score @s ObjectLevel matches 2 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_2"]}] 1
-execute if score @s ObjectLevel matches 3 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_3"]}] 1
-execute if score @s ObjectLevel matches 4 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_4"]}] 1
+execute if score @s node.property.object_level matches 1 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_1"]}] 1
+execute if score @s node.property.object_level matches 2 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_2"]}] 1
+execute if score @s node.property.object_level matches 3 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_3"]}] 1
+execute if score @s node.property.object_level matches 4 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_4"]}] 1
 
 
 # Only run past here if the final state was lit
@@ -43,7 +43,7 @@ execute if score @s game.node.node_state matches ..2 run return 1
 function exigence:beacon/node/remove_interaction
 
 # Reduce menace
-execute if score Menace DungeonRun matches 1.. run scoreboard players remove Menace DungeonRun 1
+execute if score .menace game.dungeon matches 1.. run scoreboard players remove .menace game.dungeon 1
 
 # Increase aqua
 execute as @p[tag=Lighting] run function exigence:resources/try_generate {green:0,red:0,aqua:1}
@@ -53,11 +53,11 @@ tag @s add BeaconLightLoop
 function exigence:beacon/node/light_beacon_loop
 
 # Clear leftover ardor ember
-execute if score @s ObjectLevel matches 1 run clear @a ghast_tear[custom_model_data={"strings":[ardor_ember_1]}]
-execute if score @s ObjectLevel matches 2 run clear @a ghast_tear[custom_model_data={"strings":[ardor_ember_2]}]
-execute if score @s ObjectLevel matches 3 run clear @a ghast_tear[custom_model_data={"strings":[ardor_ember_3]}]
-execute if score @s ObjectLevel matches 4 run clear @a ghast_tear[custom_model_data={"strings":[ardor_ember_4]}]
+execute if score @s node.property.object_level matches 1 run clear @a ghast_tear[custom_model_data={"strings":[ardor_ember_1]}]
+execute if score @s node.property.object_level matches 2 run clear @a ghast_tear[custom_model_data={"strings":[ardor_ember_2]}]
+execute if score @s node.property.object_level matches 3 run clear @a ghast_tear[custom_model_data={"strings":[ardor_ember_3]}]
+execute if score @s node.property.object_level matches 4 run clear @a ghast_tear[custom_model_data={"strings":[ardor_ember_4]}]
 
 # Kill leftover ardor ember items
-scoreboard players operation #compare ObjectLevel = @s ObjectLevel
-execute if data storage exigence:dungeon {is_active:1} run execute as @e[type=minecraft:item,tag=ArdorEmber] if score @s ObjectLevel = #compare ObjectLevel run kill @s
+scoreboard players operation #compare node.property.object_level = @s node.property.object_level
+execute if score game.is_active game.state matches 1 run execute as @e[type=minecraft:item,tag=ArdorEmber] if score @s game.entity.object_level = #compare node.property.object_level run kill @s

@@ -1,4 +1,9 @@
-# Called when detect_game_state
+# Called from detect_game_state
+
+## CONSTRAINTS
+
+#====================================================================================================
+
 say You lost!
 
 # Turn game off
@@ -10,15 +15,10 @@ execute at @a[tag=PrimaryPlayer] run playsound minecraft:entity.ravager.celebrat
 # Main title
 title @a[tag=ActivePlayer] title {text:"Defeat",color:"red"}
 
-# Teleport player to the hub
-#execute as @e[type=minecraft:armor_stand,tag=HubCenter] at @s run spreadplayers ~ ~ 1 2 under 20 false @a[tag=ActivePlayer]
-execute as @e[type=minecraft:armor_stand,tag=HubCenter] at @s run tp @a[tag=ActivePlayer] ~ ~ ~ ~ ~
-
 # Call Keep clears
 execute as @a[tag=ActivePlayer] run function exigence:player/clear/coin
 execute as @a[tag=ActivePlayer] run function exigence:player/clear/research
 execute as @a[tag=ActivePlayer] run function exigence:player/clear/glint
-
 
 # COINKEEP PART 1: Save how many coins they had
 execute as @a[tag=ActivePlayer] store result score @s hub.coin_conversion run clear @s minecraft:gold_nugget
@@ -33,6 +33,12 @@ clear @a[tag=ActivePlayer] #exigence:loss_clear
 clear @a[scores={game.player.mod.void_bundle=0},tag=ActivePlayer] #exigence:consumable
 # If VaultKeep is 1, do not clear vault keys
 clear @a[scores={game.player.mod.vault_keep=0},tag=ActivePlayer] #exigence:trim_templates
+
+execute as @a[tag=ActivePlayer] run function exigence:game/access/leave
+
+# TEMP BREAK POINT
+return 0
+#----------------------------------------------------------------------------------------------------
 
 # COINKEEP PART 2 - start after we've cleared their junk
 # Choose lesser of how many coins they picked up vs how many CoinKeep they have

@@ -10,7 +10,7 @@
 
 #say (D3) Remove coop invitor
 
-execute at @s run kill @e[type=text_display,tag=StatusDisplay,distance=..5]
+execute at @s run kill @e[type=minecraft:text_display,tag=StatusDisplay,distance=..5]
 
 # Remove display details
 $execute at @s as @e[type=minecraft:item_display,tag=CoopInvitorDisplay,distance=..16,nbt={item:{components:{"minecraft:custom_data":{slot_id:"$(slot_id)"}}}}] \

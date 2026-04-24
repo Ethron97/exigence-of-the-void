@@ -1,10 +1,5 @@
-
-execute as @e[type=minecraft:armor_stand,tag=Card,tag=!ReturnCard,tag=Played] run function exigence:deck/post_process/remove_card with entity @s equipment.mainhand.components."minecraft:custom_data"
+# More of a remove-played-voids rather than return-deck, as the cards never left the chest
 
 #====================================================================================================
-# OLD
-# Collects the items from all armorstands and gives them to the player
-#say Return deck
-#execute unless entity @e[type=minecraft:armor_stand,tag=ReturnCard] run say WHY ARE TEHRE NO RETURN CARDS
-#execute as @e[type=minecraft:armor_stand,tag=Card,tag=ReturnCard] run function exigence:deck/return_card with entity @s equipment.mainhand.components."minecraft:custom_data"
-#kill @e[type=minecraft:armor_stand,tag=Card]
+
+execute in minecraft:overworld as @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=Card,tag=!ReturnCard,tag=Played] run function exigence:deck/post_process/remove_card with entity @s equipment.mainhand.components."minecraft:custom_data"

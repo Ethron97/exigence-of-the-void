@@ -2,4 +2,4 @@
 say [Beastsense works on Void Merchants]
 
 # Functionality
-scoreboard players set Voidscent Modifiers 1
+scoreboard players set mod.void_scent game.modifiers 1

@@ -15,4 +15,4 @@ execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=Profil
 if score @s profile.node.profile_id = #compare hub.entity.profile_id at @s run function exigence:deck/process/analyze_deck
 
 # update displays
-execute at @s as @n[type=marker,tag=DeckAnalyzer,distance=..9] run function exigence:hub/deck_analyzer/update_displays
+execute at @s as @n[type=minecraft:marker,tag=DeckAnalyzer,distance=..9] run function exigence:hub/deck_analyzer/update_displays

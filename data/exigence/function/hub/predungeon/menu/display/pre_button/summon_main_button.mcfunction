@@ -22,20 +22,20 @@ function_right:'exigence:hub/predungeon/menu/display/pre_button/calls/right_clic
 },"minecraft:lore":[[{text:"Validate Profile",color:"#c7c1c1"}]]}}}
 
 # Assign difficulty texture
-execute if score #compare profile.player.profile_difficulty matches 1 run data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..1] item.components."minecraft:custom_model_data".strings set value ["difficulty_radiant"]
-execute if score #compare profile.player.profile_difficulty matches 2 run data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..1] item.components."minecraft:custom_model_data".strings set value ["difficulty_ancient"]
-execute if score #compare profile.player.profile_difficulty matches 3 run data modify entity @n[type=item_display,tag=NewItemDisplay,distance=..1] item.components."minecraft:custom_model_data".strings set value ["difficulty_ascendant"]
+execute if score #compare profile.player.profile_difficulty matches 1 run data modify entity @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..1] item.components."minecraft:custom_model_data".strings set value ["difficulty_radiant"]
+execute if score #compare profile.player.profile_difficulty matches 2 run data modify entity @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..1] item.components."minecraft:custom_model_data".strings set value ["difficulty_ancient"]
+execute if score #compare profile.player.profile_difficulty matches 3 run data modify entity @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..1] item.components."minecraft:custom_model_data".strings set value ["difficulty_ascendant"]
 # TODO exigence
 
 # Join team for hover color
-team join Green @n[type=item_display,tag=NewItemDisplay,distance=..0.1]
+team join Green @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1]
 
 # Assign new IDID
 scoreboard players add #highest IDID 1
-scoreboard players operation @n[type=item_display,tag=NewItemDisplay,distance=..0.1] IDID = #highest IDID
+scoreboard players operation @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] IDID = #highest IDID
 
 # Add ID to item data
-execute store result entity @n[type=item_display,tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_data".idid int 1 run scoreboard players get #highest IDID
+execute store result entity @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_data".idid int 1 run scoreboard players get #highest IDID
 
 # Remove local tag
-tag @n[type=item_display,tag=NewItemDisplay,distance=..0.1] remove NewItemDisplay
+tag @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] remove NewItemDisplay

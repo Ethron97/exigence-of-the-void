@@ -8,7 +8,7 @@
 #say (D3) Summon coop invitors
 
 # Update step details
-execute at @s run data modify entity @n[type=text_display,tag=StepDetails,distance=..5] text set value {text:"Invite Players",color:"yellow"}
+execute at @s run data modify entity @n[type=minecraft:text_display,tag=StepDetails,distance=..5] text set value {text:"Invite Players",color:"yellow"}
 
 # Place the buttons
 execute at @s run function exigence:hub/profile_selector/menu/display/coop_invitor/summon_selector_confirm with entity @s item.components."minecraft:custom_data"

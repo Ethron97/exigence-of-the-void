@@ -1,9 +1,13 @@
+# Called from scheduler
+
+#====================================================================================================
+execute if score predungeon.cancel_load hub.room_misc matches 1 run return fail
+#----------------------------------------------------------------------------------------------------
+
+say (D3) Main variance (upper)
 
 # Testing model
 #setblock -386 153 -21 air
 
-# Temp blocks
-#fill -401 157 -37 -401 159 -33 cracked_stone_bricks
-
 # Clone staircase
-clone -401 -4 -32 -412 -30 -38 -412 151 -38
+execute in minecraft:overworld run clone -403 -7 -32 -412 -25 -38 -412 156 -38

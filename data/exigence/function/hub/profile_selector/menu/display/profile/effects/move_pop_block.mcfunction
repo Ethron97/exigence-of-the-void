@@ -8,4 +8,4 @@
 
 #====================================================================================================
 
-$tp @n[type=block_display,scores={IDID=$(idid)},tag=PopBlock,distance=..16] ~ ~ ~
+$tp @n[type=minecraft:block_display,scores={IDID=$(idid)},tag=PopBlock,distance=..16] ~ ~ ~

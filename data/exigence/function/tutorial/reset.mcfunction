@@ -10,16 +10,16 @@
 #say (D3) Reset tutorial
 
 # Markers
-execute as @e[type=marker,tag=TutorialMarker,tag=LastDropped,distance=..1000] run tag @s remove LastDropped
-execute as @e[type=marker,tag=TutorialMarker,tag=Dropped,distance=..1000] run tag @s remove Dropped
-execute as @e[type=marker,tag=TutorialMarker,tag=Fallback,distance=..1000] run tag @s remove Fallback
+execute as @e[type=minecraft:marker,tag=TutorialMarker,tag=LastDropped,distance=..1000] run tag @s remove LastDropped
+execute as @e[type=minecraft:marker,tag=TutorialMarker,tag=Dropped,distance=..1000] run tag @s remove Dropped
+execute as @e[type=minecraft:marker,tag=TutorialMarker,tag=Fallback,distance=..1000] run tag @s remove Fallback
 
 # Entities
-kill @e[type=ravager,distance=..1000]
+kill @e[type=minecraft:ravager,distance=..1000]
 kill @e[type=vex,tag=TutorialEyeball,distance=..1000]
-kill @e[type=item,distance=..1000]
-kill @e[type=armor_stand,tag=Bait1,distance=..1000]
-kill @e[type=armor_stand,tag=Bait2,distance=..1000]
+kill @e[type=minecraft:item,distance=..1000]
+kill @e[type=minecraft:armor_stand,tag=Bait1,distance=..1000]
+kill @e[type=minecraft:armor_stand,tag=Bait2,distance=..1000]
 
 effect clear @a[tag=Tutorial] luck
 effect clear @a[tag=Tutorial] jump_boost
@@ -65,8 +65,8 @@ fill 152 126 141 152 130 147 air replace sculk
 
 # Kill exit armorstnads (and clear light)
 execute at @e[type=minecraft:marker,tag=TutorialExitNode,distance=..1000] run fill ~ ~1 ~ ~ ~1 ~ air replace light
-kill @e[type=marker,tag=TutorialExitNode,distance=..1000]
-kill @e[type=block_display,tag=TutorialExitPortalDisplay,distance=..1000]
+kill @e[type=minecraft:marker,tag=TutorialExitNode,distance=..1000]
+kill @e[type=minecraft:block_display,tag=TutorialExitPortalDisplay,distance=..1000]
 
 execute positioned 186.5 131.0 33.5 run function exigence:tutorial/setup/setup_exit_portal
 
@@ -81,13 +81,13 @@ execute as @e[type=minecraft:marker,tag=RavagerGlass,tag=TutorialGlass,distance=
 
 schedule clear exigence:tutorial/flow/private/ravager_loop
 
-execute as @n[scores={ObjectLevel=10},tag=BellNode] run function exigence:bell/node/deactivate
-execute as @n[scores={ObjectLevel=10},tag=BellNode] run function exigence:bell/node/activate
+execute as @n[scores={node.property.object_level=10},tag=BellNode,distance=..1000] run function exigence:bell/node/deactivate
+execute as @n[scores={node.property.object_level=10},tag=BellNode,distance=..1000] run function exigence:bell/node/activate
 
 # Reset nodes
-execute as @e[type=minecraft:armor_stand,scores={ObjectLevel=10},tag=BerryNode,distance=..1000] at @s run function exigence:botany/node/berry_bush_inactive
-execute as @e[type=minecraft:armor_stand,scores={ObjectLevel=10},tag=AltarNode,distance=..1000] at @s run function exigence:altar/node/deactivate
+execute as @e[type=minecraft:marker,scores={node.property.object_level=10},tag=BerryNode,distance=..1000] at @s run function exigence:botany/node/berry_bush_inactive
+execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=10},tag=AltarNode,distance=..1000] at @s run function exigence:altar/node/deactivate
 
 execute as @a[tag=Tutorial] run title @s actionbar ""
 
-execute at @e[type=minecraft:armor_stand,tag=EchoNode,distance=..1000] run fill ~ ~1 ~ ~ ~1 ~ air replace light
+execute at @e[type=minecraft:marker,tag=EchoNode,distance=..1000] run fill ~ ~1 ~ ~ ~1 ~ air replace light

@@ -1,18 +1,19 @@
 # At game start, takes all Cards from the player's inventory and sets them up for the game.
 
 ## CONSTRAINTS
-#   AS lead player
+#   AT profile node
 
 #====================================================================================================
+execute unless entity @n[type=minecraft:marker,tag=ProfileNode,distance=..0.01] run return run tellraw @a {text:"Process deck was not run on a profile node",color:"red"}
+#====================================================================================================
 
-say Process deck
+say (D3) Process deck
 
 # Reset Highest
-scoreboard players set #highest Deck 0
-
+scoreboard players set #highest game.deck 0
 
 # Teleport DeckCardLocation to start position
-tp @e[type=minecraft:armor_stand,tag=DeckCardLocation] -301.5 2 -104.5
+execute in minecraft:overworld run tp @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=DeckCardLocation,limit=1] 541.5 0.0 541.5
 
 # We have to give the full name for each card to process to keep track of rarity color / special symbols as well
 # "CardName" is the name of the card play function and ascension etc functions to be used as a macro later.
@@ -37,21 +38,30 @@ tp @e[type=minecraft:armor_stand,tag=DeckCardLocation] -301.5 2 -104.5
 #function exigence:deck/process/process_card {card_name:"paper_test_2"}
 #function exigence:deck/process/process_card {card_name:"consume_green"}
 #function exigence:deck/process/process_card {card_name:"sneak"}
-#function exigence:deck/process/process_card {card_name:"stability"}
 #function exigence:deck/process/process_card {card_name:"difficulty_x",item:"{text:"✘ ✦ Difficulty 11 ✦ ✘",color:"green","italic":false}"}
 #function exigence:deck/process/process_card {card_name:"difficulty_xx",item:"{text:"✘ ✦ Difficulty 12 ✦ ✘",color:"green","italic":false}"}
 #function exigence:deck/process/process_card {card_name:"difficulty_xxx",item:"{text:"✘ ✦ Difficulty 13 ✦ ✘",color:"green","italic":false}"}
 #function exigence:deck/process/process_card {card_name:"difficulty_xxxx",item:"{text:"✘ ✦ Difficulty 14 ✦ ✘",color:"green","italic":false}"}
 #function exigence:deck/process/process_card {card_name:"difficulty_xxxxx",item:"{text:"✘ ✦ Difficulty 15 ✦ ✘",color:"green","italic":false}"}
 
-# ========================================================================================================================
+# Reset tracking scores
+scoreboard players set #temp profile.data.deck.cr.cards_processed_common 0
+scoreboard players set #temp profile.data.deck.cr.cards_processed_uncommon 0
+scoreboard players set #temp profile.data.deck.cr.cards_processed_rare 0
+scoreboard players set #temp profile.data.deck.cr.cards_processed_legendary 0
+scoreboard players set #temp profile.data.deck.cr.cards_processed_common_void 0
+scoreboard players set #temp profile.data.deck.cr.cards_processed_uncommon_void 0
+scoreboard players set #temp profile.data.deck.cr.cards_processed_rare_void 0
+scoreboard players set #temp profile.data.deck.cr.cards_processed_legendary_void 0
+
+#====================================================================================================
 # PRIORITY
-# ========================================================================================================================
+#====================================================================================================
 function exigence:deck/process/process_card {card_name:"spellbook",display_name:"Spellbook",rarity:4,void:0,recycler:0,spellbinder:1,instant:1,persistent:0}
 
-# ========================================================================================================================
+#====================================================================================================
 # COMMON
-# ========================================================================================================================
+#====================================================================================================
 
 # Common Void
 function exigence:deck/process/process_card {card_name:"endurance",display_name:"Endurance",rarity:1,void:1,recycler:0,spellbinder:0,instant:0,persistent:0}
@@ -81,9 +91,9 @@ function exigence:deck/process/process_card {card_name:"key_hunter_i",display_na
 function exigence:deck/process/process_card {card_name:"forgotten_belonging",display_name:"Forgotten Belonging",rarity:1,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/process_card {card_name:"roots_of_vitality",display_name:"Roots of Vitality",rarity:1,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 
-# ========================================================================================================================
+#====================================================================================================
 # UNCOMMON
-# ========================================================================================================================
+#====================================================================================================
 
 # Uncommon Void
 function exigence:deck/process/process_card {card_name:"dissonance",display_name:"Dissonance",rarity:2,void:1,recycler:0,spellbinder:0,instant:1,persistent:0}
@@ -119,9 +129,9 @@ function exigence:deck/process/process_card {card_name:"key_hunter_ii",display_n
 function exigence:deck/process/process_card {card_name:"reflection",display_name:"Reflection",rarity:2,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/process_card {card_name:"heart_of_ferocity",display_name:"Heart of Ferocity",rarity:2,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 
-# ========================================================================================================================
+#====================================================================================================
 # RARE
-# ========================================================================================================================
+#====================================================================================================
 
 # Rare Void
 function exigence:deck/process/process_card {card_name:"patience",display_name:"Patience",rarity:3,void:1,recycler:0,spellbinder:0,instant:1,persistent:0}
@@ -160,9 +170,9 @@ function exigence:deck/process/process_card {card_name:"forgotten_offering",disp
 function exigence:deck/process/process_card {card_name:"mind_of_divinity",display_name:"Mind of Divinity",rarity:3,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/process_card {card_name:"heretic",display_name:"Heretic",rarity:3,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 
-# ========================================================================================================================
+#====================================================================================================
 # LEGENDARY
-# ========================================================================================================================
+#====================================================================================================
 
 # Legendary Void
 function exigence:deck/process/process_card {card_name:"chrysopoeia",display_name:"Chrysopoeia",rarity:4,void:1,recycler:0,spellbinder:0,instant:1,persistent:0}
@@ -212,9 +222,9 @@ function exigence:deck/process/process_card {card_name:"inner_fire",display_name
 function exigence:deck/process/process_card {card_name:"conviction",display_name:"Conviction",rarity:4,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 
 
-# ========================================================================================================================
+#====================================================================================================
 # DEVELOPER
-# ========================================================================================================================
+#====================================================================================================
 function exigence:deck/process/process_card {card_name:"dev_level_one_key",display_name:"Level One Key",rarity:5,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/process_card {card_name:"dev_level_two_key",display_name:"Level Two Key",rarity:5,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/process_card {card_name:"dev_level_three_key",display_name:"Level Three Key",rarity:5,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
@@ -223,28 +233,14 @@ function exigence:deck/process/process_card {card_name:"dev_vault_rain",display_
 function exigence:deck/process/process_card {card_name:"dev_no_menace",display_name:"No Menace",rarity:5,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/process_card {card_name:"dev_freesources",display_name:"Freesources",rarity:5,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 
-# ========================================================================================================================
+#====================================================================================================
 
 scoreboard players set #Highest game.cards_played 0
-# Play all INSTANT cards
-execute as @e[type=minecraft:armor_stand,tag=Card,tag=Instant] run function exigence:deck/play_instant with entity @s equipment.mainhand.components."minecraft:custom_data"
-execute as @e[type=minecraft:armor_stand,tag=Card,tag=Instant] run tag @s add Played
-execute as @e[type=minecraft:armor_stand,tag=Card,tag=Instant] run function exigence:cards/add_sidebar_display_instant
-#scoreboard players set #Highest game.cards_played 0
 
-# Add ReturnCard to all non-void cards
-#   Only cards added to the deck at the very start will ever get returned, so we can load new cards freely during the run without worrying about it.
-tag @e[type=minecraft:armor_stand,scores={deck.card.is_void=0},tag=Card] add ReturnCard
-
-# If void debug on, return void cards
-execute if data storage exigence:debug {void:1} run tag @e[type=minecraft:armor_stand,scores={deck.card.is_void=1},tag=Card] add ReturnCard
-
+scoreboard players set #card_counter Temp 0
+# Post process card:
+execute in minecraft:overworld as @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,tag=Card] run function exigence:deck/process/private/post_process_card
+scoreboard players operation .cards game.dungeon = #card_counter Temp
 
 ## OBLIVION
-execute if score Oblivion Modifiers matches 1 run function exigence:cards/oblivion/trigger
-
-# Initialize card counter
-function exigence:deck/update_card_counter
-
-# Update cardsProcessed scores
-execute as @e[type=armor_stand,tag=Card] run function exigence:deck/process/update_player_stats
+execute if score mod.oblivion game.modifiers matches 1 run function exigence:cards/oblivion/trigger

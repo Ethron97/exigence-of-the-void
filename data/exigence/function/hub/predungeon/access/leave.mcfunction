@@ -35,12 +35,12 @@ execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=Player
 run scoreboard players set #other_players Temp 1
 
 #   Also reset to the pre-button menu if there are other players in the room
-execute if score #other_players Temp matches 1 unless score #predungeon_state Temp matches 0 positioned 0.5 209.0 104.5 \
-as @n[type=marker,tag=PredungeonMenuNode,distance=..10] at @s run function exigence:hub/predungeon/menu/display/back_to_prebutton
+execute if score #other_players Temp matches 1 unless score predungeon.door_state hub.room_misc matches 0 positioned 0.5 209.0 104.5 \
+as @n[type=minecraft:marker,tag=PredungeonMenuNode,distance=..10] at @s run function exigence:hub/predungeon/menu/display/back_to_prebutton
 
 execute if score #other_players Temp matches 1 run return 0
 #----------------------------------------------------------------------------------------------------
 
 # If this player was the last one, kill room node and unload room
 execute in exigence:hub positioned 0.5 209.0 104.5 run function exigence:hub/predungeon/node/unload_room
-execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=marker,tag=RoomNode] if score @s hub.room.room_id = #compare hub.player.room_id run kill @s
+execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,tag=RoomNode] if score @s hub.room.room_id = #compare hub.player.room_id run kill @s

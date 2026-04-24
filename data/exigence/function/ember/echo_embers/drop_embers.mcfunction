@@ -8,7 +8,7 @@
 #====================================================================================================
 
 # Copy object level for reference
-scoreboard players operation #compare ObjectLevel = @s ObjectLevel
+scoreboard players operation #compare node.property.object_level = @s node.property.object_level
 
 execute if score @s node.ember.embers_to_drop matches 1..19 run function exigence:ember/echo_embers/summon_ember
 execute if score @s node.ember.embers_to_drop matches 1..19 run scoreboard players remove @s node.ember.embers_to_drop 1

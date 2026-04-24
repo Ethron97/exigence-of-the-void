@@ -7,16 +7,15 @@
 # Handles anger/awareness of player on all wardens
 #   game.warden.awareness measured in seconds
 
+# Design goals:
+#   Wardens are threatening, more than annoying (but not just annoying)
+#   Sneaking does nothing (encourage movement vs complete lack of danger)
+#   Wardens can track players through walls/floors
+
 #====================================================================================================
 
 #say Anger Updating
-
-
-# If warden has NO AI and there is a player on their level, un-ai
-execute if data entity @s {NoAI:true} if score @s ObjectLevel matches 1 if entity @a[scores={dead=0,game.player.active_level=1},tag=ActivePlayer] run data modify entity @s NoAI set value false
-execute if data entity @s {NoAI:true} if score @s ObjectLevel matches 2 if entity @a[scores={dead=0,game.player.active_level=2},tag=ActivePlayer] run data modify entity @s NoAI set value false
-execute if data entity @s {NoAI:true} if score @s ObjectLevel matches 3 if entity @a[scores={dead=0,game.player.active_level=3},tag=ActivePlayer] run data modify entity @s NoAI set value false
-execute if data entity @s {NoAI:true} if score @s ObjectLevel matches 4 if entity @a[scores={dead=0,game.player.active_level=4},tag=ActivePlayer] run data modify entity @s NoAI set value false
+execute if data entity @s {NoAI:true} run function exigence:enemy/warden/private/update_no_ai
 
 # Return if no ai
 execute if data entity @s {NoAI:true} run return 1
@@ -25,16 +24,11 @@ execute if data entity @s {NoAI:true} run return 1
 # FIRST THING WE DO... if not angry, reset suspects
 # Overwrite in-game anger if not angry so it never uses vanilla methods of detection.
 #   This ensures that sneaking is never effective.
-execute as @s if score @s game.warden.awareness < #anger_threshold game.warden.awareness run data merge entity @s {anger:{suspects:[]}}
+execute if score @s game.warden.awareness < #anger_threshold game.warden.awareness run data merge entity @s {anger:{suspects:[]}}
 
 
 # Cap awareness (set to less of current or #max)
 scoreboard players operation @s game.warden.awareness < #max_awareness game.warden.awareness
-
-# Design goals:
-#   Wardens are threatening
-#   Sneaking does nothing (encourage movement vs complete lack of danger)
-#   Wardens can track players through walls/floors
 
 # Store old awareness
 scoreboard players operation #old_awareness game.warden.awareness = @s game.warden.awareness
@@ -49,7 +43,7 @@ scoreboard players remove @s[scores={game.warden.awareness=1..}] game.warden.awa
 execute as @s[tag=!Angry] if score @s game.warden.awareness < #max_awareness game.warden.awareness at @s if entity @a[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer,distance=..24] run scoreboard players add @s game.warden.awareness 2
 execute as @s[tag=!Angry] if score @s game.warden.awareness < #max_awareness game.warden.awareness at @s if entity @a[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer,distance=..12] run scoreboard players add @s game.warden.awareness 2
 execute as @s[tag=!Angry] if score @s game.warden.awareness < #max_awareness game.warden.awareness at @s if entity @a[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer,distance=..5] run scoreboard players add @s game.warden.awareness 30
-execute if data storage exigence:dungeon {max_menace:1} as @s if score @s game.warden.awareness < #max_awareness game.warden.awareness run scoreboard players add @s game.warden.awareness 20
+execute if score game.max_menace game.state matches 1 as @s if score @s game.warden.awareness < #max_awareness game.warden.awareness run scoreboard players add @s game.warden.awareness 20
 
 # If max menace, set awareness to max
 #execute } run scoreboard players operation @s game.warden.awareness = #max_awareness game.warden.awareness
@@ -64,7 +58,7 @@ execute if score @s Random matches 1 at @s run function exigence:enemy/warden/pr
 
 # Maintain aggro (or re-aggro if in coop)
 #execute as @s[tag=Angry] if score @s game.warden.anger matches ..100 if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run damage @s 0 generic by @p[tag=ActivePlayer,scores={dead=0,game.player.vault_code=0}]
-execute as @s[scores={game.warden.anger=..100},tag=Angry] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run function exigence:enemy/warden/private/set_target with entity @p[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer,sort=nearest,limit=1]
+execute as @s[scores={game.warden.anger=..100},tag=Angry] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run function exigence:enemy/warden/private/set_target with entity @p[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer]
 
 # Update anger value
 #   If first time at threshold, give +X awareness so it doesn't insta-deaggro

@@ -16,7 +16,7 @@ bossbar set exigence:bossbar value 100
 bossbar set exigence:last_card name {text:"!!! DANGER !!!",color:"red"}
 
 # Disable interactables
-execute as @e[type=minecraft:armor_stand,tag=BerryNode] run function exigence:botany/node/berry_bush_inactive
+execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=BerryNode] run function exigence:botany/node/berry_bush_inactive
 execute as @e[type=minecraft:armor_stand,tag=BellNode] run function exigence:bell/node/deactivate
 execute as @e[type=minecraft:armor_stand,tag=AltarNode] run function exigence:altar/node/remove_interaction
 

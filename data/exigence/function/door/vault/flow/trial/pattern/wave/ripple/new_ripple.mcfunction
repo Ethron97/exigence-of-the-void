@@ -23,7 +23,7 @@ $execute if score @s PatternSpeed matches 5 at @s align xyz run summon block_dis
 block_state:{Name:"magenta_concrete_powder"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-7.0f,0.0f,-0.4f],scale:[14.0f,0.03f,0.8f]}}
 
 # Initialize scores
-scoreboard players operation @e[type=block_display,tag=Ripple,tag=NewRipple] PatternSpeed = @s PatternSpeed
+scoreboard players operation @e[type=minecraft:block_display,tag=Ripple,tag=NewRipple] PatternSpeed = @s PatternSpeed
 execute if score @s PatternSpeed matches 1 run scoreboard players set @s PatternTimer 90
 execute if score @s PatternSpeed matches 2 run scoreboard players set @s PatternTimer 80
 execute if score @s PatternSpeed matches 3 run scoreboard players set @s PatternTimer 70
@@ -31,4 +31,4 @@ execute if score @s PatternSpeed matches 4 run scoreboard players set @s Pattern
 execute if score @s PatternSpeed matches 5 run scoreboard players set @s PatternTimer 50
 
 # Remove local tag
-tag @e[type=block_display,tag=Ripple,tag=NewRipple] remove NewRipple
+tag @e[type=minecraft:block_display,tag=Ripple,tag=NewRipple] remove NewRipple

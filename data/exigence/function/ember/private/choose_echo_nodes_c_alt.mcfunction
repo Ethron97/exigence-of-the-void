@@ -8,8 +8,7 @@
 #====================================================================================================
 
 # DEBUG
-$say Choosing difficulty $(min_difficulty)..$(max_difficulty)
-#$say Choosing difficulty $(chosen_difficulty)
+#$say (D3) Choosing difficulty $(min_difficulty)..$(max_difficulty) $(level)
 
-$execute if score Difficulty DungeonRun matches 1.. run tag @e[type=minecraft:armor_stand,scores={EchoDifficulty=$(min_difficulty)..$(max_difficulty),ObjectLevel=$(level)},tag=EchoNode,sort=random,limit=1] add ChosenEchoNode
-execute if score Difficulty DungeonRun matches 0 run tag @e[type=minecraft:armor_stand,scores={EchoDifficulty=1},tag=EchoNode,tag=L0,sort=random,limit=1] add ChosenEchoNode
+$execute if score game.difficulty game.state matches 1.. run tag @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,scores={node.property.echo.difficulty=$(min_difficulty)..$(max_difficulty),node.property.object_level=$(level)},tag=EchoNode,sort=random,limit=1] add ChosenEchoNode
+execute if score game.difficulty game.state matches 0 run tag @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,scores={node.property.echo.difficulty=1},tag=EchoNode,tag=L0,sort=random,limit=1] add ChosenEchoNode

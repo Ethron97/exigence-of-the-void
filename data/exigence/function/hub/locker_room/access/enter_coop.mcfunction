@@ -30,7 +30,7 @@ scoreboard players operation @s hub.player.locker_room_id = @n[tag=LockerRoomNod
 function exigence:hub/locker_room/node/setup_interaction
 
 # Remove local tag (added from try_enter_coop
-tag @n[type=marker,tag=LockerRoomNode,distance=..1] remove TeleportToThisOne
+tag @n[type=minecraft:marker,tag=LockerRoomNode,distance=..1] remove TeleportToThisOne
 scoreboard players set #did_coop_enter Temp 1
 
 #====================================================================================================

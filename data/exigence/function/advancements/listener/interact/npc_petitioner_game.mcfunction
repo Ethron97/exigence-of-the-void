@@ -1,6 +1,6 @@
 
 # Return if the game is not active
-execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return fail
+execute unless entity @s[tag=ActivePlayer] unless score game.is_active game.state matches 1 run return fail
 #----------------------------------------------------------------------------------------------------
 
 # If player(s) does not have "talk to petitioner" give that first

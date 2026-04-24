@@ -29,11 +29,11 @@ execute if score #total game.story.wards matches 0 as @a[tag=ActivePlayer,sort=a
 function exigence:game/other/wards/crystal/remove
 
 # Kill all corresponding items
-execute if entity @s[tag=Emerald] run kill @e[type=item,tag=ResonanceEmerald]
-execute if entity @s[tag=Sapphire] run kill @e[type=item,tag=ResonanceSapphire]
-execute if entity @s[tag=Ruby] run kill @e[type=item,tag=ResonanceRuby]
-execute if entity @s[tag=Topaz] run kill @e[type=item,tag=ResonanceTopaz]
-execute if entity @s[tag=Amethyst] run kill @e[type=item,tag=ResonanceAmethyst]
+execute if entity @s[tag=Emerald] run kill @e[type=minecraft:item,tag=ResonanceEmerald]
+execute if entity @s[tag=Sapphire] run kill @e[type=minecraft:item,tag=ResonanceSapphire]
+execute if entity @s[tag=Ruby] run kill @e[type=minecraft:item,tag=ResonanceRuby]
+execute if entity @s[tag=Topaz] run kill @e[type=minecraft:item,tag=ResonanceTopaz]
+execute if entity @s[tag=Amethyst] run kill @e[type=minecraft:item,tag=ResonanceAmethyst]
 
 execute if entity @s[tag=Emerald] run clear @a[tag=ActivePlayer] minecraft:amethyst_shard[custom_model_data={"strings":["resonance_emerald"]}]
 execute if entity @s[tag=Sapphire] run clear @a[tag=ActivePlayer] minecraft:amethyst_shard[custom_model_data={"strings":["resonance_sapphire"]}]

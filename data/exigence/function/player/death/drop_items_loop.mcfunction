@@ -19,12 +19,12 @@ $execute if score 27 number matches ..$(index) run return 1
 
 ## Funtionality
 # Copy current slot to intermediary for data compare
-$item replace entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] weapon.mainhand from entity @s $(type).$(index)
+$item replace entity @e[x=536,y=0,z=488,dx=0,dy=0,dz=0,type=minecraft:armor_stand,tag=intermediary] weapon.mainhand from entity @s $(type).$(index)
 
 # IF card is not spellbound AND item is on drop on death list, call drop
-$execute unless data entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] {equipment:{mainhand:{components:{"minecraft:custom_data":{is_spellsling:"true"}}}}} if items entity @s $(type).$(index) #exigence:drop_on_death run function exigence:player/drop/drop_slot {type:'$(type)',index:$(index)}
+$execute unless data entity @e[x=536,y=0,z=488,dx=0,dy=0,dz=0,type=minecraft:armor_stand,tag=intermediary] {equipment:{mainhand:{components:{"minecraft:custom_data":{is_spellsling:"true"}}}}} if items entity @s $(type).$(index) #exigence:drop_on_death run function exigence:player/drop/drop_slot {type:'$(type)',index:$(index)}
 #   IF bag of holding, do not drop bag items
-$execute unless data entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] {equipment:{mainhand:{components:{"minecraft:custom_data":{is_spellsling:"true"}}}}} if items entity @s $(type).$(index) #exigence:consumable unless score @s game.player.mod.void_bundle matches 1.. run function exigence:player/drop/drop_slot {type:'$(type)',index:$(index)}
+$execute unless data entity @e[x=536,y=0,z=488,dx=0,dy=0,dz=0,type=minecraft:armor_stand,tag=intermediary] {equipment:{mainhand:{components:{"minecraft:custom_data":{is_spellsling:"true"}}}}} if items entity @s $(type).$(index) #exigence:consumable unless score @s game.player.mod.void_bundle matches 1.. run function exigence:player/drop/drop_slot {type:'$(type)',index:$(index)}
 
 
 ## Clean up and iterate:

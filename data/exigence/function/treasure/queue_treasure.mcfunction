@@ -18,7 +18,7 @@
 #$say $(source) $(amount)
 
 # Add X to treasure 
-$scoreboard players add TreasureQueue DungeonRun $(amount)
+$scoreboard players add treasure.queue game.dungeon.temp $(amount)
 
 # Add scores
 $scoreboard players add @a[tag=ActivePlayer] profile.data.treasure.cr.treasure_queue_$(source) $(amount)

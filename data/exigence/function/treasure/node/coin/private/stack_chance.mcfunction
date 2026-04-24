@@ -5,7 +5,8 @@
 
 #====================================================================================================
 
-execute if score @s ObjectLevel matches 1 run execute as @s store result score @s Random run random value 1..25
-execute if score @s ObjectLevel matches 2 run execute as @s store result score @s Random run random value 1..59
-execute if score @s ObjectLevel matches 3 run execute as @s store result score @s Random run random value 1..70
-execute if score @s ObjectLevel matches 4 run execute as @s store result score @s Random run random value 1..91
+## SWITCH
+execute if score @s node.property.object_level matches 1 run return run execute as @s store result score @s Random run random value 1..25
+execute if score @s node.property.object_level matches 2 run return run execute as @s store result score @s Random run random value 1..59
+execute if score @s node.property.object_level matches 3 run return run execute as @s store result score @s Random run random value 1..70
+execute if score @s node.property.object_level matches 4 run return run execute as @s store result score @s Random run random value 1..91

@@ -10,7 +10,7 @@
 team join Ember @s
 
 # Assign object level
-scoreboard players operation @s ObjectLevel = #compare ObjectLevel
+scoreboard players operation @s node.property.object_level = #compare node.property.object_level
 
 # If ember debug on, glow
 execute if data storage exigence:debug {ember:1} run data modify entity @s Glowing set value true

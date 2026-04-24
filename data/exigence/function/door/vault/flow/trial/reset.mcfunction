@@ -4,8 +4,8 @@
 bossbar set exigence:trial_flow visible false
 
 # Kill setup entities
-kill @e[type=marker,tag=FlowTrialSetup]
-kill @e[type=block_display,tag=FlowTrialSetup]
+kill @e[type=minecraft:marker,tag=FlowTrialSetup]
+kill @e[type=minecraft:block_display,tag=FlowTrialSetup]
 
 # Replace end portal
 fill -347 148 -34 -364 148 -18 black_concrete replace end_portal

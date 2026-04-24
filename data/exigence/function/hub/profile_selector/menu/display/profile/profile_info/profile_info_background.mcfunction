@@ -15,14 +15,14 @@ summon block_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.45f,-0.5f,-0.025f],scale:[0.9f,1.0f,0.05f]}}
 
 # Assign data
-$data modify entity @n[type=block_display,tag=NewBlockDisplay,distance=..1] data.custom_data.parent_idid set value '$(idid)'
-$data modify entity @n[type=block_display,tag=NewBlockDisplay,distance=..1] data.custom_data.player_id set value '$(player_id)'
-$data modify entity @n[type=block_display,tag=NewBlockDisplay,distance=..1] data.custom_data.slot_id set value '$(slot_id)'
-$data modify entity @n[type=block_display,tag=NewBlockDisplay,distance=..1] data.custom_data.profile_id set value '$(profile_id)'
-$data modify entity @n[type=block_display,tag=NewBlockDisplay,distance=..1] data.custom_data.profile_selector_id set value '$(profile_selector_id)'
+$data modify entity @n[type=minecraft:block_display,tag=NewBlockDisplay,distance=..1] data.custom_data.parent_idid set value '$(idid)'
+$data modify entity @n[type=minecraft:block_display,tag=NewBlockDisplay,distance=..1] data.custom_data.player_id set value '$(player_id)'
+$data modify entity @n[type=minecraft:block_display,tag=NewBlockDisplay,distance=..1] data.custom_data.slot_id set value '$(slot_id)'
+$data modify entity @n[type=minecraft:block_display,tag=NewBlockDisplay,distance=..1] data.custom_data.profile_id set value '$(profile_id)'
+$data modify entity @n[type=minecraft:block_display,tag=NewBlockDisplay,distance=..1] data.custom_data.profile_selector_id set value '$(profile_selector_id)'
 
 # Copy profile selector id
-$scoreboard players set @n[type=block_display,tag=NewBlockDisplay,distance=..1] hub.entity.profile_selector_id $(profile_selector_id)
+$scoreboard players set @n[type=minecraft:block_display,tag=NewBlockDisplay,distance=..1] hub.entity.profile_selector_id $(profile_selector_id)
 
 # Local tag to be removed by function that implements this
-tag @n[type=block_display,tag=NewBlockDisplay,distance=..1] remove NewBlockDisplay
+tag @n[type=minecraft:block_display,tag=NewBlockDisplay,distance=..1] remove NewBlockDisplay

@@ -7,24 +7,27 @@
 
 say I am reviving
 
+# Reset dead score
+scoreboard players set @s dead 0
+
+# Decrement death check counter
+scoreboard players remove game.dead_players game.state 1
+
 # Teleport to revive station that matches new active level
-execute if score ActiveLevel DungeonRun matches 2 at @e[type=minecraft:armor_stand,scores={ObjectLevel=2},tag=RespawnNode] run tp @s ~ ~5 ~ ~ ~
-execute if score ActiveLevel DungeonRun matches 3 at @e[type=minecraft:armor_stand,scores={ObjectLevel=3},tag=RespawnNode] run tp @s ~ ~5 ~ ~ ~
-execute if score ActiveLevel DungeonRun matches 4 at @e[type=minecraft:armor_stand,scores={ObjectLevel=4},tag=RespawnNode] run tp @s ~ ~5 ~ ~ ~
+execute if score game.active_level game.state matches 2 at @e[type=minecraft:armor_stand,scores={node.property.object_level=2},tag=RespawnNode] run tp @s ~ ~5 ~ ~ ~
+execute if score game.active_level game.state matches 3 at @e[type=minecraft:armor_stand,scores={node.property.object_level=3},tag=RespawnNode] run tp @s ~ ~5 ~ ~ ~
+execute if score game.active_level game.state matches 4 at @e[type=minecraft:armor_stand,scores={node.property.object_level=4},tag=RespawnNode] run tp @s ~ ~5 ~ ~ ~
 
 # Particles
-execute if score ActiveLevel DungeonRun matches 2 at @e[type=minecraft:armor_stand,scores={ObjectLevel=2},tag=RespawnNode] run function exigence:player/death/private/revive_particles
-execute if score ActiveLevel DungeonRun matches 3 at @e[type=minecraft:armor_stand,scores={ObjectLevel=3},tag=RespawnNode] run function exigence:player/death/private/revive_particles
-execute if score ActiveLevel DungeonRun matches 4 at @e[type=minecraft:armor_stand,scores={ObjectLevel=4},tag=RespawnNode] run function exigence:player/death/private/revive_particles
+execute if score game.active_level game.state matches 2 at @e[type=minecraft:armor_stand,scores={node.property.object_level=2},tag=RespawnNode] run function exigence:player/death/private/revive_particles
+execute if score game.active_level game.state matches 3 at @e[type=minecraft:armor_stand,scores={node.property.object_level=3},tag=RespawnNode] run function exigence:player/death/private/revive_particles
+execute if score game.active_level game.state matches 4 at @e[type=minecraft:armor_stand,scores={node.property.object_level=4},tag=RespawnNode] run function exigence:player/death/private/revive_particles
 
 # Give slowfall 5 seconds
 effect give @s slow_falling 5 0 true
 
 # Gamemode adventure
 gamemode adventure @s
-
-# Reset dead score
-scoreboard players set @s dead 0
 
 # Playsound
 execute at @s run playsound minecraft:block.respawn_anchor.set_spawn ambient @a ~ ~ ~ 3 1

@@ -15,7 +15,7 @@
 
 #====================================================================================================
 
-say Choose echo nodes b2
+#$say (D3) Choose echo nodes b2 $(min_difficulty)..$(max_difficulty)
 
 # Reduce iteration score
 scoreboard players remove #temp Temp 1
@@ -41,9 +41,9 @@ scoreboard players operation #rollHigher Temp = #roll1 Temp
 scoreboard players operation #rollHigher Temp > #roll2 Temp
 
 # Get final difficulty based on echo_selection_type
-execute if data storage exigence:dungeon_settings {echo_selection_type:0} run say Select random node from tier range (standard)
-execute if data storage exigence:dungeon_settings {echo_selection_type:1} run say Select node from random tier
-execute if data storage exigence:dungeon_settings {echo_selection_type:2} run say Select node from highest of two random tiers
+execute if data storage exigence:dungeon_settings {echo_selection_type:0} run say (D3) Select random node from tier range (standard)
+execute if data storage exigence:dungeon_settings {echo_selection_type:1} run say (D3) Select node from random tier
+execute if data storage exigence:dungeon_settings {echo_selection_type:2} run say (D3) Select node from highest of two random tiers
 execute if data storage exigence:dungeon_settings {echo_selection_type:0} run function exigence:ember/private/choose_echo_nodes_c_alt with storage exigence:echo_selection
 execute if data storage exigence:dungeon_settings {echo_selection_type:1} store result storage exigence:echo_selection chosen_difficulty int 1 run scoreboard players get #roll1 Temp
 execute if data storage exigence:dungeon_settings {echo_selection_type:2} store result storage exigence:echo_selection chosen_difficulty int 1 run scoreboard players get #rollHigher Temp

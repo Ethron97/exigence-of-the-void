@@ -20,7 +20,7 @@
 #$say money item display $(Rotation)
 
 # Summon item (unless existing NSS exists)
-$execute unless entity @n[type=item,tag=NSS,distance=..0.01] run function exigence:hub/item_shop/item/summon_item {item_name:'$(item_name)'}
+$execute unless entity @n[type=minecraft:item,tag=NSS,distance=..0.01] run function exigence:hub/item_shop/item/summon_item {item_name:'$(item_name)'}
 
 # Setup item data
 #   This also summons the NewItemDisplay

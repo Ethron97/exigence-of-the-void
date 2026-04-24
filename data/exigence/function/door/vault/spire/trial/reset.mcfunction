@@ -11,11 +11,11 @@ fill -355 155 -9 -357 155 -11 polished_tuff
 
 # Clear purpurpillar
 fill -364 150 -18 -347 150 -2 air replace purpur_pillar
-execute at @e[type=marker,tag=Spire] run fill ~ ~ ~ ~ ~ ~ air replace purpur_pillar
+execute at @e[type=minecraft:marker,tag=Spire] run fill ~ ~ ~ ~ ~ ~ air replace purpur_pillar
 
 # Kill setups
-kill @e[type=marker,tag=SpireTrialSetup]
-kill @e[type=block_display,tag=SpireTrialSetup]
+kill @e[type=minecraft:marker,tag=SpireTrialSetup]
+kill @e[type=minecraft:block_display,tag=SpireTrialSetup]
 
 # Set fire normal
 fill -363 158 -3 -349 158 -17 minecraft:chiseled_tuff replace minecraft:soul_soil

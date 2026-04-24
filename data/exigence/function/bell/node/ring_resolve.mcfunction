@@ -2,7 +2,7 @@
 
 ## CONSTRAINTS
 #   AS BellInteraction interaction OR BellNode armorstand
-#       Both have the same NodeID
+#       Both have the same node.id
 
 # ===============================================================================================================
 
@@ -14,10 +14,10 @@ execute on target run tag @s add Ringing
 execute on attacker run tag @s add Ringing
 
 # Store compare
-scoreboard players operation #compare NodeID = @s NodeID
+scoreboard players operation #compare node.id = @s node.id
 
 # Call subfunction as bell that is ringing
-execute at @s as @e[type=minecraft:armor_stand,tag=BellNode,distance=..10] if score @s NodeID = #compare NodeID run function exigence:bell/node/private/ring
+execute at @s as @e[type=minecraft:armor_stand,tag=BellNode,distance=..10] if score @s node.id = #compare node.id run function exigence:bell/node/private/ring
 
 # Call Resonance
 execute as @a[tag=ActivePlayer,tag=Ringing] run function exigence:cards/resonance/private/trigger

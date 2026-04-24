@@ -10,7 +10,7 @@
 #====================================================================================================
 
 # Must be within 6 blocks of center, and have no air beneath it
-execute unless entity @e[type=marker,tag=SpireCenter,distance=..6] run return 0
+execute unless entity @e[type=minecraft:marker,tag=SpireCenter,distance=..6] run return 0
 
 # Prevent spawning on or below a player
 execute if entity @a[scores={game.player.vault_code=5},distance=..1] run return 0

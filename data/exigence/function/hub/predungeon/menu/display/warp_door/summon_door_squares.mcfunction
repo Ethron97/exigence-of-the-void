@@ -12,4 +12,4 @@ summon minecraft:item_display ~ ~ ~ {Rotation:[180.0f,0.0f],billboard:"fixed",in
 ,item:{id:"minecraft:netherite_ingot",count:1,components:{"minecraft:custom_model_data":{strings:["door_squares"]}}}}
 
 # Remove local tag
-tag @n[type=item_display,tag=NewItemDisplay,distance=..0.1] remove NewItemDisplay
+tag @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] remove NewItemDisplay

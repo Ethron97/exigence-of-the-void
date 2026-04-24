@@ -115,7 +115,7 @@ transformation:[-0.0000f,0.0000f,-0.5000f,0.0000f,0.3536f,0.3536f,-0.0000f,1.414
 
 #====================================================================================================
 # Common functions
-execute as @e[type=item_display,tag=NewRune] run data modify entity @s brightness set value {block:15,sky:15}
+execute as @e[type=minecraft:item_display,tag=NewRune] run data modify entity @s brightness set value {block:15,sky:15}
 
 
 

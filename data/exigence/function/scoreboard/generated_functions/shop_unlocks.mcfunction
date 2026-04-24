@@ -149,6 +149,12 @@ execute if score @s profile.shop_unlock.potion_speed_1_f matches 1 run data modi
 execute if score @s profile.shop_unlock.potion_speed_2 matches 1 run data modify storage exigence:shop shop_unlocked append value potion_speed_2
 execute if score @s profile.shop_unlock.potion_speed_3 matches 1 run data modify storage exigence:shop shop_unlocked append value potion_speed_3
 execute if score @s profile.shop_unlock.potion_speed_4 matches 1 run data modify storage exigence:shop shop_unlocked append value potion_speed_4
+execute if score @s profile.shop_unlock.vault.crucible_bolt matches 1 run data modify storage exigence:shop shop_unlocked append value crucible_bolt
+execute if score @s profile.shop_unlock.vault.crucible_dune matches 1 run data modify storage exigence:shop shop_unlocked append value crucible_dune
+execute if score @s profile.shop_unlock.vault.crucible_eye matches 1 run data modify storage exigence:shop shop_unlocked append value crucible_eye
+execute if score @s profile.shop_unlock.vault.crucible_flow matches 1 run data modify storage exigence:shop shop_unlocked append value crucible_flow
+execute if score @s profile.shop_unlock.vault.crucible_silence matches 1 run data modify storage exigence:shop shop_unlocked append value crucible_silence
+execute if score @s profile.shop_unlock.vault.crucible_spire matches 1 run data modify storage exigence:shop shop_unlocked append value crucible_spire
 execute if score @s profile.shop_unlock.vault.opened_coast matches 1 run data modify storage exigence:shop shop_unlocked append value opened_coast
 execute if score @s profile.shop_unlock.vault.opened_host matches 1 run data modify storage exigence:shop shop_unlocked append value opened_host
 execute if score @s profile.shop_unlock.vault.opened_raiser matches 1 run data modify storage exigence:shop shop_unlocked append value opened_raiser
@@ -167,9 +173,3 @@ execute if score @s profile.shop_unlock.vault.trial_eye matches 1 run data modif
 execute if score @s profile.shop_unlock.vault.trial_flow matches 1 run data modify storage exigence:shop shop_unlocked append value trial_flow
 execute if score @s profile.shop_unlock.vault.trial_silence matches 1 run data modify storage exigence:shop shop_unlocked append value trial_silence
 execute if score @s profile.shop_unlock.vault.trial_spire matches 1 run data modify storage exigence:shop shop_unlocked append value trial_spire
-execute if score @s profile.shop_unlock.vault.crucible_bolt matches 1 run data modify storage exigence:shop shop_unlocked append value crucible_bolt
-execute if score @s profile.shop_unlock.vault.crucible_dune matches 1 run data modify storage exigence:shop shop_unlocked append value crucible_dune
-execute if score @s profile.shop_unlock.vault.crucible_eye matches 1 run data modify storage exigence:shop shop_unlocked append value crucible_eye
-execute if score @s profile.shop_unlock.vault.crucible_flow matches 1 run data modify storage exigence:shop shop_unlocked append value crucible_flow
-execute if score @s profile.shop_unlock.vault.crucible_silence matches 1 run data modify storage exigence:shop shop_unlocked append value crucible_silence
-execute if score @s profile.shop_unlock.vault.crucible_spire matches 1 run data modify storage exigence:shop shop_unlocked append value crucible_spire

@@ -41,7 +41,7 @@ team join Special
 ## SAVE CHESTS TEMPLATE
 # Chests -> data
 #   OUTPUTS chests_saved if there was data to save
-$execute in exigence:hub at @n[x=-98,y=0,z=798,dx=244,dy=256,dz=16,type=marker,scores={hub.profile_selector_id=$(profile_selector_id)},tag=ProfileSelectorNode] \
+$execute in exigence:hub at @n[x=-98,y=0,z=798,dx=244,dy=256,dz=16,type=minecraft:marker,scores={hub.profile_selector_id=$(profile_selector_id)},tag=ProfileSelectorNode] \
 run function exigence:hub/profile_selector/load/save_chests
 
 # Data -> profile chest

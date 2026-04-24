@@ -9,16 +9,16 @@
 tp @s -424.5 152.0 -17.5 90 0
 
 # Setup pots
-execute if entity @s[tag=Trial] as @e[type=marker,tag=PotMarker,tag=bolt,tag=!Crucible] at @s run function exigence:door/vault/bolt/setup_pots_trial
-execute if entity @s[tag=Crucible] as @e[type=marker,tag=PotMarker,tag=bolt] at @s run function exigence:door/vault/bolt/setup_pots_crucible
+execute if entity @s[tag=Trial] as @e[type=minecraft:marker,tag=PotMarker,tag=bolt,tag=!Crucible] at @s run function exigence:door/vault/bolt/setup_pots_trial
+execute if entity @s[tag=Crucible] as @e[type=minecraft:marker,tag=PotMarker,tag=bolt] at @s run function exigence:door/vault/bolt/setup_pots_crucible
 
 # If game is active, give begin scores
-execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Trial] profile.data.vaults.cr.bolt_trial_win 1
-execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Crucible] profile.data.vaults.cr.bolt_crucible_win 1
+execute if score game.is_active game.state matches 1 run scoreboard players add @s[tag=Trial] profile.data.vaults.cr.bolt_trial_win 1
+execute if score game.is_active game.state matches 1 run scoreboard players add @s[tag=Crucible] profile.data.vaults.cr.bolt_crucible_win 1
 
 # Give advancement
-execute if data storage exigence:dungeon {is_active:1} as @s[tag=Trial] run function exigence:profile/profile_node/set/shop_unlock_vault {vault_string:"trial_bolt"}
-execute if data storage exigence:dungeon {is_active:1} as @s[tag=Crucible] run function exigence:profile/profile_node/set/shop_unlock_vault {vault_string:"crucible_bolt"}
+execute if score game.is_active game.state matches 1 as @s[tag=Trial] run function exigence:profile/profile_node/set/shop_unlock_vault {vault_string:"trial_bolt"}
+execute if score game.is_active game.state matches 1 as @s[tag=Crucible] run function exigence:profile/profile_node/set/shop_unlock_vault {vault_string:"crucible_bolt"}
 
 # Reset vault
 function exigence:door/vault/bolt/trial/reset

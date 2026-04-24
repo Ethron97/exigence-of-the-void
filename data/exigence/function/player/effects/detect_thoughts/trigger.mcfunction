@@ -1,12 +1,15 @@
 # Add tag
 #   Gets removed when indicator_line is done
 #   AS ravager
+
+#====================================================================================================
+
 tag @s add Mindread
 
-scoreboard players operation #compare ObjectLevel = @s ObjectLevel
+scoreboard players operation #compare game.entity.object_level = @s game.entity.object_level
 
 # Get key on same level
-execute as @e[type=minecraft:item,tag=Key] if score @s ObjectLevel = #compare ObjectLevel run tag @s add PossibleDetected
+execute as @e[type=minecraft:item,tag=Key] if score @s game.entity.object_level = #compare game.entity.object_level run tag @s add PossibleDetected
 tag @e[type=minecraft:item,tag=PossibleDetected,sort=random,limit=1] add DetectedThoughts
 
 # Playsound fail (no key to glow)

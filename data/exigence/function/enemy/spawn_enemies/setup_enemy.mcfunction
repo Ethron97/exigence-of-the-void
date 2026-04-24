@@ -5,6 +5,9 @@
 
 #====================================================================================================
 
+# Setup scores
+function exigence:enemy/spawn_enemies/set_object_level
+
 # Join enemy team for color/friendly fire
 team join Enemy @s
 
@@ -19,11 +22,10 @@ effect give @s[type=minecraft:witch] minecraft:speed infinite 0 true
 effect give @s[type=minecraft:witch] minecraft:regeneration infinite 0 true
 
 # If RADIANT difficulty (0), give enemies slowness I
-execute if score ProfileDifficulty DungeonRun matches 0 run attribute @s movement_speed modifier add exigence:enemy_slow -0.2 add_multiplied_base
+execute if score game.profile_difficulty game.state matches 0 run attribute @s movement_speed modifier add exigence:enemy_slow -0.2 add_multiplied_base
 
 # Add silence tag to mobs we want to be silenced in between rounds
 tag @s add Silence
-
 
 # Add attributes to mobs that need it
 #   Giving ravagers follow range on level 4 is just crazy unfair. 100% always have a ravager chasing you, no suspense.
@@ -51,4 +53,4 @@ execute if data storage exigence:debug {enemy:1} run effect give @s minecraft:gl
 #effect give @s[type=creaking] speed infinite 0 true
 
 # If profile = 2, give ravagers strength XXXX so they can insta kill
-#execute if score ProfileDifficulty DungeonRun matches 2 run effect give @s[type=minecraft:ravager] strength infinite 100 true
+#execute if score game.profile_difficulty game.state matches 2 run effect give @s[type=minecraft:ravager] strength infinite 100 true

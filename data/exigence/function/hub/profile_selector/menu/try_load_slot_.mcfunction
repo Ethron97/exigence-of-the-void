@@ -16,8 +16,8 @@
 $function exigence:hub/profile_selector/menu/load_slot_display {player_id:$(player_id),slot_id:$(slot_id),profile_selector_id:$(profile_selector_id)}
 
 # 2. Always load blank and then just overwrite of the profile exists
-execute as @n[type=item_display,tag=SlotDisplay,distance=..0.1] run function exigence:hub/profile_selector/menu/display/profile/set_blank
+execute as @n[type=minecraft:item_display,tag=SlotDisplay,distance=..0.1] run function exigence:hub/profile_selector/menu/display/profile/set_blank
 
 # 3. Load profile specific info (if exists)
-$execute as @n[type=item_display,tag=SlotDisplay,distance=..0.1] in exigence:profile_data \
+$execute as @n[type=minecraft:item_display,tag=SlotDisplay,distance=..0.1] in exigence:profile_data \
 at @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,scores={profile.node.player_id=$(player_id),profile.node.slot_id=$(slot_id)},tag=ProfileNode] run function exigence:hub/profile_selector/menu/display/profile/load_profile_to_slot

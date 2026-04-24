@@ -9,7 +9,7 @@ fill -423 151 22 -406 150 6 air replace minecraft:magenta_glazed_terracotta
 bossbar set exigence:trial_silence visible false
 
 # Kill setup entities
-kill @e[type=marker,tag=SilenceTrialSetup]
+kill @e[type=minecraft:marker,tag=SilenceTrialSetup]
 
 # Replace end portal with black concrete
 fill -406 148 22 -422 148 6 black_concrete replace end_portal

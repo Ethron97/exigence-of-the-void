@@ -11,7 +11,7 @@ execute as @a[scores={dead=0},tag=ActivePlayer] run scoreboard players operation
 scoreboard players operation #highest_hearts Temp /= 20 number
 
 # Add to treasure queue
-scoreboard players operation EmberQueue DungeonRun += #highest_hearts Temp
+scoreboard players operation ember.queue game.dungeon.temp += #highest_hearts Temp
 
 # Tellraw actual amount added
 tellraw @a [{text:"+",color:"gray"},{"score":{"name":"#highest_hearts","objective":"Temp"},color:"gray"},{text:" 🔥",color:"aqua"}]

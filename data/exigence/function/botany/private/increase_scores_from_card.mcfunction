@@ -1,8 +1,8 @@
 # Called by pick_bush functions
 
 ## CONSTRAINTS
-# AS player
-# After picking bush called from card
+#   AS player
+#   After picking bush called from card
 
 #====================================================================================================
 

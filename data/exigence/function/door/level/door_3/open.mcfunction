@@ -38,4 +38,4 @@ kill @e[type=minecraft:interaction,tag=Door3Handle,distance=..10]
 
 # Clear level key from other players (if it was opened by a non-key method)
 clear @a trial_key[custom_model_data={strings:["level_3_key"]}]
-kill @e[type=item,tag=Level3Key]
+kill @e[type=minecraft:item,tag=Level3Key]

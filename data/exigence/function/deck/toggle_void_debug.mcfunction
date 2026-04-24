@@ -11,8 +11,11 @@ execute if data storage exigence:debug {void:0} run say Turning void on
 data modify storage exigence:debug void set from storage temp debug
 
 # Reminder in Predungeon so I don't forget
-execute if data storage exigence:debug {void:1} run setblock -261 17 -75 minecraft:bamboo_sign[rotation=0]{front_text:{has_glowing_text:1b,color:"red",messages:["","VOID DEBUG","ON",""]}}
-execute if data storage exigence:debug {void:0} run setblock -261 17 -75 minecraft:air
+#execute if data storage exigence:debug {void:1} run setblock -261 17 -75 minecraft:bamboo_sign[rotation=0]{front_text:{has_glowing_text:1b,color:"red",messages:["","VOID DEBUG","ON",""]}}
+#execute if data storage exigence:debug {void:0} run setblock -261 17 -75 minecraft:air
+
+execute if data storage exigence:debug {void:1} in exigence:hub run setblock 3 211 109 bamboo_wall_sign[facing=north]{front_text:{has_glowing_text:1b,color:"red",messages:["","VOID DEBUG","ON",""]}}
+execute if data storage exigence:debug {void:0} in exigence:hub run setblock 3 211 109 air
 
 # Change echowintracking
 execute if data storage exigence:debug {void:1} run scoreboard players set Ethron97 career.settings.echo_win_tracking 0

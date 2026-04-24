@@ -2,4 +2,4 @@
 say [Reveal one hallway mirror parkour]
 
 # Functionality
-scoreboard players add RevealedMirrors Modifiers 1
+scoreboard players add mod.revealed_mirrors game.modifiers 1

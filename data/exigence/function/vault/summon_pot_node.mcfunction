@@ -4,7 +4,7 @@
 # Called by player at location of where to put the node
 
 # Summon marker
-function exigence:game/new_marker
+function exigence:game/admin/new_marker
 
 tag @e[type=minecraft:marker,tag=NewMarker] add PotMarker
 $tag @e[type=minecraft:marker,tag=NewMarker] add $(vault_name)

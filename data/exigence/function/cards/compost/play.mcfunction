@@ -10,4 +10,4 @@ execute as @e[type=minecraft:armor_stand,tag=Card,tag=Recycled] run scoreboard p
 scoreboard players operation #recycled Temp *= 2 number
 
 # Add to berry queue
-scoreboard players operation BerryQueue DungeonRun += #recycled Temp
+scoreboard players operation berry.queue game.dungeon.temp += #recycled Temp

@@ -4,7 +4,7 @@ advancement revoke @s only exigence:listener/use_totem
 #say Used totem
 
 # If game not active, return
-execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
+execute unless entity @s[tag=ActivePlayer] unless score game.is_active game.state matches 1 run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Trigger use

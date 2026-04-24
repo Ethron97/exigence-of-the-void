@@ -22,4 +22,4 @@ execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=Player
 execute as @a if score @s hub.player.room_id = #compare hub.room.room_id run scoreboard players reset @s hub.player.room_id
 
 # Kill room node
-kill @s[type=marker,tag=RoomNode]
+kill @s[type=minecraft:marker,tag=RoomNode]

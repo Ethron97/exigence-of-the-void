@@ -41,7 +41,7 @@ transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],transla
 function exigence:door/level/common/summon_runes
 
 # Setup new runes
-execute as @e[type=item_display,tag=NewRune] run function exigence:door/level/door_2/setup_handle_b
+execute as @e[type=minecraft:item_display,tag=NewRune] run function exigence:door/level/door_2/setup_handle_b
 
 
 
@@ -51,8 +51,8 @@ summon interaction ~ ~-2 ~ {Tags:["DoorHandle","NewDoorHandle","Door2Handle"],re
 
 
 # Copy score from bolt node
-scoreboard players operation @e[type=item_display,tag=NewDoorHandle] DoorHandleID = @s NodeID
-scoreboard players operation @e[type=interaction,tag=NewDoorHandle] DoorHandleID = @s NodeID
+scoreboard players operation @e[type=minecraft:item_display,tag=NewDoorHandle] DoorHandleID = @s node.id
+scoreboard players operation @e[type=interaction,tag=NewDoorHandle] DoorHandleID = @s node.id
 
 # Remove local tag
 tag @e[tag=NewDoorHandle] remove NewDoorHandle

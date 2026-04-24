@@ -8,29 +8,29 @@
 #====================================================================================================
 
 # Make sure local tag is cleared
-tag @e[type=item,tag=ClosestArdorFlame] remove ClosestArdorFlame
+tag @e[type=minecraft:item,tag=ClosestArdorFlame] remove ClosestArdorFlame
 
 # Tag closest Flame on same level
-execute at @s[scores={game.player.active_level=1}] run tag @e[type=minecraft:item,scores={ObjectLevel=1},tag=Ardor,sort=nearest,limit=1] add ClosestArdorFlame
-execute at @s[scores={game.player.active_level=2}] run tag @e[type=minecraft:item,scores={ObjectLevel=2},tag=Ardor,sort=nearest,limit=1] add ClosestArdorFlame
-execute at @s[scores={game.player.active_level=3}] run tag @e[type=minecraft:item,scores={ObjectLevel=3},tag=Ardor,sort=nearest,limit=1] add ClosestArdorFlame
-execute at @s[scores={game.player.active_level=4}] run tag @e[type=minecraft:item,scores={ObjectLevel=4},tag=Ardor,sort=nearest,limit=1] add ClosestArdorFlame
+execute at @s[scores={game.player.active_level=1}] run tag @e[type=minecraft:item,scores={game.entity.object_level=1},tag=Ardor,sort=nearest,limit=1] add ClosestArdorFlame
+execute at @s[scores={game.player.active_level=2}] run tag @e[type=minecraft:item,scores={game.entity.object_level=2},tag=Ardor,sort=nearest,limit=1] add ClosestArdorFlame
+execute at @s[scores={game.player.active_level=3}] run tag @e[type=minecraft:item,scores={game.entity.object_level=3},tag=Ardor,sort=nearest,limit=1] add ClosestArdorFlame
+execute at @s[scores={game.player.active_level=4}] run tag @e[type=minecraft:item,scores={game.entity.object_level=4},tag=Ardor,sort=nearest,limit=1] add ClosestArdorFlame
 
 # If no Flame shard on same level, return
-#execute unless entity @e[type=item,tag=ClosestArdorFlame] run say No Flame on same level found
-execute unless entity @e[type=item,tag=ClosestArdorFlame] run return 1
+#execute unless entity @e[type=minecraft:item,tag=ClosestArdorFlame] run say No Flame on same level found
+execute unless entity @e[type=minecraft:item,tag=ClosestArdorFlame] run return 1
 
 # Old distance
 scoreboard players operation #old_distance game.player.sound_ping.flame_distance = @s game.player.sound_ping.flame_distance
 
 # Determine distance bracket
 scoreboard players set @s game.player.sound_ping.flame_distance 10
-execute at @e[type=item,tag=ClosestArdorFlame,distance=..16] run scoreboard players set @s game.player.sound_ping.flame_distance -1
-execute at @e[type=item,tag=ClosestArdorFlame,distance=16..32] if score @s game.player.effects.detection matches 1.. run scoreboard players set @s game.player.sound_ping.flame_distance 0
-execute at @e[type=item,tag=ClosestArdorFlame,distance=32..48] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 1.. run scoreboard players set @s game.player.sound_ping.flame_distance 1
-execute at @e[type=item,tag=ClosestArdorFlame,distance=48..64] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 2.. run scoreboard players set @s game.player.sound_ping.flame_distance 2
-execute at @e[type=item,tag=ClosestArdorFlame,distance=64..80] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 3.. run scoreboard players set @s game.player.sound_ping.flame_distance 3
-execute at @e[type=item,tag=ClosestArdorFlame,distance=80..96] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 4.. run scoreboard players set @s game.player.sound_ping.flame_distance 4
+execute at @e[type=minecraft:item,tag=ClosestArdorFlame,distance=..16] run scoreboard players set @s game.player.sound_ping.flame_distance -1
+execute at @e[type=minecraft:item,tag=ClosestArdorFlame,distance=16..32] if score @s game.player.effects.detection matches 1.. run scoreboard players set @s game.player.sound_ping.flame_distance 0
+execute at @e[type=minecraft:item,tag=ClosestArdorFlame,distance=32..48] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 1.. run scoreboard players set @s game.player.sound_ping.flame_distance 1
+execute at @e[type=minecraft:item,tag=ClosestArdorFlame,distance=48..64] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 2.. run scoreboard players set @s game.player.sound_ping.flame_distance 2
+execute at @e[type=minecraft:item,tag=ClosestArdorFlame,distance=64..80] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 3.. run scoreboard players set @s game.player.sound_ping.flame_distance 3
+execute at @e[type=minecraft:item,tag=ClosestArdorFlame,distance=80..96] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 4.. run scoreboard players set @s game.player.sound_ping.flame_distance 4
 
 # PING SOUND IF:
 #   1. Player got closer since last ping OR
@@ -50,17 +50,17 @@ execute if score @s game.player.sound_ping.flame_distance matches 10 run return 
 # Stop old ping (if exists) so we don't overlap when they are running forward
 stopsound @s neutral minecraft:entity.evoker.cast_spell
 # Determine bracket
-execute at @e[type=item,tag=ClosestArdorFlame,distance=..16] run function exigence:player/effects/detection/flame/-1
-execute at @e[type=item,tag=ClosestArdorFlame,distance=16..32] if score @s game.player.effects.detection matches 1.. run function exigence:player/effects/detection/flame/0
-execute at @e[type=item,tag=ClosestArdorFlame,distance=32..48] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 1.. run function exigence:player/effects/detection/flame/1
-execute at @e[type=item,tag=ClosestArdorFlame,distance=48..64] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 2.. run function exigence:player/effects/detection/flame/2
-execute at @e[type=item,tag=ClosestArdorFlame,distance=64..80] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 3.. run function exigence:player/effects/detection/flame/3
-execute at @e[type=item,tag=ClosestArdorFlame,distance=80..96] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 4.. run function exigence:player/effects/detection/flame/4
+execute at @e[type=minecraft:item,tag=ClosestArdorFlame,distance=..16] run function exigence:player/effects/detection/flame/-1
+execute at @e[type=minecraft:item,tag=ClosestArdorFlame,distance=16..32] if score @s game.player.effects.detection matches 1.. run function exigence:player/effects/detection/flame/0
+execute at @e[type=minecraft:item,tag=ClosestArdorFlame,distance=32..48] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 1.. run function exigence:player/effects/detection/flame/1
+execute at @e[type=minecraft:item,tag=ClosestArdorFlame,distance=48..64] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 2.. run function exigence:player/effects/detection/flame/2
+execute at @e[type=minecraft:item,tag=ClosestArdorFlame,distance=64..80] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 3.. run function exigence:player/effects/detection/flame/3
+execute at @e[type=minecraft:item,tag=ClosestArdorFlame,distance=80..96] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 4.. run function exigence:player/effects/detection/flame/4
 
 # Call vibration
 tag @s add GetDistance
-execute if score @s game.player.effects.detection matches 1.. as @e[type=item,tag=ClosestArdorFlame] run function exigence:player/effects/detection/vibrate/vibrate
+execute if score @s game.player.effects.detection matches 1.. as @e[type=minecraft:item,tag=ClosestArdorFlame] run function exigence:player/effects/detection/vibrate/vibrate
 tag @s remove GetDistance
 
 # Remove local tag
-tag @e[type=item,tag=ClosestArdorFlame] remove ClosestArdorFlame
+tag @e[type=minecraft:item,tag=ClosestArdorFlame] remove ClosestArdorFlame

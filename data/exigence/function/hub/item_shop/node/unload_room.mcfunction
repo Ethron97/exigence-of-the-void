@@ -15,7 +15,7 @@ scoreboard players set #cancel_item_shop_iterate Temp 1
 # Any menu item that is loaded, tp back up to be "unloaded"
 execute as @e[type=minecraft:item_display,tag=ItemShopDisplay,tag=Loaded,distance=..32] run function exigence:menu/item_display/item_shop_display/load/unload
 
-execute in exigence:hub as @n[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=marker,scores={hub.room.room_type=9},tag=RoomNode] \
+execute in exigence:hub as @n[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,scores={hub.room.room_type=9},tag=RoomNode] \
 run scoreboard players operation #compare hub.entity.profile_id = @s hub.entity.profile_id
 
 #====================================================================================================
@@ -33,13 +33,13 @@ if score @s profile.node.profile_id = #compare hub.entity.profile_id at @s run f
 
 # Remove deck analyzer
 execute positioned -27.5 200.0 0.5 run kill @e[type=#exigence:display,tag=ItemShopAnalyzerDisplay,distance=..8]
-execute positioned -27.5 200.0 0.5 run kill @e[type=marker,tag=ItemShopAnalyzerDisplay,distance=..8]
+execute positioned -27.5 200.0 0.5 run kill @e[type=minecraft:marker,tag=ItemShopAnalyzerDisplay,distance=..8]
 
 # Remove interactions
 function exigence:hub/item_shop/node/kill_all_interactions
 
 # Remove locked reason displays if they got orphaned
-kill @e[type=text_display,tag=LockedReasonDisplay,distance=..32]
+kill @e[type=minecraft:text_display,tag=LockedReasonDisplay,distance=..32]
 
 # Remove all items off the ground (so other people can't pick them up when entering)
 # TODO

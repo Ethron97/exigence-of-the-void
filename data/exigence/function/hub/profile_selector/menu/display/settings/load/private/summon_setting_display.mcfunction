@@ -29,6 +29,6 @@ function_right:'exigence:hub/profile_selector/menu/display/settings/calls/right_
 }}}}
 
 # Assign data
-execute as @n[type=item_display,tag=NewItemDisplay,distance=..1] run function exigence:hub/profile_selector/menu/display/settings/load/private/summon_setting_display_data
+execute as @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..1] run function exigence:hub/profile_selector/menu/display/settings/load/private/summon_setting_display_data
 
 # Local tag to be removed by function that implements this

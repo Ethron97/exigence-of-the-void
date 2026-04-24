@@ -9,7 +9,7 @@
 tag @s add Door2
 
 # Rotate runes to face the normal
-data modify entity @s Rotation[0] set from entity @e[type=item_display,tag=Door2Handle,limit=1] Rotation[0]
+data modify entity @s Rotation[0] set from entity @e[type=minecraft:item_display,tag=Door2Handle,limit=1] Rotation[0]
 execute at @s run rotate @s ~-90 ~
 
 # Remove local tag from previous function

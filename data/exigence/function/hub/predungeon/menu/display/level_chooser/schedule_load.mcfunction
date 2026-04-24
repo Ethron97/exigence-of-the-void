@@ -6,5 +6,5 @@
 
 #====================================================================================================
 
-execute in exigence:hub positioned 0.5 209.0 104.5 at @n[type=marker,tag=PredungeonMenuNode,distance=..32] \
+execute in exigence:hub positioned 0.5 209.0 104.5 at @n[type=minecraft:marker,tag=PredungeonMenuNode,distance=..32] \
 run function exigence:hub/predungeon/menu/display/level_chooser/load

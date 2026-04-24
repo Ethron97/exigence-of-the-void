@@ -13,7 +13,7 @@ effect give @s speed infinite 1 true
 effect give @s strength infinite 0 true
 
 # Reproduce slow on Radiant difficulty
-execute if score ProfileDifficulty DungeonRun matches 0 run attribute @s movement_speed modifier add exigence:enemy_slow -0.2 add_multiplied_base
+execute if score game.profile_difficulty game.state matches 0 run attribute @s movement_speed modifier add exigence:enemy_slow -0.2 add_multiplied_base
 
 # Remove local tag
 tag @s remove NewMite

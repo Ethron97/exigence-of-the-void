@@ -1,5 +1,5 @@
-scoreboard players set @s[scores={EchoDifficulty=31}] BaseEmberDrop 40
-scoreboard players set @s[scores={EchoDifficulty=32}] BaseEmberDrop 43
-scoreboard players set @s[scores={EchoDifficulty=33}] BaseEmberDrop 47
-scoreboard players set @s[scores={EchoDifficulty=34}] BaseEmberDrop 51
-scoreboard players set @s[scores={EchoDifficulty=35}] BaseEmberDrop 55
+scoreboard players set @s[scores={node.property.echo.difficulty=31}] node.echo.base_ember_drop 40
+scoreboard players set @s[scores={node.property.echo.difficulty=32}] node.echo.base_ember_drop 43
+scoreboard players set @s[scores={node.property.echo.difficulty=33}] node.echo.base_ember_drop 47
+scoreboard players set @s[scores={node.property.echo.difficulty=34}] node.echo.base_ember_drop 51
+scoreboard players set @s[scores={node.property.echo.difficulty=35}] node.echo.base_ember_drop 55

@@ -13,5 +13,5 @@ data modify storage exigence:debug enemy set from storage temp debug
 
 # 2. Run commands depending on debug state
 # Toggle glowing
-$execute if data storage exigence:debug {enemy:1} run effect give @e[type=#exigence:enemy,scores={ObjectLevel=$(levels)}] minecraft:glowing infinite 0 true
+$execute if data storage exigence:debug {enemy:1} run effect give @e[type=#exigence:enemy,scores={game.entity.object_level=$(levels)}] minecraft:glowing infinite 0 true
 execute if data storage exigence:debug {enemy:0} run effect clear @e[type=#exigence:enemy] minecraft:glowing

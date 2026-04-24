@@ -10,13 +10,13 @@
 summon minecraft:marker ~ ~ ~ {Tags:["NewMarker","LockerRoomNode"],CustomName:[{text:"Marker | LockerRoomNode",color:"#aca927"},{text:" e",color:"#fffb00"}]}
 
 # Teleport to align and face
-execute align x align y align z run tp @n[type=marker,tag=NewMarker,distance=..1] ~.5 ~ ~.5 ~ ~
+execute align x align y align z run tp @n[type=minecraft:marker,tag=NewMarker,distance=..1] ~.5 ~ ~.5 ~ ~
 
 # Initialize id
-scoreboard players set @n[type=marker,tag=NewMarker,distance=..1] hub.locker_room_id 0
+scoreboard players set @n[type=minecraft:marker,tag=NewMarker,distance=..1] hub.locker_room_id 0
 
 # Remove local tag
-tag @n[type=marker,tag=NewMarker,distance=..1] remove NewMarker
+tag @n[type=minecraft:marker,tag=NewMarker,distance=..1] remove NewMarker
 
 # Manually add South or West tag based on locker room orientation
 tellraw @s {text:"Don't forget to add the South or West tag"}

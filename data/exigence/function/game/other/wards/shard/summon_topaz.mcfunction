@@ -1,6 +1,8 @@
 # Summon new Topaz shard drop within the dungeon
+# Called by :treasure/node/drop_treasure
 
 ## CONSTRAINTS
+#   AS treasure node
 #   AT location
 
 #====================================================================================================
@@ -21,7 +23,7 @@ summon minecraft:item ~ ~ ~ {Tags:["NewResonance","Resonance","ResonanceTopaz","
 team join Special @e[type=minecraft:item,tag=NewResonance]
 
 # Store object level
-scoreboard players operation #compare ObjectLevel = @s ObjectLevel
+scoreboard players operation #compare node.property.object_level = @s node.property.object_level
 
 # Handle common resonance function (removes NewResonance tag)
 execute as @e[type=minecraft:item,tag=NewResonance] at @s run function exigence:game/other/wards/shard/shard_data

@@ -24,4 +24,3 @@ execute in exigence:tutorial run function exigence:tutorial/reset
 execute in exigence:tutorial run function exigence:tutorial/flow/next_token
 
 execute if data storage exigence:debug {tutorial:1} run function exigence:tutorial/toggle_debug
-

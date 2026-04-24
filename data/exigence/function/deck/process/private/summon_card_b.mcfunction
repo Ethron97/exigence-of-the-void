@@ -1,17 +1,15 @@
 # Called by summon_card to summon the new card and adjust the Deck location marker
 
 ## CONSTRAINTS
-#   AS/AT ArmorStand
-#       tag=DeckCardLocation
+#   AS/AT ArmorStand tag=DeckCardLocation
 
 #====================================================================================================
 
 # Summon card armorstand ("NewCards" should be removed by whatever called this function after it is finished)
-summon armor_stand ~ ~ ~ {Tags:["NewCards","Card","NewCard"],ShowArms:1b,NoGravity:1b,CustomNameVisible:0b}
-
-# Wrap check
-execute store result score @s temp_coords run data get entity @s Pos[0] 10
-execute if score @s temp_coords matches -2925 run teleport @s ~-10 ~ ~1
+summon armor_stand ~ ~ ~ {Tags:["NewCards","Card","NewCard"],ShowArms:1b,NoGravity:1b,CustomNameVisible:0b,Rotation:[90,0]}
 
 # Move forward
-execute at @s run teleport @s ~1 ~ ~
+execute at @s run teleport @s ~ ~ ~-1
+
+# Wrap check
+execute at @s if block ~ ~-1 ~ red_glazed_terracotta run teleport @s ~-1 ~ ~10

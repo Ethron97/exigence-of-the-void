@@ -1,3 +1,3 @@
 say Crop Rotation Ascend [+3 Berry Bushes]
 
-scoreboard players add BerryQueue DungeonRun 3
+scoreboard players add berry.queue game.dungeon.temp 3

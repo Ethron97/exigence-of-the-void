@@ -17,5 +17,5 @@ execute as @a[tag=Predungeon,distance=..16] at @s run function exigence:hub/pred
 execute as @e[type=minecraft:item_display,tag=MenuDisplay,distance=..16] run function exigence:hub/predungeon/menu/display_hover_logic
 
 # If the dungeon is in state 2, check player sensors
-execute if score #predungeon_state Temp matches 2 at @n[type=marker,tag=PredungeonMenuNode,distance=..10] \
+execute if score predungeon.door_state hub.room_misc matches 2 at @n[type=minecraft:marker,tag=PredungeonMenuNode,distance=..10] \
 run function exigence:hub/predungeon/menu/display/player_sensors/check_sensors

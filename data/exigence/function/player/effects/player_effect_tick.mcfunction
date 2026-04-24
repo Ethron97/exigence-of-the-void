@@ -66,7 +66,7 @@ scoreboard players remove @s[scores={game.player.effects.speed10=1..}] game.play
 
 #====================================================================================================
 
-execute as @s[scores={game.player.effects.beastsense=1..}] run function exigence:player/effects/beast_sense/beast_sense_tick
+execute as @s[scores={game.player.effects.beastsense=1..}] at @s run function exigence:player/effects/beast_sense/beast_sense_tick
 execute as @s[scores={game.player.effects.flicker=1..}] at @s run function exigence:player/effects/flicker/flicker_tick
 execute as @s[scores={game.player.effects.glimmer=1..}] at @s run function exigence:player/effects/glimmer/glimmer_tick
 
@@ -92,5 +92,5 @@ effect give @s[tag=Carrying,predicate=!exigence:effects/slowness2] slowness infi
 effect clear @s[predicate=exigence:effects/slowness1] minecraft:slowness
 
 # If luckyfeather modifier, and holding feather, give slowfal
-execute if score LuckyFeather Modifiers matches 1 as @s[predicate=exigence:equipment/holding_feather,predicate=!exigence:effects/slow_falling1] run effect give @s slow_falling infinite 1
-execute if score LuckyFeather Modifiers matches 1 as @s[predicate=!exigence:equipment/holding_feather,predicate=exigence:effects/slow_falling1] run effect clear @s slow_falling
+execute if score mod.lucky_feather game.modifiers matches 1 as @s[predicate=exigence:equipment/holding_feather,predicate=!exigence:effects/slow_falling1] run effect give @s slow_falling infinite 1
+execute if score mod.lucky_feather game.modifiers matches 1 as @s[predicate=!exigence:equipment/holding_feather,predicate=exigence:effects/slow_falling1] run effect clear @s slow_falling

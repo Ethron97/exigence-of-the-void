@@ -15,7 +15,7 @@ scoreboard players set #predungeon_validate_deck Temp 1
 
 # Run refresh from the nearest Deck Analyzer refresh button
 scoreboard players operation #relay_to_room_id Temp = @s hub.entity.room_id
-execute as @n[type=item_display,tag=PredungeonAnalyzerDisplay,tag=RefreshButton,distance=..16] run function exigence:hub/deck_analyzer/refresh_button/calls/refresh/refresh
+execute as @n[type=minecraft:item_display,tag=PredungeonAnalyzerDisplay,tag=RefreshButton,distance=..16] run function exigence:hub/deck_analyzer/refresh_button/calls/refresh/refresh
 
 # Errors present?
 execute store success score #predungeon_validate_deck Temp unless score errors deck.analysis matches 1..

@@ -12,8 +12,8 @@
 execute at @s run fill ~ ~ ~ ~ ~ ~ air replace minecraft:purpur_pillar
 
 # If block below this is barrier, just kill self and return
-#execute at @s if block ~ ~-1 ~ minecraft:barrier run kill @s[type=marker,tag=Spire]
-#execute unless entity @s[type=marker,tag=Spire] run return 1
+#execute at @s if block ~ ~-1 ~ minecraft:barrier run kill @s[type=minecraft:marker,tag=Spire]
+#execute unless entity @s[type=minecraft:marker,tag=Spire] run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Teleport down one block

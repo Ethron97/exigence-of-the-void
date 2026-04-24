@@ -4,8 +4,8 @@
 
 # Kill snowballs and markers
 kill @e[type=snowball]
-kill @e[type=marker,tag=SnowballMarker]
+kill @e[type=minecraft:marker,tag=SnowballMarker]
 
 # Clear web markers/web
-execute at @e[type=marker,tag=WebBallWeb] run fill ~ ~ ~ ~ ~ ~ air replace cobweb
-kill @e[type=marker,tag=WebBallWeb]
+execute at @e[type=minecraft:marker,tag=WebBallWeb] run fill ~ ~ ~ ~ ~ ~ air replace cobweb
+kill @e[type=minecraft:marker,tag=WebBallWeb]

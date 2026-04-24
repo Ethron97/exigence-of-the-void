@@ -34,4 +34,4 @@ $execute at @a[tag=HandleInteracting] run summon minecraft:item_display ^ ^1 ^0.
 transformation:[-0.0000f,-0.0000f,0.5000f,0.0000f,-0.5000f,-0.0000f,-0.0000f,0.0000f,0.0000f,-0.5000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,1.0000f]}
 
 # Handle the key item setups
-execute at @s as @e[type=item_display,tag=NewDoorHandleKey,distance=..10] run function exigence:door/level/common/insert_key_data
+execute at @s as @e[type=minecraft:item_display,tag=NewDoorHandleKey,distance=..10] run function exigence:door/level/common/insert_key_data

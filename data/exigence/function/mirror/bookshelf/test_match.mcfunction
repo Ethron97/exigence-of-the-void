@@ -204,7 +204,7 @@ execute if score #OldBookshelf game.mirror.bookshelf_match < #Bookshelf game.mir
 execute if score #OldBookshelf game.mirror.bookshelf_match > #Bookshelf game.mirror.bookshelf_match at @e[type=minecraft:villager,tag=NPC_Scientist] run playsound minecraft:entity.villager.no neutral @a[predicate=exigence:mirror/bookshelf] ~ ~ ~ 2 1
 
 execute if score #Bookshelf game.mirror.bookshelf_match matches 40 run say All match
-execute if score #Bookshelf game.mirror.bookshelf_match matches 40 at @e[type=armor_stand,tag=Villager,tag=MirrorNode] run playsound minecraft:block.glass.break ambient @a[tag=ActivePlayer]
+execute if score #Bookshelf game.mirror.bookshelf_match matches 40 at @e[type=minecraft:armor_stand,tag=Villager,tag=MirrorNode] run playsound minecraft:block.glass.break ambient @a[tag=ActivePlayer]
 #execute unless score #Bookshelf game.mirror.bookshelf_match matches 40 run say Fail
 #execute if score #Bookshelf game.mirror.bookshelf_match matches 40 run advancement grant @a[tag=ActivePlayer] only exigence:story/match_bookshelf
 execute if score #Bookshelf game.mirror.bookshelf_match matches 40 as @a[tag=ActivePlayer,sort=arbitrary,limit=1] run function exigence:profile/profile_node/story/grant {story:'match_bookshelf'}

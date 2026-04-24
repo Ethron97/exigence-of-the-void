@@ -9,7 +9,7 @@
 scoreboard players set @s node.ember.embers_to_drop 10
 
 # Summon echo:
-function exigence:ember/node/summon_echo_item
+execute at @s run function exigence:ember/node/summon_echo_item
 
 # Spawn compass
 function exigence:ember/node/create_echo_compass with storage exigence:echo_selection

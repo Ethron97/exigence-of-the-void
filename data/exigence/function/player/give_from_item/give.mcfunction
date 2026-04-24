@@ -14,9 +14,6 @@
 # DEBUG
 #$say Give item loop $(type).$(index)
 
-# Sanity
-execute unless entity @e[type=minecraft:armor_stand,tag=intermediary] run summon minecraft:armor_stand -382.47 37.00 -115.34 {Tags:[intermediary],ShowArms:1b}
-
 # Return if index is too high
 $execute if score 27 number matches ..$(index) run return 1
 
@@ -27,7 +24,7 @@ scoreboard players set #replace Temp 0
 $execute unless items entity @s $(type).$(index) * run scoreboard players set #replace Temp 1
 
 # If replace, replace and return
-$execute if score #replace Temp matches 1 run item replace entity @s $(type).$(index) from entity @e[type=item,tag=ForceGive,limit=1] contents
+$execute if score #replace Temp matches 1 run item replace entity @s $(type).$(index) from entity @e[type=minecraft:item,tag=ForceGive,limit=1] contents
 execute if score #replace Temp matches 1 run return 1
 
 ## STACK CHECK
@@ -36,8 +33,8 @@ execute if score #replace Temp matches 1 run return 1
 # If it wasn't empty, check if same stackable card (mostly for returning cards)
 #scoreboard players set #increase Temp 0
 #$execute if items entity @s $(type).$(index) paper[custom_data={item_name:'$(card_name)'}] run scoreboard players set #increase Temp 1
-#$execute item replace entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] weapon.mainhand from entity @s $(type).$(index)
-#$execute if score #stackcheck Temp matches 1 if data entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] {HandItems:[{components:{"minecraft:custom_data":{card_name:'$(card_name)'}}}]} run scoreboard players set #increase Temp 1
+#$execute item replace entity @e[x=536,y=0,z=488,dx=0,dy=0,dz=0,type=minecraft:armor_stand,tag=intermediary,limit=1] weapon.mainhand from entity @s $(type).$(index)
+#$execute if score #stackcheck Temp matches 1 if data entity @e[x=536,y=0,z=488,dx=0,dy=0,dz=0,type=minecraft:armor_stand,tag=intermediary,limit=1] {HandItems:[{components:{"minecraft:custom_data":{card_name:'$(card_name)'}}}]} run scoreboard players set #increase Temp 1
 #$execute if score #stackcheck Temp matches 1 if score #increase Temp matches 1 run item modify entity @s $(type).$(index) exigence:increment
 #execute if score #stackcheck Temp matches 1 if score #increase Temp matches 1 run return 1
 

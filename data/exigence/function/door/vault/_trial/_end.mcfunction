@@ -25,7 +25,7 @@ tag @s[tag=TrialTrial] remove ActivePlayer
 tag @s[tag=TrialTrial] remove TrialTrial
 
 # If game is not active, return
-execute unless data storage exigence:dungeon {is_active:1} run return 1
+execute unless score game.is_active game.state matches 1 run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Update bossbars to only show for players who are not in a vault

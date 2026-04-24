@@ -5,17 +5,17 @@
 # Iterate over previous clocknodes until there isn't one, going down clockid one at a time
 
 # Tag target
-execute as @e[type=marker,tag=ClockMarker] if score @s game.item.clock_marker.id = #tp_to game.item.clock_marker.id run tag @s add NextMarker
+execute as @e[type=minecraft:marker,tag=ClockMarker] if score @s game.item.clock_marker.id = #tp_to game.item.clock_marker.id run tag @s add NextMarker
 
 # If no target, return
-execute unless entity @e[type=marker,tag=ClockMarker,tag=NextMarker] run return 1
+execute unless entity @e[type=minecraft:marker,tag=ClockMarker,tag=NextMarker] run return 1
 #----------------------------------------------------------------------------------------------------
 
 # TP player
-execute at @e[type=marker,tag=ClockMarker,tag=NextMarker] run tp @a[tag=ActivePlayer] ~ ~ ~
+execute at @e[type=minecraft:marker,tag=ClockMarker,tag=NextMarker] run tp @a[tag=ActivePlayer] ~ ~ ~
 
 # Remove local tag
-tag @e[type=marker,tag=ClockMarker,tag=NextMarker] remove NextMarker
+tag @e[type=minecraft:marker,tag=ClockMarker,tag=NextMarker] remove NextMarker
 
 # Playsound
 execute at @a[tag=ActivePlayer] run playsound minecraft:entity.enderman.teleport ambient @a ~ ~1000 ~ 1000 1.2

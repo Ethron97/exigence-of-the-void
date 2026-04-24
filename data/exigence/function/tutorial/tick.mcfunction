@@ -11,7 +11,7 @@ scoreboard players add ticks Tutorial 1
 execute as @a[scores={CarrotOnStick=1..},tag=Tutorial,distance=..1000] run function exigence:tutorial/utility/use_item
 
 # kill carrot on stick on ground
-kill @e[type=minecraft:item,distance=..1000,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}]
+kill @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}]
 
 # Give new stick if they don't have one
 #item replace entity @a[distance=..1000,tag=Tutorial,nbt=!{Inventory:[{id:"minecraft:carrot_on_a_stick"}]}] hotbar.8 with minecraft:carrot_on_a_stick[custom_name=[{text:"Exit Tutorial",color:"red",italic:false}]]
@@ -24,8 +24,7 @@ give @s[nbt=!{Inventory:[{id:"minecraft:carrot_on_a_stick",components:{"minecraf
 # Step checks
 function exigence:tutorial/flow/step_check
 
-# Only trigger if dungeon is inactive, to prevent double tick
-execute unless data storage exigence:dungeon {is_active:1} run function exigence:game/other/ravager_glass/ravager_glass_tick
+function exigence:game/other/ravager_glass/ravager_glass_tick
 
 execute as @a[scores={dead=1},tag=Tutorial] run function exigence:tutorial/flow/death
 
@@ -52,20 +51,21 @@ execute if score Step Tutorial matches 1500 if entity @a[x=173,y=130,z=43,dx=10,
 
 # ALTARS
 # Inactive altars
-execute at @e[type=minecraft:armor_stand,scores={game.node.node_state=0..1},tag=AltarNode,distance=..1000] if score seconds.cooldown tick_counter matches 7 run particle minecraft:glow ~ ~0.5 ~ 0.2 0.2 0.2 0 1
-execute at @e[type=minecraft:armor_stand,scores={game.node.node_state=0..1},tag=AltarNode,distance=..1000] if score seconds.cooldown tick_counter matches 17 run particle minecraft:glow ~ ~0.5 ~ 0.2 0.2 0.2 0 1
+execute at @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:armor_stand,scores={game.node.node_state=0..1},tag=AltarNode] if score seconds.cooldown tick_counter matches 7 run particle minecraft:glow ~ ~0.5 ~ 0.2 0.2 0.2 0 1
+execute at @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:armor_stand,scores={game.node.node_state=0..1},tag=AltarNode] if score seconds.cooldown tick_counter matches 17 run particle minecraft:glow ~ ~0.5 ~ 0.2 0.2 0.2 0 1
 # Radiant altars
-execute at @e[type=minecraft:armor_stand,scores={game.node.node_state=2},tag=AltarNode,distance=..1000] run particle minecraft:soul_fire_flame ~ ~1 ~ 0.3 0.5 0.3 0 3
+execute at @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:armor_stand,scores={game.node.node_state=2},tag=AltarNode] run particle minecraft:soul_fire_flame ~ ~1 ~ 0.3 0.5 0.3 0 3
 
-execute at @e[type=minecraft:armor_stand,tag=BellNode,tag=Active,distance=..1000] if score seconds.cooldown tick_counter matches 7 run particle minecraft:glow ~ ~0.5 ~ 0.2 0.2 0.2 0 1
-execute at @e[type=minecraft:armor_stand,tag=BellNode,tag=Active,distance=..1000] if score seconds.cooldown tick_counter matches 17 run particle minecraft:glow ~ ~0.5 ~ 0.2 0.2 0.2 0 1
+execute at @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:armor_stand,tag=BellNode,tag=Active] if score seconds.cooldown tick_counter matches 7 run particle minecraft:glow ~ ~0.5 ~ 0.2 0.2 0.2 0 1
+execute at @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:armor_stand,tag=BellNode,tag=Active] if score seconds.cooldown tick_counter matches 17 run particle minecraft:glow ~ ~0.5 ~ 0.2 0.2 0.2 0 1
 
 # CLIMBY DOOR OPEN
-execute if score Step Tutorial matches 1103 at @n[type=armor_stand,tag=Bait1,distance=..1000] if entity @n[type=ravager,distance=..2] run function exigence:tutorial/flow/private/open_climby_door
-execute if score Step Tutorial matches 1308 at @n[type=armor_stand,tag=Bait2,distance=..1000] if entity @n[type=ravager,distance=..2] run function exigence:tutorial/flow/private/open_glassy_door
+execute if score Step Tutorial matches 1103 at @n[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:armor_stand,tag=Bait1] if entity @n[type=minecraft:ravager,distance=..2] run function exigence:tutorial/flow/private/open_climby_door
+# POOL DOOR OPEN
+execute if score Step Tutorial matches 1308 at @n[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:armor_stand,tag=Bait2] if entity @n[type=minecraft:ravager,distance=..2] run function exigence:tutorial/flow/private/open_glassy_door
 
 execute if score Step Tutorial matches 1501.. run function exigence:tutorial/flow/final_section/tick
 
 # Win check
-execute as @a[tag=Tutorial,distance=..1000] at @s if entity @e[type=minecraft:marker,tag=TutorialExitNode,distance=..2] if score Step Tutorial matches 1501 run title @s actionbar {text:"You must collect the Echo Shard to escape!",color:"red"}
-execute as @a[tag=Tutorial,distance=..1000] at @s if entity @e[type=minecraft:marker,tag=TutorialExitNode,distance=..2] if score Step Tutorial matches 1502 run function exigence:tutorial/access/complete_tutorial
+execute if score Step Tutorial matches 1501 as @a[tag=Tutorial,distance=..1000] at @s if entity @e[type=minecraft:marker,tag=TutorialExitNode,distance=..2] run title @s actionbar {text:"You must collect the Echo Shard to escape!",color:"red"}
+execute if score Step Tutorial matches 1502 as @a[tag=Tutorial,distance=..1000] at @s if entity @e[type=minecraft:marker,tag=TutorialExitNode,distance=..2] run function exigence:tutorial/access/complete_tutorial

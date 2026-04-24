@@ -11,6 +11,6 @@ execute as @e[type=minecraft:marker,tag=NewAppeared] at @s run function exigence
 tag @e[type=minecraft:marker,tag=NewAppeared] remove NewAppeared
 
 # If there are more to appear, iterate
-execute if data storage exigence:dungeon {is_active:1} if entity @e[type=minecraft:marker,tag=Appearing] run schedule function exigence:hub/item_shop/item/dust_of_appearance/private/trigger_loop 2t append
+execute if score game.is_active game.state matches 1 if entity @e[type=minecraft:marker,tag=Appearing] run schedule function exigence:hub/item_shop/item/dust_of_appearance/private/trigger_loop 2t append
 # If there are no more, schedule untrigger
-#execute if data storage exigence:dungeon {is_active:1} unless entity @e[type=minecraft:marker,tag=Appearing] run schedule function exigence:vault/artifact/artifacts/dust_of_appearance/private/untrigger_loop 100t
+#execute if score game.is_active game.state matches 1 unless entity @e[type=minecraft:marker,tag=Appearing] run schedule function exigence:vault/artifact/artifacts/dust_of_appearance/private/untrigger_loop 100t

@@ -9,7 +9,7 @@
 say Run timeout predungeon
 
 # Reset score
-scoreboard players reset @n[type=armor_stand,tag=PlayerNode,distance=..0.1] player.node.queue.timeout_predungeon
+scoreboard players reset @n[type=minecraft:armor_stand,tag=PlayerNode,distance=..0.1] player.node.queue.timeout_predungeon
 
 # Call function
 tellraw @s [{text:"Exceeded Predungeon timeout limit",color:red}]

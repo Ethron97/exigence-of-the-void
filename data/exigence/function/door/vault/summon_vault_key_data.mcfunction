@@ -12,7 +12,7 @@ playsound minecraft:block.trial_spawner.open_shutter neutral @a ~ ~ ~ 2 1
 team join Treasure @s
 
 # Set object level
-scoreboard players operation @s ObjectLevel = #compare ObjectLevel
+scoreboard players operation @s game.entity.object_level = #compare node.property.object_level
 
 # If treasure debug on, glow key
 execute if data storage exigence:treasure_drop {debug:1} run data modify entity @s Glowing set value true

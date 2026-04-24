@@ -1,8 +1,12 @@
 # In charge of distributing the ravagers to various MenaceNodes around the map.
-# Currently, no additional logic, except that each MenaceNode will only start with one ravager near it.
+
+## CONSTRAINTS
+#   IN minecraft:overworld
+
+#====================================================================================================
 
 # Clear tag that remembers which nodes have been ravagered
-tag @e[type=minecraft:armor_stand,tag=Ravagered] remove Ravagered
+tag @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,tag=Ravagered] remove Ravagered
 
 # Select ravagers for distribution
-execute as @e[type=minecraft:ravager] run function exigence:enemy/ravager/distribute
+execute as @e[x=-284,y=-64,z=-140,dx=7,dy=7,dz=7,type=minecraft:ravager,sort=arbitrary] run function exigence:enemy/ravager/distribute

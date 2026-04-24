@@ -13,7 +13,7 @@ data modify entity @s Glowing set value false
 function exigence:hub/profile_selector/menu/display/profile/calls/private/remove_step_details with entity @s item.components."minecraft:custom_data"
 
 # Remove difficulty selcetor buttons
-kill @e[type=text_display,tag=KeepDisplay,distance=..16]
+kill @e[type=minecraft:text_display,tag=KeepDisplay,distance=..16]
 function exigence:hub/profile_selector/menu/display/profile/effects/remove_difficulty_selectors with entity @s item.components."minecraft:custom_data"
 
 # Remove coop selector buttons

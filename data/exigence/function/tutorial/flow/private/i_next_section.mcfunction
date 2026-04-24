@@ -11,7 +11,7 @@
 #say (D3) Next section iterate
 
 # Reset token
-execute as @e[type=marker,tag=TutorialMarker,tag=LastDropped,distance=..1000] run tag @s remove LastDropped
+execute as @e[type=minecraft:marker,tag=TutorialMarker,tag=LastDropped,distance=..1000] run tag @s remove LastDropped
 tag @s add LastDropped
 tag @s add Dropped
 
@@ -20,8 +20,8 @@ execute as @s[tag=Checkpoint] run function exigence:tutorial/flow/last_dropped_f
 execute as @s[tag=Checkpoint] run function exigence:tutorial/flow/next_token
 
 # Update debug colors
-execute as @e[type=marker,tag=TutorialMarker,distance=..1000] run function exigence:tutorial/marker/private/update_debug_color
+execute as @e[type=minecraft:marker,tag=TutorialMarker,distance=..1000] run function exigence:tutorial/marker/private/update_debug_color
 
 # If not checkpoint, iterate
-execute in exigence:tutorial at @s[tag=!Checkpoint] as @n[type=marker,tag=TutorialMarker,tag=!Dropped,distance=..100] run function exigence:tutorial/flow/private/i_next_section
+execute in exigence:tutorial at @s[tag=!Checkpoint] as @n[type=minecraft:marker,tag=TutorialMarker,tag=!Dropped,distance=..100] run function exigence:tutorial/flow/private/i_next_section
 

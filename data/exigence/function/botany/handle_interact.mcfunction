@@ -12,7 +12,7 @@
 execute on target run tag @s add Picking
 
 # Store compare
-scoreboard players operation #compare NodeID = @s NodeID
+scoreboard players operation #compare node.id = @s node.id
 
 # Call subfunction as altar that is interacted with
 execute on target run function exigence:botany/node/pick/interact

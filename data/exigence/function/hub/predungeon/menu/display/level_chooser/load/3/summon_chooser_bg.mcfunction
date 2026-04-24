@@ -14,14 +14,14 @@ summon minecraft:item_display ~ ~ ~ {Rotation:[180.0f,0.0f],billboard:"fixed",in
 }}}
 
 # Default to locked
-#team join Red @n[distance=..0.1,type=item_display,tag=NewItemDisplay]
+#team join Red @n[distance=..0.1,type=minecraft:item_display,tag=NewItemDisplay]
 
 # Assign new IDID
 #scoreboard players add #highest IDID 1
-#scoreboard players operation @n[distance=..0.1,type=item_display,tag=NewItemDisplay] IDID = #highest IDID
+#scoreboard players operation @n[distance=..0.1,type=minecraft:item_display,tag=NewItemDisplay] IDID = #highest IDID
 
 # Add ID to item data
-#execute store result entity @n[distance=..0.1,type=item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".idid int 1 run scoreboard players get #highest IDID
+#execute store result entity @n[distance=..0.1,type=minecraft:item_display,tag=NewItemDisplay] item.components."minecraft:custom_data".idid int 1 run scoreboard players get #highest IDID
 
 # Remove local tag
-tag @n[type=item_display,tag=NewItemDisplay,distance=..0.1] remove NewItemDisplay
+tag @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] remove NewItemDisplay

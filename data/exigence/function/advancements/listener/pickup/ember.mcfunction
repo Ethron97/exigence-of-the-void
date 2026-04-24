@@ -10,7 +10,7 @@ execute as @s[tag=Tutorial] run scoreboard players add @s profile.data.ember.cr.
 execute as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/flow/step
 
 # Remove the advancement early (thereby cancelling the rest of this function) if the game is not active
-execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
+execute unless entity @s[tag=ActivePlayer] unless score game.is_active game.state matches 1 run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Get number of embers if it was a stack

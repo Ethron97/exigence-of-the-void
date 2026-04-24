@@ -9,7 +9,7 @@
 say Run timeout profile selector
 
 # Reset score
-scoreboard players reset @n[type=armor_stand,tag=PlayerNode,distance=..0.1] player.node.queue.timeout_profile_selector
+scoreboard players reset @n[type=minecraft:armor_stand,tag=PlayerNode,distance=..0.1] player.node.queue.timeout_profile_selector
 
 # Call function
 tellraw @s [{text:"Exceeded Profile Selector timeout limit",color:red}]

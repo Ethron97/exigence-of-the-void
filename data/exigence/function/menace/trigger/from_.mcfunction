@@ -11,8 +11,8 @@
 
 # Get max before and extra
 scoreboard players operation #before_max Temp = 20 number
-scoreboard players operation #before_max Temp -= Menace DungeonRun
-scoreboard players operation #before_max Temp -= MenaceQueue DungeonRun
+scoreboard players operation #before_max Temp -= .menace game.dungeon
+scoreboard players operation #before_max Temp -= menace.queue game.dungeon.temp
 scoreboard players operation #before_max Temp > 0 number
 $scoreboard players set #menace_added Temp $(amount)
 scoreboard players operation #before_max Temp < #menace_added Temp
@@ -29,4 +29,4 @@ scoreboard players operation @a[tag=ActivePlayer] profile.data.menace.cr.menace_
 scoreboard players operation @a[tag=ActivePlayer] profile.data.menace.cr.menace_extra_total += #after_max Temp
 
 # Add menace after calculationss
-$scoreboard players add MenaceQueue DungeonRun $(amount)
+$scoreboard players add menace.queue game.dungeon.temp $(amount)

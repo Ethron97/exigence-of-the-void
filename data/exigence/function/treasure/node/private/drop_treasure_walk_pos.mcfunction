@@ -9,8 +9,8 @@
 scoreboard players add Iteration.Current node.treasure.drop_working 1
 
 # Teleport walking marker to its parent node
-scoreboard players operation #compare NodeID = @s NodeID
-execute as @e[type=minecraft:armor_stand,tag=TreasureNode] at @s if score @s NodeID = #compare NodeID align xyz run tp @e[type=minecraft:marker,tag=TreasureWalking] ~0.5 ~0.5 ~0.5
+scoreboard players operation #compare node.id = @s node.id
+execute as @e[type=minecraft:armor_stand,tag=TreasureNode] at @s if score @s node.id = #compare node.id align xyz run tp @e[type=minecraft:marker,tag=TreasureWalking] ~0.5 ~0.5 ~0.5
 
 # Reset variables
 scoreboard players set Walk.Current node.treasure.drop_working 0

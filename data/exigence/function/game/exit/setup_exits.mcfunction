@@ -1,12 +1,15 @@
 # Controls exit node/portal setup
-# Called by game_on
+
+## CONSTRAINTS
+#   IN overworld
 
 #====================================================================================================
 
-# Reset tags
-tag @e[type=armor_stand,tag=EchoNode,tag=HasPortal] remove HasPortal
+# If difficulty is not set, fail
+execute if score game.difficulty game.state matches 0 run return run say (C) Difficulty invalid?
+#----------------------------------------------------------------------------------------------------
 
 # Always create one exit
-execute positioned -310.5 2.0 -102.5 run function exigence:game/exit/exit_node/summon_exit_node
+function exigence:game/exit/node/summon_exit_node
 # Create a second if player has BackupPlan (and difficulty 4)
-execute if score BackupPlan Modifiers matches 1 if score Difficulty DungeonRun matches 4 positioned -310.5 2.0 -102.5 run function exigence:game/exit/exit_node/summon_exit_node
+execute if score mod.backup_plan game.modifiers matches 1 if score game.difficulty game.state matches 4 positioned -310.5 2.0 -102.5 run function exigence:game/exit/node/summon_exit_node

@@ -1,5 +1,5 @@
 # Create a new node with tag "NewNode"
-execute at @s as @s run function exigence:game/new_node
+execute at @s as @s run function exigence:game/admin/new_node
 
 # Teleport mirrornode to be looking where player is looking
 teleport @e[type=minecraft:armor_stand,tag=NewNode] ~ ~ ~ ~ ~

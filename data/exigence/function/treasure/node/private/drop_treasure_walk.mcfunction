@@ -7,7 +7,7 @@
 execute at @s align xyz run summon minecraft:marker ~0.5 ~0.5 ~0.5 {Tags:[TreasureWalking],CustomName:{text:"Marker | TreasureWalking"}}
 
 # Copy node id
-scoreboard players operation @e[type=marker,tag=TreasureWalking] NodeID = @s NodeID
+scoreboard players operation @e[type=minecraft:marker,tag=TreasureWalking] node.id = @s node.id
 
 # Prep variables
 scoreboard players operation Walk.Max node.treasure.drop_working = @s TreasureRadius
@@ -16,7 +16,7 @@ scoreboard players set Walk.FailsMax node.treasure.drop_working 3
 # Randomize position
 data modify storage exigence:treasure_drop verify set value 0
 scoreboard players set Iteration.Current node.treasure.drop_working 0
-execute as @e[type=marker,tag=TreasureWalking] run function exigence:treasure/node/private/drop_treasure_walk_pos
+execute as @e[type=minecraft:marker,tag=TreasureWalking] run function exigence:treasure/node/private/drop_treasure_walk_pos
 
 # Store marker final positions for treasure drop
 # OLD

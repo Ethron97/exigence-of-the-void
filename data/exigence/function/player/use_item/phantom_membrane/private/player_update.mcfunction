@@ -16,7 +16,7 @@ execute if score @s game.player.effects.farstep matches 1.. if items entity @s w
 
 # If player is not holding membrane, teleport preview to start
 scoreboard players operation #compare game.entity.profile_id = @s profile.player.profile_id
-execute if score #temp Temp matches 0 as @e[type=block_display,tag=ItemPreview,tag=Valid] if score @s game.entity.profile_id = #compare game.entity.profile_id run function exigence:player/use_item/phantom_membrane/private/reset_preview
+execute if score #temp Temp matches 0 as @e[type=minecraft:block_display,tag=ItemPreview,tag=Valid] if score @s game.entity.profile_id = #compare game.entity.profile_id run function exigence:player/use_item/phantom_membrane/private/reset_preview
 
 # If player IS holding membrane, update preview
 execute if score #temp Temp matches 1 run function exigence:player/use_item/phantom_membrane/private/update_preview

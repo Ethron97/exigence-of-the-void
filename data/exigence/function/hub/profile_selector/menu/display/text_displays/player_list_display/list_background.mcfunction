@@ -19,4 +19,4 @@ scoreboard players operation @n[type=minecraft:item_display,tag=NewItemDisplay,d
 scoreboard players operation @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id
 
 # Remove local tag
-tag @n[type=item_display,tag=NewItemDisplay,distance=..1] remove NewItemDisplay
+tag @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..1] remove NewItemDisplay

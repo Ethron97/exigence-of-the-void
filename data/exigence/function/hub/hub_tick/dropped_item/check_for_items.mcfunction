@@ -6,10 +6,10 @@
 #====================================================================================================
 
 # If in predungeon and dungeon state is 1..
-execute if entity @s[tag=Predungeon] if score #predungeon_state Temp matches 1.. run return run function exigence:hub/hub_tick/dropped_item/check_for_items_predungeon
+execute if entity @s[tag=Predungeon] if score predungeon.door_state hub.room_misc matches 1.. run return run function exigence:hub/hub_tick/dropped_item/check_for_items_predungeon
 
 # Check for item on the ground
-execute at @s as @e[type=item,tag=!DropChecked,distance=..4] run function exigence:hub/hub_tick/dropped_item/just_dropped_item
+execute at @s as @e[type=minecraft:item,tag=!DropChecked,distance=..4] run function exigence:hub/hub_tick/dropped_item/just_dropped_item
 
 # Every second, update items on the ground
 #execute if score seconds.cooldown tick_counter matches 9 at @s as @e[type=minecraft:item,tag=DropChecked,tag=!DroppedByAdmin,distance=..4] run function exigence:hub/hub_tick/dropped_item/update_item

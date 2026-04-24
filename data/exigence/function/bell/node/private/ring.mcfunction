@@ -22,9 +22,8 @@ execute at @s run playsound minecraft:block.bell.use ambient @a ~ ~ ~ 1 1
 function exigence:bell/node/remove_interaction
 
 # If game is inactive, return here
-execute if score @s ObjectLevel matches 10 run function exigence:tutorial/flow/step
-execute if score @s ObjectLevel matches 10 run return 1
-execute unless data storage exigence:dungeon {is_active:1} run return 1
+execute if score @s node.property.object_level matches 10 run return run function exigence:tutorial/flow/step
+execute unless score game.is_active game.state matches 1 run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Call sub function based on if player has golden axe
@@ -36,7 +35,7 @@ scoreboard players set @s game.node.bell.ring_cooldown 100
 
 # 2/3 chance of generating one Hazard
 execute store result score #random Random run random value 1..3
-execute if score #random Random matches 2..3 if score @s ObjectLevel matches 1 run function exigence:hazard/proc_hazard {level:1,amount:1,type:"bell"}
-execute if score #random Random matches 2..3 if score @s ObjectLevel matches 2 run function exigence:hazard/proc_hazard {level:2,amount:1,type:"bell"}
-execute if score #random Random matches 2..3 if score @s ObjectLevel matches 3 run function exigence:hazard/proc_hazard {level:3,amount:1,type:"bell"}
-execute if score #random Random matches 2..3 if score @s ObjectLevel matches 4 run function exigence:hazard/proc_hazard {level:4,amount:1,type:"bell"}
+execute if score #random Random matches 2..3 if score @s node.property.object_level matches 1 run function exigence:hazard/proc_hazard {level:1,amount:1,type:"bell"}
+execute if score #random Random matches 2..3 if score @s node.property.object_level matches 2 run function exigence:hazard/proc_hazard {level:2,amount:1,type:"bell"}
+execute if score #random Random matches 2..3 if score @s node.property.object_level matches 3 run function exigence:hazard/proc_hazard {level:3,amount:1,type:"bell"}
+execute if score #random Random matches 2..3 if score @s node.property.object_level matches 4 run function exigence:hazard/proc_hazard {level:4,amount:1,type:"bell"}

@@ -15,4 +15,4 @@
 summon minecraft:marker ~ ~ ~ {Tags:["NewRoomNode","RoomNode"],CustomName:[{text:"Marker | RoomNode",color:"#6dc532"},{text:"e",color:"#4c98ee"}]}
 
 # Generate and assign new id
-execute as @n[type=marker,tag=NewRoomNode,distance=..1] run function exigence:room/node/private/data
+execute as @n[type=minecraft:marker,tag=NewRoomNode,distance=..1] run function exigence:room/node/private/data

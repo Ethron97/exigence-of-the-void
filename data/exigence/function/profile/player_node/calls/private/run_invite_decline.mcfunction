@@ -9,7 +9,7 @@
 say Run queued invite decline
 
 # Reset score
-scoreboard players reset @n[type=armor_stand,tag=PlayerNode,distance=..0.1] player.node.queue.invite_decline
+scoreboard players reset @n[type=minecraft:armor_stand,tag=PlayerNode,distance=..0.1] player.node.queue.invite_decline
 
 # Call player function:
 function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/cancel_invited

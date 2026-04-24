@@ -2,13 +2,12 @@
 
 
 # ============== FRIENDLY / POSITIVE =================
-execute if data storage exigence:dungeon {all_echos_found:0} run function exigence:game/game_tick/ambient/echo
 
 function exigence:game/game_tick/ambient/flame
 function exigence:game/game_tick/ambient/key
 
 # BEACONS
-execute if score Difficulty DungeonRun matches 5.. as @a[scores={dead=0},tag=ActivePlayer] at @s run function exigence:beacon/ambient_tick
+execute if score game.difficulty game.state matches 5.. as @a[scores={dead=0},tag=ActivePlayer] at @s run function exigence:beacon/ambient_tick
 
 # VAULT KEY
 function exigence:game/game_tick/ambient/vault_key
@@ -29,19 +28,14 @@ execute at @e[type=minecraft:armor_stand,tag=VaultNode,tag=PickedUp,tag=!Opened,
 
 
 # ALTARS
-execute if data storage exigence:dungeon {max_menace:0} run function exigence:altar/ambient_tick
-
-
-# EXIT
-#   Have to call from the exit portal to avoid double-ticking
-execute if data storage exigence:dungeon {escape_portal:0} as @e[type=armor_stand,tag=ExitNode] at @s run function exigence:game/exit/exit_node/tick
+execute if score game.max_menace game.state matches 0 run function exigence:altar/ambient_tick
 
 
 # BELLS
 execute if score seconds.cooldown tick_counter matches 6 at @e[type=minecraft:armor_stand,scores={game.node.bell.ring_cooldown=0},tag=BellNode,tag=Active] run particle minecraft:glow ~ ~0.1 ~ 0.3 0.2 0.3 0 1
 execute if score seconds.cooldown tick_counter matches 16 at @e[type=minecraft:armor_stand,scores={game.node.bell.ring_cooldown=0},tag=BellNode,tag=Active] run particle minecraft:glow ~ ~0.1 ~ 0.3 0.2 0.3 0 1
-execute if score Resonance Modifiers matches 1.. if score seconds.cooldown tick_counter matches 3 at @e[type=minecraft:armor_stand,scores={game.node.bell.ring_cooldown=0},tag=BellNode,tag=Active] run particle minecraft:small_gust ~ ~0.1 ~ 0.3 0.2 0.3 0.1 5
-execute if score Resonance Modifiers matches 1.. if score seconds.cooldown tick_counter matches 13 at @e[type=minecraft:armor_stand,scores={game.node.bell.ring_cooldown=0},tag=BellNode,tag=Active] run particle minecraft:small_gust ~ ~0.1 ~ 0.3 0.2 0.3 0.1 5
+execute if score mod.resonance game.modifiers matches 1.. if score seconds.cooldown tick_counter matches 3 at @e[type=minecraft:armor_stand,scores={game.node.bell.ring_cooldown=0},tag=BellNode,tag=Active] run particle minecraft:small_gust ~ ~0.1 ~ 0.3 0.2 0.3 0.1 5
+execute if score mod.resonance game.modifiers matches 1.. if score seconds.cooldown tick_counter matches 13 at @e[type=minecraft:armor_stand,scores={game.node.bell.ring_cooldown=0},tag=BellNode,tag=Active] run particle minecraft:small_gust ~ ~0.1 ~ 0.3 0.2 0.3 0.1 5
 
 
 # BOOKSHELVES

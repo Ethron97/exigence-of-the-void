@@ -11,88 +11,88 @@
 #====================================================================================================
 ## TOTAL + RARITY
 # TOTAL
-execute if data storage exigence:deck_analysis {cards_total:0} run data modify entity @n[type=text_display,tag=DeckLabelsA,distance=..5] text.extra[0].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_total:0} run data modify entity @n[type=text_display,tag=DeckLabelsA,distance=..5] text.extra[0].color set from storage exigence:temp color_b
-$data modify entity @n[type=text_display,tag=DeckScoresA,distance=..5] text.extra[0].text set value "\n$(cards_total)"
-execute if data storage exigence:deck_analysis {cards_total:0} run data modify entity @n[type=text_display,tag=DeckScoresA,distance=..5] text.extra[0].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_total:0} run data modify entity @n[type=text_display,tag=DeckScoresA,distance=..5] text.extra[0].color set from storage exigence:temp color_b
+execute if data storage exigence:deck_analysis {cards_total:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsA,distance=..5] text.extra[0].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_total:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsA,distance=..5] text.extra[0].color set from storage exigence:temp color_b
+$data modify entity @n[type=minecraft:text_display,tag=DeckScoresA,distance=..5] text.extra[0].text set value "\n$(cards_total)"
+execute if data storage exigence:deck_analysis {cards_total:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresA,distance=..5] text.extra[0].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_total:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresA,distance=..5] text.extra[0].color set from storage exigence:temp color_b
 
 # If deck total is above 40 (after void discount), make yellow
-execute if score cards.count deck.analysis matches 41.. run data modify entity @n[type=text_display,tag=DeckLabelsA,distance=..5] text.extra[0].color set value "#DA4A42"
-execute if score cards.count deck.analysis matches 41.. run data modify entity @n[type=text_display,tag=DeckScoresA,distance=..5] text.extra[0].color set value "#DA4A42"
+execute if score cards.count deck.analysis matches 41.. run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsA,distance=..5] text.extra[0].color set value "#DA4A42"
+execute if score cards.count deck.analysis matches 41.. run data modify entity @n[type=minecraft:text_display,tag=DeckScoresA,distance=..5] text.extra[0].color set value "#DA4A42"
 
 # COMMON
-execute if data storage exigence:deck_analysis {cards_common:0} run data modify entity @n[type=text_display,tag=DeckLabelsA,distance=..5] text.extra[2].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_common:0} run data modify entity @n[type=text_display,tag=DeckLabelsA,distance=..5] text.extra[2].color set value "#B2BEC6"
-$data modify entity @n[type=text_display,tag=DeckScoresA,distance=..5] text.extra[2].text set value "\n$(cards_common)"
-execute if data storage exigence:deck_analysis {cards_common:0} run data modify entity @n[type=text_display,tag=DeckScoresA,distance=..5] text.extra[2].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_common:0} run data modify entity @n[type=text_display,tag=DeckScoresA,distance=..5] text.extra[2].color set from storage exigence:temp color_b
+execute if data storage exigence:deck_analysis {cards_common:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsA,distance=..5] text.extra[2].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_common:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsA,distance=..5] text.extra[2].color set value "#B2BEC6"
+$data modify entity @n[type=minecraft:text_display,tag=DeckScoresA,distance=..5] text.extra[2].text set value "\n$(cards_common)"
+execute if data storage exigence:deck_analysis {cards_common:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresA,distance=..5] text.extra[2].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_common:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresA,distance=..5] text.extra[2].color set from storage exigence:temp color_b
 
 # UNCOMMON
-execute if data storage exigence:deck_analysis {cards_uncommon:0} run data modify entity @n[type=text_display,tag=DeckLabelsA,distance=..5] text.extra[3].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_uncommon:0} run data modify entity @n[type=text_display,tag=DeckLabelsA,distance=..5] text.extra[3].color set value "#A6CDA3"
-$data modify entity @n[type=text_display,tag=DeckScoresA,distance=..5] text.extra[3].text set value "\n$(cards_uncommon)"
-execute if data storage exigence:deck_analysis {cards_uncommon:0} run data modify entity @n[type=text_display,tag=DeckScoresA,distance=..5] text.extra[3].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_uncommon:0} run data modify entity @n[type=text_display,tag=DeckScoresA,distance=..5] text.extra[3].color set from storage exigence:temp color_b
+execute if data storage exigence:deck_analysis {cards_uncommon:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsA,distance=..5] text.extra[3].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_uncommon:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsA,distance=..5] text.extra[3].color set value "#A6CDA3"
+$data modify entity @n[type=minecraft:text_display,tag=DeckScoresA,distance=..5] text.extra[3].text set value "\n$(cards_uncommon)"
+execute if data storage exigence:deck_analysis {cards_uncommon:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresA,distance=..5] text.extra[3].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_uncommon:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresA,distance=..5] text.extra[3].color set from storage exigence:temp color_b
 
 # RARE
-execute if data storage exigence:deck_analysis {cards_rare:0} run data modify entity @n[type=text_display,tag=DeckLabelsA,distance=..5] text.extra[4].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_rare:0} run data modify entity @n[type=text_display,tag=DeckLabelsA,distance=..5] text.extra[4].color set value "#A5B6EB"
-$data modify entity @n[type=text_display,tag=DeckScoresA,distance=..5] text.extra[4].text set value "\n$(cards_rare)"
-execute if data storage exigence:deck_analysis {cards_rare:0} run data modify entity @n[type=text_display,tag=DeckScoresA,distance=..5] text.extra[4].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_rare:0} run data modify entity @n[type=text_display,tag=DeckScoresA,distance=..5] text.extra[4].color set from storage exigence:temp color_b
+execute if data storage exigence:deck_analysis {cards_rare:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsA,distance=..5] text.extra[4].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_rare:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsA,distance=..5] text.extra[4].color set value "#A5B6EB"
+$data modify entity @n[type=minecraft:text_display,tag=DeckScoresA,distance=..5] text.extra[4].text set value "\n$(cards_rare)"
+execute if data storage exigence:deck_analysis {cards_rare:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresA,distance=..5] text.extra[4].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_rare:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresA,distance=..5] text.extra[4].color set from storage exigence:temp color_b
 
 # LEGENDARY
-execute if data storage exigence:deck_analysis {cards_legendary:0} run data modify entity @n[type=text_display,tag=DeckLabelsA,distance=..5] text.extra[5].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_legendary:0} run data modify entity @n[type=text_display,tag=DeckLabelsA,distance=..5] text.extra[5].color set value "#DAA4EE"
-$data modify entity @n[type=text_display,tag=DeckScoresA,distance=..5] text.extra[5].text set value "\n$(cards_legendary)"
-execute if data storage exigence:deck_analysis {cards_legendary:0} run data modify entity @n[type=text_display,tag=DeckScoresA,distance=..5] text.extra[5].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_legendary:0} run data modify entity @n[type=text_display,tag=DeckScoresA,distance=..5] text.extra[5].color set from storage exigence:temp color_b
+execute if data storage exigence:deck_analysis {cards_legendary:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsA,distance=..5] text.extra[5].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_legendary:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsA,distance=..5] text.extra[5].color set value "#DAA4EE"
+$data modify entity @n[type=minecraft:text_display,tag=DeckScoresA,distance=..5] text.extra[5].text set value "\n$(cards_legendary)"
+execute if data storage exigence:deck_analysis {cards_legendary:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresA,distance=..5] text.extra[5].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_legendary:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresA,distance=..5] text.extra[5].color set from storage exigence:temp color_b
 
 
 #====================================================================================================
 ## CARD TYPES
 # INSTANT
-execute if data storage exigence:deck_analysis {cards_instant:0} run data modify entity @n[type=text_display,tag=DeckLabelsB,distance=..5] text.extra[0].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_instant:0} run data modify entity @n[type=text_display,tag=DeckLabelsB,distance=..5] text.extra[0].color set from storage exigence:temp color_b
-$data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[0].text set value "\n$(cards_instant)"
-execute if data storage exigence:deck_analysis {cards_instant:0} run data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[0].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_instant:0} run data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[0].color set from storage exigence:temp color_b
+execute if data storage exigence:deck_analysis {cards_instant:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsB,distance=..5] text.extra[0].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_instant:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsB,distance=..5] text.extra[0].color set from storage exigence:temp color_b
+$data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[0].text set value "\n$(cards_instant)"
+execute if data storage exigence:deck_analysis {cards_instant:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[0].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_instant:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[0].color set from storage exigence:temp color_b
 
 # ASCEND
-execute if data storage exigence:deck_analysis {cards_ascend:0} run data modify entity @n[type=text_display,tag=DeckLabelsB,distance=..5] text.extra[1].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_ascend:0} run data modify entity @n[type=text_display,tag=DeckLabelsB,distance=..5] text.extra[1].color set from storage exigence:temp color_b
-$data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[1].text set value "\n$(cards_ascend)"
-execute if data storage exigence:deck_analysis {cards_ascend:0} run data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[1].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_ascend:0} run data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[1].color set from storage exigence:temp color_b
+execute if data storage exigence:deck_analysis {cards_ascend:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsB,distance=..5] text.extra[1].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_ascend:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsB,distance=..5] text.extra[1].color set from storage exigence:temp color_b
+$data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[1].text set value "\n$(cards_ascend)"
+execute if data storage exigence:deck_analysis {cards_ascend:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[1].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_ascend:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[1].color set from storage exigence:temp color_b
 
 # PERSISTENT
-execute if data storage exigence:deck_analysis {cards_persistent:0} run data modify entity @n[type=text_display,tag=DeckLabelsB,distance=..5] text.extra[2].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_persistent:0} run data modify entity @n[type=text_display,tag=DeckLabelsB,distance=..5] text.extra[2].color set from storage exigence:temp color_b
-$data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[2].text set value "\n$(cards_persistent)"
-execute if data storage exigence:deck_analysis {cards_persistent:0} run data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[2].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_persistent:0} run data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[2].color set from storage exigence:temp color_b
+execute if data storage exigence:deck_analysis {cards_persistent:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsB,distance=..5] text.extra[2].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_persistent:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsB,distance=..5] text.extra[2].color set from storage exigence:temp color_b
+$data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[2].text set value "\n$(cards_persistent)"
+execute if data storage exigence:deck_analysis {cards_persistent:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[2].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_persistent:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[2].color set from storage exigence:temp color_b
 
 # VOID
-execute if data storage exigence:deck_analysis {cards_void:0} run data modify entity @n[type=text_display,tag=DeckLabelsB,distance=..5] text.extra[3].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_void:0} run data modify entity @n[type=text_display,tag=DeckLabelsB,distance=..5] text.extra[3].color set from storage exigence:temp color_b
-$data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[3].text set value "\n$(cards_void)"
-execute if data storage exigence:deck_analysis {cards_void:0} run data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[3].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_void:0} run data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[3].color set from storage exigence:temp color_b
+execute if data storage exigence:deck_analysis {cards_void:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsB,distance=..5] text.extra[3].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_void:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsB,distance=..5] text.extra[3].color set from storage exigence:temp color_b
+$data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[3].text set value "\n$(cards_void)"
+execute if data storage exigence:deck_analysis {cards_void:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[3].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_void:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[3].color set from storage exigence:temp color_b
 
 # RECYCLE
-execute if data storage exigence:deck_analysis {cards_recycle:0} run data modify entity @n[type=text_display,tag=DeckLabelsB,distance=..5] text.extra[4].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_recycle:0} run data modify entity @n[type=text_display,tag=DeckLabelsB,distance=..5] text.extra[4].color set from storage exigence:temp color_b
-$data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[4].text set value "\n$(cards_recycle)"
-execute if data storage exigence:deck_analysis {cards_recycle:0} run data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[4].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_recycle:0} run data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[4].color set from storage exigence:temp color_b
+execute if data storage exigence:deck_analysis {cards_recycle:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsB,distance=..5] text.extra[4].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_recycle:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsB,distance=..5] text.extra[4].color set from storage exigence:temp color_b
+$data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[4].text set value "\n$(cards_recycle)"
+execute if data storage exigence:deck_analysis {cards_recycle:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[4].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_recycle:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[4].color set from storage exigence:temp color_b
 
 # SPELLBIND
-execute if data storage exigence:deck_analysis {cards_spellbind:0} run data modify entity @n[type=text_display,tag=DeckLabelsB,distance=..5] text.extra[5].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_spellbind:0} run data modify entity @n[type=text_display,tag=DeckLabelsB,distance=..5] text.extra[5].color set from storage exigence:temp color_b
-$data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[5].text set value "\n$(cards_spellbind)"
-execute if data storage exigence:deck_analysis {cards_spellbind:0} run data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[5].color set from storage exigence:temp color_a
-execute unless data storage exigence:deck_analysis {cards_spellbind:0} run data modify entity @n[type=text_display,tag=DeckScoresB,distance=..5] text.extra[5].color set from storage exigence:temp color_b
+execute if data storage exigence:deck_analysis {cards_spellbind:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsB,distance=..5] text.extra[5].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_spellbind:0} run data modify entity @n[type=minecraft:text_display,tag=DeckLabelsB,distance=..5] text.extra[5].color set from storage exigence:temp color_b
+$data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[5].text set value "\n$(cards_spellbind)"
+execute if data storage exigence:deck_analysis {cards_spellbind:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[5].color set from storage exigence:temp color_a
+execute unless data storage exigence:deck_analysis {cards_spellbind:0} run data modify entity @n[type=minecraft:text_display,tag=DeckScoresB,distance=..5] text.extra[5].color set from storage exigence:temp color_b
 
 #====================================================================================================
 ## DECK TIMES

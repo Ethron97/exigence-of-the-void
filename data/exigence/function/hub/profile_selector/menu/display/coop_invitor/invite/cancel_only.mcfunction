@@ -46,7 +46,7 @@ execute if score @s player.node.joined_player_1 matches 1.. run scoreboard playe
 execute if score @s player.node.joined_player_2 matches 1.. run scoreboard players add #filled_slots Temp 1
 execute if score @s player.node.joined_player_3 matches 1.. run scoreboard players add #filled_slots Temp 1
 
-execute at @a[tag=CancelledBy,limit=1] as @n[type=item_display,tag=CoopInvitorDisplay,tag=Confirm,distance=..16] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/update_confirm_button
+execute at @a[tag=CancelledBy,limit=1] as @n[type=minecraft:item_display,tag=CoopInvitorDisplay,tag=Confirm,distance=..16] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/update_confirm_button
 
 # If there is no pending invite and no filled slots, cancel sender
 #   Ie a player leaved, but we still need to clear the stats
@@ -56,7 +56,7 @@ execute if score #filled_slots Temp matches 0 unless score @s player.node.invite
 execute if score @s player.node.invite_sent_to = #target player.node.invite_sent_to run scoreboard players reset @s player.node.invite_sent_to
 
 # Shift menu depending on state
-execute at @a[tag=CancelledBy,limit=1] as @e[type=item_display,tag=PlayerHeadDisplay,distance=..16] if score @s IDID = #compare IDID \
+execute at @a[tag=CancelledBy,limit=1] as @e[type=minecraft:item_display,tag=PlayerHeadDisplay,distance=..16] if score @s IDID = #compare IDID \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/private/update_menu_from_cancel_only with entity @s item.components."minecraft:custom_data"
 
 # Remove local tag(s)

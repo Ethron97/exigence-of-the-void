@@ -10,15 +10,15 @@ execute if score #slot Temp matches 1 run data modify storage exigence:give card
 #$tag @e[type=minecraft:armor_stand,tag=Card,tag=!Played,tag=Spellbound,limit=1,sort=random,nbt={mainhand:{components:{"minecraft:custom_data":{card_name:'$(card_name)'}}}}] add Spellslinging
 
 # Get all card entities matching this card name
-$execute as @e[type=armor_stand,tag=Card,tag=!Played,tag=Spellbound] if items entity @s weapon.* paper[custom_data~{card_name:'$(card_name)'}] run tag @s add CanSpellslinging
+$execute as @e[type=minecraft:armor_stand,tag=Card,tag=!Played,tag=Spellbound] if items entity @s weapon.* paper[custom_data~{card_name:'$(card_name)'}] run tag @s add CanSpellslinging
 # Tag a random one with filters
-execute as @e[type=armor_stand,tag=CanSpellslinging,sort=random,limit=1] run tag @s add Spellslinging
+execute as @e[type=minecraft:armor_stand,tag=CanSpellslinging,sort=random,limit=1] run tag @s add Spellslinging
 # Remove local
-tag @e[type=armor_stand,tag=Card,tag=CanSpellslinging] remove CanSpellslinging
+tag @e[type=minecraft:armor_stand,tag=Card,tag=CanSpellslinging] remove CanSpellslinging
 
 # Copy item over from hand to armorstand so that costs are on the armorstand
-execute if score #slot Temp matches 2 run item replace entity @e[type=armor_stand,tag=Spellslinging,limit=1] weapon.mainhand from entity @s weapon.mainhand
-execute if score #slot Temp matches 1 run item replace entity @e[type=armor_stand,tag=Spellslinging,limit=1] weapon.mainhand from entity @s weapon.offhand
+execute if score #slot Temp matches 2 run item replace entity @e[type=minecraft:armor_stand,tag=Spellslinging,limit=1] weapon.mainhand from entity @s weapon.mainhand
+execute if score #slot Temp matches 1 run item replace entity @e[type=minecraft:armor_stand,tag=Spellslinging,limit=1] weapon.mainhand from entity @s weapon.offhand
 
 # Clear 
 scoreboard players set #remove Temp 1
@@ -32,7 +32,7 @@ execute as @a[tag=ActivePlayer,tag=!Spellslinging] run function exigence:player/
 execute at @s positioned ~ ~1000 ~ run playsound minecraft:item.trident.return ambient @a ~ ~ ~ 1000 1
 
 # Call functions common to Drawing a card
-execute as @e[type=armor_stand,tag=Spellslinging] run function exigence:cards/spellsling
+execute as @e[type=minecraft:armor_stand,tag=Spellslinging] run function exigence:cards/spellsling
 
 # Update displays
 function exigence:deck/update_card_counter

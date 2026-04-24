@@ -1,8 +1,8 @@
 # Called from vault/setup as each pot that is getting filled
 
 # If gold idol, fill with money and return
-execute if score GoldIdol Modifiers matches 1 at @s run function exigence:vault/fill/money
-execute if score GoldIdol Modifiers matches 1 at @s run return 0
+execute if score mod.gold_idol game.modifiers matches 1 at @s run function exigence:vault/fill/money
+execute if score mod.gold_idol game.modifiers matches 1 at @s run return 0
 #----------------------------------------------------------------------------------------------------
 
 execute store result score @s Random run random value 1..10

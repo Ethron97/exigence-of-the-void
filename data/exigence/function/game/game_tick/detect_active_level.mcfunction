@@ -1,35 +1,32 @@
 # Called by game_tick
+#   AFTER player tick
 
 #====================================================================================================
 
 # Store old active level
-scoreboard players operation #ActiveLevelOld DungeonRun = ActiveLevel DungeonRun
-
-# Update player's active levels
-execute as @a[scores={dead=0},tag=ActivePlayer] run function exigence:player/update_active_level
-
+scoreboard players operation #active_level_old game.state = game.active_level game.state
 
 
 ## DUNGEON LEVEL LOGIC
 # If echo has not been retrieved, active dungeon level = lowest active level with a living player
 #   This is to incentivize players to ascend together instead of leaving someone behind to loot or something
-execute if data storage exigence:dungeon {all_echos_found:0} if entity @a[scores={dead=0},tag=ActivePlayer] run scoreboard players set ActiveLevel DungeonRun 10 
-execute if data storage exigence:dungeon {all_echos_found:0} as @a[scores={dead=0},tag=ActivePlayer] run scoreboard players operation ActiveLevel DungeonRun < @s game.player.active_level
+execute if score game.all_echos_found game.state matches 0 if entity @a[scores={dead=0},tag=ActivePlayer] run scoreboard players set game.active_level game.state 10 
+execute if score game.all_echos_found game.state matches 0 as @a[scores={dead=0},tag=ActivePlayer] run scoreboard players operation game.active_level game.state < @s game.player.active_level
 
 # If echo has been retrieved, active dungeon level = active level of player with the echo (or that last had the echo)
-execute if data storage exigence:dungeon {all_echos_found:1} as @a[scores={game.player.echo_fragments=1},tag=ActivePlayer] run scoreboard players operation ActiveLevel DungeonRun = @s game.player.active_level
+execute if score game.all_echos_found game.state matches 1 as @a[scores={game.player.echo_fragments=1},tag=ActivePlayer] run scoreboard players operation game.active_level game.state = @s game.player.active_level
 
 
 ## LEVEL CHANGE LOGIC
-#execute if score #ActiveLevelOld DungeonRun < ActiveLevel DungeonRun run say Level up!
-#execute if score #ActiveLevelOld DungeonRun > ActiveLevel DungeonRun run say Level down!
-execute if score #ActiveLevelOld DungeonRun > ActiveLevel DungeonRun run function exigence:enemy/redistribute_ravagers
+#execute if score #active_level_old game.state < game.active_level game.state run say Level up!
+#execute if score #active_level_old game.state > game.active_level game.state run say Level down!
+execute if score #active_level_old game.state > game.active_level game.state run function exigence:enemy/redistribute_ravagers
 
 # Ascend level only goes up
-scoreboard players operation #AscendLevelOld DungeonRun = AscendLevel DungeonRun
-scoreboard players operation AscendLevel DungeonRun > ActiveLevel DungeonRun
+scoreboard players operation #ascend_level_old game.state = game.ascend_level game.state
+scoreboard players operation game.ascend_level game.state > game.active_level game.state
 
-execute if score #AscendLevelOld DungeonRun < AscendLevel DungeonRun run function exigence:game/ascend
+execute if score #ascend_level_old game.state < game.ascend_level game.state run function exigence:game/ascend
 
 
 # If not inside any active level, give wither I

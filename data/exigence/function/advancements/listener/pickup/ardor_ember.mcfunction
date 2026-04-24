@@ -5,7 +5,7 @@
 advancement revoke @s only exigence:listener/pickup/ardor_ember
 
 # Return if the game is not active
-execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
+execute unless entity @s[tag=ActivePlayer] unless score game.is_active game.state matches 1 run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Clear ghast_tear

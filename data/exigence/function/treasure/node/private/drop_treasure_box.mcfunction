@@ -18,7 +18,7 @@ data modify storage exigence:treasure_drop verify set value 0
 function exigence:treasure/node/randomize_drop_pos with storage exigence:treasure_drop
 
 # Drop treasure
-$execute if data storage exigence:treasure_drop {verify:1} at @e[type=marker,tag=TreasureWalking] run function $(function) with storage exigence:treasure_drop
+$execute if data storage exigence:treasure_drop {verify:1} at @e[type=minecraft:marker,tag=TreasureWalking] run function $(function) with storage exigence:treasure_drop
 execute if data storage exigence:treasure_drop {verify:0} run say Failed to drop treasure.
 
 # Update node.treasure.data.highest_drop_tries

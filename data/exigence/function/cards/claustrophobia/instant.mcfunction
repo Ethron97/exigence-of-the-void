@@ -2,4 +2,4 @@
 say [Gain Speed II if there are at least 7 hazards active on your level]
 
 # Functionality
-scoreboard players set Claustrophobia Modifiers 1
+scoreboard players set mod.claustrophobia game.modifiers 1

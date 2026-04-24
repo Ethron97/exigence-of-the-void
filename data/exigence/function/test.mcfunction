@@ -8,15 +8,15 @@ scoreboard objectives add IDID dummy
 #schedule function exigence:enemy/distribute_ravagers 1t
 
 # Check if two menace nodes are within 16 blocks (meaning both could be triggered at the same time)
-#execute as @e[type=armor_stand,tag=MenaceNode] at @s if entity @e[distance=..16,type=armor_stand,tag=MenaceNode] run say I need personal space
+#execute as @e[type=minecraft:armor_stand,tag=MenaceNode] at @s if entity @e[distance=..16,type=minecraft:armor_stand,tag=MenaceNode] run say I need personal space
 
 
 # Testing CartCache en masse
-#tag @e[type=armor_stand,tag=CartCache] remove CartCache
-#execute as @e[type=minecraft:armor_stand,tag=VarianceNode,tag=Minecart] run function exigence:cards/cart_cache/cart_trigger
+#tag @e[type=minecraft:marker,tag=CartCache] remove CartCache
+#execute as @e[type=minecraft:marker,tag=VarianceNode,tag=Minecart] run function exigence:cards/cart_cache/cart_trigger
 
 # Test for nonair around all echo nodes
-#execute as @e[type=armor_stand,tag=EchoNode] at @s if function exigence:ember/setup/detect_nonair run tp Ethron97 @s
+#execute as @e[type=minecraft:marker,tag=EchoNode] at @s if function exigence:ember/setup/detect_nonair run tp Ethron97 @s
 
 
 #$clear @s minecraft:paper[custom_data={card_name:"$(card_name)"}] 1

@@ -12,10 +12,10 @@ data modify storage exigence:debug mirror set from storage temp debug
 
 
 # 2. Run commands depending on debug state
-$execute if data storage exigence:debug {mirror:1} as @e[type=minecraft:armor_stand,scores={ObjectLevel=$(levels)},tag=MirrorNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
+$execute if data storage exigence:debug {mirror:1} as @e[type=minecraft:armor_stand,scores={node.property.object_level=$(levels)},tag=MirrorNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
 execute if data storage exigence:debug {mirror:0} as @e[type=minecraft:armor_stand,tag=MirrorNode] run data merge entity @s {Glowing:0b,CustomNameVisible:0b,Invisible:1b,Marker:1b}
 
 # Create pot displays
-$execute if data storage exigence:debug {mirror:1} as @e[type=minecraft:marker,scores={ObjectLevel=$(levels)},tag=HiddenBlock] at @s positioned ~-.5 ~ ~-.5 run function exigence:mirror/hidden_blocks/debug/summon_display
+$execute if data storage exigence:debug {mirror:1} as @e[type=minecraft:marker,scores={node.property.object_level=$(levels)},tag=HiddenBlock] at @s positioned ~-.5 ~ ~-.5 run function exigence:mirror/hidden_blocks/debug/summon_display
 # Kill pot displays
-execute if data storage exigence:debug {mirror:0} run kill @e[type=block_display,tag=HiddenBlockDebug]
+execute if data storage exigence:debug {mirror:0} run kill @e[type=minecraft:block_display,tag=HiddenBlockDebug]

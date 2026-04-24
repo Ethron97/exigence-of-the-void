@@ -21,14 +21,14 @@ function_right:'exigence:hub/predungeon/menu/display/level_chooser/calls/right_c
 },"minecraft:lore":[[{text:"???",color:"#c7c1c1"}],[{text:"",color:"#c7c1c1"}]]}}}
 
 # Default to locked
-team join Red @n[type=item_display,tag=NewItemDisplay,distance=..0.1]
+team join Red @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1]
 
 # Assign new IDID
 scoreboard players add #highest IDID 1
-scoreboard players operation @n[type=item_display,tag=NewItemDisplay,distance=..0.1] IDID = #highest IDID
+scoreboard players operation @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] IDID = #highest IDID
 
 # Add ID to item data
-execute store result entity @n[type=item_display,tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_data".idid int 1 run scoreboard players get #highest IDID
+execute store result entity @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] item.components."minecraft:custom_data".idid int 1 run scoreboard players get #highest IDID
 
 # Remove local tag
-tag @n[type=item_display,tag=NewItemDisplay,distance=..0.1] remove NewItemDisplay
+tag @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] remove NewItemDisplay

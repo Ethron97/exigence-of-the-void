@@ -1,11 +1,14 @@
 ## CONSTRAINTS
 #    AS player, when they enter the dungeon
+scoreboard players set @s dead 0
 scoreboard players set @s game.player.active_level 0
+scoreboard players set @s game.player.calc_heighten 0
 scoreboard players set @s game.player.damage_absorbed 0
 scoreboard players set @s game.player.damage_since_last_death 0
 scoreboard players set @s game.player.damage_taken 0
 scoreboard players set @s game.player.echo_fragments 0
 scoreboard players set @s game.player.heighten 0
+scoreboard players set @s game.player.holding_compass 0
 scoreboard players set @s game.player.mod.accelerate 0
 scoreboard players set @s game.player.mod.beast_vision 0
 scoreboard players set @s game.player.mod.berry_vision 0
@@ -316,4 +319,3 @@ scoreboard players set @s profile.data.winloss.cr.deaths_total 0
 scoreboard players set @s profile.data.winloss.cr.max_menace_deaths 0
 scoreboard players set @s profile.data.winloss.cr.max_menace_reached 0
 scoreboard players set @s profile.data.winloss.cr.max_menace_wins 0
-scoreboard players set @s dead 0

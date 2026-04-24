@@ -25,6 +25,6 @@ execute if entity @s[predicate=exigence:effects/speed9] run scoreboard players s
 
 scoreboard players set #temp2 Temp 0
 # Call as each ravager wihtin 32 of this player
-execute at @s as @e[type=ravager,distance=..32] run function exigence:cards/kinesis/private/slow
+execute at @s as @e[type=minecraft:ravager,distance=..32] run function exigence:cards/kinesis/private/slow
 
 tellraw @s [{text:" > Transfered speed to ",color:"gray"},{score:{name:"#temp2",objective:"Temp"},color:"green"},{text:" Ravagers",color:"gray"}]

@@ -19,9 +19,9 @@ execute if score @s game.node.node_state matches 0 if score #blaze_powder Temp m
 execute if score @s game.node.node_state matches 0 if score #spark Temp matches 1 run function exigence:altar/node/private/light_radiant
 
 # Failed Upgrade (currently triggered, no blaze to upgrade)
-execute if score @s game.node.node_state matches 1 if score #blaze_powder Temp matches 0 if score #spark Temp matches 0 if score InnerFire Modifiers matches 0 run tellraw @a[tag=Lighting] [{text:"An ",color:"gray",italic:false},{text:"🔥 Ancient Ember 🔥 ",color:"aqua",italic:false},{text:"is required to enhance the flame further",color:"gray",italic:false}]
+execute if score @s game.node.node_state matches 1 if score #blaze_powder Temp matches 0 if score #spark Temp matches 0 if score mod.inner_fire game.modifiers matches 0 run tellraw @a[tag=Lighting] [{text:"An ",color:"gray",italic:false},{text:"🔥 Ancient Ember 🔥 ",color:"aqua",italic:false},{text:"is required to enhance the flame further",color:"gray",italic:false}]
 #   InnerFire triggers
-execute if score @s[tag=!Red] game.node.node_state matches 1.. if score #blaze_powder Temp matches 0 if score #spark Temp matches 0 if score InnerFire Modifiers matches 1 run function exigence:altar/node/private/light_red
+execute if score @s[tag=!Red] game.node.node_state matches 1.. if score #blaze_powder Temp matches 0 if score #spark Temp matches 0 if score mod.inner_fire game.modifiers matches 1 run function exigence:altar/node/private/light_red
 
 # Upgrade Trigger (currently triggered, trigger with blaze)
 execute if score @s game.node.node_state matches 1 if score #blaze_powder Temp matches 1 run clear @a[tag=Lighting] blaze_powder 1

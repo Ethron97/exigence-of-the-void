@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute at @e[type=item_display,tag=DoorHandle,distance=..20] run particle minecraft:block{block_state:{Name:"minecraft:lodestone"}} ~ ~0.2 ~ 0.3 0.3 0.3 0.1 30
+execute at @e[type=minecraft:item_display,tag=DoorHandle,distance=..20] run particle minecraft:block{block_state:{Name:"minecraft:lodestone"}} ~ ~0.2 ~ 0.3 0.3 0.3 0.1 30
 
 # Circle particles
 particle minecraft:electric_spark ^1.0 ^0.0 ^

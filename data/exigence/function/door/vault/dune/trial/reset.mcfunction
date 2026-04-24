@@ -7,10 +7,10 @@ say Reset Dune
 bossbar set exigence:trial_dune visible false
 
 # Kill setups
-kill @e[type=marker,tag=DuneTrialSetup]
+kill @e[type=minecraft:marker,tag=DuneTrialSetup]
 
 # Kill skulls
-kill @e[type=item_display,tag=DuneSkull]
+kill @e[type=minecraft:item_display,tag=DuneSkull]
 
 # Replace end portal
 fill -406 148 6 -422 148 -10 black_concrete replace end_portal

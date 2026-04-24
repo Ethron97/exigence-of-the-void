@@ -23,8 +23,8 @@ function exigence:door/level/door_3/close
 
 ## Recreate door handles
 # Level 1
-execute as @e[type=armor_stand,tag=DoorNode,tag=Door1] at @s positioned ~ ~2.5 ~ run function exigence:door/level/door_1/setup_handle
+execute as @e[type=minecraft:armor_stand,tag=DoorNode,tag=Door1] at @s positioned ~ ~2.5 ~ run function exigence:door/level/door_1/setup_handle
 # Level 2
-execute as @e[type=armor_stand,tag=DoorNode,tag=Door2] at @s positioned ~ ~2.5 ~ run function exigence:door/level/door_2/setup_handle
+execute as @e[type=minecraft:armor_stand,tag=DoorNode,tag=Door2] at @s positioned ~ ~2.5 ~ run function exigence:door/level/door_2/setup_handle
 # Level 3
-execute as @e[type=armor_stand,tag=DoorNode,tag=Door3] at @s positioned ~ ~2.5 ~ run function exigence:door/level/door_3/setup_handle
+execute as @e[type=minecraft:armor_stand,tag=DoorNode,tag=Door3] at @s positioned ~ ~2.5 ~ run function exigence:door/level/door_3/setup_handle

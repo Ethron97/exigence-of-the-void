@@ -49,6 +49,20 @@
       }
     },
     {
+      "label": "Tp Profile Selector",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger TpProfileSelector"
+      }
+    },
+    {
+      "label": "Tp Game Controllers",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger TpGameController"
+      }
+    },
+    {
       "label": "Creative mode",
       "action": {
         "type": "minecraft:run_command",

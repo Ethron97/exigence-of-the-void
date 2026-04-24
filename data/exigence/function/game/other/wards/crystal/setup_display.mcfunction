@@ -17,11 +17,11 @@ execute at @s[tag=Topaz] run summon minecraft:item_display ~ ~0.5 ~ {interpolati
 execute at @s[tag=Amethyst] run summon minecraft:item_display ~ ~0.5 ~ {interpolation_duration:20,CustomName:{text:"ItemDisplay | Amethyst"},billboard:"fixed",item:{id:"minecraft:purple_stained_glass",count:1},Tags:["NewCrystalDisplay","CrystalDisplay","Amethyst"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[1.0f,1.0f,1.0f]}}
 
 # Join team
-execute as @e[type=item_display,tag=CrystalDisplay,tag=Emerald] run team join Green @s
-execute as @e[type=item_display,tag=CrystalDisplay,tag=Sapphire] run team join Echo @s
-execute as @e[type=item_display,tag=CrystalDisplay,tag=Ruby] run team join Enemy @s
-execute as @e[type=item_display,tag=CrystalDisplay,tag=Topaz] run team join Special @s
-execute as @e[type=item_display,tag=CrystalDisplay,tag=Amethyst] run team join Menace @s
+execute as @e[type=minecraft:item_display,tag=CrystalDisplay,tag=Emerald] run team join Green @s
+execute as @e[type=minecraft:item_display,tag=CrystalDisplay,tag=Sapphire] run team join Echo @s
+execute as @e[type=minecraft:item_display,tag=CrystalDisplay,tag=Ruby] run team join Enemy @s
+execute as @e[type=minecraft:item_display,tag=CrystalDisplay,tag=Topaz] run team join Special @s
+execute as @e[type=minecraft:item_display,tag=CrystalDisplay,tag=Amethyst] run team join Menace @s
 
 # Assign id
 scoreboard players operation @e[type=minecraft:item_display,tag=NewCrystalDisplay] game.story.ward_crystal.node_id = #compare game.story.ward_crystal.node_id

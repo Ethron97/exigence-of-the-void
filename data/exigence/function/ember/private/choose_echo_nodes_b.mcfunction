@@ -8,38 +8,39 @@
 
 #====================================================================================================
 
-$say choose nodes on $(level)
+#$say (D3) choose nodes on $(level)
+
 # Set starting difficulty
-scoreboard players set #MinDifficulty DungeonRun 0
-scoreboard players set #MaxDifficulty DungeonRun 4
+scoreboard players set #MinDifficulty game.dungeon.echo 0
+scoreboard players set #MaxDifficulty game.dungeon.echo 4
 
 # Increase echo difficulty spread to match the level
-$scoreboard players set #BaseDifficulty DungeonRun $(level)0
-scoreboard players operation #MinDifficulty DungeonRun += #BaseDifficulty DungeonRun
-scoreboard players operation #MaxDifficulty DungeonRun += #BaseDifficulty DungeonRun
+$scoreboard players set #BaseDifficulty game.dungeon.echo $(level)0
+scoreboard players operation #MinDifficulty game.dungeon.echo += #BaseDifficulty game.dungeon.echo
+scoreboard players operation #MaxDifficulty game.dungeon.echo += #BaseDifficulty game.dungeon.echo
 
 # Cap diffiulcty based on the highest echo this player has achieved + 1
-execute as @a[tag=ActivePlayer] run scoreboard players operation #MaxDifficulty DungeonRun < @s profile.data.winloss.highest_win
-scoreboard players add #MaxDifficulty DungeonRun 1
+execute as @a[tag=Predungeon] run scoreboard players operation #MaxDifficulty game.dungeon.echo < @s profile.data.winloss.highest_win
+scoreboard players add #MaxDifficulty game.dungeon.echo 1
 
 # Ensure difficulty mod is bounded at +/-4 (so min difficiulty doesn't go above 5, or max below 1)
-scoreboard players operation DifficultyMod DungeonRun < 4 number
-scoreboard players operation DifficultyMod DungeonRun > -4 number
+scoreboard players operation .difficulty_mod game.dungeon.echo < 4 number
+scoreboard players operation .difficulty_mod game.dungeon.echo > -4 number
 
 # Apply difficulty mod
-scoreboard players operation #MinDifficulty DungeonRun += DifficultyMod DungeonRun
-scoreboard players operation #MaxDifficulty DungeonRun += DifficultyMod DungeonRun
+scoreboard players operation #MinDifficulty game.dungeon.echo += .difficulty_mod game.dungeon.echo
+scoreboard players operation #MaxDifficulty game.dungeon.echo += .difficulty_mod game.dungeon.echo
 
 # Ensure MaxDifficulty is at least 1 (otherwise nothing will get selected)
-scoreboard players operation #MaxDifficulty DungeonRun > 1 number
-execute if score Difficulty DungeonRun matches 1 run scoreboard players operation #MaxDifficulty DungeonRun > 11 number
-execute if score Difficulty DungeonRun matches 2 run scoreboard players operation #MaxDifficulty DungeonRun > 21 number
-execute if score Difficulty DungeonRun matches 3 run scoreboard players operation #MaxDifficulty DungeonRun > 31 number
-execute if score Difficulty DungeonRun matches 4 run scoreboard players operation #MaxDifficulty DungeonRun > 41 number
+scoreboard players operation #MaxDifficulty game.dungeon.echo > 1 number
+execute if score game.difficulty game.state matches 1 run scoreboard players operation #MaxDifficulty game.dungeon.echo > 11 number
+execute if score game.difficulty game.state matches 2 run scoreboard players operation #MaxDifficulty game.dungeon.echo > 21 number
+execute if score game.difficulty game.state matches 3 run scoreboard players operation #MaxDifficulty game.dungeon.echo > 31 number
+execute if score game.difficulty game.state matches 4 run scoreboard players operation #MaxDifficulty game.dungeon.echo > 41 number
 
 # Store in data
-execute store result storage exigence:echo_selection min_difficulty int 1 run scoreboard players get #MinDifficulty DungeonRun
-execute store result storage exigence:echo_selection max_difficulty int 1 run scoreboard players get #MaxDifficulty DungeonRun
+execute store result storage exigence:echo_selection min_difficulty int 1 run scoreboard players get #MinDifficulty game.dungeon.echo
+execute store result storage exigence:echo_selection max_difficulty int 1 run scoreboard players get #MaxDifficulty game.dungeon.echo
 $data modify storage exigence:echo_selection echos set from storage exigence:echo_selection Level$(level)Echos
 $data modify storage exigence:echo_selection level set value $(level)
 

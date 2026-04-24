@@ -1,7 +1,7 @@
 # With {door_name:""}
 
 # Create a new node with tag "NewNode"
-execute at @s as @s run function exigence:game/new_node
+execute at @s as @s run function exigence:game/admin/new_node
 
 # Add door tag
 execute as @e[type=minecraft:armor_stand,tag=NewNode] run tag @s add DoorNode

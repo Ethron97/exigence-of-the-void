@@ -18,17 +18,17 @@ summon minecraft:marker -355.5 155.0 -9.5 {Tags:["SpireTrialSetup","SpireCenter"
 #summon minecraft:marker -355.5 155.0 -9.5 {Tags:["SpireTrialSetup","SpirePosB"],CustomName:{text:"Marker | SpirePosB"}}
 
 # First spires
-execute at @e[type=marker,tag=SpireCenter] run summon minecraft:marker ~3 ~ ~ {Tags:["SpireTrialSetup","Spire","NewSpire"],CustomName:{text:"Marker | Spire"}}
-execute at @e[type=marker,tag=SpireCenter] run summon minecraft:marker ~-3 ~ ~ {Tags:["SpireTrialSetup","Spire","NewSpire"],CustomName:{text:"Marker | Spire"}}
-#execute at @e[type=marker,tag=SpireCenter] run summon minecraft:marker ~ ~ ~4 {Tags:["SpireTrialSetup","Spire","NewSpire"],CustomName:{text:"Marker | Spire"}}
-#execute at @e[type=marker,tag=SpireCenter] run summon minecraft:marker ~ ~ ~-4 {Tags:["SpireTrialSetup","Spire","NewSpire"],CustomName:{text:"Marker | Spire"}}
+execute at @e[type=minecraft:marker,tag=SpireCenter] run summon minecraft:marker ~3 ~ ~ {Tags:["SpireTrialSetup","Spire","NewSpire"],CustomName:{text:"Marker | Spire"}}
+execute at @e[type=minecraft:marker,tag=SpireCenter] run summon minecraft:marker ~-3 ~ ~ {Tags:["SpireTrialSetup","Spire","NewSpire"],CustomName:{text:"Marker | Spire"}}
+#execute at @e[type=minecraft:marker,tag=SpireCenter] run summon minecraft:marker ~ ~ ~4 {Tags:["SpireTrialSetup","Spire","NewSpire"],CustomName:{text:"Marker | Spire"}}
+#execute at @e[type=minecraft:marker,tag=SpireCenter] run summon minecraft:marker ~ ~ ~-4 {Tags:["SpireTrialSetup","Spire","NewSpire"],CustomName:{text:"Marker | Spire"}}
 
 # Warning on starting platform
 # Summon block display
 summon block_display -355.5 154.5 -9.5 {Glowing:1b,Tags:["SpireTrialSetup","SpireWarning"],block_state:{Name:"glass"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-1.5f,1.5f,-1.5f],scale:[3.0f,0.01f,3.0f]}}
 
 # Add to hazard for red
-team join Hazard @e[type=block_display,tag=SpireWarning]
+team join Hazard @e[type=minecraft:block_display,tag=SpireWarning]
 
 # Replace fire with soulfire
 execute if entity @a[scores={game.player.vault_code=5},tag=Crucible] run fill -363 158 -3 -349 158 -17 minecraft:soul_soil replace minecraft:chiseled_tuff

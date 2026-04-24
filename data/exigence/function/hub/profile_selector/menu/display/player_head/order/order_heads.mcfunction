@@ -17,7 +17,7 @@ scoreboard players set @e[type=minecraft:item_display,tag=PlayerHeadDisplay,dist
 scoreboard players set #order_index Temp 0
 
 # Mark heads for ignore, if their respective player was invited
-execute as @e[type=item_display,tag=PlayerHeadDisplay,distance=..5] run function exigence:hub/profile_selector/menu/display/player_head/order/check_ignore with entity @s item.components."minecraft:custom_data"
+execute as @e[type=minecraft:item_display,tag=PlayerHeadDisplay,distance=..5] run function exigence:hub/profile_selector/menu/display/player_head/order/check_ignore with entity @s item.components."minecraft:custom_data"
 
 # Start the iteration
 function exigence:hub/profile_selector/menu/display/player_head/order/next_head

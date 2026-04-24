@@ -1,7 +1,7 @@
-# Grows berries on an active berry node. Determines how growth stage.
+# Called when bush goes from growth state to non-growth (like getting picked)
 
 ## CONSTRAINTS
-#   AS BerryNode armorstand
+#   AS BerryNode
 
 #====================================================================================================
 

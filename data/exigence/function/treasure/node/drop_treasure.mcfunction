@@ -1,3 +1,6 @@
+## CONSTRAINTS
+#   AS treasure node
+
 # Call with {function:"",priority:0}
 #   priority 1 means no max iterations fail, will retry until it drops.
 #   priority 0 means max tries equal to config (default 10)

@@ -1,8 +1,13 @@
-# AS BellNode
+# Reset/deactivate bell node
+
+## CONSTRAINTS
+#   AS/AT BellNode
+
+#====================================================================================================
 
 tag @s remove Active
 tag @s remove Smashed
-execute at @s run setblock ~ ~ ~ minecraft:air
+fill ~ ~ ~ ~ ~ ~ minecraft:air replace minecraft:bell
 
 scoreboard players set @s game.node.bell.ring_cooldown 0
 

@@ -12,8 +12,8 @@ scoreboard players operation #TotalVoid Temp += @s profile.data.deck.cr.cards_pr
 
 tellraw @s [{text:"Deck",italic:false,bold:false,color:"gray","hover_event": {"action": "show_text","value": [\
 {text:"Deck Stats",color:"gray",italic:false,bold:false},{text:" (run)",color:"dark_gray",italic:false,bold:false}\
-,{text:"\nCards Remaining: ",color:"gray",italic:false,bold:false},{"score":{"name":"Cards","objective":"DungeonRun"},color:"white"}\
-,{text:"\nFatigue Level: ",color:"gray",italic:false,bold:false},{"score":{"name":"Fatigue","objective":"DungeonRun"},color:"white"}\
+,{text:"\nCards Remaining: ",color:"gray",italic:false,bold:false},{"score":{"name":".cards","objective":"game.dungeon"},color:"white"}\
+,{text:"\nFatigue Level: ",color:"gray",italic:false,bold:false},{"score":{"name":".fatigue","objective":"game.dungeon"},color:"white"}\
 ,{text:"\n",color:"gray",italic:false,bold:false}\
 ,{text:"\nCards Recycled: ",color:"gray",italic:false,bold:false},{"score":{"name":"@s","objective":"profile.data.deck.cr.cards_recycled"},color:"white"}\
 ,{text:"\nCards Spellbound: ",color:"gray",italic:false,bold:false},{"score":{"name":"@s","objective":"profile.data.deck.cr.cards_spellbound"},color:"white"}\

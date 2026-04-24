@@ -1,6 +1,15 @@
-# Call with echo id and level
-#   As echo node
-#$say Spawn compass on level $(level). ID: $(echo_id)
+# Create echo compass for this echo node
+
+## CONSTRAINTS
+#   AS echo node
+
+## INPUT
+#   INT echo_id
+#   INT level
+
+#====================================================================================================
+
+#$say (D3) Spawn compass on level $(level). ID: $(echo_id)
 
 execute store result storage exigence:compass x int 1 run data get entity @s Pos[0]
 execute store result storage exigence:compass y int 1 run data get entity @s Pos[1]
@@ -13,6 +22,6 @@ $data modify storage exigence:compass echo_id set value $(echo_id)
 
 # Set dimension based on if tutorial or not tutorial
 data modify storage exigence:compass dimension set value 'minecraft:overworld'
-execute if score @s ObjectLevel matches 10 run data modify storage exigence:compass dimension set value 'exigence:tutorial'
+execute if score @s node.property.object_level matches 10 run data modify storage exigence:compass dimension set value 'exigence:tutorial'
 
-execute as @a[tag=ActivePlayer] run function exigence:player/give/compass with storage exigence:compass
+execute as @a[tag=Predungeon] run function exigence:player/give/compass with storage exigence:compass

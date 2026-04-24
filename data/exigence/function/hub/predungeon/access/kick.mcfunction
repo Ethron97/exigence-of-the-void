@@ -7,6 +7,8 @@
 
 #say (D3) Kicking from predungeon
 
+tellraw @s [{text:"You were kicked from the Predungeon",color:"red"}]
+
 tag @s remove Predungeon
 
 execute in exigence:hub run tp @s 0.5 200.0 18.5

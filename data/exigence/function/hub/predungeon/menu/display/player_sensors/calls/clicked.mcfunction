@@ -8,6 +8,10 @@
 
 #say (D3) clicked eyeball sensors
 
+# If admin clicks it, just finish the door
+execute if entity @p[tag=Interacting,tag=Admin,distance=..16] run return run scoreboard players set #sensor_state Temp 60
+
+
 tellraw @p[tag=Interacting,tag=Predungeon,distance=..16] [{text:"You are being sensed! Keep looking until the door powers up.",color:"light_purple"}]
 
 # Increase cooldown score for player

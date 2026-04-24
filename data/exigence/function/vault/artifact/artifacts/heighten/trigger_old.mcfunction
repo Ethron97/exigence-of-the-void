@@ -5,7 +5,5 @@
 function exigence:player/effects/heighten/increase
 function exigence:player/effects/heighten/increase
 
-# Increase StartingHazard by 1 on the selected difficulty level
-execute as @e[type=minecraft:armor_stand,tag=HazardNode,tag=!StartingHazard] if score @s ObjectLevel = Difficulty DungeonRun run tag @s add PossibleStartingHazard
-tag @e[type=minecraft:armor_stand,tag=PossibleStartingHazard,sort=random,limit=1] add StartingHazard
-tag @e[type=minecraft:armor_stand,tag=PossibleStartingHazard] remove PossibleStartingHazard
+# Increase starting hazard by 1 on the selected difficulty level
+function exigence:hazard/starting_hazard/increase/main

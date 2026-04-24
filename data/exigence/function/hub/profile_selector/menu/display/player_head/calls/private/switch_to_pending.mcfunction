@@ -20,11 +20,11 @@ tag @s remove DisplayingHead
 tag @s add Pending
 
 #   Then teleport it to be center frame
-$execute at @s at @n[type=item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..16] run tp @s ~ ~1.2 ~
+$execute at @s at @n[type=minecraft:item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..16] run tp @s ~ ~1.2 ~
 
 # Remove the rest of the head display / page flippers / slot backgrounds
 tag @s add KeepDisplay
-$execute at @s as @n[type=item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..16] at @s run function exigence:hub/profile_selector/menu/display/profile/effects/remove_player_head_selectors
+$execute at @s as @n[type=minecraft:item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..16] at @s run function exigence:hub/profile_selector/menu/display/profile/effects/remove_player_head_selectors
 tag @s remove KeepDisplay
 
 # Summon displays related to Pending

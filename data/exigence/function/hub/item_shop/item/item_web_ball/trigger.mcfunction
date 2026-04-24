@@ -20,7 +20,7 @@ execute unless entity @e[type=minecraft:snowball,distance=..32] run return 1
 summon minecraft:marker ~ ~ ~ {Tags:["NewSnowballMarker","SnowballMarker"],CustomName:{text:"Marker | Snowball"}}
 
 # Get snowball without tag, copy marker as Thrower
-execute as @e[type=snowball,tag=!AccountedFor,distance=..32] run data modify entity @s Owner set from entity @e[type=marker,tag=NewSnowballMarker,distance=..32,limit=1] UUID
+execute as @e[type=snowball,tag=!AccountedFor,distance=..32] run data modify entity @s Owner set from entity @e[type=minecraft:marker,tag=NewSnowballMarker,distance=..32,limit=1] UUID
 
 # Generate next id
 scoreboard players add #sequence game.entity.snowball.id 1
@@ -32,7 +32,7 @@ scoreboard players operation @e[type=snowball,tag=!AccountedFor,distance=..32] g
 tag @e[type=snowball,tag=!AccountedFor,distance=..32] add AccountedFor
 
 # Copy highest score to snowball Marker
-scoreboard players operation @e[type=marker,tag=NewSnowballMarker,distance=..32] game.entity.snowball.id = #sequence game.entity.snowball.id
+scoreboard players operation @e[type=minecraft:marker,tag=NewSnowballMarker,distance=..32] game.entity.snowball.id = #sequence game.entity.snowball.id
 
 # Remove local tag
-tag @e[type=marker,tag=NewSnowballMarker,distance=..32] remove NewSnowballMarker
+tag @e[type=minecraft:marker,tag=NewSnowballMarker,distance=..32] remove NewSnowballMarker

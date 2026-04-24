@@ -13,4 +13,4 @@ summon minecraft:text_display ~ ~ ~ {Rotation:[180.0f,0.0f],billboard:"fixed",in
 ,text:[{text:"Select destination for primary ",color:"green"},{text:"Echo Shard",color:"blue"}]}
 
 # Remove local tag
-tag @n[type=text_display,tag=NewTextDisplay,distance=..0.1] remove NewItemDisplay
+tag @n[type=minecraft:text_display,tag=NewTextDisplay,distance=..0.1] remove NewItemDisplay

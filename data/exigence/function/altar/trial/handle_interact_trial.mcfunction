@@ -15,5 +15,4 @@ execute if entity @s[tag=Trial] run tag @p[tag=Lighting] add Trial
 execute if entity @s[tag=Crucible] run tag @p[tag=Lighting] add Crucible
 
 # Get/tag parent vault node
-scoreboard players operation #compare VaultID = @s VaultID
-execute as @e[type=minecraft:armor_stand,scores={ObjectLevel=3},tag=VaultNode,distance=..16] if score @s NodeID = #compare VaultID run function exigence:altar/trial/begin_switch
+execute as @n[type=minecraft:armor_stand,tag=VaultNode,distance=..8] run function exigence:altar/trial/begin_switch

@@ -779,7 +779,6 @@ scoreboard objectives add debug.vault_pots_2 dummy
 scoreboard objectives add debug.vault_pots_3 dummy
 scoreboard objectives add debug.vault_pots_4 dummy
 scoreboard objectives add deck.analysis dummy
-scoreboard objectives add deck.card.is_void dummy
 scoreboard objectives add deck.card.rarity dummy
 scoreboard objectives add deck.process_card dummy
 scoreboard objectives add format_time dummy

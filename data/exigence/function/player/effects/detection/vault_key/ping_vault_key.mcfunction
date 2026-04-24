@@ -8,29 +8,29 @@
 #====================================================================================================
 
 # Make sure local tag is cleared
-tag @e[type=item,tag=ClosestVaultKey] remove ClosestVaultKey
+tag @e[type=minecraft:item,tag=ClosestVaultKey] remove ClosestVaultKey
 
 # Tag closest Vault Key on same level
-execute at @s[scores={game.player.active_level=1}] run tag @e[type=minecraft:item,scores={ObjectLevel=1},tag=VaultKey,sort=nearest,limit=1] add ClosestVaultKey
-execute at @s[scores={game.player.active_level=2}] run tag @e[type=minecraft:item,scores={ObjectLevel=2},tag=VaultKey,sort=nearest,limit=1] add ClosestVaultKey
-execute at @s[scores={game.player.active_level=3}] run tag @e[type=minecraft:item,scores={ObjectLevel=3},tag=VaultKey,sort=nearest,limit=1] add ClosestVaultKey
-execute at @s[scores={game.player.active_level=4}] run tag @e[type=minecraft:item,scores={ObjectLevel=4},tag=VaultKey,sort=nearest,limit=1] add ClosestVaultKey
+execute at @s[scores={game.player.active_level=1}] run tag @e[type=minecraft:item,scores={game.entity.object_level=1},tag=VaultKey,sort=nearest,limit=1] add ClosestVaultKey
+execute at @s[scores={game.player.active_level=2}] run tag @e[type=minecraft:item,scores={game.entity.object_level=2},tag=VaultKey,sort=nearest,limit=1] add ClosestVaultKey
+execute at @s[scores={game.player.active_level=3}] run tag @e[type=minecraft:item,scores={game.entity.object_level=3},tag=VaultKey,sort=nearest,limit=1] add ClosestVaultKey
+execute at @s[scores={game.player.active_level=4}] run tag @e[type=minecraft:item,scores={game.entity.object_level=4},tag=VaultKey,sort=nearest,limit=1] add ClosestVaultKey
 
 # If no Vault Key shard on same level, return
-#execute unless entity @e[type=item,tag=ClosestVaultKey] run say No Vault Key on same level found
-execute unless entity @e[type=item,tag=ClosestVaultKey] run return 1
+#execute unless entity @e[type=minecraft:item,tag=ClosestVaultKey] run say No Vault Key on same level found
+execute unless entity @e[type=minecraft:item,tag=ClosestVaultKey] run return 1
 
 # Old distance
 scoreboard players operation #old_distance game.player.sound_ping.vault_key_distance = @s game.player.sound_ping.vault_key_distance
 
 # Determine distance bracket
 scoreboard players set @s game.player.sound_ping.vault_key_distance 10
-execute at @e[type=item,tag=ClosestVaultKey,distance=..16] run scoreboard players set @s game.player.sound_ping.vault_key_distance -1
-execute at @e[type=item,tag=ClosestVaultKey,distance=16..32] if score @s game.player.effects.detection matches 1.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 0
-execute at @e[type=item,tag=ClosestVaultKey,distance=32..48] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 1.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 1
-execute at @e[type=item,tag=ClosestVaultKey,distance=48..64] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 2.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 2
-execute at @e[type=item,tag=ClosestVaultKey,distance=64..80] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 3.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 3
-execute at @e[type=item,tag=ClosestVaultKey,distance=80..96] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 4.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 4
+execute at @e[type=minecraft:item,tag=ClosestVaultKey,distance=..16] run scoreboard players set @s game.player.sound_ping.vault_key_distance -1
+execute at @e[type=minecraft:item,tag=ClosestVaultKey,distance=16..32] if score @s game.player.effects.detection matches 1.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 0
+execute at @e[type=minecraft:item,tag=ClosestVaultKey,distance=32..48] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 1.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 1
+execute at @e[type=minecraft:item,tag=ClosestVaultKey,distance=48..64] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 2.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 2
+execute at @e[type=minecraft:item,tag=ClosestVaultKey,distance=64..80] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 3.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 3
+execute at @e[type=minecraft:item,tag=ClosestVaultKey,distance=80..96] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 4.. run scoreboard players set @s game.player.sound_ping.vault_key_distance 4
 
 # PING SOUND IF:
 #   1. Player got closer since last ping OR
@@ -50,17 +50,17 @@ execute if score @s game.player.sound_ping.vault_key_distance matches 10 run ret
 # Stop old ping (if exists) so we don't overlap when they are running forward
 stopsound @s neutral minecraft:block.beacon.ambient
 # Determine bracket
-execute at @e[type=item,tag=ClosestVaultKey,distance=..16] run function exigence:player/effects/detection/vault_key/-1
-execute at @e[type=item,tag=ClosestVaultKey,distance=16..32] if score @s game.player.effects.detection matches 1.. run function exigence:player/effects/detection/vault_key/0
-execute at @e[type=item,tag=ClosestVaultKey,distance=32..48] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 1.. run function exigence:player/effects/detection/vault_key/1
-execute at @e[type=item,tag=ClosestVaultKey,distance=48..64] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 2.. run function exigence:player/effects/detection/vault_key/2
-execute at @e[type=item,tag=ClosestVaultKey,distance=64..80] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 3.. run function exigence:player/effects/detection/vault_key/3
-execute at @e[type=item,tag=ClosestVaultKey,distance=80..96] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 4.. run function exigence:player/effects/detection/vault_key/4
+execute at @e[type=minecraft:item,tag=ClosestVaultKey,distance=..16] run function exigence:player/effects/detection/vault_key/-1
+execute at @e[type=minecraft:item,tag=ClosestVaultKey,distance=16..32] if score @s game.player.effects.detection matches 1.. run function exigence:player/effects/detection/vault_key/0
+execute at @e[type=minecraft:item,tag=ClosestVaultKey,distance=32..48] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 1.. run function exigence:player/effects/detection/vault_key/1
+execute at @e[type=minecraft:item,tag=ClosestVaultKey,distance=48..64] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 2.. run function exigence:player/effects/detection/vault_key/2
+execute at @e[type=minecraft:item,tag=ClosestVaultKey,distance=64..80] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 3.. run function exigence:player/effects/detection/vault_key/3
+execute at @e[type=minecraft:item,tag=ClosestVaultKey,distance=80..96] if score @s game.player.effects.detection matches 1.. if score @s game.player.mod.detection matches 4.. run function exigence:player/effects/detection/vault_key/4
 
 # Call vibration
 tag @s add GetDistance
-execute if score @s game.player.effects.detection matches 1.. as @e[type=item,tag=ClosestVaultKey] run function exigence:player/effects/detection/vibrate/vibrate
+execute if score @s game.player.effects.detection matches 1.. as @e[type=minecraft:item,tag=ClosestVaultKey] run function exigence:player/effects/detection/vibrate/vibrate
 tag @s remove GetDistance
 
 # Remove local tag
-tag @e[type=item,tag=ClosestVaultKey] remove ClosestVaultKey
+tag @e[type=minecraft:item,tag=ClosestVaultKey] remove ClosestVaultKey

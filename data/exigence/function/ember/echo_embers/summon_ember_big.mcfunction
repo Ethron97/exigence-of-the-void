@@ -6,21 +6,21 @@
 
 #====================================================================================================
 
-#say Drop big
+#say (D3) Drop big
 
 # Summon new ember drop
 loot spawn ~ ~0.5 ~ loot exigence:ember/ember_echo_big
 
 # Execute common functions
-execute as @e[type=item,distance=..4,nbt={Item:{components:{"minecraft:custom_data":{just_spawned:'true'}}}}] run function exigence:ember/echo_embers/ember_data
+execute as @e[type=minecraft:item,distance=..4,nbt={Item:{components:{"minecraft:custom_data":{just_spawned:'true'}}}}] run function exigence:ember/echo_embers/ember_data
 
 # Early return if Tutorial
-execute if score @s ObjectLevel matches 10 run return 1
+execute if score @s node.property.object_level matches 10 run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Increase scores
 scoreboard players add @a[tag=ActivePlayer] profile.data.ember.cr.embers_echo_dropped 10
-execute if score @s ObjectLevel matches 1 run scoreboard players add @a[tag=ActivePlayer] profile.data.ember.cr.embers_echo_dropped_L1 10
-execute if score @s ObjectLevel matches 2 run scoreboard players add @a[tag=ActivePlayer] profile.data.ember.cr.embers_echo_dropped_L2 10
-execute if score @s ObjectLevel matches 3 run scoreboard players add @a[tag=ActivePlayer] profile.data.ember.cr.embers_echo_dropped_L3 10
-execute if score @s ObjectLevel matches 4 run scoreboard players add @a[tag=ActivePlayer] profile.data.ember.cr.embers_echo_dropped_L4 10
+execute if score @s node.property.object_level matches 1 run scoreboard players add @a[tag=ActivePlayer] profile.data.ember.cr.embers_echo_dropped_L1 10
+execute if score @s node.property.object_level matches 2 run scoreboard players add @a[tag=ActivePlayer] profile.data.ember.cr.embers_echo_dropped_L2 10
+execute if score @s node.property.object_level matches 3 run scoreboard players add @a[tag=ActivePlayer] profile.data.ember.cr.embers_echo_dropped_L3 10
+execute if score @s node.property.object_level matches 4 run scoreboard players add @a[tag=ActivePlayer] profile.data.ember.cr.embers_echo_dropped_L4 10

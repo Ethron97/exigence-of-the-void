@@ -8,7 +8,7 @@
 scoreboard players remove seconds.cooldown tick_counter 1
 
 # If game is active, game tick
-execute if data storage exigence:dungeon {is_active:1} run function exigence:game/game_tick
+execute if score game.is_active game.state matches 1 run function exigence:game/game_tick/game_tick
 # If any players are in the hub dimension, hub tick
 execute in exigence:hub positioned 0 200 0 if entity @a[distance=..2000,limit=1] run function exigence:hub/hub_tick
 # If tutorial is active, tutorial tick
@@ -50,8 +50,8 @@ execute if data storage exigence:debug {void:1} if score seconds.cooldown tick_c
 execute if data storage exigence:debug {void:1} if score seconds.cooldown tick_counter matches 0 run function exigence:misc/update_vault_counter
 
 # This is for difficulty setup
-execute if data storage exigence:debug {echo:1} if score seconds.cooldown tick_counter matches 0 as @e[type=minecraft:armor_stand,team=!ActiveEcho,scores={EchoDifficulty=0},tag=EchoNode] run team join Green @s
-execute if data storage exigence:debug {echo:1} if score seconds.cooldown tick_counter matches 0 as @e[type=minecraft:armor_stand,team=Green,scores={EchoDifficulty=1..},tag=EchoNode] run team join Echo @s
+execute if data storage exigence:debug {echo:1} if score seconds.cooldown tick_counter matches 0 at @e[type=minecraft:marker,scores={node.property.echo.difficulty=0},tag=EchoNode] run team join Hazard @n[type=minecraft:block_display,tag=EchoDebugDisplay,distance=..3]
+execute if data storage exigence:debug {echo:1} if score seconds.cooldown tick_counter matches 0 at @e[type=minecraft:marker,scores={node.property.echo.difficulty=1..},tag=EchoNode] run team join Echo @n[type=minecraft:block_display,team=Hazard,tag=EchoDebugDisplay,distance=..3]
 
 #====================================================================================================
 # Reset seconds clock if necessary, after executing ALL other tick functions

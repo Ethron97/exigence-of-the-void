@@ -7,7 +7,7 @@ execute if score card.draw.cooldown tick_counter matches ..0 run function exigen
 # Reduce CardPlayCooldown until 0
 execute if score card.play.cooldown tick_counter matches 1.. run scoreboard players remove card.play.cooldown tick_counter 1
 # If 0 and cards are queued, play card
-execute if score CardQueue DungeonRun matches 1.. if score card.play.cooldown tick_counter matches ..0 run function exigence:deck/deck_tick/add_card_draw
+execute if score card.queue game.dungeon.temp matches 1.. if score card.play.cooldown tick_counter matches ..0 run function exigence:deck/deck_tick/add_card_draw
 
 # Update bossbar value
 function exigence:bossbar/deck/update_bar

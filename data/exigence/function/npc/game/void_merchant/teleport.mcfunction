@@ -21,9 +21,9 @@ execute if entity @s[tag=Loaded] run function exigence:menu/void_menu/unload
 
 # Teleport
 #   Add all echo (other than chosen) and menace nodes to CanTeleport
-tag @e[type=minecraft:armor_stand,scores={ObjectLevel=3},tag=EchoNode,tag=!ChosenEchoNode] add CanTeleport
-tag @e[type=minecraft:armor_stand,scores={ObjectLevel=3},tag=MenaceNode] add CanTeleport
-tag @e[type=minecraft:armor_stand,scores={ObjectLevel=3},tag=VoidTent] add CanTeleport
+tag @e[type=minecraft:marker,scores={node.property.object_level=3},tag=EchoNode,tag=!ChosenEchoNode] add CanTeleport
+tag @e[type=minecraft:armor_stand,scores={node.property.object_level=3},tag=MenaceNode] add CanTeleport
+tag @e[type=minecraft:armor_stand,scores={node.property.object_level=3},tag=VoidTent] add CanTeleport
 
 #   As each CanTeleport, remove tag if there is a bad guy nearby (or enderman)
 execute as @e[type=minecraft:armor_stand,tag=CanTeleport] at @s if entity @e[type=#exigence:enemy,distance=..10] run tag @s remove CanTeleport

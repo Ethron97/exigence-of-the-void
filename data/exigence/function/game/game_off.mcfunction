@@ -2,7 +2,9 @@
 
 say Game Off
 
-data modify storage exigence:dungeon is_active set value 0
+scoreboard players set game.is_active game.state 0
+# Just in case the game ended while it was still loading
+scoreboard players set predungeon.cancel_load hub.room_misc 1
 
 # Reset max menace
 function exigence:menace/reset_max_menace
@@ -14,9 +16,7 @@ team join Spectator @e[type=minecraft:ravager]
 execute as @e[tag=Silence] run data modify entity @s Silent set value true
 
 # Save bookshelf
-function exigence:mirror/bookshelf/save_bookshelf
-
-
+#function exigence:mirror/bookshelf/save_bookshelf
 
 ## PLAYER STUFF
 # Clear all potion effects
@@ -27,14 +27,6 @@ stopsound @a[tag=ActivePlayer] ambient
 
 # Reset teams
 team join Spectator @a[tag=ActivePlayer]
-
-# Increment attempt scores
-execute if score Difficulty DungeonRun matches 1 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.attempts_D1 1
-execute if score Difficulty DungeonRun matches 2 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.attempts_D2 1
-execute if score Difficulty DungeonRun matches 3 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.attempts_D3 1
-execute if score Difficulty DungeonRun matches 4 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.attempts_D4 1
-execute if score Difficulty DungeonRun matches 5 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.attempts_D5 1
-execute if score Difficulty DungeonRun matches 6 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.attempts_D6 1
 
 # Display post game stats
 #   Wait until later if they are Exalting
@@ -49,6 +41,11 @@ title @a actionbar ""
 # Clear title
 title @a clear
 
+# Hide bossbar(s)
+function exigence:bossbar/deck/hide
+function exigence:bossbar/last_card/hide
+function exigence:bossbar/resource/hide
+function exigence:bossbar/objective/hide
 
 # Reset bookshelf on principal
 fill -481 62 -200 -473 64 -200 minecraft:chiseled_bookshelf[facing=south]

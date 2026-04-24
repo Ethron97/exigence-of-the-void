@@ -21,7 +21,7 @@ scoreboard players operation #compare profile.node.coop_profile_id = @s profile.
 scoreboard players set #temptchd Temp 0
 #   If this is the node with chests loaded... I don't think we care.
 execute if score @s profile.node.coop_profile_id matches 1.. \
-as @e[type=marker,scores={profile.node.coop_profile_id=1..},tag=ProfileNode,tag=ChestsLoaded,distance=..140] \
+as @e[type=minecraft:marker,scores={profile.node.coop_profile_id=1..},tag=ProfileNode,tag=ChestsLoaded,distance=..140] \
 if score @s profile.node.profile_id = #compare profile.node.coop_profile_id run scoreboard players set #temptchd Temp 1
 
 #execute if score #temptchd Temp matches 1 run say (D3) WAITING FOR CHESTS TAG ADDED
@@ -38,7 +38,7 @@ scoreboard players set #data_loaded Temp 1
 
 # Load from MAIN co-op profile if this profile is part of a coop profile
 execute if score @s profile.node.coop_profile_id matches 1.. \
-as @e[type=marker,scores={profile.node.coop_profile_id=1..},tag=ProfileNode,distance=..140] \
+as @e[type=minecraft:marker,scores={profile.node.coop_profile_id=1..},tag=ProfileNode,distance=..140] \
 if score @s profile.node.profile_id = #compare profile.node.coop_profile_id at @s run function exigence:profile/profile_node/load/chest_to_data
 # Else just load this node's data
 execute unless score @s profile.node.coop_profile_id matches 1.. at @s run function exigence:profile/profile_node/load/chest_to_data

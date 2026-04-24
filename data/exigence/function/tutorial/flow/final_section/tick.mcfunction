@@ -7,11 +7,11 @@
 
 ## PORTAL
 # Ambient particles
-execute at @n[type=marker,tag=TutorialExitNode,distance=..1000] if entity @a[tag=Tutorial,distance=..32] run particle minecraft:dust_color_transition{from_color:[0.3f,0.2f,1.0f],scale:1.0f,to_color:[0.88f,0.26f,1.0f]} ~ ~2 ~ 0.6 1.5 0.6 0.01 3
+execute at @n[type=minecraft:marker,tag=TutorialExitNode,distance=..1000] if entity @a[tag=Tutorial,distance=..32] run particle minecraft:dust_color_transition{from_color:[0.3f,0.2f,1.0f],scale:1.0f,to_color:[0.88f,0.26f,1.0f]} ~ ~2 ~ 0.6 1.5 0.6 0.01 3
 # Ambient portal sound controller
-execute as @n[type=marker,tag=TutorialExitNode,distance=..1000] run scoreboard players remove @s game.entity.ambient_noise_cooldown 1
-execute as @n[type=marker,tag=TutorialExitNode,distance=..1000] if score @s game.entity.ambient_noise_cooldown matches ..0 at @s run playsound minecraft:block.portal.ambient ambient @p[tag=Tutorial,distance=..32] ~ ~ ~ 2 0.8
-execute as @n[type=marker,tag=TutorialExitNode,distance=..1000] if score @s game.entity.ambient_noise_cooldown matches ..0 store result score @s game.entity.ambient_noise_cooldown run random value 160..280
+execute as @n[type=minecraft:marker,tag=TutorialExitNode,distance=..1000] run scoreboard players remove @s game.entity.ambient_noise_cooldown 1
+execute as @n[type=minecraft:marker,tag=TutorialExitNode,distance=..1000] if score @s game.entity.ambient_noise_cooldown matches ..0 at @s run playsound minecraft:block.portal.ambient ambient @p[tag=Tutorial,distance=..32] ~ ~ ~ 2 0.8
+execute as @n[type=minecraft:marker,tag=TutorialExitNode,distance=..1000] if score @s game.entity.ambient_noise_cooldown matches ..0 store result score @s game.entity.ambient_noise_cooldown run random value 160..280
 
 # ECHO SHARD
 # Ambient particles around the Echo Shard

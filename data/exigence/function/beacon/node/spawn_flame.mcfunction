@@ -5,9 +5,10 @@
 
 #====================================================================================================
 
-#say SPawn flame
+#say (D3) Spawn flame
 
-execute if score @s ObjectLevel matches 1 run execute as @e[type=minecraft:armor_stand,scores={ObjectLevel=1},tag=TreasureNode,tag=!KeyBlacklist,tag=!FlameBlacklist,tag=Active,sort=random,limit=1] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:beacon/summon_ardor_flame"}
-execute if score @s ObjectLevel matches 2 run execute as @e[type=minecraft:armor_stand,scores={ObjectLevel=2},tag=TreasureNode,tag=!KeyBlacklist,tag=!FlameBlacklist,tag=Active,sort=random,limit=1] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:beacon/summon_ardor_flame"}
-execute if score @s ObjectLevel matches 3 run execute as @e[type=minecraft:armor_stand,scores={ObjectLevel=3},tag=TreasureNode,tag=!KeyBlacklist,tag=!FlameBlacklist,tag=Active,sort=random,limit=1] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:beacon/summon_ardor_flame"}
-execute if score @s ObjectLevel matches 4 run execute as @e[type=minecraft:armor_stand,scores={ObjectLevel=4},tag=TreasureNode,tag=!KeyBlacklist,tag=!FlameBlacklist,tag=Active,sort=random,limit=1] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:beacon/summon_ardor_flame"}
+## SWITCH
+execute if score @s node.property.object_level matches 1 run return run execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=1},tag=TreasureNode,tag=!KeyBlacklist,tag=!FlameBlacklist,tag=Active,sort=random,limit=1] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:beacon/summon_ardor_flame"}
+execute if score @s node.property.object_level matches 2 run return run execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=2},tag=TreasureNode,tag=!KeyBlacklist,tag=!FlameBlacklist,tag=Active,sort=random,limit=1] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:beacon/summon_ardor_flame"}
+execute if score @s node.property.object_level matches 3 run return run execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=3},tag=TreasureNode,tag=!KeyBlacklist,tag=!FlameBlacklist,tag=Active,sort=random,limit=1] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:beacon/summon_ardor_flame"}
+execute if score @s node.property.object_level matches 4 run return run execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=4},tag=TreasureNode,tag=!KeyBlacklist,tag=!FlameBlacklist,tag=Active,sort=random,limit=1] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:beacon/summon_ardor_flame"}

@@ -1,28 +1,32 @@
+# Called by /drop_treasure
+
 ## CONSTRAINTS
+#   AS treasure node
 #   AT location
 
 #====================================================================================================
 
 # DEBUG
-#say Summon flame
+#say (D3) Summon flame
 
 # Summon a new item
-summon minecraft:item ~ ~ ~ {Age:-32768,Item:{id:"minecraft:nether_star",count:1,components:{"minecraft:max_stack_size":1,"minecraft:custom_data":{ardor_flame:"true"}}},Tags:["Ardor","NewArdorFlame","ArdorFlame","Ember"]}
+summon minecraft:item ~ ~ ~ {Age:-32768,Item:{id:"minecraft:nether_star",count:1\
+,components:{"minecraft:max_stack_size":1,"minecraft:custom_data":{ardor_flame:"true"}}},Tags:["Ardor","NewArdorFlame","ArdorFlame","Ember"]}
 
 # Assign model based on level
-execute if score @s ObjectLevel matches 1 run data modify entity @e[type=item,tag=NewArdorFlame,limit=1] Item.components."minecraft:custom_model_data" set value {"strings":[ardor_flame_1]}
-execute if score @s ObjectLevel matches 2 run data modify entity @e[type=item,tag=NewArdorFlame,limit=1] Item.components."minecraft:custom_model_data" set value {"strings":[ardor_flame_2]}
-execute if score @s ObjectLevel matches 3 run data modify entity @e[type=item,tag=NewArdorFlame,limit=1] Item.components."minecraft:custom_model_data" set value {"strings":[ardor_flame_3]}
-execute if score @s ObjectLevel matches 4 run data modify entity @e[type=item,tag=NewArdorFlame,limit=1] Item.components."minecraft:custom_model_data" set value {"strings":[ardor_flame_4]}
+execute if score @s node.property.object_level matches 1 run data modify entity @e[type=minecraft:item,tag=NewArdorFlame,distance=..0.1,limit=1] Item.components."minecraft:custom_model_data" set value {"strings":[ardor_flame_1]}
+execute if score @s node.property.object_level matches 2 run data modify entity @e[type=minecraft:item,tag=NewArdorFlame,distance=..0.1,limit=1] Item.components."minecraft:custom_model_data" set value {"strings":[ardor_flame_2]}
+execute if score @s node.property.object_level matches 3 run data modify entity @e[type=minecraft:item,tag=NewArdorFlame,distance=..0.1,limit=1] Item.components."minecraft:custom_model_data" set value {"strings":[ardor_flame_3]}
+execute if score @s node.property.object_level matches 4 run data modify entity @e[type=minecraft:item,tag=NewArdorFlame,distance=..0.1,limit=1] Item.components."minecraft:custom_model_data" set value {"strings":[ardor_flame_4]}
 
 # Add to Treasure scoreboard team (for glow color)
-execute as @e[type=minecraft:item,tag=NewArdorFlame] run team join Ember @s
+team join Ember @e[type=minecraft:item,tag=NewArdorFlame,distance=..0.1,limit=1]
 
 # Copy object level
-scoreboard players operation @e[type=minecraft:item,tag=NewArdorFlame] ObjectLevel = @s ObjectLevel
+scoreboard players operation @e[type=minecraft:item,tag=NewArdorFlame,distance=..0.1,limit=1] game.entity.object_level = @s node.property.object_level
 
 # If debug on, glow
-execute if data storage exigence:debug {ember:1} as @e[type=minecraft:item,tag=NewArdorFlame] run data modify entity @s Glowing set value true
+execute if data storage exigence:debug {ember:1} run data modify entity @e[type=minecraft:item,tag=NewArdorFlame,distance=..0.1,limit=1] Glowing set value true
 
-# Remove "NewArdorFlame" tag
-execute as @e[type=minecraft:item,tag=NewArdorFlame] run tag @s remove NewArdorFlame
+# Remove local tag
+tag @e[type=minecraft:item,tag=NewArdorFlame,distance=..0.1,limit=1] remove NewArdorFlame

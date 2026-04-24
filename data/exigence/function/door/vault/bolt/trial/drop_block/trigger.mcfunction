@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # Return if not drop block
-execute unless entity @s[type=block_display,tag=DropBlock] run return 1
+execute unless entity @s[type=minecraft:block_display,tag=DropBlock] run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Remove block at position

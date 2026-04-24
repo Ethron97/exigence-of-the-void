@@ -7,6 +7,6 @@
 #====================================================================================================
 
 # DEBVUG
-#$say Clear echo compass $(echo_id)
+#$say (D3) Clear echo compass $(echo_id)
 
-$clear @s compass[custom_data={echo_id:$(echo_id),is_soulbound:1b}]
+$clear @s compass[custom_data~{echo_id:$(echo_id),is_soulbound:1b}]

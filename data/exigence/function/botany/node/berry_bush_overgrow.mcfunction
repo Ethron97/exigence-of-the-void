@@ -1,5 +1,10 @@
-# Call as grown berry bush
+# Overgrow this bush
 # function exigence:botany/node/berry_bush_overgrow {min:0,max:0}
+
+## CONSTRAINTS
+#   AS BerryNode
+
+#====================================================================================================
 
 # Increase bush min and max by given amounts
 $scoreboard players add @s[tag=BerryNode] node.berry.min_berries $(min)

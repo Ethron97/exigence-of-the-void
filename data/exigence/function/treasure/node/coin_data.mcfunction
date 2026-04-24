@@ -3,6 +3,9 @@
 ## CONSTRAINTS
 #   AS coin item
 
+## INPUT
+#   SCORE #compare node.property.object_level
+
 #====================================================================================================
 
 
@@ -12,7 +15,7 @@ execute if score #Bonus Temp matches 1 run data modify entity @s Item.components
 team join Treasure @s
 
 # Copy object level
-scoreboard players operation @s ObjectLevel = #compare ObjectLevel
+scoreboard players operation @s game.entity.object_level = #compare node.property.object_level
 
 # If treasure debug on, glow coin
 execute if data storage exigence:debug {treasure:1} run data modify entity @s Glowing set value true

@@ -149,6 +149,12 @@ advancement revoke @s only exigence:unlockables/shop_unlock_potion_speed_1_f
 advancement revoke @s only exigence:unlockables/shop_unlock_potion_speed_2
 advancement revoke @s only exigence:unlockables/shop_unlock_potion_speed_3
 advancement revoke @s only exigence:unlockables/shop_unlock_potion_speed_4
+advancement revoke @s only exigence:vault/crucible_bolt
+advancement revoke @s only exigence:vault/crucible_dune
+advancement revoke @s only exigence:vault/crucible_eye
+advancement revoke @s only exigence:vault/crucible_flow
+advancement revoke @s only exigence:vault/crucible_silence
+advancement revoke @s only exigence:vault/crucible_spire
 advancement revoke @s only exigence:vault/opened_coast
 advancement revoke @s only exigence:vault/opened_host
 advancement revoke @s only exigence:vault/opened_raiser
@@ -167,12 +173,6 @@ advancement revoke @s only exigence:vault/trial_eye
 advancement revoke @s only exigence:vault/trial_flow
 advancement revoke @s only exigence:vault/trial_silence
 advancement revoke @s only exigence:vault/trial_spire
-advancement revoke @s only exigence:vault/crucible_bolt
-advancement revoke @s only exigence:vault/crucible_dune
-advancement revoke @s only exigence:vault/crucible_eye
-advancement revoke @s only exigence:vault/crucible_flow
-advancement revoke @s only exigence:vault/crucible_silence
-advancement revoke @s only exigence:vault/crucible_spire
 advancement revoke @s only exigence:story/destroy_crystals
 advancement revoke @s only exigence:story/light_altars
 advancement revoke @s only exigence:story/light_beacons

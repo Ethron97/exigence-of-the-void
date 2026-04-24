@@ -1,4 +1,4 @@
 say Difficulty xxx (diff 13 play)
 
-scoreboard players set EchoDifficulty DungeonRun 13
+scoreboard players set .echo_difficulty game.dungeon.echo 13
 

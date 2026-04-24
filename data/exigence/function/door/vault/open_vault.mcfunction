@@ -11,7 +11,7 @@
 # DEBUG
 #$say Open vault $(vault)
 
-$function exigence:door/vault/$(vault)/open
+$execute @e[type=minecraft:armor_stand,tag=VaultNode,tag=Vault_$(vault),limit=1] run function exigence:door/vault/$(vault)/open
 
 # Clear tag from player
 $tag @s remove Opening$(vault)

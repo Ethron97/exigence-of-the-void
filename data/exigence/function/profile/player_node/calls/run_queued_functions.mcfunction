@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say (D3) Run queued functions
+#say (D3) Run queued functions
 
 # Assumes local tag was added at step "player logged in"
 execute if score @s player.node.queue.invite_decline matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_invite_decline
@@ -18,6 +18,7 @@ execute if score @s player.node.queue.timeout_tutorial matches 1.. at @s as @p[t
 execute if score @s player.node.queue.timeout_locker_room matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_timeout_locker_room
 execute if score @s player.node.queue.timeout_item_shop matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_timeout_item_shop
 execute if score @s player.node.queue.timeout_predungeon matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_timeout_predungeon
+execute if score @s player.node.queue.kicked_predungeon matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_kicked_predungeon
 
 # ...
 execute if score @s player.node.queue.mail matches 1.. run function exigence:profile/player_node/calls/private/run_read_mail

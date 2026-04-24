@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # Reset tag
-tag @e[type=marker,tag=TutorialMarker,tag=Fallback,distance=..1000] remove Fallback
+tag @e[type=minecraft:marker,tag=TutorialMarker,tag=Fallback,distance=..1000] remove Fallback
 
 # Give tag to the current LastDropped
 tag @s add Fallback

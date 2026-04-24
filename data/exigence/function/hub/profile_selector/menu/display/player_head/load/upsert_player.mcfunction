@@ -8,7 +8,7 @@
 # Return if head exists
 scoreboard players operation #compare career.player_id = @s career.player_id
 scoreboard players set #temp Temp 0
-execute as @e[type=item_display,tag=PlayerHeadDisplay,distance=..16] if score @s hub.entity.player_id = #compare career.player_id run scoreboard players set #temp Temp 1
+execute as @e[type=minecraft:item_display,tag=PlayerHeadDisplay,distance=..16] if score @s hub.entity.player_id = #compare career.player_id run scoreboard players set #temp Temp 1
 execute if score #temp Temp matches 1 run return fail
 #----------------------------------------------------------------------------------------------------
 

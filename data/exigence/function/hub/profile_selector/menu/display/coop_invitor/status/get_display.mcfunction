@@ -26,11 +26,11 @@ execute if score #temp2 Temp matches 2 run scoreboard players operation @s playe
 execute if score #temp2 Temp matches 1 run scoreboard players operation @s player.node.invited_player_1 = #target career.player_id
 
 # Claim the respective display
-execute if score #temp2 Temp matches 3 in exigence:hub as @n[x=-98,y=0,z=798,dx=244,dy=256,dz=16,type=text_display,tag=StatusDisplay,tag=StatusDisplay4] \
+execute if score #temp2 Temp matches 3 in exigence:hub as @n[x=-98,y=0,z=798,dx=244,dy=256,dz=16,type=minecraft:text_display,tag=StatusDisplay,tag=StatusDisplay4] \
 if score @s hub.entity.profile_selector_id = #compare hub.player.profile_selector_id run function exigence:hub/profile_selector/menu/display/coop_invitor/status/claim_display
 
-execute if score #temp2 Temp matches 2 in exigence:hub as @n[x=-98,y=0,z=798,dx=244,dy=256,dz=16,type=text_display,tag=StatusDisplay,tag=StatusDisplay3] \
+execute if score #temp2 Temp matches 2 in exigence:hub as @n[x=-98,y=0,z=798,dx=244,dy=256,dz=16,type=minecraft:text_display,tag=StatusDisplay,tag=StatusDisplay3] \
 if score @s hub.entity.profile_selector_id = #compare hub.player.profile_selector_id run function exigence:hub/profile_selector/menu/display/coop_invitor/status/claim_display
 
-execute if score #temp2 Temp matches 1 in exigence:hub as @n[x=-98,y=0,z=798,dx=244,dy=256,dz=16,type=text_display,tag=StatusDisplay,tag=StatusDisplay2] \
+execute if score #temp2 Temp matches 1 in exigence:hub as @n[x=-98,y=0,z=798,dx=244,dy=256,dz=16,type=minecraft:text_display,tag=StatusDisplay,tag=StatusDisplay2] \
 if score @s hub.entity.profile_selector_id = #compare hub.player.profile_selector_id run function exigence:hub/profile_selector/menu/display/coop_invitor/status/claim_display

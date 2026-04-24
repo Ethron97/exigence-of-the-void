@@ -1,19 +1,21 @@
 # Called by activate_berry_nodes
 
 ## CONSTRAINTS
-#   AS BerryNode
+#   AS/AT BerryNode
+
+# As of balance 1.0, bushes have an 80% chance to be active.
+#   Active tag = capable of growing
+#   No active tag = incapapble of growing
+#   Grown tag = currently has berry bushes
 
 #====================================================================================================
 
-## CONTROL
-# Reset berry nodes
-execute at @s run function exigence:botany/node/berry_bush_inactive
-
 # Place mud beneath because they are always on mud?
-execute at @s run setblock ~ ~-1 ~ minecraft:mud
+setblock ~ ~-1 ~ minecraft:mud
 
 # Return if not on active level
-execute if score @s ObjectLevel > Difficulty DungeonRun
+execute if score @s node.property.object_level > game.difficulty game.state run return 0
+#----------------------------------------------------------------------------------------------------
 
 
 ## ACTIVATE

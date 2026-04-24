@@ -1,3 +1,3 @@
 say Green Thumb [+4 Berry Bushes]
 
-scoreboard players add BerryQueue DungeonRun 4
+scoreboard players add berry.queue game.dungeon.temp 4

@@ -13,9 +13,9 @@ execute unless items entity @s weapon.offhand * run return 1
 #say dropping offhand
 
 # Copy offhand to intermediary for data compare
-item replace entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] weapon.mainhand from entity @s weapon.offhand
+item replace entity @e[x=536,y=0,z=488,dx=0,dy=0,dz=0,type=minecraft:armor_stand,tag=intermediary,limit=1] weapon.mainhand from entity @s weapon.offhand
 
 # IF card is not spellbound AND item is on drop on death list, call drop
-execute unless data entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] {equipment:{maindhand:{components:{"minecraft:custom_data":{is_spellsling:"true"}}}}} if items entity @s weapon.offhand #exigence:drop_on_death run function exigence:player/drop/drop_slot_specific {slot_name:'weapon.offhand'}
+execute unless data entity @e[x=536,y=0,z=488,dx=0,dy=0,dz=0,type=minecraft:armor_stand,tag=intermediary,limit=1] {equipment:{maindhand:{components:{"minecraft:custom_data":{is_spellsling:"true"}}}}} if items entity @s weapon.offhand #exigence:drop_on_death run function exigence:player/drop/drop_slot_specific {slot_name:'weapon.offhand'}
 #   IF bag of holding, do not drop bag items
-execute unless data entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] {equipment:{mainhand:{components:{"minecraft:custom_data":{is_spellsling:"true"}}}}} if items entity @s weapon.offhand #exigence:consumable unless score @s game.player.mod.void_bundle matches 1.. run function exigence:player/drop/drop_slot_specific {slot_name:'weapon.offhand'}
+execute unless data entity @e[x=536,y=0,z=488,dx=0,dy=0,dz=0,type=minecraft:armor_stand,tag=intermediary,limit=1] {equipment:{mainhand:{components:{"minecraft:custom_data":{is_spellsling:"true"}}}}} if items entity @s weapon.offhand #exigence:consumable unless score @s game.player.mod.void_bundle matches 1.. run function exigence:player/drop/drop_slot_specific {slot_name:'weapon.offhand'}

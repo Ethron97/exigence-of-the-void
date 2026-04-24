@@ -1,1 +1,0 @@
-scoreboard players remove core.hazard deck.analysis 2

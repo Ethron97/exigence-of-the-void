@@ -3,6 +3,9 @@
 ## CONSTRAINTS
 #   AS Item (NewSherd)
 
+## INPUT
+#   SCORE #compare node.property.object_level
+
 #====================================================================================================
 
 # Playsound
@@ -12,7 +15,7 @@ execute at @s run playsound minecraft:block.decorated_pot.place neutral @a ~ ~ ~
 team join Treasure @s
 
 # Copy object level
-scoreboard players operation @s ObjectLevel = #compare ObjectLevel
+scoreboard players operation @s game.entity.object_level = #compare node.property.object_level
 
 # If treasure debug on, glow coin
 execute if data storage exigence:treasure_drop {debug:1} run data modify entity @s Glowing set value true

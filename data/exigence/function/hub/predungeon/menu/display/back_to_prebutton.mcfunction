@@ -7,10 +7,10 @@
 
 #====================================================================================================
 # This shouldn't bec alled if state is currently 0
-execute if score #predungeon_state Temp matches 0 run return run tellraw @a {text:"? State is already 0, why run back_to_prebutton?",color:yellow}
+execute if score predungeon.door_state hub.room_misc matches 0 run return run tellraw @a {text:"? State is already 0, why run back_to_prebutton?",color:yellow}
 #----------------------------------------------------------------------------------------------------
 
-scoreboard players set #predungeon_state Temp 0
+scoreboard players set predungeon.door_state hub.room_misc 0
 
 # Kill whatever current menu exists
 kill @e[type=#exigence:display,tag=FromHover,distance=..5]
@@ -18,7 +18,7 @@ kill @e[type=#exigence:display,tag=PredungeonMenuDisplay,distance=..5]
 kill @e[type=#exigence:display,tag=PlayerSensorPupil,distance=..5]
 
 # Close all slots
-execute as @e[type=item_display,tag=Open,distance=..5] run function exigence:hub/predungeon/menu/display/warp_door/slot/close_slot
+execute as @e[type=minecraft:item_display,tag=Open,distance=..5] run function exigence:hub/predungeon/menu/display/warp_door/slot/close_slot
 
 # Load prebutton (schedule)
 schedule function exigence:hub/predungeon/menu/display/pre_button/schedule_load 20t

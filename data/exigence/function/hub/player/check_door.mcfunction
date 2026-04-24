@@ -17,8 +17,8 @@ execute as @s[tag=!ProfileSelecting] at @s if block ~ ~ ~ minecraft:cyan_stained
 execute as @s[tag=!Tutorial] at @s if block ~ ~ ~ minecraft:lime_stained_glass_pane run function exigence:tutorial/access/try_enter_tutorial
 
 # If yellow stained glass (locker room):
-execute as @s[tag=LockerRoom] at @s if block ~ ~ ~ minecraft:yellow_stained_glass_pane at @n[type=marker,tag=LockerRoomNode,distance=..5] run function exigence:hub/locker_room/access/leave
-execute as @s[tag=!LockerRoom] at @s if block ~ ~ ~ minecraft:yellow_stained_glass_pane at @n[type=marker,tag=LockerRoomNode,distance=..5] run function exigence:hub/locker_room/access/try_enter_door
+execute as @s[tag=LockerRoom] at @s if block ~ ~ ~ minecraft:yellow_stained_glass_pane at @n[type=minecraft:marker,tag=LockerRoomNode,distance=..5] run function exigence:hub/locker_room/access/leave
+execute as @s[tag=!LockerRoom] at @s if block ~ ~ ~ minecraft:yellow_stained_glass_pane at @n[type=minecraft:marker,tag=LockerRoomNode,distance=..5] run function exigence:hub/locker_room/access/try_enter_door
 
 # ITEM SHOP (orange stained glass)
 execute as @s[tag=ItemShop] at @s if block ~ ~ ~ minecraft:orange_stained_glass_pane run function exigence:hub/item_shop/access/leave

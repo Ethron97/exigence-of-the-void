@@ -4,7 +4,7 @@
 advancement revoke @s only exigence:listener/consume/eat_melon_slice
 
 # Return if game is not active
-execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
+execute unless entity @s[tag=ActivePlayer] unless score game.is_active game.state matches 1 run return 1
 #----------------------------------------------------------------------------------------------------
 
 #say Eat berry
@@ -13,4 +13,4 @@ execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon 
 scoreboard players add @s profile.data.berry.cr.berries_eaten 1
 
 # Ambrosia
-execute if score Ambrosia Modifiers matches 1.. run function exigence:cards/ambrosia/private/eat
+execute if score mod.ambrosia game.modifiers matches 1.. run function exigence:cards/ambrosia/private/eat

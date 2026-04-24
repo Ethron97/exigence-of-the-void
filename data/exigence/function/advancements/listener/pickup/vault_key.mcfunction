@@ -4,7 +4,7 @@ advancement revoke @s only exigence:listener/pickup/vault_key
 #say Pickup vault key
 
 # Return if dungeon is not active
-execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
+execute unless entity @s[tag=ActivePlayer] unless score game.is_active game.state matches 1 run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Add correct vault key item to inventory (switch)

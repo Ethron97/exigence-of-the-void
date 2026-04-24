@@ -16,7 +16,7 @@ $scoreboard players remove #Total shop.player.money_to_spend $(money_cost)
 $function exigence:hub/item_shop/item/summon_item {item_name:$(item_name)}
 
 # Set item origin to player UUID
-execute as @p[tag=ItemShop,tag=Interacting,distance=..16] run data modify entity @n[type=item,tag=NSS,distance=..0.1] Owner set from entity @s UUID
+execute as @p[tag=ItemShop,tag=Interacting,distance=..16] run data modify entity @n[type=minecraft:item,tag=NSS,distance=..0.1] Owner set from entity @s UUID
 
 execute as @n[type=minecraft:item,tag=NSS,distance=..0.1] at @s run tp @s @p[tag=ItemShop,tag=Interacting,distance=..16]
 tag @n[type=minecraft:item,tag=NSS,distance=..0.1] remove NSS

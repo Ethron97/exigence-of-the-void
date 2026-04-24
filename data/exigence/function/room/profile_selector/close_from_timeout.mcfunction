@@ -10,7 +10,7 @@
 scoreboard players operation #compare hub.room.room_id = @s hub.room.room_id
 
 # Close the room down
-execute in exigence:hub as @e[x=-98,y=0,z=798,dx=244,dy=256,dz=16,type=marker,tag=ProfileSelectorNode] \
+execute in exigence:hub as @e[x=-98,y=0,z=798,dx=244,dy=256,dz=16,type=minecraft:marker,tag=ProfileSelectorNode] \
 if score @s hub.entity.room_id = #compare hub.room.room_id at @s run function exigence:hub/profile_selector/node/unload_room
 
 # Add queued functions to player node(s)

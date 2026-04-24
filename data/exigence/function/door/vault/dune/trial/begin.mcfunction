@@ -36,8 +36,8 @@ execute if entity @s[tag=Crucible] run bossbar set exigence:trial_dune color pur
 execute if entity @s[tag=Crucible] run bossbar set exigence:trial_dune name [{text:"Crucible of Dust",color:"light_purple"}]
 
 # If game is active, give begin scores
-execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Trial] profile.data.vaults.cr.dune_trial_try 1
-execute if data storage exigence:dungeon {is_active:1} run scoreboard players add @s[tag=Crucible] profile.data.vaults.cr.dune_crucible_try 1
+execute if score game.is_active game.state matches 1 run scoreboard players add @s[tag=Trial] profile.data.vaults.cr.dune_trial_try 1
+execute if score game.is_active game.state matches 1 run scoreboard players add @s[tag=Crucible] profile.data.vaults.cr.dune_crucible_try 1
 
 # Begin tick iteration
 function exigence:door/vault/dune/trial/tick

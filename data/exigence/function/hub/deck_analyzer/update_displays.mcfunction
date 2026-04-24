@@ -22,4 +22,4 @@ function exigence:hub/deck_analyzer/display/resources/update with storage exigen
 function exigence:hub/deck_analyzer/display/system_impact/update with storage exigence:deck_analysis
 
 # Update refresh button based on error/warnings
-execute as @e[type=item_display,tag=RefreshButton,distance=..5,limit=1] run function exigence:hub/deck_analyzer/refresh_button/update_appearance
+execute as @e[type=minecraft:item_display,tag=RefreshButton,distance=..5,limit=1] run function exigence:hub/deck_analyzer/refresh_button/update_appearance

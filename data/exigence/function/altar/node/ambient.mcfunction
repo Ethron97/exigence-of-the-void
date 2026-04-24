@@ -20,11 +20,11 @@ execute if score seconds.cooldown tick_counter matches 14 if score @s game.node.
 execute if score @s game.node.node_state matches 2 run particle minecraft:soul_fire_flame ~ ~1 ~ 0.3 0.5 0.3 0 3
 
 # Concordant altars
-execute if score seconds.cooldown tick_counter matches 2 if score Concordance Modifiers matches 1.. if score @s game.node.node_state matches 1..2 run particle minecraft:dust_color_transition{from_color:[1.0f,1.0f,1.0f],scale:1.0f,to_color:[0.0f,1.0f,1.0f]} ~ ~0.5 ~ 0.5 0.2 0.5 0 1
-execute if score seconds.cooldown tick_counter matches 12 if score Concordance Modifiers matches 1.. if score @s game.node.node_state matches 1..2 run particle minecraft:dust_color_transition{from_color:[1.0f,1.0f,1.0f],scale:1.0f,to_color:[0.0f,1.0f,1.0f]} ~ ~0.5 ~ 0.5 0.2 0.5 0 1
+execute if score seconds.cooldown tick_counter matches 2 if score mod.concordance game.modifiers matches 1.. if score @s game.node.node_state matches 1..2 run particle minecraft:dust_color_transition{from_color:[1.0f,1.0f,1.0f],scale:1.0f,to_color:[0.0f,1.0f,1.0f]} ~ ~0.5 ~ 0.5 0.2 0.5 0 1
+execute if score seconds.cooldown tick_counter matches 12 if score mod.concordance game.modifiers matches 1.. if score @s game.node.node_state matches 1..2 run particle minecraft:dust_color_transition{from_color:[1.0f,1.0f,1.0f],scale:1.0f,to_color:[0.0f,1.0f,1.0f]} ~ ~0.5 ~ 0.5 0.2 0.5 0 1
 
 # Red-able altars (inner fire)
-execute if score InnerFire Modifiers matches 0 run return 0
+execute if score mod.inner_fire game.modifiers matches 0 run return 0
 #----------------------------------------------------------------------------------------------------
 execute if score seconds.cooldown tick_counter matches 6 if score @s[tag=!Red] game.node.node_state matches 1.. run particle minecraft:dust{color:[1.0f,0.0f,0.0f],scale:1.0f} ~ ~0.5 ~ 0.5 0.2 0.5 0 2
 execute if score seconds.cooldown tick_counter matches 16 if score @s[tag=!Red] game.node.node_state matches 1.. run particle minecraft:dust{color:[1.0f,0.0f,0.0f],scale:1.0f} ~ ~0.5 ~ 0.5 0.2 0.5 0 2

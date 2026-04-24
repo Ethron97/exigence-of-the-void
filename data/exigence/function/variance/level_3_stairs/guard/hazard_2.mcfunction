@@ -1,9 +1,13 @@
+# Called from scheduler
+
+#====================================================================================================
+execute if score predungeon.cancel_load hub.room_misc matches 1 run return fail
+#----------------------------------------------------------------------------------------------------
+
+say (D3) Guard hazard (upper)
 
 # Testing model
 #setblock -383 153 -24 sculk
 
-# Temp sculk
-#fill -335 160 -52 -335 170 -56 sculk
-
 # Clone staircase
-clone -326 -35 -51 -343 -60 -57 -343 151 -57
+execute in minecraft:overworld run clone -331 -38 -51 -342 -55 -57 -342 156 -57

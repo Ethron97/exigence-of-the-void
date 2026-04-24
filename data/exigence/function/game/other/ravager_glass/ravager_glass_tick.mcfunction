@@ -1,7 +1,13 @@
 # Called by tick unless both game and tutorial are off
 
-# 1. Detect if there is Ravager Glass TM beneath, inside, or above the active player. If there is, run
-execute as @a[scores={dead=0,game.player.mod.ravager_hoof=0},tag=ActivePlayer] at @s run function exigence:player/ravager_glass/check
-execute in exigence:tutorial as @p[tag=Tutorial,gamemode=adventure] at @s run function exigence:player/ravager_glass/check
+# GAME USE DEPRECATED; ONLY USED IN TUTORIAL NOW
 
-execute as @e[type=minecraft:marker,tag=RavagerGlass] run function exigence:game/other/ravager_glass/update
+## CONSTRAINTS
+#   IN exigence:tutorial
+
+#====================================================================================================
+
+# 1. Detect if there is Ravager Glass TM beneath, inside, or above the active player. If there is, run
+execute as @p[tag=Tutorial,gamemode=adventure] at @s run function exigence:player/ravager_glass/check
+
+execute as @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,tag=RavagerGlass] run function exigence:game/other/ravager_glass/update

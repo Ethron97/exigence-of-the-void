@@ -13,16 +13,15 @@ execute at @s run setblock ~ ~ ~ minecraft:soul_fire
 execute at @s run playsound minecraft:entity.evoker.cast_spell neutral @a ~ ~ ~ 1 1.3
 
 # Remove interaction, if already red'd
-execute if score InnerFire Modifiers matches 1 if entity @s[tag=Red] run function exigence:altar/node/remove_interaction
-execute if score InnerFire Modifiers matches 0 run function exigence:altar/node/remove_interaction
+execute if score mod.inner_fire game.modifiers matches 1 if entity @s[tag=Red] run function exigence:altar/node/remove_interaction
+execute if score mod.inner_fire game.modifiers matches 0 run function exigence:altar/node/remove_interaction
 
 # Set game.node.node_state to 2
 scoreboard players set @s game.node.node_state 2
 
 # If game is inactive, return here
-execute if score @s ObjectLevel matches 10 in exigence:tutorial run function exigence:tutorial/flow/step
-execute if score @s ObjectLevel matches 10 run return 1
-execute unless data storage exigence:dungeon {is_active:1} run return 1
+execute if score @s node.property.object_level matches 10 in exigence:tutorial run return run function exigence:tutorial/flow/step
+execute unless score game.is_active game.state matches 1 run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Give player score

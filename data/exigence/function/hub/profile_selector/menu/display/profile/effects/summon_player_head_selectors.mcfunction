@@ -15,8 +15,8 @@ function exigence:hub/profile_selector/menu/display/coop_invitor/summon_page_fli
 # Summon page label
 summon minecraft:text_display ~ ~0.95 ~ {billboard:"fixed",alignment:"center",Tags:["PageLabel","NewTextDisplay"],text:[{text:"Page #"}],background:1\
 ,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.3f,0.3f,0.3f]}}
-scoreboard players operation @n[type=text_display,tag=NewTextDisplay,distance=..5] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id
-tag @n[type=text_display,tag=NewTextDisplay,distance=..5] remove NewTextDisplay
+scoreboard players operation @n[type=minecraft:text_display,tag=NewTextDisplay,distance=..5] hub.entity.profile_selector_id = @s hub.entity.profile_selector_id
+tag @n[type=minecraft:text_display,tag=NewTextDisplay,distance=..5] remove NewTextDisplay
 
 # Summon "slots"
 execute positioned ~0.31 ~1.35 ~-1.15 run function exigence:hub/profile_selector/menu/display/coop_invitor/load_slot_background with entity @s item.components."minecraft:custom_data"
@@ -28,6 +28,6 @@ function exigence:hub/profile_selector/menu/display/player_head/refresh_heads
 
 # Load page 1
 scoreboard players set #current_page Temp 1
-execute as @e[type=item_display,tag=PlayerHeadDisplay,tag=!Ignore,distance=..5] unless score @s hub.entity.player_head_page = #current_page Temp run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/hide_head
-execute as @e[type=item_display,tag=PlayerHeadDisplay,tag=Ignore,distance=..5] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/hide_head
+execute as @e[type=minecraft:item_display,tag=PlayerHeadDisplay,tag=!Ignore,distance=..5] unless score @s hub.entity.player_head_page = #current_page Temp run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/hide_head
+execute as @e[type=minecraft:item_display,tag=PlayerHeadDisplay,tag=Ignore,distance=..5] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/hide_head
 function exigence:hub/profile_selector/menu/display/coop_invitor/effects/load_page

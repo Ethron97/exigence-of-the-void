@@ -12,7 +12,7 @@ tag @s remove Red
 tag @s remove ChooseLock
 
 # Return if not on active level
-execute unless score @s ObjectLevel <= Difficulty DungeonRun run return 1
+execute unless score @s node.property.object_level <= game.difficulty game.state run return 1
 #----------------------------------------------------------------------------------------------------
 
 # 80% to be active, 20% to be ruined

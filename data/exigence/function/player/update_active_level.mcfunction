@@ -15,7 +15,7 @@ execute if predicate exigence:level/3 run scoreboard players set @s game.player.
 execute if predicate exigence:level/4 run scoreboard players set @s game.player.active_level 4
 
 # If went down and echo has been found, give new return compass
-execute unless score #OldActiveLevel game.player.active_level = @s game.player.active_level if data storage exigence:dungeon {all_echos_found:1} if score @s career.settings.return_compass matches 1 run function exigence:player/give/return_compass
+execute unless score #OldActiveLevel game.player.active_level = @s game.player.active_level if score game.all_echos_found game.state matches 1 if score @s career.settings.return_compass matches 1 run function exigence:player/give/return_compass
 
 # If active level changed, give title
 execute unless score #OldActiveLevel game.player.active_level = @s game.player.active_level if predicate exigence:level/1 run title @s subtitle {text:"⋉ Ruins of Solstice ⋊",color:"aqua"}
@@ -25,5 +25,5 @@ execute unless score #OldActiveLevel game.player.active_level = @s game.player.a
 execute unless score #OldActiveLevel game.player.active_level = @s game.player.active_level run title @s title ""
 
 # If we want door open:
-#execute if score Y temp_coords matches 32.. if entity @e[type=minecraft:armor_stand,tag=DoorNode,tag=MirrorMines,tag=Open] run scoreboard players set ActiveLevel DungeonRun 2
-#execute if score Y temp_coords matches 128.. if entity @e[type=minecraft:armor_stand,tag=DoorNode,tag=TempleOfFervor,tag=Open] run scoreboard players set ActiveLevel DungeonRun 3
+#execute if score Y temp_coords matches 32.. if entity @e[type=minecraft:armor_stand,tag=DoorNode,tag=MirrorMines,tag=Open] run scoreboard players set game.active_level game.state 2
+#execute if score Y temp_coords matches 128.. if entity @e[type=minecraft:armor_stand,tag=DoorNode,tag=TempleOfFervor,tag=Open] run scoreboard players set game.active_level game.state 3

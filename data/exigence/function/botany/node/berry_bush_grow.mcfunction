@@ -1,13 +1,15 @@
 # Grows berries on an active berry node. Determines how growth stage.
 
 ## CONSTRAINTS
-#   AS BerryNode armorstand
+#   AS BerryNode
 
 #====================================================================================================
 
 # Return if not berry node
 execute unless entity @s[tag=BerryNode] run return fail
 #----------------------------------------------------------------------------------------------------
+
+#say (D3) I am growing
 
 # Add Grown tag
 tag @s add Grown

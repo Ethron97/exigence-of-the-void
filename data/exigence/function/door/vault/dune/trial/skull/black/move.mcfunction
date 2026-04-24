@@ -9,14 +9,14 @@
 ## Home towards player (with turn radius)
 
 # Move marker B to the skull, facing player
-execute at @s facing entity @p[scores={dead=0,game.player.vault_code=2},tag=ActivePlayer] eyes run tp @e[type=marker,tag=DunePosB] ~ ~ ~ ~ ~
+execute at @s facing entity @p[scores={dead=0,game.player.vault_code=2},tag=ActivePlayer] eyes run tp @e[type=minecraft:marker,tag=DunePosB] ~ ~ ~ ~ ~
 
 
 # Store rotations and normalize to 0..360
 execute store result score #skull_rot Temp run data get entity @s Rotation[0]
 scoreboard players add #skull_rot Temp 180
 
-execute store result score #player_rot Temp run data get entity @e[type=marker,tag=DunePosB,limit=1] Rotation[0]
+execute store result score #player_rot Temp run data get entity @e[type=minecraft:marker,tag=DunePosB,limit=1] Rotation[0]
 scoreboard players add #player_rot Temp 180
 
 # Get difference
@@ -36,4 +36,4 @@ execute at @s run particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0 3
 execute at @s run particle minecraft:soul_fire_flame ^ ^ ^ 0.2 0.1 0.2 0 1
 
 # If in block, kill
-execute at @s unless block ~ ~ ~ air run kill @s[type=item_display,tag=Black,tag=DuneSkull]
+execute at @s unless block ~ ~ ~ air run kill @s[type=minecraft:item_display,tag=Black,tag=DuneSkull]

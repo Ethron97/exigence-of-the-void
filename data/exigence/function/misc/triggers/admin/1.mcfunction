@@ -5,7 +5,7 @@ scoreboard players set @s ObjectLevel 1
 tellraw @s {text:"Object level set to 1",color: "gray"}
 
 # Set Difficulty to 1 (for testing)
-scoreboard players set Difficulty DungeonRun 1
+scoreboard players set game.difficulty game.state 1
 
 # Reset trigger score
 scoreboard players reset @s 1

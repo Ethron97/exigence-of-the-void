@@ -9,10 +9,10 @@
 playsound minecraft:block.ender_chest.open ui @a ~ ~ ~ 1 1
 
 # Open middle slot
-execute as @n[type=item_display,tag=DoorSlotFill0,tag=Closed,distance=..5] run function exigence:hub/predungeon/menu/display/warp_door/slot/open_slot
+execute as @n[type=minecraft:item_display,tag=DoorSlotFill0,tag=Closed,distance=..5] run function exigence:hub/predungeon/menu/display/warp_door/slot/open_slot
 
 # Summon cancel button
-execute at @n[type=marker,tag=DoorSlotMarker0,distance=..5] positioned ~ ~ ~-0.01 run function exigence:hub/predungeon/menu/display/level_chooser/load/summon_cancel
+execute at @n[type=minecraft:marker,tag=DoorSlotMarker0,distance=..5] positioned ~ ~ ~-0.01 run function exigence:hub/predungeon/menu/display/level_chooser/load/summon_cancel
 
 # Outputs: #attempts_d#1-6 Temp
 execute as @p[tag=Predungeon,distance=..16] run function exigence:player/get/attempts_d
@@ -36,7 +36,7 @@ run function exigence:hub/predungeon/menu/display/level_chooser/load/load_choose
 
 # Summon main title
 #execute positioned ~ ~1.5 ~ run function exigence:hub/predungeon/menu/display/level_chooser/summon_title
-#execute as @n[distance=..5,type=text_display,tag=LevelChooserTitle] at @s run tp @s ~ ~2 ~
+#execute as @n[distance=..5,type=minecraft:text_display,tag=LevelChooserTitle] at @s run tp @s ~ ~2 ~
 
 # Summon detail displays etc
 # TODO

@@ -23,6 +23,6 @@ execute if score #filled_slots Temp < max_coop_players global_settings run funct
 execute if score #filled_slots Temp = max_coop_players global_settings run function exigence:hub/profile_selector/menu/display/player_head/calls/private/switch_from_pending_to_confirm with entity @s item.components."minecraft:custom_data"
 
 # Call "confirm button update"
-execute at @s as @n[type=item_display,tag=CoopInvitorDisplay,tag=Confirm,distance=..5] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/update_confirm_button
+execute at @s as @n[type=minecraft:item_display,tag=CoopInvitorDisplay,tag=Confirm,distance=..5] run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/update_confirm_button
 
 execute at @s run playsound entity.player.levelup player @a ~ ~ ~ 1 1

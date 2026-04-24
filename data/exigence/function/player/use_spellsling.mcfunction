@@ -6,8 +6,8 @@
 #say use_spellsling
 
 # If max menace, tellraw and return
-execute if data storage exigence:dungeon {max_menace:1} run tellraw @s [{text:"An odious force prevents you from spellslinging",color:"red"}]
-execute if data storage exigence:dungeon {max_menace:1} run return 1
+execute if score game.max_menace game.state matches 1 run tellraw @s [{text:"An odious force prevents you from spellslinging",color:"red"}]
+execute if score game.max_menace game.state matches 1 run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Call function

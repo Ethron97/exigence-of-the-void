@@ -11,8 +11,8 @@
 #====================================================================================================
 
 # If game is active, return
-execute if data storage exigence:dungeon {is_active:1} run say The game is active, go play it
-execute if data storage exigence:dungeon {is_active:1} run return 1
+execute if score game.is_active game.state matches 1 run say The game is active, go play it
+execute if score game.is_active game.state matches 1 run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Set scores

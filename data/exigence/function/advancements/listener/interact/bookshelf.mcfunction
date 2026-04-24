@@ -2,7 +2,7 @@
 advancement revoke @s only exigence:listener/interact/bookshelf
 
 # Return if game is not acive
-execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
+execute unless entity @s[tag=ActivePlayer] unless score game.is_active game.state matches 1 run return 1
 #----------------------------------------------------------------------------------------------------
 
 # If the player is near the Scientist Bookshelf, check bookshelf match

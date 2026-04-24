@@ -11,8 +11,8 @@ execute if data storage exigence:dungeon {tutorial:1} if entity @s[tag=Tutorial]
 execute as @s[scores={game.player.vault_code=3}] run function exigence:door/vault/silence/trial/loss
 
 # Return if the game is not active
-execute if data storage exigence:dungeon {is_active:0} run advancement revoke @s only exigence:listener/step_on_sculk
-execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
+execute if score game.is_active game.state matches 0 run advancement revoke @s only exigence:listener/step_on_sculk
+execute unless entity @s[tag=ActivePlayer] unless score game.is_active game.state matches 1 run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Queue revoke so they can get it again

@@ -45,7 +45,7 @@ execute at @s run playsound minecraft:entity.enderman.teleport ui @s ~ ~100 ~ 10
 # TEMP TESTING
 #scoreboard players set Fallback Tutorial 1001
 #spawnpoint @a[tag=Tutorial] 80 123 143
-#execute as @n[distance=..1000,type=marker,tag=TutorialMarker,scores={TutorialMarkerID=37}] run tag @s add Fallback
+#execute as @n[distance=..1000,type=minecraft:marker,tag=TutorialMarker,scores={TutorialMarkerID=37}] run tag @s add Fallback
 #kill @s
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

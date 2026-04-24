@@ -46,7 +46,7 @@ execute if score Silence TrialTimer matches 659 as @a[scores={dead=0,game.player
 
 scoreboard players remove SilencePlatform TrialTimer 1
 
-execute if score SilencePlatform TrialTimer matches ..0 as @e[type=marker,tag=SilencePlatform] at @s run function exigence:door/vault/silence/trial/platform/step
+execute if score SilencePlatform TrialTimer matches ..0 as @e[type=minecraft:marker,tag=SilencePlatform] at @s run function exigence:door/vault/silence/trial/platform/step
 
 #====================================================================================================
 ## Tick cleanup

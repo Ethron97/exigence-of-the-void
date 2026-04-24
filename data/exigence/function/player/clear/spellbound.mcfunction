@@ -13,9 +13,6 @@
 # DEBUG
 #$say Give item loop $(type).$(index)
 
-# Sanity
-execute unless entity @e[type=minecraft:armor_stand,tag=intermediary] run summon minecraft:armor_stand -382.47 37.00 -115.34 {Tags:[intermediary],ShowArms:1b}
-
 # Return if index is too high
 $execute if score 27 number matches ..$(index) run return 1
 #----------------------------------------------------------------------------------------------------
@@ -23,9 +20,9 @@ $execute if score 27 number matches ..$(index) run return 1
 # Reset score
 scoreboard players set #clear Temp 0
 
-$item replace entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] weapon.mainhand from entity @s $(type).$(index)
+$item replace entity @e[x=536,y=0,z=488,dx=0,dy=0,dz=0,type=minecraft:armor_stand,tag=intermediary] weapon.mainhand from entity @s $(type).$(index)
 
-$execute if data entity @e[type=minecraft:armor_stand,tag=intermediary,limit=1] {equipment:{mainhand:{components:{"minecraft:custom_data":{card_name:'$(card_name)'}}}}} run scoreboard players set #clear Temp 1
+$execute if data entity @e[x=536,y=0,z=488,dx=0,dy=0,dz=0,type=minecraft:armor_stand,tag=intermediary] {equipment:{mainhand:{components:{"minecraft:custom_data":{card_name:'$(card_name)'}}}}} run scoreboard players set #clear Temp 1
 
 $execute if score #clear Temp matches 1 run item replace entity @s $(type).$(index) with air
 execute if score #clear Temp matches 1 run return 1

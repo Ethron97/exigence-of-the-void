@@ -14,7 +14,7 @@ scoreboard players operation et.AddingTime game.effect_temp = et.BaseTime game.e
 function exigence:player/effects/private/update_effect/common_duration_mods
 #   Metabolism = +30 seconds * modifier
 scoreboard players set #temp game.effect_temp 600
-scoreboard players operation #temp game.effect_temp *= Metabolism Modifiers
+scoreboard players operation #temp game.effect_temp *= mod.metabolism game.modifiers
 execute if score et.FromCard game.effect_temp matches 1 run scoreboard players operation et.AddingTime game.effect_temp += #temp game.effect_temp
 
 # Multiply total add time by heighten modifier

@@ -1,9 +1,7 @@
 say [+4 🍒, +1 ☢]
 
 # Grow four berries
-scoreboard players add BerryQueue DungeonRun 4
+scoreboard players add berry.queue game.dungeon.temp 4
 
-# Increase StartingHazard by 1 on level 1
-tag @e[type=minecraft:armor_stand,scores={ObjectLevel=1},tag=HazardNode,tag=!StartingHazard,sort=random,limit=1] add StartingHazard
-
-
+# Increase starting hazard by 1 on level 1
+function exigence:hazard/starting_hazard/increase/1

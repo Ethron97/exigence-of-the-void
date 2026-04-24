@@ -12,12 +12,12 @@ data modify storage exigence:debug beacon set from storage temp debug
 
 
 # 2. Run commands depending on debug state
-$execute if data storage exigence:debug {beacon:1} as @e[type=minecraft:armor_stand,scores={ObjectLevel=$(levels)},tag=BeaconNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
+$execute if data storage exigence:debug {beacon:1} as @e[type=minecraft:armor_stand,scores={node.property.object_level=$(levels)},tag=BeaconNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
 execute if data storage exigence:debug {beacon:0} as @e[type=minecraft:armor_stand,tag=BeaconNode] run data merge entity @s {Glowing:0b,CustomNameVisible:0b,Invisible:1b,Marker:1b}
 
 # Glow ardor flame/embers on ground
-$execute if data storage exigence:debug {beacon:1} as @e[type=minecraft:item,scores={ObjectLevel=$(levels)},tag=ArdorFlame] run data modify entity @s Glowing set value true
+$execute if data storage exigence:debug {beacon:1} as @e[type=minecraft:item,scores={node.property.object_level=$(levels)},tag=ArdorFlame] run data modify entity @s Glowing set value true
 execute if data storage exigence:debug {beacon:0} as @e[type=minecraft:item,tag=ArdorFlame] run data modify entity @s Glowing set value false
 
-$execute if data storage exigence:debug {beacon:1} as @e[type=minecraft:item,scores={ObjectLevel=$(levels)},tag=ArdorEmber] run data modify entity @s Glowing set value true
+$execute if data storage exigence:debug {beacon:1} as @e[type=minecraft:item,scores={node.property.object_level=$(levels)},tag=ArdorEmber] run data modify entity @s Glowing set value true
 execute if data storage exigence:debug {beacon:0} as @e[type=minecraft:item,tag=ArdorEmber] run data modify entity @s Glowing set value false

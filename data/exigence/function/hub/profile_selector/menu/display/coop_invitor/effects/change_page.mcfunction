@@ -23,7 +23,7 @@ execute if score @s hub.entity.page_number matches ..0 run scoreboard players op
 
 scoreboard players operation #current_page Temp = @s hub.entity.page_number
 # Any head not on new page, move to storage
-execute as @e[type=item_display,tag=PlayerHeadDisplay,distance=..16] unless score @s hub.entity.player_head_page = #current_page Temp run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/hide_head
+execute as @e[type=minecraft:item_display,tag=PlayerHeadDisplay,distance=..16] unless score @s hub.entity.player_head_page = #current_page Temp run function exigence:hub/profile_selector/menu/display/coop_invitor/effects/hide_head
 
 # Load heads to page
 function exigence:hub/profile_selector/menu/display/coop_invitor/effects/load_page

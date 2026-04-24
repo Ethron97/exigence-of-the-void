@@ -30,16 +30,16 @@ execute if score Spire TrialTimer matches 2 run function exigence:door/vault/spi
 execute if score Spire TrialTimer matches 3 run function exigence:door/vault/spire/trial/proc/proc_next
 
 # Clear center platform
-execute if score Spire TrialTimer matches 60 run data modify entity @e[type=block_display,tag=SpireWarning,limit=1] Glowing set value false
-execute if score Spire TrialTimer matches 65 run data modify entity @e[type=block_display,tag=SpireWarning,limit=1] Glowing set value true
-execute if score Spire TrialTimer matches 70 run data modify entity @e[type=block_display,tag=SpireWarning,limit=1] Glowing set value false
-execute if score Spire TrialTimer matches 75 run data modify entity @e[type=block_display,tag=SpireWarning,limit=1] Glowing set value true
-execute if score Spire TrialTimer matches 80 run data modify entity @e[type=block_display,tag=SpireWarning,limit=1] Glowing set value false
-execute if score Spire TrialTimer matches 85 run data modify entity @e[type=block_display,tag=SpireWarning,limit=1] Glowing set value true
-execute if score Spire TrialTimer matches 90 run data modify entity @e[type=block_display,tag=SpireWarning,limit=1] Glowing set value false
-execute if score Spire TrialTimer matches 95 run data modify entity @e[type=block_display,tag=SpireWarning,limit=1] Glowing set value true
+execute if score Spire TrialTimer matches 60 run data modify entity @e[type=minecraft:block_display,tag=SpireWarning,limit=1] Glowing set value false
+execute if score Spire TrialTimer matches 65 run data modify entity @e[type=minecraft:block_display,tag=SpireWarning,limit=1] Glowing set value true
+execute if score Spire TrialTimer matches 70 run data modify entity @e[type=minecraft:block_display,tag=SpireWarning,limit=1] Glowing set value false
+execute if score Spire TrialTimer matches 75 run data modify entity @e[type=minecraft:block_display,tag=SpireWarning,limit=1] Glowing set value true
+execute if score Spire TrialTimer matches 80 run data modify entity @e[type=minecraft:block_display,tag=SpireWarning,limit=1] Glowing set value false
+execute if score Spire TrialTimer matches 85 run data modify entity @e[type=minecraft:block_display,tag=SpireWarning,limit=1] Glowing set value true
+execute if score Spire TrialTimer matches 90 run data modify entity @e[type=minecraft:block_display,tag=SpireWarning,limit=1] Glowing set value false
+execute if score Spire TrialTimer matches 95 run data modify entity @e[type=minecraft:block_display,tag=SpireWarning,limit=1] Glowing set value true
 execute if score Spire TrialTimer matches 100 run fill -355 155 -9 -357 155 -11 air
-execute if score Spire TrialTimer matches 100 run kill @e[type=block_display,tag=SpireWarning]
+execute if score Spire TrialTimer matches 100 run kill @e[type=minecraft:block_display,tag=SpireWarning]
 
 # Pre-trial time titles
 execute if score Spire TrialTimer matches 0 as @a[scores={dead=0,game.player.vault_code=5},tag=ActivePlayer] run function exigence:door/vault/_trial/titles/3

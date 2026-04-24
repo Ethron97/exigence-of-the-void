@@ -46,11 +46,11 @@ execute if score Dune TrialTimer matches 659 as @a[scores={dead=0,game.player.va
 ## TRIAL FUNCTIONALITY
 
 # Reduce SkullTimer
-scoreboard players remove @e[type=item_display,scores={SkullTimer=1..},tag=DuneSkull] SkullTimer 1
+scoreboard players remove @e[type=minecraft:item_display,scores={SkullTimer=1..},tag=DuneSkull] SkullTimer 1
 
 # Move skulls
-execute as @e[type=item_display,scores={SkullTimer=0},tag=DuneSkull,tag=White] run function exigence:door/vault/dune/trial/skull/white/move
-execute as @e[type=item_display,scores={SkullTimer=0},tag=DuneSkull,tag=Black] run function exigence:door/vault/dune/trial/skull/black/move
+execute as @e[type=minecraft:item_display,scores={SkullTimer=0},tag=DuneSkull,tag=White] run function exigence:door/vault/dune/trial/skull/white/move
+execute as @e[type=minecraft:item_display,scores={SkullTimer=0},tag=DuneSkull,tag=Black] run function exigence:door/vault/dune/trial/skull/black/move
 
 # Reduce skull trial timer
 scoreboard players remove Skulls TrialTimer 1
@@ -59,8 +59,8 @@ scoreboard players remove Skulls TrialTimer 1
 execute if score Skulls TrialTimer matches ..0 unless score Dune TrialTimer matches 630.. run function exigence:door/vault/dune/trial/skull/proc_skulls
 
 # PLay sound if player is within 2 blocks of any skills
-execute at @e[type=item_display,tag=DuneSkull,tag=White] positioned ~ ~-1 ~ as @a[scores={dead=0,game.player.vault_code=2},tag=ActivePlayer,distance=..2] run playsound minecraft:entity.skeleton.step hostile @s ~ ~ ~ 0.5 1.3
-execute at @e[type=item_display,tag=DuneSkull,tag=Black] positioned ~ ~-1 ~ as @a[scores={dead=0,game.player.vault_code=2},tag=ActivePlayer,distance=..2] run playsound minecraft:entity.wither_skeleton.step hostile @s ~ ~ ~ 0.5 1.3
+execute at @e[type=minecraft:item_display,tag=DuneSkull,tag=White] positioned ~ ~-1 ~ as @a[scores={dead=0,game.player.vault_code=2},tag=ActivePlayer,distance=..2] run playsound minecraft:entity.skeleton.step hostile @s ~ ~ ~ 0.5 1.3
+execute at @e[type=minecraft:item_display,tag=DuneSkull,tag=Black] positioned ~ ~-1 ~ as @a[scores={dead=0,game.player.vault_code=2},tag=ActivePlayer,distance=..2] run playsound minecraft:entity.wither_skeleton.step hostile @s ~ ~ ~ 0.5 1.3
 
 # Check if player is near any skulls. If yes, game loss
 #   If near feet, middle, or head

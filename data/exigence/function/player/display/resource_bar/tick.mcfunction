@@ -8,10 +8,10 @@
 #====================================================================================================
 
 # Full / standard (default)
-execute at @s unless score @s career.settings.resource_actionbar_style matches 1.. unless entity @e[type=minecraft:armor_stand,tag=ExitNode,distance=..2] run function exigence:player/display/resource_bar/full/update
+execute at @s unless score @s career.settings.resource_actionbar_style matches 1.. unless entity @e[type=minecraft:marker,tag=ExitNode,distance=..2] run function exigence:player/display/resource_bar/full/update
 
 # "Efficient"
-execute at @s if score @s career.settings.resource_actionbar_style matches 1 unless entity @e[type=minecraft:armor_stand,tag=ExitNode,distance=..2] run function exigence:player/display/resource_bar/efficient/update
+execute at @s if score @s career.settings.resource_actionbar_style matches 1 unless entity @e[type=minecraft:marker,tag=ExitNode,distance=..2] run function exigence:player/display/resource_bar/efficient/update
 
 # Numeric / simple (least laggy)
-execute at @s if score @s career.settings.resource_actionbar_style matches 2 unless entity @e[type=minecraft:armor_stand,tag=ExitNode,distance=..2] run function exigence:player/display/resource_bar/numeric/update
+execute at @s if score @s career.settings.resource_actionbar_style matches 2 unless entity @e[type=minecraft:marker,tag=ExitNode,distance=..2] run function exigence:player/display/resource_bar/numeric/update

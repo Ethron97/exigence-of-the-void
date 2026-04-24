@@ -12,8 +12,8 @@
 #say (D3) Show description
 
 # Kill description if exists (so they don't pile up.)
-kill @n[type=text_display,tag=SettingDescription,distance=..1]
-kill @n[type=text_display,tag=SettingDescriptionTitle,distance=..1]
+kill @n[type=minecraft:text_display,tag=SettingDescription,distance=..1]
+kill @n[type=minecraft:text_display,tag=SettingDescriptionTitle,distance=..1]
 
 # Summon text display
 #,background:2017213500

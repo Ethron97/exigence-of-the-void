@@ -32,4 +32,4 @@ execute if score @s profile.data.winloss.attempts_total matches 1.. run say (D2)
 execute in exigence:profile_data run tp @s 0.5 1.0 -73.5
 
 # Only archive if at least one run was attempted with this profile; Otherwise, kill it.
-execute unless score @s profile.data.winloss.attempts_total matches 1.. run kill @s[type=marker,tag=ProfileNode]
+execute unless score @s profile.data.winloss.attempts_total matches 1.. run kill @s[type=minecraft:marker,tag=ProfileNode]

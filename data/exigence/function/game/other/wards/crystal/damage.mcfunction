@@ -16,8 +16,8 @@ scoreboard players operation #compare game.story.ward_crystal.node_id = @s game.
 
 # Remove 1 random item display with matching ID
 execute as @e[type=minecraft:item_display,tag=CrystalDisplay] if score @s game.story.ward_crystal.node_id = #compare game.story.ward_crystal.node_id run tag @s add RandomDestroy
-execute as @e[type=item_display,tag=RandomDestroy,sort=random,limit=1] run kill @s
-tag @e[type=item_display,tag=RandomDestroy] remove RandomDestroy
+execute as @e[type=minecraft:item_display,tag=RandomDestroy,sort=random,limit=1] run kill @s
+tag @e[type=minecraft:item_display,tag=RandomDestroy] remove RandomDestroy
 
 # Remove 1 from game.story.wards score
 $scoreboard players remove ward.$(color) game.story.wards 1

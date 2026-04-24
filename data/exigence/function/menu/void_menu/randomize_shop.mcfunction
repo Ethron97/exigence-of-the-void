@@ -20,10 +20,10 @@ summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","helmet_deck"]}
 
 # Select X random from the markers
 #   Default of 3, can be 4-6 if cards played
-execute if score VoidShopSlots Modifiers matches 3 run tag @e[type=minecraft:marker,tag=RandomVoid,distance=..1,sort=random,limit=3] add SelectedVoid
-execute if score VoidShopSlots Modifiers matches 4 run tag @e[type=minecraft:marker,tag=RandomVoid,distance=..1,sort=random,limit=4] add SelectedVoid
-execute if score VoidShopSlots Modifiers matches 5 run tag @e[type=minecraft:marker,tag=RandomVoid,distance=..1,sort=random,limit=5] add SelectedVoid
-execute if score VoidShopSlots Modifiers matches 6 run tag @e[type=minecraft:marker,tag=RandomVoid,distance=..1,sort=random,limit=6] add SelectedVoid
+execute if score mod.void_shop_slots game.modifiers matches 3 run tag @e[type=minecraft:marker,tag=RandomVoid,distance=..1,sort=random,limit=3] add SelectedVoid
+execute if score mod.void_shop_slots game.modifiers matches 4 run tag @e[type=minecraft:marker,tag=RandomVoid,distance=..1,sort=random,limit=4] add SelectedVoid
+execute if score mod.void_shop_slots game.modifiers matches 5 run tag @e[type=minecraft:marker,tag=RandomVoid,distance=..1,sort=random,limit=5] add SelectedVoid
+execute if score mod.void_shop_slots game.modifiers matches 6 run tag @e[type=minecraft:marker,tag=RandomVoid,distance=..1,sort=random,limit=6] add SelectedVoid
 
 # Reset data
 data modify storage exigence:void_shop selected set value []

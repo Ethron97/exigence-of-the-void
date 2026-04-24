@@ -12,17 +12,17 @@ data modify storage exigence:debug treasure set from storage temp debug
 
 
 # 2. Run commands depending on debug state
-$execute if data storage exigence:debug {treasure:1} as @e[type=minecraft:armor_stand,scores={ObjectLevel=$(levels)},tag=TreasureNodeBox] run function exigence:treasure/node/debug/create_bb
+$execute if data storage exigence:debug {treasure:1} as @e[type=minecraft:armor_stand,scores={node.property.object_level=$(levels)},tag=TreasureNodeBox] run function exigence:treasure/node/debug/create_bb
 execute if data storage exigence:debug {treasure:0} as @e[type=minecraft:armor_stand,tag=TreasureNodeBox] run function exigence:treasure/node/debug/remove_bb
 
-$execute if data storage exigence:debug {treasure:1} as @e[type=minecraft:item,scores={ObjectLevel=$(levels)},tag=VaultKey] run data modify entity @s Glowing set value true
+$execute if data storage exigence:debug {treasure:1} as @e[type=minecraft:item,scores={game.entity.object_level=$(levels)},tag=VaultKey] run data modify entity @s Glowing set value true
 execute if data storage exigence:debug {treasure:0} as @e[type=minecraft:item,tag=VaultKey] run data modify entity @s Glowing set value false
-$execute if data storage exigence:debug {treasure:1} as @e[type=minecraft:item,scores={ObjectLevel=$(levels)},tag=Coin] run data modify entity @s Glowing set value true
+$execute if data storage exigence:debug {treasure:1} as @e[type=minecraft:item,scores={game.entity.object_level=$(levels)},tag=Coin] run data modify entity @s Glowing set value true
 execute if data storage exigence:debug {treasure:0} as @e[type=minecraft:item,tag=Coin] run data modify entity @s Glowing set value false
-$execute if data storage exigence:debug {treasure:1} as @e[type=minecraft:item,scores={ObjectLevel=$(levels)},tag=Sherd] run data modify entity @s Glowing set value true
+$execute if data storage exigence:debug {treasure:1} as @e[type=minecraft:item,scores={game.entity.object_level=$(levels)},tag=Sherd] run data modify entity @s Glowing set value true
 execute if data storage exigence:debug {treasure:0} as @e[type=minecraft:item,tag=Sherd] run data modify entity @s Glowing set value false
-$execute if data storage exigence:debug {treasure:1} as @e[type=minecraft:item,scores={ObjectLevel=$(levels)},tag=LevelKey] run data modify entity @s Glowing set value true
+$execute if data storage exigence:debug {treasure:1} as @e[type=minecraft:item,scores={game.entity.object_level=$(levels)},tag=LevelKey] run data modify entity @s Glowing set value true
 execute if data storage exigence:debug {treasure:0} as @e[type=minecraft:item,tag=LevelKey] run data modify entity @s Glowing set value false
 
-$execute if data storage exigence:debug {treasure:1} as @e[type=minecraft:armor_stand,scores={ObjectLevel=$(levels)},tag=TreasureNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
+$execute if data storage exigence:debug {treasure:1} as @e[type=minecraft:armor_stand,scores={node.property.object_level=$(levels)},tag=TreasureNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
 execute if data storage exigence:debug {treasure:0} as @e[type=minecraft:armor_stand,tag=TreasureNode] run data merge entity @s {Glowing:0b,CustomNameVisible:0b,Invisible:1b,Marker:1b}

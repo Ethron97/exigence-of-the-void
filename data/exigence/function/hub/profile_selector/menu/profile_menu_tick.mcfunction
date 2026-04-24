@@ -30,7 +30,7 @@ execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=!OldHover,tag=Hove
 tag @e[type=minecraft:item_display,tag=OldHover,distance=..16] remove OldHover
 #====================================================================================================
 # Deselect any open menus if the player walks away
-execute as @n[type=item_display,tag=CreationProcess,distance=..16] at @s unless entity @a[distance=..6] run function exigence:hub/profile_selector/menu/display/profile/create_new_cancel with entity @s item.components."minecraft:custom_data"
+execute as @n[type=minecraft:item_display,tag=CreationProcess,distance=..16] at @s unless entity @a[distance=..6] run function exigence:hub/profile_selector/menu/display/profile/create_new_cancel with entity @s item.components."minecraft:custom_data"
 
 #====================================================================================================
 # If sneaking, change color to red of all loaded

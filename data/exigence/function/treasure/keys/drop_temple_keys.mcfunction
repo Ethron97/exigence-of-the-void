@@ -1,5 +1,5 @@
 # Pick treasure node to drop key on
-execute as @e[type=minecraft:armor_stand,scores={ObjectLevel=2},tag=TreasureNode,tag=!L0,tag=!KeyDropper,tag=!KeyBlacklist,sort=random,limit=1] run function exigence:treasure/keys/private/drop_key_2
+execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=2},tag=TreasureNode,tag=!L0,tag=!KeyDropper,tag=!KeyBlacklist,sort=random,limit=1] run function exigence:treasure/keys/private/drop_key_2
 
 # Progress iteration
 scoreboard players remove #i Temp 1

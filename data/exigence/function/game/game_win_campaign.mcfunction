@@ -1,7 +1,7 @@
 # Called when a full playthrough is won (by lighting all of the beacons)
 
 # Set escape portal to 1 so that the game_win thinks the game actually won
-data modify storage exigence:dungeon escape_portal set value 1
+scoreboard players set game.escape_portal game.state 1
 
 # Add tag "Exalting" or something
 tag @a[tag=ActivePlayer] add Exalting
@@ -10,7 +10,7 @@ tag @a[tag=ActivePlayer] add Exalting
 function exigence:game/game_off
 
 # Kill all items
-kill @e[type=item]
+kill @e[type=minecraft:item]
 
 say The beacons are lit, the Ardor return to destroy the Watchers!
 

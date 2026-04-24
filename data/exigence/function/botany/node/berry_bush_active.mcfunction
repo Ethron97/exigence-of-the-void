@@ -1,7 +1,7 @@
 # Sets a berry node to active
 
 ## CONSTRAINTS
-#   AS BerryNode armorstand
+#   AS BerryNode
 
 #====================================================================================================
 
@@ -20,5 +20,5 @@ execute at @s run setblock ~ ~1 ~ light[level=3]
 
 # Add active tag to interaction
 #   DEPRECATED?>!@
-#scoreboard players operation #compare NodeID = @s NodeID
-#execute as @e[type=minecraft:interaction,tag=BerryInteract] if score @s NodeID = #compare NodeID run tag @s add Active
+#scoreboard players operation #compare node.id = @s node.id
+#execute as @e[type=minecraft:interaction,tag=BerryInteract] if score @s node.id = #compare node.id run tag @s add Active

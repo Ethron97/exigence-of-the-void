@@ -19,8 +19,8 @@ execute store result storage exigence:temp score int 1 run scoreboard players ge
 # Update times played and processed
 function exigence:cards/get_times_scores with entity @s equipment.mainhand.components."minecraft:custom_data"
 
-# Update card id from Deck score
-execute store result storage exigence:temp id int 1 run scoreboard players get @s Deck
+# Update card id from game.deck score
+execute store result storage exigence:temp id int 1 run scoreboard players get @s game.deck
 
 # Initialize blank variables so macro functions
 data modify storage exigence:temp spellsling set value ""

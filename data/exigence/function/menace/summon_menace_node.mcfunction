@@ -1,5 +1,5 @@
 # Create a new node with tag "NewNode"
-execute at @s as @s run function exigence:game/new_node
+execute at @s as @s run function exigence:game/admin/new_node
 
 # Give name and tags
 execute as @e[type=minecraft:armor_stand,tag=NewNode] run data modify entity @s CustomName set value {text:"MenaceNode",color:"dark_purple",italic:false}

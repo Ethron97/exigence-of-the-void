@@ -5,16 +5,19 @@
 ## CONSTRAINTS
 #   AS Item (NewLevelKey)
 
+## INPUT
+#   SCORE #compare 
+
 #====================================================================================================
 
-#say summoning level key
+#say (D3) summoning level key
 
 # Add to Treasure scoreboard team (for glow color)
 team join Treasure @s
 tag @s add Treasure
 
 # Copy object level
-scoreboard players operation @s ObjectLevel = #compare ObjectLevel
+scoreboard players operation @s game.entity.object_level = #compare node.property.object_level
 
 # Ensure item wont despawn
 data modify entity @s Age set value -32768

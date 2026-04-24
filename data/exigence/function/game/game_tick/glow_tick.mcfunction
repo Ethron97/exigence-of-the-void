@@ -1,9 +1,17 @@
+# Called as entity with glow remaining
+
+## CONSTRAINTS
+#   #glowable (item, ravager, warden)
+
+#====================================================================================================
+
 # Reduce game.entity.glow_remaining
-scoreboard players remove @e[type=#exigence:glowable,scores={game.entity.glow_remaining=1..}] game.entity.glow_remaining 1
+scoreboard players remove @s game.entity.glow_remaining 1
 
 # For entities
-effect give @e[type=#exigence:glowable_enemies,scores={game.entity.glow_remaining=1..}] minecraft:glowing 1 0 true
+execute if entity @s[type=!minecraft:item] run return run effect give @s minecraft:glowing 1 0 true
+#----------------------------------------------------------------------------------------------------
 
 # Toggle glow for items
-execute as @e[type=minecraft:item,scores={game.entity.glow_remaining=1..},nbt=!{Glowing:1b}] run data modify entity @s Glowing set value true
-execute as @e[type=minecraft:item,scores={game.entity.glow_remaining=0},nbt={Glowing:1b}] run data modify entity @s Glowing set value false
+execute as @e[scores={game.entity.glow_remaining=1..},nbt=!{Glowing:1b}] run data modify entity @s Glowing set value true
+execute if score @s game.entity.glow_remaining matches 0 run data modify entity @s Glowing set value false

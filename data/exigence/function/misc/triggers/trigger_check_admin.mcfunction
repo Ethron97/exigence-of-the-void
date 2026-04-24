@@ -16,3 +16,5 @@ execute if score @s TpGame matches -2147483647..2147483647 unless score @s TpGam
 execute if score @s TpHub matches -2147483647..2147483647 unless score @s TpHub matches 0 run function exigence:misc/triggers/tp/tp_hub
 execute if score @s TpOldHub matches -2147483647..2147483647 unless score @s TpOldHub matches 0 run function exigence:misc/triggers/tp/tp_old_hub
 execute if score @s TpProfileData matches -2147483647..2147483647 unless score @s TpProfileData matches 0 run function exigence:misc/triggers/tp/tp_profile_data
+execute if score @s TpGameController matches -2147483647..2147483647 unless score @s TpGameController matches 0 run function exigence:misc/triggers/tp/tp_game_controller
+execute if score @s TpProfileSelector matches -2147483647..2147483647 unless score @s TpProfileSelector matches 0 run function exigence:misc/triggers/tp/tp_profile_selectors

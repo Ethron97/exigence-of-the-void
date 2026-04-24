@@ -14,12 +14,12 @@ execute at @s run playsound entity.player.levelup player @s ~ ~100 ~ 100 1
 
 scoreboard players operation #compare hub.player_entity.query_idid = @s hub.player_entity.query_idid
 # Find the player head that corresponds to
-execute in exigence:hub as @e[x=-98,y=0,z=798,dx=244,dy=256,dz=16,type=item_display,tag=PlayerHeadDisplay] if score @s IDID = #compare hub.player_entity.query_idid \
+execute in exigence:hub as @e[x=-98,y=0,z=798,dx=244,dy=256,dz=16,type=minecraft:item_display,tag=PlayerHeadDisplay] if score @s IDID = #compare hub.player_entity.query_idid \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/invite/invite_accepted with entity @s item.components."minecraft:custom_data"
 
 scoreboard players operation #compare career.player_id = @s career.player_id
 # Update the status display for this player
-execute in exigence:hub as @e[x=-98,y=0,z=798,dx=244,dy=256,dz=16,type=text_display,tag=StatusDisplay] if score @s hub.entity.player_id = #compare career.player_id \
+execute in exigence:hub as @e[x=-98,y=0,z=798,dx=244,dy=256,dz=16,type=minecraft:text_display,tag=StatusDisplay] if score @s hub.entity.player_id = #compare career.player_id \
 run function exigence:hub/profile_selector/menu/display/coop_invitor/status/update_joined
 
 # Put the current player into Limbo
@@ -27,10 +27,10 @@ run function exigence:hub/profile_selector/menu/display/coop_invitor/status/upda
 execute at @s as @n[tag=SlotDisplay,tag=Selected,distance=..20] run function exigence:hub/profile_selector/menu/display/profile/deselect with entity @s item.components."minecraft:custom_data"
 
 # Cancel in-process creation
-execute at @s as @n[type=item_display,tag=SlotDisplay,tag=CreationProcess,distance=..20] run function exigence:hub/profile_selector/menu/display/profile/create_new_cancel with entity @s item.components."minecraft:custom_data"
+execute at @s as @n[type=minecraft:item_display,tag=SlotDisplay,tag=CreationProcess,distance=..20] run function exigence:hub/profile_selector/menu/display/profile/create_new_cancel with entity @s item.components."minecraft:custom_data"
 
 # Remove chests
-execute at @s as @n[type=marker,tag=ProfileSelectorNode,distance=..20] at @s run function exigence:hub/profile_selector/load/remove_chests
+execute at @s as @n[type=minecraft:marker,tag=ProfileSelectorNode,distance=..20] at @s run function exigence:hub/profile_selector/load/remove_chests
 
 # Update all displays (incase they go limbo-ed off of a coop profile)
 function exigence:hub/profile_selector/menu/display/text_displays/player_list_display/reload_all_displays

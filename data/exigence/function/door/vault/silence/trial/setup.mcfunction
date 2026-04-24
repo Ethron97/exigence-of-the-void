@@ -13,7 +13,7 @@ summon minecraft:marker -413.5 152.1 14.5 {Tags:["SilenceTrialSetup","SilencePla
 
 # Randomize starting direction and prep step
 execute store result score #silence_previous Random run random value 0..3
-execute as @e[type=marker,tag=SilencePlatform] at @s run function exigence:door/vault/silence/trial/platform/prep_step
+execute as @e[type=minecraft:marker,tag=SilencePlatform] at @s run function exigence:door/vault/silence/trial/platform/prep_step
 
 # Replace end portal
 fill -406 148 22 -422 148 6 end_portal replace black_concrete

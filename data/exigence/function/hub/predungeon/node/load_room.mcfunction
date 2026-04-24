@@ -35,4 +35,4 @@ execute positioned ~-6.49 ~ ~ rotated -90 0 summon marker run function exigence:
 execute positioned ~ ~ ~5.49 run function exigence:hub/predungeon/menu/load_menu
 
 # Initialize "state"
-scoreboard players set #predungeon_state Temp 0
+scoreboard players set predungeon.door_state hub.room_misc 0

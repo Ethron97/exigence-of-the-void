@@ -25,8 +25,8 @@ execute if score @s game.node.node_state matches 2 run function exigence:altar/n
 damage @p[tag=Lighting] 2 minecraft:generic
 
 # If game is inactive, return here
-execute unless data storage exigence:dungeon {is_active:1} run return 1
-execute if score @s ObjectLevel matches 10 run return 1
+execute unless score game.is_active game.state matches 1 run return 1
+execute if score @s node.property.object_level matches 10 run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Give player score

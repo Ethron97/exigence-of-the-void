@@ -5,8 +5,8 @@
 # DEUBG
 #say Generate drop block
 
-execute unless entity @e[type=marker,tag=BoltThrower] run say Bolt thrower not found
-execute unless entity @e[type=marker,tag=BoltThrower] run return 1
+execute unless entity @e[type=minecraft:marker,tag=BoltThrower] run say Bolt thrower not found
+execute unless entity @e[type=minecraft:marker,tag=BoltThrower] run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Randomize rotation
@@ -20,4 +20,4 @@ execute if score #random Random matches 1 store result storage exigence:trial le
 execute if score #random Random matches 2..3 store result storage exigence:trial length float 0.1 run random value 31..50
 
 # Call macro
-execute as @e[type=marker,tag=BoltThrower] run function exigence:door/vault/bolt/trial/drop_block/generate_single_b with storage exigence:trial
+execute as @e[type=minecraft:marker,tag=BoltThrower] run function exigence:door/vault/bolt/trial/drop_block/generate_single_b with storage exigence:trial

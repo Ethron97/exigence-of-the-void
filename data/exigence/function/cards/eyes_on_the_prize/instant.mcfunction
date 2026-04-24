@@ -2,4 +2,4 @@
 say [+1 cards available each refresh in the Ember Shop]
 
 # Functionality
-scoreboard players add BonusCards Modifiers 1
+scoreboard players add mod.bonus_cards game.modifiers 1

@@ -18,4 +18,4 @@ fill -377 80 -117 -377 82 -115 air
 summon minecraft:blaze -375.5 81.0 -115.5 {Tags:["L2","DataMerge","RedStairs"],CustomName:{text:"Singe",color:"gold",italic:false},PersistenceRequired:1b}
 
 # Setup blazes
-execute as @e[type=blaze,tag=!Setuped] run function exigence:enemy/blaze/setup_blazes
+execute as @e[type=minecraft:blaze,tag=!Setuped] run function exigence:enemy/blaze/setup_blazes

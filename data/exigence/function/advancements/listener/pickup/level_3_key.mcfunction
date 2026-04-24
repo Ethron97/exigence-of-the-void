@@ -4,7 +4,7 @@
 advancement revoke @s only exigence:listener/pickup/level_3_key
 
 # Return if game is not active
-execute unless entity @s[tag=ActivePlayer] unless data storage exigence:dungeon {is_active:1} run return 1
+execute unless entity @s[tag=ActivePlayer] unless score game.is_active game.state matches 1 run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Replace key with give key
@@ -15,7 +15,7 @@ execute as @s run function exigence:player/give/level_3_key
 function exigence:advancements/listener/pickup/level_key_generic
 
 # Kill all level keys of the current active level
-execute at @s as @e[type=minecraft:item,scores={ObjectLevel=3},tag=LevelKey,distance=..1000] run kill @s
+execute at @s as @e[type=minecraft:item,scores={game.entity.object_level=3},tag=LevelKey,distance=..1000] run kill @s
 
 # Update got score
 scoreboard players set 3.got_key game.level_doors 1

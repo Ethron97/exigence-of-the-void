@@ -8,4 +8,4 @@
 
 #====================================================================================================
 
-$kill @n[type=block_display,scores={IDID=$(idid)},tag=PopBlock,distance=..16]
+$kill @n[type=minecraft:block_display,scores={IDID=$(idid)},tag=PopBlock,distance=..16]

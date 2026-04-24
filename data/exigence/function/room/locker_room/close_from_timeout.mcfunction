@@ -10,7 +10,7 @@
 scoreboard players operation #compare hub.room.room_id = @s hub.room.room_id
 
 # Close the room down
-execute in exigence:hub positioned 0 200 0 as @e[type=marker,tag=LockerRoomNode,distance=..100] \
+execute in exigence:hub positioned 0 200 0 as @e[type=minecraft:marker,tag=LockerRoomNode,distance=..100] \
 if score @s hub.entity.room_id = #compare hub.room.room_id at @s run function exigence:hub/locker_room/node/unload_room
 
 # Add queued functions to player node(s)

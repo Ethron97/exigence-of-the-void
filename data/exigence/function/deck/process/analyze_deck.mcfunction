@@ -1,10 +1,11 @@
 # Analyze deck
+#   ALL /try_analyze functions are now controlled by a python script
 
 ## CONTRAINTS
 #   AS/AT profile node
 
 #====================================================================================================
-execute unless entity @n[type=marker,tag=ProfileNode,distance=..0.01] run return run tellraw @a {text:"Analyze deck was not run on a profile node",color:"red"}
+execute unless entity @n[type=minecraft:marker,tag=ProfileNode,distance=..0.01] run return run tellraw @a {text:"Analyze deck was not run on a profile node",color:"red"}
 #====================================================================================================
 
 #say (D3) Analyze deck (new)
@@ -182,7 +183,6 @@ function exigence:cards/backup_plan/analyze/try_analyze
 function exigence:cards/claustrophobia/analyze/try_analyze
 function exigence:cards/exigence/analyze/try_analyze
 function exigence:cards/key_master/analyze/try_analyze
-function exigence:cards/mending/analyze/try_analyze
 function exigence:cards/oblivion/analyze/try_analyze
 function exigence:cards/tranquility/analyze/try_analyze
 function exigence:cards/final_ascension/analyze/try_analyze

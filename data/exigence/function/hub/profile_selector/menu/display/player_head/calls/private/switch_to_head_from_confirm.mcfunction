@@ -12,7 +12,7 @@
 #say (D3) Switch from confirm to head
 
 # Load player head menu
-$execute at @s as @n[type=item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..16] at @s \
+$execute at @s as @n[type=minecraft:item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..16] at @s \
 run function exigence:hub/profile_selector/menu/display/profile/effects/summon_player_head_selectors
 
 # Shift confirm up

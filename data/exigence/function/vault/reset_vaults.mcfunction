@@ -47,19 +47,19 @@ function exigence:door/vault/flow/close
 
 ## Setup vault
 # Level 1
-execute as @e[type=marker,tag=PotMarker,tag=host] at @s run function exigence:door/vault/host/setup_pots
-execute as @e[type=marker,tag=PotMarker,tag=raiser] at @s run function exigence:door/vault/raiser/setup_pots
-execute as @e[type=marker,tag=PotMarker,tag=rib] at @s run function exigence:door/vault/rib/setup_pots
-execute as @e[type=marker,tag=PotMarker,tag=shaper] at @s run function exigence:door/vault/shaper/setup_pots
-execute as @e[type=marker,tag=PotMarker,tag=tide] at @s run function exigence:door/vault/tide/setup_pots
-execute as @e[type=marker,tag=PotMarker,tag=wayfinder] at @s run function exigence:door/vault/wayfinder/setup_pots
+execute as @e[type=minecraft:marker,tag=PotMarker,tag=host] at @s run function exigence:door/vault/host/setup_pots
+execute as @e[type=minecraft:marker,tag=PotMarker,tag=raiser] at @s run function exigence:door/vault/raiser/setup_pots
+execute as @e[type=minecraft:marker,tag=PotMarker,tag=rib] at @s run function exigence:door/vault/rib/setup_pots
+execute as @e[type=minecraft:marker,tag=PotMarker,tag=shaper] at @s run function exigence:door/vault/shaper/setup_pots
+execute as @e[type=minecraft:marker,tag=PotMarker,tag=tide] at @s run function exigence:door/vault/tide/setup_pots
+execute as @e[type=minecraft:marker,tag=PotMarker,tag=wayfinder] at @s run function exigence:door/vault/wayfinder/setup_pots
 # Level 2
-execute as @e[type=marker,tag=PotMarker,tag=snout] at @s run function exigence:door/vault/snout/setup_pots
-execute as @e[type=marker,tag=PotMarker,tag=wild] at @s run function exigence:door/vault/wild/setup_pots
-execute as @e[type=marker,tag=PotMarker,tag=sentry] at @s run function exigence:door/vault/sentry/setup_pots
-execute as @e[type=marker,tag=PotMarker,tag=vex] at @s run function exigence:door/vault/vex/setup_pots
-execute as @e[type=marker,tag=PotMarker,tag=coast] at @s run function exigence:door/vault/coast/setup_pots
-execute as @e[type=marker,tag=PotMarker,tag=ward] at @s run function exigence:door/vault/ward/setup_pots
+execute as @e[type=minecraft:marker,tag=PotMarker,tag=snout] at @s run function exigence:door/vault/snout/setup_pots
+execute as @e[type=minecraft:marker,tag=PotMarker,tag=wild] at @s run function exigence:door/vault/wild/setup_pots
+execute as @e[type=minecraft:marker,tag=PotMarker,tag=sentry] at @s run function exigence:door/vault/sentry/setup_pots
+execute as @e[type=minecraft:marker,tag=PotMarker,tag=vex] at @s run function exigence:door/vault/vex/setup_pots
+execute as @e[type=minecraft:marker,tag=PotMarker,tag=coast] at @s run function exigence:door/vault/coast/setup_pots
+execute as @e[type=minecraft:marker,tag=PotMarker,tag=ward] at @s run function exigence:door/vault/ward/setup_pots
 # Level 3 pot setups handled on trial win
 
 

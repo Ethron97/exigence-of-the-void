@@ -18,6 +18,6 @@ $summon minecraft:item_display ~ ~ ~ {Rotation:$(Rotation),CustomName:{text:"Ite
 # Assign data
 scoreboard players operation #input hub.entity.profile_id = @s hub.entity.profile_id
 scoreboard players operation #input hub.entity.coop_profile_id = @s hub.entity.coop_profile_id
-execute as @n[type=item_display,tag=NewItemDisplay,distance=..1] run function exigence:hub/deck_analyzer/refresh_button/load_refresh_button_data
+execute as @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..1] run function exigence:hub/deck_analyzer/refresh_button/load_refresh_button_data
 
 # Local tag to be removed by function that implements this

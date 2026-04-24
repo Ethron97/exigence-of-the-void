@@ -8,10 +8,8 @@
 ## EFFECTS
 effect clear @s
 
-
 # Return to adventure
 gamemode adventure @s
-
 
 ## TAGS
 tag @a[tag=Exalting] remove Exalting
@@ -22,14 +20,11 @@ tag @s remove Trial
 tag @s remove Crucible
 tag @s remove HandleInteracting
 
-
 ## SCOREBOARD
-scoreboard players set @s RoomToken 0
-function exigence:game/game_reset/reset_player_scores
+function exigence:scoreboard/generated_functions/reset_on_death
 
 # Reset advancements
-function exigence:game/game_reset/reset_advancements
-
+function exigence:game/reset/reset_advancements
 
 ## ATTRIBUTES
 attribute @s minecraft:safe_fall_distance modifier add exigence:safe_fall 100 add_value

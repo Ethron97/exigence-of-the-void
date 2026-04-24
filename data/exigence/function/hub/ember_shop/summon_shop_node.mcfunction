@@ -17,7 +17,7 @@ execute as @e[type=minecraft:marker,tag=NewMarker] run tag @s add EmberShopNode
 team join Ember @e[type=minecraft:marker,tag=NewMarker]
 
 # Clear object level score
-scoreboard players reset @e[type=minecraft:marker,tag=NewMarker] ObjectLevel
+scoreboard players reset @e[type=minecraft:marker,tag=NewMarker] node.property.object_level
 
 # Set rarity score
 $scoreboard players set @e[type=minecraft:marker,tag=NewMarker] Rarity $(rarity)

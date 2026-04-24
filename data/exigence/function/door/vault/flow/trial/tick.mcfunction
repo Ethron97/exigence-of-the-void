@@ -55,8 +55,8 @@ execute if entity @a[scores={dead=0,game.player.vault_code=6},tag=ActivePlayer,t
 #execute if entity @a[tag=ActivePlayer,scores={dead=0,game.player.vault_code=6},tag=Crucible] if score Flow TrialTimer matches 420 run function exigence:door/vault/flow/trial/pattern/new_pattern
 
 # Reduce pattern timer
-scoreboard players remove @e[type=marker,scores={PatternTimer=1..},tag=Pattern] PatternTimer 1
-execute as @e[type=marker,scores={PatternTimer=0},tag=Pattern,tag=Wave] at @s run function exigence:door/vault/flow/trial/pattern/wave/ripple/new_ripple with entity @s
+scoreboard players remove @e[type=minecraft:marker,scores={PatternTimer=1..},tag=Pattern] PatternTimer 1
+execute as @e[type=minecraft:marker,scores={PatternTimer=0},tag=Pattern,tag=Wave] at @s run function exigence:door/vault/flow/trial/pattern/wave/ripple/new_ripple with entity @s
 
 # Advance ripples
 execute as @e[type=minecraft:block_display,scores={PatternSpeed=1},tag=Ripple] at @s run tp @s ^ ^ ^0.04
@@ -66,7 +66,7 @@ execute as @e[type=minecraft:block_display,scores={PatternSpeed=4},tag=Ripple] a
 execute as @e[type=minecraft:block_display,scores={PatternSpeed=5},tag=Ripple] at @s run tp @s ^ ^ ^0.1
 
 # Kill ripple if it is in a block
-execute as @e[type=minecraft:block_display,tag=Ripple] at @s unless block ~ ~ ~ air run kill @s[type=block_display,tag=Ripple]
+execute as @e[type=minecraft:block_display,tag=Ripple] at @s unless block ~ ~ ~ air run kill @s[type=minecraft:block_display,tag=Ripple]
 
 # If player is on ground, check for loss
 execute if entity @a[scores={game.player.vault_code=6},tag=ActivePlayer,nbt={OnGround:1b}] as @e[type=minecraft:block_display,tag=Ripple] at @s run function exigence:door/vault/flow/trial/pattern/wave/ripple/trigger

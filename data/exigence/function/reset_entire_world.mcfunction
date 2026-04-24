@@ -37,10 +37,6 @@ function exigence:misc/setup_functions/initialize_global_settings
 say 7. Recreating item shop
 execute in exigence:hub positioned -43.5 200.0 0.5 run function exigence:hub/item_shop/recreate
 
-# TODO move cooldown initializers
-# Delay after breaking ravager glass before it comes back
-scoreboard players set #RavagerGlassCooldownLimit game.entity.ravager_glass.cooldown 20
-
 # Prevent online players from needing to tp/remove tags (because when the scoreboard is replaced, it would detect null as != 0)
 scoreboard players set @a quits 0
 team leave @a

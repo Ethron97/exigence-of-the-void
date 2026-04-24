@@ -14,4 +14,4 @@ execute if score #random Random matches 1 run summon minecraft:blaze -447.5 232.
 execute if score #random Random matches 2 run summon minecraft:blaze -449.5 232.0 -212.5 {Tags:["L4","DataMerge","FireTowerB"],CustomName:{text:"Nova",color:"gold",italic:false},PersistenceRequired:1b}
 
 # Setup blazes
-execute as @e[type=blaze,tag=!Setuped] run function exigence:enemy/blaze/setup_blazes
+execute as @e[type=minecraft:blaze,tag=!Setuped] run function exigence:enemy/blaze/setup_blazes

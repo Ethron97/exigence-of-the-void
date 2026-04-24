@@ -8,7 +8,7 @@
 #   INT head_player_id (from data.components."minecraft:custom_data)"
 
 #====================================================================================================
-execute unless entity @s[type=item_display,tag=PlayerHeadDisplay] run return 1
+execute unless entity @s[type=minecraft:item_display,tag=PlayerHeadDisplay] run return 1
 #====================================================================================================
 
 # Kill self unless player is found with matching score AND that player has invites enabled
