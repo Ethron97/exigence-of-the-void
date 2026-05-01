@@ -7,7 +7,7 @@
 execute unless entity @n[type=minecraft:marker,tag=ProfileNode,distance=..0.01] run return run tellraw @a {text:"Process deck was not run on a profile node",color:"red"}
 #====================================================================================================
 
-say (D3) Process deck
+#say (D3) Process deck
 
 # Reset Highest
 scoreboard players set #highest game.deck 0

@@ -31,7 +31,7 @@ scoreboard players reset @s hub.player.room_id
 # CHECK IF THERE ARE OTHER PLAYERS ON THE ROOM NODE
 scoreboard players set #other_players Temp 0
 #   If yes, earlyu return so we don't kill the room node/unload the room
-execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] if score @s player.node.room_id = #compare hub.player.room_id \
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode,scores={player.node.room_id=1..}] if score @s player.node.room_id = #compare hub.player.room_id \
 run scoreboard players set #other_players Temp 1
 
 #   Also reset to the pre-button menu if there are other players in the room

@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say (D3) I escaped
+#say (D3) I escaped
 
 # If portal is not yet opened, and game is coop, open the portal
 execute if score game.escape_portal game.state matches 0 if score game.player_count game.state matches 2.. at @s as @n[type=minecraft:marker,tag=ExitNode,distance=..10] run function exigence:game/exit/exit_portal/open

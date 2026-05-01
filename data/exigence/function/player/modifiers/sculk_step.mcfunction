@@ -19,10 +19,10 @@ scoreboard players set #temp Temp 8
 execute if score @s game.player.mod.sculk_boots matches 1 run scoreboard players set #temp Temp 6
 execute if score @s game.player.mod.sculk_boots matches 2 run scoreboard players set #temp Temp 4
 execute if score @s game.player.mod.sculk_boots matches 3 run scoreboard players set #temp Temp 1
-execute at @s[scores={game.player.active_level=1}] as @e[type=minecraft:warden,scores={game.entity.object_level=1},sort=nearest,limit=1] run scoreboard players operation @s game.warden.awareness += #temp Temp
-execute at @s[scores={game.player.active_level=2}] as @e[type=minecraft:warden,scores={game.entity.object_level=2},sort=nearest,limit=1] run scoreboard players operation @s game.warden.awareness += #temp Temp
-execute at @s[scores={game.player.active_level=3}] as @e[type=minecraft:warden,scores={game.entity.object_level=3},sort=nearest,limit=1] run scoreboard players operation @s game.warden.awareness += #temp Temp
-execute at @s[scores={game.player.active_level=4}] as @e[type=minecraft:warden,scores={game.entity.object_level=4},sort=nearest,limit=1] run scoreboard players operation @s game.warden.awareness += #temp Temp
+execute at @s[scores={game.player.active_level=1}] as @n[type=minecraft:warden,scores={game.entity.object_level=1}] run scoreboard players operation @s game.warden.awareness += #temp Temp
+execute at @s[scores={game.player.active_level=2}] as @n[type=minecraft:warden,scores={game.entity.object_level=2}] run scoreboard players operation @s game.warden.awareness += #temp Temp
+execute at @s[scores={game.player.active_level=3}] as @n[type=minecraft:warden,scores={game.entity.object_level=3}] run scoreboard players operation @s game.warden.awareness += #temp Temp
+execute at @s[scores={game.player.active_level=4}] as @n[type=minecraft:warden,scores={game.entity.object_level=4}] run scoreboard players operation @s game.warden.awareness += #temp Temp
 
 
 # If sculk boots = -1, give speed and jump boost

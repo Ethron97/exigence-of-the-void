@@ -9,7 +9,7 @@
 # Value of 0 means it will close room as soon as it detects no players.
 
 # Default 15 seconds
-scoreboard players set @s hub.room.max_timeout 300
+scoreboard players set @s hub.room.max_timeout 30
 
 # Room specific
 #   Set Tutorial to very short, because who cares if you lose progress. You can skip forward.

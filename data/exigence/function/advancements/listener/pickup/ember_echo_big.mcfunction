@@ -8,9 +8,9 @@ clear @s[tag=Tutorial] minecraft:campfire
 execute as @s[tag=Tutorial] run function exigence:player/give/ember
 execute as @s[tag=Tutorial] run scoreboard players add @s profile.data.ember.cr.embers_echo_picked_up 10
 
-
-# Remove the advancement early (thereby cancelling the rest of this function) if the game is not active
-execute unless entity @s[tag=ActivePlayer] unless score game.is_active game.state matches 1 run return 1
+# Return if the game is not active or this player is not active
+execute if score game.is_active game.state matches 0 run return 1
+execute unless entity @s[tag=ActivePlayer] run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Delete the pickup item from their inventory

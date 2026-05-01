@@ -21,10 +21,19 @@ scoreboard players set game.ticks tick_counter 0
 scoreboard players set card.draw.cooldown tick_counter 0
 scoreboard players set card.play.cooldown tick_counter 0
 
+# Resources
+scoreboard players set green.max game.resources 2
+scoreboard players set red.max game.resources 2
+scoreboard players set aqua.max game.resources 2
+scoreboard players set green.current game.resources 0
+scoreboard players set red.current game.resources 0
+scoreboard players set aqua.current game.resources 0
+
 # Dungeon run scores
 # GAME STATE
 scoreboard players set game.all_echos_found game.state 0
 scoreboard players set game.escape_portal game.state 0
+
 scoreboard players set game.active_level game.state 1
 scoreboard players set game.ascend_level game.state 1
 scoreboard players set game.beacons_lit game.state 0
@@ -36,13 +45,31 @@ scoreboard players set game.dead_players game.state 0
 # game.profile_difficulty
 # game.player_count
 
+# LEVEL DOORS
+#   Default/start at 1 key per level;
+#   On level door load, we will set to 0 if the level isn't active (so we clear out any unused card keys too)
+scoreboard players set 1.keys_to_drop game.level_doors 1
+scoreboard players set 2.keys_to_drop game.level_doors 1
+scoreboard players set 3.keys_to_drop game.level_doors 1
+
+scoreboard players set 1.opened game.level_doors 0
+scoreboard players set 2.opened game.level_doors 0
+scoreboard players set 3.opened game.level_doors 0
+scoreboard players set 1.keys_dropped game.level_doors 0
+scoreboard players set 2.keys_dropped game.level_doors 0
+scoreboard players set 3.keys_dropped game.level_doors 0
+scoreboard players set 1.got_key game.level_doors 0
+scoreboard players set 2.got_key game.level_doors 0
+scoreboard players set 3.got_key game.level_doors 0
+
 # DUNGEON
 scoreboard players set .min_menace game.dungeon 0
 scoreboard players set .menace game.dungeon 0
-scoreboard players set .menace_block game.dungeon 0
+scoreboard players set menace.block game.dungeon 0
 scoreboard players set .hazard game.dungeon 0
 scoreboard players set .cards game.dungeon 0
 scoreboard players set .fatigue game.dungeon 0
+scoreboard players set game.puzzle_candles game.dungeon 0
 
 # TEMP
 scoreboard players set card.queue game.dungeon.temp 0
@@ -141,9 +168,6 @@ scoreboard players operation card.play.cooldown tick_counter = #CardPlayCooldown
 
 # Lowest interval of heartbeats
 scoreboard players set #minHeartbeatDelay tick_counter 9
-
-# Max attempts of a treasure node before giving up treasure drop
-scoreboard players set #MaxTreasureDroppingIterations node.treasure.drop_working 10
 
 # Delay before a menace node can trigger from player presence again
 scoreboard players set #MenaceNodeCooldownLimit game.node.menace.cooldown 200

@@ -68,8 +68,8 @@ execute as @s[tag=!Angry] if score @s game.warden.awareness >= #anger_threshold 
 # un-aggroed warden basically a 50/50 for when the ping happens. Because it goes from 0 to you're dead in 0.1 seconds
 #   Get target
 tag @a[tag=NewTarget] remove NewTarget
-execute as @s[tag=!Angry] if entity @a[scores={dead=0,game.player.vault_code=0,game.player.sculk_step_cooldown=1..},tag=ActivePlayer] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run tag @a[scores={dead=0,game.player.vault_code=0,game.player.sculk_step_cooldown=1..},tag=ActivePlayer,sort=nearest,limit=1] add NewTarget
-execute as @s[tag=!Angry] unless entity @a[scores={dead=0,game.player.vault_code=0,game.player.sculk_step_cooldown=1..},tag=ActivePlayer] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run tag @a[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer,sort=nearest,limit=1] add NewTarget
+execute as @s[tag=!Angry] if entity @a[scores={dead=0,game.player.vault_code=0,game.player.sculk_step_cooldown=1..},tag=ActivePlayer] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run tag @p[scores={dead=0,game.player.vault_code=0,game.player.sculk_step_cooldown=1..},tag=ActivePlayer] add NewTarget
+execute as @s[tag=!Angry] unless entity @a[scores={dead=0,game.player.vault_code=0,game.player.sculk_step_cooldown=1..},tag=ActivePlayer] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run tag @p[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer] add NewTarget
 # Increment "wardens aggrod" score
 scoreboard players add @a[tag=NewTarget] profile.data.enemy.cr.wardens_angered 1
 

@@ -1,8 +1,9 @@
 #say pickup/level_1_key_key
 advancement revoke @s only exigence:listener/pickup/level_1_key
 
-# Return 1 if game is not active
-execute unless entity @s[tag=ActivePlayer] unless score game.is_active game.state matches 1 run return 1
+# Return if the game is not active or this player is not active
+execute if score game.is_active game.state matches 0 run return 1
+execute unless entity @s[tag=ActivePlayer] run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Replace key with give key
@@ -10,7 +11,7 @@ clear @s trial_key[custom_data={key_level:"1"}]
 execute as @s run function exigence:player/give/level_1_key
 
 # Call generic functions
-function exigence:advancements/listener/pickup/level_key_generic
+function exigence:advancements/listener/pickup/level_key/generic
 
 # Kill all level keys of the current active level
 execute at @s as @e[type=minecraft:item,scores={game.entity.object_level=1},tag=LevelKey,distance=..1000] run kill @s

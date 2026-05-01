@@ -2,8 +2,8 @@ scoreboard players operation Out.X game.mirror.setup = Mod.X game.mirror.setup
 scoreboard players operation Out.Y game.mirror.setup = Mod.Y game.mirror.setup
 scoreboard players operation Out.Z game.mirror.setup = Mod.Z game.mirror.setup
 
-scoreboard players operation Out.X game.mirror.setup *= #out Random
-scoreboard players operation Out.Z game.mirror.setup *= #out Random
+scoreboard players operation Out.X game.mirror.setup *= #in Random
+scoreboard players operation Out.Z game.mirror.setup *= #in Random
 
 scoreboard players operation Out.X game.mirror.setup += Start.X game.mirror.setup
 scoreboard players operation Out.Y game.mirror.setup += Start.Y game.mirror.setup
@@ -20,11 +20,11 @@ function exigence:mirror/mirrors/place_block with storage exigence:mirror
 scoreboard players operation Out.X game.mirror.setup = Mod.X game.mirror.setup
 scoreboard players operation Out.Z game.mirror.setup = Mod.Z game.mirror.setup
 
-scoreboard players operation Out.X game.mirror.setup *= #out Random
-scoreboard players operation Out.Z game.mirror.setup *= #out Random
+scoreboard players operation Out.X game.mirror.setup *= #in Random
+scoreboard players operation Out.Z game.mirror.setup *= #in Random
 
-scoreboard players operation Out.X game.mirror.setup *= -1 Random
-scoreboard players operation Out.Z game.mirror.setup *= -1 Random
+scoreboard players operation Out.X game.mirror.setup *= -1 number
+scoreboard players operation Out.Z game.mirror.setup *= -1 number
 
 scoreboard players operation Out.X game.mirror.setup += Mirror.X game.mirror.setup
 scoreboard players operation Out.Z game.mirror.setup += Mirror.Z game.mirror.setup

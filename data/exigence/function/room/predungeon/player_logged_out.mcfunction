@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-say (D3) Player logged out [predungeon]
+#say (D3) Player logged out [predungeon]
 
 # If state is still in menu, just reset to prebutton
 execute if score predungeon.door_state hub.room_misc matches 1..2 run return run execute \

@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say (D3) Resetting
+#say (D3) Resetting
 
 # Tag remove
 tag @s remove NeedReset

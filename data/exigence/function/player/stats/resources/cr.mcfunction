@@ -15,7 +15,7 @@ tellraw @s [{text:"Resources",italic:false,bold:false,color:"yellow","hover_even
 ,{text:"\nUnderflow ✖   ",color:"gray",italic:false,bold:false},{"score":{"name":"@s","objective":"profile.data.resources.cr.underflow_green"},color:"dark_green",bold:false}\
 ,{text:" / ",color:"gray",italic:false,bold:false},{"score":{"name":"@s","objective":"profile.data.resources.cr.underflow_red"},color:"red",bold:false}\
 ,{text:" / ",color:"gray",italic:false,bold:false},{"score":{"name":"@s","objective":"profile.data.resources.cr.underflow_aqua"},color:"aqua",bold:false}\
-,{text:"\nLeftover  ◎   ",color:"gray",italic:false,bold:false},{"score":{"name":"Current.Green","objective":"game.resources"},color:"dark_green",bold:false}\
-,{text:" / ",color:"gray",italic:false,bold:false},{"score":{"name":"Current.Red","objective":"game.resources"},color:"red",bold:false}\
-,{text:" / ",color:"gray",italic:false,bold:false},{"score":{"name":"Current.Aqua","objective":"game.resources"},color:"aqua",bold:false}\
+,{text:"\nLeftover  ◎   ",color:"gray",italic:false,bold:false},{"score":{"name":"green.current","objective":"game.resources"},color:"dark_green",bold:false}\
+,{text:" / ",color:"gray",italic:false,bold:false},{"score":{"name":"red.current","objective":"game.resources"},color:"red",bold:false}\
+,{text:" / ",color:"gray",italic:false,bold:false},{"score":{"name":"aqua.current","objective":"game.resources"},color:"aqua",bold:false}\
 ]}}]

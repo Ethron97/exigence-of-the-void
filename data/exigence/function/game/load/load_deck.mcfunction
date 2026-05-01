@@ -1,4 +1,5 @@
 # Scheduled from start_loading_sequence
+# Load deck
 
 #====================================================================================================
 execute if score predungeon.cancel_load hub.room_misc matches 1 run return fail

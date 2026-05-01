@@ -12,6 +12,7 @@ execute at @s run team join Echo @n[type=block_display,tag=EchoDebugDisplay,dist
 # Tags
 tag @s remove Active
 tag @s remove ChosenEchoNode
+tag @s remove PhantomNode
 
 # Setblock above echonodes clear light
 fill ~ ~1 ~ ~ ~1 ~ air replace light
@@ -23,3 +24,6 @@ scoreboard players reset @s game.node.echo.id
 # Waypoint
 waypoint modify @s style reset
 attribute @s waypoint_transmit_range base set 0
+
+# Add PhantomNode tag if "active" (on active level)
+execute if score @s node.property.object_level <= game.difficulty game.state run tag @s add PhantomNode

@@ -1,5 +1,7 @@
 # Responsible for deck timing management, such as card draws
 
+#====================================================================================================
+
 # CardDrawCooldown controls when cards get added to the draw queue
 scoreboard players remove card.draw.cooldown tick_counter 1
 execute if score card.draw.cooldown tick_counter matches ..0 run function exigence:deck/deck_tick/add_card_queue

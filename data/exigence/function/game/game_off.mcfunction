@@ -47,9 +47,6 @@ function exigence:bossbar/last_card/hide
 function exigence:bossbar/resource/hide
 function exigence:bossbar/objective/hide
 
-# Reset bookshelf on principal
-fill -481 62 -200 -473 64 -200 minecraft:chiseled_bookshelf[facing=south]
-
 # Hide trial bossbars in case game ended while one was active
 bossbar set exigence:trial_bolt visible false
 bossbar set exigence:trial_flow visible false
@@ -57,27 +54,3 @@ bossbar set exigence:trial_eye visible false
 bossbar set exigence:trial_silence visible false
 bossbar set exigence:trial_dune visible false
 bossbar set exigence:trial_spire visible false
-
-# Clear schedules
-schedule clear exigence:hazard/private/starting_hazard_loop
-schedule clear exigence:variance/setup/setup_loop
-schedule clear exigence:variance/level_3_stairs/crypt/variance_2
-schedule clear exigence:variance/level_3_stairs/crypt/variance_1
-schedule clear exigence:variance/level_3_stairs/guard/variance_1
-schedule clear exigence:variance/level_3_stairs/guard/variance_2
-schedule clear exigence:variance/level_3_stairs/main/variance_1
-schedule clear exigence:variance/level_3_stairs/main/variance_2
-schedule clear exigence:variance/level_3_stairs/crypt/variance_1
-schedule clear exigence:variance/level_3_stairs/crypt/variance_2
-schedule clear exigence:variance/level_3_stairs/guard/variance_2
-schedule clear exigence:variance/level_3_stairs/guard/variance_1
-schedule clear exigence:variance/level_3_stairs/main/variance_1
-schedule clear exigence:variance/level_3_stairs/main/variance_2
-schedule clear exigence:variance/level_3_stairs/crypt/variance_1
-schedule clear exigence:variance/level_3_stairs/crypt/variance_2
-schedule clear exigence:variance/level_3_stairs/guard/variance_1
-schedule clear exigence:variance/level_3_stairs/guard/variance_2
-schedule clear exigence:variance/level_3_stairs/main/variance_2
-schedule clear exigence:variance/level_3_stairs/main/variance_1
-schedule clear exigence:variance/level_3_stairs/guard/reset
-schedule clear exigence:variance/level_3_stairs/main/reset

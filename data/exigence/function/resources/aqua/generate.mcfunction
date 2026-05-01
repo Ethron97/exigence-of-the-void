@@ -11,7 +11,7 @@ execute if score #OverflowAqua game.resources matches 2 run data modify storage 
 execute if score #OverflowAqua game.resources matches 3 run data modify storage exigence:resource_hud aqua_overflow set value [{text:"∴∴∴",color:"aqua"}]
 
 # Add resource
-scoreboard players operation Current.Aqua game.resources += #AddedAqua game.resources
+scoreboard players operation aqua.current game.resources += #AddedAqua game.resources
 
 # Update scores
 scoreboard players operation @a[tag=ActivePlayer] profile.data.resources.cr.overflow_aqua += #OverflowAqua game.resources

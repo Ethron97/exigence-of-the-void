@@ -1,5 +1,4 @@
-# Responsible for loading all tutorial functionality
-#   Called when player first enters, or if they die/reset
+# Responsible for unloading tutorial
 
 ## CONSTRAINTS
 #   IN exigence:tutorial

@@ -1,9 +1,13 @@
-# Called by game on, setup altar nodes
+# Called by game load sequence
+
+## CONSTRAINTS
+#   IN minecraft:overworld
 
 #====================================================================================================
 
-# Setup altar nodes
-execute as @e[type=minecraft:armor_stand,tag=AltarNode] run function exigence:altar/node/setup
+## ALTAR NODES
+execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=AltarNode] at @s run function exigence:altar/node/setup
 
-# Activate candles if difficulty is at least 3
+## PUZZLE CANDLES
+# Setup candles if difficulty is at least 3
 execute if score game.difficulty game.state matches 3.. run function exigence:altar/puzzle/activate_candles

@@ -7,6 +7,10 @@
 
 #====================================================================================================
 
+# Not all vault altars are trial altars
+execute if entity @s[tag=!Trial,tag=!Crucible] run return fail
+#----------------------------------------------------------------------------------------------------
+
 # Copy vault code from altarnode to player
 scoreboard players operation @p[tag=Lighting] game.player.vault_code = @s node.property.altar.vault_code
 

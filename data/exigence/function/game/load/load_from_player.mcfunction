@@ -5,7 +5,9 @@
 
 #====================================================================================================
 
-say (D3) Load player related misc as primary player
+#say (D3) Load player related misc as primary player
+
+scoreboard players set @s game.player.player_number 1
 
 # Select "active" profile node(s)
 function exigence:profile/profile_node/select_active

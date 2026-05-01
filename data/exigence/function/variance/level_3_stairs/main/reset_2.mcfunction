@@ -4,7 +4,7 @@
 execute if score predungeon.cancel_load hub.room_misc matches 1 run return fail
 #----------------------------------------------------------------------------------------------------
 
-say (D3) Main reset (upper)
+#say (D3) Main reset (upper)
 
 # Testing Model
 #setblock -386 153 -21 birch_slab

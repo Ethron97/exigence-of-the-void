@@ -8,7 +8,7 @@
 #====================================================================================================
 
 # Make sure local tag is cleared
-tag @e[type=minecraft:item,tag=ClosestEchoShard] remove ClosestEchoShard
+tag @e[type=minecraft:item,tag=ClosestEchoShard,distance=..96] remove ClosestEchoShard
 
 # Tag closest echo on same level
 execute at @s[scores={game.player.active_level=1}] run tag @n[type=minecraft:item,scores={game.entity.object_level=1},tag=EchoShard,distance=..96] add ClosestEchoShard
@@ -17,7 +17,7 @@ execute at @s[scores={game.player.active_level=3}] run tag @n[type=minecraft:ite
 execute at @s[scores={game.player.active_level=4}] run tag @n[type=minecraft:item,scores={game.entity.object_level=4},tag=EchoShard,distance=..96] add ClosestEchoShard
 execute at @s[tag=Tutorial] run tag @n[type=minecraft:item,scores={game.entity.object_level=10},tag=EchoShard,distance=..96] add ClosestEchoShard
 
-# If no echo shard on same level, return
+# If no echo shard on same level (in distance), return
 #execute unless entity @e[type=minecraft:item,tag=ClosestEchoShard] run say No echo on same level found (within range)
 execute unless entity @e[type=minecraft:item,tag=ClosestEchoShard,distance=..96,limit=1] run return 1
 #----------------------------------------------------------------------------------------------------
@@ -28,6 +28,9 @@ scoreboard players operation #old_distance game.player.sound_ping.echo_distance 
 # Determine distance bracket
 function exigence:player/effects/detection/echo/get_distance_bracket
 
+# If ping echo distance is 10, no pings
+execute if score @s game.player.sound_ping.echo_distance matches 10 run return 1
+#----------------------------------------------------------------------------------------------------
 
 # PING SOUND IF:
 #   1. Player got closer since last ping OR
@@ -35,14 +38,6 @@ function exigence:player/effects/detection/echo/get_distance_bracket
 # So return if both are not true
 #execute if score @s game.player.sound_ping.echo_cooldown matches 1.. if score #old_distance game.player.sound_ping.echo_distance <= @s game.player.sound_ping.echo_distance run say No ping
 execute if score @s game.player.sound_ping.echo_cooldown matches 1.. if score #old_distance game.player.sound_ping.echo_distance <= @s game.player.sound_ping.echo_distance run return 1
-#----------------------------------------------------------------------------------------------------
-
-# If pingechocooldown is 0, default to 10
-#   This triggers if: Echo is on the same level but player is not close enough to ping (if player is close enough to ping this gets overwritten by the subcalls below)
-execute if score @s game.player.sound_ping.echo_cooldown matches 0 run scoreboard players set @s game.player.sound_ping.echo_cooldown 10
-
-# If ping echo distance is 10, no pings
-execute if score @s game.player.sound_ping.echo_distance matches 10 run return 1
 #----------------------------------------------------------------------------------------------------
 
 ## SUCCESSFUL PING

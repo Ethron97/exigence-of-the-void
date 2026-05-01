@@ -14,3 +14,4 @@ execute if entity @s[type=minecraft:ravager] run return run function exigence:ga
 execute if entity @s[type=minecraft:warden] run return run function exigence:game/game_tick/e_tick/e_tick_warden
 # Non-ravager/warden enemies:
 execute if entity @s[type=#exigence:enemy_misc] run return run function exigence:game/game_tick/e_tick/e_tick_enemy_other
+execute if entity @s[type=minecraft:villager] run return run function exigence:npc/game/e_tick

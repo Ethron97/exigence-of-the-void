@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # DEBUG
-#$say Trigger $(amount) menace from $(from)
+#$say (D3) Trigger $(amount) menace from $(from)
 
 # Get max before and extra
 scoreboard players operation #before_max Temp = 20 number

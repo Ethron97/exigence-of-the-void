@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # DEBUG
-#say Proc menace from sculk
+#say (D3) Proc menace from sculk
 
 # Always summon an eyeball
 #execute at @s run function exigence:menace/eyeball/summon_eyeball

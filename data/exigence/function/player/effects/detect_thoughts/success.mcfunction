@@ -11,4 +11,4 @@ title @a subtitle {text:"Key Revealed",italic:true,bold:false,color:"gold"}
 title @a title ""
 
 # Indicator line
-execute at @s facing entity @e[scores={game.ravager.detect_thoughts=60..},sort=nearest,limit=1] eyes run function exigence:player/effects/detect_thoughts/indicator_line
+execute at @s facing entity @n[scores={game.ravager.detect_thoughts=60..}] eyes run function exigence:player/effects/detect_thoughts/indicator_line

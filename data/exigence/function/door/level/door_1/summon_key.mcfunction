@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # DEBUG
-say (D3) Summon key
+#say (D3) Summon key (door 1)
 
 # Summon a new item
 summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:trial_key",count:1,components:{"minecraft:custom_model_data":{"strings":["level_1_key"]},"minecraft:custom_name":[{text:"⋉ Mirror Mines Key ⋊",color:"gold",italic:false}],"minecraft:custom_data":{key_level:"1"}}},Tags:["NewLevelKey","LevelKey","Key","Level1Key"]}

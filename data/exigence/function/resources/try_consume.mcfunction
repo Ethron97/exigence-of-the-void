@@ -2,12 +2,12 @@
 # /function exigence:resources/try_consume {green:#,red:#,aqua:#}
 
 # Clear title data
-data modify storage exigence:resource_hud green_consume set value ""
-data modify storage exigence:resource_hud red_consume set value ""
-data modify storage exigence:resource_hud aqua_consume set value ""
-data modify storage exigence:resource_hud green_fail set value ""
-data modify storage exigence:resource_hud red_fail set value ""
-data modify storage exigence:resource_hud aqua_fail set value ""
+data modify storage exigence:resource_hud green_consume set value {text:""}
+data modify storage exigence:resource_hud red_consume set value {text:""}
+data modify storage exigence:resource_hud aqua_consume set value {text:""}
+data modify storage exigence:resource_hud green_fail set value {text:""}
+data modify storage exigence:resource_hud red_fail set value {text:""}
+data modify storage exigence:resource_hud aqua_fail set value {text:""}
 
 scoreboard players set #LastConsumeResult game.resources 0
 
@@ -17,17 +17,17 @@ $scoreboard players set aqua.cost game.resources $(aqua)
 
 # DEBUG
 $say try consume $(green) green, $(red) red, $(aqua) aqua
-$execute unless score Current.Green game.resources matches $(green).. run say Not enough green
-$execute unless score Current.Red game.resources matches $(red).. run say Not enough red
-$execute unless score Current.Aqua game.resources matches $(aqua).. run say Not enough aqua
+$execute unless score green.current game.resources matches $(green).. run say Not enough green
+$execute unless score red.current game.resources matches $(red).. run say Not enough red
+$execute unless score aqua.current game.resources matches $(aqua).. run say Not enough aqua
 
 scoreboard players operation #MissingGreen game.resources = green.cost game.resources
 scoreboard players operation #MissingRed game.resources = red.cost game.resources
 scoreboard players operation #MissingAqua game.resources = aqua.cost game.resources
 
-scoreboard players operation #MissingGreen game.resources -= Current.Green game.resources
-scoreboard players operation #MissingRed game.resources -= Current.Red game.resources
-scoreboard players operation #MissingAqua game.resources -= Current.Aqua game.resources
+scoreboard players operation #MissingGreen game.resources -= green.current game.resources
+scoreboard players operation #MissingRed game.resources -= red.current game.resources
+scoreboard players operation #MissingAqua game.resources -= aqua.current game.resources
 
 scoreboard players operation #MissingGreen game.resources > 0 number
 scoreboard players operation #MissingRed game.resources > 0 number

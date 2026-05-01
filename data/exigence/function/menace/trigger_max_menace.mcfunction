@@ -1,34 +1,42 @@
 # Call from resolve_menace when max menace is reached
 
+## CONSTRAINTS
+#   IN minecraft:overworld
+
+#====================================================================================================
+execute unless dimension minecraft:overworld run return run say Trigger max menace called from not overworld?
+#----------------------------------------------------------------------------------------------------
+
+#say (D3) Max menace reached
+
 # Update storage
-data modify storage exigence:dungeon max_menace set value 1
+scoreboard players set game.max_menace game.state 1
 
 # Enable red vinette
 worldborder warning distance 300000
 
 # Playsound
-playsound minecraft:block.end_portal.spawn hostile @a 0 100 0 1000 1
+playsound minecraft:block.end_portal.spawn hostile @a[tag=ActivePlayer] 0 100 0 1000 1
 
 # Set bossbar color to red, and 100%
 bossbar set exigence:bossbar color red
 bossbar set exigence:bossbar value 100
-
 bossbar set exigence:last_card name {text:"!!! DANGER !!!",color:"red"}
 
 # Disable interactables
 execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=BerryNode] run function exigence:botany/node/berry_bush_inactive
-execute as @e[type=minecraft:armor_stand,tag=BellNode] run function exigence:bell/node/deactivate
-execute as @e[type=minecraft:armor_stand,tag=AltarNode] run function exigence:altar/node/remove_interaction
+execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=BellNode] at @s run function exigence:bell/node/deactivate
+execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=AltarNode] at @s run function exigence:altar/node/remove_interaction
 
-# Increase ravager follow range
-execute as @e[type=minecraft:ravager] run attribute @s follow_range base set 200
+# Increase ravager follow range (we're setting this as the default already)
+#execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:ravager] run attribute @s follow_range base set 200
 
 # Let's not disable beacons.. so you can still win
 #execute as @e[type=minecraft:armor_stand,tag=BeaconNode] run function exigence:beacon/node/remove_interaction
 
 # Disable opening new vault doors
-kill @e[type=minecraft:item_display,tag=VaultHandle]
-kill @e[type=minecraft:interaction,tag=VaultHandle]
+kill @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:item_display,tag=VaultHandle]
+kill @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:interaction,tag=VaultHandle]
 
 # Allow ravagers up certain areas
 ## Cherry tree cave
@@ -48,4 +56,5 @@ setblock -323 16 -239 sculk
 scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.cr.max_menace_reached 1
 
 # Clear all spellbound cards, since they can't play them at max menace anyways.
+# TODO surely we can replace this functiuon with a partial data on /clear?
 execute as @a[tag=ActivePlayer] run function exigence:player/clear/all_spellbound {type:'hotbar',index:0}

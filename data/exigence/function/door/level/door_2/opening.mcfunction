@@ -4,7 +4,7 @@
 #====================================================================================================
 
 # DEBUG
-#say Opening door 2
+#say (D3) Opening door 2
 
 # Return if no one has InsertingKey score > 1
 execute unless score Door.2 game.door.inserting_key matches 1.. run return 1
@@ -12,7 +12,7 @@ execute unless score Door.2 game.door.inserting_key matches 1.. run return 1
 
 ## ANIMATION / SOUND SEQUENCE
 #   Interpolate key forward into the lock
-execute at @e[type=minecraft:item_display,tag=Door2Handle] run function exigence:door/level/door_2/opening_at
+execute positioned -384.5 132.0 -90.0 at @n[type=minecraft:item_display,tag=Door2Handle,distance=..10] run function exigence:door/level/door_2/opening_at
 
 #====================================================================================================
 # Remove inserting key

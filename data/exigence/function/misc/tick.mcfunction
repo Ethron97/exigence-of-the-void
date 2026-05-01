@@ -37,9 +37,6 @@ function exigence:profile/profile_tick
 
 # DEBUG
 #====================================================================================================
-# Temp testing
-#function exigence:mirror/mirrors/detect_approaches
-
 # Position debug
 execute as @a[tag=Admin,tag=!ActivePlayer] run function exigence:misc/predicate_debug
 # Update debug.node_counter automatically every second

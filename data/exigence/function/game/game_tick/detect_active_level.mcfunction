@@ -32,3 +32,5 @@ execute if score #ascend_level_old game.state < game.ascend_level game.state run
 # If not inside any active level, give wither I
 
 # If inside any active level, clear wither I
+
+#tellraw @a [{text:"Current active level: "},{score:{name:"game.active_level",objective:"game.state"}}]

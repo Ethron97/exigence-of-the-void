@@ -1,4 +1,5 @@
 # Tags the active profile of the input player
+#   ONLY CALLED BY GAME_LOAD
 
 ## CONSTRAINTS
 #   AS player

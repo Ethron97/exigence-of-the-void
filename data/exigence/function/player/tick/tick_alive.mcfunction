@@ -34,37 +34,24 @@ execute if score @s Temp matches 1.. run function exigence:player/use_item/phant
 # If player has any farstep, queue removal of the item
 execute if score @s game.player.effects.farstep matches 1.. run schedule function exigence:player/clear/farstepper 1t
 
-# If player has JUMPBOOST or Speed2+, give them step height
-#   Can probably relageted to every second
-execute if score seconds.cooldown tick_counter matches 2 run function exigence:player/attributes/step_height
-
-# Speed coalesce
-#   Fixes bug where lower level speed gets "lost" when you have higher level speed
-function exigence:player/effects/speed/should_coalesce
-
 # Refresh score to track who is holding echo(s)
 execute store result score @s game.player.echo_fragments run clear @s #exigence:echo 0
 execute if score @s game.player.echo_fragments = .echos_required game.dungeon.echo if score game.all_echos_found game.state matches 0 run function exigence:game/found_all_echos
 
-# Update active level
-function exigence:player/update_active_level
-
-# Item sounds
+# Echo item sounds
 execute if score game.all_echos_found game.state matches 0 run function exigence:player/sound/item_sounds/echo
+# Level Key item sounds
+function exigence:player/sound/item_sounds/level_key
 
 # Check for ravager glass
-function exigence:player/ravager_glass/check
+execute if entity @s[gamemode=adventure] run function exigence:player/ravager_glass/check
+
+# Move any carried entities along with the player
+execute if entity @s[tag=Carrying] as @e[type=minecraft:villager,tag=Carried,distance=..100,limit=1] run tp @s ~ ~2 ~
+
+# Re-reveal any blocks within 16 blocks that are not revealed, but were previously discovered
+execute if score @s game.player.active_level matches 1..2 as @e[type=minecraft:marker,tag=HiddenBlock,tag=Discovered,tag=ReflectionNO,tag=!Revealed,tag=!Appeared,distance=..16] at @s run function exigence:mirror/hidden_blocks/reveal_block
 
 #====================================================================================================
-## MODIFIERS
-# (Others are probably still under "player effect tick"
-
-# Gathering Storm (with speed)
-execute if score @s[predicate=exigence:effects/speed] game.player.mod.gathering_storm matches 1 run function exigence:player/modifiers/gathering_storm
-
-# Sunplate (speed)
-execute if score @s game.player.mod.sun_plate matches 5 if score seconds.cooldown tick_counter matches 4 run function exigence:player/modifiers/sun_plate_s_tick
-
-# Phantom Cloak (speed)
-execute if score @s game.player.mod.phantom_scales matches 7 if score seconds.cooldown tick_counter matches 4 run function exigence:player/modifiers/phantom_cloak_s_tick
-
+## SECOND-TICKS
+execute if score seconds.cooldown tick_counter matches 2 run function exigence:player/tick/tick_alive_second

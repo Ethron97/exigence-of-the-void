@@ -1,5 +1,7 @@
 # Easily accessible function we can use to test things
 scoreboard objectives add IDID dummy
+
+
 # Testing pot data merge for vault pot fills
 #$data merge block -261 17 -31 {item:{id:"$(id)",Count:$(Count),tag:$(tag)}}
 
@@ -8,7 +10,7 @@ scoreboard objectives add IDID dummy
 #schedule function exigence:enemy/distribute_ravagers 1t
 
 # Check if two menace nodes are within 16 blocks (meaning both could be triggered at the same time)
-#execute as @e[type=minecraft:armor_stand,tag=MenaceNode] at @s if entity @e[distance=..16,type=minecraft:armor_stand,tag=MenaceNode] run say I need personal space
+#execute as @e[type=minecraft:armor_stand,tag=marker] at @s if entity @e[distance=..16,type=minecraft:marker,tag=MenaceNode] run say I need personal space
 
 
 # Testing CartCache en masse

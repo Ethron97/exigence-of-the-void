@@ -30,8 +30,7 @@ execute if data storage exigence:dungeon_settings {stacked_coins:1} if score @s 
 execute if data storage exigence:dungeon_settings {stacked_coins:1} if score @s node.property.object_level matches 4 run scoreboard players set #stacksize Temp 4
 
 # Handle common coin function (removes NewCoin tag)
-execute as @e[type=minecraft:item,tag=NewCoin] at @s run function exigence:treasure/node/coin_data
-
+execute as @e[type=minecraft:item,tag=NewCoin,distance=..0.1] at @s run function exigence:treasure/node/coin_data
 
 # Increment coin dropped scores
 execute if score #Bonus Temp matches 0 if score @s node.property.object_level matches 1 run scoreboard players operation @a[tag=ActivePlayer] profile.data.treasure.cr.coins_dropped_L1 += #stacksize Temp

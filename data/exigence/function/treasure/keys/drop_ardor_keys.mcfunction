@@ -1,7 +1,14 @@
-#say Drop ardor keys
+# Called from drop_level_keys
+
+## CONSTRAINTS
+#   IN minecraft:overworld
+
+#====================================================================================================
+
+#say (D3) Drop ardor keys
 
 # Pick treasure node to drop key on
-execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=3},tag=TreasureNode,tag=!L0,tag=!KeyDropper,tag=!KeyBlacklist,sort=random,limit=1] run function exigence:treasure/keys/private/drop_key_3
+execute as @e[x=-306,y=113,z=33,dx=-168,dy=60,dz=-132,type=minecraft:marker,scores={node.property.object_level=3},tag=TreasureNode,tag=!KeyDropper,tag=!KeyBlacklist,sort=random,limit=1] run function exigence:treasure/keys/private/drop_key_3
 
 # Progress iteration
 scoreboard players remove #i Temp 1

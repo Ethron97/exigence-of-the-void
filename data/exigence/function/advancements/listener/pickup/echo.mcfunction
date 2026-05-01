@@ -8,11 +8,12 @@ execute as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/
 # Stop sound
 stopsound @s neutral minecraft:block.amethyst_block.resonate
 
-# Return if the game is not active
-execute unless entity @s[tag=ActivePlayer] unless score game.is_active game.state matches 1 run return 1
+# Return if the game is not active or this player is not active
+execute if score game.is_active game.state matches 0 run return 1
+execute unless entity @s[tag=ActivePlayer] run return 1
 #----------------------------------------------------------------------------------------------------
 
-say (D3) Pickup echo
+#say (D3) Pickup echo
 
 # Delete the music disc from their inventory
 clear @s minecraft:music_disc_relic 1

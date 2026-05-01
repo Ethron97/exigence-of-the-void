@@ -7,9 +7,9 @@
 #====================================================================================================
 
 # DEBUG
-#say open Door 3
+say (D3) Open Door 3
 
-tag @n[type=minecraft:armor_stand,tag=DoorNode,tag=Door3,distance=..10] add Open
+tag @n[type=minecraft:marker,tag=DoorNode,tag=Door3,distance=..10] add Open
 scoreboard players set 3.opened game.level_doors 1
 
 #====================================================================================================
@@ -38,4 +38,5 @@ kill @e[type=minecraft:interaction,tag=Door3Handle,distance=..10]
 
 # Clear level key from other players (if it was opened by a non-key method)
 clear @a trial_key[custom_model_data={strings:["level_3_key"]}]
-kill @e[type=minecraft:item,tag=Level3Key]
+# And the ground (if it was there...)
+kill @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:item,tag=Level3Key]

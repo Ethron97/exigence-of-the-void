@@ -11,10 +11,10 @@
 tag @e[type=minecraft:item,tag=ClosestArdorFlame] remove ClosestArdorFlame
 
 # Tag closest Flame on same level
-execute at @s[scores={game.player.active_level=1}] run tag @e[type=minecraft:item,scores={game.entity.object_level=1},tag=Ardor,sort=nearest,limit=1] add ClosestArdorFlame
-execute at @s[scores={game.player.active_level=2}] run tag @e[type=minecraft:item,scores={game.entity.object_level=2},tag=Ardor,sort=nearest,limit=1] add ClosestArdorFlame
-execute at @s[scores={game.player.active_level=3}] run tag @e[type=minecraft:item,scores={game.entity.object_level=3},tag=Ardor,sort=nearest,limit=1] add ClosestArdorFlame
-execute at @s[scores={game.player.active_level=4}] run tag @e[type=minecraft:item,scores={game.entity.object_level=4},tag=Ardor,sort=nearest,limit=1] add ClosestArdorFlame
+execute at @s[scores={game.player.active_level=1}] run tag @n[type=minecraft:item,scores={game.entity.object_level=1},tag=Ardor] add ClosestArdorFlame
+execute at @s[scores={game.player.active_level=2}] run tag @n[type=minecraft:item,scores={game.entity.object_level=2},tag=Ardor] add ClosestArdorFlame
+execute at @s[scores={game.player.active_level=3}] run tag @n[type=minecraft:item,scores={game.entity.object_level=3},tag=Ardor] add ClosestArdorFlame
+execute at @s[scores={game.player.active_level=4}] run tag @n[type=minecraft:item,scores={game.entity.object_level=4},tag=Ardor] add ClosestArdorFlame
 
 # If no Flame shard on same level, return
 #execute unless entity @e[type=minecraft:item,tag=ClosestArdorFlame] run say No Flame on same level found

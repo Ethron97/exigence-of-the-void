@@ -1,28 +1,44 @@
-# Convert node from armorstand to marker
+# Convert this node from armor stand to marker
 
 ## CONSTRAINTS
 #   AS/AT altar node
 
 #====================================================================================================
-execute unless entity @s[distance=..1,tag=AltarNode,type=minecraft:armor_stand,tag=!Converted] run return 1
-#====================================================================================================
+execute if entity @s[type=minecraft:armor_stand,tag=AltarNode,tag=Converted] run return run tellraw @a [{text:"TRIED TO CONVERT ALREADY CONVERTED ALTAR NODE",color:"red"}]
+execute if entity @s[type=minecraft:armor_stand,tag=!AltarNode] run return run tellraw @a [{text:"TRIED TO CONVERT NON-ALTAR NODE",color:"red"}]
+execute unless entity @s[type=minecraft:armor_stand,tag=AltarNode,distance=..0.01] run return run tellraw @a [{text:"TRIED TO CONVERT NOT @AT ALTAR NODE",color:"red"}]
+#----------------------------------------------------------------------------------------------------
 
 # MARK THIS ARMORSTAND NODE AS CONVERTED
 tag @s add Converted
 
-# Summon marker
-summon minecraft:marker ~ ~ ~ {Tags:["NewMarker"],CustomName:{text:"Marker | AltarNode"}}
+execute align xyz run summon minecraft:marker ~0.5 ~ ~0.5 {Tags:["NewNode","Node","AltarNode"],CustomName:{text:"Marker | AltarNode",color:"yellow",italic:false}}
 
-# Copy scores
-#   These will get captured in "copy data" step if we migrate them all to data before converting
-scoreboard players operation @n[type=minecraft:marker,tag=NewMarker,distance=..0.01] node.id = @s node.id
-scoreboard players operation @n[type=minecraft:marker,tag=NewMarker,distance=..0.01] ObjectLevel = @s ObjectLevel
+# Put object level into name
+execute if score @s node.property.object_level matches 1 run data modify entity @e[type=minecraft:marker,tag=NewNode,distance=..1,limit=1] CustomName set value {text:"Marker | AltarNode <1>",color:"yellow",italic:false}
+execute if score @s node.property.object_level matches 2 run data modify entity @e[type=minecraft:marker,tag=NewNode,distance=..1,limit=1] CustomName set value {text:"Marker | AltarNode <2>",color:"yellow",italic:false}
+execute if score @s node.property.object_level matches 3 run data modify entity @e[type=minecraft:marker,tag=NewNode,distance=..1,limit=1] CustomName set value {text:"Marker | AltarNode <3>",color:"yellow",italic:false}
+execute if score @s node.property.object_level matches 4 run data modify entity @e[type=minecraft:marker,tag=NewNode,distance=..1,limit=1] CustomName set value {text:"Marker | AltarNode <4>",color:"yellow",italic:false}
 
-# Copy data
-data modify entity @n[type=minecraft:marker,tag=NewMarker,distance=..0.01] data.custom_data set from entity @s data.custom_data
+# Assign team
+execute as @e[type=minecraft:marker,tag=NewNode,distance=..1] run team join Special @s
 
-# Team
-team join Special @n[type=minecraft:marker,tag=NewMarker,distance=..0.01]
+# Copy node id and save to data
+scoreboard players operation @e[type=minecraft:marker,tag=NewNode,distance=..1] node.id = @s node.id
+execute as @e[type=minecraft:marker,tag=NewNode,distance=..1] store result entity @s data.custom_data.node_id int 1 run scoreboard players get @s node.id
 
-# Copy tags (also removes local tag)
-data modify entity @n[type=minecraft:marker,tag=NewMarker,distance=..0.01] Tags set from entity @s Tags
+# Copy object level
+scoreboard players operation @e[type=minecraft:marker,tag=NewNode,distance=..1] node.property.object_level = @s node.property.object_level
+execute as @e[type=minecraft:marker,tag=NewNode,distance=..1] store result entity @s data.custom_data.object_level int 1 run scoreboard players get @s node.property.object_level
+
+# Copy vault code (if exists)
+execute if score @s node.property.altar.vault_code matches 1.. run scoreboard players operation @e[type=minecraft:marker,tag=NewNode,distance=..1] node.property.altar.vault_code = @s node.property.altar.vault_code
+execute if score @s node.property.altar.vault_code matches 1.. as @e[type=minecraft:marker,tag=NewNode,distance=..1] store result entity @s data.custom_data.vault_code int 1 run scoreboard players get @s node.property.altar.vault_code
+
+# Copy tags
+execute if entity @s[tag=VaultAltar] run tag @e[type=minecraft:marker,tag=NewNode,distance=..1] add VaultAltar
+execute if entity @s[tag=Trial] run tag @e[type=minecraft:marker,tag=NewNode,distance=..1] add Trial
+execute if entity @s[tag=Crucible] run tag @e[type=minecraft:marker,tag=NewNode,distance=..1] add Crucible
+
+# Remove local tag
+tag @e[type=minecraft:marker,tag=NewNode,distance=..1] remove NewNode

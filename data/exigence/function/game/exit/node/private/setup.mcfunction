@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-say (D3) Setup exit node
+#say (D3) Setup exit node
 
 # Remove local tag
 tag @s remove NewExitNode

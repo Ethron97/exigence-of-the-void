@@ -8,13 +8,7 @@
 # DEBUG
 #say (D3) Try enter tutorial
 
-# Check that no one else is currently in the tutorial
-execute if data storage exigence:dungeon {tutorial:1} run tellraw @s [{text:"The Tutorial is in use",color:"red"}]
-execute if data storage exigence:dungeon {tutorial:1} run tp @s 3.5 195.0 -64.5 -90 0
-execute if data storage exigence:dungeon {tutorial:1} run return fail
-#   TODO message changes if someone disconnected or if they're currently usin git
-#   Maybe let someone in immediately if someone DCs?
-# Involves tokens or something, incase someone disconnects from tutorial
+execute in exigence:hub if entity @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,scores={hub.room.room_type=1},tag=RoomNode] at @s run return run function exigence:tutorial/access/fail/in_use
 #----------------------------------------------------------------------------------------------------
 
 # Check that player has empty inventory

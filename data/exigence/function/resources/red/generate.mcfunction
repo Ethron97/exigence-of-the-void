@@ -11,7 +11,7 @@ execute if score #OverflowRed game.resources matches 2 run data modify storage e
 execute if score #OverflowRed game.resources matches 3 run data modify storage exigence:resource_hud red_overflow set value [{text:"∴∴∴",color:"dark_red"}]
 
 # Add resource
-scoreboard players operation Current.Red game.resources += #AddedRed game.resources
+scoreboard players operation red.current game.resources += #AddedRed game.resources
 
 # Update scores
 scoreboard players operation @a[tag=ActivePlayer] profile.data.resources.cr.overflow_red += #OverflowRed game.resources

@@ -1,3 +1,7 @@
 
+#====================================================================================================
+
+#say (D3) Update all candles
+
 # Light new candle that matches score
-execute as @e[type=minecraft:marker,tag=PuzzleCandle] if score @s game.story.puzzle_candle_id <= @a[tag=ActivePlayer,tag=PrimaryPlayer,limit=1] profile.story.puzzle_candles run function exigence:altar/puzzle/candle/trigger
+execute as @e[x=-415,y=151,z=-68,dx=18,dy=11,dz=23,type=minecraft:marker,tag=PuzzleCandle] run function exigence:altar/puzzle/candle/update

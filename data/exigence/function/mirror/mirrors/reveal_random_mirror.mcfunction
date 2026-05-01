@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-say Revealing
+say (D3) Revealing
 
 # Add tag
 tag @s add RevealedMirror

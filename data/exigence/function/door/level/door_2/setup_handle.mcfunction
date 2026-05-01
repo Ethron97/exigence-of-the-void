@@ -35,24 +35,22 @@ summon minecraft:item_display ^ ^ ^ {brightness:{block:15,sky:15},Rotation:[0.0f
 item:{id:"minecraft:nether_brick",count:1,components:{"minecraft:custom_model_data":{"strings":["door_lock_c"]}}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.0f,1.0f,1.0f]}}
 
-
-
+#====================================================================================================
 # Call common function to summon the circles of runes around the lock
 function exigence:door/level/common/summon_runes
 
 # Setup new runes
-execute as @e[type=minecraft:item_display,tag=NewRune] run function exigence:door/level/door_2/setup_handle_b
+execute as @e[type=minecraft:item_display,tag=NewRune,distance=..10] run function exigence:door/level/door_2/setup_handle_b
 
+#====================================================================================================
+# Summon enchanted barrier
+summon minecraft:item_display ^ ^ ^0.1 {brightness:{block:15,sky:15},Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["Door","Door2","DoorShimmer","Door2Shimmer"],\
+item:{id:"minecraft:light_blue_stained_glass_pane",count:1,components:{"minecraft:enchantments":{protection:1}}},\
+transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[4.9f,4.9f,1.0f]}}
 
-
+#====================================================================================================
 # Summon new interaction
 summon interaction ~ ~-2 ~ {Tags:["DoorHandle","NewDoorHandle","Door2Handle"],response:1b,width:2,height:4}
 
-
-
-# Copy score from bolt node
-scoreboard players operation @e[type=minecraft:item_display,tag=NewDoorHandle] DoorHandleID = @s node.id
-scoreboard players operation @e[type=interaction,tag=NewDoorHandle] DoorHandleID = @s node.id
-
 # Remove local tag
-tag @e[tag=NewDoorHandle] remove NewDoorHandle
+tag @e[tag=NewDoorHandle,distance=..10] remove NewDoorHandle

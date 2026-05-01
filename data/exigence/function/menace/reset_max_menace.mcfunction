@@ -1,7 +1,14 @@
 # Call from game off
 
+## CONSTRAINTS
+#   IN minecraft:overworld
+
+#====================================================================================================
+execute unless dimension minecraft:overworld run return run say Reset max menace called from not overworld?
+#----------------------------------------------------------------------------------------------------
+
 # Update storage
-data modify storage exigence:dungeon max_menace set value 0
+scoreboard players set game.max_menace game.state 0
 
 # Enable red vinette
 worldborder warning distance 0

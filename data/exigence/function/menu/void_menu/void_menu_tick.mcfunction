@@ -40,7 +40,7 @@ execute as @e[type=minecraft:enderman,tag=VoidMerchant] at @s if entity @e[type=
 execute as @e[type=minecraft:enderman,tag=VoidMerchant] at @s if entity @p[distance=..10] anchored eyes facing entity @p eyes run tp @s ~ ~ ~ ~ 0
 
 # Set vertical looking to zero
-#data modify entity @e[type=minecraft:enderman,tag=VoidMerchant,sort=nearest,limit=1] Rotation[1] set value 0.0f
+#data modify entity @n[type=minecraft:enderman,tag=VoidMerchant] Rotation[1] set value 0.0f
 
 # Load shops if player is near void merchants
 execute as @e[type=minecraft:enderman,tag=VoidMerchant,tag=!Loaded] at @s if entity @p[scores={dead=0},tag=ActivePlayer,tag=!VoidShopping,distance=..6] run function exigence:menu/void_menu/load

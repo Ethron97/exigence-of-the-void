@@ -34,13 +34,11 @@ function exigence:hub/item_shop/item/item_web_ball/reset
 execute as @e[type=minecraft:armor_stand,tag=Start] at @s run tp @s ~ ~ ~ 135 0
 
 # Reset altars
-execute as @e[type=minecraft:armor_stand,tag=AltarNode] run function exigence:altar/node/deactivate
 execute as @e[type=minecraft:armor_stand,tag=BeaconNode] run function exigence:beacon/node/deactivate
 
 scoreboard objectives setdisplay sidebar.team.dark_aqua
 scoreboard objectives setdisplay sidebar.team.dark_red
 
-function exigence:npc/game/reset_npcs
 
 # Reset vaults
 function exigence:vault/reset_vaults

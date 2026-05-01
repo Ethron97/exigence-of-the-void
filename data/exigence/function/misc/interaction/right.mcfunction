@@ -8,6 +8,9 @@
 
 #say right
 
+# Tag the player who interacted
+execute on target run tag @s add Interacting
+
 # Check for sub-function
 execute as @s[tag=FunctionInteraction] run function exigence:misc/interaction/function_right
 
@@ -18,6 +21,9 @@ execute as @s[tag=BeaconInteract] run function exigence:beacon/handle_interact
 execute as @s[tag=Crystal] run function exigence:game/other/wards/crystal/handle_interact
 execute as @s[tag=VaultHandle] run function exigence:door/vault/handle_interact
 execute as @s[tag=DoorHandle] run function exigence:door/level/handle_interact
+
+# Remove local tags
+execute on target run tag @s remove Interacting
 
 # Remove data to reset interact detection
 data remove entity @s interaction

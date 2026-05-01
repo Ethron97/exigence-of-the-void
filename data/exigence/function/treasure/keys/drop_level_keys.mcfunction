@@ -1,7 +1,14 @@
-say Drop level keys
+# Called from loading sequence
+
+## CONSTRAINTS
+#   IN minecraft:overworld
+
+#====================================================================================================
+
+say (D3) Drop level keys
 
 # Reset tag
-tag @e[type=minecraft:armor_stand,tag=KeyDropper] remove KeyDropper
+tag @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=KeyDropper] remove KeyDropper
 
 execute if score game.difficulty game.state matches 2.. run scoreboard players operation #i Temp = 1.keys_to_drop game.level_doors
 execute if score game.difficulty game.state matches 2.. if score #i Temp matches 1.. run function exigence:treasure/keys/drop_mirror_mine_keys

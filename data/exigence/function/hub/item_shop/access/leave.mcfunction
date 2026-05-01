@@ -24,13 +24,13 @@ scoreboard players reset @s shop.player.looking_at_idid
 scoreboard players operation #compare career.player_id = @s career.player_id
 scoreboard players operation #compare hub.player.room_id = @s hub.player.room_id
 
-execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15] \
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] \
 if score @s profile.node.player_id = #compare career.player_id run scoreboard players reset @s player.node.room_id
 scoreboard players reset @s hub.player.room_id
 
 # CHECK IF THERE ARE OTHER PLAYERS ON THE ROOM NODE
 #   If yes, earlyu return so we don't kill the room node/unload the room
-execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15] if score @s player.node.room_id = #compare hub.player.room_id \
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode,scores={player.node.room_id=1..}] if score @s player.node.room_id = #compare hub.player.room_id \
 run return 0
 #----------------------------------------------------------------------------------------------------
 

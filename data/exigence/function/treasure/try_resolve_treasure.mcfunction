@@ -2,6 +2,10 @@
 # Only gets called if TreasureQueue is 1..
 # - Primarily to simulate effects that reduce the chance of treasure, such as the Scout card
 
+#====================================================================================================
+
+#say (D3) Try resolve treasure
+
 # Reduce TreasureQueue by 1, regardless of whether treasure gets resolved
 scoreboard players remove treasure.queue game.dungeon.temp 1
 

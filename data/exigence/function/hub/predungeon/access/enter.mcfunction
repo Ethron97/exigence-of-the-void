@@ -36,7 +36,7 @@ execute if score @s profile.player.coop_profile_id matches 1.. in exigence:hub \
 run scoreboard players operation @n[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,scores={hub.room.room_type=2},tag=RoomNode] hub.entity.coop_profile_id = @s profile.player.coop_profile_id
 #   PLAYER/NODE
 scoreboard players operation @s hub.player.room_id = #next hub.room.room_id
-execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15] if score @s profile.node.player_id = #compare career.player_id \
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] if score @s profile.node.player_id = #compare career.player_id \
 run scoreboard players operation @s player.node.room_id = #next hub.room.room_id
 
 #====================================================================================================

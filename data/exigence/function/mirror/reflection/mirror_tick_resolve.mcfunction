@@ -1,67 +1,55 @@
 # Update reflection
 
 ## CONSTRAINTS
-#   AS player
+#   AS/AT mirror node
+
+## INPUT
+#   TAGGED player = Reflecting
+#   SCORE Player.X game.mirror.math
+#   SCORE Player.Y game.mirror.math
+#   SCORE Player.Z game.mirror.math
+#   SCORE Player.Looking.Angle game.mirror.math
+#   SCORE #compare game.player.player_number
 
 #====================================================================================================
 
-# DEBUG
 #say Reflecting
 
-# Add local tag
-tag @s add Reflecting
-
-# Update equipment
-execute as @e[type=minecraft:armor_stand,tag=Reflection,tag=Active] run function exigence:mirror/reflection/private/match_equipment
-
-# Mirror particles
-execute at @e[type=minecraft:armor_stand,tag=Reflection,tag=Active] run particle minecraft:smoke ~ ~0.6 ~ 0.1 0.2 0.1 0 5
-#execute at @e[type=minecraft:armor_stand,tag=Reflection,tag=Active] run particle minecraft:effect ~ ~ ~ 0 0 0 0.01 2
-
-# =======================================================================================================================
 # Calculate angle from player normal to the "mirror"
-execute as @e[type=minecraft:armor_stand,tag=Rotation,tag=Active] at @s anchored eyes facing entity @p[tag=Reflecting] eyes run tp @s ~ ~ ~ ~ ~
+execute as @e[type=minecraft:armor_stand,tag=Rotation,distance=..1] at @s anchored eyes facing entity @p[tag=Reflecting,distance=..30] eyes run tp @s ~ ~ ~ ~ ~
+execute as @e[type=minecraft:armor_stand,tag=Rotation,distance=..1] at @s store result score Player.Angle game.mirror.math run data get entity @s Rotation[0] 100
 
-# Copy rotation data scores
-execute as @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] store result score Mirror.Node.Angle game.mirror.math run data get entity @s Rotation[0] 100
-execute as @e[type=minecraft:armor_stand,tag=Rotation,tag=Active] store result score Player.Angle game.mirror.math run data get entity @s Rotation[0] 100
+execute store result score Mirror.Node.Angle game.mirror.math run data get entity @s Rotation[0] 100
 
 # Reflect the angle
-scoreboard players operation #GetAngleDifference game.mirror.math = Mirror.Node.Angle game.mirror.math
-scoreboard players operation #GetAngleDifference game.mirror.math -= Player.Angle game.mirror.math
-scoreboard players operation Angle.Difference game.mirror.math = #GetAngleDifference game.mirror.math
+scoreboard players operation Angle.Difference game.mirror.math = Mirror.Node.Angle game.mirror.math
+scoreboard players operation Angle.Difference game.mirror.math -= Player.Angle game.mirror.math
 
 # Reflection angle is the direction that the Reflection is in relation to the mirrornode
 scoreboard players operation Reflection.Angle game.mirror.math = Mirror.Node.Angle game.mirror.math
 scoreboard players operation Reflection.Angle game.mirror.math += Angle.Difference game.mirror.math
-execute as @e[type=minecraft:armor_stand,tag=RotationReflection,tag=Active] store result entity @s Rotation[0] float 0.01 run scoreboard players get Reflection.Angle game.mirror.math
 
-#execute as @e[name=RotationReflection] store result entity @s Rotation[1] float 1 run data get entity @e[name=Rotation,limit=1] Rotation[1] 1
-execute as @e[type=minecraft:armor_stand,tag=RotationReflection,tag=Active] run data modify entity @s Rotation[1] set value 0.0f
+# Store for macro tp call
+execute store result storage exigence:mirror rotation float 0.01 run scoreboard players get Reflection.Angle game.mirror.math
 
 # =======================================================================================================================
-# Update Reflection looking angle
-execute as @s store result score Player.Looking.Angle game.mirror.math run data get entity @s Rotation[0] 100
-scoreboard players operation #LookingAngle.Difference game.mirror.math = Mirror.Node.Angle game.mirror.math
-scoreboard players operation #LookingAngle.Difference game.mirror.math -= Player.Looking.Angle game.mirror.math
-scoreboard players operation LookingAngle.Difference game.mirror.math = #LookingAngle.Difference game.mirror.math
+# Get player looking, reflect, load to reflection armorstand
+scoreboard players operation LookingAngle.Difference game.mirror.math = Mirror.Node.Angle game.mirror.math
+scoreboard players operation LookingAngle.Difference game.mirror.math -= Player.Looking.Angle game.mirror.math
 
 scoreboard players operation Reflection.Looking.Angle game.mirror.math = Mirror.Node.Angle game.mirror.math
 scoreboard players operation Reflection.Looking.Angle game.mirror.math += LookingAngle.Difference game.mirror.math
-execute as @e[type=minecraft:armor_stand,tag=Reflection,tag=Active] store result entity @s Rotation[0] float 0.01 run scoreboard players get Reflection.Looking.Angle game.mirror.math
-execute as @e[type=minecraft:armor_stand,tag=Reflection,tag=Active] store result entity @s Rotation[1] float 1 run data get entity @p[tag=Reflecting] Rotation[1] 1
-execute as @e[type=minecraft:armor_stand,tag=Reflection,tag=Active] run data modify entity @s Pose.Head set from storage temp Head
-execute as @e[type=minecraft:armor_stand,tag=Reflection,tag=Active] run data modify entity @s Pose.Head[0] set from entity @s Rotation[1]
+
+# Pose gets updated on tp
 
 # =======================================================================================================================
 # Get distance between player and mirrornode
-execute store result score Player.X game.mirror.math run data get entity @s Pos[0] 100
-execute store result score Player.Y game.mirror.math run data get entity @s Pos[1] 100
-execute store result score Player.Z game.mirror.math run data get entity @s Pos[2] 100
-execute as @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] run execute store result score Node.X game.mirror.math run data get entity @s Pos[0] 100
-execute as @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] run execute store result score Node.Y game.mirror.math run data get entity @s Pos[1] 100
-execute as @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] run execute store result score Node.Z game.mirror.math run data get entity @s Pos[2] 100
+#   Player position already retrieved before this function
+execute store result score Node.X game.mirror.math run data get entity @s Pos[0] 100
+execute store result score Node.Y game.mirror.math run data get entity @s Pos[1] 100
+execute store result score Node.Z game.mirror.math run data get entity @s Pos[2] 100
 
+# Y and Z planes are flipped in the vec module
 scoreboard players operation in0.x nnmath_vec = Node.X game.mirror.math
 scoreboard players operation in0.y nnmath_vec = Node.Z game.mirror.math
 scoreboard players operation in0.z nnmath_vec = Node.Y game.mirror.math
@@ -78,10 +66,5 @@ scoreboard players operation in0.z nnmath_vec *= #-1 nnmath_vec
 execute store result storage exigence:mirror height double 0.01 run scoreboard players get in0.z nnmath_vec
 
 # =======================================================================================================================
-# Update reflection position
-data modify storage exigence:mirror type set value armor_stand
-function exigence:mirror/tp_reflection with storage exigence:mirror
-
-
-# Remove local tag
-tag @s remove Reflecting
+# Update reflection position / pose / equipment
+execute at @s as @e[type=minecraft:armor_stand,tag=Reflection] if score @s game.entity.player_number = #compare game.player.player_number run function exigence:mirror/tp_reflection with storage exigence:mirror

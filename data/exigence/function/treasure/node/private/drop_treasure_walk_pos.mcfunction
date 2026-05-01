@@ -2,15 +2,19 @@
 # Randomize drop location via random horizontal walk
 
 ## CONSTRAINTS
+#   AT starting location
 #   AS walking marker
 
 # =========================================================================================================
 
 scoreboard players add Iteration.Current node.treasure.drop_working 1
 
+# Re-teleport marker to start
+tp @s ~ ~ ~
+
 # Teleport walking marker to its parent node
-scoreboard players operation #compare node.id = @s node.id
-execute as @e[type=minecraft:armor_stand,tag=TreasureNode] at @s if score @s node.id = #compare node.id align xyz run tp @e[type=minecraft:marker,tag=TreasureWalking] ~0.5 ~0.5 ~0.5
+#scoreboard players operation #compare node.id = @s game.entity.node.id
+#execute as @e[type=minecraft:armor_stand,tag=TreasureNode] at @s if score @s node.id = #compare node.id align xyz run tp @e[type=minecraft:marker,tag=TreasureWalking] ~0.5 ~0.5 ~0.5
 
 # Reset variables
 scoreboard players set Walk.Current node.treasure.drop_working 0
@@ -20,11 +24,11 @@ execute store result score Walk.Blacklist node.treasure.drop_working run random 
 
 # Verify storage = 1 successful drop location found. Assume try unless walk or walkdown fails
 data modify storage exigence:treasure_drop verify set value 1
-execute as @e[type=minecraft:marker,tag=TreasureWalking] run function exigence:treasure/node/treasure_walk/walk
+execute at @s run function exigence:treasure/node/treasure_walk/walk
 
 # After horizontal walk, down walk until solid ground (so treasure doesn't spawn in the air)
-scoreboard players set @e[type=minecraft:marker,tag=TreasureWalking] node.treasure.treasure_walk_depth 0
-execute as @e[type=minecraft:marker,tag=TreasureWalking] at @s run function exigence:treasure/node/treasure_walk/walk_down
+scoreboard players set @s node.treasure.treasure_walk_depth 0
+execute at @s run function exigence:treasure/node/treasure_walk/walk_down
 
 # If not valid, iterate again
 execute if data storage exigence:treasure_drop {verify:0} if score Iteration.Current node.treasure.drop_working matches ..10 run function exigence:treasure/node/private/drop_treasure_walk_pos

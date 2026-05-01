@@ -11,9 +11,9 @@ scoreboard players operation #MissingGreen game.resources = green.cost game.reso
 scoreboard players operation #MissingRed game.resources = red.cost game.resources
 scoreboard players operation #MissingAqua game.resources = aqua.cost game.resources
 
-scoreboard players operation #MissingGreen game.resources -= Current.Green game.resources
-scoreboard players operation #MissingRed game.resources -= Current.Red game.resources
-scoreboard players operation #MissingAqua game.resources -= Current.Aqua game.resources
+scoreboard players operation #MissingGreen game.resources -= green.current game.resources
+scoreboard players operation #MissingRed game.resources -= red.current game.resources
+scoreboard players operation #MissingAqua game.resources -= aqua.current game.resources
 
 scoreboard players operation #MissingGreen game.resources > 0 number
 scoreboard players operation #MissingRed game.resources > 0 number

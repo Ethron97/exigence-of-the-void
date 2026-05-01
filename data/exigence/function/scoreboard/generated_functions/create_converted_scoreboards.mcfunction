@@ -841,11 +841,11 @@ scoreboard objectives add node.data.echo.times_won dummy
 scoreboard objectives add node.data.menace.times_triggered dummy
 scoreboard objectives add node.ember.embers_to_drop dummy
 scoreboard objectives add node.property.altar.vault_code dummy
-scoreboard objectives add node.treasure.data.highest_drop_tries dummy
+scoreboard objectives add node.data.treasure.highest_drop_tries dummy
 scoreboard objectives add node.treasure.drop_working dummy
 scoreboard objectives add node.treasure.treasure_walk_depth dummy
-scoreboard objectives add node.vault.data.opened dummy
-scoreboard objectives add node.vault.data.picked_up dummy
+scoreboard objectives add node.data.vault.opened dummy
+scoreboard objectives add node.data.vault.picked_up dummy
 scoreboard objectives add profile.data.deck.t.cards_purchased_common dummy
 scoreboard objectives add profile.data.deck.t.cards_purchased_common_void dummy
 scoreboard objectives add profile.data.deck.t.cards_purchased_legendary dummy

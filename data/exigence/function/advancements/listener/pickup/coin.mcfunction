@@ -6,8 +6,9 @@ clear @s[tag=Tutorial] minecraft:large_amethyst_bud
 execute as @s[tag=Tutorial] run function exigence:player/give/coin
 execute as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/flow/step
 
-# Return if the game is not active
-execute unless entity @s[tag=ActivePlayer] unless score game.is_active game.state matches 1 run return 1
+# Return if the game is not active or this player is not active
+execute if score game.is_active game.state matches 0 run return 1
+execute unless entity @s[tag=ActivePlayer] run return 1
 #----------------------------------------------------------------------------------------------------
 
 scoreboard players set #stacksize game.treasure.picked_up_coin_handle 1

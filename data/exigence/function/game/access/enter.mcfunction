@@ -14,6 +14,7 @@ tag @s add ActivePlayer
 tag @s[scores={profile.player.coop_profile_index=0..1}] add PrimaryPlayer
 
 function exigence:scoreboard/generated_functions/reset_on_enter
+scoreboard players set @s game.player.active_level 1
 function exigence:scoreboard/generated_functions/reset_on_death
 function exigence:game/reset/reset_advancements
 gamemode adventure @s

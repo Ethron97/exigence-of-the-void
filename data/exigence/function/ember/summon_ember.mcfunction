@@ -4,8 +4,7 @@
 
 #====================================================================================================
 
-# DEBUG
-#say Summon ember
+#say (D3) Summon ember
 
 # Summon a new item
 summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:soul_campfire",count:1,components:{"minecraft:max_stack_size":1,"minecraft:custom_model_data":{"strings":["ember_ground"]}}},Tags:["NewEmber","Ember"]}
@@ -22,7 +21,7 @@ execute if data storage exigence:dungeon_settings {stacked_embers:1} if score @s
 execute if data storage exigence:dungeon_settings {stacked_embers:1} if score @s node.property.object_level matches 4 run scoreboard players set #stacksize Temp 4
 
 # Ember data (removes NewEmber tag)
-execute as @e[type=minecraft:item,tag=NewEmber] run function exigence:ember/private/summon_ember_data
+execute as @e[type=minecraft:item,tag=NewEmber,distance=..1] run function exigence:ember/private/summon_ember_data
 
 # Increase scores
 scoreboard players operation @a[tag=ActivePlayer] profile.data.ember.cr.embers_dropped += #stacksize Temp

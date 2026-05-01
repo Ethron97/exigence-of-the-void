@@ -28,5 +28,5 @@ $scoreboard players set @e[type=minecraft:marker,tag=NewMarker] EmberShopCost $(
 # If debug is on, glow
 execute if data storage exigence:debug {ember_shop:1} as @e[type=minecraft:marker,tag=NewMarker] at @s run function exigence:hub/ember_shop/private/show_shop_node
 
-# Remove "NewTreasureNode" tag
+# Remove local tag
 tag @e[type=minecraft:marker,tag=NewMarker] remove NewMarker

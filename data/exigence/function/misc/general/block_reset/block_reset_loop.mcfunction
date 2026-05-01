@@ -18,10 +18,10 @@ execute as @e[type=minecraft:marker,tag=BlockReset] at @s run fill ~-150 ~ ~-150
 execute as @e[type=minecraft:marker,tag=BlockReset] at @s run tp @s ~ ~2 ~
 
 # Increment current Y
-scoreboard players add #block_reset Y 2
+scoreboard players add #block_reset Temp 2
 
 # iterate if not reached max
-execute if score #block_reset Y < #block_reset_max Y run schedule function exigence:misc/general/block_reset/block_reset_loop 1t
+execute if score #block_reset Temp < #block_reset_max Temp run schedule function exigence:misc/general/block_reset/block_reset_loop 1t
 
 # Else kill marker
-execute if score #block_reset Y >= #block_reset_max Y run kill @e[type=minecraft:marker,tag=BlockReset]
+execute if score #block_reset Temp >= #block_reset_max Temp run kill @e[type=minecraft:marker,tag=BlockReset]

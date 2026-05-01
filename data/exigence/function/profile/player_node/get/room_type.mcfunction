@@ -9,6 +9,11 @@
 
 #====================================================================================================
 
+scoreboard players set #room_type Temp -1
+scoreboard players set #room_id Temp -1
+execute unless score @s player.node.room_id matches 1.. run return fail
+#----------------------------------------------------------------------------------------------------
+
 scoreboard players operation #compare player.node.room_id = @s player.node.room_id
 
 execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,tag=RoomNode] \

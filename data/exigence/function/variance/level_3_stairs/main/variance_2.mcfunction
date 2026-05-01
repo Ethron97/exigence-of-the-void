@@ -4,7 +4,7 @@
 execute if score predungeon.cancel_load hub.room_misc matches 1 run return fail
 #----------------------------------------------------------------------------------------------------
 
-say (D3) Main variance (upper)
+#say (D3) Main variance (upper)
 
 # Testing model
 #setblock -386 153 -21 air

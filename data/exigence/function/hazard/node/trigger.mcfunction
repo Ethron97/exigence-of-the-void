@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say (D3) I am triggered
+#say (D3) I am triggered
 
 # Tag remove
 tag @s remove Active

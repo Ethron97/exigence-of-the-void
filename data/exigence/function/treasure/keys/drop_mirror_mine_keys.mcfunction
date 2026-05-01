@@ -1,5 +1,14 @@
+# Called from drop_level_keys
+
+## CONSTRAINTS
+#   IN minecraft:overworld
+
+#====================================================================================================
+
+#say (D3) Drop mirror mines keys
+
 # Pick treasure node to drop key on
-execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=1},tag=TreasureNode,tag=!L0,tag=!KeyDropper,tag=!KeyBlacklist,sort=random,limit=1] run function exigence:treasure/keys/private/drop_key_1
+execute as @e[x=-271,y=-55,z=-113,dx=-118,dy=92,dz=-153,type=minecraft:marker,scores={node.property.object_level=1},tag=TreasureNode,tag=!KeyDropper,tag=!KeyBlacklist,sort=random,limit=1] run function exigence:treasure/keys/private/drop_key_1
 
 # Progress iteration
 scoreboard players remove #i Temp 1

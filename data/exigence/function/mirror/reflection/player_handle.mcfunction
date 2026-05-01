@@ -1,59 +1,55 @@
 # Handles relfection updates for a given player
 
 ## CONSTRAINTS
-#   AS player
+#   AS/AT player
 
 #====================================================================================================
 
 # DEBUG
-#say player handle
+#say (D3) player handle
 
-scoreboard players operation #compare game.entity.profile_id = @s profile.player.profile_id
+# If there is not close to any mirrors, return
+execute unless entity @e[type=minecraft:armor_stand,tag=MirrorNode,distance=..30] run return fail
+#----------------------------------------------------------------------------------------------------
 
 ## GET MIRROR
 # Reset active tag
-execute as @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] run tag @s remove Active
-execute as @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Nominate] run tag @s remove Nominate
+tag @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active,distance=..30] remove Active
 
-# Nominate nearest mirrornode to be active
-execute at @s run execute as @e[type=minecraft:armor_stand,tag=MirrorNode,distance=..30] run tag @s add Nominate
-
-# If there is no nomination (not close to any mirrors) return
-execute unless entity @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Nominate] run return 1
-#----------------------------------------------------------------------------------------------------
+# Nominate all nearby mirror nodes
+execute as @e[type=minecraft:armor_stand,tag=MirrorNode,distance=..30] run tag @s add Nominate
 
 # Get active mirror
-#   Narrows down to one using predicates
+#   Narrows down to one where the player actuall is, using predicates
 function exigence:mirror/reflection/get_active_mirror
 
-
-
-
-
-## PREP MIRROR ENTITIES
-# Get this player's Reflection, Rotation, and RotationReflection
-# Reset tags
-tag @e[type=minecraft:armor_stand,tag=MirrorEntity] remove Active
-
-# Get mirror entities that match this player's
-execute as @e[type=minecraft:armor_stand,tag=MirrorEntity] if score @s game.entity.profile_id = #compare game.entity.profile_id run tag @s add Active
-
-# If there is no active mirror, hide reflection and return
-execute unless entity @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] run data modify entity @e[type=minecraft:armor_stand,tag=Reflection,tag=Active,limit=1] equipment set value {}
-execute unless entity @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] run return 1
+# If no active mirror and player WAS NOT already reflecting, just return
+# If there is no active mirror and player WAS already reflecting, hide reflection and return
+execute unless entity @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active,distance=..30] run return run function exigence:mirror/reflection/private/no_active_mirror_found
 #----------------------------------------------------------------------------------------------------
 
-# If rotation armorstands are not near the active mirrornode, move them
-execute as @e[type=minecraft:armor_stand,tag=Active,tag=Rotation] at @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] if entity @s[distance=2..] run tp @s ~ ~ ~
-execute as @e[type=minecraft:armor_stand,tag=Active,tag=RotationReflection] at @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active] if entity @s[distance=2..] run tp @s ~ ~ ~
+## REFLECT
+# Add local tag
+tag @s add Reflecting
 
+scoreboard players operation #compare game.entity.profile_id = @s profile.player.profile_id
 
+# If player was NOT CurrentlyReflecting, set them now to reflecting (also makes sure their shadow is close)
+execute if entity @s[tag=!CurrentlyReflecting] at @n[type=minecraft:armor_stand,tag=MirrorNode,tag=Active,distance=..30] run function exigence:mirror/reflection/private/start_reflecting
+
+# Store player information
+function exigence:mirror/reflection/private/get_player_info
+
+# Store num to lookup reflection
+scoreboard players operation #compare game.player.player_number = @s game.player.player_number
 
 ## UPDATE REFLECTIONS
 # Call mirror tick resolve unless by the Villager mirror
-execute unless entity @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active,tag=Villager] run function exigence:mirror/reflection/mirror_tick_resolve
-# Call special function if near the Villager mirror
-execute if entity @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active,tag=Villager] at @a[tag=ActivePlayer,advancements={exigence:story/match_bookshelf=false}] run function exigence:mirror/reflection/mirror_tick_resolve_villager
+execute as @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active,distance=..30] at @s run function exigence:mirror/reflection/mirror_tick_resolve
 
-# Ensure scientist npc is always facing nearest player
-execute as @e[type=minecraft:villager,tag=NPC_Scientist,tag=!Reflection,tag=!Carried] at @s anchored eyes facing entity @p[tag=ActivePlayer] eyes run tp @s ~ ~ ~ ~ ~
+# Call special function if near the Villager mirror
+#   Instead of a unique function, just use the other function and then teleport the villager to the Reflection (prioritize lowest player_number?)
+#execute if entity @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Active,tag=Villager] at @a[tag=ActivePlayer,advancements={exigence:story/match_bookshelf=false}] run function exigence:mirror/reflection/mirror_tick_resolve_villager
+
+# Remove local tag
+tag @s remove Reflecting

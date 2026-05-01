@@ -48,6 +48,10 @@ execute at @s run playsound minecraft:entity.enderman.teleport ui @s ~ ~100 ~ 10
 #execute as @n[distance=..1000,type=minecraft:marker,tag=TutorialMarker,scores={TutorialMarkerID=37}] run tag @s add Fallback
 #kill @s
 
+# Store ids
+scoreboard players operation #compare career.player_id = @s career.player_id
+scoreboard players operation #compare profile.player.profile_id = @s profile.player.profile_id
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Summon Room Node
 scoreboard players set #room_type Temp 1
@@ -56,7 +60,5 @@ execute in exigence:hub positioned 100 200 100 run function exigence:room/node/n
 # Assign room ids
 #   PLAYER
 scoreboard players operation @s hub.player.room_id = #next hub.room.room_id
-execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15] if score @s profile.node.player_id = #compare career.player_id \
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] if score @s profile.node.player_id = #compare career.player_id \
 run scoreboard players operation @s player.node.room_id = #next hub.room.room_id
-#   FK (link room node to specific room node)
-scoreboard players operation @n[tag=ProfileSelectorNode,distance=..1] hub.entity.room_id = #next hub.room.room_id

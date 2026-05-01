@@ -40,3 +40,6 @@ execute in exigence:hub positioned -43.5 200.0 0.5 run function exigence:hub/ite
 # Prevent online players from needing to tp/remove tags (because when the scoreboard is replaced, it would detect null as != 0)
 scoreboard players set @a quits 0
 team leave @a
+
+# Max attempts of a treasure node before giving up treasure drop
+scoreboard players set #MaxTreasureDroppingIterations node.treasure.drop_working 10

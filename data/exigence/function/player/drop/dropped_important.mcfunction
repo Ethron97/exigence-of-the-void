@@ -19,3 +19,7 @@ team join Green @s
 
 # Set to glowing
 data modify entity @s Glowing set value true
+
+# Re-add tag so that it has particles
+#   Wont re-start the sound unless All Echos Found is false still, which is fine
+execute if items entity @s contents #exigence:echo run tag @s add EchoShard

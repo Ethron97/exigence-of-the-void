@@ -1,3 +1,6 @@
+say Recode this
+return 0
+
 # Summon node base
 execute at @s as @s run function exigence:game/admin/new_node
 

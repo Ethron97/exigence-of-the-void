@@ -1,3 +1,8 @@
+## CONSTRAINTS
+#   AS/AT player
+
+#====================================================================================================
+
 execute if score @s game.player.mod.glimmer matches 0 run return run scoreboard players operation @e[type=minecraft:item,scores={game.entity.object_level=1},tag=Treasure,distance=..16] game.entity.glow_remaining > 23 number
 execute if score @s game.player.mod.glimmer matches 1 run return run scoreboard players operation @e[type=minecraft:item,scores={game.entity.object_level=1},tag=Treasure,distance=..24] game.entity.glow_remaining > 23 number
 execute if score @s game.player.mod.glimmer matches 2 run return run scoreboard players operation @e[type=minecraft:item,scores={game.entity.object_level=1},tag=Treasure,distance=..32] game.entity.glow_remaining > 23 number

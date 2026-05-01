@@ -14,17 +14,17 @@ scoreboard players set #LastConsumeResult game.resources 0
 #$say try generate $(green) green, $(red) red, $(aqua) aqua
 
 # Overflow = Green + NewGreen - MaxGreen > 0
-scoreboard players operation #OverflowGreen game.resources = Current.Green game.resources
-scoreboard players operation #OverflowRed game.resources = Current.Red game.resources
-scoreboard players operation #OverflowAqua game.resources = Current.Aqua game.resources
+scoreboard players operation #OverflowGreen game.resources = green.current game.resources
+scoreboard players operation #OverflowRed game.resources = red.current game.resources
+scoreboard players operation #OverflowAqua game.resources = aqua.current game.resources
 
 $scoreboard players add #OverflowGreen game.resources $(green)
 $scoreboard players add #OverflowRed game.resources $(red)
 $scoreboard players add #OverflowAqua game.resources $(aqua)
 
-scoreboard players operation #OverflowGreen game.resources -= Max.Green game.resources
-scoreboard players operation #OverflowRed game.resources -= Max.Red game.resources
-scoreboard players operation #OverflowAqua game.resources -= Max.Aqua game.resources
+scoreboard players operation #OverflowGreen game.resources -= green.max game.resources
+scoreboard players operation #OverflowRed game.resources -= red.max game.resources
+scoreboard players operation #OverflowAqua game.resources -= aqua.max game.resources
 
 scoreboard players operation #OverflowGreen game.resources > 0 number
 scoreboard players operation #OverflowRed game.resources > 0 number

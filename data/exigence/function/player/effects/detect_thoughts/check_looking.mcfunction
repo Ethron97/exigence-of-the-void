@@ -11,7 +11,7 @@ execute at @s as @e[type=minecraft:ravager,distance=..30] at @s anchored eyes fa
 execute at @s as @e[type=minecraft:ravager,distance=..10] at @s anchored eyes facing entity @p[tag=ActivePlayer,tag=CheckLooking] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=ActivePlayer,tag=CheckLooking] positioned ^ ^ ^1 if entity @s[distance=..0.4] run tag @s add RavagerLookee
 
 # Get the nearest ravager the player is looking at (in case there are a couple in a line, or bunched)
-execute at @s as @e[type=minecraft:ravager,tag=RavagerLookee,sort=nearest,limit=1] run tag @s add RavagerLookeeNearest 
+execute at @s as @n[type=minecraft:ravager,tag=RavagerLookee] run tag @s add RavagerLookeeNearest 
 
 # Increase selected lookee's detect thoughts score by 2
 scoreboard players add @e[type=minecraft:ravager,tag=RavagerLookeeNearest] game.ravager.detect_thoughts 2

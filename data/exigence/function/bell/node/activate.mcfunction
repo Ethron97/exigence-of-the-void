@@ -5,7 +5,8 @@
 
 #====================================================================================================
 
-#say I am a bell activating
+#say (D3) I am a bell activating
+
 tag @s add Active
 setblock ~ ~ ~ minecraft:bell[attachment=ceiling]
 

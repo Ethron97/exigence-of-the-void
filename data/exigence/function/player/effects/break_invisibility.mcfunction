@@ -1,13 +1,18 @@
 # Removes invisibility and rejoins player team
-#   Call as player
 
+## CONSTRAINTS
+#   AS player (on Enemy team)
+
+#====================================================================================================
+
+# Clear invis
 scoreboard players set @s game.player.effects.invisibility 0
 effect clear @s invisibility
 
-tellraw @s {text:"Your position has been revealed",color:"red",italic:true}
+tellraw @s {text:"Your position has been revealed!",color:"red",italic:true}
 
 # Playsound
 execute at @s run playsound minecraft:entity.elder_guardian.curse hostile @s ~ ~1000 ~ 1000 1
 
-# Team joijn player
+# Team join player
 team join Player @s

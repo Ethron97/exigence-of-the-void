@@ -1,3 +1,7 @@
+# Called from game_tick
+
+#====================================================================================================
+
 # Resolve 1 treasure queue.
 #   Treasure does not drop at max menace
 execute if score seconds.cooldown tick_counter matches 5 if score treasure.queue game.dungeon.temp matches 1.. run function exigence:treasure/try_resolve_treasure

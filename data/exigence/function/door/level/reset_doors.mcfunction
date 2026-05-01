@@ -1,30 +1,18 @@
-# Reset node tags
-execute as @e[type=minecraft:armor_stand,tag=DoorNode,tag=Opened] run tag @s remove Opened
+# Load level doors
+
+## CONSTRAINTS
+#   IN minecraft:overworld
+
+#====================================================================================================
 
 # Kill any vault key hovers
-kill @e[type=minecraft:item_display,tag=DoorHandleKey]
+kill @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:item_display,tag=DoorHandleKey]
 
-# Kill old door handls
-kill @e[type=minecraft:item_display,tag=Door]
-kill @e[type=minecraft:interaction,tag=DoorHandle]
+# Kill old door handles
+kill @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:item_display,tag=Door]
+kill @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:interaction,tag=DoorHandle]
 
-# Reset tags
-tag @a[tag=Trial] remove Trial
-tag @a[tag=Crucible] remove Crucible
-
-## Close doors
-# Level 1
-function exigence:door/level/door_1/close
-# Level 2
-function exigence:door/level/door_2/close
-# Level 3
-function exigence:door/level/door_3/close
-
-
-## Recreate door handles
-# Level 1
-execute as @e[type=minecraft:armor_stand,tag=DoorNode,tag=Door1] at @s positioned ~ ~2.5 ~ run function exigence:door/level/door_1/setup_handle
-# Level 2
-execute as @e[type=minecraft:armor_stand,tag=DoorNode,tag=Door2] at @s positioned ~ ~2.5 ~ run function exigence:door/level/door_2/setup_handle
-# Level 3
-execute as @e[type=minecraft:armor_stand,tag=DoorNode,tag=Door3] at @s positioned ~ ~2.5 ~ run function exigence:door/level/door_3/setup_handle
+# Reset doors
+execute positioned -331.5 21.0 -257.5 as @n[type=minecraft:marker,tag=DoorNode,tag=Door1,distance=..1] at @s run function exigence:door/level/door_1/reset
+execute positioned -384.5 132.0 -90.0 as @n[type=minecraft:marker,tag=DoorNode,tag=Door2,distance=..1] at @s run function exigence:door/level/door_2/reset
+execute positioned -361.5 172.0 -85.0 as @n[type=minecraft:marker,tag=DoorNode,tag=Door3,distance=..1] at @s run function exigence:door/level/door_3/reset

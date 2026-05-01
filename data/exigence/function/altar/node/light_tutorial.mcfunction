@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say Light tutorial
+#say (D3) Light tutorial
 
 scoreboard players set #blaze_powder Temp 0
 scoreboard players set #spark Temp 0

@@ -1,5 +1,11 @@
-# DEBUG
-#say Setting up all mirrors
+# Generate randomized mirror parkours
+
+## CONSTRAINTS
+#   IN minecraft;overworld
+
+#====================================================================================================
+
+#say (D3) Setting up all mirrors
 
 function exigence:mirror/mirrors/45_degree/setup_45_degree
 function exigence:mirror/mirrors/four_wide_one_path/setup_four_wide_one_path
@@ -8,11 +14,5 @@ function exigence:mirror/mirrors/three_wide_one_path/setup_three_wide_one_path
 function exigence:mirror/mirrors/laboratory/setup
 function exigence:mirror/mirrors/stairs/setup
 
-# Reset tag
-tag @e[type=minecraft:armor_stand,tag=RevealedMirror] remove RevealedMirror
-
 # Reveal number of starting mirrors based on modifier
-execute if score mod.revealed_mirrors game.modifiers matches 1.. as @e[type=minecraft:armor_stand,tag=MirrorNode,tag=!RevealedMirror,sort=random,limit=1] run function exigence:mirror/mirrors/reveal_random_mirror
-execute if score mod.revealed_mirrors game.modifiers matches 2.. as @e[type=minecraft:armor_stand,tag=MirrorNode,tag=!RevealedMirror,sort=random,limit=1] run function exigence:mirror/mirrors/reveal_random_mirror
-execute if score mod.revealed_mirrors game.modifiers matches 3.. as @e[type=minecraft:armor_stand,tag=MirrorNode,tag=!RevealedMirror,sort=random,limit=1] run function exigence:mirror/mirrors/reveal_random_mirror
-execute if score mod.revealed_mirrors game.modifiers matches 4.. as @e[type=minecraft:armor_stand,tag=MirrorNode,tag=!RevealedMirror,sort=random,limit=1] run function exigence:mirror/mirrors/reveal_random_mirror
+execute if score mod.revealed_mirrors game.modifiers matches 1.. run function exigence:mirror/mirrors/setup_revealed_mirrors

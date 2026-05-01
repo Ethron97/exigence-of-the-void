@@ -3,7 +3,7 @@
 kill @e[type=minecraft:marker,tag=BlockReset]
 summon minecraft:marker -374 0 -120 {Tags:["BlockReset"],CustomName:{text:"Marker | BlockReset"}}
 
-scoreboard players set #block_reset Y 0
-scoreboard players set #block_reset_max Y 250
+scoreboard players set #block_reset Temp 0
+scoreboard players set #block_reset_max Temp 250
 
 schedule function exigence:misc/general/block_reset/block_reset_loop 2t

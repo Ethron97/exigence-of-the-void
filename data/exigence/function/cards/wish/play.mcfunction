@@ -35,17 +35,17 @@ execute if score #random Random matches 14 run tellraw @a[scores={dead=0},tag=Ac
 # Reduce a random resource cap by 2
 execute store result score #random Random run random value 1..3
 
-execute if score #random Random matches 1 run scoreboard players remove Max.Green game.resources 2
-scoreboard players operation Max.Green game.resources > 0 number
-scoreboard players operation Current.Green game.resources < Max.Green game.resources
+execute if score #random Random matches 1 run scoreboard players remove green.max game.resources 2
+scoreboard players operation green.max game.resources > 0 number
+scoreboard players operation green.current game.resources < green.max game.resources
 execute if score #random Random matches 1 run tellraw @a[tag=ActivePlayer] [{text:"Reduced resource maximums by ",color:"red"},{text:"❂❂",color:"dark_green"}]
 
-execute if score #random Random matches 2 run scoreboard players remove Max.Red game.resources 2
-scoreboard players operation Max.Red game.resources > 0 number
-scoreboard players operation Current.Red game.resources < Max.Red game.resources
+execute if score #random Random matches 2 run scoreboard players remove red.max game.resources 2
+scoreboard players operation red.max game.resources > 0 number
+scoreboard players operation red.current game.resources < red.max game.resources
 execute if score #random Random matches 2 run tellraw @a[tag=ActivePlayer] [{text:"Reduced resource maximums by ",color:"red"},{text:"❂❂",color:"dark_red"}]
 
-execute if score #random Random matches 3 run scoreboard players remove Max.Aqua game.resources 2
-scoreboard players operation Max.Aqua game.resources > 0 number
-scoreboard players operation Current.Aqua game.resources < Max.Aqua game.resources
+execute if score #random Random matches 3 run scoreboard players remove aqua.max game.resources 2
+scoreboard players operation aqua.max game.resources > 0 number
+scoreboard players operation aqua.current game.resources < aqua.max game.resources
 execute if score #random Random matches 3 run tellraw @a[tag=ActivePlayer] [{text:"Reduced resource maximums by ",color:"red"},{text:"❂❂",color:"aqua"}]

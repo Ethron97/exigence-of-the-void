@@ -4,13 +4,16 @@
 ## CONSTRAINTS
 #   AS NewEmber item entity
 
+## INPUT
+#   SCORE #compare node.property.object_level
+
 #====================================================================================================
 
 # Join ember team
 team join Ember @s
 
 # Assign object level
-scoreboard players operation @s node.property.object_level = #compare node.property.object_level
+scoreboard players operation @s game.entity.object_level = #compare node.property.object_level
 
 # If ember debug on, glow
 execute if data storage exigence:debug {ember:1} run data modify entity @s Glowing set value true

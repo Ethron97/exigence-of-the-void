@@ -3,11 +3,12 @@
 
 #====================================================================================================
 
-say (D3) Start loading sequence
+#say (D3) Start loading sequence
 
 # Handle setup that needs to come from player info (like chests, profile difficulty)
 #   Also marks every relevant profile node as "Active"
 execute as @a[tag=Predungeon,scores={profile.player.coop_profile_index=0..1}] run function exigence:game/load/load_from_player
+execute as @a[tag=Predungeon,scores={profile.player.coop_profile_index=2..4}] run scoreboard players operation @s game.player.player_number = @s profile.player.coop_profile_index
 
 # Set difficulty
 scoreboard players operation game.difficulty game.state = game.difficulty game.dungeon.setup
@@ -32,6 +33,14 @@ schedule function exigence:game/load/load_enemies_setup 6t
 schedule function exigence:game/load/load_enemies_distribute 7t
 schedule function exigence:game/load/load_variance_and_hazard 8t
 schedule function exigence:game/load/load_berry_nodes 9t
+schedule function exigence:game/load/load_bell_nodes 10t
+schedule function exigence:game/load/load_altar_nodes 11t
+schedule function exigence:game/load/load_menace_nodes 12t
+schedule function exigence:game/load/load_treasure_nodes 13t
+schedule function exigence:game/load/load_level_doors 14t
+schedule function exigence:game/load/load_npcs 15t
+schedule function exigence:game/load/load_mirrors 16t
+schedule function exigence:game/load/load_bookshelf 17t
 
 # ...
 # Finish load sequence

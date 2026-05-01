@@ -5,12 +5,12 @@
 
 #====================================================================================================
 
-# Mirror Vision
-execute if score seconds.cooldown tick_counter matches 3 as @a[scores={game.player.mod.mirror_vision=1..,dead=0},tag=ActivePlayer] run function exigence:player/modifiers/mirror_vision
-function exigence:mirror/hidden_blocks/hidden_block_tick
-
 # Detect approaches
 function exigence:mirror/mirrors/detect_approaches
 
 # For each living player, update their Reflection
-execute as @a[scores={dead=0},tag=ActivePlayer] run function exigence:mirror/reflection/player_handle
+execute as @a[scores={dead=0},tag=ActivePlayer] at @s run function exigence:mirror/reflection/player_handle
+
+# Mark reflection in the villager-mirror as the villager reflection
+#   IF there is a player in the bookshelf area
+execute if entity @a[x=-482,y=61,z=-199,dx=9,dy=5,dz=5,limit=1] run function exigence:mirror/reflection/villager_handle

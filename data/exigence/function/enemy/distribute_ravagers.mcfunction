@@ -1,4 +1,4 @@
-# In charge of distributing the ravagers to various MenaceNodes around the map.
+# In charge of distributing the ravagers to various menace nodes around the map.
 
 ## CONSTRAINTS
 #   IN minecraft:overworld

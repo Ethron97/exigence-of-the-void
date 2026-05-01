@@ -3,6 +3,9 @@
 ## CONSTRAINTS
 #   AS Player who just picked bush
 
+## INPUT
+#   SCORE #compare node.id
+
 #====================================================================================================
 
 # TUTORIAL:
@@ -10,8 +13,9 @@ execute if data storage exigence:dungeon {tutorial:1} as @s[tag=Tutorial] in exi
 execute if data storage exigence:dungeon {tutorial:1} at @s[tag=Tutorial] as @n[type=minecraft:marker,tag=BerryNode,distance=..10] if score @s node.id = #compare node.id run function exigence:botany/node/pick/pick_bush_tutorial
 execute if data storage exigence:dungeon {tutorial:1} as @s[tag=Tutorial] run return 1
 
-# Return if dungeon is off
-execute unless entity @s[tag=ActivePlayer] unless score game.is_active game.state matches 1 run return 1
+# Return if the game is not active or this player is not active
+execute if score game.is_active game.state matches 0 run return 1
+execute unless entity @s[tag=ActivePlayer] run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Increase the player's berry_bushes_picked (total) score by 1

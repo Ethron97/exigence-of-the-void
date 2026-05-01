@@ -5,6 +5,9 @@
 
 #====================================================================================================
 
+execute unless entity @s[tag=Active] run return fail
+#----------------------------------------------------------------------------------------------------
+
 #   Unglow if glowing and further than X blocks away or if it is not active
 execute if entity @s[tag=BerryGlowing] unless entity @a[scores={dead=0,game.player.mod.berry_vision=1},tag=ActivePlayer,distance=..16] run function exigence:botany/node/unglow
 

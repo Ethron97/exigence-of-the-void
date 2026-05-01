@@ -15,8 +15,9 @@
 
 #====================================================================================================
 
+#$say (D3) dropping $(function)
+
 tag @s add Dropping
-#$execute as @e[type=minecraft:armor_stand,tag=Dropping] run say dropping $(function)
 
 $data modify storage exigence:treasure_drop priority set value $(priority)
 

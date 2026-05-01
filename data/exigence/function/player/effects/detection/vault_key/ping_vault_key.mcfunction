@@ -11,10 +11,10 @@
 tag @e[type=minecraft:item,tag=ClosestVaultKey] remove ClosestVaultKey
 
 # Tag closest Vault Key on same level
-execute at @s[scores={game.player.active_level=1}] run tag @e[type=minecraft:item,scores={game.entity.object_level=1},tag=VaultKey,sort=nearest,limit=1] add ClosestVaultKey
-execute at @s[scores={game.player.active_level=2}] run tag @e[type=minecraft:item,scores={game.entity.object_level=2},tag=VaultKey,sort=nearest,limit=1] add ClosestVaultKey
-execute at @s[scores={game.player.active_level=3}] run tag @e[type=minecraft:item,scores={game.entity.object_level=3},tag=VaultKey,sort=nearest,limit=1] add ClosestVaultKey
-execute at @s[scores={game.player.active_level=4}] run tag @e[type=minecraft:item,scores={game.entity.object_level=4},tag=VaultKey,sort=nearest,limit=1] add ClosestVaultKey
+execute at @s[scores={game.player.active_level=1}] run tag @n[type=minecraft:item,scores={game.entity.object_level=1},tag=VaultKey] add ClosestVaultKey
+execute at @s[scores={game.player.active_level=2}] run tag @n[type=minecraft:item,scores={game.entity.object_level=2},tag=VaultKey] add ClosestVaultKey
+execute at @s[scores={game.player.active_level=3}] run tag @n[type=minecraft:item,scores={game.entity.object_level=3},tag=VaultKey] add ClosestVaultKey
+execute at @s[scores={game.player.active_level=4}] run tag @n[type=minecraft:item,scores={game.entity.object_level=4},tag=VaultKey] add ClosestVaultKey
 
 # If no Vault Key shard on same level, return
 #execute unless entity @e[type=minecraft:item,tag=ClosestVaultKey] run say No Vault Key on same level found

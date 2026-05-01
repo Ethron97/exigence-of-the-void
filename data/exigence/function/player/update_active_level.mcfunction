@@ -25,5 +25,5 @@ execute unless score #OldActiveLevel game.player.active_level = @s game.player.a
 execute unless score #OldActiveLevel game.player.active_level = @s game.player.active_level run title @s title ""
 
 # If we want door open:
-#execute if score Y temp_coords matches 32.. if entity @e[type=minecraft:armor_stand,tag=DoorNode,tag=MirrorMines,tag=Open] run scoreboard players set game.active_level game.state 2
-#execute if score Y temp_coords matches 128.. if entity @e[type=minecraft:armor_stand,tag=DoorNode,tag=TempleOfFervor,tag=Open] run scoreboard players set game.active_level game.state 3
+#execute if score Y temp_coords matches 32.. if entity @e[type=minecraft:marker,tag=DoorNode,tag=MirrorMines,tag=Open] run scoreboard players set game.active_level game.state 2
+#execute if score Y temp_coords matches 128.. if entity @e[type=minecraft:marker,tag=DoorNode,tag=TempleOfFervor,tag=Open] run scoreboard players set game.active_level game.state 3

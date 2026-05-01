@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # DEBUG
-#say Summon key
+#say (D3) Summon key (door 3)
 
 # Summon a new item
 summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:trial_key",count:1,components:{"minecraft:custom_model_data":{"strings":["level_3_key"]},"minecraft:custom_name":[{text:"⋉ Ardors Bane Key ⋊",color:"gold",italic:false}],"minecraft:custom_data":{key_level:"3"}}},Tags:["NewLevelKey","LevelKey","Key","Level3Key"]}

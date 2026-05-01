@@ -12,5 +12,5 @@ data modify storage exigence:debug bell set from storage temp debug
 
 
 # 2. Run commands depending on debug state
-$execute if data storage exigence:debug {bell:1} as @e[type=minecraft:armor_stand,scores={node.property.object_level=$(levels)},tag=BellNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
-execute if data storage exigence:debug {bell:0} as @e[type=minecraft:armor_stand,tag=BellNode] run data merge entity @s {Glowing:0b,CustomNameVisible:0b,Invisible:1b,Marker:1b}
+$execute if data storage exigence:debug {bell:1} as @e[type=minecraft:marker,scores={node.property.object_level=$(levels)},tag=BellNode] at @s run function exigence:bell/node/debug/on
+execute if data storage exigence:debug {bell:0} as @e[type=minecraft:marker,tag=BellNode] at @s run function exigence:bell/node/debug/off

@@ -1,6 +1,6 @@
 # Get lateral offset
 scoreboard players operation ForwardStart.X game.mirror.setup = Mod.X game.mirror.setup
-scoreboard players operation Forward.Start.Y game.mirror.setup = Start.Y game.mirror.setup
+scoreboard players operation ForwardStart.Y game.mirror.setup = Start.Y game.mirror.setup
 scoreboard players operation ForwardStart.Z game.mirror.setup = Mod.Z game.mirror.setup
 
 scoreboard players operation ForwardStart.X game.mirror.setup *= Forward.Pos game.mirror.setup
@@ -20,7 +20,7 @@ scoreboard players operation Out.X game.mirror.setup *= Lateral.Pos game.mirror.
 scoreboard players operation Out.Z game.mirror.setup *= Lateral.Pos game.mirror.setup
 
 scoreboard players operation Out.X game.mirror.setup += ForwardStart.X game.mirror.setup
-scoreboard players operation Out.Y game.mirror.setup += Forward.Start.Y game.mirror.setup
+scoreboard players operation Out.Y game.mirror.setup += ForwardStart.Y game.mirror.setup
 scoreboard players operation Out.Z game.mirror.setup += ForwardStart.Z game.mirror.setup
 
 execute store result storage exigence:mirror X int 1 run scoreboard players get Out.X game.mirror.setup
@@ -38,8 +38,8 @@ scoreboard players operation Out.Z game.mirror.setup = Mod2.Z game.mirror.setup
 scoreboard players operation Out.X game.mirror.setup *= Lateral.Pos game.mirror.setup
 scoreboard players operation Out.Z game.mirror.setup *= Lateral.Pos game.mirror.setup
 
-scoreboard players operation Out.X game.mirror.setup *= -1 Random
-scoreboard players operation Out.Z game.mirror.setup *= -1 Random
+scoreboard players operation Out.X game.mirror.setup *= -1 number
+scoreboard players operation Out.Z game.mirror.setup *= -1 number
 
 scoreboard players operation Out.X game.mirror.setup += Mirror.X game.mirror.setup
 scoreboard players operation Out.Z game.mirror.setup += Mirror.Z game.mirror.setup

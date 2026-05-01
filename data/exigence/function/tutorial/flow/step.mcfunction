@@ -172,7 +172,7 @@ execute if score Step Tutorial matches 403 run tellraw @p[tag=Tutorial,distance=
 execute if score Step Tutorial matches 403 run scoreboard players set Step Tutorial 702
 
 execute if score Step Tutorial matches 703 run tellraw @p[tag=Tutorial,distance=..1000] [{color:"green",text:"\n-> See what you can find in this abandoned village."}]
-execute if score Step Tutorial matches 703 as @e[type=minecraft:armor_stand,scores={node.property.object_level=10},tag=TreasureNode,tag=!EmberSpecial,distance=..1000] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:treasure/node/coin/summon_coin"}
+execute if score Step Tutorial matches 703 as @e[type=minecraft:armor_stand,scores={node.property.object_level=10},tag=TreasureNode,tag=!EmberSpecialTutorial,distance=..1000] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:treasure/node/coin/summon_coin"}
 execute if score Step Tutorial matches 703 as @e[type=minecraft:item,scores={game.entity.object_level=10},distance=..1000] run tag @s add PreventItemDespawn
 execute if score Step Tutorial matches 703 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Collect 5 coins",text:">>> Collect 5 coins <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
 execute if score Step Tutorial matches 703 run bossbar set exigence:tutorial value 0
@@ -200,7 +200,7 @@ execute if score Step Tutorial matches 801 run bossbar set exigence:tutorial_dec
 execute if score Step Tutorial matches 801 as @p[tag=Tutorial,distance=..1000] run playsound minecraft:entity.lightning_bolt.thunder ambient @s ~ ~1000 ~ 1000 1
 execute if score Step Tutorial matches 801 run bossbar set exigence:tutorial value 0
 execute if score Step Tutorial matches 801 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Collect 3 embers",text:">>> Collect 3 embers <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
-execute if score Step Tutorial matches 801 run execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=10},tag=TreasureNode,tag=EmberSpecial,distance=..1000] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:ember/summon_ember"}
+execute if score Step Tutorial matches 801 run execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=10},tag=TreasureNode,tag=EmberSpecialTutorial,distance=..1000] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:ember/summon_ember"}
 execute if score Step Tutorial matches 801 run execute as @e[type=minecraft:item,scores={game.entity.object_level=10},distance=..1000] run tag @s add PreventItemDespawn
 
 execute if score Step Tutorial matches 802 run tellraw @p[tag=Tutorial,distance=..1000] [{color:"green",text:"\n-> Unlike coins, Embers only spawn from cards and around Echo Shards."}]
@@ -211,7 +211,7 @@ execute if score Step Tutorial matches 803 run bossbar set exigence:tutorial val
 execute if score Step Tutorial matches 803 run scoreboard players set Step Tutorial 900
 
 ## RESEARCH SHERDS
-execute if score Step Tutorial matches 901 run execute at @e[type=minecraft:armor_stand,scores={node.property.object_level=10},tag=TreasureNode,tag=EmberSpecial,distance=..1000] run kill @e[type=minecraft:item,tag=Ember,distance=..2]
+execute if score Step Tutorial matches 901 run execute at @e[type=minecraft:armor_stand,scores={node.property.object_level=10},tag=TreasureNode,tag=EmberSpecialTutorial,distance=..1000] run kill @e[type=minecraft:item,tag=Ember,distance=..2]
 execute if score Step Tutorial matches 901 run tellraw @p[tag=Tutorial,distance=..1000] [{color:"green",text:"\n-> The final common dungeon drop is the Research Fragment."}]
 execute if score Step Tutorial matches 901 run bossbar set exigence:tutorial value 0
 execute if score Step Tutorial matches 901 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Collect 1 fragment",text:">>> Collect 1 fragment <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
@@ -234,7 +234,7 @@ execute if score Step Tutorial matches 1001 run tellraw @p[tag=Tutorial,distance
 execute if score Step Tutorial matches 1001 run function exigence:tutorial/flow/next_token
 
 execute if score Step Tutorial matches 1002 run tellraw @p[tag=Tutorial,distance=..1000] [{color:"green",text:"\n-> Up ahead is an old altar. Rekindle it by right clicking."}]
-execute if score Step Tutorial matches 1002 run execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=10},tag=AltarNode,distance=..1000] run function exigence:altar/node/activate
+execute if score Step Tutorial matches 1002 run execute as @e[type=minecraft:marker,scores={node.property.object_level=10},tag=AltarNode,distance=..1000] run function exigence:altar/node/activate
 execute if score Step Tutorial matches 1002 run function exigence:tutorial/utility/flashing_bossbar_a {final_text:"Light the altar",text:">>> Light the altar <<<",color0:"yellow",color1:"white",active_color:0,interval:3,flashes:9}
 execute if score Step Tutorial matches 1002 run bossbar set exigence:tutorial value 0
 

@@ -7,7 +7,7 @@ execute if score predungeon.cancel_load hub.room_misc matches 1 run return fail
 # run tellraw @a [{text:"Dungeon load sequence cancelled",color:"red"}]
 #----------------------------------------------------------------------------------------------------
 
-say (D3) Finish loading sequence
+#say (D3) Finish loading sequence
 
 # Try migrate players
 #   get room id for predungeon room node

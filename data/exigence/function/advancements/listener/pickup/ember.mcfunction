@@ -1,7 +1,7 @@
 # Reset advancement
 advancement revoke @s only exigence:listener/pickup/ember
 
-#say pickup ember
+#say (D3) Pickup ember
 
 # TUTORIAL
 clear @s[tag=Tutorial] minecraft:soul_campfire
@@ -9,9 +9,12 @@ execute as @s[tag=Tutorial] run function exigence:player/give/ember
 execute as @s[tag=Tutorial] run scoreboard players add @s profile.data.ember.cr.embers_picked_up 1
 execute as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/flow/step
 
-# Remove the advancement early (thereby cancelling the rest of this function) if the game is not active
-execute unless entity @s[tag=ActivePlayer] unless score game.is_active game.state matches 1 run return 1
+# Return if the game is not active or this player is not active
+execute if score game.is_active game.state matches 0 run return 1
+execute unless entity @s[tag=ActivePlayer] run return 1
 #----------------------------------------------------------------------------------------------------
+
+#say (D3) Pickup ember in game
 
 # Get number of embers if it was a stack
 scoreboard players set #stacksize Temp 1

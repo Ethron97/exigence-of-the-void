@@ -13,7 +13,7 @@ $execute as @s run function exigence:door/vault/$(key_name)/give_key
 
 # Add picked up tag to corresponding vault node so it knows not to spawn any more of this key
 $execute as @e[type=minecraft:armor_stand,tag=VaultNode,tag=Vault_$(key_name)] run tag @s add PickedUp
-$execute as @e[type=minecraft:armor_stand,tag=VaultNode,tag=Vault_$(key_name)] run scoreboard players add @s node.vault.data.picked_up 1
+$execute as @e[type=minecraft:armor_stand,tag=VaultNode,tag=Vault_$(key_name)] run scoreboard players add @s node.data.vault.picked_up 1
 scoreboard players add @s profile.data.vaults.cr.vault_keys_picked_up 1
 
 # Kill any other duplicates of this vault key

@@ -5,6 +5,8 @@
 
 # ===============================================================================================================
 
+#say (D3) I am a bell setting up
+
 # Deactivate bell
 function exigence:bell/node/deactivate
 

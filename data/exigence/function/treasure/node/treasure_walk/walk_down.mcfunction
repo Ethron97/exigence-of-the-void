@@ -4,7 +4,7 @@
 #====================================================================================================
 
 # DEBUG
-#say Walk down
+#say (D3) Walk down
 
 # If next block is blacklisted, return fail
 execute if block ~ ~-1 ~ #exigence:drop_blacklist run data modify storage exigence:treasure_drop verify set value 0

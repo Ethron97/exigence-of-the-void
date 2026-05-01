@@ -12,5 +12,8 @@ tag @s add Door1
 data modify entity @s Rotation[0] set from entity @e[type=minecraft:item_display,tag=Door1Handle,limit=1] Rotation[0]
 execute at @s run rotate @s ~-90 ~
 
+# Join team for glow color
+team join Ember @s
+
 # Remove local tag from previous function
 tag @s remove NewRune

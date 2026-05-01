@@ -1,11 +1,11 @@
-# Called from altar/activate_altar_nodes at game_on
+
 
 ## CONSTRAINTS
-# AS AltarNode
+#   AS AltarNode
 
 #====================================================================================================
 
-#say Activate altar node
+#say (D3) Activate altar node
 
 # Clone built altar from prebuilds
 execute at @s[tag=!Crucible] run clone -390 -43 -119 -388 -42 -117 ~-1 ~-1 ~-1

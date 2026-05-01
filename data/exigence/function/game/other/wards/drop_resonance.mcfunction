@@ -4,14 +4,4 @@
 
 #====================================================================================================
 
-# Tag random crystal
-tag @e[type=interaction,tag=Crystal,sort=random,limit=1] add DroppingResonance
-
-execute as @e[type=interaction,tag=Crystal,tag=DroppingResonance,tag=Emerald] run execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=4},tag=TreasureNode,sort=random,limit=1] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:game/other/wards/shard/summon_emerald"}
-execute as @e[type=interaction,tag=Crystal,tag=DroppingResonance,tag=Sapphire] run execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=4},tag=TreasureNode,sort=random,limit=1] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:game/other/wards/shard/summon_sapphire"}
-execute as @e[type=interaction,tag=Crystal,tag=DroppingResonance,tag=Ruby] run execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=4},tag=TreasureNode,sort=random,limit=1] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:game/other/wards/shard/summon_ruby"}
-execute as @e[type=interaction,tag=Crystal,tag=DroppingResonance,tag=Topaz] run execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=4},tag=TreasureNode,sort=random,limit=1] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:game/other/wards/shard/summon_topaz"}
-execute as @e[type=interaction,tag=Crystal,tag=DroppingResonance,tag=Amethyst] run execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=4},tag=TreasureNode,sort=random,limit=1] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:game/other/wards/shard/summon_amethyst"}
-
-# Remove local tag
-tag @e[type=interaction,tag=Crystal,tag=DroppingResonance] remove DroppingResonance
+execute as @e[x=-520,y=180,z=-287,dx=340,dy=200,dz=340,type=minecraft:interaction,tag=Crystal,sort=random,limit=1] run function exigence:game/other/wards/crystal/drop_resonance_type

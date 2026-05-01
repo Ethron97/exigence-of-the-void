@@ -15,7 +15,7 @@ $scoreboard players set #L$(current_level).AltarNodes debug.node_counter 0
 $scoreboard players set #L$(current_level).BellNodes debug.node_counter 0
 
 # Swap buffers
-$execute store result score #L$(current_level).MenaceNodes debug.node_counter if entity @e[type=minecraft:armor_stand,scores={node.property.object_level=$(current_level)},tag=MenaceNode]
+$execute store result score #L$(current_level).MenaceNodes debug.node_counter if entity @e[type=minecraft:marker,scores={node.property.object_level=$(current_level)},tag=MenaceNode]
 $scoreboard players operation L$(current_level).MenaceNodes debug.node_counter = #L$(current_level).MenaceNodes debug.node_counter
 
 $execute store result score #L$(current_level).HazardNodes debug.node_counter if entity @e[type=minecraft:marker,scores={node.property.object_level=$(current_level)},tag=HazardNode]
@@ -30,11 +30,11 @@ $scoreboard players operation L$(current_level).BerryNodes debug.node_counter = 
 $execute store result score #L$(current_level).EchoNodes debug.node_counter if entity @e[type=minecraft:marker,scores={node.property.object_level=$(current_level)},tag=EchoNode]
 $scoreboard players operation L$(current_level).EchoNodes debug.node_counter = #L$(current_level).EchoNodes debug.node_counter
 
-$execute store result score #L$(current_level).TreasureNodes debug.node_counter if entity @e[type=minecraft:armor_stand,scores={node.property.object_level=$(current_level)},tag=TreasureNode]
+$execute store result score #L$(current_level).TreasureNodes debug.node_counter if entity @e[type=minecraft:marker,scores={node.property.object_level=$(current_level)},tag=TreasureNode]
 $scoreboard players operation L$(current_level).TreasureNodes debug.node_counter = #L$(current_level).TreasureNodes debug.node_counter
 
-$execute store result score #L$(current_level).AltarNodes debug.node_counter if entity @e[type=minecraft:armor_stand,scores={node.property.object_level=$(current_level)},tag=AltarNode,tag=!VaultAltar]
+$execute store result score #L$(current_level).AltarNodes debug.node_counter if entity @e[type=minecraft:marker,scores={node.property.object_level=$(current_level)},tag=AltarNode,tag=!VaultAltar]
 $scoreboard players operation L$(current_level).AltarNodes debug.node_counter = #L$(current_level).AltarNodes debug.node_counter
 
-$execute store result score #L$(current_level).BellNodes debug.node_counter if entity @e[type=minecraft:armor_stand,scores={node.property.object_level=$(current_level)},tag=BellNode]
+$execute store result score #L$(current_level).BellNodes debug.node_counter if entity @e[type=minecraft:marker,scores={node.property.object_level=$(current_level)},tag=BellNode]
 $scoreboard players operation L$(current_level).BellNodes debug.node_counter = #L$(current_level).BellNodes debug.node_counter

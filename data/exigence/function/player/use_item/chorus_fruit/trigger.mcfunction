@@ -7,12 +7,12 @@
 
 # Get nodes on same level
 scoreboard players operation #compare game.player.active_level = @s game.player.active_level
-execute as @e[type=minecraft:armor_stand,tag=MenaceNode] if score @s node.property.object_level = #compare game.player.active_level run tag @s add OnActiveLevel
+execute as @e[type=minecraft:marker,tag=MenaceNode] if score @s node.property.object_level = #compare game.player.active_level run tag @s add OnActiveLevel
 execute as @e[type=minecraft:marker,tag=EchoNode] if score @s node.property.object_level = #compare game.player.active_level run tag @s add OnActiveLevel
 
 # Add candidate tag to nearest X menace/echo nodes
 #   Increase values to change weights and average distance
-execute at @s run tag @e[type=minecraft:armor_stand,tag=MenaceNode,tag=OnActiveLevel,sort=nearest,limit=15] add ChorusCandidate
+execute at @s run tag @e[type=minecraft:marker,tag=MenaceNode,tag=OnActiveLevel,sort=nearest,limit=15] add ChorusCandidate
 execute at @s run tag @e[type=minecraft:marker,tag=EchoNode,tag=OnActiveLevel,sort=nearest,limit=8] add ChorusCandidate
 
 # Eliminate anything with a nearby enemy (nonplayer)
@@ -23,7 +23,7 @@ execute as @e[type=minecraft:armor_stand,tag=ChorusCandidate] at @s if entity @e
 execute at @s run tag @e[type=minecraft:armor_stand,tag=ChorusCandidate,sort=nearest,limit=12] remove ChorusCandidate
 
 # If no candidates remaining, tp to nearest menace node
-execute at @s unless entity @e[type=minecraft:armor_stand,tag=ChorusCandidate] at @e[type=minecraft:armor_stand,tag=MenaceNode,sort=nearest,limit=1] run tp @s ~ ~ ~
+execute at @s unless entity @e[type=minecraft:armor_stand,tag=ChorusCandidate] at @n[type=minecraft:marker,tag=MenaceNode] run tp @s ~ ~ ~
 
 # Tp to a random one
 execute at @e[type=minecraft:armor_stand,tag=ChorusCandidate,sort=random,limit=1] run tp @s ~ ~ ~
