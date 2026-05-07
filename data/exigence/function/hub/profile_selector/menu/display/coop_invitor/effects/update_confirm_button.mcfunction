@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say (D3) Update confirm button
+execute if score debug.level debug matches 3.. run say (D3) Update confirm button
 
 tag @s remove CanConfirm
 

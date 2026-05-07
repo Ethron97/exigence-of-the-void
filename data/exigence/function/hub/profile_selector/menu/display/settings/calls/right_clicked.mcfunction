@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Right click settings
+execute if score debug.level debug matches 3.. run say (D3) Right click settings
 
 function exigence:hub/profile_selector/menu/display/settings/calls/clicked
 # with entity @s item.components."minecraft:custom_data"

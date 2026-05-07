@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # DEBUG
-#say ring bell ring function
+execute if score toggle.bell debug matches 1 if score debug.level debug matches 3.. run say (D3) Ring bell ring function
 
 # Remove bell so player is certain when it has cooled down
 execute at @s run setblock ~ ~ ~ minecraft:air

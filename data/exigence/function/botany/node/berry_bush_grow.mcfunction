@@ -9,10 +9,11 @@
 execute unless entity @s[tag=BerryNode] run return fail
 #----------------------------------------------------------------------------------------------------
 
-#say (D3) I am growing
+execute if score toggle.berry debug matches 1 if score debug.level debug matches 3.. run say (D3) I am growing
 
 # Add Grown tag
 tag @s add Grown
+tag @s add ETICK
 
 execute store result score @s Random run random value 1..2
 

@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) Try enter PRE DUNGEON
+execute if score debug.level debug matches 3.. run say (D3) Try enter PRE DUNGEON
 
 # Make sure player has profile loaded
 execute unless score @s profile.player.profile_id matches 1.. run return run function exigence:hub/predungeon/access/fail/no_profile
@@ -21,6 +21,9 @@ execute if score #did_coop_enter Temp matches 1 run return 0
 # Shop is in use
 execute if entity @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,scores={hub.room.room_type=2},tag=RoomNode] at @s run return run function exigence:hub/predungeon/access/fail/in_use
 #----------------------------------------------------------------------------------------------------
+
+# Game is active
+execute if entity @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,scores={hub.room.room_type=3},tag=RoomNode] at @s run return run function exigence:hub/predungeon/access/fail/in_use_game
 
 # Enter room as first player
 function exigence:hub/predungeon/access/enter

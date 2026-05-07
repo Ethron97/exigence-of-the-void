@@ -5,11 +5,11 @@
 #   AS/AT bookshelf node
 
 ## INPUT
-#   SCORE #setup Temp 0-1
+#   SCORE #setup_bookshelves Temp 0-1
 
 #====================================================================================================
 
 # Reset
 function exigence:mirror/bookshelf/node/reset
 
-execute if score #setup Temp matches 1 run function exigence:mirror/bookshelf/node/activate
+execute if score #setup_bookshelves Temp matches 1 run function exigence:mirror/bookshelf/node/activate

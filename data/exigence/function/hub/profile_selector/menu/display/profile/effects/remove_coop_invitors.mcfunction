@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say (D3) Remove coop invitor
+execute if score debug.level debug matches 3.. run say (D3) Remove coop invitor
 
 execute at @s run kill @e[type=minecraft:text_display,tag=StatusDisplay,distance=..5]
 

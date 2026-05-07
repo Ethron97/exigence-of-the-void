@@ -10,7 +10,7 @@
 execute if score #loaded_to_waiting Temp matches 1.. run return fail
 #----------------------------------------------------------------------------------------------------
 
-#say (D3) Try load to waiting
+execute if score debug.level debug matches 3.. run say (D3) Try load to waiting
 
 # Load chests to data
 execute in exigence:profile_data run function exigence:profile/profile_node/load/try_chest_to_data

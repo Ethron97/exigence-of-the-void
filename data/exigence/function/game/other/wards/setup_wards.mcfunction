@@ -1,27 +1,28 @@
 # Setup wards on level 4 runs
-#   Only called if player is doing difficulty 4 and does not have break_wards advancement
+#   Only called difficulty 4 and profile has not destroyed Wards
 
 ## CONSTRAINTS
-#   AS primary player
+#   IN minecraft:overworld
 
 #====================================================================================================
 
 # Debug
-say Setup wards
+execute if score toggle.wards debug matches 1 if score debug.level debug matches 3.. run say (D3) Setup wards
 
-# Reset tag
-tag @e[tag=ChosenCrystal] remove ChosenCrystal
+# Reset tags
+tag @e[x=-520,y=180,z=-287,dx=340,dy=200,dz=340,type=minecraft:marker,tag=ChosenCrystal] remove ChosenCrystal
+tag @e[x=-520,y=180,z=-287,dx=340,dy=200,dz=340,type=minecraft:marker,tag=CrystalCandidate] remove CrystalCandidate
+
+# Select random level 4 echo or menace node
+tag @e[x=-520,y=180,z=-287,dx=340,dy=200,dz=340,type=minecraft:marker,scores={node.property.object_level=4},tag=EchoNode,tag=!ChosenEchoNode] add CrystalCandidate
+tag @e[x=-520,y=180,z=-287,dx=340,dy=200,dz=340,type=minecraft:marker,scores={node.property.object_level=4},tag=MenaceNode,tag=!Ravagered] add CrystalCandidate
 
 # Copy to main health scoreboard
-scoreboard players operation ward.Emerald game.story.wards = @s profile.story.ward_emerald
-scoreboard players operation ward.Sapphire game.story.wards = @s profile.story.ward_sapphire
-scoreboard players operation ward.Ruby game.story.wards = @s profile.story.ward_ruby
-scoreboard players operation ward.Topaz game.story.wards = @s profile.story.ward_topaz
-scoreboard players operation ward.Amethyst game.story.wards = @s profile.story.ward_amethyst
+#   This is done from load_from_profile_node
 
 # Summon ward if at least 1 health
-execute if score ward.Emerald game.story.wards matches 1.. run function exigence:game/other/wards/crystal/spawn_crystal {color:'Emerald'}
-execute if score ward.Sapphire game.story.wards matches 1.. run function exigence:game/other/wards/crystal/spawn_crystal {color:'Sapphire'}
-execute if score ward.Ruby game.story.wards matches 1.. run function exigence:game/other/wards/crystal/spawn_crystal {color:'Ruby'}
-execute if score ward.Topaz game.story.wards matches 1.. run function exigence:game/other/wards/crystal/spawn_crystal {color:'Topaz'}
-execute if score ward.Amethyst game.story.wards matches 1.. run function exigence:game/other/wards/crystal/spawn_crystal {color:'Amethyst'}
+execute if score ward.emerald game.story.wards matches 1.. run function exigence:game/other/wards/setup/emerald/0_setup_ward
+execute if score ward.sapphire game.story.wards matches 1.. run function exigence:game/other/wards/setup/sapphire/0_setup_ward
+execute if score ward.ruby game.story.wards matches 1.. run function exigence:game/other/wards/setup/ruby/0_setup_ward
+execute if score ward.topaz game.story.wards matches 1.. run function exigence:game/other/wards/setup/topaz/0_setup_ward
+execute if score ward.amethyst game.story.wards matches 1.. run function exigence:game/other/wards/setup/amethyst/0_setup_ward

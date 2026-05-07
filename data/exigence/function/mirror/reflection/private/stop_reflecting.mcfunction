@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Stop reflecting
+execute if score toggle.mirror debug matches 1 if score debug.level debug matches 3.. run say (D3) (D3) Stop reflecting
 
 # Store num to lookup reflection
 scoreboard players operation #compare game.player.player_number = @s game.player.player_number

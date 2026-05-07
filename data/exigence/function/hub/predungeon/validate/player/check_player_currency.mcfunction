@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) check currency
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3) check currency
 
 # Clear currency
 execute store result score #temp Temp run clear @s #exigence:currency 0

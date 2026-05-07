@@ -151,8 +151,9 @@ scoreboard objectives remove game.resources
 scoreboard objectives remove game.setup.level_3_stairs
 scoreboard objectives remove game.state
 scoreboard objectives remove game.story.puzzle_candle_id
-scoreboard objectives remove game.story.ward_crystal.node_id
+scoreboard objectives remove game.story.ward_crystal.id
 scoreboard objectives remove game.story.wards
+scoreboard objectives remove game.story.beacons
 scoreboard objectives remove game.treasure.picked_up_coin_handle
 scoreboard objectives remove game.triumph
 scoreboard objectives remove game.vault.handle.id
@@ -162,6 +163,10 @@ scoreboard objectives remove game.warden.anger
 scoreboard objectives remove game.warden.awareness
 scoreboard objectives remove global_settings
 scoreboard objectives remove hub.coin_conversion
+scoreboard objectives remove hub.coin_conversion.glint_owed
+scoreboard objectives remove hub.coin_conversion.leftover_coins
+scoreboard objectives remove hub.coin_conversion.coins_converted
+scoreboard objectives remove hub.coin_conversion.money_converted
 scoreboard objectives remove hub.coin_conversion_alt
 scoreboard objectives remove hub.coin_conversion.math
 scoreboard objectives remove hub.coin_conversion.smash_batch
@@ -1002,6 +1007,7 @@ scoreboard objectives remove profile.story.ward_ruby
 scoreboard objectives remove profile.story.ward_sapphire
 scoreboard objectives remove profile.story.ward_topaz
 scoreboard objectives remove quits
+scoreboard objectives remove quit
 scoreboard objectives remove Random
 scoreboard objectives remove RandomB
 scoreboard objectives remove shop.frame.lore_lines

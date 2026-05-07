@@ -1,1 +1,0 @@
-data merge block ~ ~ ~ {item:{id:"minecraft:burn_pottery_sherd",count:1,components:{"minecraft:max_stack_size":1,"minecraft:custom_data":{pot:'true'}}}}

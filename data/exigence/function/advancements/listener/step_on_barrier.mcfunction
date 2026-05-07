@@ -1,4 +1,6 @@
-#say (D3) Step on barrier
+# Called as advancement reward
+
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3) Step on barrier
 
 # Reset advancement
 advancement revoke @s only exigence:listener/step_on_barrier

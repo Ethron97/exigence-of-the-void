@@ -9,7 +9,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) Enter Tutorial
+execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Enter Tutorial
 effect clear @s night_vision
 
 # Reset scores

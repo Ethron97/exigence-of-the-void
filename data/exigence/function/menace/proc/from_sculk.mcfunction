@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) Proc menace from sculk
+execute if score toggle.menace debug matches 1 if score debug.level debug matches 3.. run say (D3) Proc menace from sculk
 
 # Always summon an eyeball
 #execute at @s run function exigence:menace/eyeball/summon_eyeball

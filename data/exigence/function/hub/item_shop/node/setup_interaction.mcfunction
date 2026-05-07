@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Setup item shop interaction
+execute if score debug.level debug matches 3.. run say (D3) Setup item shop interaction
 
 # Summon interaction
 summon interaction ~ ~ ~ {Tags:["ItemShopInteraction","NewItemShopInteraction","FunctionInteraction"],response:true,width:0.01,height:0.01}

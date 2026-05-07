@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) I am Triggered
+execute if score toggle.altar debug matches 1 if score debug.level debug matches 3.. run say (D3) I am Triggered
 
 # Add triggered tag
 tag @s add Triggered

@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.hazard debug matches 1 if score debug.level debug matches 3.. run say (D3) Fire tower A
+
 # Set fire
 fill -388 220 -142 -390 220 -144 fire
 

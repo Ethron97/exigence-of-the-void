@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) Unload item shop
+execute if score debug.level debug matches 3.. run say (D3) Unload item shop
 
 # Cancel if any items are mid-load
 scoreboard players set #cancel_item_shop_iterate Temp 1

@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) Load tutorial
+execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Load tutorial
 
 #execute positioned 64 100 0 run forceload add ~ ~ ~180 ~200
 #execute positioned 181 131 -69 run forceload add ~ ~ ~70 ~130
@@ -23,4 +23,4 @@ scoreboard players set Step Tutorial 0
 execute in exigence:tutorial run function exigence:tutorial/reset
 execute in exigence:tutorial run function exigence:tutorial/flow/next_token
 
-execute if data storage exigence:debug {tutorial:1} run function exigence:tutorial/toggle_debug
+execute if score toggle.tutorial debug matches 1 run function exigence:tutorial/admin/toggle_tutorial_debug

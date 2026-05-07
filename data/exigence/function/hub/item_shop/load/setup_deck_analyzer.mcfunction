@@ -10,7 +10,7 @@
 
 #====================================================================================================
 
-#say (D3) Setup deck analyzer [item shop]
+execute if score debug.level debug matches 3.. run say (D3) Setup deck analyzer [item shop]
 
 # Call interface-summon
 function exigence:hub/deck_analyzer/setup_deck_analyzer_node

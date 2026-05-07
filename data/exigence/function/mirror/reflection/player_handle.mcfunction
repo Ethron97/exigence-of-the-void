@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) player handle
+execute if score toggle.mirror debug matches 1 if score debug.level debug matches 5.. run say (D5) player handle
 
 # If there is not close to any mirrors, return
 execute unless entity @e[type=minecraft:armor_stand,tag=MirrorNode,distance=..30] run return fail

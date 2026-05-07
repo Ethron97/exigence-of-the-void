@@ -1,4 +1,5 @@
-# Clear door
+# Clear door (and ender-pearl proofing barriers)
+fill -421 66 -145 -419 68 -143 air replace barrier
 fill -421 66 -145 -419 68 -143 air destroy
 
 # Surrounding effects

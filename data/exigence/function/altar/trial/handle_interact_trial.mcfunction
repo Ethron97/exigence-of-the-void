@@ -19,4 +19,4 @@ execute if entity @s[tag=Trial] run tag @p[tag=Lighting] add Trial
 execute if entity @s[tag=Crucible] run tag @p[tag=Lighting] add Crucible
 
 # Get/tag parent vault node
-execute as @n[type=minecraft:armor_stand,tag=VaultNode,distance=..8] run function exigence:altar/trial/begin_switch
+execute as @n[type=minecraft:marker,tag=VaultNode,distance=..8] run function exigence:altar/trial/begin_switch

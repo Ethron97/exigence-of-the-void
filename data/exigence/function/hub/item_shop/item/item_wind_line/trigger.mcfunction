@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) trigger wind line item
+execute if score debug.level debug matches 3.. run say (D3) trigger wind line item
 
 # Playsound
 playsound minecraft:entity.breeze.idle_ground ambient @a ^ ^ ^4 1 1.0

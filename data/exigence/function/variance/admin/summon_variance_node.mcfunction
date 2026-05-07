@@ -17,7 +17,7 @@ team join Variance @e[type=minecraft:marker,tag=NewMarker]
 $scoreboard players set @e[type=minecraft:marker,tag=NewMarker] node.property.max_node_state $(max_node_state)
 
 # Glow if debug on
-execute if data storage exigence:debug {variance:1} as @e[type=minecraft:marker,tag=VarianceNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
+execute if score toggle.variance debug matches 1 as @e[type=minecraft:marker,tag=VarianceNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
 
 # Remove local tag
 tag @e[type=minecraft:marker,tag=NewMarker] remove NewMarker

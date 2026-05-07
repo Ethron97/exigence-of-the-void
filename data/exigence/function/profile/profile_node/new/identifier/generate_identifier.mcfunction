@@ -12,7 +12,7 @@
 
 #====================================================================================================
 
-#say (D3) Get identifier
+execute if score debug.level debug matches 3.. run say (D3) Get identifier
 
 # Initialize array
 scoreboard players set #max_identifiers Temp 18

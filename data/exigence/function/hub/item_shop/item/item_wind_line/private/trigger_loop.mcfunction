@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Wind line loop
+execute if score debug.level debug matches 3.. run say (D3) Wind line loop
 
 # Reduce iteration
 scoreboard players remove #i Temp 1

@@ -23,11 +23,13 @@ execute as @e[type=minecraft:item,tag=NAS,nbt={Item:{id:"minecraft:trident"}},di
 #   This handles copying the data and summoning item display
 $execute as @e[type=minecraft:item,tag=NAS,distance=..0.1] run function exigence:menu/load_item_display {menu_tag:'$(menu_tag)',Rotation:'$(Rotation)',scale:'0.5',hover_scale:'0.7'}
 
-# Give NewVaultTrialDisplay tag
-#tag @e[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] add NewVaultTrialDisplay
+# Give VaultTrialDisplay tag
+tag @e[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] add VaultTrialDisplay
+tag @e[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] add NewVaultTrialDisplay
 
 # Remove local tag
 tag @e[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] remove NewItemDisplay
+tag @e[type=minecraft:item_display,tag=NewItemDisplays,distance=..0.1] remove NewItemDisplays
 
 # Kill summoned item (no longer needed)
 kill @e[type=minecraft:item,tag=NAS,distance=..0.1]

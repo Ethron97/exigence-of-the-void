@@ -40,3 +40,6 @@ scoreboard players operation @s profile.node.slot_id = #compare profile.node.slo
 # Add profile ID to the name
 execute store result storage exigence:temp profile_id int 1 run scoreboard players get #sequence profile.player.profile_id
 function exigence:profile/profile_node/new/private/add_profile_id_to_name with storage exigence:temp
+
+# Initialize other scores
+function exigence:profile/profile_node/new/initialize_scores

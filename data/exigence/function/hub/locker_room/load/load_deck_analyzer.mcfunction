@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say (D3) Load deck analyzer [locker room]
+execute if score debug.level debug matches 3.. run say (D3) Load deck analyzer [locker room]
 
 # Call interface
 #   INPUT: #profile_id Temp, #coop_profile_id Temp

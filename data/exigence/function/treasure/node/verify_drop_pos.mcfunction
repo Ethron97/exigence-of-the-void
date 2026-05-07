@@ -14,7 +14,7 @@
 #====================================================================================================
 
 # DEBUG
-#$say (D3) Verify drop position $(final_x) $(final_y) $(final_z)
+$execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Verify drop position $(final_x) $(final_y) $(final_z)
 
 $execute if block $(final_x) $(final_y) $(final_z) #exigence:pass_through run data modify storage exigence:treasure_drop verify set value 1
 

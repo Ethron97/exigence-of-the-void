@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) Light tutorial
+execute if score toggle.altar debug matches 1 if score debug.level debug matches 3.. run say (D3) Light tutorial
 
 scoreboard players set #blaze_powder Temp 0
 scoreboard players set #spark Temp 0

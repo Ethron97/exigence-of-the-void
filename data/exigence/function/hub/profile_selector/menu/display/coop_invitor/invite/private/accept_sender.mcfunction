@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Accept invite -  sender
+execute if score debug.level debug matches 3.. run say (D3) Accept invite -  sender
 
 tag @s remove InviteSent
 tag @s add InvitedBy

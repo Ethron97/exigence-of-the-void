@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) Force unload [predungeon]
+execute if score debug.level debug matches 3.. run say (D3) Force unload [predungeon]
 
 # Kick players currently in the room
 execute as @a[tag=Predungeon] run function exigence:hub/predungeon/access/kick

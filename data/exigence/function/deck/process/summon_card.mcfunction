@@ -5,15 +5,15 @@
 
 #====================================================================================================
 
-#say (D3) Summon card (add card to deck)
+execute if score debug.level debug matches 4.. run say (D4) Summon card (add card to deck)
 
 # Handle summoning of new card and moving the deck location marker
 function exigence:deck/process/private/summon_card_b
 
 # Get highest current deck score
-#scoreboard players set #highest game.deck 0
-#execute as @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=Card] run scoreboard players operation #highest game.deck > @s game.deck
-scoreboard players add #highest game.deck 1
+#scoreboard players set deck.size game.deck 0
+#execute as @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=Card] run scoreboard players operation deck.size game.deck > @s game.deck
+scoreboard players add deck.size game.deck 1
 
 # Handle data for the new card
 #   Assigns deck score, removes new card tag, glows if debug

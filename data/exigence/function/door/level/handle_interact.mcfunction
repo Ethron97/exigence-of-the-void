@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-say (D3) Level door handle interaction 
+execute if score toggle.door debug matches 1 if score debug.level debug matches 3.. run say (D3) Level door handle interaction 
 
 ## VERIFY HOLDING KEY
 # Return if player is not holding a key
@@ -30,9 +30,6 @@ execute if data storage exigence:door {key_match:0} run return run playsound min
 #----------------------------------------------------------------------------------------------------
 
 ## SUCCESSFUL KEY
-# Kill the vault handle interaction (we no longer need it)
-kill @s[type=minecraft:interaction]
-
 # Decrement item in mainhand
 execute on target run item modify entity @s[gamemode=!creative] weapon.mainhand exigence:decrement
 
@@ -45,5 +42,5 @@ execute if entity @s[tag=Door1Handle] on target at @s as @n[type=minecraft:item_
 execute if entity @s[tag=Door2Handle] on target at @s as @n[type=minecraft:item_display,tag=DoorHandle,distance=..10] run function exigence:door/level/door_2/insert_key with storage exigence:door
 execute if entity @s[tag=Door3Handle] on target at @s as @n[type=minecraft:item_display,tag=DoorHandle,distance=..10] run function exigence:door/level/door_3/insert_key with storage exigence:door
 
-# Remove local tag
-execute on target run tag @s remove HandleInteracting
+# Kill the vault handle interaction (we no longer need it)
+kill @s[type=minecraft:interaction]

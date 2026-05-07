@@ -1,13 +1,7 @@
-# Reset node tags
-execute as @e[type=minecraft:armor_stand,tag=VaultNode,tag=Opened] run tag @s remove Opened
-execute as @e[type=minecraft:armor_stand,tag=VaultNode,tag=PickedUp] run tag @s remove PickedUp
 
+# MOVE TO GAME RESET
 # Kill any vault key hovers
 kill @e[type=minecraft:item_display,tag=VaultHandleKey]
-
-# Kill old door handls
-kill @e[type=minecraft:item_display,tag=VaultHandle]
-kill @e[type=minecraft:interaction,tag=VaultHandle]
 
 # Clean lingering antechamber displays
 function exigence:door/vault/_trial/_cleanup_displays {vault_code:1,vault_name:'Bolt'}

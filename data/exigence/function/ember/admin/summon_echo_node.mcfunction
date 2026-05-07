@@ -21,8 +21,8 @@ execute as @e[type=minecraft:marker,tag=NewNode] run scoreboard players set @s n
 execute as @e[type=minecraft:marker,tag=NewNode] run team join Echo @s
 
 # If debug, glow
-execute if data storage exigence:debug {echo:1} as @e[type=minecraft:marker,tag=NewNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
-execute if data storage exigence:debug {echo:1} as @e[type=minecraft:marker,tag=NewNode] run function exigence:ember/private/summon_echo_difficulty_display
+execute if score toggle.echo debug matches 1 as @e[type=minecraft:marker,tag=NewNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
+execute if score toggle.echo debug matches 1 as @e[type=minecraft:marker,tag=NewNode] run function exigence:ember/private/summon_echo_difficulty_display
 
 # Remove "NewNode" tag
 tag @e[type=minecraft:marker,tag=NewNode] remove NewNode

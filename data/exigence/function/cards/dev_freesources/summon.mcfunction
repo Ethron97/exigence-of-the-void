@@ -5,4 +5,5 @@ data modify entity @s Item.components."minecraft:custom_model_data".strings set 
 
 $data modify entity @s Item.components."minecraft:lore" append value [{text:"✪✪✪✪✪",italic:false,color:"$(developer)"},{text:" ",italic:false,color:"dark_gray"},{text:"Instant Card",italic:false,color:"white"}]
 data modify entity @s Item.components."minecraft:lore" append value [{text:""}]
+data modify entity @s Item.components."minecraft:lore" append value [{text:"+4 max to each resource",italic:false,color:"gray"}]
 data modify entity @s Item.components."minecraft:lore" append value [{text:"Fill each resource",italic:false,color:"gray"}]

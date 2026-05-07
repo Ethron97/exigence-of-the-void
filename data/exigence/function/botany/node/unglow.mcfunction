@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say Unglow
+execute if score toggle.berry debug matches 1 if score debug.level debug matches 3.. run say (D3) Unglow
 
 # Remove tag
 tag @s remove BerryGlowing

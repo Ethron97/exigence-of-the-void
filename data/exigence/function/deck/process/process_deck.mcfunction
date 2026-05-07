@@ -5,15 +5,17 @@
 
 #====================================================================================================
 execute unless entity @n[type=minecraft:marker,tag=ProfileNode,distance=..0.01] run return run tellraw @a {text:"Process deck was not run on a profile node",color:"red"}
-#====================================================================================================
+#----------------------------------------------------------------------------------------------------
 
-#say (D3) Process deck
+execute if score debug.level debug matches 3.. run say (D3) Process deck
 
 # Reset Highest
-scoreboard players set #highest game.deck 0
+scoreboard players set deck.size game.deck 0
 
 # Teleport DeckCardLocation to start position
 execute in minecraft:overworld run tp @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=DeckCardLocation,limit=1] 541.5 0.0 541.5
+
+
 
 # We have to give the full name for each card to process to keep track of rarity color / special symbols as well
 # "CardName" is the name of the card play function and ascension etc functions to be used as a macro later.
@@ -85,7 +87,7 @@ function exigence:deck/process/process_card {card_name:"glimmer",display_name:"G
 function exigence:deck/process/process_card {card_name:"detection",display_name:"Detection",rarity:1,void:0,recycler:0,spellbinder:0,instant:0,persistent:0}
 
 # Common Instant
-function exigence:deck/process/process_card {card_name:"canyon_runner",display_name:"Canyon Runner",rarity:1,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
+function exigence:deck/process/process_card {card_name:"canyon_runner",display_name:"Canyon Runner",rarity:1,void:0,recycler:0,spellbinder:0,instant:2,persistent:0}
 function exigence:deck/process/process_card {card_name:"spike_growth",display_name:"Spike Growth",rarity:1,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/process_card {card_name:"key_hunter_i",display_name:"Key Hunter I",rarity:1,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/process_card {card_name:"forgotten_belonging",display_name:"Forgotten Belonging",rarity:1,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
@@ -136,7 +138,7 @@ function exigence:deck/process/process_card {card_name:"heart_of_ferocity",displ
 # Rare Void
 function exigence:deck/process/process_card {card_name:"patience",display_name:"Patience",rarity:3,void:1,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/process_card {card_name:"dissonance_ii",display_name:"Dissonance II",rarity:3,void:1,recycler:0,spellbinder:0,instant:1,persistent:0}
-function exigence:deck/process/process_card {card_name:"prescience",display_name:"Prescience",rarity:3,void:1,recycler:0,spellbinder:1,instant:1,persistent:0}
+function exigence:deck/process/process_card {card_name:"prescience",display_name:"Prescience",rarity:3,void:1,recycler:0,spellbinder:1,instant:2,persistent:0}
 function exigence:deck/process/process_card {card_name:"forbidden_knowledge",display_name:"Forbidden Knowledge",rarity:3,void:1,recycler:0,spellbinder:0,instant:1,persistent:0}
 
 # Rare
@@ -219,7 +221,7 @@ function exigence:deck/process/process_card {card_name:"void_clone",display_name
 function exigence:deck/process/process_card {card_name:"inner_fire",display_name:"Inner Fire",rarity:4,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 
 # PRIORITY LAST
-function exigence:deck/process/process_card {card_name:"conviction",display_name:"Conviction",rarity:4,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
+function exigence:deck/process/process_card {card_name:"conviction",display_name:"Conviction",rarity:4,void:0,recycler:0,spellbinder:0,instant:2,persistent:0}
 
 
 #====================================================================================================
@@ -237,10 +239,5 @@ function exigence:deck/process/process_card {card_name:"dev_freesources",display
 
 scoreboard players set #Highest game.cards_played 0
 
-scoreboard players set #card_counter Temp 0
-# Post process card:
-execute in minecraft:overworld as @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,tag=Card] run function exigence:deck/process/private/post_process_card
-scoreboard players operation .cards game.dungeon = #card_counter Temp
-
-## OBLIVION
-execute if score mod.oblivion game.modifiers matches 1 run function exigence:cards/oblivion/trigger
+# Immediately play instants that must be played during setup:
+execute in minecraft:overworld as @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,tag=Card,tag=Instant,tag=PlayDuringSetup] run function exigence:deck/process/private/post_process_card_instant

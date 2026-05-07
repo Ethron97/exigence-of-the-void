@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.hazard debug matches 1 if score debug.level debug matches 3.. run say (D3) Red stairs
+
 # SMOLDER
 fill -377 95 -116 -377 97 -114 air
 summon minecraft:blaze -375.5 96.0 -114.5 {Tags:["L2","DataMerge","RedStairs"],CustomName:{text:"Smolder",color:"gold",italic:false},PersistenceRequired:1b}

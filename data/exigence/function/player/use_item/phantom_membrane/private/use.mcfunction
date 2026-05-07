@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say trigger phantom membrane
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3) Trigger phantom membrane
 
 # Final validation of preview location
 function exigence:player/use_item/phantom_membrane/private/update_preview

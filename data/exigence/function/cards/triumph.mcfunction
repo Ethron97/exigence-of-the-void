@@ -34,4 +34,4 @@ execute if score tri.Joy game.triumph matches 3 as @a[scores={dead=0},tag=Active
 execute if score tri.Gratification game.triumph matches 1 as @a[scores={dead=0},tag=ActivePlayer] run effect give @s saturation 10
 
 # True Ascension
-execute if score tri.TrueAscension game.triumph matches 1 run execute as @e[type=minecraft:armor_stand,tag=Card,tag=Ascend] run function exigence:deck/play_ascend with entity @s equipment.mainhand.components."minecraft:custom_data"
+execute if score tri.TrueAscension game.triumph matches 1 run execute as @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=Card,tag=Ascend] run function exigence:deck/play_ascend with entity @s equipment.mainhand.components."minecraft:custom_data"

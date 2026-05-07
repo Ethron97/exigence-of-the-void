@@ -12,7 +12,7 @@
 #====================================================================================================
 
 # DEBUG
-#$say Set effect health $(duration) $(amplifier)
+$execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3) Set effect health $(duration) $(amplifier)
 
 # Setup scores
 scoreboard players set et.FromCard game.effect_temp 0

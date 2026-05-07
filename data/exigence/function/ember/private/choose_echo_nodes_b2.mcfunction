@@ -15,7 +15,7 @@
 
 #====================================================================================================
 
-#$say (D3) Choose echo nodes b2 $(min_difficulty)..$(max_difficulty)
+$execute if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3) Choose echo nodes b2 $(min_difficulty)..$(max_difficulty)
 
 # Reduce iteration score
 scoreboard players remove #temp Temp 1

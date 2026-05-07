@@ -1,5 +1,5 @@
 # Execute at active player
-#say (D3) trigger dust of appearance
+execute if score debug.level debug matches 3.. run say (D3) trigger dust of appearance
 
 # Playsound
 playsound minecraft:item.firecharge.use ambient @a ^ ^ ^3 1 1.5

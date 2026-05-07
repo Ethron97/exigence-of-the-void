@@ -5,6 +5,8 @@
 #   IN minecraft:overworld
 
 ## INPUT
+#   STR card_name
+#   STR display_name
 #   SCORE #copies deck.process_card
 #   SCORE #rarity deck.process_card
 #   SCORE #void deck.process_card
@@ -15,7 +17,7 @@
 
 #====================================================================================================
 
-#$say (D3) I am loading $(card_name)
+$execute if score debug.level debug matches 3.. run say (D3) I am loading $(card_name)
 
 # Summon the relavent armor stand(s)
 execute if score #copies deck.process_card matches 1.. run execute as @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=DeckCardLocation,limit=1] at @s run function exigence:deck/process/summon_card
@@ -25,12 +27,13 @@ execute if score #copies deck.process_card matches 3.. unless score #rarity deck
 
 # Update game.cards_played.times_processed
 $scoreboard players operation card.$(card_name) game.cards_played.times_processed += #copies deck.process_card
-$execute if data storage exigence:debug {void:0} run scoreboard players operation card.$(card_name) TimesProcessedTotal += #copies deck.process_card
+$execute if score toggle.void debug matches 0 run scoreboard players operation card.$(card_name) TimesProcessedTotal += #copies deck.process_card
 
 # Summon copy of card item
 $execute positioned 537.5 0.0 472.5 run function exigence:cards/summon_card {card_name:'$(card_name)'}
 
 # Run data function on each of the newly summoned cards
+#   INPUT: score inputs
 $execute as @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=NewCards] run function exigence:deck/process/private/load_card_b {card_name:'$(card_name)',display_name:'$(display_name)'}
 
 # Delete summoned card

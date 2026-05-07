@@ -2,7 +2,7 @@
 
 #====================================================================================================
 
-#say (D3) Resolve menace
+execute if score toggle.menace debug matches 1 if score debug.level debug matches 3.. run say (D3) Resolve menace
 
 # Reduce MenaceQueue by 1
 scoreboard players remove menace.queue game.dungeon.temp 1

@@ -1,7 +1,7 @@
 # Reset advancement
 advancement revoke @s only exigence:listener/pickup/ember_echo
 
-#say pickup ember echo
+execute if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3) Pickup ember echo
 
 # TUTORIAL
 clear @s[tag=Tutorial] minecraft:campfire
@@ -13,6 +13,8 @@ execute as @s[tag=Tutorial] run scoreboard players add @s profile.data.ember.cr.
 execute if score game.is_active game.state matches 0 run return 1
 execute unless entity @s[tag=ActivePlayer] run return 1
 #----------------------------------------------------------------------------------------------------
+
+execute if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3) Pickup ember echo game
 
 # Delete the pickup item from their inventory
 clear @s minecraft:campfire 1

@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say (D3) Setup deck analyzer from profile selector room
+execute if score debug.level debug matches 3.. run say (D3) Setup deck analyzer from profile selector room
 
 # Call interface-summon
 function exigence:hub/deck_analyzer/setup_deck_analyzer_node

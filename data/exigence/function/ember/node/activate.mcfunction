@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) I am activate
+execute if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3) I am activate
 
 tag @s add Active
 execute at @s run team join ActiveEcho @n[type=minecraft:block_display,tag=EchoDebugDisplay,distance=..3]

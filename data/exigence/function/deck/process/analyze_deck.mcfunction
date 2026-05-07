@@ -6,9 +6,9 @@
 
 #====================================================================================================
 execute unless entity @n[type=minecraft:marker,tag=ProfileNode,distance=..0.01] run return run tellraw @a {text:"Analyze deck was not run on a profile node",color:"red"}
-#====================================================================================================
+#----------------------------------------------------------------------------------------------------
 
-#say (D3) Analyze deck (new)
+execute if score debug.level debug matches 3.. run say (D3) Analyze deck (new)
 
 # Reset
 data modify storage exigence:hub too_many_copies set value false

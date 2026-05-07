@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Leaving Predungeon
+execute if score debug.level debug matches 3.. run say (D3) Leaving Predungeon
 
 tag @s remove Predungeon
 team leave @s

@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#$say (D3) Cycle setting $(scoreboard)
+$execute if score debug.level debug matches 3.. run say (D3) Cycle setting $(scoreboard)
 
 # Increase this random score by 1
 scoreboard players add @s Random 1

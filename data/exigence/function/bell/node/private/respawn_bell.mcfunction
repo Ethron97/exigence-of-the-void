@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say Respawn bell
+execute if score toggle.bell debug matches 1 if score debug.level debug matches 3.. run say (D3) Respawn bell
 
 execute at @s run setblock ~ ~ ~ minecraft:bell[attachment=ceiling]
 

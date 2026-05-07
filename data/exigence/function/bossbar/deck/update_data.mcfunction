@@ -4,6 +4,7 @@
 #   game_on
 #   spellbind
 #   spellsling
+#   recycle
 #   draw_card
 
 #====================================================================================================
@@ -12,11 +13,8 @@
 #   Initialize with length 1 so off-by-one counting is eaiser
 data modify storage exigence:bossbar_deck cards set value ['']
 
-# Call in order rarity,spellbound
-execute as @e[type=minecraft:armor_stand,tag=Card,tag=!Played] run function exigence:bossbar/deck/private/_add_display_pre
-
-# Create gray card for each played card (order does not matter)
-execute as @e[type=minecraft:armor_stand,tag=Card,tag=Played] run function exigence:bossbar/deck/private/add_display {color:"dark_gray",italic:"false"}
+# Add displays through forced order
+function exigence:bossbar/deck/private/add_displays_ordered
 
 # Copy array data to individual keys
 #   If there is data, copy it
@@ -66,6 +64,9 @@ data modify storage exigence:bossbar_deck card_40 set from storage exigence:boss
 data modify storage exigence:bossbar_deck card_41 set from storage exigence:bossbar_deck cards[41]
 data modify storage exigence:bossbar_deck card_42 set from storage exigence:bossbar_deck cards[42]
 data modify storage exigence:bossbar_deck card_43 set from storage exigence:bossbar_deck cards[43]
+
+# Get break points (white space between card sections for readibility)
+function exigence:bossbar/deck/private/determine_display_breaks
 
 # Update title
 function exigence:bossbar/deck/update_title with storage exigence:bossbar_deck

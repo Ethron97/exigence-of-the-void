@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Resetting
+execute if score toggle.variance debug matches 1 if score debug.level debug matches 3.. run say (D3) Resetting
 
 # Tag remove
 tag @s remove NeedReset

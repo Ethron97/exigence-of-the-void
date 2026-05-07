@@ -814,7 +814,7 @@ scoreboard objectives add game.ravager.eating_cookie dummy
 scoreboard objectives add game.resources dummy
 scoreboard objectives add game.setup.level_3_stairs dummy
 scoreboard objectives add game.story.puzzle_candle_id dummy
-scoreboard objectives add game.story.ward_crystal.node_id dummy
+scoreboard objectives add game.story.ward_crystal.id dummy
 scoreboard objectives add game.story.wards dummy
 scoreboard objectives add game.treasure.picked_up_coin_handle dummy
 scoreboard objectives add game.triumph dummy

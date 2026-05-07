@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Close tutorial (player timed out)
+execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Close tutorial (player timed out)
 
 scoreboard players operation #compare hub.room.room_id = @s hub.room.room_id
 

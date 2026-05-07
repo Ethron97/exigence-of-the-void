@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say Unapply dragon breath
+execute if score toggle.enemy debug matches 1 if score debug.level debug matches 3.. run say (D3) Unapply dragon breath
 
 tag @s remove DragonBreath
 scoreboard players set @s game.entity.glow_remaining 0

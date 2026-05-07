@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) Entering Locker Room
+execute if score debug.level debug matches 3.. run say (D3) Entering Locker Room
 
 tag @s add LockerRoom
 

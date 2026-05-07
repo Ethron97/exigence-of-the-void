@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) Drop big
+execute if score toggle.echo debug matches 1 if score debug.level debug matches 4.. run say (D4) Drop echo ember big
 
 # Summon new ember drop
 loot spawn ~ ~0.5 ~ loot exigence:ember/ember_echo_big

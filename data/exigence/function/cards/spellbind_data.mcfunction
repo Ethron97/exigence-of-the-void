@@ -12,7 +12,8 @@ tag @s add ForceGive
 data modify entity @s Item.id set value "minecraft:carrot_on_a_stick"
 
 # Give custom data so we know it's a spellbind
-data modify entity @s Item.components."minecraft:custom_data".is_spellsling set value "true"
+data modify entity @s Item.components."minecraft:custom_data".is_spellsling set value true
+data modify entity @s Item.components."minecraft:custom_data".is_soulbound set value true
 
 # Append to lore explaining Spellbound
 data modify entity @s Item.components."minecraft:lore" append value [{text:"",italic:false,color:"gray"}]
@@ -25,7 +26,8 @@ data modify entity @s Item.components."minecraft:custom_data".red set from stora
 data modify entity @s Item.components."minecraft:custom_data".aqua set from storage exigence:resources aqua
 
 # Give to player(s)
-execute as @a[tag=ActivePlayer] run function exigence:player/give_from_item/give {type:'hotbar',index:0,card_name:'$(card_name)'}
+#   This reason we have "force give" is in case they are spectating.
+execute at @s as @a[tag=ActivePlayer] run function exigence:player/give_from_item/try_give
 
 # Kill item
 kill @s

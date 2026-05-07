@@ -19,7 +19,7 @@ execute as @s[tag=BellInteract] run function exigence:bell/node/ring_resolve
 execute as @s[tag=AltarInteract] at @s run function exigence:altar/handle_interact
 execute as @s[tag=BeaconInteract] run function exigence:beacon/handle_interact
 execute as @s[tag=Crystal] run function exigence:game/other/wards/crystal/handle_interact
-execute as @s[tag=VaultHandle] run function exigence:door/vault/handle_interact
+execute as @s[tag=VaultHandle] at @s run function exigence:door/vault/handle_interact
 execute as @s[tag=DoorHandle] run function exigence:door/level/handle_interact
 
 # Remove local tags

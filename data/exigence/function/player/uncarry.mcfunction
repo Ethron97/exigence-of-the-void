@@ -7,7 +7,8 @@
 #====================================================================================================
 
 # Kill Villager (after tping up so it doesn't look weird)
-execute as @e[type=minecraft:villager,tag=Carried] at @s run tp @s ~ ~1000 ~
-kill @e[type=minecraft:villager,tag=Carried]
+execute as @e[type=minecraft:villager,tag=Carried] run function exigence:npc/game/unload_from_carrying
 
 tellraw @s {text:"The NPC returns to hiding",color:"gray"}
+
+tag @s remove Carrying

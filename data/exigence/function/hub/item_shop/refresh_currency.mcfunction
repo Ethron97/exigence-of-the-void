@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Refresh global currency
+execute if score debug.level debug matches 3.. run say (D3) Refresh global currency
 
 scoreboard players set #Total shop.player.money_to_spend 0
 scoreboard players set #Total shop.player.research_to_spend 0

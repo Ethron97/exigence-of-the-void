@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) trigger web ball throw
+execute if score debug.level debug matches 3.. run say (D3) trigger web ball throw
 
 # Reset snowball score
 scoreboard players set @s game.player.used.snowball 0

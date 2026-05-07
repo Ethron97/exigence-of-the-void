@@ -6,10 +6,10 @@
 #====================================================================================================
 
 # Inform
-tellraw @s {text:"You were unable to escape in time",color:"red"}
+tellraw @s {text:"You were unable to escape in time :(",color:"red"}
 
 # Kill
 kill @s
 
 # Teleport to ember shop
-execute at @e[type=minecraft:armor_stand,tag=EmberShop,limit=1] run teleport @s ~ ~ ~ ~ ~
+#execute at @e[type=minecraft:armor_stand,tag=EmberShop,limit=1] run teleport @s ~ ~ ~ ~ ~

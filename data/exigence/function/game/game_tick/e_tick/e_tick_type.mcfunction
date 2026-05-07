@@ -10,6 +10,7 @@
 #   Most common to least common
 execute if entity @s[type=minecraft:marker] run return run function exigence:game/game_tick/e_tick/e_tick_marker
 execute if entity @s[type=minecraft:item] run return run function exigence:game/game_tick/e_tick/e_tick_item
+execute if entity @s[type=minecraft:interaction] run return run function exigence:game/game_tick/e_tick/e_tick_interaction
 execute if entity @s[type=minecraft:ravager] run return run function exigence:game/game_tick/e_tick/e_tick_ravager
 execute if entity @s[type=minecraft:warden] run return run function exigence:game/game_tick/e_tick/e_tick_warden
 # Non-ravager/warden enemies:

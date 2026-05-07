@@ -10,11 +10,12 @@
 
 #====================================================================================================
 
-#say (D3) summoning level key
+execute unless score toggle.treasure debug matches 0 unless score toggle.door debug matches 0 if score debug.level debug matches 4.. run say (D4) Summoning level key
 
 # Add to Treasure scoreboard team (for glow color)
 team join Treasure @s
 tag @s add Treasure
+tag @s add ETICK
 
 # Copy object level
 scoreboard players operation @s game.entity.object_level = #compare node.property.object_level
@@ -26,4 +27,4 @@ data modify entity @s Age set value -32768
 tag @s remove NewLevelKey
 
 # If treasure debug on, glow coin
-execute if data storage exigence:debug {treasure:1} run data modify entity @s Glowing set value true
+execute if score toggle.treasure debug matches 1 run data modify entity @s Glowing set value true

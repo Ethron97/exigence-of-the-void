@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Accept - invited
+execute if score debug.level debug matches 3.. run say (D3) Accept - invited
 
 tag @s add Joined
 

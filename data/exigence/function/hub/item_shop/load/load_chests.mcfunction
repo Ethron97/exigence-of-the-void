@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say (D3) Load chests (item shop)
+execute if score debug.level debug matches 2.. run say (D2) Load chests (item shop)
 
 # Make sure chests are placed
 function exigence:hub/item_shop/load/place_chests

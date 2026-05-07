@@ -7,6 +7,7 @@
 
 # Set no ai
 data modify entity @s NoAI set value true
+tag @s add ETICK
 
 # Set score
 scoreboard players set @s game.enemy.stun_timer 600

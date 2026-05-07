@@ -6,12 +6,12 @@
 
 #====================================================================================================
 
-#say (D3) Sensors complete
+execute if score debug.level debug matches 3.. run say (D3) Sensors complete
 
 # Set state
 scoreboard players set predungeon.door_state hub.room_misc 3
 # Initialize cancel score (used if player logs out mid load)
-scoreboard players set predungeon.cancel_load hub.room_misc 0
+scoreboard players set game.cancel_load hub.room_misc 0
 
 # Kill menu buttons
 kill @e[type=minecraft:item_display,tag=PredungeonMenuDisplay,distance=..5]

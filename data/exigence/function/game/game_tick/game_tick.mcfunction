@@ -23,7 +23,7 @@ execute unless score game.is_active game.state matches 1 run return 1
 # Entity ticker
 #   The downside of the e_tick_level is that if an item like the web-ball gets thrown in between levels... we're cooked
 #function exigence:game/game_tick/e_tick/e_tick_level
-execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=!player] at @s run function exigence:game/game_tick/e_tick/e_tick_type
+execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,tag=ETICK] at @s run function exigence:game/game_tick/e_tick/e_tick_type
 
 function exigence:game/game_tick/detect_active_level
 function exigence:botany/berry_tick
@@ -36,9 +36,12 @@ execute if score game.max_menace game.state matches 0 run function exigence:trea
 execute if score game.max_menace game.state matches 0 run function exigence:deck/deck_tick/deck_tick
 
 #function exigence:game/game_tick/ambient_tick
-#function exigence:door/door_tick
 #function exigence:game/game_tick/major_damage
 
+# Check which players are viewing objective bossbar (by holding compass)
+execute as @a[scores={dead=0},tag=ActivePlayer] run function exigence:player/display/objective/update
+# Update objective bossbar if at least one player is viewing
+execute if entity @a[scores={dead=0},tag=ActivePlayer,tag=DisplayObjective] run function exigence:bossbar/objective/update_title
 
 # TEMP BREAK POINT
 #----------------------------------------------------------------------------------------------------
@@ -57,9 +60,3 @@ execute if score mod.void_cache game.modifiers matches 1.. if score seconds.cool
 
 # Claustrophobia tick
 #execute if score mod.claustrophobia game.modifiers matches 1 if score seconds.cooldown tick_counter matches 6 as @a[scores={dead=0},tag=ActivePlayer] run function exigence:cards/claustrophobia/update
-
-# Check which players are viewing objective bossbar (by holding compass)
-#execute as @a[scores={dead=0},tag=ActivePlayer] run function exigence:player/display/objective/update
-
-# Update objective bossbar if at least one player is viewing
-#execute if entity @a[scores={dead=0},tag=ActivePlayer,tag=DisplayObjective] run function exigence:bossbar/objective/update_title

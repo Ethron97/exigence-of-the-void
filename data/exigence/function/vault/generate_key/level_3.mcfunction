@@ -1,31 +1,23 @@
 # Generate vault key on level 3
 
-#say Generate vault key (level 3)
+## CONSTRAINTS
+#   AS vault node
 
-# Pick treasure node to drop key on
-execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=3},tag=TreasureNode,tag=!KeyBlacklist,sort=random,limit=1] run tag @s add VaultKeyDropper
+#====================================================================================================
 
-# Pick which vault to drop a key for
-#   Nodes are disqualified if the vault has been opened, or the key has been picked up already
-execute as @e[type=minecraft:armor_stand,scores={node.property.object_level=3},tag=VaultNode,tag=!PickedUp,tag=!Opened,sort=random,limit=1] run tag @s add SelectedVaultNode
+# If this key is picked up, return
+execute if entity @s[tag=PickedUp] run return run say Skipped because it has already been picked up
+#----------------------------------------------------------------------------------------------------
 
-## LEVEL 3
-execute if entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode,tag=Vault_bolt] run data modify storage exigence:treasure_drop vault_name set value bolt
-execute if entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode,tag=Vault_flow] run data modify storage exigence:treasure_drop vault_name set value flow
-execute if entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode,tag=Vault_silence] run data modify storage exigence:treasure_drop vault_name set value silence
-execute if entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode,tag=Vault_dune] run data modify storage exigence:treasure_drop vault_name set value dune
-execute if entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode,tag=Vault_eye] run data modify storage exigence:treasure_drop vault_name set value eye
-execute if entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode,tag=Vault_spire] run data modify storage exigence:treasure_drop vault_name set value spire
+execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Generate vault key (level 3)
 
-# Increase scores (if there was a vault node remaining to spawn a key)
-execute if entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode] run scoreboard players add @a[tag=ActivePlayer] profile.data.vaults.cr.vault_keys_spawned 1
+# LEVEL 1
+data modify storage exigence:treasure_drop vault_name set from entity @s data.custom_data.vault_name
 
-# Drop key
-execute if entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode] run execute as @e[type=minecraft:armor_stand,tag=VaultKeyDropper] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:door/vault/summon_vault_key"}
+# Increase scores
+# TODO move to profile node
+scoreboard players add @a[tag=ActivePlayer] profile.data.vaults.cr.vault_keys_spawned 1
 
-# Debug
-execute unless entity @e[type=minecraft:armor_stand,tag=SelectedVaultNode] run say No vault nodes available to drop a key
-
-# Remove local tag(s)
-execute as @e[type=minecraft:armor_stand,tag=VaultKeyDropper] run tag @s remove VaultKeyDropper
-execute as @e[type=minecraft:armor_stand,tag=SelectedVaultNode] run tag @s remove SelectedVaultNode
+# Drop key at random treasure node
+execute as @e[x=-306,y=113,z=33,dx=-168,dy=60,dz=-132,type=minecraft:marker,scores={node.property.object_level=3},tag=TreasureNode,tag=!KeyBlacklist\
+,sort=random,limit=1] run function exigence:treasure/node/drop_treasure {priority:0,function:"exigence:door/vault/summon_vault_key"}

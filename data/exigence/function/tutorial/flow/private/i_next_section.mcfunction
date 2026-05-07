@@ -8,7 +8,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) Next section iterate
+execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Next section iterate
 
 # Reset token
 execute as @e[type=minecraft:marker,tag=TutorialMarker,tag=LastDropped,distance=..1000] run tag @s remove LastDropped

@@ -7,7 +7,7 @@
             {
               "items": "minecraft:nether_star",
               "predicates": {
-                "minecraft:custom_data": {"ardor_flame":"true"}
+                "minecraft:custom_data": {"ardor_flame":true}
               }
             }
           ]

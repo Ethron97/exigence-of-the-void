@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say (D3) Clicked refresh button
+execute if score debug.level debug matches 3.. run say (D3) Clicked refresh button
 
 # Increase cooldown score for player
 scoreboard players add @p[tag=Interacting,distance=..16] hub.player.interaction_cooldown 20

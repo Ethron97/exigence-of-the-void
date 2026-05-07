@@ -6,9 +6,9 @@
 #====================================================================================================
 
 # DEBUG
-say (D3) Open Door 1
+execute if score toggle.door debug matches 1 if score debug.level debug matches 3.. run say (D3) Open Door 1
 
-tag @e[type=minecraft:marker,tag=DoorNode,tag=Door1,distance=..10] add Open
+tag @e[type=minecraft:marker,tag=DoorNode,tag=Door1,distance=..10] add ETICK
 scoreboard players set 1.opened game.level_doors 1
 
 #====================================================================================================
@@ -19,7 +19,7 @@ playsound item.totem.use neutral @a ~ ~1000 ~ 1000 0.8
 #====================================================================================================
 ## PHYSICAL EFFECTS
 
-fill -334 21 -257 -331 25 -260 air replace barrier
+fill -331 25 -261 -335 21 -257 air replace barrier
 
 #====================================================================================================
 ## Particles

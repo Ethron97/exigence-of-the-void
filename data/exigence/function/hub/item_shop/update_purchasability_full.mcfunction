@@ -7,7 +7,7 @@
 #====================================================================================================
 say DEPRECATED
 
-#say (D3) Refresh pruchasability full
+execute if score debug.level debug matches 3.. run say (D3) Refresh pruchasability full
 
 function exigence:hub/item_shop/refresh_currency
 function exigence:hub/item_shop/update_all_purchasability_tags

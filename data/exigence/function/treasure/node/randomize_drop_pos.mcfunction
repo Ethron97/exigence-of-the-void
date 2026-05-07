@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # DEBUG
-#$say (D3) Randomize drop position $(BBX1)..$(BBX2) $(BBY1)..$(BBY2) $(BBZ1)..$(BBZ2)
+$execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Randomize drop position $(BBX1)..$(BBX2) $(BBY1)..$(BBY2) $(BBZ1)..$(BBZ2)
 
 scoreboard players add Iteration.Current node.treasure.drop_working 1
 

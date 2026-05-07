@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) Player logged out [predungeon]
+execute if score debug.level debug matches 3.. run say (D3) Player logged out [predungeon]
 
 # If state is still in menu, just reset to prebutton
 execute if score predungeon.door_state hub.room_misc matches 1..2 run return run execute \
@@ -14,5 +14,5 @@ positioned 0.5 209.0 104.5 as @n[type=minecraft:marker,tag=PredungeonMenuNode,di
 
 # If state is loading, unload room completely
 execute if score predungeon.door_state hub.room_misc matches 3 run tellraw @a[tag=Predungeon] [{text:"✖ A player logged out during loading!",color:"red"}]
-execute if score predungeon.door_state hub.room_misc matches 3 run scoreboard players set predungeon.cancel_load hub.room_misc 1
+execute if score predungeon.door_state hub.room_misc matches 3 run scoreboard players set game.cancel_load hub.room_misc 1
 execute if score predungeon.door_state hub.room_misc matches 3 run function exigence:room/predungeon/force_unload

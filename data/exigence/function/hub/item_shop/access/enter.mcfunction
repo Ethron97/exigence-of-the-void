@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Entering item shop
+execute if score debug.level debug matches 3.. run say (D3) Entering item shop
 
 tag @s add ItemShop
 team join ItemShop @s

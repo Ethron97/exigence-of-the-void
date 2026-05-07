@@ -5,7 +5,7 @@
 
 # ===============================================================================================================
 
-#say (D3) I am a bell setting up
+execute if score toggle.bell debug matches 1 if score debug.level debug matches 3.. run say (D3) I am a bell setting up
 
 # Deactivate bell
 function exigence:bell/node/deactivate

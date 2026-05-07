@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say (D3) Hover (generic hover)
+execute if score debug.level debug matches 4.. run say (D4) Hover (generic hover)
 
 # Glow
 data merge entity @s {Glowing:1b}

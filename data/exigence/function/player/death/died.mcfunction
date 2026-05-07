@@ -33,13 +33,9 @@ scoreboard players operation @s profile.data.ember.cr.echo_fragment_lost += #tem
 # Drop items
 function exigence:player/death/died/died_at with storage exigence:give
 
-# TEMP TESTING BREAKPOINT
-return 0
-#----------------------------------------------------------------------------------------------------
-
 # Gamemode spectator if there is another player alive
-#execute if entity @a[scores={dead=0},tag=ActivePlayer] run gamemode spectator @s
-#execute if entity @a[scores={dead=0},tag=ActivePlayer] run schedule function exigence:player/game/refresh_spectate 5t
+execute if entity @a[scores={dead=0},tag=ActivePlayer] run gamemode spectator @s
+execute if entity @a[scores={dead=0},tag=ActivePlayer] run schedule function exigence:player/game/refresh_spectate 5t
 
 # Ensure is on player team
 team join Player @s
@@ -75,8 +71,9 @@ execute if score game.max_menace game.state matches 1 run scoreboard players add
 
 # If player dies while carrying NPC (and game is coop), remove NPC and carrying tag and send message
 execute if entity @s[tag=Carrying] run function exigence:player/uncarry
-tag @s remove Carrying
 
 # Title to alert teammates
-title @a[scores={dead=0},tag=ActivePlayer] subtitle [{"selector":"@s"},{text:" died",color:"red"}]
-title @a[scores={dead=0},tag=ActivePlayer] title ""
+tag @s add DontTitle
+title @a[tag=ActivePlayer,tag=!DontTitle] subtitle [{"selector":"@s"},{text:" died",color:"red"}]
+title @a[tag=ActivePlayer,tag=!DontTitle] title ""
+tag @s remove DontTitle

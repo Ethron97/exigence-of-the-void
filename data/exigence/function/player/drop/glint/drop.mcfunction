@@ -8,6 +8,10 @@
 # Get current glint count
 execute store result score #glints Temp run clear @s minecraft:diamond 0
 
+# Return if 0
+execute if score #glints Temp matches 0 run return 1
+#----------------------------------------------------------------------------------------------------
+
 # If glint is LE GlintKeep, just return as there is nothing to drop
 execute if score #glints Temp <= @s game.player.mod.glint_keep run return 1
 #----------------------------------------------------------------------------------------------------

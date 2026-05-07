@@ -9,6 +9,7 @@
 
 #====================================================================================================
 execute unless entity @s[type=player] run return run say (C) Tried to copy profile scores to a non player?
+execute unless entity @n[tag=ProfileNode,distance=..0.1] run return run say (C) Tried to copy profile scores from not AT profile node?
 #====================================================================================================
 
 scoreboard players operation @s profile.player.profile_id = @n[tag=ProfileNode,distance=..0.1] profile.node.profile_id

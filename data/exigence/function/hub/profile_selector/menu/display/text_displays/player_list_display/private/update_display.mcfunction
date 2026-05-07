@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Update display
+execute if score debug.level debug matches 3.. run say (D3) Update display
 
 scoreboard players operation #compare hub.entity.player_id = @s hub.entity.player_id
 scoreboard players operation #compare profile.player.coop_profile_id = @s Random

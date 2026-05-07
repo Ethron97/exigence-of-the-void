@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Open slot
+execute if score debug.level debug matches 4.. run say (D4) Open slot
 
 tag @s remove Closed
 tag @s add Open

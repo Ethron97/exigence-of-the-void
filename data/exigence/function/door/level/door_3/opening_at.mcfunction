@@ -24,7 +24,7 @@ execute if score Door.3 game.door.inserting_key matches 41 run execute as @e[typ
 execute if score Door.3 game.door.inserting_key matches 40 run execute as @e[type=minecraft:item_display,tag=Door3Handle,distance=..1] run data merge entity @s {start_interpolation:-1,transformation:[-0.0000f,-1.0000f,0.0000f,0.0000f,1.0000f,-0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,0.0000f,1.0000f]}
 
 #   Start rotating runes
-#execute as @e[type=minecraft:item_display,tag=Door3Handle,scores={InsertingKey=41}] run execute as @e[type=minecraft:item_display] run data modify entity @s Glowing set value true
+#execute as @e[type=minecraft:item_display,tag=Door3Handle,scores={game.door.inserting_key=41}] run execute as @e[type=minecraft:item_display] run data modify entity @s Glowing set value true
 execute if score Door.3 game.door.inserting_key matches 41 run execute as @e[type=minecraft:item_display,tag=Ring3,distance=..10] run data modify entity @s teleport_duration set value 28
 execute if score Door.3 game.door.inserting_key matches 41 run execute as @e[type=minecraft:item_display,tag=Ring2,distance=..10] run data modify entity @s teleport_duration set value 19
 execute if score Door.3 game.door.inserting_key matches 41 run execute as @e[type=minecraft:item_display,tag=Ring1,distance=..10] run data modify entity @s teleport_duration set value 10

@@ -1,7 +1,7 @@
 # Player related general hub tick functions
 
 ## CONSTRAINTS
-#   AS player
+#   AS player (not active player)
 
 #====================================================================================================
 
@@ -26,3 +26,6 @@ function exigence:hub/hub_tick/dropped_item/check_for_items
 
 # Room ticks (part 1)
 execute at @s[scores={hub.player.profile_selector_id=1..}] run function exigence:hub/profile_selector/menu/profile_menu_tick
+
+# Converting coins:
+execute if entity @s[tag=ConvertingCoins] run function exigence:hub/convert_money/player_tick

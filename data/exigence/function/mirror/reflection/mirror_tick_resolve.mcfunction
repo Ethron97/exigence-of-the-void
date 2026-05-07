@@ -13,7 +13,7 @@
 
 #====================================================================================================
 
-#say Reflecting
+execute if score toggle.mirror debug matches 1 if score debug.level debug matches 5.. run say (D5) Reflecting
 
 # Calculate angle from player normal to the "mirror"
 execute as @e[type=minecraft:armor_stand,tag=Rotation,distance=..1] at @s anchored eyes facing entity @p[tag=Reflecting,distance=..30] eyes run tp @s ~ ~ ~ ~ ~

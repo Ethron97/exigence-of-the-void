@@ -14,7 +14,7 @@ execute if score coins.converting hub.coin_conversion matches 100.. if score #i 
 execute as @a[tag=ConvertingCoins] at @s anchored eyes positioned ^ ^ ^3 run playsound minecraft:block.note_block.bell neutral @a
 
 # Add tags
-execute as @e[type=minecraft:item,nbt={Item:{id:"minecraft:gold_nugget",components:{"minecraft:custom_data":{convert_coin:"true"}}}}] run function exigence:hub/convert_money/item_smash/private/summon_coin_item_data
+execute as @e[type=minecraft:item] if items entity @s contents gold_nugget[custom_data~{convert_coin:true}] run function exigence:hub/convert_money/item_smash/private/summon_coin_item_data
 
 # Reduce iteration score by 1
 execute if score coins.converting hub.coin_conversion matches 100.. if score #i hub.coin_conversion matches 3.. run scoreboard players remove #i hub.coin_conversion 1

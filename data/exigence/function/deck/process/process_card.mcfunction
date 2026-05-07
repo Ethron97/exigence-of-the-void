@@ -10,7 +10,7 @@
 #   BIT void
 #   BIT recycler
 #   BIT spellbinder
-#   BIT instant
+#   INT instant 0-2 (0 = not instant, 1 = instant PLAY DURING SETUP, 2 = instant PLAY AT GAME START)
 #   BIT persistent
 
 #====================================================================================================
@@ -27,7 +27,7 @@ scoreboard players operation #copies deck.process_card += #cards_b deck.process_
 execute if score #copies deck.process_card matches 0 run return 0
 #----------------------------------------------------------------------------------------------------
 
-#$say (D3) Process card $(card_name)
+$execute if score debug.level debug matches 3.. run say (D3) Process card $(card_name)
 
 # Save inputs
 $scoreboard players set #rarity deck.process_card $(rarity)

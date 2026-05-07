@@ -584,7 +584,7 @@ scoreboard objectives remove TimesPlayed
 scoreboard objectives remove TimesProcessed
 scoreboard objectives remove TimesRecycled
 scoreboard objectives remove DialogueGame
-scoreboard objectives remove InsertingKey
+scoreboard objectives remove game.door.inserting_key
 scoreboard objectives remove EffectTemp
 scoreboard objectives remove EndermiteTimer
 scoreboard objectives remove EnemyStunCooldown

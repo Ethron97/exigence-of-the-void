@@ -1,4 +1,4 @@
-#say (D3) untrigger loop
+execute if score debug.level debug matches 3.. run say (D3) untrigger loop
 # We don't need this since it will just un-trigger when the player leaves the area
 
 say depcreated

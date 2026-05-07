@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Kill item shop interaction
+execute if score debug.level debug matches 4.. run say (D4) Kill item shop interaction
 
 scoreboard players operation #compare career.player_id = @s career.player_id
 

@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Close item shop (player(s) timed out)
+execute if score debug.level debug matches 3.. run say (D3) Close item shop (player(s) timed out)
 
 scoreboard players operation #compare hub.room.room_id = @s hub.room.room_id
 

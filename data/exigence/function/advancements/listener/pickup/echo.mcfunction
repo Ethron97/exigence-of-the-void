@@ -1,6 +1,8 @@
 # Reset advancement
 advancement revoke @s only exigence:listener/pickup/echo
 
+execute if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3) Pickup echo
+
 # TUTORIAL
 clear @s[tag=Tutorial] minecraft:music_disc_relic 1
 execute as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/flow/step
@@ -13,7 +15,7 @@ execute if score game.is_active game.state matches 0 run return 1
 execute unless entity @s[tag=ActivePlayer] run return 1
 #----------------------------------------------------------------------------------------------------
 
-#say (D3) Pickup echo
+execute if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3) Pickup echo game
 
 # Delete the music disc from their inventory
 clear @s minecraft:music_disc_relic 1

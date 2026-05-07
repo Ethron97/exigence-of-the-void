@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say New frame
+execute if score toggle.wards debug matches 1 if score debug.level debug matches 4.. run say (D4) New frame
 
 # Generate random right rotation quaternion frm 0.2..0.7
 #   Will rotate and slightly scale, it's a feature

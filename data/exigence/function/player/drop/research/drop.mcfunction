@@ -8,6 +8,10 @@
 # Get current research count
 execute store result score #research Temp run clear @s minecraft:prize_pottery_sherd 0
 
+# Return if 0
+execute if score #research Temp matches 0 run return 1
+#----------------------------------------------------------------------------------------------------
+
 # If research is LE ResearchKeep, just return as there is nothing to drop
 execute if score #research Temp <= @s game.player.mod.research_keep run return 1
 #----------------------------------------------------------------------------------------------------

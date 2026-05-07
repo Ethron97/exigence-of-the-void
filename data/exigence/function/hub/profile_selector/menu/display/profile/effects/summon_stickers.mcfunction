@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Summon stickers
+execute if score debug.level debug matches 4.. run say (D4) Summon stickers
 
 execute at @s align z positioned ~0.0 ~0.75 ~0.01 run function exigence:hub/profile_selector/menu/display/profile/stickers/sticker_background with entity @s item.components."minecraft:custom_data"
 

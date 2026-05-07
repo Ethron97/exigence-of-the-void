@@ -26,7 +26,6 @@ execute unless score #creating_coop Temp matches 1 run function exigence:profile
 #   IF COOP: Only generate new one if there is not one already popualated
 execute if score #creating_coop Temp matches 1 unless data storage exigence:temp identifier run function exigence:profile/profile_node/new/identifier/generate_identifier
 
-
 ## SUMMON ENTITY
 #   with setups
 execute summon minecraft:marker run function exigence:profile/profile_node/new/private/profile_node_data

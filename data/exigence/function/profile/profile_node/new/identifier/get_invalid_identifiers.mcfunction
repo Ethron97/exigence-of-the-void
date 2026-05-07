@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Get invalid identifiers
+execute if score debug.level debug matches 3.. run say (D3) Get invalid identifiers
 
 scoreboard players operation #compare profile.node.player_id = @s career.player_id
 

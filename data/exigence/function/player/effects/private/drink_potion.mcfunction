@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Drinked potion
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3) Drinked potion
 
 # Cleanup
 scoreboard players set @s game.player.used.potion 0

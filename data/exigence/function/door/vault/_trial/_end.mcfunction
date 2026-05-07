@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # DEBUG
-#say End generic
+execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) End trial generic
 
 # Play teleport sound
 execute at @s run playsound minecraft:entity.player.teleport player @s ~ ~ ~ 1 1

@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) Reset tutorial
+execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Reset tutorial
 
 # Markers
 execute as @e[type=minecraft:marker,tag=TutorialMarker,tag=LastDropped,distance=..1000] run tag @s remove LastDropped

@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say (D3) validate/deck/check
+execute if score debug.level debug matches 3.. run say (D3) validate/deck/check
 
 # Default to VALID
 scoreboard players set #predungeon_validate_deck Temp 1

@@ -2,14 +2,13 @@
 
 ## CONSTRAINTS
 #   AS profile node
-#   AT profile data center
 
 # OUTPUT
 #   SCORE #data_loaded Temp
 
 #====================================================================================================
 
-#say (D3) Try chest to data
+execute if score debug.level debug matches 3.. run say (D3) Try chest to data
 
 #   OUTPUT: Default, data not loaded
 scoreboard players set #data_loaded Temp 0
@@ -20,8 +19,8 @@ scoreboard players operation #compare profile.node.coop_profile_id = @s profile.
 #execute if score @s profile.node.coop_profile_id matches 1.. run say (D3) IS COOP
 scoreboard players set #temptchd Temp 0
 #   If this is the node with chests loaded... I don't think we care.
-execute if score @s profile.node.coop_profile_id matches 1.. \
-as @e[type=minecraft:marker,scores={profile.node.coop_profile_id=1..},tag=ProfileNode,tag=ChestsLoaded,distance=..140] \
+execute if score @s profile.node.coop_profile_id matches 1.. in exigence:profile_data \
+as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,scores={profile.node.coop_profile_id=1..},tag=ProfileNode,tag=ChestsLoaded] \
 if score @s profile.node.profile_id = #compare profile.node.coop_profile_id run scoreboard players set #temptchd Temp 1
 
 #execute if score #temptchd Temp matches 1 run say (D3) WAITING FOR CHESTS TAG ADDED
@@ -37,8 +36,8 @@ tag @s[tag=WaitingForChests] remove WaitingForChests
 scoreboard players set #data_loaded Temp 1
 
 # Load from MAIN co-op profile if this profile is part of a coop profile
-execute if score @s profile.node.coop_profile_id matches 1.. \
-as @e[type=minecraft:marker,scores={profile.node.coop_profile_id=1..},tag=ProfileNode,distance=..140] \
+execute if score @s profile.node.coop_profile_id matches 1.. in exigence:profile_data \
+as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,scores={profile.node.coop_profile_id=1..},tag=ProfileNode] \
 if score @s profile.node.profile_id = #compare profile.node.coop_profile_id at @s run function exigence:profile/profile_node/load/chest_to_data
 # Else just load this node's data
 execute unless score @s profile.node.coop_profile_id matches 1.. at @s run function exigence:profile/profile_node/load/chest_to_data

@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say (D3) Summon player head
+execute if score debug.level debug matches 4.. run say (D4) Summon player head
 
 # Summon display
 function exigence:hub/profile_selector/menu/display/player_head/load/load_player_head with storage exigence:temp

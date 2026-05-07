@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Kicking from profile selector
+execute if score debug.level debug matches 3.. run say (D3) Kicking from profile selector
 
 tag @s remove ProfileSelecting
 

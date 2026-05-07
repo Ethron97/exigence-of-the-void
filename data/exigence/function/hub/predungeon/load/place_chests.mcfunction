@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Place chests [predungeon]
+execute if score debug.level debug matches 3.. run say (D3) Place chests [predungeon]
 
 # Place blank chests
 setblock ~-4 ~ ~3 chest[type=right,facing=north]

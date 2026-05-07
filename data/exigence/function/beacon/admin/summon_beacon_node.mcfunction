@@ -1,0 +1,20 @@
+say Recode this
+return 0
+
+# Summon node base
+execute at @s as @s run function exigence:game/admin/new_node
+
+# Assign tag
+execute as @e[type=minecraft:armor_stand,tag=NewNode] run tag @s add BeaconNode
+
+# Give custom name
+execute as @e[type=minecraft:armor_stand,tag=NewNode] run data modify entity @s CustomName set value {text:"BeaconNode",color:"yellow",italic:false}
+
+# Assign team
+execute as @e[type=minecraft:armor_stand,tag=NewNode] run team join Special @s
+
+# If debug, glow
+execute if score toggle.beacon debug matches 1 as @e[type=minecraft:armor_stand,tag=NewNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
+
+# Remove "NewNode" tag
+tag @e[type=minecraft:armor_stand,tag=NewNode] remove NewNode

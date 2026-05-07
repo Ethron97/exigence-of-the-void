@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Unload room
+execute if score debug.level debug matches 3.. run say (D3) Unload room
 
 # Get loaded profile
 scoreboard players reset #compare profile.node.profile_id

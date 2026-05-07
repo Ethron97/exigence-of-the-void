@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say (D3) Try inform member 2
+execute if score debug.level debug matches 3.. run say (D3) Try inform member 2
 
 scoreboard players set #player_found2 Temp 0
 

@@ -14,12 +14,15 @@
 
 #====================================================================================================
 
-#say Anger Updating
+execute if score toggle.enemy debug matches 1 if score debug.level debug matches 3.. run say (D3) Try anger update
+
 execute if data entity @s {NoAI:true} run function exigence:enemy/warden/private/update_no_ai
 
 # Return if no ai
 execute if data entity @s {NoAI:true} run return 1
 #----------------------------------------------------------------------------------------------------
+
+execute if score toggle.enemy debug matches 1 if score debug.level debug matches 3.. run say (D3) Updating anger
 
 # FIRST THING WE DO... if not angry, reset suspects
 # Overwrite in-game anger if not angry so it never uses vanilla methods of detection.

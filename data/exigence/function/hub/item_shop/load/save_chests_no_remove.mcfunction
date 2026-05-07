@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say (D3) Save chests (no remove) [item shop]
+execute if score debug.level debug matches 2.. run say (D2) Save chests (no remove) [item shop]
 
 #   OUTPUT
 execute store success score #chests_saved Temp if block ~2 ~ ~3 minecraft:chest

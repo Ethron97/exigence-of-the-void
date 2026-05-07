@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Remove chests [predungeon]
+execute if score debug.level debug matches 3.. run say (D3) Remove chests [predungeon]
 
 # Remove chests
 setblock ~-4 ~ ~3 air

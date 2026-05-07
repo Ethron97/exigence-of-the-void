@@ -4,13 +4,13 @@
 
 #====================================================================================================
 
-#say (D3) Try resolve treasure
+execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Try resolve treasure
 
 # Reduce TreasureQueue by 1, regardless of whether treasure gets resolved
 scoreboard players remove treasure.queue game.dungeon.temp 1
 
 # Return if there is nothing in the data queue
-execute unless data storage exigence:treasure queue[0] run say No data in the treasure queue?
+execute unless data storage exigence:treasure queue[0] run say (C) No data in the treasure queue?
 execute unless data storage exigence:treasure queue[0] run return 1
 #----------------------------------------------------------------------------------------------------
 
@@ -21,9 +21,9 @@ execute if score .difficulty_mod game.dungeon.echo matches -2 if score #random R
 execute if score .difficulty_mod game.dungeon.echo matches -3 if score #random Random matches 31..100 run function exigence:treasure/resolve_treasure
 
 # Debug
-#execute if score .difficulty_mod game.dungeon.echo matches -1 if score #random Random matches 1..10 run say Treasure skip
-#execute if score .difficulty_mod game.dungeon.echo matches -2 if score #random Random matches 1..20 run say Treasure skip
-#execute if score .difficulty_mod game.dungeon.echo matches -3 if score #random Random matches 1..30 run say Treasure skip
+execute if score .difficulty_mod game.dungeon.echo matches -1 if score #random Random matches 1..10 run execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Treasure skip
+execute if score .difficulty_mod game.dungeon.echo matches -2 if score #random Random matches 1..20 run execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Treasure skip
+execute if score .difficulty_mod game.dungeon.echo matches -3 if score #random Random matches 1..30 run execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Treasure skip
 
 # Clear first element in the TreasureQueue
 data remove storage exigence:treasure queue[0]

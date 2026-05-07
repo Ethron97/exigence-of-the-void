@@ -15,7 +15,7 @@ execute as @e[type=minecraft:marker,tag=NewNode] run tag @s add HazardNode
 team join Hazard @e[type=minecraft:marker,tag=NewNode]
 
 # Glow if debiug
-execute if data storage exigence:debug {hazard:1} as @e[type=minecraft:marker,tag=HazardNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
+execute if score toggle.hazard debug matches 1 as @e[type=minecraft:marker,tag=HazardNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
 
 # Remove local tag
 tag @e[type=minecraft:marker,tag=NewNode] remove NewNode

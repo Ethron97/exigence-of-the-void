@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) locker menu tick
+execute if score debug.level debug matches 5.. run say (D5) locker menu tick
 
 # Swap Hover/OldHover tags (only for this locker room)
 scoreboard players operation #compare hub.locker_room_id = @s hub.locker_room_id

@@ -6,5 +6,6 @@
 
 #====================================================================================================
 
-execute if entity @a[tag=GetDistance,distance=..112] run function exigence:player/utility/get_distance/64/96/112/104
-execute if entity @a[tag=GetDistance,distance=112..] run function exigence:player/utility/get_distance/64/96/112/120
+## SWITCH
+execute if entity @a[tag=GetDistance,distance=..112] run return run function exigence:player/utility/get_distance/64/96/112/104
+execute if entity @a[tag=GetDistance,distance=112..] run return run function exigence:player/utility/get_distance/64/96/112/120

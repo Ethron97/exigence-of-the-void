@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) Try enter item shop
+execute if score debug.level debug matches 3.. run say (D3) Try enter item shop
 
 # Make sure player has profile loaded
 execute unless score @s profile.player.profile_id matches 1.. run return run function exigence:hub/item_shop/access/fail/no_profile

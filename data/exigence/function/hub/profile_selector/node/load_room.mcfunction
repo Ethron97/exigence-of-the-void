@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Load room
+execute if score debug.level debug matches 3.. run say (D3) Load room
 
 # Generate new id
 scoreboard players add #sequence hub.profile_selector_id 1

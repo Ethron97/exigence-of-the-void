@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Entering predungeon
+execute if score debug.level debug matches 3.. run say (D3) Entering predungeon
 
 tag @s add Predungeon
 team join Predungeon @s

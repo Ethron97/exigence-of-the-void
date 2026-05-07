@@ -11,9 +11,10 @@
 # CARD COUNT:
 execute if score cards.count deck.analysis matches ..40 run tag @s add GoodCards
 # ATTEMPTED LEVEL:
-execute if score #attempts_d5 Temp matches 1.. run tag @s add GoodKnown
+#execute if score #attempts_d5 Temp matches 1.. run tag @s add GoodKnown
 # GOT PREVIOUS ACHIEVEMENT:
 execute if entity @p[tag=Predungeon,distance=..16,advancements={exigence:story/destroy_crystals=true}] run tag @s add GoodUnlock
+execute if entity @p[tag=Predungeon,distance=..16,advancements={exigence:story/destroy_crystals=true}] run tag @s add GoodKnown
 
 # Update models
 execute at @s[tag=GoodUnlock,tag=GoodCards,tag=!GoodKnown] run function exigence:hub/predungeon/menu/display/level_chooser/load/general/model_unknown
@@ -25,7 +26,7 @@ team join Yellow @s[tag=!GoodCards,tag=GoodUnlock]
 team join Green @s[tag=GoodCards,tag=GoodUnlock]
 
 # Set name (lore 0)
-data modify entity @s[tag=GoodKnown] item.components."minecraft:lore"[0] set value [{text:"Beacons of Hope",color:"#c7c1c1"}]
+data modify entity @s[tag=GoodKnown] item.components."minecraft:lore"[0] set value [{text:"Light the Beacons",color:"#c7c1c1"}]
 
 # Set locked reason (lore 1)
 data modify entity @s[tag=!GoodUnlock] item.components."minecraft:lore"[1] set value [{text:"Break the Wards!",color:"#cf4f4f"}]

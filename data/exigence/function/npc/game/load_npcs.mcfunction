@@ -8,7 +8,7 @@
 execute unless dimension minecraft:overworld run return run say Tried to load npcs not in overworld
 #----------------------------------------------------------------------------------------------------
 
-#say (D3) Load npcs
+execute if score debug.level debug matches 3.. run say (D3) Load npcs
 
 # SUPPLIER
 execute if score game.difficulty game.state matches 1 if entity @a[tag=Predungeon,advancements={exigence:story/rescue_supplier=false,exigence:story/win_difficulty_1=true}] run function exigence:npc/game/spawn_supplier

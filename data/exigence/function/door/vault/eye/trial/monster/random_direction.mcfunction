@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say Random direction
+execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Random direction
 
 # Random value between 0..3
 execute store result score #random Random run random value 0..3

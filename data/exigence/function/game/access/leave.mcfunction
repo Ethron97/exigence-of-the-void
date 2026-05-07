@@ -1,36 +1,72 @@
-# Mostly a temp function
+# Shared player-reset functions between loss and win
+# Also called as interface if player gets kicked
 
 ## CONSTRAINTS
 #   AS player
 
+## OUTPUT
+#   @s hub.coin_conversion
+#   @s hub.coin_conversion.glint_owed
+#   +coins.converting hub.coin_conversion
+
 #====================================================================================================
 
-#say (D3) Leave dungeon
+say (D3) Leave dungeon
 
+# Copy player cr_ scores to profile node t_ scores
+# TODO
+
+## TAGS
 tag @s remove ActivePlayer
 tag @s remove PrimaryPlayer
-tag @s remove Won
 tag @s remove Carrying
+tag @s remove Trial
+tag @s remove Crucible
+tag @s remove HandleInteracting
 tag @s remove CurrentlyReflecting
+tag @s remove Won
+
 team leave @s
+gamemode adventure @s
+effect clear @a
+stopsound @a ambient
+title @a actionbar ""
+title @a clear
 
-execute in exigence:hub run tp @s 0 200 0
-
-# INSTANT UNLOADS:
-# Return deck (remove voids)
-function exigence:deck/return_deck
-execute in minecraft:overworld run kill @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=Card]
-
-# SCHEDULED UNLOADS:
-function exigence:game/unload/start_unloading_sequence
+# Display post game stats
+function exigence:player/stats/run_stats
 
 # Reset-reset scores
 function exigence:scoreboard/generated_functions/reset_on_leave
+function exigence:scoreboard/generated_functions/reset_on_death
+function exigence:game/reset/reset_advancements
+
+# Reset attributers
+function exigence:player/utility/reset_attributes
+
+# Clear all spellbound cards
+function exigence:player/clear/all_spellbound
+
+# Clear win items
+clear @s #exigence:win_clear
+
+# COIN CONVERSION
+#   Clear gold nuggets and remember amount
+execute store result score @s hub.coin_conversion run clear @s minecraft:gold_nugget
+#   Get owed glint
+scoreboard players operation @s hub.coin_conversion.glint_owed = @s hub.coin_conversion
+scoreboard players operation @s hub.coin_conversion.glint_owed /= 5 number
+#   Get leftover coins, add to collective
+scoreboard players operation @s hub.coin_conversion.leftover_coins = @s hub.coin_conversion
+scoreboard players operation @s hub.coin_conversion.leftover_coins %= 5 number
+#   Add leftover to temp version so that if another player logged in/got kicked, it wouldn't increase their leftovers
+scoreboard players operation #coins.leftover hub.coin_conversion += @s hub.coin_conversion.leftover_coins
 
 # DEBUG
-gamemode creative @s
-effect give @s night_vision infinite 0 true
+gamemode creative @s[tag=Admin]
+effect give @s[tag=Admin] night_vision infinite 0 true
 
+# This stuff is temp just to remove the room node; In the future the room node just gets migrated
 #====================================================================================================
 # Remove THIS player from room node
 scoreboard players operation #compare career.player_id = @s career.player_id

@@ -28,7 +28,7 @@ scoreboard players operation #old_distance game.player.sound_ping.echo_distance 
 # Determine distance bracket
 function exigence:player/effects/detection/echo/get_distance_bracket
 
-# If ping echo distance is 10, no pings
+# If ping distance is 10, no pings
 execute if score @s game.player.sound_ping.echo_distance matches 10 run return 1
 #----------------------------------------------------------------------------------------------------
 
@@ -39,6 +39,8 @@ execute if score @s game.player.sound_ping.echo_distance matches 10 run return 1
 #execute if score @s game.player.sound_ping.echo_cooldown matches 1.. if score #old_distance game.player.sound_ping.echo_distance <= @s game.player.sound_ping.echo_distance run say No ping
 execute if score @s game.player.sound_ping.echo_cooldown matches 1.. if score #old_distance game.player.sound_ping.echo_distance <= @s game.player.sound_ping.echo_distance run return 1
 #----------------------------------------------------------------------------------------------------
+
+execute if score toggle.echo debug matches 1 if score debug.level debug matches 4.. run say (D4) Ping echo
 
 ## SUCCESSFUL PING
 # Stop old ping (if exists) so we don't overlap when they are running forward

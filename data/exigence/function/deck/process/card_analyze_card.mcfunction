@@ -1,6 +1,10 @@
-# call as card to call analyze
+# Call as card to call analyze
 
-# Get costs
-$function exigence:cards/get_cost {card_name:'$(card_name)'}
+## CONSTRAINTS
+#   AS card armorstand
+
+#====================================================================================================
+
+execute if score toggle.deck debug matches 1 if score debug.level debug matches 4.. run say (D4) Card analyze card
 
 $function exigence:cards/$(card_name)/analyze

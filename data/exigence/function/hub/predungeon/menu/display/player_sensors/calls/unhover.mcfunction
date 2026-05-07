@@ -8,8 +8,8 @@
 
 #====================================================================================================
 
-#$say (D3) Unhover (profile) (profile_selector:$(profile_selector_id) slot:$(slot_id))
-#say (D3) Unhover pre button
+#$say Unhover (profile) (profile_selector:$(profile_selector_id) slot:$(slot_id))
+execute if score debug.level debug matches 4.. run say (D4) Unhover pre button
 
 team join Yellow @s
 

@@ -16,7 +16,8 @@ execute if score @s dead matches 1 run return run function exigence:player/death
 # COMMON FUNCTIONS (dead or alive)
 # Snowball usage
 execute if score @s game.player.used.snowball matches 1.. run function exigence:hub/item_shop/item/item_web_ball/trigger
-execute if entity @e[type=minecraft:marker,tag=SnowballMarker,distance=..1000] run function exigence:hub/item_shop/item/item_web_ball/private/tick_loop
+# TODO move this to E TICK
+execute if entity @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=SnowballMarker,limit=1] run function exigence:hub/item_shop/item/item_web_ball/private/tick_loop
 
 # Check for right click on items
 execute if score @s CarrotOnStick matches 1.. run function exigence:player/use_item/use_item

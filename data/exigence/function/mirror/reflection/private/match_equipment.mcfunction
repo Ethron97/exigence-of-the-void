@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say Matching equipment
+execute if score toggle.mirror debug matches 1 if score debug.level debug matches 5.. run say (D5) Matching equipment
 
 ## ARMOR/HANDS
 item replace entity @s armor.feet from entity @p[tag=Reflecting] armor.feet

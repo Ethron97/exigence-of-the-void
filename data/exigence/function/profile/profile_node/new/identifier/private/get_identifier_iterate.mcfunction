@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#$say (D3) Iterate $(i)
+$execute if score debug.level debug matches 3.. run say (D3) Iterate $(i)
 
 # Get element i
 $data modify storage exigence:temp identifier set from storage exigence:temp identifiers[$(i)]

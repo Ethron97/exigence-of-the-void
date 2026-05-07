@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say testmatch
+execute if score toggle.bookshelf debug matches 1 if score debug.level debug matches 3.. run say (D3) Testmatch
 scoreboard players operation matches.old game.mirror.bookshelf_match = matches.current game.mirror.bookshelf_match
 # Because some of the final book shelves are blank, most slots start "correct"
 scoreboard players set matches.current game.mirror.bookshelf_match -122

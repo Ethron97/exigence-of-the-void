@@ -11,7 +11,7 @@
 
 #====================================================================================================
 
-#say (D3) Load/Reload coop statuses
+execute if score debug.level debug matches 3.. run say (D3) Load/Reload coop statuses
 
 # Delete existing statuses
 function exigence:hub/profile_selector/menu/display/text_displays/hide_coop_list with entity @s item.components."minecraft:custom_data"

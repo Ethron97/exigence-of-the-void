@@ -11,7 +11,7 @@
 #====================================================================================================
 
 # DEBUG
-#$say Generate drop block $(RotA) $(length)
+$execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Generate drop block $(RotA) $(length)
 
 # Create new drop block
 $execute at @s rotated ~$(RotA) ~ positioned ^ ^-0.5 ^$(length) run function exigence:door/vault/bolt/trial/drop_block/new_drop_block

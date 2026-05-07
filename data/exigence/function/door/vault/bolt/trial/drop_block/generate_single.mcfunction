@@ -3,9 +3,9 @@
 #====================================================================================================
 
 # DEUBG
-#say Generate drop block
+execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Generate drop block
 
-execute unless entity @e[type=minecraft:marker,tag=BoltThrower] run say Bolt thrower not found
+execute unless entity @e[type=minecraft:marker,tag=BoltThrower] run say (C) Bolt thrower not found
 execute unless entity @e[type=minecraft:marker,tag=BoltThrower] run return 1
 #----------------------------------------------------------------------------------------------------
 

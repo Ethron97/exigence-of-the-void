@@ -15,8 +15,7 @@ execute if score game.max_menace game.state matches 0 run function exigence:play
 execute if score game.max_menace game.state matches 1 run function exigence:player/stats/time/public/update_time_stats_alive_mm
 
 # Clear spellbound cards dropped on the ground
-execute as @e[type=minecraft:item,tag=!SoulWarned,distance=..3,nbt={Item:{id:"minecraft:carrot_on_a_stick",components:{"minecraft:custom_data":{is_spellsling:"true"}}}}] run function exigence:player/dropped_soulbound
-execute as @e[type=minecraft:item,tag=!SoulWarned,distance=..3,nbt={Item:{components:{"minecraft:custom_data":{is_soulbound:1b}}}}] run function exigence:player/dropped_soulbound
+execute as @e[type=minecraft:item,tag=!SoulWarned,distance=..3] if items entity @s contents *[custom_data~{is_soulbound:true}] run function exigence:player/dropped_soulbound
 
 # Check for looking at pot if they don't have a pot breaker
 function exigence:player/utility/pot/pot_check
@@ -36,12 +35,16 @@ execute if score @s game.player.effects.farstep matches 1.. run schedule functio
 
 # Refresh score to track who is holding echo(s)
 execute store result score @s game.player.echo_fragments run clear @s #exigence:echo 0
-execute if score @s game.player.echo_fragments = .echos_required game.dungeon.echo if score game.all_echos_found game.state matches 0 run function exigence:game/found_all_echos
+# Found all if: one player is holding all the echos (and at least 1 was required)
+execute if score .echos_required game.dungeon.echo matches 1.. if score @s game.player.echo_fragments = .echos_required game.dungeon.echo if score game.all_echos_found game.state matches 0 run function exigence:game/found_all_echos
 
+## ITEM SOUNDS
 # Echo item sounds
 execute if score game.all_echos_found game.state matches 0 run function exigence:player/sound/item_sounds/echo
 # Level Key item sounds
 function exigence:player/sound/item_sounds/level_key
+# Ardor flame item sounds
+execute if score game.difficulty game.state matches 5 run function exigence:player/sound/item_sounds/ardor
 
 # Check for ravager glass
 execute if entity @s[gamemode=adventure] run function exigence:player/ravager_glass/check
@@ -51,6 +54,9 @@ execute if entity @s[tag=Carrying] as @e[type=minecraft:villager,tag=Carried,dis
 
 # Re-reveal any blocks within 16 blocks that are not revealed, but were previously discovered
 execute if score @s game.player.active_level matches 1..2 as @e[type=minecraft:marker,tag=HiddenBlock,tag=Discovered,tag=ReflectionNO,tag=!Revealed,tag=!Appeared,distance=..16] at @s run function exigence:mirror/hidden_blocks/reveal_block
+
+# Beacon guide
+execute if score game.difficulty game.state matches 5.. run function exigence:beacon/player/ambient_tick
 
 #====================================================================================================
 ## SECOND-TICKS

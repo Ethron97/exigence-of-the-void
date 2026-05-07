@@ -7,7 +7,7 @@
             {
               "items": "minecraft:ghast_tear",
               "predicates": {
-                "minecraft:custom_data": {"ardor_ember":"true"}
+                "minecraft:custom_data": {"ardor_ember":true}
               }
             }
           ]

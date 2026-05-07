@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Upsert heads
+execute if score debug.level debug matches 3.. run say (D3) Upsert heads
 
 # As all existing heads, delete if player is not online
 execute as @e[type=minecraft:item_display,tag=PlayerHeadDisplay,distance=..16] run function exigence:hub/profile_selector/menu/display/player_head/load/downsert_head with entity @s item.components."minecraft:custom_data"

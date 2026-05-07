@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Coop to sp
+execute if score debug.level debug matches 3.. run say (D3) Coop to sp
 
 # If this is the only remaining profile, reset
 scoreboard players reset @s profile.node.coop_profile_id

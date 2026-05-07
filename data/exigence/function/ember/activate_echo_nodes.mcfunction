@@ -7,7 +7,7 @@
 execute unless dimension minecraft:overworld run return run tellraw @a [{text:"Must actvate echo nodes in overworld",color:"red"}]
 #----------------------------------------------------------------------------------------------------
 
-#say (D3) Activate echo nodes
+execute if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3) Activate echo nodes
 
 # Reset active echo nodes tag/team
 execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=EchoNode] run function exigence:ember/node/reset

@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Player logged in
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3) Player logged in
 
 scoreboard players set @s quit 0
 
@@ -23,5 +23,15 @@ execute if score @s profile.player.coop_profile_id matches 1.. in exigence:profi
 if score @s profile.node.profile_id = #compare profile.player.profile_id at @s as @a if score @s profile.player.profile_id = #compare profile.player.profile_id \
 run function exigence:profile/player/call_grant_advancements_from_scores
 
-# Remove loca ltag
+# Check if logged out while coin converting:
+execute if score @s hub.coin_conversion.glint_owed matches 1.. run function exigence:hub/convert_money/instant/start_conversion
+# Or if queued:
+execute if entity @s[tag=QueueCoinConversion] run function exigence:hub/convert_money/instant/start_conversion
+# Or if converting:
+execute if entity @s[tag=ConvertingCoins] run function exigence:hub/convert_money/instant/start_conversion
+
+# Clear other misc tags
+tag @s remove OpeningVault
+
+# Remove local tag
 tag @s remove JustLoggedIn

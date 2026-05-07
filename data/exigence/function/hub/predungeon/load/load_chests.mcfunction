@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say (D3) Load chests [predungeon]
+execute if score debug.level debug matches 2.. run say (D2) Load chests [predungeon]
 
 # Make sure chests are placed
 function exigence:hub/predungeon/load/place_chests

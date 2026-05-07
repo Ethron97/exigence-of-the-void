@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) validate/coop/is_present_player
+execute if score debug.level debug matches 3.. run say (D3) validate/coop/is_present_player
 
 scoreboard players set #player_found Temp 1
 

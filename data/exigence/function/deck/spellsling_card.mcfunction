@@ -7,18 +7,18 @@ execute if score #slot Temp matches 2 run data modify storage exigence:give card
 execute if score #slot Temp matches 1 run data modify storage exigence:give card_name set from entity @s equipment.offhand.components."minecraft:custom_data".card_name
 
 # Get card entity that matches card name and is spellbound/not played
-#$tag @e[type=minecraft:armor_stand,tag=Card,tag=!Played,tag=Spellbound,limit=1,sort=random,nbt={mainhand:{components:{"minecraft:custom_data":{card_name:'$(card_name)'}}}}] add Spellslinging
+#$tag @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=Card,tag=!Played,tag=Spellbound,limit=1,sort=random,nbt={mainhand:{components:{"minecraft:custom_data":{card_name:'$(card_name)'}}}}] add Spellslinging
 
 # Get all card entities matching this card name
-$execute as @e[type=minecraft:armor_stand,tag=Card,tag=!Played,tag=Spellbound] if items entity @s weapon.* paper[custom_data~{card_name:'$(card_name)'}] run tag @s add CanSpellslinging
+$execute as @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=Card,tag=!Played,tag=Spellbound] if items entity @s weapon.* paper[custom_data~{card_name:'$(card_name)'}] run tag @s add CanSpellslinging
 # Tag a random one with filters
-execute as @e[type=minecraft:armor_stand,tag=CanSpellslinging,sort=random,limit=1] run tag @s add Spellslinging
+execute as @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=CanSpellslinging,sort=random,limit=1] run tag @s add Spellslinging
 # Remove local
-tag @e[type=minecraft:armor_stand,tag=Card,tag=CanSpellslinging] remove CanSpellslinging
+tag @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=Card,tag=CanSpellslinging] remove CanSpellslinging
 
 # Copy item over from hand to armorstand so that costs are on the armorstand
-execute if score #slot Temp matches 2 run item replace entity @e[type=minecraft:armor_stand,tag=Spellslinging,limit=1] weapon.mainhand from entity @s weapon.mainhand
-execute if score #slot Temp matches 1 run item replace entity @e[type=minecraft:armor_stand,tag=Spellslinging,limit=1] weapon.mainhand from entity @s weapon.offhand
+execute if score #slot Temp matches 2 run item replace entity @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=Spellslinging,limit=1] weapon.mainhand from entity @s weapon.mainhand
+execute if score #slot Temp matches 1 run item replace entity @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=Spellslinging,limit=1] weapon.mainhand from entity @s weapon.offhand
 
 # Clear 
 scoreboard players set #remove Temp 1

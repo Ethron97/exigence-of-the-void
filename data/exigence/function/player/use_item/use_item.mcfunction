@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say Use Item
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3) Use Item
 
 # Reset score
 scoreboard players set @s CarrotOnStick 0

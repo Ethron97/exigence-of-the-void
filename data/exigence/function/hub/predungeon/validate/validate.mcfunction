@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say (D3) validate/validate
+execute if score debug.level debug matches 3.. run say (D3) validate/validate
 
 # Default to VALID
 scoreboard players set #predungeon_validate_total Temp 1

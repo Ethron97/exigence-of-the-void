@@ -44,8 +44,12 @@ scoreboard players add @s[type=minecraft:ravager] game.ravager.eating_cookie 0
 scoreboard players add @s[type=minecraft:ravager] game.entity.ambient_noise_cooldown 0
 scoreboard players add @s game.enemy.stun_timer 0
 
+# Add etick to wardens/ravagers
+tag @s[type=minecraft:ravager] add ETICK
+tag @s[type=minecraft:warden] add ETICK
+
 # Glow enemies if debug
-execute if data storage exigence:debug {enemy:1} run effect give @s minecraft:glowing infinite 0 true
+execute if score toggle.enemy debug matches 1 run effect give @s minecraft:glowing infinite 0 true
 
 # Deprecated effects
 # Give creakings effects

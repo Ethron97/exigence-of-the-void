@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.hazard debug matches 1 if score debug.level debug matches 3.. run say (D3) Hot springs
+
 # TOAST - Hot Springs Nether Tower, West
 fill -453 104 -144 -453 105 -144 air
 summon minecraft:blaze -451.5 104 -143.5 {Tags:["L2","DataMerge","HotSprings"],CustomName:{text:"Toast",color:"gold",italic:false},PersistenceRequired:1b}

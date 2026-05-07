@@ -22,7 +22,7 @@ execute as @e[type=minecraft:marker,tag=TreasureWalking,distance=..1] at @s run 
 
 # Drop treasure
 $execute if data storage exigence:treasure_drop {verify:1} at @e[type=minecraft:marker,tag=TreasureWalking,distance=..64,limit=1] run function $(function) with storage exigence:treasure_drop
-execute if data storage exigence:treasure_drop {verify:0} run say Failed to drop treasure.
+execute if data storage exigence:treasure_drop {verify:0} if score toggle.treasure debug matches 1 if score debug.level debug matches 2.. run say (D2) Failed to drop treasure.
 
 # Update node.data.treasure.highest_drop_tries
 scoreboard players operation @s node.data.treasure.highest_drop_tries > Iteration.Current node.treasure.drop_working

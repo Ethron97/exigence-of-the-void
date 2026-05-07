@@ -6,5 +6,6 @@
 
 #====================================================================================================
 
-execute if entity @a[tag=GetDistance,distance=..88] run scoreboard players set #distance Temp 88
-execute if entity @a[tag=GetDistance,distance=88..] run scoreboard players set #distance Temp 96
+## SWITCH
+execute if entity @a[tag=GetDistance,distance=..88] run return run scoreboard players set #distance Temp 88
+execute if entity @a[tag=GetDistance,distance=88..] run return run scoreboard players set #distance Temp 96

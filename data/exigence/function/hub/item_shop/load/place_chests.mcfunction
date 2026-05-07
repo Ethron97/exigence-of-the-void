@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Place chests [item shop]
+execute if score debug.level debug matches 3.. run say (D3) Place chests [item shop]
 
 # Place blank chests
 setblock ~2 ~ ~3 chest[type=right,facing=north]

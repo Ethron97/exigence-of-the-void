@@ -1,5 +1,4 @@
-# DEBUG
-#say Pickup ardor flame
+# Called as advancement reward
 
 # Reset advancement
 advancement revoke @s only exigence:listener/pickup/ardor_flame
@@ -9,16 +8,18 @@ execute if score game.is_active game.state matches 0 run return 1
 execute unless entity @s[tag=ActivePlayer] run return 1
 #----------------------------------------------------------------------------------------------------
 
+execute if score toggle.beacon debug matches 1 if score debug.level debug matches 3.. run say (D3) Pickup ardor flame
+
 # Kill all other ardor flames this player's level
 scoreboard players operation #compare game.player.active_level = @s game.player.active_level
 execute if score game.is_active game.state matches 1 at @s run execute as @e[type=minecraft:item,tag=ArdorFlame,distance=..1000] if score @s game.entity.object_level = #compare game.player.active_level run kill @s
 
 # Clear netherstar
-clear @s minecraft:nether_star[custom_data={ardor_flame:"true"}]
-#execute if score @s game.player.active_level matches 1 run clear @s minecraft:nether_star[custom_data={ardor_flame:"true"}]
-#execute if score @s game.player.active_level matches 2 run clear @s minecraft:nether_star[custom_data={ardor_flame:"true"}]
-#execute if score @s game.player.active_level matches 3 run clear @s minecraft:nether_star[custom_data={ardor_flame:"true"}]
-#execute if score @s game.player.active_level matches 4 run clear @s minecraft:nether_star[custom_data={ardor_flame:"true"}]
+clear @s minecraft:nether_star[custom_data~{ardor_flame:true}]
+#execute if score @s game.player.active_level matches 1 run clear @s minecraft:nether_star[custom_data~{ardor_flame:true}]
+#execute if score @s game.player.active_level matches 2 run clear @s minecraft:nether_star[custom_data~{ardor_flame:true}]
+#execute if score @s game.player.active_level matches 3 run clear @s minecraft:nether_star[custom_data~{ardor_flame:true}]
+#execute if score @s game.player.active_level matches 4 run clear @s minecraft:nether_star[custom_data~{ardor_flame:true}]
 
 # Give ardor flame
 execute if score @s game.player.active_level matches 1 run function exigence:player/give/ardor_flame {model:{"strings":[ardor_flame_1]},text:'Ruins of Solstice'}

@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) New web march
+execute if score debug.level debug matches 3.. run say (D3) New web march
 
 # Generate random yaw and pitch
 execute store result storage exigence:temp snowball_yaw float 0.1 run random value 0..3600

@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say (D3) New room node (data)
+execute if score debug.level debug matches 3.. run say (D3) New room node (data)
 
 # Generate and assign new id
 scoreboard players add #next hub.room.room_id 1

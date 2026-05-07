@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.beacon debug matches 1 if score debug.level debug matches 3.. run say (D3) Light beacon EMBER
+
 # Increment node state
 scoreboard players add @s game.node.node_state 1
 
@@ -29,18 +31,18 @@ execute if score @s game.node.node_state matches 1..2 run title @a[tag=ActivePla
 execute at @s run playsound minecraft:item.flintandsteel.use neutral @a ~ ~ ~
 
 # Clear ardor ember
-execute if score @s node.property.object_level matches 1 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_1"]}] 1
-execute if score @s node.property.object_level matches 2 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_2"]}] 1
-execute if score @s node.property.object_level matches 3 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_3"]}] 1
-execute if score @s node.property.object_level matches 4 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_4"]}] 1
-
+item modify entity @p[tag=Lighting,gamemode=!creative] weapon.mainhand exigence:decrement
+#execute if score @s node.property.object_level matches 1 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_1"]}] 1
+#execute if score @s node.property.object_level matches 2 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_2"]}] 1
+#execute if score @s node.property.object_level matches 3 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_3"]}] 1
+#execute if score @s node.property.object_level matches 4 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_4"]}] 1
 
 # Only run past here if the final state was lit
 execute if score @s game.node.node_state matches ..2 run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Remove interaction
-function exigence:beacon/node/remove_interaction
+function exigence:beacon/node/setup/remove_interaction
 
 # Reduce menace
 execute if score .menace game.dungeon matches 1.. run scoreboard players remove .menace game.dungeon 1
@@ -48,16 +50,15 @@ execute if score .menace game.dungeon matches 1.. run scoreboard players remove 
 # Increase aqua
 execute as @p[tag=Lighting] run function exigence:resources/try_generate {green:0,red:0,aqua:1}
 
-# Start animation to light the rest of the beacon
-tag @s add BeaconLightLoop
-function exigence:beacon/node/light_beacon_loop
+# Run first tick of animation
+function exigence:beacon/node/light_beacon
 
 # Clear leftover ardor ember
-execute if score @s node.property.object_level matches 1 run clear @a ghast_tear[custom_model_data={"strings":[ardor_ember_1]}]
-execute if score @s node.property.object_level matches 2 run clear @a ghast_tear[custom_model_data={"strings":[ardor_ember_2]}]
-execute if score @s node.property.object_level matches 3 run clear @a ghast_tear[custom_model_data={"strings":[ardor_ember_3]}]
-execute if score @s node.property.object_level matches 4 run clear @a ghast_tear[custom_model_data={"strings":[ardor_ember_4]}]
+execute if score @s node.property.object_level matches 1 run clear @a ghast_tear[custom_model_data={strings:["ardor_ember_1"]}]
+execute if score @s node.property.object_level matches 2 run clear @a ghast_tear[custom_model_data={strings:["ardor_ember_2"]}]
+execute if score @s node.property.object_level matches 3 run clear @a ghast_tear[custom_model_data={strings:["ardor_ember_3"]}]
+execute if score @s node.property.object_level matches 4 run clear @a ghast_tear[custom_model_data={strings:["ardor_ember_4"]}]
 
 # Kill leftover ardor ember items
 scoreboard players operation #compare node.property.object_level = @s node.property.object_level
-execute if score game.is_active game.state matches 1 run execute as @e[type=minecraft:item,tag=ArdorEmber] if score @s game.entity.object_level = #compare node.property.object_level run kill @s
+execute as @e[x=-520,y=180,z=-287,dx=340,dy=200,dz=340,type=minecraft:item,tag=ArdorEmber] if score @s game.entity.object_level = #compare node.property.object_level run kill @s

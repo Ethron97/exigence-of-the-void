@@ -14,3 +14,4 @@ scoreboard players reset @s game.node.node_state
 scoreboard players reset @s Random 
 tag @s remove Red
 tag @s remove ChooseLock
+tag @s remove ETICK

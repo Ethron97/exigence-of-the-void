@@ -13,7 +13,8 @@ execute if score green.cost game.resources matches 0 if score red.cost game.reso
 #----------------------------------------------------------------------------------------------------
 
 # DEBUG
-say Modifying costs
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3) Modifying costs
+
 scoreboard players set #CostReduced game.resources 1
 
 # For now, just reduce all by 1... minimum of 1

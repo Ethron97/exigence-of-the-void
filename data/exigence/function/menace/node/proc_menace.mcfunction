@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) Proc menace from node (player detected)
+execute if score toggle.menace debug matches 1 if score debug.level debug matches 3.. run say (D3) Proc menace from node (player detected)
 
 # 1/3 chance
 execute store result score #random Random run random value 1..3

@@ -11,7 +11,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) Inserting DOOR 1 key
+execute if score toggle.door debug matches 1 if score debug.level debug matches 3.. run say (D3) Inserting DOOR 1 key
 
 ## HANDLE
 #====================================================================================================

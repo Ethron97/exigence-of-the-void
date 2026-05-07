@@ -7,6 +7,8 @@
 execute unless dimension minecraft:overworld run return run say Tried to transform sculk not in overworld
 #----------------------------------------------------------------------------------------------------
 
+execute if score toggle.menace debug matches 1 if score debug.level debug matches 3.. run say (D3) Transform sculk to red
+
 # Reset old
 kill @e[x=-380,y=-63,z=-124,dx=7,dy=380,dz=7,type=minecraft:marker,tag=Redifier]
 

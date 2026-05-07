@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) Setup exit node
+execute if score debug.level debug matches 3.. run say (D3) Setup exit node
 
 # Remove local tag
 tag @s remove NewExitNode

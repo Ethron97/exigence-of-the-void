@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) migrate player to game
+execute if score debug.level debug matches 3.. run say (D3) migrate player to game
 
 tag @s remove Predungeon
 team leave @s

@@ -16,7 +16,7 @@ team join Ember @s
 scoreboard players operation @s game.entity.object_level = #compare node.property.object_level
 
 # If ember debug on, glow
-execute if data storage exigence:debug {ember:1} run data modify entity @s Glowing set value true
+execute if score toggle.ember debug matches 1 run data modify entity @s Glowing set value true
 
 # Modify model based on level (if ember stack option enabled)
 execute if score #stacksize Temp matches 2 run data modify entity @s Item.components."minecraft:custom_model_data" set value {"strings":["ember2"]}

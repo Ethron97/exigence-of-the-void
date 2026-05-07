@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) Summon invitor confirm
+execute if score debug.level debug matches 4.. run say (D4) Summon invitor confirm
 
 # Summon display
 function exigence:hub/profile_selector/menu/display/coop_invitor/load_coop_invitor with entity @s item.components."minecraft:custom_data"

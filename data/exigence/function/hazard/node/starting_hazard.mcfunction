@@ -8,6 +8,8 @@
 
 #====================================================================================================
 
+execute if score toggle.hazard debug matches 1 if score debug.level debug matches 3.. run say (D3) Starting hazard
+
 # Trigger hazard
 function exigence:hazard/node/trigger
 scoreboard players add .hazard game.dungeon 1

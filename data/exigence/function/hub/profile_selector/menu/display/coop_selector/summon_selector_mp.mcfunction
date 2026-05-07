@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) Summon single player selector
+execute if score debug.level debug matches 4.. run say (D4) Summon single player selector
 
 # Summon display
 function exigence:hub/profile_selector/menu/display/coop_selector/load_coop_selector with entity @s item.components."minecraft:custom_data"

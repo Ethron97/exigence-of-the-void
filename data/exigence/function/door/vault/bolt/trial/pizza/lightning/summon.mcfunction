@@ -9,7 +9,7 @@
 #====================================================================================================
 
 # DEBUG
-#say New lightning
+execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) New lightning
 
 $summon minecraft:marker ~ ~ ~ {Tags:["PizzaLightning","NewPizzaLightning"],Rotation:$(Rotation),CustomName:{text:"Marker | PizzaLightning"}}
 

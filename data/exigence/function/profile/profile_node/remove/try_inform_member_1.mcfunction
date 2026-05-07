@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Try inform member 1
+execute if score debug.level debug matches 3.. run say (D3) Try inform member 1
 
 data modify storage exigence:temp profile_identifier set from entity @s data.custom_data.profile_identifier
 

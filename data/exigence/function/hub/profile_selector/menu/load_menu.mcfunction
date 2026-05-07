@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#$say (D3) Load profile selector menu $(profile_selector_id)
+$execute if score debug.level debug matches 3.. run say (D3) Load profile selector menu $(profile_selector_id)
 
 # Load the 5 slots:
 # Call function to load slot #

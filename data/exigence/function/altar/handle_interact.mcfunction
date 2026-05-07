@@ -7,7 +7,7 @@
 # ===============================================================================================================
 
 # DEBUG
-#say Altar handle
+execute if score toggle.altar debug matches 1 if score debug.level debug matches 3.. run say (D3) Altar handle interact
 
 # Tag the player who interacted
 execute on target run tag @s add Lighting

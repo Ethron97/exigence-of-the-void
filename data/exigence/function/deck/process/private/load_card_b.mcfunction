@@ -16,13 +16,14 @@
 #====================================================================================================
 
 # DEBUG
-#$say (D3) Loading card b ($(card_name))
+$execute if score debug.level debug matches 3.. run say (D3) Loading card b ($(card_name))
 
 # Add flags
 execute if score #void deck.process_card matches 1 run tag @s add IsVoid
 execute if score #recycler deck.process_card matches 1 run tag @s add Recycler
 execute if score #spellbinder deck.process_card matches 1 run tag @s add Spellbinder
-execute if score #instant deck.process_card matches 1 run tag @s add Instant
+execute if score #instant deck.process_card matches 1.. run tag @s add Instant
+execute if score #instant deck.process_card matches 1 run tag @s add PlayDuringSetup
 execute if score #persistent deck.process_card matches 1 run tag @s add Persistent
 
 # Copy card name to armor stand name for chat report

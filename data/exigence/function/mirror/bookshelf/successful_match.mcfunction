@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say (D3) All match
+execute if score toggle.bookshelf debug matches 1 if score debug.level debug matches 3.. run say (D3) All match
 
 playsound minecraft:block.glass.break block @a ~ ~ ~ 2 1
 

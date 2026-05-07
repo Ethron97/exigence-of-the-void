@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say (D3) Switch from pending to confirm
+execute if score debug.level debug matches 3.. run say (D3) Switch from pending to confirm
 
 # Kill pending title
 execute at @s run kill @n[type=minecraft:text_display,tag=PendingTitle,distance=..5]

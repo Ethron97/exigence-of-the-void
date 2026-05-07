@@ -1,9 +1,11 @@
+# Update bossbar based on state of level 2 beacon
 
-execute if entity @e[type=minecraft:armor_stand,scores={game.node.node_state=0,node.property.object_level=2},tag=BeaconNode] run \
-bossbar set exigence:objective name [{text:"Light the Beacon",color:"aqua"},{text:"",color:"gray"}]
+#====================================================================================================
 
-execute if entity @e[type=minecraft:armor_stand,scores={game.node.node_state=1,node.property.object_level=2},tag=BeaconNode] run \
-bossbar set exigence:objective name [{text:"Light the Beacon",color:"aqua"},{text:" (33%)",color:"gray"}]
+execute if score beacon.2 game.story.beacons matches 0 if data storage exigence:dungeon_settings {ardor_flame_type:0} \
+run bossbar set exigence:objective name [{text:"Light the Beacon",color:"aqua"},{text:"",color:"gray"}]
+execute if score beacon.2 game.story.beacons matches 0 if data storage exigence:dungeon_settings {ardor_flame_type:1} \
+run bossbar set exigence:objective name [{text:"Light the Beacon",color:"aqua"},{text:" (0/3)",color:"gray"}]
 
-execute if entity @e[type=minecraft:armor_stand,scores={game.node.node_state=2,node.property.object_level=2},tag=BeaconNode] run \
-bossbar set exigence:objective name [{text:"Light the Beacon",color:"aqua"},{text:" (66%)",color:"gray"}]
+execute if score beacon.2 game.story.beacons matches 1 run bossbar set exigence:objective name [{text:"Light the Beacon",color:"aqua"},{text:" 1/3",color:"gray"}]
+execute if score beacon.2 game.story.beacons matches 2 run bossbar set exigence:objective name [{text:"Light the Beacon",color:"aqua"},{text:" 2/3",color:"gray"}]

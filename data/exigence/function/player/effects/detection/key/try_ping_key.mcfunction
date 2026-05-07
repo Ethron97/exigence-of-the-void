@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Try ping key
+execute if score toggle.door debug matches 1 if score debug.level debug matches 4.. run say (D4) Try ping key
 
 # If key has not been found on the level the player is on
 ## SWITCH

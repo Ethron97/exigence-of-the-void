@@ -1,5 +1,5 @@
 $scoreboard players add card.$(card_name) game.cards_played.times_played 1
-$execute if data storage exigence:debug {void:0} run scoreboard players add card.$(card_name) TimesPlayedTotal 1
+$execute if score toggle.void debug matches 0 run scoreboard players add card.$(card_name) TimesPlayedTotal 1
 $execute store result storage exigence:temp times_played int 1 run scoreboard players get card.$(card_name) game.cards_played.times_played
 
 $execute store result storage exigence:temp times_processed int 1 run scoreboard players get $(card_name) game.cards_played.times_processed

@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) Cancel invite -  sender
+execute if score debug.level debug matches 3.. run say (D3) Cancel invite -  sender
 
 tag @s remove InviteSent
 tag @s add CancelledBy

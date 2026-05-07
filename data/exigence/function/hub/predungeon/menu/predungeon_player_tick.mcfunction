@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Predungeon tick player
+execute if score debug.level debug matches 5.. run say (D5) Predungeon tick player
 
 scoreboard players operation #compare career.player_id = @s career.player_id
 

@@ -11,7 +11,7 @@
 
 #====================================================================================================
 
-#say (D3) Load predungeon menu node
+execute if score debug.level debug matches 3.. run say (D3) Load predungeon menu node
 
 # Load menu node
 summon minecraft:marker ~ ~ ~ {Tags:["PredungeonMenuNode"]}

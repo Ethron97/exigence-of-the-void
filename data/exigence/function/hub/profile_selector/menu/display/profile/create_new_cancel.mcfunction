@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Cancel create new
+execute if score debug.level debug matches 3.. run say (D3) Cancel create new
 
 # Remove tag
 tag @s remove CreationProcess

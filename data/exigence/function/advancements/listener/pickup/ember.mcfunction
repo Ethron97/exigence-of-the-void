@@ -1,7 +1,7 @@
 # Reset advancement
 advancement revoke @s only exigence:listener/pickup/ember
 
-#say (D3) Pickup ember
+execute if score toggle.ember debug matches 1 if score debug.level debug matches 3.. run say (D3) Pickup ember
 
 # TUTORIAL
 clear @s[tag=Tutorial] minecraft:soul_campfire
@@ -14,7 +14,7 @@ execute if score game.is_active game.state matches 0 run return 1
 execute unless entity @s[tag=ActivePlayer] run return 1
 #----------------------------------------------------------------------------------------------------
 
-#say (D3) Pickup ember in game
+execute if score toggle.ember debug matches 1 if score debug.level debug matches 3.. run say (D3) Pickup ember in game
 
 # Get number of embers if it was a stack
 scoreboard players set #stacksize Temp 1

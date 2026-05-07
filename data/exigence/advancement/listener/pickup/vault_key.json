@@ -7,7 +7,7 @@
           {
             "items": "#exigence:trim_templates",
             "predicates": {
-              "minecraft:custom_data": {"vault_key_summoned":"true"}
+              "minecraft:custom_data": {"vault_key_summoned":true}
             }
           }
         ]

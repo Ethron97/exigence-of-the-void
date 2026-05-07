@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Leaving Item Shop
+execute if score debug.level debug matches 3.. run say (D3) Leaving Item Shop
 
 tag @s remove ItemShop
 team leave @s

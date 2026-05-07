@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+say (D3) Dungeon enter
+
 # Cleanup predungeon stuff
 function exigence:hub/predungeon/access/migrate_to_game
 
@@ -19,7 +21,10 @@ function exigence:scoreboard/generated_functions/reset_on_death
 function exigence:game/reset/reset_advancements
 gamemode adventure @s
 team join Player @s
-#attribute @s minecraft:safe_fall_distance modifier remove exigence:safe_fall
+attribute @s minecraft:safe_fall_distance modifier remove exigence:safe_fall
+
+# Reset title times (to defaults)
+title @s times 10t 70t 20t
 
 # Set waypoint to not transmit (so coop players don't get confused seeing each other on it)
 #   Spectators already don't appear on it, and the hub will be in a different world.
@@ -48,3 +53,6 @@ function exigence:game/load/modifiers/load_modifiers_b
 #function exigence:player/utility/setup_preview_display
 # Initialize interaction: TODO
 #execute as @a[tag=ActivePlayer] run function exigence:player/utility/interaction/get_interaction
+
+# Initialize vault score (so we can filter some bossbars)
+scoreboard players set @s game.player.vault_code 0

@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) Remove player head selectors
+execute if score debug.level debug matches 3.. run say (D3) Remove player head selectors
 
 # Remove display
 kill @e[type=minecraft:text_display,tag=PageLabel,distance=..16]

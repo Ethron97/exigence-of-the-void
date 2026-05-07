@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say (D3) Hover call
+execute if score debug.level debug matches 4.. run say (D4) Hover call
 
 team join LightPurple @s
 

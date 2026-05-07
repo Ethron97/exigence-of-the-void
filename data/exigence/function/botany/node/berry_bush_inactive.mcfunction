@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) I am Deactivate
+execute if score toggle.berry debug matches 1 if score debug.level debug matches 3.. run say (D3) I am Deactivate
 
 # Reset active tag
 tag @s remove Active
@@ -13,6 +13,7 @@ tag @s remove Grown
 tag @s remove Overgrown
 tag @s remove FromSetup
 tag @s remove PotentialGrowth
+tag @s remove ETICK
 
 # Set block at berry bush to be dead bush
 execute at @s[tag=BerryNode] run setblock ~ ~ ~ dead_bush

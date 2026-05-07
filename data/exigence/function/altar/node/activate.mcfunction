@@ -1,11 +1,11 @@
-
+# Activate this altar node for this game
 
 ## CONSTRAINTS
 #   AS AltarNode
 
 #====================================================================================================
 
-#say (D3) Activate altar node
+execute if score toggle.altar debug matches 1 if score debug.level debug matches 3.. run say (D3) Activate altar node
 
 # Clone built altar from prebuilds
 execute at @s[tag=!Crucible] run clone -390 -43 -119 -388 -42 -117 ~-1 ~-1 ~-1
@@ -19,3 +19,6 @@ execute at @s run setblock ~ ~ ~ minecraft:soul_campfire[lit=false]
 
 # Set game.node.node_state to 0
 scoreboard players set @s game.node.node_state 0
+
+# Add etick tag
+tag @s add ETICK

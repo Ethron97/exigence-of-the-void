@@ -6,18 +6,23 @@
 
 #====================================================================================================
 
-execute if score @s node.property.object_level matches 1 as @a[tag=Lighting] unless items entity @s weapon.mainhand minecraft:nether_star run tellraw @s [{text:"This becaon requires an ",color:"gray",italic:false},{text:"🔥 Ardor Flame 🔥 ",color:"aqua"},{text:"to light",color:"gray",italic:false}]
+execute if score toggle.beacon debug matches 1 if score debug.level debug matches 3.. run say (D3) Try light beacon FLAME
+
+# Not holding an ardor flame:
+execute as @a[tag=Lighting] unless items entity @s weapon.mainhand minecraft:nether_star run return run tellraw @s [{text:"This becaon requires an ",color:"gray",italic:false},{text:"🔥 Ardor Flame 🔥 ",color:"aqua"},{text:"to light",color:"gray",italic:false}]
+#----------------------------------------------------------------------------------------------------
+
 execute if score @s node.property.object_level matches 1 as @a[tag=Lighting] if items entity @s weapon.mainhand minecraft:nether_star unless items entity @s weapon.mainhand minecraft:nether_star[custom_model_data={"strings":[ardor_flame_1]}] run tellraw @s [{text:"That is the wrong ",color:"gray",italic:false},{text:"🔥 Ardor Flame 🔥 ",color:"aqua"},{text:"for this level!",color:"gray",italic:false}]
 execute if score @s node.property.object_level matches 1 if items entity @a[tag=Lighting] weapon.mainhand minecraft:nether_star[custom_model_data={"strings":[ardor_flame_1]}] run function exigence:beacon/node/private/light_flame
 
-execute if score @s node.property.object_level matches 2 as @a[tag=Lighting] unless items entity @s weapon.mainhand minecraft:nether_star run tellraw @s [{text:"This becaon requires an ",color:"gray",italic:false},{text:"🔥 Ardor Flame 🔥 ",color:"aqua"},{text:"to light",color:"gray",italic:false}]
 execute if score @s node.property.object_level matches 2 as @a[tag=Lighting] if items entity @s weapon.mainhand minecraft:nether_star unless items entity @s weapon.mainhand minecraft:nether_star[custom_model_data={"strings":[ardor_flame_2]}] run tellraw @s [{text:"That is the wrong ",color:"gray",italic:false},{text:"🔥 Ardor Flame 🔥 ",color:"aqua"},{text:"for this level!",color:"gray",italic:false}]
 execute if score @s node.property.object_level matches 2 if items entity @a[tag=Lighting] weapon.mainhand minecraft:nether_star[custom_model_data={"strings":[ardor_flame_2]}] run function exigence:beacon/node/private/light_flame
 
-execute if score @s node.property.object_level matches 3 as @a[tag=Lighting] unless items entity @s weapon.mainhand minecraft:nether_star run tellraw @s [{text:"This becaon requires an ",color:"gray",italic:false},{text:"🔥 Ardor Flame 🔥 ",color:"aqua"},{text:"to light",color:"gray",italic:false}]
 execute if score @s node.property.object_level matches 3 as @a[tag=Lighting] if items entity @s weapon.mainhand minecraft:nether_star unless items entity @s weapon.mainhand minecraft:nether_star[custom_model_data={"strings":[ardor_flame_3]}] run tellraw @s [{text:"That is the wrong ",color:"gray",italic:false},{text:"🔥 Ardor Flame 🔥 ",color:"aqua"},{text:"for this level!",color:"gray",italic:false}]
 execute if score @s node.property.object_level matches 3 if items entity @a[tag=Lighting] weapon.mainhand minecraft:nether_star[custom_model_data={"strings":[ardor_flame_3]}] run function exigence:beacon/node/private/light_flame
 
-execute if score @s node.property.object_level matches 4 as @a[tag=Lighting] unless items entity @s weapon.mainhand minecraft:nether_star run tellraw @s [{text:"This becaon requires an ",color:"gray",italic:false},{text:"🔥 Ardor Flame 🔥 ",color:"aqua"},{text:"to light",color:"gray",italic:false}]
 execute if score @s node.property.object_level matches 4 as @a[tag=Lighting] if items entity @s weapon.mainhand minecraft:nether_star unless items entity @s weapon.mainhand minecraft:nether_star[custom_model_data={"strings":[ardor_flame_4]}] run tellraw @s [{text:"That is the wrong ",color:"gray",italic:false},{text:"🔥 Ardor Flame 🔥 ",color:"aqua"},{text:"for this level!",color:"gray",italic:false}]
 execute if score @s node.property.object_level matches 4 if items entity @a[tag=Lighting] weapon.mainhand minecraft:nether_star[custom_model_data={"strings":[ardor_flame_4]}] run function exigence:beacon/node/private/light_flame
+
+# Update story scores
+function exigence:beacon/node/private/update_story_score

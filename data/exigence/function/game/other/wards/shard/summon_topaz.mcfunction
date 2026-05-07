@@ -8,7 +8,7 @@
 #====================================================================================================
 
 # Summon a new resonance with tag "new resonance"
-summon minecraft:item ~ ~ ~ {Tags:["NewResonance","Resonance","ResonanceTopaz","Treasure"],Item:{id:"minecraft:amethyst_shard",count:1,components:{\
+summon minecraft:item ~ ~ ~ {Tags:["NewResonance","Resonance","ResonanceTopaz","Treasure","ETICK"],Item:{id:"minecraft:amethyst_shard",count:1,components:{\
 "minecraft:max_stack_size":1,"minecraft:custom_model_data":{"strings":["resonance_topaz"]}\
 ,"minecraft:custom_name":[{text:"🌌 Topaz Shard 🌌",color:"yellow",italic:false}]\
 ,"minecraft:lore":[\

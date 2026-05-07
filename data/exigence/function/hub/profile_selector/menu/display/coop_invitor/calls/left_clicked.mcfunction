@@ -5,6 +5,6 @@
 
 #====================================================================================================
 
-#say (D3) Left click profile
+execute if score debug.level debug matches 3.. run say (D3) Left click profile
 
 function exigence:hub/profile_selector/menu/display/coop_invitor/calls/clicked with entity @s item.components."minecraft:custom_data"

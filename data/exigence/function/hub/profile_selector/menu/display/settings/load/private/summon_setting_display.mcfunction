@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say (D3) Load setting selector
+execute if score debug.level debug matches 3.. run say (D3) Load setting selector
 
 # Summon item display
 summon minecraft:item_display ~ ~ ~ {brightness:{block:13,sky:13},Rotation:[90.0f,0.0f],billboard:"fixed"\

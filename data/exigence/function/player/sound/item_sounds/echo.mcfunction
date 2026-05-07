@@ -6,7 +6,9 @@
 
 #====================================================================================================
 
-# Ambient tinkle around the Echo Shard
+execute if score toggle.echo debug matches 1 if score debug.level debug matches 5.. run say (D5) Item sounds: Echo
+
+# Decrement cooldown
 scoreboard players remove @s game.player.sound_ping.echo_cooldown 1
 
 # Playsound and reset cooldown

@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.hazard debug matches 1 if score debug.level debug matches 3.. run say (D3) Fire stairs sculk
+
 # Randomize 1-3
 execute store result score randomB Random run random value 1..3
 

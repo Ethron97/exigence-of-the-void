@@ -24,7 +24,7 @@
               },
               {
                 "function": "minecraft:set_custom_data",
-                "tag": {"convert_coin":"true"}
+                "tag": {"convert_coin":true}
               }
             ]
           }

@@ -1,7 +1,7 @@
 # Loop over all variances 1 tick at a time
 
 #====================================================================================================
-execute if score predungeon.cancel_load hub.room_misc matches 1 run return fail
+execute if score game.cancel_load hub.room_misc matches 1 run return fail
 #----------------------------------------------------------------------------------------------------
 
 scoreboard players set #didnt_setup Temp 1

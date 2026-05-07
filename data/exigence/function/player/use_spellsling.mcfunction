@@ -3,7 +3,7 @@
 
 #====================================================================================================
 
-#say use_spellsling
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3) Use spellsling
 
 # If max menace, tellraw and return
 execute if score game.max_menace game.state matches 1 run tellraw @s [{text:"An odious force prevents you from spellslinging",color:"red"}]

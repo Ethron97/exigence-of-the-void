@@ -5,4 +5,4 @@
 
 #====================================================================================================
 
-#say (D3) TODO
+execute if score debug.level debug matches 3.. run say (D3) TODO

@@ -18,7 +18,7 @@ $execute as @e[type=minecraft:marker,tag=NewNode] run data modify entity @s Cust
 execute as @e[type=minecraft:marker,tag=NewNode] run team join Special @s
 
 # Glow if debug
-execute if data storage exigence:debug {bookshelf:1} as @e[type=minecraft:marker,tag=NewNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
+execute if score toggle.bookshelf debug matches 1 as @e[type=minecraft:marker,tag=NewNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
 
 # Remove "NewNode" tag
 tag @e[type=minecraft:marker,tag=NewNode] remove NewNode

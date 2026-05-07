@@ -8,7 +8,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) Load predungeon
+execute if score debug.level debug matches 3.. run say (D3) Load predungeon
 
 fill 1 207 35 -1 209 35 minecraft:air
 

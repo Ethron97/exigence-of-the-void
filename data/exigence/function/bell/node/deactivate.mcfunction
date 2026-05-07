@@ -7,6 +7,7 @@
 
 tag @s remove Active
 tag @s remove Smashed
+tag @s remove ETICK
 fill ~ ~ ~ ~ ~ ~ minecraft:air replace minecraft:bell
 
 scoreboard players reset @s game.node.bell.ring_cooldown

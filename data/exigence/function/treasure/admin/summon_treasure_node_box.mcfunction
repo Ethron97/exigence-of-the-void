@@ -28,8 +28,8 @@ execute as @e[type=minecraft:marker,tag=NewNode] if score @s node.property.treas
 team join Treasure @e[type=minecraft:marker,tag=NewNode]
 
 # If treasure debug is on, create bb and glow armorstand
-execute if data storage exigence:debug {treasure:1} as @e[type=minecraft:marker,tag=NewNode] run function exigence:treasure/node/debug/create_bb
-execute if data storage exigence:debug {treasure:1} as @e[type=minecraft:marker,tag=NewNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
+execute if score toggle.treasure debug matches 1 as @e[type=minecraft:marker,tag=NewNode] run function exigence:treasure/node/debug/create_bb
+execute if score toggle.treasure debug matches 1 as @e[type=minecraft:marker,tag=NewNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
 
 # Remove "NewNode" tag
 tag @e[type=minecraft:marker,tag=NewNode] remove NewNode

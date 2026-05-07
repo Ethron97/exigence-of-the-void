@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say (D3) Load refresh button
+execute if score debug.level debug matches 3.. run say (D3) Load refresh button
 
 # Summon item display
 $summon minecraft:item_display ~ ~ ~ {Rotation:$(Rotation),CustomName:{text:"ItemDisplay | RefreshButton"},billboard:"fixed",Tags:["RefreshButton","MenuDisplay","NewItemDisplay","DeckAnalyzerDisplay","SizeClassMedium"],item:{id:"minecraft:sunflower",count:1\

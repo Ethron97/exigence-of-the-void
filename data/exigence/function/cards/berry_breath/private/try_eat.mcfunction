@@ -3,7 +3,7 @@
 
 #====================================================================================================
 
-#say (D3) I am tryig to eat
+execute if score debug.level debug matches 3.. run say (D3) I am tryig to eat
 
 # If the nearest berry bush (on same level) is active, give +30s Beast Sense and then deactivate
 scoreboard players operation #compare game.entity.object_level = @s game.entity.object_level

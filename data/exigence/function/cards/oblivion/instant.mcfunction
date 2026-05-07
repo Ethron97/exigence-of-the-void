@@ -9,7 +9,7 @@ scoreboard players set mod.oblivion game.modifiers 1
 #say [Other Void cards are not consumed this run. One non-void card is consumed at the end of this run.]
 
 # Mark one nonvoid processed card as Oblivion
-#tag @e[type=minecraft:armor_stand,tag=Card,tag=!IsVoid,limit=1,sort=random] add OblivionCard
+#tag @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=Card,tag=!IsVoid,limit=1,sort=random] add OblivionCard
 
 #execute as @e[type=minecraft:armor_stand,tag=OblivionCard] run say <<< ✘ Oblivion ✘
 

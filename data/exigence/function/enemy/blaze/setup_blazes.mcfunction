@@ -18,7 +18,7 @@ effect give @s minecraft:slowness infinite 200 true
 attribute @s knockback_resistance base set 10.0
 
 # Glow enemies if debig
-execute if data storage exigence:debug {enemy:1} run effect give @s minecraft:glowing infinite 0 true
+execute if score toggle.enemy debug matches 1 run effect give @s minecraft:glowing infinite 0 true
 
 # Other setup
 function exigence:enemy/spawn_enemies/setup_enemy

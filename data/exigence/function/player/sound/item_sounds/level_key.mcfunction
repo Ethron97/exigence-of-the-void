@@ -5,7 +5,9 @@
 
 #====================================================================================================
 
-# Sound
+execute if score toggle.door debug matches 1 if score debug.level debug matches 5.. run say (D5) Item sounds: Door
+
+# Decrement cooldown
 scoreboard players remove @s game.player.sound_ping.key_cooldown 1
 
 # Playsound and reset cooldown

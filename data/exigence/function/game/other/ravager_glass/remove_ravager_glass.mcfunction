@@ -10,7 +10,7 @@
 fill ~ ~ ~ ~ ~ ~ air replace gray_stained_glass_pane
 
 # Place a marker to store the position of the Ravager Glass.
-summon minecraft:marker ~ ~ ~ {Tags:["RavagerGlass","NewRavagerGlass"],CustomName:{text:"Marker | RavagerGlass"}}
+summon minecraft:marker ~ ~ ~ {Tags:["RavagerGlass","NewRavagerGlass","ETICK"],CustomName:{text:"Marker | RavagerGlass"}}
 
 execute if entity @s[tag=Tutorial] run tag @n[type=minecraft:marker,tag=NewRavagerGlass,distance=..3] add TutorialGlass
 execute if entity @s[tag=Tutorial] in exigence:tutorial if score Step Tutorial matches 1304 run function exigence:tutorial/flow/step

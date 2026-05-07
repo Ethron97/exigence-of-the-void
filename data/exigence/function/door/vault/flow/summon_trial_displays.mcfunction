@@ -10,7 +10,7 @@
 #====================================================================================================
 
 # DEBUG
-#$say trial $(Rotation)
+$execute if score toggle.vault debug matches 1 if score debug.level debug matches 4.. run say (D4) Summon trial displays $(Rotation)
 
 $summon minecraft:text_display ^ ^2.5 ^-1.4 {background:1,line_width:150,Rotation:$(Rotation),Tags:["VaultTrialDisplay","NewVaultTrialDisplay"],billboard:'fixed',text:[{text:"Trial of Flow",color:"aqua"}]}
 

@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say (D3) Unload deck analyzer
+execute if score debug.level debug matches 3.. run say (D3) Unload deck analyzer
 
 $execute as @n[scores={hub.entity.profile_selector_id=$(profile_selector_id)},tag=DeckAnalyzer,distance=..24] \
 run function exigence:hub/deck_analyzer/unload_deck_analyzer with entity @s data.custom_data

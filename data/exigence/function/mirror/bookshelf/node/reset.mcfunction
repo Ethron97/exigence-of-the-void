@@ -7,9 +7,12 @@
 
 # Reset tag
 tag @s remove Active
+tag @s remove ETICK
+
+# Clear block contents
+data modify block ~ ~ ~ Items set value []
 
 # Reset bookshelves
-## SWITCH
 execute if entity @s[tag=FacingEast] at @s run return run setblock ~ ~ ~ minecraft:chiseled_bookshelf[facing=east]
 execute if entity @s[tag=FacingWest] at @s run return run setblock ~ ~ ~ minecraft:chiseled_bookshelf[facing=west]
 execute if entity @s[tag=FacingNorth] at @s run return run setblock ~ ~ ~ minecraft:chiseled_bookshelf[facing=north]

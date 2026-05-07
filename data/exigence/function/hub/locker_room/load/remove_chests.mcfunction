@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Remove chests [locker room]
+execute if score debug.level debug matches 3.. run say (D3) Remove chests [locker room]
 
 # Remove chests
 setblock ^3 ^ ^ air

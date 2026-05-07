@@ -5,7 +5,7 @@
 #====================================================================================================
 
 # DEBUG
-#say Setting up level 3 floot staircase variance
+execute if score toggle.variance debug matches 1 if score debug.level debug matches 3.. run say (D3) Setting up level 3 floot staircase variance
 function exigence:variance/level_3_stairs/reset_stairs
 
 # Determine if top or bottom level has the single stair

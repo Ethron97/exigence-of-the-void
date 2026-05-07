@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-say use glow ink sac
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3) Use glow ink sac
 
 # Set any entity that has glow to 999999
 #   Maybe in future set to -1 so it no longer updates... but then we need to change other glow updaters

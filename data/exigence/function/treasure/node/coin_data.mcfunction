@@ -18,7 +18,7 @@ team join Treasure @s
 scoreboard players operation @s game.entity.object_level = #compare node.property.object_level
 
 # If treasure debug on, glow coin
-execute if data storage exigence:debug {treasure:1} run data modify entity @s Glowing set value true
+execute if score toggle.treasure debug matches 1 run data modify entity @s Glowing set value true
 
 # Modify model based on level (if coin stack option enabled)
 execute if score #stacksize Temp matches 2 run data modify entity @s Item.components."minecraft:custom_model_data" set value {"strings":["coin2"]}

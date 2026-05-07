@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Node close triage
+execute if score debug.level debug matches 3.. run say (D3) Node close triage
 
 # Triage
 execute if score @s hub.room.room_type matches 1 run function exigence:room/tutorial/close_from_timeout

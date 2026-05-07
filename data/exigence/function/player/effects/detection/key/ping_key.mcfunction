@@ -7,8 +7,6 @@
 
 #====================================================================================================
 
-#say (D3) Ping key
-
 # Make sure local tag is cleared
 tag @e[type=minecraft:item,tag=ClosestLevelKey,distance=..96] remove ClosestLevelKey
 
@@ -29,7 +27,7 @@ scoreboard players operation #old_distance game.player.sound_ping.key_distance =
 # Determine distance bracket
 function exigence:player/effects/detection/key/get_distance_bracket
 
-#tellraw @a [{text:"Distance Bracket: "},{score:{name:"@s","objective":"game.player.sound_ping.key_distance"}}]
+execute if score toggle.door debug matches 1 if score debug.level debug matches 4.. run tellraw @a [{text:"(D4) Distance Bracket: "},{score:{name:"@s","objective":"game.player.sound_ping.key_distance"}}]
 
 # If ping Key distance is 10, no pings
 #execute if score @s game.player.sound_ping.key_distance matches 10 run say No ping (No valid distance)
@@ -43,6 +41,8 @@ execute if score @s game.player.sound_ping.key_distance matches 10 run return 1
 #execute if score @s game.player.sound_ping.key_cooldown matches 1.. if score #old_distance game.player.sound_ping.key_distance <= @s game.player.sound_ping.key_distance run say No ping (from backup, didn't get closer)
 execute if score @s game.player.sound_ping.key_cooldown matches 1.. if score #old_distance game.player.sound_ping.key_distance <= @s game.player.sound_ping.key_distance run return 1
 #----------------------------------------------------------------------------------------------------
+
+execute if score toggle.door debug matches 1 if score debug.level debug matches 4.. run say (D4) Ping key
 
 ## SUCCESSFUL PING
 # Stop old ping (if exists) so we don't overlap when they are running forward

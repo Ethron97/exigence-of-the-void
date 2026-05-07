@@ -1,5 +1,4 @@
 # Opens the door and handles any additional fucntionality
-#say open Door 3
 
 ## CONSTRAINTS
 #   AT ItemDisplay (Door3Handle)
@@ -7,9 +6,9 @@
 #====================================================================================================
 
 # DEBUG
-say (D3) Open Door 3
+execute if score toggle.door debug matches 1 if score debug.level debug matches 3.. run say (D3) Open Door 3
 
-tag @n[type=minecraft:marker,tag=DoorNode,tag=Door3,distance=..10] add Open
+tag @n[type=minecraft:marker,tag=DoorNode,tag=Door3,distance=..10] add ETICK
 scoreboard players set 3.opened game.level_doors 1
 
 #====================================================================================================
@@ -26,6 +25,7 @@ playsound item.totem.use neutral @a ~ ~1000 ~ 1000 0.8
 #clone -366 148 -103 -358 157 -103 -366 171 -86
 
 fill -364 172 -86 -360 176 -86 air replace barrier
+fill -360 172 -87 -364 176 -87 air replace barrier
 
 #====================================================================================================
 # PARTICLES

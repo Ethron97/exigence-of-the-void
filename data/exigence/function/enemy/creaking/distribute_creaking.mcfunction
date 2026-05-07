@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) I am distributing
+execute if score toggle.enemy debug matches 1 if score debug.level debug matches 3.. run say (D3) I am distributing
 
 # Teleport self to one random menace node
 #   In the pale garden, on level 4, inside the walls, not already creakingined

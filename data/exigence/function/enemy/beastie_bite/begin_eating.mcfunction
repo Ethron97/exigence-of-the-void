@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Om nom nom (cookie)
+execute if score toggle.enemy debug matches 1 if score debug.level debug matches 3.. run say (D3) Om nom nom (cookie)
 
 # Pacify Ravager
 data merge entity @s {NoAI:true}

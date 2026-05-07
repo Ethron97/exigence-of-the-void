@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say Start interolate
+execute if score toggle.vault debug matches 1 if score debug.level debug matches 4.. run say (D4) Start interolate
 
 # Get line from pizzaid
 scoreboard players operation #compare PizzaID = @s PizzaID

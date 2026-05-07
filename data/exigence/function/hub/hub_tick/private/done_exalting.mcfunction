@@ -1,7 +1,7 @@
 # Called by exalting when any player returns to hub
 
 # escape all players
-execute as @a[tag=Exalting] run function exigence:player/game/escape
+execute as @a[tag=Exalting] run function exigence:game/access/escape
 
 scoreboard players set @a[tag=Exalting] CarrotOnStick 0
 

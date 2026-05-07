@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say (D3) Try data to chest
+execute if score debug.level debug matches 2.. run say (D2) Try data to chest
 
 # If there were no chests to save, remove waiting for chests tag
 #execute if score #chests_saved Temp matches 0 if entity @s[tag=WaitingForChests] run say (D3) REMOVING waitin for chests TAG
@@ -17,19 +17,20 @@ execute if score #chests_saved Temp matches 0 if entity @s[tag=WaitingForChests]
 execute if score #chests_saved Temp matches 0 run return fail
 #----------------------------------------------------------------------------------------------------
 
-#say (D3) Try data to chest pt2
+execute if score debug.level debug matches 2.. run say (D2) Try data to chest pt2
 
 # Save to MAIN co-op profile if this profile is part of a coop profile
 scoreboard players operation #compare profile.node.coop_profile_id = @s profile.node.coop_profile_id
-execute if score @s profile.node.coop_profile_id matches 1.. \
-as @e[type=minecraft:marker,scores={profile.node.coop_profile_id=1..},tag=ProfileNode,distance=..140] \
+execute if score @s profile.node.coop_profile_id matches 1.. in exigence:profile_data \
+as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,scores={profile.node.coop_profile_id=1..},tag=ProfileNode] \
 if score @s profile.node.profile_id = #compare profile.node.coop_profile_id at @s run function exigence:profile/profile_node/save/data_to_chest
 # Else just load this node's data
 execute unless score @s profile.node.coop_profile_id matches 1.. at @s run function exigence:profile/profile_node/save/data_to_chest
 
-#say (D3) Check for waiting...
+execute if score debug.level debug matches 2.. run say (D2) Check for waiting...
 ## CHECK FOR WAITING
 # If co-op profile, check if any other co-op profiles are WaitingForChest, and if so, pick a random one to load to
 scoreboard players set #loaded_to_waiting Temp 0
-execute if score @s profile.node.coop_profile_id matches 1.. as @e[type=minecraft:marker,tag=ProfileNode,tag=WaitingForChests,distance=..300,sort=random] \
+execute if score @s profile.node.coop_profile_id matches 1.. in exigence:profile_data \
+as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode,tag=WaitingForChests,sort=random] \
 if score @s profile.node.coop_profile_id = #compare profile.node.coop_profile_id run function exigence:profile/profile_node/load/try_load_to_waiting

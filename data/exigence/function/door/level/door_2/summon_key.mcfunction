@@ -7,10 +7,12 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) Summon key (door 2)
+execute if score toggle.door debug matches 1 if score debug.level debug matches 4.. run say (D4) Summon key (door 2)
 
 # Summon a new item
-summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:trial_key",count:1,components:{"minecraft:custom_model_data":{"strings":["level_2_key"]},"minecraft:custom_name":[{text:"⋉ Temple of Fervor Key ⋊",color:"gold",italic:false}],"minecraft:custom_data":{key_level:"2"}}},Tags:["NewLevelKey","LevelKey","Key","Level2Key"]}
+summon minecraft:item ~ ~ ~ {Tags:["NewLevelKey","LevelKey","Key","Level2Key"],\
+Item:{id:"minecraft:trial_key",count:1,components:{"minecraft:custom_model_data":{"strings":["level_2_key"]}\
+,"minecraft:custom_name":[{text:"⋉ Temple of Fervor Key ⋊",color:"gold",italic:false}],"minecraft:custom_data":{key_level:"2"}}}}
 
 scoreboard players operation #compare node.property.object_level = @s node.property.object_level
 

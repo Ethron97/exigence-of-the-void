@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) Leaving Locker Room
+execute if score debug.level debug matches 3.. run say (D3) Leaving Locker Room
 
 tag @s remove LockerRoom
 

@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # DEBUG
-#$say (D3) Trigger $(amount) menace from $(from)
+$execute if score toggle.menace debug matches 1 if score debug.level debug matches 3.. run say (D3) Trigger $(amount) menace from $(from)
 
 # Get max before and extra
 scoreboard players operation #before_max Temp = 20 number

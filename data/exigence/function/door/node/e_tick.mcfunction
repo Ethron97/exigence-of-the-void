@@ -6,4 +6,4 @@
 #====================================================================================================
 
 # Redistribute ravagers that get too close to door nodes
-execute if entity @s[tag=Open] as @e[type=minecraft:ravager,distance=..2] run function exigence:enemy/ravager/redistribute
+execute as @e[type=minecraft:ravager,distance=..2] run function exigence:enemy/ravager/redistribute

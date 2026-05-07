@@ -27,8 +27,8 @@ execute if score game.difficulty game.state matches 4.. run function exigence:ha
 
 ## WARDS
 # +1 hazard on level 4 for each Ward destroyed
-#execute if score game.difficulty game.state matches 4.. if score ward.Emerald game.story.wards matches 0 run function exigence:hazard/starting_hazard/increase/4
-#execute if score game.difficulty game.state matches 4.. if score ward.Sapphire game.story.wards matches 0 run function exigence:hazard/starting_hazard/increase/4
-#execute if score game.difficulty game.state matches 4.. if score ward.Ruby game.story.wards matches 0 run function exigence:hazard/starting_hazard/increase/4
-#execute if score game.difficulty game.state matches 4.. if score ward.Topaz game.story.wards matches 0 run function exigence:hazard/starting_hazard/increase/4
-#execute if score game.difficulty game.state matches 4.. if score ward.Amethyst game.story.wards matches 0 run function exigence:hazard/starting_hazard/increase/4
+#execute if score game.difficulty game.state matches 4.. if score ward.emerald game.story.wards matches 0 run function exigence:hazard/starting_hazard/increase/4
+#execute if score game.difficulty game.state matches 4.. if score ward.sapphire game.story.wards matches 0 run function exigence:hazard/starting_hazard/increase/4
+#execute if score game.difficulty game.state matches 4.. if score ward.ruby game.story.wards matches 0 run function exigence:hazard/starting_hazard/increase/4
+#execute if score game.difficulty game.state matches 4.. if score ward.topaz game.story.wards matches 0 run function exigence:hazard/starting_hazard/increase/4
+#execute if score game.difficulty game.state matches 4.. if score ward.amethyst game.story.wards matches 0 run function exigence:hazard/starting_hazard/increase/4

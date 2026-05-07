@@ -8,6 +8,8 @@ execute if score game.is_active game.state matches 0 run return 1
 execute unless entity @s[tag=ActivePlayer] run return 1
 #----------------------------------------------------------------------------------------------------
 
+execute if score toggle.door debug matches 1 if score debug.level debug matches 3.. run say (D3) Pickup level 2 key
+
 # Replace key with give key
 clear @s trial_key[custom_data={key_level:"2"}]
 execute as @s run function exigence:player/give/level_2_key

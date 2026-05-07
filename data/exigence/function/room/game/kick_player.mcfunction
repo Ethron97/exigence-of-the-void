@@ -26,7 +26,7 @@ team join Spectator @s
 function exigence:player/stats/run_stats
 
 # Clear all spellbound cards
-execute as @s run function exigence:player/clear/all_spellbound {type:'hotbar',index:0}
+function exigence:player/clear/all_spellbound
 
 # Clear actionbar
 title @s actionbar ""

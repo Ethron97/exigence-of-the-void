@@ -3,7 +3,7 @@
 #====================================================================================================
 
 # DEBUG
-#say New pizza
+execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) New pizza
 
 # New Pizza ID
 scoreboard players add #next PizzaID 1

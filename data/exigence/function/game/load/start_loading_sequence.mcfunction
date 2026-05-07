@@ -3,7 +3,7 @@
 
 #====================================================================================================
 
-#say (D3) Start loading sequence
+execute if score debug.level debug matches 3.. run say (D3) Start loading sequence
 
 # Handle setup that needs to come from player info (like chests, profile difficulty)
 #   Also marks every relevant profile node as "Active"
@@ -41,6 +41,29 @@ schedule function exigence:game/load/load_level_doors 14t
 schedule function exigence:game/load/load_npcs 15t
 schedule function exigence:game/load/load_mirrors 16t
 schedule function exigence:game/load/load_bookshelf 17t
+schedule function exigence:game/load/load_wards 18t
+schedule function exigence:game/load/load_beacons 19t
+
+schedule function exigence:game/load/vault/load_host 20t
+schedule function exigence:game/load/vault/load_wayfinder 21t
+schedule function exigence:game/load/vault/load_shaper 22t
+schedule function exigence:game/load/vault/load_raiser 23t
+schedule function exigence:game/load/vault/load_tide 24t
+schedule function exigence:game/load/vault/load_rib 25t
+
+schedule function exigence:game/load/vault/load_snout 26t
+schedule function exigence:game/load/vault/load_wild 27t
+schedule function exigence:game/load/vault/load_sentry 28t
+schedule function exigence:game/load/vault/load_ward 29t
+schedule function exigence:game/load/vault/load_coast 30t
+schedule function exigence:game/load/vault/load_vex 31t
+
+schedule function exigence:game/load/vault/load_bolt 32t
+schedule function exigence:game/load/vault/load_dune 33t
+schedule function exigence:game/load/vault/load_eye 34t
+schedule function exigence:game/load/vault/load_flow 35t
+schedule function exigence:game/load/vault/load_silence 36t
+schedule function exigence:game/load/vault/load_spire 37t
 
 # ...
 # Finish load sequence

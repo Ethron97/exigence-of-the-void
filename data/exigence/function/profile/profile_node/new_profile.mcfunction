@@ -12,7 +12,7 @@
 
 #====================================================================================================
 
-#say (D3) Try new profile
+execute if score debug.level debug matches 3.. run say (D3) Try new profile
 
 ## VALIDATE
 execute unless dimension exigence:profile_data run return run tellraw @s {text:"Not in exigence:profile_data, aborting",color:"red"}
@@ -28,7 +28,7 @@ execute if score #temp Temp matches 5.. run return run tellraw @s {text:"Maximum
 
 #----------------------------------------------------------------------------------------------------
 
-#say (D3) Creating new profile
+execute if score debug.level debug matches 3.. run say (D3) Creating new profile
 
 # Increase number of profiles created
 scoreboard players add @s career.profiles_created 1

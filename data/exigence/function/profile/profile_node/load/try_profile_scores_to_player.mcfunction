@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Try scores to player
+execute if score debug.level debug matches 3.. run say (D3) Try scores to player
 
 scoreboard players operation #compare career.player_id = @s profile.node.player_id
 scoreboard players set #online Temp 0

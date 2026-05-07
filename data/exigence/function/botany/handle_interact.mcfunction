@@ -6,7 +6,7 @@
 # ===============================================================================================================
 
 # DEBUG
-#say Berry handle
+execute if score toggle.berry debug matches 1 if score debug.level debug matches 3.. run say (D3) Berry handle interact
 
 # Tag the player who interacted
 execute on target run tag @s add Picking

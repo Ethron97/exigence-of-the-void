@@ -11,5 +11,6 @@
 #fill -383 139 -79 -387 139 -79 barrier
 
 fill -383 132 -90 -387 136 -90 barrier replace air
+fill -383 136 -89 -387 132 -89 barrier
 
-tag @s remove Open
+tag @s remove ETICK

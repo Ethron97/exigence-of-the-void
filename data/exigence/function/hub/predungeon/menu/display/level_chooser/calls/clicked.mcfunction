@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) clicked level chooser
+execute if score debug.level debug matches 3.. run say (D3) clicked level chooser
 
 # Increase cooldown score for player
 scoreboard players add @p[tag=Interacting,distance=..16] hub.player.interaction_cooldown 20
@@ -44,6 +44,7 @@ execute if entity @s[tag=Level5] run scoreboard players set game.difficulty game
 ## SWITCH TO PLAYER SENSORS
 # Kill level choosers (except this one)
 execute at @s run kill @e[type=#exigence:display,tag=PredungeonMenuDisplay,distance=0.5..5]
+execute at @s run kill @e[type=minecraft:text_display,tag=LevelChooserDetails,distance=0.5..5]
 
 # Close all (open) slots (except this one)
 tag @s add NotMe

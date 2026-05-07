@@ -10,7 +10,7 @@
 
 #====================================================================================================
 
-#say (D3) UPDATE DECK ANALYZER
+execute if score debug.level debug matches 3.. run say (D3) UPDATE DECK ANALYZER
 
 # Save the profile id for this load
 scoreboard players operation @s hub.entity.profile_id = #profile_id Temp

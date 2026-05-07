@@ -7,7 +7,7 @@
 execute unless entity @s[tag=Tutorial] run return fail
 #====================================================================================================
 
-#say (D3) Trigger skip section
+execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Trigger skip section
 
 execute if entity @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/flow/skip_section
 

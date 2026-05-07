@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Inform coop members
+execute if score debug.level debug matches 3.. run say (D3) Inform coop members
 
 # For each other profile node that is active, try to inform the relevant player.
 scoreboard players operation #player_left_id profile.node.player_id = @s profile.node.player_id

@@ -1,10 +1,14 @@
 # Reset advancement
 advancement revoke @s only exigence:listener/pickup/money
 
+execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Pickup money
+
 # Return if the game is not active or this player is not active
 execute if score game.is_active game.state matches 0 run return 1
 execute unless entity @s[tag=ActivePlayer] run return 1
 #----------------------------------------------------------------------------------------------------
+
+execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Pickup money game
 
 # Delete the music disc from their inventory
 clear @s minecraft:amethyst_cluster 1

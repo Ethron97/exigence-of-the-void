@@ -3,11 +3,11 @@
 ## CONSTRAINTS
 
 #====================================================================================================
-execute if score predungeon.cancel_load hub.room_misc matches 1 run return fail
+execute if score game.cancel_load hub.room_misc matches 1 run return fail
 # run tellraw @a [{text:"Dungeon load sequence cancelled",color:"red"}]
 #----------------------------------------------------------------------------------------------------
 
-#say (D3) Finish loading sequence
+execute if score debug.level debug matches 3.. run say (D3) Finish loading sequence
 
 # Try migrate players
 #   get room id for predungeon room node
@@ -22,7 +22,5 @@ execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,scores={hub.room.
 # Unload predungeon
 execute in exigence:hub positioned 0.5 209.0 104.5 run function exigence:hub/predungeon/node/unload_room
 
-# Start game if at least one player was entered
-#   Otherwise, wait for player to join to Start the game
-# TODO
+# Start the game
 execute in minecraft:overworld run function exigence:game/start/game_start

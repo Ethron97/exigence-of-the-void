@@ -8,7 +8,7 @@
 #====================================================================================================
 
 # Summon a new coin with tag "new coin"
-summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:large_amethyst_bud",count:1,components:{"minecraft:max_stack_size":1,"minecraft:custom_model_data":{"strings":["coin1"]}}},Tags:["NewCoin","Coin","Treasure"]}
+summon minecraft:item ~ ~ ~ {Tags:["NewCoin","Coin","Treasure","ETICK"],Item:{id:"minecraft:large_amethyst_bud",count:1,components:{"minecraft:max_stack_size":1,"minecraft:custom_model_data":{"strings":["coin1"]}}}}
 
 # Playsound
 playsound minecraft:block.amethyst_block.step neutral @a ~ ~ ~ 2 1

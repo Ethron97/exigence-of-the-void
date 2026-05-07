@@ -15,7 +15,7 @@ data modify entity @s CustomName set value {text:"BerryNode",color:"green",itali
 team join Botany @s
 
 # If debug, glow
-execute if data storage exigence:debug {berry:1} run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
+execute if score toggle.berry debug matches 1 run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
 
 # Remove "NewNode" tag
 tag @s remove NewNode

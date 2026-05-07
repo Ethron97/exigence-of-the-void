@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) I am distributing on level 1
+execute if score toggle.enemy debug matches 1 if score debug.level debug matches 3.. run say (D3) I am distributing on level 1
 
 # Teleport to random menace node that does not have tag "Wardened".
 teleport @s @e[x=-271,y=-55,z=-113,dx=-118,dy=92,dz=-153,type=minecraft:marker,scores={node.property.object_level=1},tag=MenaceNode,tag=!Wardened,tag=!RavagerBlacklist,sort=random,limit=1]

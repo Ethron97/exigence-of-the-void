@@ -7,7 +7,7 @@
 execute unless dimension minecraft:overworld run return run say Reset max menace called from not overworld?
 #----------------------------------------------------------------------------------------------------
 
-# Update storage
+# Update score
 scoreboard players set game.max_menace game.state 0
 
 # Enable red vinette

@@ -12,7 +12,7 @@
 
 #====================================================================================================
 
-#say (D3) Inform member
+execute if score debug.level debug matches 3.. run say (D3) Inform member
 
 tag @s add Private_InformingPlayer
 

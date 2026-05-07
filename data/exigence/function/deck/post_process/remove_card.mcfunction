@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#$say (D3) Remove card $(card_name)
+$execute if score debug.level debug matches 3.. run say (D3) Remove card $(card_name)
 
 $data modify storage exigence:give card_name set value $(card_name)
 data modify storage exigence:give index set value 0

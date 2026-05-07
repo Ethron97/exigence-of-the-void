@@ -11,16 +11,16 @@
 execute if score game.dead_players game.state >= game.player_count game.state run return run function exigence:game/game_loss
 #----------------------------------------------------------------------------------------------------
 
-# Spectate
-#   Cancel old spectate else player glitches or something
-#execute as @a[scores={dead=2},tag=ActivePlayer] at @s run spectate @p[scores={dead=0},tag=ActivePlayer]
-
 ## WIN CHECK
-# If all active players have Won tag, game win
+#   If escaped players + dead players = player count, win
+#   IE, offline players prevent winning currently... unless we just change it so logging out means insta death
 execute store result score #temp Temp if entity @a[tag=ActivePlayer,tag=Won]
+execute store result score #temp2 Temp if entity @a[tag=ActivePlayer,scores={dead=2}]
+scoreboard players operation #temp Temp += #temp2 Temp
 #   If coop, check if portal is open
-execute if score game.player_count game.state matches 2.. if score game.escape_portal game.state matches 1 \
-if score #temp Temp = game.player_count game.state run function exigence:game/game_win
+execute if score #temp Temp = game.player_count game.state run function exigence:game/game_win
 
 # If four beacons are lit, campaign is over
-execute if score game.beacons_lit game.state matches 4 run function exigence:game/game_win_campaign
+execute if score game.beacons_lit game.state matches 4 run say Game win (temp)
+execute if score game.beacons_lit game.state matches 4 run function exigence:game/game_win
+#execute if score game.beacons_lit game.state matches 4 run function exigence:game/game_win_campaign

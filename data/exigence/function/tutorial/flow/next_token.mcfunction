@@ -6,8 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) Next token
-
+execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Next token
 
 # If node that was marked as LastDropped also has tag "Checkpoint"
 execute as @n[type=minecraft:marker,tag=TutorialMarker,tag=LastDropped,tag=Checkpoint,distance=..1000] run function exigence:tutorial/flow/last_dropped_fallback

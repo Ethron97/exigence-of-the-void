@@ -11,7 +11,7 @@
 #====================================================================================================
 
 # DEBUG
-#say Try create new spire
+execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Try create new spire
 
 # If position is too far, try again
 $execute at @s align xyz positioned ~0.5 ~ ~0.5 rotated ~$(RotA) 0 positioned ^ ^1 ^$(length) unless function exigence:door/vault/spire/trial/spire/valid_pos run function exigence:door/vault/spire/trial/spire/random_spread
@@ -20,7 +20,7 @@ $execute at @s align xyz positioned ~0.5 ~ ~0.5 rotated ~$(RotA) 0 positioned ^ 
 #----------------------------------------------------------------------------------------------------
 
 # DEBUG
-#say Created new spire
+execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Created new spire
 
 # Summon marker
 $execute at @s align xyz positioned ~0.5 ~ ~0.5 rotated ~$(RotA) 0 positioned ^ ^1 ^$(length) run summon minecraft:marker ~ ~ ~ {Tags:["SpireTrialSetup","Spire","NewSpire"],CustomName:{text:"Marker | Spire"}}

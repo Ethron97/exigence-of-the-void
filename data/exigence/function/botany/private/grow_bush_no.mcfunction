@@ -9,7 +9,8 @@ execute if score mod.evergrowth game.modifiers matches 1 run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Else add to fails
-say All berries grown on level(s)
+execute if score toggle.berry debug matches 1 if score debug.level debug matches 3.. run say (D3) All berries grown on level(s)
+
 scoreboard players add @a[tag=ActivePlayer] profile.data.berry.cr.berry_bushes_failed 1
 execute if score growth.level game.dungeon.temp matches 1 run scoreboard players add @a[tag=ActivePlayer] profile.data.berry.cr.berry_bushes_failed_L1 1
 execute if score growth.level game.dungeon.temp matches 2 run scoreboard players add @a[tag=ActivePlayer] profile.data.berry.cr.berry_bushes_failed_L2 1

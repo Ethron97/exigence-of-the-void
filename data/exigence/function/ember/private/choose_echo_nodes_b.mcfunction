@@ -8,10 +8,10 @@
 
 #====================================================================================================
 
-#$say (D3) choose nodes on $(level)
+$execute if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3) choose nodes on $(level)
 
 # Set starting difficulty
-scoreboard players set #MinDifficulty game.dungeon.echo 0
+scoreboard players set #MinDifficulty game.dungeon.echo 1
 scoreboard players set #MaxDifficulty game.dungeon.echo 4
 
 # Increase echo difficulty spread to match the level
@@ -20,12 +20,17 @@ scoreboard players operation #MinDifficulty game.dungeon.echo += #BaseDifficulty
 scoreboard players operation #MaxDifficulty game.dungeon.echo += #BaseDifficulty game.dungeon.echo
 
 # Cap diffiulcty based on the highest echo this player has achieved + 1
-execute as @a[tag=Predungeon] run scoreboard players operation #MaxDifficulty game.dungeon.echo < @s profile.data.winloss.highest_win
+execute if score toggle.echo debug matches 1 if score debug.level debug matches 3.. \
+run tellraw @a [{text:"(D3) highest win: "},{score:{name:"highest.win",objective:"game.dungeon.setup"},color:"blue"}]
+scoreboard players operation #MaxDifficulty game.dungeon.echo < highest.win game.dungeon.setup
 scoreboard players add #MaxDifficulty game.dungeon.echo 1
 
 # Ensure difficulty mod is bounded at +/-4 (so min difficiulty doesn't go above 5, or max below 1)
 scoreboard players operation .difficulty_mod game.dungeon.echo < 4 number
 scoreboard players operation .difficulty_mod game.dungeon.echo > -4 number
+
+execute if score toggle.echo debug matches 1 if score debug.level debug matches 3.. \
+run tellraw @a [{text:"(D3) Difficulty mod: "},{score:{name:".difficulty_mod",objective:"game.dungeon.echo"},color:"blue"}]
 
 # Apply difficulty mod
 scoreboard players operation #MinDifficulty game.dungeon.echo += .difficulty_mod game.dungeon.echo
@@ -37,6 +42,9 @@ execute if score game.difficulty game.state matches 1 run scoreboard players ope
 execute if score game.difficulty game.state matches 2 run scoreboard players operation #MaxDifficulty game.dungeon.echo > 21 number
 execute if score game.difficulty game.state matches 3 run scoreboard players operation #MaxDifficulty game.dungeon.echo > 31 number
 execute if score game.difficulty game.state matches 4 run scoreboard players operation #MaxDifficulty game.dungeon.echo > 41 number
+
+# If min/max are equal, subtract 1 from min so that the spread works
+execute if score #MinDifficulty game.dungeon.echo = #MaxDifficulty game.dungeon.echo run scoreboard players remove #MinDifficulty game.dungeon.echo 1
 
 # Store in data
 execute store result storage exigence:echo_selection min_difficulty int 1 run scoreboard players get #MinDifficulty game.dungeon.echo

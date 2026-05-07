@@ -151,8 +151,9 @@ scoreboard objectives add game.resources dummy
 scoreboard objectives add game.setup.level_3_stairs dummy
 scoreboard objectives add game.state dummy
 scoreboard objectives add game.story.puzzle_candle_id dummy
-scoreboard objectives add game.story.ward_crystal.node_id dummy
+scoreboard objectives add game.story.ward_crystal.id dummy
 scoreboard objectives add game.story.wards dummy
+scoreboard objectives add game.story.beacons dummy
 scoreboard objectives add game.treasure.picked_up_coin_handle dummy
 scoreboard objectives add game.triumph dummy
 scoreboard objectives add game.vault.handle.id dummy
@@ -162,6 +163,10 @@ scoreboard objectives add game.warden.anger dummy
 scoreboard objectives add game.warden.awareness dummy
 scoreboard objectives add global_settings dummy
 scoreboard objectives add hub.coin_conversion dummy
+scoreboard objectives add hub.coin_conversion.glint_owed dummy
+scoreboard objectives add hub.coin_conversion.leftover_coins dummy
+scoreboard objectives add hub.coin_conversion.coins_converted dummy
+scoreboard objectives add hub.coin_conversion.money_converted dummy
 scoreboard objectives add hub.coin_conversion_alt dummy
 scoreboard objectives add hub.coin_conversion.math dummy
 scoreboard objectives add hub.coin_conversion.smash_batch dummy
@@ -1002,6 +1007,7 @@ scoreboard objectives add profile.story.ward_ruby dummy
 scoreboard objectives add profile.story.ward_sapphire dummy
 scoreboard objectives add profile.story.ward_topaz dummy
 scoreboard objectives add quits dummy
+scoreboard objectives add quit minecraft.custom:minecraft.leave_game
 scoreboard objectives add Random dummy
 scoreboard objectives add RandomB dummy
 scoreboard objectives add shop.frame.lore_lines dummy

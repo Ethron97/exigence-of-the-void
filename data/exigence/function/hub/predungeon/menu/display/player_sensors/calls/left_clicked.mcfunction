@@ -5,6 +5,6 @@
 
 #====================================================================================================
 
-#say (D3) Left click pre button
+execute if score debug.level debug matches 3.. run say (D3) Left click pre button
 
 execute at @s run function exigence:hub/predungeon/menu/display/player_sensors/calls/clicked

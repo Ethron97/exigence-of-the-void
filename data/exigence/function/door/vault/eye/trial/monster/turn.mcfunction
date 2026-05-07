@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say Turning
+execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Turning
 
 # Randomize direction
 execute at @s run function exigence:door/vault/eye/trial/monster/random_direction

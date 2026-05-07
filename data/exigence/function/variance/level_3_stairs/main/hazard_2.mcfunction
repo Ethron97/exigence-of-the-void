@@ -1,10 +1,10 @@
 # Called from scheduler
 
 #====================================================================================================
-execute if score predungeon.cancel_load hub.room_misc matches 1 run return fail
+execute if score game.cancel_load hub.room_misc matches 1 run return fail
 #----------------------------------------------------------------------------------------------------
 
-#say (D3) Main hazard (upper)
+execute if score toggle.variance debug matches 1 if score debug.level debug matches 3.. run say (D3) Main hazard (upper)
 
 # Testing model
 #setblock -386 153 -21 sculk

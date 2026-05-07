@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) Unload predungeon
+execute if score debug.level debug matches 3.. run say (D3) Unload predungeon
 
 fill 1 207 35 -1 209 35 minecraft:end_gateway
 

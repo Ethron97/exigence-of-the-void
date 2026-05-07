@@ -3,7 +3,7 @@
 # Tellraw
 tellraw @a [{text:"   Recycled ",color:"gray"},{"score":{"name":"@a[tag=ActivePlayer,sort=arbitrary,limit=1]","objective":"profile.data.deck.cr.cards_spellbound"},color:"gray"},{text:" ♻",color:"green"}]
 
-# Switch to call recycles for each card spellbound
+# Call recycles for each card spellbound
 execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=1..},tag=ActivePlayer] run function exigence:deck/recycle/try
 execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=2..},tag=ActivePlayer] run function exigence:deck/recycle/try
 execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=3..},tag=ActivePlayer] run function exigence:deck/recycle/try

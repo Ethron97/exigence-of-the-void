@@ -7,7 +7,7 @@
 
 #====================================================================================================
 
-#say (D3) Skip section
+execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Skip section
 
 # Save current last dropped
 tag @n[type=minecraft:marker,tag=TutorialMarker,tag=LastDropped,distance=..1000] add SaveLastDropped

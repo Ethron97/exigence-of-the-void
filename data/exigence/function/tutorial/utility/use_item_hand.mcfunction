@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#$say (D3) Use item $(slot)
+$execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Use item $(slot)
 
 # Call item subfunction
 $execute if items entity @s[advancements={exigence:story/win_difficulty_0=true}] weapon.$(slot) carrot_on_a_stick[custom_data~{item_name:'exit_tutorial'}] run function exigence:misc/triggers/tutorial/exit_tutorial

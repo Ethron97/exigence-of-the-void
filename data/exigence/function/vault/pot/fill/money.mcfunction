@@ -1,0 +1,8 @@
+# Fill pot with money
+
+## CONSTRAINTS
+#   AT pot block
+
+#====================================================================================================
+
+data merge block ~ ~ ~ {item:{id:"minecraft:amethyst_cluster",count:1,components:{"minecraft:max_stack_size":1,"minecraft:custom_model_data":{"strings":["glint_ground"]}}}}

@@ -3,7 +3,7 @@
 #====================================================================================================
 
 # DEBUG
-#say Setup bolt trial
+execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Setup bolt trial
 
 # Reset scores
 scoreboard players set Bolt TrialTimer 0

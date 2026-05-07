@@ -1,6 +1,8 @@
 # Reset advancement
 advancement revoke @s only exigence:listener/pickup/coin
 
+execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Pickup coin
+
 # TUTORIAL
 clear @s[tag=Tutorial] minecraft:large_amethyst_bud
 execute as @s[tag=Tutorial] run function exigence:player/give/coin
@@ -10,6 +12,8 @@ execute as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/
 execute if score game.is_active game.state matches 0 run return 1
 execute unless entity @s[tag=ActivePlayer] run return 1
 #----------------------------------------------------------------------------------------------------
+
+execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Pickup coin game
 
 scoreboard players set #stacksize game.treasure.picked_up_coin_handle 1
 # Get number of coins if it was a stack

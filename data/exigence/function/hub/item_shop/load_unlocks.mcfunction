@@ -11,7 +11,7 @@
 
 #====================================================================================================
 
-#say (D3) Load unlocks (initialize)
+execute if score debug.level debug matches 3.. run say (D3) Load unlocks (initialize)
 
 # Reset array
 data modify storage exigence:shop shop_unlocked set value [] 

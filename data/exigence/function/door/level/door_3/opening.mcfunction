@@ -2,11 +2,13 @@
 #   Interation begins by insert_key
 
 #====================================================================================================
+execute if score game.cancel_load hub.room_misc matches 1 run return fail
+#----------------------------------------------------------------------------------------------------
 
 # DEBUG
-#say (D3) Opening door 3
+execute if score toggle.door debug matches 1 if score debug.level debug matches 3.. run say (D3) Opening door 3
 
-# Return if no one has InsertingKey score > 1
+# Return if no one has game.door.inserting_key score > 1
 execute unless score Door.3 game.door.inserting_key matches 1.. run return 1
 #----------------------------------------------------------------------------------------------------
 

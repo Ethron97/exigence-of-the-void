@@ -9,7 +9,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) update purchasability a
+execute if score debug.level debug matches 3.. run say (D3) update purchasability a
 
 # Load advancements
 execute as @r[tag=ItemShop,distance=..24] run function exigence:hub/item_shop/load_unlocks

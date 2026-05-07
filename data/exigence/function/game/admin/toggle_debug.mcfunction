@@ -1,7 +1,7 @@
 # 1. Toggle debug state
 # Store in dummy so it doesn't instantly flip back
-execute if data storage exigence:dungeon {debug:1} run data modify storage temp debug set value 0
-execute if data storage exigence:dungeon {debug:0} run data modify storage temp debug set value 1
+execute if data storage exigence:dungeon {debug:1} run scoreboard players set #temp debug 0
+execute if data storage exigence:dungeon {debug:0} run scoreboard players set #temp debug 1
 
 # Callout new debug value
 execute if data storage exigence:dungeon {debug:1} run say Turning debug off

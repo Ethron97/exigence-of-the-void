@@ -8,7 +8,7 @@
 #====================================================================================================
 
 # DEBUG
-say Setting up item preview display
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3) Setting up item preview display
 
 summon minecraft:block_display -384 37.0 -116 {Tags:["ItemPreview","NewItemPreview"],block_state:{Name:"glass"}}
 

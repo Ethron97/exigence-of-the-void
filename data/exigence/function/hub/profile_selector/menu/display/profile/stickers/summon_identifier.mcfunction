@@ -10,7 +10,7 @@
 
 #====================================================================================================
 
-#say (D3) Load identifier sticker
+execute if score debug.level debug matches 3.. run say (D3) Load identifier sticker
 
 # Summon item display
 $summon minecraft:item_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["ProfileSticker","NewItemDisplay","IdentifierSticker"],item:{id:"$(identifier)",count:1\

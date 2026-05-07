@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) New locker room node
+execute if score debug.level debug matches 3.. run say (D3) New locker room node
 
 summon minecraft:marker ~ ~ ~ {Tags:["NewMarker","LockerRoomNode"],CustomName:[{text:"Marker | LockerRoomNode",color:"#aca927"},{text:" e",color:"#fffb00"}]}
 

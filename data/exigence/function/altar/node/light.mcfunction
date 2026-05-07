@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) Light
+execute if score toggle.altar debug matches 1 if score debug.level debug matches 3.. run say (D3) Light
 
 scoreboard players set #blaze_powder Temp 0
 execute if entity @a[tag=Lighting,nbt={SelectedItem:{id:"minecraft:blaze_powder"}}] run scoreboard players set #blaze_powder Temp 1

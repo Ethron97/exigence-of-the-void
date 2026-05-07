@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.ember debug matches 1 if score debug.level debug matches 3.. run say (D3) Resolve ember
+
 # Increase ping scores
 scoreboard players add @a[tag=ActivePlayer] profile.data.ember.cr.ember_ping 1
 

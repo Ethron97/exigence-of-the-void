@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Place chests (West) [locker room]
+execute if score debug.level debug matches 3.. run say (D3) Place chests (West) [locker room]
 
 # Place blank chests
 setblock ^3 ^ ^ chest[type=right,facing=north]

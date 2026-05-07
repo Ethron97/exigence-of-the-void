@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say (D3) Load page flipper
+execute if score debug.level debug matches 3.. run say (D3) Load page flipper
 
 # Summon item display
 summon minecraft:item_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["PageFlipperDisplay","MenuDisplay","NewItemDisplay","SizeClassB"],item:{id:"minecraft:sunflower",count:1},\

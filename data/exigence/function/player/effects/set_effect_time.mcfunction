@@ -4,7 +4,7 @@
 
 #====================================================================================================
 
-#$say Set effect $(effect) $(duration)
+$execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3) $(effect) $(duration)
 
 # Setup scores
 scoreboard players set et.FromCard game.effect_temp 0

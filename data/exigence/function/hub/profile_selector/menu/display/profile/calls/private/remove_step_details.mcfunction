@@ -8,6 +8,6 @@
 
 #====================================================================================================
 
-#say (D3) Remove step details
+execute if score debug.level debug matches 3.. run say (D3) Remove step details
 
 $execute at @s run kill @e[type=minecraft:text_display,scores={IDID=$(idid)},tag=StepDetails,distance=..16]

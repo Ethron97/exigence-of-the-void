@@ -1,6 +1,8 @@
 # Reset advancement
 advancement revoke @s only exigence:listener/pickup/research
 
+execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Pickup research
+
 # TUTORIAL
 clear @s[tag=Tutorial] minecraft:burn_pottery_sherd
 execute as @s[tag=Tutorial] run function exigence:player/give/fragment
@@ -11,6 +13,8 @@ execute as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/
 execute if score game.is_active game.state matches 0 run return 1
 execute unless entity @s[tag=ActivePlayer] run return 1
 #----------------------------------------------------------------------------------------------------
+
+execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Pickup research game
 
 # Add score based on source
 scoreboard players set #is_pot Temp 0

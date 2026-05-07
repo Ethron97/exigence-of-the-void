@@ -5,5 +5,5 @@
 
 #====================================================================================================
 
-tellraw @s {text:"The Predungeon is in use",color:"red"}
+tellraw @s [{text:"✖ The Predungeon is in use",color:"red"}]
 function exigence:hub/predungeon/access/fail/bounce

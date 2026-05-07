@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Setting up all mirrors
+execute if score toggle.mirror debug matches 1 if score debug.level debug matches 3.. run say (D3) Setting up all mirrors
 
 function exigence:mirror/mirrors/45_degree/setup_45_degree
 function exigence:mirror/mirrors/four_wide_one_path/setup_four_wide_one_path

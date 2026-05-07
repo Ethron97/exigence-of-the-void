@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say (D3) Load deck analyzer from profile selector room
+execute if score debug.level debug matches 3.. run say (D3) Load deck analyzer from profile selector room
 
 # Call interface
 #   If switching, just update the profile_id

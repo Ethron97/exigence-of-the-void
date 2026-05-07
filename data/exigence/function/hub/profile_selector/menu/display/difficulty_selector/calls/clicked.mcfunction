@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-#say (D3) Clicked difficulty selecotr
+execute if score debug.level debug matches 3.. run say (D3) Clicked difficulty selecotr
 
 # Copy scoreboard score to the parent
 $execute at @s as @n[type=minecraft:item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..5] \

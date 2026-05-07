@@ -5,7 +5,10 @@
 
 #====================================================================================================
 
+execute if score toggle.bookshelf debug matches 1 if score debug.level debug matches 3.. run say (D3) Activate bookshelf node
+
 tag @s add Active
+tag @s add ETICK
 
 data modify storage exigence:bookshelf slot_0 set value 0
 data modify storage exigence:bookshelf slot_1 set value 0
@@ -56,17 +59,3 @@ execute at @s if data storage exigence:bookshelf {slot_2:1} run data modify bloc
 execute at @s if data storage exigence:bookshelf {slot_3:1} run data modify block ~ ~ ~ Items append value {count:1,Slot:3b,id:"minecraft:book",components:{"minecraft:custom_name":[{text:"📕 Dusty Tome 📕",color:"white",italic:false}],"minecraft:lore":[[{text:"Filled with indecipherable writings, it is a",color:"gray"}],[{text:"reflection of the decaying city around it",color:"gray"}]]}}
 execute at @s if data storage exigence:bookshelf {slot_4:1} run data modify block ~ ~ ~ Items append value {count:1,Slot:4b,id:"minecraft:book",components:{"minecraft:custom_name":[{text:"📕 Dusty Tome 📕",color:"white",italic:false}],"minecraft:lore":[[{text:"Filled with indecipherable writings, it is a",color:"gray"}],[{text:"reflection of the decaying city around it",color:"gray"}]]}}
 execute at @s if data storage exigence:bookshelf {slot_5:1} run data modify block ~ ~ ~ Items append value {count:1,Slot:5b,id:"minecraft:book",components:{"minecraft:custom_name":[{text:"📕 Dusty Tome 📕",color:"white",italic:false}],"minecraft:lore":[[{text:"Filled with indecipherable writings, it is a",color:"gray"}],[{text:"reflection of the decaying city around it",color:"gray"}]]}}
-
-#say Activat#
-#execute store result score @s Random run random value 1..5
-#execute if score @s Random matches 1.. run data modify block ~ ~ ~ Items append value {count:1,Slot:0b,id:"minecraft:book"}
-#execute store result score @s Random run random value 1..5
-#execute if score @s Random matches 1.. run data modify block ~ ~ ~ Items append value {count:1,Slot:1b,id:"minecraft:book",components:{"minecraft:custom_name":[{text:"📕 Dusty Tome 📕",color:"gray"}],"minecraft:lore":[[{text:"Filled with indecipherable writings, it is a",color:"gray"}],[{text:"reflection of the decaying city around it",color:"gray"}]]}}
-#execute store result score @s Random run random value 1..5
-#execute if score @s Random matches 1.. run data modify block ~ ~ ~ Items append value {count:1,Slot:2b,id:"minecraft:book",components:{"minecraft:custom_name":[{text:"📕 Dusty Tome 📕",color:"gray"}],"minecraft:lore":[[{text:"Filled with indecipherable writings, it is a",color:"gray"}],[{text:"reflection of the decaying city around it",color:"gray"}]]}}
-#execute store result score @s Random run random value 1..5
-#execute if score @s Random matches 1.. run data modify block ~ ~ ~ Items append value {count:1,Slot:3b,id:"minecraft:book",components:{"minecraft:custom_name":[{text:"📕 Dusty Tome 📕",color:"gray"}],"minecraft:lore":[[{text:"Filled with indecipherable writings, it is a",color:"gray"}],[{text:"reflection of the decaying city around it",color:"gray"}]]}}
-#execute store result score @s Random run random value 1..5
-#execute if score @s Random matches 1.. run data modify block ~ ~ ~ Items append value {count:1,Slot:4b,id:"minecraft:book",components:{"minecraft:custom_name":[{text:"📕 Dusty Tome 📕",color:"gray"}],"minecraft:lore":[[{text:"Filled with indecipherable writings, it is a",color:"gray"}],[{text:"reflection of the decaying city around it",color:"gray"}]]}}
-#execute store result score @s Random run random value 1..5
-#execute if score @s Random matches 1.. run data modify block ~ ~ ~ Items append value {count:1,Slot:5b,id:"minecraft:book",components:{"minecraft:custom_name":[{text:"📕 Dusty Tome 📕",color:"gray"}],"minecraft:lore":[[{text:"Filled with indecipherable writings, it is a",color:"gray"}],[{text:"reflection of the decaying city around it",color:"gray"}]]}}

@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Kicking from predungeon
+execute if score debug.level debug matches 3.. run say (D3) Kicking from predungeon
 
 tellraw @s [{text:"You were kicked from the Predungeon",color:"red"}]
 

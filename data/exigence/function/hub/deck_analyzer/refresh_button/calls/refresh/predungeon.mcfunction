@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say (D3) Refresh from PREDUNGEON room $(profile_id)
+execute if score debug.level debug matches 3.. run say (D3) Refresh from PREDUNGEON room $(profile_id)
 
 #====================================================================================================
 ## SAVE CHESTS FOR REFRESH

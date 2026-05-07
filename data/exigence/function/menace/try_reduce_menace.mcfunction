@@ -10,7 +10,7 @@
 
 #====================================================================================================
 
-#say (D3) Try reduce menace
+execute if score toggle.menace debug matches 1 if score debug.level debug matches 3.. run say (D3) Try reduce menace
 
 # If max menace, return
 execute if score game.max_menace game.state matches 1 run return 1

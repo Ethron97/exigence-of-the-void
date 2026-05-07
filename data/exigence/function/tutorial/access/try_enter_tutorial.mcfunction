@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) Try enter tutorial
+execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Try enter tutorial
 
 execute in exigence:hub if entity @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,scores={hub.room.room_type=1},tag=RoomNode] at @s run return run function exigence:tutorial/access/fail/in_use
 #----------------------------------------------------------------------------------------------------

@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say (D3) Drop level keys
+execute if score toggle.door debug matches 1 if score debug.level debug matches 3.. run say (D3) Drop level keys
 
 # Reset tag
 tag @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=KeyDropper] remove KeyDropper

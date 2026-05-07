@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-#say (D3) Unhover (coop invitor)
+execute if score debug.level debug matches 4.. run say (D4) Unhover (coop invitor)
 
 # Unscale entity
 $data modify entity @s[tag=PlayerHeadDisplay] transformation set value {left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0.125f,0f],scale:[$(scale)f,$(scale)f,$(scale2)f]}

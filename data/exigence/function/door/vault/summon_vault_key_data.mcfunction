@@ -15,7 +15,9 @@ team join Treasure @s
 scoreboard players operation @s game.entity.object_level = #compare node.property.object_level
 
 # If treasure debug on, glow key
-execute if data storage exigence:treasure_drop {debug:1} run data modify entity @s Glowing set value true
+execute if score toggle.treasure debug matches 1 run data modify entity @s Glowing set value true
+# OR if vault debug on
+execute if score toggle.vault debug matches 1 run data modify entity @s Glowing set value true
 
 # Remove "NewVaultKey" tag
 tag @s remove NewVaultKey

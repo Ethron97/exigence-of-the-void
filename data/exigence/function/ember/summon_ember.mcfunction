@@ -4,10 +4,11 @@
 
 #====================================================================================================
 
-#say (D3) Summon ember
+execute if score toggle.ember debug matches 1 if score debug.level debug matches 4.. run say (D4) Summon ember
 
 # Summon a new item
-summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:soul_campfire",count:1,components:{"minecraft:max_stack_size":1,"minecraft:custom_model_data":{"strings":["ember_ground"]}}},Tags:["NewEmber","Ember"]}
+summon minecraft:item ~ ~ ~ {Tags:["NewEmber","Ember","ETICK"],Item:{id:"minecraft:soul_campfire",count:1\
+,components:{"minecraft:max_stack_size":1,"minecraft:custom_model_data":{"strings":["ember_ground"]}}}}
 
 playsound minecraft:entity.blaze.hurt neutral @a ~ ~ ~ 2 0.8
 

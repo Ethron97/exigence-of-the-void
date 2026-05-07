@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Ordered
+execute if score debug.level debug matches 3.. run say (D3) Ordered
 
 tag @s add Ordered
 

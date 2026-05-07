@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) get active mirror
+execute if score toggle.mirror debug matches 1 if score debug.level debug matches 5.. run say (D5) Get active mirror
 
 # Select active mirrornode from nominate, if player is within the specific box for that mirror node
 execute if predicate exigence:mirror/stairs run return run tag @e[type=minecraft:armor_stand,tag=MirrorNode,tag=Stairs,tag=Nominate,distance=..30] add Active

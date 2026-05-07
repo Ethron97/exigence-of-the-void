@@ -7,7 +7,7 @@
 execute unless entity @s[tag=Tutorial] run return run say (C) Player does not have tutorial tag (triggers/tutorial/exit_tutorial)
 #====================================================================================================
 
-#say (D3) Trigger exit tutorial
+execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Trigger exit tutorial
 
 # Message player
 tellraw @s [{text:"-> Exit Tutorial",color:red}]

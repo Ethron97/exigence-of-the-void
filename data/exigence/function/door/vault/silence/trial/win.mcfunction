@@ -9,8 +9,8 @@
 tp @s -424.5 152.0 14.5 90 0
 
 # Setup pots
-execute if entity @s[tag=Trial] as @e[type=minecraft:marker,tag=PotMarker,tag=silence,tag=!Crucible] at @s run function exigence:door/vault/silence/setup_pots_trial
-execute if entity @s[tag=Crucible] as @e[type=minecraft:marker,tag=PotMarker,tag=silence] at @s run function exigence:door/vault/silence/setup_pots_crucible
+#execute if entity @s[tag=Trial] as @e[x=487,y=-1,z=519,dx=0,dy=1,dz=0,type=minecraft:marker,tag=PotMarker,tag=silence,tag=!Crucible] run function exigence:door/vault/silence/setup/setup_pot_trial_a with entity @s data.custom_data
+execute if entity @s[tag=Crucible] as @e[x=487,y=-1,z=519,dx=0,dy=1,dz=0,type=minecraft:marker,tag=PotMarker,tag=silence] run function exigence:door/vault/silence/setup/setup_pot_crucible_a with entity @s data.custom_data
 
 # Give scores
 execute if score game.is_active game.state matches 1 run scoreboard players add @s[tag=Trial] profile.data.vaults.cr.silence_trial_win 1

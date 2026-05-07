@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say (D3) Next head
+execute if score debug.level debug matches 3.. run say (D3) Next head
 
 scoreboard players add #order_index Temp 1
 # Use #index_order to get number of pages

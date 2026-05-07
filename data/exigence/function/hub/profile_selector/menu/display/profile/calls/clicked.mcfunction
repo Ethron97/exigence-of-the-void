@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) clicked profile
+execute if score debug.level debug matches 3.. run say (D3) clicked profile
 
 # Clicked current profile without sneaking to show stats
 execute at @s if entity @s[tag=ProfileLoaded,tag=Selected] as @p[tag=ProfileSelecting,tag=Interacting,distance=..16,predicate=!exigence:player/sneaking] run function exigence:player/stats/profile_stats

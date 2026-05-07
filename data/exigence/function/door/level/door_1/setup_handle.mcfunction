@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-#say (D3) Setup handle (door 1)
+execute if score toggle.door debug matches 1 if score debug.level debug matches 3.. run say (D3) Setup handle (door 1)
 
 # Little skull above the key slot
 summon minecraft:item_display ^ ^0.25 ^-0.171875 {brightness:{block:15,sky:15},Rotation:[135.0f,0.0f],billboard:"fixed",Tags:["Door","Door1"],\

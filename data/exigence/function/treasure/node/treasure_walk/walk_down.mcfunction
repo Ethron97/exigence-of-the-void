@@ -4,7 +4,7 @@
 #====================================================================================================
 
 # DEBUG
-#say (D3) Walk down
+execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Walk down
 
 # If next block is blacklisted, return fail
 execute if block ~ ~-1 ~ #exigence:drop_blacklist run data modify storage exigence:treasure_drop verify set value 0
@@ -22,7 +22,7 @@ execute unless block ~ ~-1 ~ #exigence:pass_through run return 0
 scoreboard players add @s node.treasure.treasure_walk_depth 1
 
 # If depth is greater than 15, fail
-#execute if score @s node.treasure.treasure_walk_depth matches 15.. run say Treasure walk depth >= 15, retry treasure drop
+execute if score @s node.treasure.treasure_walk_depth matches 15.. if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Treasure walk depth >= 15, retry treasure drop
 execute if score @s node.treasure.treasure_walk_depth matches 15.. run data modify storage exigence:treasure_drop verify set value 0
 execute if score @s node.treasure.treasure_walk_depth matches 15.. run return fail
 #----------------------------------------------------------------------------------------------------

@@ -7,10 +7,10 @@
 #====================================================================================================
 
 # DEBUG
-#say Summong new drop block
+execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Summong new drop block
 
 # If block is already air, return
-#execute if block ~ ~ ~ minecraft:air run say Already air
+execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. if block ~ ~ ~ minecraft:air run say (D3) Already air
 execute if block ~ ~ ~ minecraft:air run return 1
 #----------------------------------------------------------------------------------------------------
 

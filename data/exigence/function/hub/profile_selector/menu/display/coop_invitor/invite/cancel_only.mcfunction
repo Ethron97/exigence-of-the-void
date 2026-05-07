@@ -11,7 +11,7 @@
 
 #====================================================================================================
 
-#say (D3) Cancel invite ONLY (from player node)
+execute if score debug.level debug matches 3.. run say (D3) Cancel invite ONLY (from player node)
 scoreboard players operation #compare profile.node.player_id = @s profile.node.player_id
 
 execute as @a if score @s career.player_id = #target player.node.invite_sent_to run tag @s add Inviteded
