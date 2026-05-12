@@ -1,27 +1,38 @@
 # Responsible for setting everything up required for the Bolt Trial/Crucible
 
+## CONSTRAINTS
+#   AS/AT trial node
+
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Setup bolt trial
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) Setup bolt trial
 
 # Reset scores
-scoreboard players set Bolt TrialTimer 0
+scoreboard players set @s trial.timer 0
 
-# Clone ground
-clone -419 125 -23 -409 125 -13 -419 151 -23
+# Clone grond
+execute if entity @s[tag=Game] run clone ~5 ~11 ~5 ~-5 ~11 ~-5 ~-5 ~-1 ~-5
+execute if entity @s[tag=Hub] run clone ~5 ~-7 ~5 ~-5 ~-7 ~-5 ~-5 ~-1 ~-5
 
 # Summon BoltThrower
 #   Marker at center of the chamber whose rotation is used to spawn pizza
-summon minecraft:marker -413.5 152.1 -17.5 {Tags:["BoltTrialSetup","BoltThrower"],CustomName:{text:"Marker | BoltThrower"}}
-summon minecraft:marker -410.43 152.1 -14.47 {Tags:["BoltTrialSetup","PizzaA"],CustomName:{text:"Marker | PizzaA"}}
-summon minecraft:marker -414.06 152.1 -22.46 {Tags:["BoltTrialSetup","PizzaB"],CustomName:{text:"Marker | PizzaB"}}
+summon minecraft:marker ~ ~0.1 ~ {Tags:["BoltTrialSetup","BoltThrower"],CustomName:{text:"Marker | BoltThrower"}}
+summon minecraft:marker ~ ~0.1 ~ {Tags:["BoltTrialSetup","PizzaA"],CustomName:{text:"Marker | PizzaA"}}
+summon minecraft:marker ~ ~0.1 ~ {Tags:["BoltTrialSetup","PizzaB"],CustomName:{text:"Marker | PizzaB"}}
 
 # Initialize pizza timer
-scoreboard players set Pizza TrialTimer 70
+scoreboard players set @s trial.timer.cooldown 70
 
 # Replace end portal
-fill -422 148 -26 -405 148 -10 end_portal replace black_concrete
+fill ~7 ~-4 ~7 ~-7 ~-4 ~-7 end_portal replace black_concrete
 
-# Set blue fire
-execute if entity @a[scores={game.player.vault_code=1},tag=Crucible] run fill -407 158 -25 -421 158 -11 minecraft:soul_soil replace minecraft:chiseled_tuff
+# Add crucible tag if applicable
+execute if entity @a[scores={game.player.vault_code=1},tag=Crucible,distance=..64] run tag @s add Crucible
+
+# Set blue fire for crucible
+#execute if entity @s[tag=Crucible] run fill ~7 ~6 ~7 ~-7 ~6 ~-7 minecraft:soul_soil replace minecraft:chiseled_tuff
+execute if entity @s[tag=Crucible] run fill ~7 ~6 ~7 ~-7 ~6 ~-7 minecraft:fire replace minecraft:soul_fire
+
+# Add etick so we know to tick it
+tag @s add ETICK

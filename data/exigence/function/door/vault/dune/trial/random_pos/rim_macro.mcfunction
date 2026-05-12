@@ -10,7 +10,7 @@
 #====================================================================================================
 
 # DEBUG
-$execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Moving markers, $(RotA) $(RotB)
+$execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) Moving markers, $(RotA) $(RotB)
 
 # Teleport center marker to face new rotation
 $execute at @s run tp @s ~ ~ ~ ~$(RotA) ~

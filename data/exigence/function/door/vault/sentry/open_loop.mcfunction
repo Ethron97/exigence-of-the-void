@@ -1,3 +1,10 @@
+# Animate rope ladder dropping for the Sentry vault
+
+#====================================================================================================
+
+execute if score game.cancel_load hub.room_misc matches 1 run return 0
+#----------------------------------------------------------------------------------------------------
+
 execute if score #Sentry vault_open_state matches 0 run setblock -417 72 -206 ladder[facing=east]
 execute if score #Sentry vault_open_state matches 1 run setblock -417 71 -206 ladder[facing=east]
 execute if score #Sentry vault_open_state matches 2 run setblock -417 70 -206 ladder[facing=east]

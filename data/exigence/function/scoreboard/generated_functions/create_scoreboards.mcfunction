@@ -1032,5 +1032,10 @@ scoreboard objectives add vault_open_state dummy
 scoreboard objectives add CarrotOnStick minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add node.id dummy
 scoreboard objectives add Tutorial dummy
+scoreboard objectives add trial.object.pizza_id dummy
+scoreboard objectives add trial.object.pizza_length dummy
 scoreboard objectives add game.entity.player_number dummy
 scoreboard objectives add game.player.player_number dummy
+scoreboard objectives add trial.timer.cooldown dummy
+scoreboard objectives add trial.timer dummy
+scoreboard objectives add trial.object.timer dummy

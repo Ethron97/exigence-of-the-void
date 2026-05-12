@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) Trial loss consequence
+
 tellraw @a [{text:"[!] ",color:"red"},{"selector":"@s",color:"yellow"},{text:" invokes the Price of Failure:",color:"gray"}]
 tellraw @a [{text:"    +3 Menace",color:"red"}]
 

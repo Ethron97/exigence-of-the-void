@@ -20,3 +20,17 @@ bossbar set exigence:trial_silence color purple
 bossbar set exigence:trial_dune color purple
 bossbar set exigence:trial_eye color purple
 bossbar set exigence:trial_spire color purple
+
+bossbar add exigence:hub_trial_bolt ""
+bossbar add exigence:hub_trial_flow ""
+bossbar add exigence:hub_trial_silence ""
+bossbar add exigence:hub_trial_dune ""
+bossbar add exigence:hub_trial_eye ""
+bossbar add exigence:hub_trial_spire ""
+
+bossbar set exigence:hub_trial_bolt color purple
+bossbar set exigence:hub_trial_flow color purple
+bossbar set exigence:hub_trial_silence color purple
+bossbar set exigence:hub_trial_dune color purple
+bossbar set exigence:hub_trial_eye color purple
+bossbar set exigence:hub_trial_spire color purple

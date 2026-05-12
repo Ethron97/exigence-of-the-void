@@ -7,10 +7,10 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Summong new drop block
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) Summong new drop block
 
 # If block is already air, return
-execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. if block ~ ~ ~ minecraft:air run say (D3) Already air
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. if block ~ ~ ~ minecraft:air run say (D3) Already air
 execute if block ~ ~ ~ minecraft:air run return 1
 #----------------------------------------------------------------------------------------------------
 
@@ -21,4 +21,4 @@ execute align xyz run summon block_display ~0.5 ~0.51 ~0.5 {Glowing:1b,Tags:["Ne
 team join Hazard @e[type=minecraft:block_display,tag=NewDropBlock]
 
 # Initialize score
-scoreboard players set @e[type=minecraft:block_display,tag=NewDropBlock] DropBlockTimer 40
+scoreboard players set @e[type=minecraft:block_display,tag=NewDropBlock] trial.object.timer 40

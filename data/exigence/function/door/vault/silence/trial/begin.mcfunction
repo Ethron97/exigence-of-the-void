@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Begin Silence
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) Begin Silence
 
 # Make sure they can step on sculk
 advancement revoke @s only exigence:listener/step_on_sculk

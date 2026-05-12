@@ -30,6 +30,9 @@ execute if entity @s[tag=QueueCoinConversion] run function exigence:hub/convert_
 # Or if converting:
 execute if entity @s[tag=ConvertingCoins] run function exigence:hub/convert_money/instant/start_conversion
 
+# Enable admin triggers
+execute if entity @s[tag=Admin] run function exigence:misc/triggers/admin/enable_all_admin_triggers
+
 # Clear other misc tags
 tag @s remove OpeningVault
 

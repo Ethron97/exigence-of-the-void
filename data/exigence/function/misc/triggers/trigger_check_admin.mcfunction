@@ -10,6 +10,7 @@ execute if score @s 3 matches -2147483647..2147483647 unless score @s 3 matches 
 execute if score @s 4 matches -2147483647..2147483647 unless score @s 4 matches 0 run function exigence:misc/triggers/admin/4
 execute if score @s Admin matches -2147483647..2147483647 unless score @s Admin matches 0 run function exigence:misc/triggers/admin/admin
 execute if score @s DebugMenu matches -2147483647..2147483647 unless score @s DebugMenu matches 0 run function exigence:misc/triggers/admin/debug_menu
+execute if score @s LinkNetherMusic matches -2147483647..2147483647 unless score @s LinkNetherMusic matches 0 run function exigence:misc/triggers/admin/link_nether_music
 
 execute if score @s TpTutorial matches -2147483647..2147483647 unless score @s TpTutorial matches 0 run function exigence:misc/triggers/tp/tp_tutorial
 execute if score @s TpGame matches -2147483647..2147483647 unless score @s TpGame matches 0 run function exigence:misc/triggers/tp/tp_game

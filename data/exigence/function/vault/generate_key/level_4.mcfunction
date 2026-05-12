@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # If this key is picked up, return
-execute if entity @s[tag=PickedUp] run return run say Skipped because it has already been picked up
+execute if entity @s[tag=PickedUp] run return run execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say Skipped because it has already been picked up
 #----------------------------------------------------------------------------------------------------
 
 execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Generate vault key (level 4)

@@ -28,10 +28,10 @@ execute if score @s game.door.inserting_key matches 60 run data modify entity @s
 #execute if score @s game.door.inserting_key matches ..30 run playsound block.beacon.activate neutral @a ~ ~ ~ 1 1.1
 
 # Time enchant particles so they "hit" the key as it opens
-execute if score @s game.door.inserting_key matches 58 run particle minecraft:enchant ~ ~1 ~ 0 0 0 3 40
+execute if score @s game.door.inserting_key matches 59 run particle minecraft:enchant ~ ~1 ~ 0 0 0 3 40
 
 # Play sound when the key "clicks" in
-execute if score @s game.door.inserting_key matches 30 run playsound block.decorated_pot.insert_fail block @a ~ ~ ~ 1 1.2
+execute if score @s game.door.inserting_key matches 30 run playsound block.decorated_pot.place block @a ~ ~ ~ 1 1.3
 
 # Finish opening
 #   Wait 5 ticks after matching so we get a chance to actually see it fit perfectly.

@@ -1,7 +1,12 @@
 # Update bar value of Bolt trial
 
+## CONSTRAINTS
+# AS trial node
+
+#====================================================================================================
+
 # 30 seconds = 600 ticks, bossbar is %100 so bossbar = ticks/6
-scoreboard players operation #UpdateBarVal tick_counter = Bolt TrialTimer
+scoreboard players operation #UpdateBarVal tick_counter = @s trial.timer
 # minus 3 seconds from pretile time
 scoreboard players operation #UpdateBarVal tick_counter -= 60 number
 scoreboard players operation #UpdateBarVal tick_counter > 0 number

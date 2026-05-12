@@ -5,10 +5,10 @@
 
 #====================================================================================================
 
-execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Pick up vault key (switch)
+$execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Pick up vault key (call: $(key_name))
 
 # Delete the trim from their inventory
-clear @s #exigence:trim_templates[custom_data~{vault_key_summoned:true}] 1
+clear @s #exigence:trim_templates
 
 $function exigence:door/vault/$(key_name)/give_key
 
@@ -19,5 +19,4 @@ $execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,ta
 scoreboard players add @s profile.data.vaults.cr.vault_keys_picked_up 1
 
 # Kill any other duplicates of this vault key
-# TODO clear from players?
 $kill @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:item,tag=Vault_$(key_name),tag=!VaultNode]

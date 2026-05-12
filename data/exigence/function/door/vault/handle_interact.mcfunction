@@ -10,22 +10,22 @@ execute if score toggle.vault debug matches 1 if score debug.level debug matches
 
 ## VERIFY HOLDING KEY
 # Return if player is not holding a trim template
-execute on target unless items entity @s weapon.mainhand #exigence:trim_templates run tellraw @s [{text:"The vault is sealed with an ancient rune.",color:"red"}]
-execute on target unless items entity @s weapon.mainhand #exigence:trim_templates run return run playsound minecraft:block.copper_grate.break ambient @a ~ ~ ~ 0.5 0.6
+execute on target unless items entity @s weapon.mainhand #exigence:vault_key run tellraw @s [{text:"🔒",color:"gold"},{text:" The vault is sealed with an ancient rune...",color:"red"}]
+execute on target unless items entity @s weapon.mainhand #exigence:vault_key run return run playsound minecraft:block.copper_grate.break ambient @a ~ ~ ~ 0.5 0.6
 #----------------------------------------------------------------------------------------------------
 
 ## CHECK MATCH
 # Call sub function that matches the trim the player is holding
-data modify storage exigence:door vault_interacting set from entity @n[type=minecraft:item_display,tag=VaultHandle,distance=..1] item.id
+data modify storage exigence:door vault_interacting set from entity @n[type=minecraft:item_display,tag=VaultHandle,distance=..1] item.components."minecraft:custom_data".vault
 
 # Try to modify it fom player hand and store success
 #   NOTE: 0 == key matches, 1 == key does not match
-execute on target store success storage exigence:door vault_not_match int 1 run data modify storage exigence:door vault_interacting set from entity @s SelectedItem.id
+execute on target store success storage exigence:door vault_not_match int 1 run data modify storage exigence:door vault_interacting set from entity @s SelectedItem.components."minecraft:custom_data".vault
 
 ## REJECT KEY
 # Return if holding key does not match the door handle
-execute on target if data storage exigence:door {vault_not_match:1} run tellraw @s [{text:"That key does not fit.",color:"red"}]
-execute if data storage exigence:door {vault_not_match:1} run return run playsound minecraft:block.copper_bulb.place ambient @a ~ ~ ~ 0.5 0.6
+execute on target if data storage exigence:door {vault_not_match:1} run tellraw @s [{text:"🔒",color:"gold"},{text:" That key does not fit!",color:"red"}]
+execute if data storage exigence:door {vault_not_match:1} run return run playsound minecraft:block.decorated_pot.place ambient @a ~ ~ ~ 0.5 0.6
 #----------------------------------------------------------------------------------------------------
 
 execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Key matches

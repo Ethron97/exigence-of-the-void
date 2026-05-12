@@ -11,7 +11,7 @@ $execute if score toggle.vault debug matches 1 if score debug.level debug matche
 
 # Summon a new item
 $summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:$(vault_name)_armor_trim_smithing_template",count:1,components:\
-{"minecraft:custom_name":'"$(vault_name)"',"minecraft:max_stack_size":1,"minecraft:custom_data":{vault_key_summoned:true,vault_name:'$(vault_name)'}\
+{"minecraft:custom_name":'"$(vault_name)"',"minecraft:max_stack_size":1,"minecraft:custom_data":{vault_name:'$(vault_name)'}\
 ,"minecraft:custom_model_data":{"strings":["vault_key"]}}},Tags:["NewVaultKey","VaultKey","Vault_$(vault_name)","Treasure","Key","ETICK"]}
 
 # Copy level

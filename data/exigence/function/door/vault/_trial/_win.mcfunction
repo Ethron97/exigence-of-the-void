@@ -1,5 +1,12 @@
 # Generic win
 
+## CONSTRAINTS
+#   AS player
+
+#====================================================================================================
+
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) Generic trial win
+
 # Play win sound
 execute at @s run playsound minecraft:ui.toast.challenge_complete player @s ~ ~1000 ~ 1000 1
 

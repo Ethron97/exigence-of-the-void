@@ -9,6 +9,7 @@ scoreboard objectives add DebugMenu trigger
 scoreboard objectives add DeclineCoopInvite trigger
 scoreboard objectives add DisableCurrencyWarning trigger
 scoreboard objectives add ExitTutorial trigger
+scoreboard objectives add LinkNetherMusic trigger
 scoreboard objectives add ProfileSelectorCancelDelete trigger
 scoreboard objectives add ProfileSelectorConfirmDelete trigger
 scoreboard objectives add ProfileStats trigger

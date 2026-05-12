@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Begin Eye
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) Begin Eye
 
 # Call generic functions
 function exigence:door/vault/_trial/_begin

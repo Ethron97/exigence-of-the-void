@@ -3,7 +3,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Setup Dune
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) Setup Dune
 
 # Reset scores
 scoreboard players set Dune TrialTimer 0

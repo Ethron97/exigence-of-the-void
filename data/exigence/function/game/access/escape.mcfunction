@@ -21,7 +21,7 @@ gamemode adventure @s
 clear @s #exigence:win_clear
 
 # If VaultKeep is 1, do not clear vault keys
-clear @s[scores={game.player.mod.vault_keep=0}] #exigence:trim_templates
+clear @s[scores={game.player.mod.vault_keep=0}] #exigence:vault_key
 
 # Escaped with NPC?
 execute if entity @s[tag=Carrying] run function exigence:game/access/escaped_with_npc

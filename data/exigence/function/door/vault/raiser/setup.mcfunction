@@ -16,4 +16,7 @@ execute positioned -274.5 7.5 -228.0 run function exigence:door/vault/raiser/set
 # Setup pots
 execute as @e[x=455,y=-1,z=503,dx=0,dy=1,dz=0,type=minecraft:marker,tag=PotMarker,tag=raiser] run function exigence:door/vault/raiser/setup/setup_pot_a with entity @s data.custom_data
 
-# Check if any players are entering with this vault key (TODO)
+# Check if any players are entering with this vault key
+scoreboard players set #temp Temp 0
+execute store result score #temp Temp run clear @a[tag=Predungeon] gold_ingot[custom_data~{vault:'raiser'}] 0
+execute if score #temp Temp matches 1.. run tag @s add PickedUp

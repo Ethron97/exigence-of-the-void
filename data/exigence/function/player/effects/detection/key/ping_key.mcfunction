@@ -27,7 +27,7 @@ scoreboard players operation #old_distance game.player.sound_ping.key_distance =
 # Determine distance bracket
 function exigence:player/effects/detection/key/get_distance_bracket
 
-execute if score toggle.door debug matches 1 if score debug.level debug matches 4.. run tellraw @a [{text:"(D4) Distance Bracket: "},{score:{name:"@s","objective":"game.player.sound_ping.key_distance"}}]
+execute if score toggle.door debug matches 1 if score debug.level debug matches 4.. run tellraw @a [{text:"(D4) Level key distance Bracket: "},{score:{name:"@s","objective":"game.player.sound_ping.key_distance"}}]
 
 # If ping Key distance is 10, no pings
 #execute if score @s game.player.sound_ping.key_distance matches 10 run say No ping (No valid distance)

@@ -10,6 +10,9 @@
 
 #====================================================================================================
 
+say DEPRECATED
+return 0
+
 # If game is active, return
 execute if score game.is_active game.state matches 1 run say The game is active, go play it
 execute if score game.is_active game.state matches 1 run return 1

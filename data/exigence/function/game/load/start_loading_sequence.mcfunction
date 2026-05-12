@@ -16,9 +16,6 @@ scoreboard players operation game.difficulty game.state = game.difficulty game.d
 scoreboard players set game.player_count game.state 0
 execute as @a[tag=Predungeon] run scoreboard players add game.player_count game.state 1
 
-# Sanity
-execute in minecraft:overworld unless entity @e[x=536,y=0,z=488,dx=0,dy=0,dz=0,type=minecraft:armor_stand,tag=intermediary] run summon minecraft:armor_stand 536.5 0.0 488.5 {Tags:[intermediary],ShowArms:1b}
-
 # Give entry scores
 #   Must be called after difficulty is set, and load_from_player is called
 execute in exigence:profile_data run function exigence:game/load/private/give_attempt_scores

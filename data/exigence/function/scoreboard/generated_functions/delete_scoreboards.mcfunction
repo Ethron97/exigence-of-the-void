@@ -1032,5 +1032,10 @@ scoreboard objectives remove vault_open_state
 scoreboard objectives remove CarrotOnStick
 scoreboard objectives remove node.id
 scoreboard objectives remove Tutorial
+scoreboard objectives remove trial.object.pizza_id
+scoreboard objectives remove trial.object.pizza_length
 scoreboard objectives remove game.entity.player_number
 scoreboard objectives remove game.player.player_number
+scoreboard objectives remove trial.timer.cooldown
+scoreboard objectives remove trial.timer
+scoreboard objectives remove trial.object.timer

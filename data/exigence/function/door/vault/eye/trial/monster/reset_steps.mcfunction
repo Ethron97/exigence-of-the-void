@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Reset steps
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) Reset steps
 
 # Eye steps * eye increment = 1 block exactly
 

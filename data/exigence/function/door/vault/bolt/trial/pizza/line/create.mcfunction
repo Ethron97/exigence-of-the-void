@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) creating new pizza line
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) creating new pizza line
 
 # Teleport facing second entity
 execute as @e[type=minecraft:marker,tag=PizzaA] at @s anchored eyes facing entity @e[type=minecraft:marker,tag=PizzaB,limit=1] eyes run tp @s ~ ~ ~ ~ ~

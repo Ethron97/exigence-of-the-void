@@ -1,5 +1,5 @@
 $data merge entity @s {Item:{id:"minecraft:chainmail_leggings",count:1,components:{"minecraft:custom_name":[{text:"👖 ",italic:false,color:"white"},\
-{text:"Insulated Pockets",italic:false,color:"$(legendary)",bold:true},{text:" 👖",italic:false,color:"white"}]\
+{text:"Faraday Trousers",italic:false,color:"$(legendary)",bold:true},{text:" 👖",italic:false,color:"white"}]\
 ,"minecraft:tooltip_display":{hidden_components:["unbreakable","attribute_modifiers","trim"]}\
 ,"minecraft:unbreakable":{}\
 ,"minecraft:trim":{pattern:'minecraft:wayfinder',material:'minecraft:lapis'}\
@@ -10,4 +10,5 @@ $data merge entity @s {Item:{id:"minecraft:chainmail_leggings",count:1,component
 ,[{text:"and gain ",italic:false,color:"gray"},{text:"Soulbound",italic:false,color:"dark_gray"}]\
 ,{text:""}\
 ,[{text:"Vault Keys ",italic:false,color:"gray"},{text:"🔒 ",italic:false,color:"gold"},{text:"count as ",italic:false,color:"gray"},{text:"💼",italic:false,color:"yellow"}]\
+,[{text:"when counting item limits.",italic:false,color:"gray"}]\
 ],"minecraft:custom_data":{item_name:"pants_vault_a",is_soulbound:true}}}}

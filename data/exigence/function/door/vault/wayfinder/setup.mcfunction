@@ -16,4 +16,7 @@ execute positioned -327.0 3.5 -186.5 run function exigence:door/vault/wayfinder/
 # Setup pots
 execute as @e[x=457,y=-1,z=471,dx=0,dy=1,dz=0,type=minecraft:marker,tag=PotMarker,tag=wayfinder] run function exigence:door/vault/wayfinder/setup/setup_pot_a with entity @s data.custom_data
 
-# Check if any players are entering with this vault key (TODO)
+# Check if any players are entering with this vault key
+scoreboard players set #temp Temp 0
+execute store result score #temp Temp run clear @a[tag=Predungeon] gold_ingot[custom_data~{vault:'wayfinder'}] 0
+execute if score #temp Temp matches 1.. run tag @s add PickedUp

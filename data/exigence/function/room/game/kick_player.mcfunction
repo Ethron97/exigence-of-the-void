@@ -59,7 +59,7 @@ clear @s #exigence:win_clear
 clear @s #exigence:loss_clear
 clear @s[scores={game.player.mod.void_bundle=0}] #exigence:consumable
 # If VaultKeep is 1, do not clear vault keys
-clear @s[scores={game.player.mod.vault_keep=0}] #exigence:trim_templates
+clear @s[scores={game.player.mod.vault_keep=0}] #exigence:vault_key
 
 # COINKEEP PART 2 - start after we've cleared their junk
 # Convert coins to money (always instant version)

@@ -1,4 +1,4 @@
-# Called by tick when DropBlockTimer = 0
+# Called by tick when trial.object.timer = 0
 
 ## CONSTRAINTS
 #   AS drop block (block display)

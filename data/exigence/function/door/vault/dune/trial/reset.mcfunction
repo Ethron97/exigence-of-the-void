@@ -1,7 +1,7 @@
 # Cleans up everything after a trial, win or lose
 
 # DEBUG
-execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Reset Dune
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) Reset Dune
 
 # Hide bossbar
 bossbar set exigence:trial_dune visible false

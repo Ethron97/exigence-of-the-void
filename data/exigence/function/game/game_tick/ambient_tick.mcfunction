@@ -3,9 +3,6 @@
 
 # ============== FRIENDLY / POSITIVE =================
 
-function exigence:game/game_tick/ambient/flame
-function exigence:game/game_tick/ambient/vault_key
-
 # TODO normalize glow particles and put in e_tick interaction
 # BELLS
 execute if score seconds.cooldown tick_counter matches 6 at @e[type=minecraft:marker,scores={game.node.bell.ring_cooldown=0},tag=BellNode,tag=Active] run particle minecraft:glow ~ ~0.1 ~ 0.3 0.2 0.3 0 1

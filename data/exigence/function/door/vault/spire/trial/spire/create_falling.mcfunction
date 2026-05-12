@@ -7,7 +7,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Spire to spire
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) Spire to spire
 
 # Get new random spread
 function exigence:door/vault/spire/trial/spire/random_spread

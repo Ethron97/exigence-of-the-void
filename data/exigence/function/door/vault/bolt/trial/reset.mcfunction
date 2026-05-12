@@ -1,27 +1,32 @@
 # Cleans up everything after a trial, win or lose
 
+## CONSTRAINTS
+#   AS/AT trial node
+
+#====================================================================================================
+
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) Bolt trial reset
+
 # Kill entities
-kill @e[type=minecraft:block_display,tag=DropBlock]
-kill @e[type=minecraft:block_display,tag=PizzaLine]
-kill @e[type=minecraft:marker,tag=BoltTrialSetup]
-kill @e[type=minecraft:marker,tag=PizzaLightning]
+kill @e[type=minecraft:block_display,tag=DropBlock,distance=..24]
+kill @e[type=minecraft:block_display,tag=PizzaLine,distance=..24]
+kill @e[type=minecraft:marker,tag=BoltTrialSetup,distance=..24]
+kill @e[type=minecraft:marker,tag=PizzaLightning,distance=..24]
+
+# Reset tags
+tag @s remove Crucible
+tag @s remove ETICK
 
 # Clone grond
-clone -419 125 -23 -409 125 -13 -419 151 -23
-
-# Hide bossbar
-bossbar set exigence:trial_bolt visible false
+execute if entity @s[tag=Game] run clone ~5 ~11 ~5 ~-5 ~11 ~-5 ~-5 ~-1 ~-5
+execute if entity @s[tag=Hub] run clone ~5 ~-7 ~5 ~-5 ~-7 ~-5 ~-5 ~-1 ~-5
 
 # Replace end portal
-fill -422 148 -26 -405 148 -10 black_concrete replace end_portal
+fill ~7 ~-4 ~7 ~-7 ~-4 ~-7 black_concrete replace end_portal
 
 # Reset fire
-fill -407 158 -25 -421 158 -11 minecraft:chiseled_tuff replace minecraft:soul_soil
-setblock -414 159 -25 fire
-setblock -409 159 -23 fire
-setblock -407 159 -18 fire
-setblock -409 159 -13 fire
-setblock -414 159 -11 fire
-setblock -419 159 -13 fire
-setblock -421 159 -18 fire
-setblock -419 159 -23 fire
+fill ~7 ~7 ~7 ~-7 ~7 ~-7 minecraft:fire replace minecraft:soul_fire strict
+
+# Hide bossbar
+execute if entity @s[tag=Game] run bossbar set exigence:trial_bolt visible false
+execute if entity @s[tag=Hub] run bossbar set exigence:hub_trial_bolt visible false

@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.vault debug matches 1 if score debug.level debug matches 4.. run say (D4) Dropping
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 4.. run say (D4) Dropping
 
 # Remove this block
 execute at @s run fill ~ ~ ~ ~ ~ ~ air replace minecraft:purpur_pillar

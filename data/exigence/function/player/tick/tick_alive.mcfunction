@@ -45,6 +45,8 @@ execute if score game.all_echos_found game.state matches 0 run function exigence
 function exigence:player/sound/item_sounds/level_key
 # Ardor flame item sounds
 execute if score game.difficulty game.state matches 5 run function exigence:player/sound/item_sounds/ardor
+# Vault Key item sounds
+function exigence:player/sound/item_sounds/vault_key
 
 # Check for ravager glass
 execute if entity @s[gamemode=adventure] run function exigence:player/ravager_glass/check

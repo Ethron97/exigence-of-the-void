@@ -13,9 +13,9 @@ execute positioned -43.5 200.0 0.5 if entity @a[tag=ItemShop,distance=..50,limit
 execute positioned 0.5 209.0 104.5 if entity @a[tag=Predungeon,distance=..16,limit=1] run function exigence:hub/predungeon/menu/predungeon_menu_tick
 execute as @e[x=-29,y=197,z=6,dx=24,dy=8,dz=24,type=minecraft:marker,scores={hub.locker_room_id=1..},tag=LockerRoomNode] at @s run function exigence:hub/locker_room/menu/locker_menu_tick
 
-# Animate coin conversion
-#execute if entity @a[distance=..1000,tag=ConvertingCoins,scores={career.settings.coin_conversion_style=2}] run function exigence:hub/convert_money/display_hud/tick
-#execute if entity @a[distance=..1000,tag=ConvertingCoins,scores={career.settings.coin_conversion_style=1}] run function exigence:hub/convert_money/item_smash/tick
+# TEMP
+# Trial tick
+execute as @e[type=minecraft:marker,tag=TrialNode,tag=Bolt,tag=Hub,tag=ETICK] at @s run function exigence:door/vault/bolt/trial/tick
 
 # Add 0 to all players player id to initialize it
 #scoreboard players add @a career.player_id 0
@@ -28,9 +28,6 @@ execute as @e[x=-29,y=197,z=6,dx=24,dy=8,dz=24,type=minecraft:marker,scores={hub
 
 # If players are exalting
 #execute if entity @a[tag=Exalting] run function exigence:hub/hub_tick/exalting
-
-
-
 
 # DEPRECATED
 #====================================================================================================

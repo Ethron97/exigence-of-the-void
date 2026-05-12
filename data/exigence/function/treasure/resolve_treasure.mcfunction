@@ -29,9 +29,9 @@ function exigence:treasure/sherd/proc_sherd_drop
 #====================================================================================================
 ## VAULT KEY
 # Chance per dungeon proc to summon a key at any active treasure node.
-execute store result score #VaultKeyCheck Random run random value 1..18
+execute store result score #VaultKeyCheck Random run random value 1..16
 #   If brush modifier, double chance
-execute if score mod.brush game.modifiers matches 1 run execute store result score #VaultKeyCheck Random run random value 1..9
+execute if score mod.brush game.modifiers matches 1 run execute store result score #VaultKeyCheck Random run random value 1..8
 # If dev vault key card, always drop
 execute if score .vault_rain game.dev_modifiers matches 1 run scoreboard players set #VaultKeyCheck Random 1
 execute if score #VaultKeyCheck Random matches 1 run function exigence:vault/generate_key/generate
