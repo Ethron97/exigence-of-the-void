@@ -25,3 +25,6 @@ execute as @e[tag=VarianceNode] if data entity @s data.custom_data.max_node_stat
 
 # Puzzle candle ids/order
 execute as @e[tag=PuzzleCandle] if data entity @s data.custom_data.puzzle_candle_id store result score @s game.story.puzzle_candle_id run data get entity @s data.custom_data.puzzle_candle_id
+
+# Tutorial markers
+execute as @e[tag=TutorialMarker] if data entity @s data.custom_data.tutorial_marker_id store result score @s tutorial.marker.id run data get entity @s data.custom_data.tutorial_marker_id

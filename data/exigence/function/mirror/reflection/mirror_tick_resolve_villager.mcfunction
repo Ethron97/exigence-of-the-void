@@ -32,10 +32,10 @@ scoreboard players operation LookingAngle.Difference game.mirror.math -= Player.
 
 scoreboard players operation Reflection.Looking.Angle game.mirror.math = Mirror.Node.Angle game.mirror.math
 scoreboard players operation Reflection.Looking.Angle game.mirror.math += LookingAngle.Difference game.mirror.math
-execute as @e[type=villager,tag=Reflection,tag=Active] store result entity @s Rotation[0] float 0.01 run scoreboard players get Reflection.Looking.Angle game.mirror.math
-execute as @e[type=villager,tag=Reflection,tag=Active] store result entity @s Rotation[1] float 1 run data get entity @p[tag=Reflecting] Rotation[1] 1
-execute as @e[type=villager,tag=Reflection,tag=Active] run data modify entity @s Pose.Head set from storage temp Head
-execute as @e[type=villager,tag=Reflection,tag=Active] run data modify entity @s Pose.Head[0] set from entity @s Rotation[1]
+execute as @e[type=minecraft:villager,tag=Reflection,tag=Active] store result entity @s Rotation[0] float 0.01 run scoreboard players get Reflection.Looking.Angle game.mirror.math
+execute as @e[type=minecraft:villager,tag=Reflection,tag=Active] store result entity @s Rotation[1] float 1 run data get entity @p[tag=Reflecting] Rotation[1] 1
+execute as @e[type=minecraft:villager,tag=Reflection,tag=Active] run data modify entity @s Pose.Head set from storage temp Head
+execute as @e[type=minecraft:villager,tag=Reflection,tag=Active] run data modify entity @s Pose.Head[0] set from entity @s Rotation[1]
 
 # =======================================================================================================================
 # Get distance between player and mirrornode

@@ -1031,7 +1031,8 @@ scoreboard objectives add tick_counter dummy
 scoreboard objectives add vault_open_state dummy
 scoreboard objectives add CarrotOnStick minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add node.id dummy
-scoreboard objectives add Tutorial dummy
+scoreboard objectives add hub.tutorial dummy
+scoreboard objectives add tutorial.marker.id dummy
 scoreboard objectives add trial.object.pizza_id dummy
 scoreboard objectives add trial.object.pizza_length dummy
 scoreboard objectives add game.entity.player_number dummy

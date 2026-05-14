@@ -11,6 +11,8 @@
 #   ?. Revoke all player advancements (todo?)
 
 #====================================================================================================
+execute if entity @e[type=minecraft:marker,tag=RoomNode] run return run say Cannot reset world while a room node exists
+#----------------------------------------------------------------------------------------------------
 
 say 1. Saving entity property scores to entity data
 function exigence:scoreboard/save_score_to_property
@@ -41,5 +43,8 @@ execute in exigence:hub positioned -43.5 200.0 0.5 run function exigence:hub/ite
 scoreboard players set @a quits 0
 team leave @a
 
+## Initialize scores
 # Max attempts of a treasure node before giving up treasure drop
 scoreboard players set #MaxTreasureDroppingIterations node.treasure.drop_working 10
+# Delay after breaking ravager glass before it comes back
+scoreboard players set cooldown.limit game.entity.ravager_glass.cooldown 20

@@ -1,7 +1,7 @@
 # Teleport reflection to the reflected position
 
 ## CONSTRAINTS
-#   AS Reflection
+#   AS Reflection (mannequin)
 #   AT mirror node
 
 #====================================================================================================
@@ -9,8 +9,9 @@
 $execute rotated $(rotation) ~ run tp @s ^ ^$(height) ^$(distance)
 
 # Mirror particles
+#   Removed for now. We only needed these when using an armorstand so you know where the "feet" were
 #   at @s needed because they just releported
-execute at @s run particle minecraft:smoke ~ ~0.6 ~ 0.1 0.2 0.1 0 5
+#execute at @s run particle minecraft:smoke ~ ~0.6 ~ 0.1 0.2 0.1 0 5
 #execute at @e[type=minecraft:armor_stand,tag=Reflection,tag=Active] run particle minecraft:effect ~ ~ ~ 0 0 0 0.01 2
 
 # Update equipment

@@ -13,4 +13,4 @@ summon minecraft:vex ~ ~ ~ {life_ticks:999999,Tags:["TutorialEyeball","NewEyebal
 #,{id:"invisibility",duration:999999,amplifier:0,show_particles:0b}\
 
 # Tweak attributes
-execute as @e[type=minecraft:vex,tag=NewEyeball] run function exigence:menace/eyeball/private/flyball_data
+execute as @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:vex,tag=NewEyeball] run function exigence:menace/eyeball/private/flyball_data

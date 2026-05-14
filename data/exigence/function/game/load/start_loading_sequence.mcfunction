@@ -3,7 +3,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Start loading sequence
+execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. run say (D3) Start loading sequence
 
 # Handle setup that needs to come from player info (like chests, profile difficulty)
 #   Also marks every relevant profile node as "Active"

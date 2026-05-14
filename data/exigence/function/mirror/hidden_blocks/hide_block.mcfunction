@@ -5,4 +5,4 @@ tag @s remove Appeared
 tag @s remove Appearing
 execute at @s run kill @e[type=minecraft:block_display,tag=!HiddenBlockDebug,tag=RevealedBlock,distance=..1]
 
-playsound minecraft:block.end_portal_frame.fill neutral @a ~ ~ ~ 1 0.3
+execute unless entity @s[tag=ReflectionYES] run playsound minecraft:block.end_portal_frame.fill neutral @a ~ ~ ~ 1 0.3

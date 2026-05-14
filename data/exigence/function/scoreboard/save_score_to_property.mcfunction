@@ -25,3 +25,6 @@ execute as @e[scores={node.property.max_node_state=1..},tag=VarianceNode] store 
 
 # Puzzle candle ids/order
 execute as @e[scores={game.story.puzzle_candle_id=1..},tag=PuzzleCandle] store result entity @s data.custom_data.puzzle_candle_id int 1 run scoreboard players get @s game.story.puzzle_candle_id
+
+# Tutorial marker ids
+execute as @e[scores={tutorial.marker.id=1..}] store result entity @s data.custom_data.tutorial_marker_id int 1 run scoreboard players get @s tutorial.marker.id

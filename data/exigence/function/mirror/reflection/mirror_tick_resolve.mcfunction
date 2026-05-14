@@ -67,4 +67,4 @@ execute store result storage exigence:mirror height double 0.01 run scoreboard p
 
 # =======================================================================================================================
 # Update reflection position / pose / equipment
-execute at @s as @e[type=minecraft:armor_stand,tag=Reflection] if score @s game.entity.player_number = #compare game.player.player_number run function exigence:mirror/tp_reflection with storage exigence:mirror
+execute at @s as @e[type=minecraft:mannequin,tag=Reflection,distance=..32] if score @s game.entity.player_number = #compare game.player.player_number run function exigence:mirror/tp_reflection with storage exigence:mirror

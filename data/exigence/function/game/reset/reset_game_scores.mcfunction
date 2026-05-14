@@ -149,8 +149,7 @@ scoreboard players set .vault_rain game.dev_modifiers 0
 # Initialize cooldowns
 scoreboard players set #RavagerAggroCooldownLimit tick_counter 100
 scoreboard players set ravager.aggro.cooldown tick_counter 50
-# Delay after breaking ravager glass before it comes back
-scoreboard players set #RavagerGlassCooldownLimit game.entity.ravager_glass.cooldown 20
+
 
 # Pull passive treasure cooldown from data
 execute store result score #PassiveTreasureCooldownLimit tick_counter run data get storage exigence:dungeon_settings passive_treasure 1

@@ -15,7 +15,7 @@ execute if score game.is_active game.state matches 1 run function exigence:game/
 # If any players are in the hub dimension, hub tick
 execute in exigence:hub positioned 0 200 0 if entity @a[distance=..2000,limit=1] run function exigence:hub/hub_tick
 # If tutorial is active, tutorial tick
-execute if data storage exigence:dungeon {tutorial:1} in exigence:tutorial run function exigence:tutorial/tick
+execute if score tut.active hub.tutorial matches 1 in exigence:tutorial run function exigence:tutorial/tick
 
 # Interaction handling
 execute at @a as @e[type=minecraft:interaction,distance=..8] at @s run function exigence:misc/interaction/check_interaction

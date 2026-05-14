@@ -8,6 +8,7 @@
 
 # DEBUG
 execute if score toggle.bell debug matches 1 if score debug.level debug matches 3.. run say (D3) Ring bell ring function
+execute if score @s node.property.object_level matches 10 if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Ring bell ring function (tutorial)
 
 # Remove bell so player is certain when it has cooled down
 execute at @s run setblock ~ ~ ~ minecraft:air

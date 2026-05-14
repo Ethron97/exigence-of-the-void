@@ -4,6 +4,7 @@ advancement revoke @s only exigence:listener/pickup/ember
 execute if score toggle.ember debug matches 1 if score debug.level debug matches 3.. run say (D3) Pickup ember
 
 # TUTORIAL
+execute if entity @s[tag=Tutorial] if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Pickup ember (tutorial)
 clear @s[tag=Tutorial] minecraft:soul_campfire
 execute as @s[tag=Tutorial] run function exigence:player/give/ember
 execute as @s[tag=Tutorial] run scoreboard players add @s profile.data.ember.cr.embers_picked_up 1

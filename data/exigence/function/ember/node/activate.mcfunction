@@ -42,8 +42,10 @@ scoreboard players operation @s node.ember.embers_to_drop > 5 number
 # Summon echo:
 execute at @s run function exigence:ember/node/summon_echo_item
 
-# Spawn compass
+# Get compass data
 function exigence:ember/node/create_echo_compass with storage exigence:echo_selection
+# Give compasses to predungeon players
+execute as @a[tag=Predungeon] run function exigence:player/give/compass with storage exigence:compass
 
 #execute as @s run tellraw @a [{text:"Embers to drop: "},{"score":{"name":"@s","objective":"node.ember.embers_to_drop"}}]
 

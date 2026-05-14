@@ -1031,7 +1031,8 @@ scoreboard objectives remove tick_counter
 scoreboard objectives remove vault_open_state
 scoreboard objectives remove CarrotOnStick
 scoreboard objectives remove node.id
-scoreboard objectives remove Tutorial
+scoreboard objectives remove hub.tutorial
+scoreboard objectives remove tutorial.marker.id
 scoreboard objectives remove trial.object.pizza_id
 scoreboard objectives remove trial.object.pizza_length
 scoreboard objectives remove game.entity.player_number

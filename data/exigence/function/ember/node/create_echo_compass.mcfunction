@@ -23,5 +23,3 @@ $data modify storage exigence:compass echo_id set value $(echo_id)
 # Set dimension based on if tutorial or not tutorial
 data modify storage exigence:compass dimension set value 'minecraft:overworld'
 execute if score @s node.property.object_level matches 10 run data modify storage exigence:compass dimension set value 'exigence:tutorial'
-
-execute as @a[tag=Predungeon] run function exigence:player/give/compass with storage exigence:compass

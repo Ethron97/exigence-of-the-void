@@ -13,5 +13,5 @@ execute at @s run summon block_display ~ ~ ~ {block_state:{Name:"minecraft:green
 function exigence:tutorial/marker/private/update_debug_color
 
 # Show ID in text display
-execute store result storage exigence:temp id int 1 run scoreboard players get @s TutorialMarkerID
+execute store result storage exigence:temp id int 1 run scoreboard players get @s tutorial.marker.id
 execute at @s run function exigence:tutorial/marker/private/summon_id_display with storage exigence:temp

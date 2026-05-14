@@ -1,7 +1,7 @@
 # Update reflection armor to match their player
 
 ## CONSTRAINTS
-#   AS armor_stand Reflection
+#   AS Reflection (mannequin)
 #   Assumes player has tag "Reflecting"
 
 #====================================================================================================
@@ -12,12 +12,15 @@ execute if score toggle.mirror debug matches 1 if score debug.level debug matche
 item replace entity @s armor.feet from entity @p[tag=Reflecting] armor.feet
 item replace entity @s armor.legs from entity @p[tag=Reflecting] armor.legs
 item replace entity @s armor.chest from entity @p[tag=Reflecting] armor.chest
+item replace entity @s armor.head from entity @p[tag=Reflecting] armor.head
 
-item replace entity @s weapon.mainhand from entity @p[tag=Reflecting] weapon.mainhand
-item replace entity @s weapon.offhand from entity @p[tag=Reflecting] weapon.offhand
+item replace entity @s weapon.mainhand from entity @p[tag=Reflecting] weapon.offhand
+item replace entity @s weapon.offhand from entity @p[tag=Reflecting] weapon.mainhand
+
+effect clear @s invisibility
 
 ## HELMET
-execute unless items entity @s armor.head * run data modify entity @s equipment.head set from entity @s data.custom_data.player_head
+#execute unless items entity @s armor.head * run data modify entity @s equipment.head set from entity @s data.custom_data.player_head
 
 # Add tag to playernode
 #execute as @e[type=minecraft:armor_stand,tag=PlayerNode] if score @s profile.node.player_id = @p[tag=Reflecting] career.player_id run tag @s add GrabHead

@@ -3,7 +3,7 @@
 
 #====================================================================================================
 
-execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) part b
+execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 4.. run say (D4) Flash bossbar part b
 
 # Re-call part A
 function exigence:tutorial/utility/flashing_bossbar_a with storage exigence:tutorial flashing_bossbar

@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-say (D3) Start convert coins (general)
+execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. run say (D3) Start convert coins (general)
 
 # Remove queue tag
 tag @s remove QueueCoinConversion

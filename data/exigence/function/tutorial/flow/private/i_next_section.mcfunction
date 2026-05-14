@@ -8,10 +8,10 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Next section iterate
+execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run tellraw @a [{text:"(D3) Next section iterate "},{score:{name:"@s",objective:"tutorial.marker.id"}}]
 
 # Reset token
-execute as @e[type=minecraft:marker,tag=TutorialMarker,tag=LastDropped,distance=..1000] run tag @s remove LastDropped
+execute as @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,tag=TutorialMarker,tag=LastDropped] run tag @s remove LastDropped
 tag @s add LastDropped
 tag @s add Dropped
 
@@ -20,7 +20,7 @@ execute as @s[tag=Checkpoint] run function exigence:tutorial/flow/last_dropped_f
 execute as @s[tag=Checkpoint] run function exigence:tutorial/flow/next_token
 
 # Update debug colors
-execute as @e[type=minecraft:marker,tag=TutorialMarker,distance=..1000] run function exigence:tutorial/marker/private/update_debug_color
+execute as @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,tag=TutorialMarker] run function exigence:tutorial/marker/private/update_debug_color
 
 # If not checkpoint, iterate
 execute in exigence:tutorial at @s[tag=!Checkpoint] as @n[type=minecraft:marker,tag=TutorialMarker,tag=!Dropped,distance=..100] run function exigence:tutorial/flow/private/i_next_section

@@ -3,7 +3,9 @@
   "entity": "this",
   "predicate": {
     "flags": {
-      "is_sneaking": true
+      "is_sneaking": false,
+      "is_swimming": false,
+      "is_fall_flying": false
     }
   }
 }

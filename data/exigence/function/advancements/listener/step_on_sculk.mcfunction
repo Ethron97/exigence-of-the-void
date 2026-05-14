@@ -1,10 +1,10 @@
 #say Step on sculk
 
 # If tutorial
-execute if data storage exigence:dungeon {tutorial:1} as @s[tag=Tutorial] run schedule function exigence:tutorial/cooldown_sculkstep 20t
-execute if data storage exigence:dungeon {tutorial:1} as @s[tag=Tutorial] if score Step Tutorial matches 309 in exigence:tutorial run function exigence:tutorial/flow/step
-execute if data storage exigence:dungeon {tutorial:1} at @s[tag=Tutorial] run playsound minecraft:block.sculk_sensor.clicking hostile @a ~ ~-1 ~ 1 1
-execute if data storage exigence:dungeon {tutorial:1} if entity @s[tag=Tutorial] run return 1
+execute if score tut.active hub.tutorial matches 1 as @s[tag=Tutorial] run schedule function exigence:tutorial/cooldown_sculkstep 20t
+execute if score tut.active hub.tutorial matches 1 as @s[tag=Tutorial] if score tut.step hub.tutorial matches 309 in exigence:tutorial run function exigence:tutorial/flow/step
+execute if score tut.active hub.tutorial matches 1 at @s[tag=Tutorial] run playsound minecraft:block.sculk_sensor.clicking hostile @a ~ ~-1 ~ 1 1
+execute if score tut.active hub.tutorial matches 1 if entity @s[tag=Tutorial] run return 1
 #----------------------------------------------------------------------------------------------------
 
 # If trial

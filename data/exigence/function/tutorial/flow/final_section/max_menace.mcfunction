@@ -15,4 +15,4 @@ playsound minecraft:block.end_portal.spawn hostile @a 0 100 0 1000 1
 bossbar set exigence:tutorial_deck color red
 bossbar set exigence:tutorial_deck value 100
 
-scoreboard players set MaxMenace Tutorial 1
+scoreboard players set tut.max_menace hub.tutorial 1

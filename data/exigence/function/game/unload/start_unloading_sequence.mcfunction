@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Start UNloading sequence
+execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. run say (D3) Start UNloading sequence
 
 # TODO prevent players from trying to enter the dungeon while unloading, we don't know how long this will take
 
@@ -51,6 +51,7 @@ function exigence:npc/game/reset_npcs
 function exigence:mirror/hidden_blocks/reset_hidden_blocks
 # Kill old entities
 kill @e[type=minecraft:armor_stand,tag=MirrorEntity]
+kill @e[type=minecraft:mannequin,tag=MirrorEntity]
 
 # Reset bookshelf on principal
 fill -481 62 -200 -473 64 -200 minecraft:chiseled_bookshelf[facing=south]
@@ -66,6 +67,10 @@ function exigence:game/unload/unload_bossbars
 
 # Unload wards
 function exigence:game/unload/unload_wards
+
+# Kill enemies
+execute positioned -300 0 -300 as @e[type=minecraft:vex,distance=..1000] run kill @s
+execute positioned -300 0 -300 as @e[type=minecraft:warden,distance=..1000] run kill @s
 
 # Unload tags from profiledata? #TODO
 

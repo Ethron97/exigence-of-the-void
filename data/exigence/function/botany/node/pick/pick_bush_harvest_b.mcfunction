@@ -16,7 +16,7 @@ scoreboard players add @s node.berry.max_berries 1
 execute store result storage exigence:berry max int 1 run scoreboard players get @s node.berry.max_berries
 
 function exigence:botany/private/random_berry_amount with storage exigence:berry
-execute at @s positioned ~ ~1 ~ run function exigence:botany/private/summon_berries with storage exigence:berry
+execute at @s positioned ~ ~1 ~ run function exigence:botany/private/summon_berries
 
 # Increase player scores
 execute if entity @s[tag=FromSetup] as @a[tag=Picking] run function exigence:botany/private/increase_scores_from_setup

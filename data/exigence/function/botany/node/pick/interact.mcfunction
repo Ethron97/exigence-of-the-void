@@ -8,10 +8,15 @@
 
 #====================================================================================================
 
+# DEBUG
+execute if score toggle.berry debug matches 1 if score debug.level debug matches 3.. run say (D3) Berry interact
+execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Berry interact (tutorial)
+
 # TUTORIAL:
-execute if data storage exigence:dungeon {tutorial:1} as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/flow/step
-execute if data storage exigence:dungeon {tutorial:1} at @s[tag=Tutorial] as @n[type=minecraft:marker,tag=BerryNode,distance=..10] if score @s node.id = #compare node.id run function exigence:botany/node/pick/pick_bush_tutorial
-execute if data storage exigence:dungeon {tutorial:1} as @s[tag=Tutorial] run return 1
+execute if score tut.active hub.tutorial matches 1 as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/flow/step
+execute if score tut.active hub.tutorial matches 1 at @s[tag=Tutorial] as @n[type=minecraft:marker,tag=BerryNode,distance=..10] if score @s node.id = #compare node.id run function exigence:botany/node/pick/pick_bush_tutorial
+execute if score tut.active hub.tutorial matches 1 as @s[tag=Tutorial] run return 1
+#----------------------------------------------------------------------------------------------------
 
 # Return if the game is not active or this player is not active
 execute if score game.is_active game.state matches 0 run return 1

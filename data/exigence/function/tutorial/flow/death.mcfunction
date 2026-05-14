@@ -13,24 +13,24 @@ execute if score toggle.tutorial debug matches 1 if score debug.level debug matc
 function exigence:scoreboard/generated_functions/reset_on_enter
 
 # Save fallback
-execute as @e[type=minecraft:marker,tag=TutorialMarker,tag=Fallback,distance=..1000] run tag @s add SuperFallback
+execute as @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,tag=TutorialMarker,tag=Fallback] run tag @s add SuperFallback
 # Reset tutorial
 function exigence:tutorial/reset
 # Restore fallback
-execute as @e[type=minecraft:marker,tag=TutorialMarker,tag=SuperFallback,distance=..1000] run tag @s add Fallback
-execute as @e[type=minecraft:marker,tag=TutorialMarker,tag=SuperFallback,distance=..1000] run tag @s remove SuperFallback
+execute as @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,tag=TutorialMarker,tag=SuperFallback] run tag @s add Fallback
+execute as @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,tag=TutorialMarker,tag=SuperFallback] run tag @s remove SuperFallback
 
 clear @s
 
 # set step to fallback
-scoreboard players operation Step Tutorial = Fallback Tutorial
-execute if score Step Tutorial matches 1500 run fill 175 131 49 177 134 47 structure_void replace ice
+scoreboard players operation tut.step hub.tutorial = tut.fallback hub.tutorial
+execute if score tut.step hub.tutorial matches 1500 run fill 175 131 49 177 134 47 structure_void replace ice
 rotate @s ~180 ~
 
 # Reset all dropped/fallback tags
-tag @n[type=minecraft:marker,tag=TutorialMarker,tag=Fallback,distance=..1000] add LastDropped
-scoreboard players operation #compare TutorialMarkerID = @n[type=minecraft:marker,tag=TutorialMarker,tag=Fallback,distance=..1000] TutorialMarkerID
-execute as @e[type=minecraft:marker,tag=TutorialMarker,distance=..1000] if score @s TutorialMarkerID <= #compare TutorialMarkerID run tag @s add Dropped
+tag @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,tag=TutorialMarker,tag=Fallback] add LastDropped
+scoreboard players operation #compare tutorial.marker.id = @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,tag=TutorialMarker,tag=Fallback] tutorial.marker.id
+execute as @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,tag=TutorialMarker] if score @s tutorial.marker.id <= #compare tutorial.marker.id run tag @s add Dropped
 
 # Give "exit" button and "skip" button
 item replace entity @s hotbar.8 with minecraft:carrot_on_a_stick[custom_name=[{text:"Exit Tutorial",color:"red",italic:false}],custom_data={item_name:'exit_tutorial'},custom_model_data={strings:["exit_button"]}]

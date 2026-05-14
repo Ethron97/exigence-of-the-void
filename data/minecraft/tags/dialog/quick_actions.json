@@ -1,5 +1,8 @@
 {
     "values": [
-      "exigence:admin"
+        {
+          "id":"exigence:admin",
+          "required": false
+        }
     ]
 }

@@ -3,7 +3,7 @@
 #====================================================================================================
 
 # Return if score doesn't match expected
-execute unless score Step Tutorial matches 1103 run return 1
+execute unless score tut.step hub.tutorial matches 1103 run return 1
 #----------------------------------------------------------------------------------------------------
 
 execute in exigence:tutorial run fill 122 125 142 126 129 147 structure_void replace ice destroy

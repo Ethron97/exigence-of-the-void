@@ -5,30 +5,32 @@
 #   IN exigence:tutorial
 
 #====================================================================================================
+execute unless dimension exigence:tutorial run return run say (C) Called tutorial.reset without in exigence:tutorial, cancelling
+#----------------------------------------------------------------------------------------------------
 
 # DEBUG
 execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Reset tutorial
 
 # Markers
-execute as @e[type=minecraft:marker,tag=TutorialMarker,tag=LastDropped,distance=..1000] run tag @s remove LastDropped
-execute as @e[type=minecraft:marker,tag=TutorialMarker,tag=Dropped,distance=..1000] run tag @s remove Dropped
-execute as @e[type=minecraft:marker,tag=TutorialMarker,tag=Fallback,distance=..1000] run tag @s remove Fallback
+execute as @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,tag=TutorialMarker,tag=LastDropped] run tag @s remove LastDropped
+execute as @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,tag=TutorialMarker,tag=Dropped] run tag @s remove Dropped
+execute as @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,tag=TutorialMarker,tag=Fallback] run tag @s remove Fallback
 
 # Entities
-kill @e[type=minecraft:ravager,distance=..1000]
-kill @e[type=vex,tag=TutorialEyeball,distance=..1000]
-kill @e[type=minecraft:item,distance=..1000]
-kill @e[type=minecraft:armor_stand,tag=Bait1,distance=..1000]
-kill @e[type=minecraft:armor_stand,tag=Bait2,distance=..1000]
+kill @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:ravager]
+kill @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=vex,tag=TutorialEyeball]
+kill @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:item]
+kill @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:armor_stand,tag=Bait1]
+kill @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:armor_stand,tag=Bait2]
 
 effect clear @a[tag=Tutorial] luck
 effect clear @a[tag=Tutorial] jump_boost
 
-scoreboard players set Menace Tutorial 0
-scoreboard players set CardDrawCooldown Tutorial 600
-scoreboard players set Fatigue Tutorial 0
-scoreboard players set RavagerAggroCooldownCurrent Tutorial 0
-scoreboard players set MaxMenace Tutorial 0
+scoreboard players set tut.menace hub.tutorial 0
+scoreboard players set tut.card_draw_cooldown hub.tutorial 600
+scoreboard players set tut.fatigue hub.tutorial 0
+scoreboard players set tut.ravager_aggro_cooldown hub.tutorial 0
+scoreboard players set tut.max_menace hub.tutorial 0
 bossbar set exigence:tutorial_deck color white
 bossbar set exigence:tutorial color green
 worldborder warning distance 0
@@ -64,9 +66,9 @@ fill 175 131 49 177 135 47 ice replace structure_void
 fill 152 126 141 152 130 147 air replace sculk
 
 # Kill exit armorstnads (and clear light)
-execute at @e[type=minecraft:marker,tag=TutorialExitNode,distance=..1000] run fill ~ ~1 ~ ~ ~1 ~ air replace light
-kill @e[type=minecraft:marker,tag=TutorialExitNode,distance=..1000]
-kill @e[type=minecraft:block_display,tag=TutorialExitPortalDisplay,distance=..1000]
+execute at @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,tag=TutorialExitNode] run fill ~ ~1 ~ ~ ~1 ~ air replace light
+kill @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,tag=TutorialExitNode]
+kill @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:block_display,tag=TutorialExitPortalDisplay]
 
 execute positioned 186.5 131.0 33.5 run function exigence:tutorial/setup/setup_exit_portal
 
@@ -77,17 +79,17 @@ setblock 157 128 112 air
 fill 102 123 86 98 123 86 air
 
 # Kill Ravager Glass stands (function both respawns and kills)
-execute as @e[type=minecraft:marker,tag=RavagerGlass,tag=TutorialGlass,distance=..1000] run function exigence:game/other/ravager_glass/respawn_ravager_glass
+execute as @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,tag=RavagerGlass] run function exigence:game/other/ravager_glass/respawn_ravager_glass
 
 schedule clear exigence:tutorial/flow/private/ravager_loop
 
-execute as @n[type=minecraft:marker,scores={node.property.object_level=10},tag=BellNode,distance=..1000] at @s run function exigence:bell/node/deactivate
-execute as @n[type=minecraft:marker,scores={node.property.object_level=10},tag=BellNode,distance=..1000] at @s run function exigence:bell/node/activate
+execute as @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,scores={node.property.object_level=10},tag=BellNode] at @s run function exigence:bell/node/deactivate
 
 # Reset nodes
-execute as @e[type=minecraft:marker,scores={node.property.object_level=10},tag=BerryNode,distance=..1000] at @s run function exigence:botany/node/berry_bush_inactive
-execute as @e[type=minecraft:marker,scores={node.property.object_level=10},tag=AltarNode,distance=..1000] at @s run function exigence:altar/node/deactivate
+execute as @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,scores={node.property.object_level=10},tag=BerryNode] at @s run function exigence:botany/node/berry_bush_inactive
+execute as @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,scores={node.property.object_level=10},tag=AltarNode] at @s run function exigence:altar/node/deactivate
+tag @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,tag=DonutEmber] remove DonutEmber
 
 execute as @a[tag=Tutorial] run title @s actionbar ""
 
-execute at @e[type=minecraft:marker,tag=EchoNode,distance=..1000] run fill ~ ~1 ~ ~ ~1 ~ air replace light
+execute at @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,tag=EchoNode] run fill ~ ~1 ~ ~ ~1 ~ air replace light
