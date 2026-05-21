@@ -5,17 +5,11 @@ say Game Reset
 
 # ENTITY CLEANUP
 
-# Kill phantom item previews
-kill @e[type=minecraft:block_display,tag=ItemPreview]
-
 # Reset web ball related stuff
 function exigence:hub/item_shop/item/item_web_ball/reset
 
 scoreboard objectives setdisplay sidebar.team.dark_aqua
 scoreboard objectives setdisplay sidebar.team.dark_red
-
-# Reset vaults
-function exigence:vault/reset_vaults
 
 # Kill floating flames
 kill @e[type=minecraft:vex,tag=FloatingFlame]

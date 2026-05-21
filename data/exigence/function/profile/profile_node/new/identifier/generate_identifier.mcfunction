@@ -12,13 +12,13 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Get identifier
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3) Get identifier
 
 # Initialize array
 scoreboard players set #max_identifiers Temp 18
-data modify storage exigence:temp identifiers set value ["minecraft:coal","minecraft:resin_clump","minecraft:honeycomb","minecraft:glowstone_dust","minecraft:prismarine_shard"\
-,"minecraft:resin_brick","minecraft:redstone","minecraft:amethyst_shard","minecraft:iron_ingot","minecraft:copper_ingot","minecraft:gold_ingot","minecraft:netherite_ingot"\
-,"minecraft:emerald","minecraft:diamond","minecraft:lapis_lazuli","minecraft:quartz","minecraft:nautilus_shell","minecraft:prismarine_crystals"]
+data modify storage exigence:temp identifiers set value ["coal","resin_clump","honeycomb","glowstone_dust","prismarine_shard"\
+,"resin_brick","redstone","amethyst_shard","iron_ingot","copper_ingot","gold_ingot","netherite_ingot"\
+,"emerald","diamond","lapis_lazuli","quartz","nautilus_shell","prismarine_crystals"]
 data modify storage exigence:temp invalid_identifiers set value []
 
 # Get invalid identifiers from this player

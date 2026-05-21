@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) validate/validate
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) validate/validate
 
 # Default to VALID
 scoreboard players set #predungeon_validate_total Temp 1

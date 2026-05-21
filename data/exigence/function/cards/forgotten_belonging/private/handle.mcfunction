@@ -15,7 +15,7 @@ execute if score #random Random matches 4 run tp @s -323.5 12.5 -203.0
 tag @s add ForgottenBelonging
 
 # Give glow because we keep forgetting them
-scoreboard players set @s game.entity.glow_remaining 999999
+data modify entity @s Glowing set value true
 
 # Green team
 team join Botany @s

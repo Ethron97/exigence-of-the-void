@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) Moving marker B
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 4.. run say (D4) Moving marker B
 
 # Return and TP marker B if we hit a block
 execute unless block ^ ^ ^ air run tp @e[type=minecraft:marker,tag=PizzaB] ^ ^ ^-1

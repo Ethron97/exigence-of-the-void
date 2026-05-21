@@ -10,7 +10,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) INTERFACE load deck analyzer
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) INTERFACE load deck analyzer
 
 # Save the profile id for this load
 scoreboard players operation @s hub.entity.profile_id = #profile_id Temp

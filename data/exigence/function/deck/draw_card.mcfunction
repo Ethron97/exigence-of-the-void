@@ -1,5 +1,9 @@
 # Randomly select a card to draw from the deck.
 
+#====================================================================================================
+
+execute if score toggle.deck debug matches 1 if score debug.level debug matches 3.. run say (D3) Draw card
+
 # Get random entity in Deck
 #   Spellbound = card that has been Spellbind'd but hasn't been played yet
 execute as @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,scores={game.deck=1..},tag=Card,tag=!Played,tag=!Spellbound,sort=random,limit=1] run tag @s add Drawing

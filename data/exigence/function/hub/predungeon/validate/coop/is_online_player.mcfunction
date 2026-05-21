@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) validate/coop/is_online_player
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) validate/coop/is_online_player
 
 scoreboard players operation #compare career.player_id = @s profile.node.player_id
 

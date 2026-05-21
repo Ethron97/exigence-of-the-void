@@ -2,4 +2,4 @@
 say [Start game with 999999 menace block]
 
 # Functionality
-scoreboard players set menace.block game.dungeon 999999
+scoreboard players set menace.block game.dungeon.menace 999999

@@ -2,6 +2,7 @@
 
 ## CONSTRAINTS
 #   AS player
+#   AT location to drop
 #   Assumes slot has data (verify before calling this, to avoid unnecessary macro)
 
 ## INPUT

@@ -2,11 +2,5 @@ say [3 Aqua: Automatically pick up all items that are glowing]
 
 function exigence:resources/try_consume with storage exigence:resources
 
-# Reset players pickup count
-scoreboard players set @a[scores={dead=0},tag=ActivePlayer] Temp 0
-
 # Call sub-function as each glowing item
-execute if score #LastConsumeResult game.resources matches 1 as @e[type=minecraft:item,scores={game.entity.glow_remaining=1..}] at @s at @p[scores={dead=0},tag=ActivePlayer] run function exigence:cards/lightdrawn_spirits/private/pickup
-
-# Tellraw actual amount added
-execute if score #LastConsumeResult game.resources matches 1 as @a[scores={dead=0},tag=ActivePlayer] run tellraw @s [{text:"Picked up ",color:"gray"},{"score":{"name":"@s","objective":"Temp"},color:"yellow"},{text:" items*",color:"gray"}]
+execute if score #LastConsumeResult game.resources matches 1 run function exigence:cards/lightdrawn_spirits/private/trigger

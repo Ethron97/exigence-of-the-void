@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Entering profile selector
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3) Entering profile selector
 
 tag @s add ProfileSelecting
 

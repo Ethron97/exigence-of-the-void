@@ -1,5 +1,10 @@
 # Call as closest player to this mirror
 
+## CONSTRAINTS
+#   AS player
+
+#====================================================================================================
+
 execute store result score Player.X game.mirror.math run data get entity @s Pos[0] 1
 execute store result score Player.Y game.mirror.math run data get entity @s Pos[1] 1
 execute store result score Player.Z game.mirror.math run data get entity @s Pos[2] 1

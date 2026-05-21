@@ -1,6 +1,6 @@
-scoreboard players operation #temp Tutorial = tut.bossbar hub.tutorial
+scoreboard players operation #temp Temp = tut.bossbar hub.tutorial
 #scoreboard players operation #temp Tutorial /= 2 number
-execute store result storage exigence:temp bossbar int 1 run scoreboard players get #temp Tutorial
+execute store result storage exigence:temp bossbar int 1 run scoreboard players get #temp Temp
 function exigence:bossbar/tutorial/update_value with storage exigence:temp
 
 scoreboard players add tut.bossbar hub.tutorial 1

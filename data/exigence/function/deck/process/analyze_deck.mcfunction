@@ -8,7 +8,7 @@
 execute unless entity @n[type=minecraft:marker,tag=ProfileNode,distance=..0.01] run return run tellraw @a {text:"Analyze deck was not run on a profile node",color:"red"}
 #----------------------------------------------------------------------------------------------------
 
-execute if score debug.level debug matches 3.. run say (D3) Analyze deck (new)
+execute if score toggle.deck debug matches 1 if score debug.level debug matches 3.. run say (D3) Analyze deck (new)
 
 # Reset
 data modify storage exigence:hub too_many_copies set value false
@@ -31,6 +31,7 @@ execute as @a if score @s hub.player.room_id = #relay_to_room_id Temp \
 if predicate exigence:equipment/helmet/deck run scoreboard players add cards.void_discount deck.analysis 3
 
 # Process resource max modifiers first so we can detect if cards are un-playable
+function exigence:cards/dev_freesources/analyze/try_analyze
 function exigence:cards/roots_of_vitality/analyze/try_analyze
 function exigence:cards/heart_of_ferocity/analyze/try_analyze
 function exigence:cards/mind_of_divinity/analyze/try_analyze
@@ -191,6 +192,15 @@ function exigence:cards/spellbook/analyze/try_analyze
 function exigence:cards/conviction/analyze/try_analyze
 function exigence:cards/void_clone/analyze/try_analyze
 function exigence:cards/inner_fire/analyze/try_analyze
+
+#====================================================================================================
+# DEVELOPER
+#====================================================================================================
+
+function exigence:cards/dev_gib_coins/analyze/try_analyze
+function exigence:cards/dev_level_keys/analyze/try_analyze
+function exigence:cards/dev_no_menace/analyze/try_analyze
+function exigence:cards/dev_vault_rain/analyze/try_analyze
 
 #====================================================================================================
 # Copy information from scores to data

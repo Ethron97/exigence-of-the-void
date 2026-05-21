@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Player logged out
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3 Profile) Player logged out
 
 scoreboard players set @s profile.node.player_is_online 0
 

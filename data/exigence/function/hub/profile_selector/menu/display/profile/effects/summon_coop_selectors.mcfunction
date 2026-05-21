@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 4.. run say (D4) Summon coop selectors
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 4.. run say (D4) Summon coop selectors
 
 # Clear previous step details
 # Show step details

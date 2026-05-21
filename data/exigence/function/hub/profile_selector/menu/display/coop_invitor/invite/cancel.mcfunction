@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Cancel invite FULL (from player node)
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Cancel invite FULL (from player node)
 
 execute as @a if score @s career.player_id = #compare profile.node.player_id run tag @s add CancelledBy
 

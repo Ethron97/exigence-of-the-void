@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Get display
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Get display
 
 scoreboard players set #temp2 Temp 0
 

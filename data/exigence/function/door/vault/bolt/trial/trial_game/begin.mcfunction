@@ -8,6 +8,9 @@
 # DEBUG
 execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) Begin Bolt (Game)
 
+# Update status
+scoreboard players set game.bolt.trial trial.status 1
+
 # Call generic functions
 function exigence:door/vault/_trial/_begin_game
 

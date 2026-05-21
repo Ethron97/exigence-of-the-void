@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) Refresh
+
 # Call triage function to save chests depending on which room this is in
 function exigence:hub/deck_analyzer/refresh_button/calls/refresh/_case
 

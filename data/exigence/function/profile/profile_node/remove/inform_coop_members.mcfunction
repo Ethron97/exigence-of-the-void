@@ -5,7 +5,10 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Inform coop members
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3) Inform coop members
+
+data modify storage exigence:temp name set from entity @s data.custom_data.name
+data modify storage exigence:temp profile_identifier set from entity @s data.custom_data.profile_identifier
 
 # For each other profile node that is active, try to inform the relevant player.
 scoreboard players operation #player_left_id profile.node.player_id = @s profile.node.player_id

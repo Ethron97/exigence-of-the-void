@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Confirm coop creation
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Confirm coop creation
 
 # Reset invite-sent scores
 execute at @s run tag @p[tag=Interacting,distance=..16] remove InviteSent

@@ -5,4 +5,4 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) TODO
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) TODO

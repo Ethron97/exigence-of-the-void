@@ -1,8 +1,8 @@
-execute as @s run function exigence:player/give/coin
-execute as @s run function exigence:player/give/coin
-execute as @s run function exigence:player/give/coin
-execute as @s run function exigence:player/give/coin
-execute as @s run function exigence:player/give/coin
-execute as @s run function exigence:player/give/coin
-execute as @s run function exigence:player/give/coin
-execute as @s run function exigence:player/give/coin
+function exigence:player/give/coin
+function exigence:player/give/coin
+function exigence:player/give/coin
+function exigence:player/give/coin
+function exigence:player/give/coin
+function exigence:player/give/coin
+function exigence:player/give/coin
+function exigence:player/give/coin

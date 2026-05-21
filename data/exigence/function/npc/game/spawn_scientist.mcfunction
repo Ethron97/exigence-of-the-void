@@ -1,4 +1,5 @@
-say (D3) Spawn scientist
+execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. run say (D3 Game) Spawn scientist
+
 summon minecraft:villager -479.5 61.00 -196.5 {Offers:{Recipes:[]},Tags:["NPC_Scientist","Game","NPC","ETICK"],NoAI:true,CustomName:{text:"Scientist",color:"light_purple",italic:false},VillagerData:{profession:"minecraft:librarian",type:"minecraft:taiga"},Invulnerable:1b}
 
 #execute positioned -479.5 61.00 -196.5 run attribute @e[type=minecraft:villager,tag=NPC_Scientist,distance=..1,limit=1] movement_speed base set 0.0

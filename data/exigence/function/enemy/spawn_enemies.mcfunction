@@ -7,8 +7,8 @@
 
 # L# Tags are mostly deprecated, but are still needed to assign score since those can't be done in-line.
 
-# Just kill and respawn enemies so there is no weird tracking-shenanigans
-kill @e[type=#exigence:enemy,distance=..2000]
+# Make sure enemies are unloaded before spawning new ones (though this should be done at game unload)
+execute positioned -300 0 -300 as @e[type=#exigence:enemy,distance=..1000] run function exigence:misc/entity/unload_entity
 
 #====================================================================================================
 

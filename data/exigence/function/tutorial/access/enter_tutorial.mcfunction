@@ -31,6 +31,7 @@ spawnpoint @s 75 100 15
 tag @s add Tutorial
 team join Tutorial @s
 attribute @s minecraft:safe_fall_distance modifier remove exigence:safe_fall
+attribute @s minecraft:waypoint_receive_range base set 0
 
 # Initialize bossbar
 function exigence:bossbar/tutorial/initialize

@@ -1,4 +1,4 @@
-say (D3) spawn supplier
+execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. run say (D3 Game) spawn supplier
 
 # Summon villager supplier in his lil bedroom
 summon minecraft:villager -350.5 11.00 -231.5 {Offers:{Recipes:[]},Tags:["NPC_Supplier","Game","NPC","ETICK"],NoAI:true,CustomName:{text:"Supplier",color:"light_purple",italic:false},VillagerData:{profession:"minecraft:weaponsmith",type:"minecraft:desert"},Invulnerable:1b}

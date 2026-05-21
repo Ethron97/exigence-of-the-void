@@ -6,6 +6,8 @@
 
 #====================================================================================================
 
+execute if score toggle.echo debug matches 1 if score debug.level debug matches 4.. run say (D4 Echo) Reset
+
 # Team
 execute at @s run team join Echo @n[type=block_display,tag=EchoDebugDisplay,distance=..3]
 
@@ -20,10 +22,6 @@ fill ~ ~1 ~ ~ ~1 ~ air replace light
 # Scores
 scoreboard players set @s node.ember.embers_to_drop 0
 scoreboard players reset @s game.node.echo.id
-
-# Waypoint
-waypoint modify @s style reset
-attribute @s waypoint_transmit_range base set 0
 
 # Add PhantomNode tag if "active" (on active level)
 execute if score @s node.property.object_level <= game.difficulty game.state run tag @s add PhantomNode

@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Load player related misc as primary player
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3) Load player related misc as primary player
 
 scoreboard players set @s game.player.player_number 1
 

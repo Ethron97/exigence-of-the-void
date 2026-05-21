@@ -8,18 +8,18 @@
 
 #====================================================================================================
 
-$execute if score debug.level debug matches 3.. run say (D3) Refresh from LOCKER ROOM room $(profile_id) $(locker_room_id)
+$execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) Refresh from LOCKER ROOM room $(profile_id) $(locker_room_id)
 
 #====================================================================================================
 ## SAVE CHESTS FOR REFRESH
 # Chests -> data
 #   OUTPUTS chests_saved if there was data to save
-$execute in exigence:hub positioned 0 100 0 at @n[x=-29,y=197,z=6,dx=24,dy=8,dz=24,type=minecraft:marker,scores={hub.locker_room_id=$(locker_room_id)},tag=LockerRoomNode] \
+$execute in exigence:hub at @n[x=-29,y=197,z=6,dx=24,dy=8,dz=24,type=minecraft:marker,scores={hub.locker_room_id=$(locker_room_id)},tag=LockerRoomNode] \
 run function exigence:hub/locker_room/load/save_chests_no_remove
 
 # Data -> profile chest
 scoreboard players set #remove_tag Temp 0
 $execute if score #chests_saved Temp matches 1 \
-in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,scores={profile.node.profile_id=$(profile_id)},tag=ProfileNode,limit=1]\
+in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,scores={profile.node.profile_id=$(profile_id)},tag=ProfileNode,limit=1] \
 run function exigence:profile/profile_node/save/try_data_to_chest
 #====================================================================================================

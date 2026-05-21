@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 4.. run say (D4) Summon page flipper left
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 4.. run say (D4) Summon page flipper left
 
 # Summon display
 function exigence:hub/profile_selector/menu/display/coop_invitor/load_page_flipper with entity @s item.components."minecraft:custom_data"

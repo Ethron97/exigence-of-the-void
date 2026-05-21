@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 2.. run say (D2) Load chests (profile selector)
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 2.. run say (D2) Load chests (profile selector)
 
 # Make sure chests are placed
 function exigence:hub/profile_selector/load/place_chests

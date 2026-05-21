@@ -42,6 +42,7 @@ scoreboard players add @s[type=warden] game.warden.awareness 0
 # Initialize scores
 scoreboard players add @s[type=minecraft:ravager] game.ravager.eating_cookie 0
 scoreboard players add @s[type=minecraft:ravager] game.entity.ambient_noise_cooldown 0
+scoreboard players add @s[type=minecraft:warden] game.warden.sniff_cooldown 0
 scoreboard players add @s game.enemy.stun_timer 0
 
 # Add etick to wardens/ravagers

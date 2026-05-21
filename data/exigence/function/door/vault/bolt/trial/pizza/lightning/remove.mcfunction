@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute unless score @s trial.object.pizza_id matches 1.. run tellraw @a {text:"No pizza id?",color:"red"}
+
 # Store id
 scoreboard players operation #compare trial.object.pizza_id = @s trial.object.pizza_id
 

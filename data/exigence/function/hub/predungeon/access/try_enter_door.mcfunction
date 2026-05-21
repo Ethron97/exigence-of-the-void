@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Try enter PRE DUNGEON
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Try enter PRE DUNGEON
 
 # Make sure player has profile loaded
 execute unless score @s profile.player.profile_id matches 1.. run return run function exigence:hub/predungeon/access/fail/no_profile

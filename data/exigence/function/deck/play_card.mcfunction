@@ -3,8 +3,7 @@
 
 #====================================================================================================
 
-# Debug
-#$say Playing card $(card_name)
+$execute if score toggle.deck debug matches 1 if score debug.level debug matches 3.. run say (D3) Playing card $(card_name)
 
 # Get costs
 #   Default method (non spellslinging)

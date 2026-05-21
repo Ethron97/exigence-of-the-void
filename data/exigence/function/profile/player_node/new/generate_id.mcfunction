@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#say Generate player id
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3 Profile) Generate player id
 
 # Generate random 4 digit number
 execute store result score #sequence career.player_id run random value 1000..9999

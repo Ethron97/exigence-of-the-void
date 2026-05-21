@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 4.. run say (D4) Open slot
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 4.. run say (D4 Menu) Open slot
 
 tag @s remove Closed
 tag @s add Open

@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 4.. run say (D4) Unhover (player_head)
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 4.. run say (D4) Unhover (player_head)
 
 # Hide player name
 execute at @s run function exigence:hub/profile_selector/menu/display/player_head/calls/private/remove_all_details with entity @s item.components."minecraft:custom_data"

@@ -5,6 +5,8 @@
 #   IN minecraft:overworld
 
 #====================================================================================================
+execute unless dimension minecraft:overworld run return run say (C) game_win not in overworld
+#----------------------------------------------------------------------------------------------------
 
 say Victory!
 
@@ -46,7 +48,7 @@ execute unless entity @a[scores={career.settings.echo_win_tracking=0},tag=Active
 #====================================================================================================
 
 # Turn off the game
-function exigence:game/game_off
+execute in minecraft:overworld run function exigence:game/game_off
 
 # Schedule coin convert so its after the victory sound
 #   Player scores were gathered from the access/leave function

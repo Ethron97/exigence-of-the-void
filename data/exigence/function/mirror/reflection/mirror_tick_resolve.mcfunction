@@ -32,7 +32,7 @@ scoreboard players operation Reflection.Angle game.mirror.math += Angle.Differen
 # Store for macro tp call
 execute store result storage exigence:mirror rotation float 0.01 run scoreboard players get Reflection.Angle game.mirror.math
 
-# =======================================================================================================================
+#====================================================================================================
 # Get player looking, reflect, load to reflection armorstand
 scoreboard players operation LookingAngle.Difference game.mirror.math = Mirror.Node.Angle game.mirror.math
 scoreboard players operation LookingAngle.Difference game.mirror.math -= Player.Looking.Angle game.mirror.math
@@ -42,7 +42,7 @@ scoreboard players operation Reflection.Looking.Angle game.mirror.math += Lookin
 
 # Pose gets updated on tp
 
-# =======================================================================================================================
+#====================================================================================================
 # Get distance between player and mirrornode
 #   Player position already retrieved before this function
 execute store result score Node.X game.mirror.math run data get entity @s Pos[0] 100
@@ -65,6 +65,6 @@ execute store result storage exigence:mirror distance double 0.01 run scoreboard
 scoreboard players operation in0.z nnmath_vec *= #-1 nnmath_vec
 execute store result storage exigence:mirror height double 0.01 run scoreboard players get in0.z nnmath_vec
 
-# =======================================================================================================================
+#====================================================================================================
 # Update reflection position / pose / equipment
 execute at @s as @e[type=minecraft:mannequin,tag=Reflection,distance=..32] if score @s game.entity.player_number = #compare game.player.player_number run function exigence:mirror/tp_reflection with storage exigence:mirror

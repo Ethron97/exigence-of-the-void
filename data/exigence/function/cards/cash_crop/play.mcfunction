@@ -13,5 +13,5 @@ data modify storage exigence:treasure source set value 'cash_crop'
 function exigence:treasure/queue/add_to_queue with storage exigence:treasure
 
 # Tellraw actual amount added
-tellraw @a [{text:"-",color:"gray"},{"score":{"name":"#highest_berries","objective":"Temp"},color:"gray"},{text:" 🍒",color:"dark_green"}\
-,{text:": +",color:"gray"},{"score":{"name":"#cash","objective":"Temp"},color:"gray"},{text:" 🍪 Treasure",color:"gold"}]
+tellraw @a [{text:" └ -",color:"gray"},{"score":{"name":"#highest_berries","objective":"Temp"},color:"gray"},{text:" 🍒",color:"dark_green"}\
+,{text:" ->",color:"yellow"},{text:" +",color:"gray"},{"score":{"name":"#cash","objective":"Temp"},color:"gray"},{text:" 🍪 Treasure",color:"gold"}]

@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-data merge entity @s {width:2.8,height:1.5,Tags:["AltarInteract"],response:1b}
+data merge entity @s {width:2.8,height:1.5,Tags:["AltarInteract","ETICK"],response:1b}
 
 # Assign id
 scoreboard players operation @s game.interaction.node.id = #compare node.id

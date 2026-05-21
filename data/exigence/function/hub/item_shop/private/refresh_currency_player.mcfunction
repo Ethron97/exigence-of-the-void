@@ -6,6 +6,8 @@
 
 #====================================================================================================
 
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Refresh currency player
+
 # Save old value
 scoreboard players operation #old_amount shop.player.money_to_spend = @s shop.player.money_to_spend
 scoreboard players operation #old_amount shop.player.research_to_spend = @s shop.player.research_to_spend

@@ -1,6 +1,7 @@
 # Handle the effects of drawing a specific card
 
-# AS Card ArmorStand
+## CONSTRAINTS
+#   AS Card (ArmorStand)
 
 #====================================================================================================
 

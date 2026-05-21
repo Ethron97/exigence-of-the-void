@@ -15,6 +15,9 @@ execute at @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:item,tag=EchoS
 # Ambient tinkle around the Echo Shard
 scoreboard players remove @a[x=12,y=97,z=-80,dx=230,dy=100,dz=250,scores={dead=0,game.player.sound_ping.echo_cooldown=1..},tag=Tutorial] game.player.sound_ping.echo_cooldown 1
 
+# Waypoint update
+execute as @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:armor_stand,tag=Waypoint] run function exigence:game/other/waypoint/update_waypoint
+
 execute as @a[x=12,y=97,z=-80,dx=230,dy=100,dz=250,scores={dead=0,game.player.sound_ping.echo_cooldown=0},tag=Tutorial] at @s run function exigence:player/effects/detection/echo/ping_echo
 # Call every second also, to catch cases where player is moving towards echo but the sound delay is too long
 execute if score seconds.cooldown tick_counter matches 11 as @a[x=12,y=97,z=-80,dx=230,dy=100,dz=250,scores={dead=0,game.player.sound_ping.echo_cooldown=1..},tag=Tutorial] at @s run function exigence:player/effects/detection/echo/ping_echo

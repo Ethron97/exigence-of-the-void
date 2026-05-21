@@ -11,6 +11,7 @@ tag @s remove Tutorial
 team leave @s
 effect clear @s
 attribute @s minecraft:safe_fall_distance modifier add exigence:safe_fall 100 add_value
+attribute @s minecraft:waypoint_receive_range base set 0
 title @s actionbar ""
 # Disable triggers
 scoreboard players reset @s SkipSection

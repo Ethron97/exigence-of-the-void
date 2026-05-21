@@ -9,7 +9,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score debug.level debug matches 4.. run say (D4) Unhover (generic unhover)
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 4.. run say (D4 Menu) Unhover (generic unhover)
 
 # Remove Glow
 data modify entity @s Glowing set value false

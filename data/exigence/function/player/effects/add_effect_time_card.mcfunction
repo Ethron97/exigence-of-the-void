@@ -1,7 +1,7 @@
 # Macro
 
 # WITH {effect:"",duration:}
-# Valid effects: regeneration, jump, beastsense, invisibility, detectthoughts, glimmer, flicker, circulation
+# Valid effects: regen, jump, beastsense, invisibility, detectthoughts, glimmer, flicker, circulation
 #   NOT speed
 
 ## OPTIONAL
@@ -23,6 +23,9 @@ execute if entity @a[scores={dead=0,game.player.heighten=1..},tag=ActivePlayer,t
 # Store given duration in temp variable
 $scoreboard players set et.BaseTime game.effect_temp $(duration)
 scoreboard players set et.SetTime game.effect_temp 0
+
+# Tellraw if heighten
+$execute as @a[scores={dead=0,game.player.calc_heighten=2..},tag=ActivePlayer,tag=CardEffecting] run tellraw @s [{text:" └─ [Heighten]: Duration of $(effect) multiplied by ",color:"gray"},{score:{name:"@s",objective:"game.player.calc_heighten"},color:"yellow"}]
 
 # Update in-game player effects
 $execute as @a[scores={dead=0},tag=ActivePlayer,tag=CardEffecting] run function exigence:player/effects/private/update_effect/$(effect)

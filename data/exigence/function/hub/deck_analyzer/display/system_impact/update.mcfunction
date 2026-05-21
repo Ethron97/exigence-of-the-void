@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) UPDATE SYSTEM IMPACT
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) UPDATE SYSTEM IMPACT
 
 ## VALUES
 # Get total

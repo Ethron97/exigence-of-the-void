@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 5.. run say (D5) predungeon menu tick
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 5.. run say (D5) predungeon menu tick
 
 # Swap Hover/OldHover tags
 execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=Hover,distance=..16] run function exigence:menu/menu_tick_tag_swap

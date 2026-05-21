@@ -5,6 +5,6 @@ $data modify entity @s Item.components."minecraft:custom_model_data".strings set
 
 $data modify entity @s Item.components."minecraft:lore" append value [$(uncommon_stars),{text:"Instant Void Card",italic:false,color:"white"}]
 data modify entity @s Item.components."minecraft:lore" append value [{text:""}]
-data modify entity @s Item.components."minecraft:lore" append value [{text:"Spawn a cake on the echo shard",italic:false,color:"gray"}]
+data modify entity @s Item.components."minecraft:lore" append value [{text:"Spawn a cake on each ",italic:false,color:"gray"},{text:"Echo Shard",color:"blue"}]
 #data modify entity @s Item.components."minecraft:lore" append value [{text:"Line 2",italic:false,color:"gray"}]
 #data modify entity @s Item.components."minecraft:lore" append value [{text:"Line 3",italic:false,color:"gray"}]

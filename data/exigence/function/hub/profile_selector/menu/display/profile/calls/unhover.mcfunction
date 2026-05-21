@@ -9,7 +9,7 @@
 #====================================================================================================
 
 #$say Unhover (profile) (profile_selector:$(profile_selector_id) slot:$(slot_id))
-execute if score debug.level debug matches 4.. run say (D4) Unhover (profile)
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 4.. run say (D4) Unhover (profile)
 
 # Remove item details
 function exigence:hub/profile_selector/menu/display/profile/calls/private/remove_hover_details with entity @s item.components."minecraft:custom_data"

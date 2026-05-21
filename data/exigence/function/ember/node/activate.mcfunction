@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3) I am activate
+execute if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3 Echo) I am activate
 
 tag @s add Active
 execute at @s run team join ActiveEcho @n[type=minecraft:block_display,tag=EchoDebugDisplay,distance=..3]
@@ -42,12 +42,18 @@ scoreboard players operation @s node.ember.embers_to_drop > 5 number
 # Summon echo:
 execute at @s run function exigence:ember/node/summon_echo_item
 
+# DISABLED WHILE WE TEST LOCATOR BAR
 # Get compass data
-function exigence:ember/node/create_echo_compass with storage exigence:echo_selection
+#function exigence:ember/node/create_echo_compass with storage exigence:echo_selection
 # Give compasses to predungeon players
-execute as @a[tag=Predungeon] run function exigence:player/give/compass with storage exigence:compass
+#execute as @a[tag=Predungeon] run function exigence:player/give/compass with storage exigence:compass
 
 #execute as @s run tellraw @a [{text:"Embers to drop: "},{"score":{"name":"@s","objective":"node.ember.embers_to_drop"}}]
 
 # Increase "EchosRequired" so we know how many echos the player needs to escape
-scoreboard players add .echos_required game.dungeon.echo 1
+scoreboard players add echos.total game.dungeon.echo 1
+
+
+# DEBUGGING
+# Make sure that this echo node has all air around it
+execute at @s if function exigence:ember/setup/detect_nonair run tellraw @a [{text:"(WARNING) Echo node found with non-air in its 3x3",color:"red"}]

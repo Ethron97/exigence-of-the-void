@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.deck debug matches 1 if score debug.level debug matches 3.. run say (D3) Update processed stats
+
 # SWITCH
 execute if score @s deck.card.rarity matches 1 if entity @s[tag=!IsVoid] run return run scoreboard players add @a[tag=ActivePlayer] profile.data.deck.cr.cards_processed_common 1
 execute if score @s deck.card.rarity matches 2 if entity @s[tag=!IsVoid] run return run scoreboard players add @a[tag=ActivePlayer] profile.data.deck.cr.cards_processed_uncommon 1

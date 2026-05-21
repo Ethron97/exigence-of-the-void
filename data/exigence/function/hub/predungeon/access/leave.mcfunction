@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Leaving Predungeon
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Leaving Predungeon
 
 tag @s remove Predungeon
 team leave @s

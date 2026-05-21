@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Accept - invited
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Accept - invited
 
 tag @s add Joined
 

@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) Load prebutton
+
 # Summon main button
 execute at @n[type=minecraft:marker,tag=DoorSlotMarker0,distance=..5] positioned ~ ~ ~-0.01 run function exigence:hub/predungeon/menu/display/pre_button/summon_main_button
 

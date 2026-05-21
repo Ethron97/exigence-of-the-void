@@ -11,7 +11,7 @@
 
 #====================================================================================================
 
-$execute if score debug.level debug matches 3.. run say (D3) Create new slot:$(slot_id) profile_selector:$(profile_selector_id) player:$(player_id)
+$execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Create new slot:$(slot_id) profile_selector:$(profile_selector_id) player:$(player_id)
 
 # Add local tag (to prevent overlapping effects from the "select" function)
 tag @s add Creating

@@ -6,8 +6,8 @@
 #====================================================================================================
 
 # If at exit but don't have enough echo fragments, message
-execute if score .echos_required game.dungeon.echo matches 2.. if score @s game.player.echo_fragments matches 1.. if score game.all_echos_found game.state matches 0 run title @s actionbar {text:"You must collect all the Echo Fragments to escape!",color:"red"}
-execute if score .echos_required game.dungeon.echo matches 1 if score game.all_echos_found game.state matches 0 run title @s actionbar {text:"You must collect the Echo Shard to escape!",color:"red"}
+execute if score echos.total game.dungeon.echo matches 2.. if score @s game.player.echo_fragments matches 1.. if score game.all_echos_found game.state matches 0 run title @s actionbar {text:"You must collect all the Echo Fragments to escape!",color:"red"}
+execute if score echos.total game.dungeon.echo matches 1 if score game.all_echos_found game.state matches 0 run title @s actionbar {text:"You must collect the Echo Shard to escape!",color:"red"}
 
 # If at the exit with enough fragments, escape
 execute if score @s game.player.echo_fragments matches 1.. if score game.all_echos_found game.state matches 1 run return run function exigence:game/access/escape

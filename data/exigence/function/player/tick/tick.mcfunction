@@ -19,19 +19,7 @@ execute if score @s game.player.used.snowball matches 1.. run function exigence:
 # TODO move this to E TICK
 execute if entity @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=SnowballMarker,limit=1] run function exigence:hub/item_shop/item/item_web_ball/private/tick_loop
 
-# Check for right click on items
-execute if score @s CarrotOnStick matches 1.. run function exigence:player/use_item/use_item
-
-# Clear extra pot breakers
-execute store result score #temp Temp run clear @s wooden_sword 0
-execute if score #temp Temp matches 2.. run clear @s wooden_sword 1
-
-# Sculk step
-scoreboard players remove @s[scores={game.player.sculk_step_cooldown=1..}] game.player.sculk_step_cooldown 1
-# Reset advanamcent once it runs out
-advancement revoke @s[advancements={exigence:listener/step_on_sculk=true},scores={game.player.sculk_step_cooldown=0}] only exigence:listener/step_on_sculk
-
-# Resoure display
+# Resource display
 execute if score game.max_menace game.state matches 0 run function exigence:player/display/resource_bar/tick
 
 # Generic time stats

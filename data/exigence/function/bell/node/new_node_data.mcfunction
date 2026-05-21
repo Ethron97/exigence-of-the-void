@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS new bell node
 
-# ===============================================================================================================
+#====================================================================================================
 
 # Give name and tags
 data modify entity @s CustomName set value {text:"BellNode",color:"yellow",italic:false}

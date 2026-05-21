@@ -8,20 +8,20 @@
 
 # Summon reflection
 execute if score @s game.player.player_number matches 1 \
-run summon minecraft:mannequin 534.5 0.0 502.5 {Tags:["Reflection","NewMirrorEntity","MirrorEntity"],Rotation:[90,0],immovable:true,Invulnerable:true}
+run summon minecraft:mannequin 534.5 0.0 502.5 {Tags:["Reflection","NewReflection","PlayerBound"],Rotation:[90,0],immovable:true,Invulnerable:true}
 execute if score @s game.player.player_number matches 2 \
-run summon minecraft:mannequin 534.5 0.0 503.5 {Tags:["Reflection","NewMirrorEntity","MirrorEntity"],Rotation:[90,0],immovable:true,Invulnerable:true}
+run summon minecraft:mannequin 534.5 0.0 503.5 {Tags:["Reflection","NewReflection","PlayerBound"],Rotation:[90,0],immovable:true,Invulnerable:true}
 execute if score @s game.player.player_number matches 3 \
-run summon minecraft:mannequin 534.5 0.0 504.5 {Tags:["Reflection","NewMirrorEntity","MirrorEntity"],Rotation:[90,0],immovable:true,Invulnerable:true}
+run summon minecraft:mannequin 534.5 0.0 504.5 {Tags:["Reflection","NewReflection","PlayerBound"],Rotation:[90,0],immovable:true,Invulnerable:true}
 execute if score @s game.player.player_number matches 4 \
-run summon minecraft:mannequin 534.5 0.0 505.5 {Tags:["Reflection","NewMirrorEntity","MirrorEntity"],Rotation:[90,0],immovable:true,Invulnerable:true}
+run summon minecraft:mannequin 534.5 0.0 505.5 {Tags:["Reflection","NewReflection","PlayerBound"],Rotation:[90,0],immovable:true,Invulnerable:true}
 
 # Copy player number
-scoreboard players operation @e[x=534,y=0,z=502,dx=0,dy=0,dz=3,type=minecraft:mannequin,tag=NewMirrorEntity] game.entity.player_number = @s game.player.player_number
+scoreboard players operation @e[x=534,y=0,z=502,dx=0,dy=0,dz=3,type=minecraft:mannequin,tag=NewReflection] game.entity.player_number = @s game.player.player_number
 
 # Copy player head to profile
 function exigence:player/get/player_head_data
-data modify entity @e[x=534,y=0,z=502,dx=0,dy=0,dz=3,type=minecraft:mannequin,tag=NewMirrorEntity,limit=1] profile set from storage exigence:temp player_head.components."minecraft:profile"
+data modify entity @e[x=534,y=0,z=502,dx=0,dy=0,dz=3,type=minecraft:mannequin,tag=NewReflection,limit=1] profile set from storage exigence:temp player_head.components."minecraft:profile"
 
 # Remove local tag
-tag @e[x=534,y=0,z=502,dx=0,dy=0,dz=3,type=minecraft:mannequin,tag=NewMirrorEntity] remove NewMirrorEntity
+tag @e[x=534,y=0,z=502,dx=0,dy=0,dz=3,type=minecraft:mannequin,tag=NewReflection] remove NewReflection

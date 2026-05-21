@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 2.. run say (D2) Load chests (locker room)
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 2.. run say (D2 Hub) Load chests (locker room)
 
 # Make sure chests are placed
 function exigence:hub/locker_room/load/place_chests

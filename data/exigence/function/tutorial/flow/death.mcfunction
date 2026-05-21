@@ -9,6 +9,9 @@
 execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Tutorial Deathed
 #effect give @s night_vision infinite 0 true
 
+# Reset waypoint receive
+attribute @s minecraft:waypoint_receive_range base set 0
+
 # Reset scores
 function exigence:scoreboard/generated_functions/reset_on_enter
 

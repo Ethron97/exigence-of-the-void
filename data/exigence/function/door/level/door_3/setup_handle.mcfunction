@@ -50,7 +50,7 @@ transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],transla
 
 #====================================================================================================
 # Summon new interaction
-summon interaction ~ ~-2 ~ {Tags:["DoorHandle","NewDoorHandle","Door3Handle"],response:1b,width:2,height:4}
+summon interaction ~ ~-2 ~ {Tags:["DoorHandle","NewDoorHandle","Door3Handle","ETICK"],response:1b,width:2,height:4}
 
 # Remove local tag
 tag @e[tag=NewDoorHandle,distance=..10] remove NewDoorHandle

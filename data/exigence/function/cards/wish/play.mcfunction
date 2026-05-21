@@ -17,20 +17,20 @@ execute if score #random Random matches 12 as @a[scores={dead=0},tag=ActivePlaye
 execute if score #random Random matches 13 as @a[scores={dead=0},tag=ActivePlayer] run function exigence:player/effects/speed/add_effect_time_card {level:2,duration:6000}
 execute if score #random Random matches 14 as @a[scores={dead=0},tag=ActivePlayer] run function exigence:player/effects/speed/add_effect_time_card {level:3,duration:6000}
 
-execute if score #random Random matches 1 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:"Wish granted... +5 minutes of ",color:"gray"},{text:"Beastsense",color:"yellow"}]
-execute if score #random Random matches 2 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:"Wish granted... +5 minutes of ",color:"gray"},{text:"Circulation",color:"yellow"}]
-execute if score #random Random matches 3 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:"Wish granted... +5 minutes of ",color:"gray"},{text:"Clairvoyance",color:"yellow"}]
-execute if score #random Random matches 4 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:"Wish granted... +5 minutes of ",color:"gray"},{text:"Detect Thoughts",color:"yellow"}]
-execute if score #random Random matches 5 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:"Wish granted... +5 minutes of ",color:"gray"},{text:"Far Step",color:"yellow"}]
-execute if score #random Random matches 6 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:"Wish granted... +5 minutes of ",color:"gray"},{text:"Flicker",color:"yellow"}]
-execute if score #random Random matches 7 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:"Wish granted... +5 minutes of ",color:"gray"},{text:"Glimmer",color:"yellow"}]
-execute if score #random Random matches 8 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:"Wish granted... +5 minutes of ",color:"gray"},{text:"Regeneration",color:"yellow"}]
-execute if score #random Random matches 9 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:"Wish granted... +5 minutes of ",color:"gray"},{text:"Invisibility",color:"yellow"}]
-execute if score #random Random matches 10 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:"Wish granted... +5 minutes of ",color:"gray"},{text:"Jump II",color:"yellow"}]
-execute if score #random Random matches 11 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:"Wish granted... +5 minutes of ",color:"gray"},{text:"Jump IV",color:"yellow"}]
-execute if score #random Random matches 12 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:"Wish granted... +5 minutes of ",color:"gray"},{text:"Speed I",color:"yellow"}]
-execute if score #random Random matches 13 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:"Wish granted... +5 minutes of ",color:"gray"},{text:"Speed II",color:"yellow"}]
-execute if score #random Random matches 14 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:"Wish granted... +5 minutes of ",color:"gray"},{text:"Speed III",color:"yellow"}]
+execute if score #random Random matches 1 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:" ├ Wish granted... +5 minutes of ",color:"gray"},{text:"Beastsense",color:"yellow"}]
+execute if score #random Random matches 2 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:" ├ Wish granted... +5 minutes of ",color:"gray"},{text:"Circulation",color:"yellow"}]
+execute if score #random Random matches 3 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:" ├ Wish granted... +5 minutes of ",color:"gray"},{text:"Clairvoyance",color:"yellow"}]
+execute if score #random Random matches 4 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:" ├ Wish granted... +5 minutes of ",color:"gray"},{text:"Detect Thoughts",color:"yellow"}]
+execute if score #random Random matches 5 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:" ├ Wish granted... +5 minutes of ",color:"gray"},{text:"Far Step",color:"yellow"}]
+execute if score #random Random matches 6 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:" ├ Wish granted... +5 minutes of ",color:"gray"},{text:"Flicker",color:"yellow"}]
+execute if score #random Random matches 7 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:" ├ Wish granted... +5 minutes of ",color:"gray"},{text:"Glimmer",color:"yellow"}]
+execute if score #random Random matches 8 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:" ├ Wish granted... +5 minutes of ",color:"gray"},{text:"Regeneration",color:"yellow"}]
+execute if score #random Random matches 9 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:" ├ Wish granted... +5 minutes of ",color:"gray"},{text:"Invisibility",color:"yellow"}]
+execute if score #random Random matches 10 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:" ├ Wish granted... +5 minutes of ",color:"gray"},{text:"Jump II",color:"yellow"}]
+execute if score #random Random matches 11 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:" ├ Wish granted... +5 minutes of ",color:"gray"},{text:"Jump IV",color:"yellow"}]
+execute if score #random Random matches 12 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:" ├ Wish granted... +5 minutes of ",color:"gray"},{text:"Speed I",color:"yellow"}]
+execute if score #random Random matches 13 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:" ├ Wish granted... +5 minutes of ",color:"gray"},{text:"Speed II",color:"yellow"}]
+execute if score #random Random matches 14 run tellraw @a[scores={dead=0},tag=ActivePlayer] [{text:" ├ Wish granted... +5 minutes of ",color:"gray"},{text:"Speed III",color:"yellow"}]
 
 # Reduce a random resource cap by 2
 execute store result score #random Random run random value 1..3
@@ -38,14 +38,14 @@ execute store result score #random Random run random value 1..3
 execute if score #random Random matches 1 run scoreboard players remove green.max game.resources 2
 scoreboard players operation green.max game.resources > 0 number
 scoreboard players operation green.current game.resources < green.max game.resources
-execute if score #random Random matches 1 run tellraw @a[tag=ActivePlayer] [{text:"Reduced resource maximums by ",color:"red"},{text:"❂❂",color:"dark_green"}]
+execute if score #random Random matches 1 run tellraw @a[tag=ActivePlayer] [{text:" └ ",color:"gray"},{text:"Reduced resource maximums by ",color:"red"},{text:"❂❂",color:"dark_green"}]
 
 execute if score #random Random matches 2 run scoreboard players remove red.max game.resources 2
 scoreboard players operation red.max game.resources > 0 number
 scoreboard players operation red.current game.resources < red.max game.resources
-execute if score #random Random matches 2 run tellraw @a[tag=ActivePlayer] [{text:"Reduced resource maximums by ",color:"red"},{text:"❂❂",color:"dark_red"}]
+execute if score #random Random matches 2 run tellraw @a[tag=ActivePlayer] [{text:" └ ",color:"gray"},{text:"Reduced resource maximums by ",color:"red"},{text:"❂❂",color:"dark_red"}]
 
 execute if score #random Random matches 3 run scoreboard players remove aqua.max game.resources 2
 scoreboard players operation aqua.max game.resources > 0 number
 scoreboard players operation aqua.current game.resources < aqua.max game.resources
-execute if score #random Random matches 3 run tellraw @a[tag=ActivePlayer] [{text:"Reduced resource maximums by ",color:"red"},{text:"❂❂",color:"aqua"}]
+execute if score #random Random matches 3 run tellraw @a[tag=ActivePlayer] [{text:" └ ",color:"gray"},{text:"Reduced resource maximums by ",color:"red"},{text:"❂❂",color:"aqua"}]

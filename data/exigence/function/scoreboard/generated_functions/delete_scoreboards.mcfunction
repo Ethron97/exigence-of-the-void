@@ -40,6 +40,8 @@ scoreboard objectives remove game.dungeon
 scoreboard objectives remove game.dungeon.echo
 scoreboard objectives remove game.dungeon.setup
 scoreboard objectives remove game.dungeon.temp
+scoreboard objectives remove game.dungeon.hazard
+scoreboard objectives remove game.dungeon.menace
 scoreboard objectives remove game.effect_temp
 scoreboard objectives remove game.endermite.timer
 scoreboard objectives remove game.enemy.stun_timer
@@ -147,6 +149,7 @@ scoreboard objectives remove game.player.used.snowball
 scoreboard objectives remove game.player.vault_code
 scoreboard objectives remove game.ravager.detect_thoughts
 scoreboard objectives remove game.ravager.eating_cookie
+scoreboard objectives remove game.warden.sniff_cooldown
 scoreboard objectives remove game.resources
 scoreboard objectives remove game.setup.level_3_stairs
 scoreboard objectives remove game.state
@@ -1040,3 +1043,5 @@ scoreboard objectives remove game.player.player_number
 scoreboard objectives remove trial.timer.cooldown
 scoreboard objectives remove trial.timer
 scoreboard objectives remove trial.object.timer
+scoreboard objectives remove game.entity.waypoint_id
+scoreboard objectives remove trial.status

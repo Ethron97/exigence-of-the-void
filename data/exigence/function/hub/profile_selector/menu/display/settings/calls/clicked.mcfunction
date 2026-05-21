@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Clicked settings
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Clicked settings
 
 # Shift click to show the description
 execute at @s if entity @p[tag=ProfileSelecting,tag=Interacting,distance=..16,predicate=exigence:player/sneaking] at @n[type=minecraft:marker,tag=ProfileSelectorNode,distance=..16] positioned ~5.49 ~3.2 ~ run function exigence:hub/profile_selector/menu/display/settings/calls/private/show_description with entity @s item.components."minecraft:custom_data"

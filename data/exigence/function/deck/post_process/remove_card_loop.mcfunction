@@ -8,7 +8,7 @@
 #====================================================================================================
 
 # DEBUG
-#$say (D4) Check card loop remove card$(index)
+$execute if score toggle.deck debug matches 1 if score debug.level debug matches 4.. run say (D4) Check card loop remove card$(index)
 
 # Return if index is too high
 $execute if score 27 number matches ..$(index) run return 1

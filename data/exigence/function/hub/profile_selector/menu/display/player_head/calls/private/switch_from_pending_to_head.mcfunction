@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Switch from pending to head
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Switch from pending to head
 
 # Kill pending title
 execute at @s run kill @n[type=minecraft:text_display,tag=PendingTitle,distance=..5]

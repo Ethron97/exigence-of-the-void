@@ -13,3 +13,4 @@ execute if score aqua.cost game.resources matches 6 run data modify storage exig
 
 # Update scores
 scoreboard players operation @a[tag=ActivePlayer] profile.data.resources.cr.consumed_aqua += aqua.cost game.resources
+scoreboard players operation aqua.total_consumed game.resources += aqua.cost game.resources

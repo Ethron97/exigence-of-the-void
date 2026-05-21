@@ -10,7 +10,7 @@
 
 #====================================================================================================
 
-$execute if score debug.level debug matches 3.. run say (D3) Try load coop player list $(player_index) $(coop_profile_id)
+$execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Try load coop player list $(player_index) $(coop_profile_id)
 
 data remove storage exigence:temp profile
 

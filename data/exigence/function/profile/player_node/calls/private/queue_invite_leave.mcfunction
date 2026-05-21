@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say Queue invite leave
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Queue invite leave
 
 # Set queue score
 scoreboard players set @s player.node.queue.invite_leave 1

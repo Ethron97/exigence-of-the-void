@@ -9,13 +9,13 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Clicked refresh button
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) Clicked refresh button
 
 # Increase cooldown score for player
 scoreboard players add @p[tag=Interacting,distance=..16] hub.player.interaction_cooldown 20
 
 # If there is no chest directly beside it, then don't call anything
-execute unless block ^1 ^ ^ minecraft:chest run return run tellraw @p[tag=Interacting,distance=..16] [{text:"No chests loaded",color:red}]
+execute unless block ^1 ^ ^ #exigence:chest run return run tellraw @p[tag=Interacting,distance=..16] [{text:"No chests loaded",color:red}]
 #----------------------------------------------------------------------------------------------------
 
 # Effects

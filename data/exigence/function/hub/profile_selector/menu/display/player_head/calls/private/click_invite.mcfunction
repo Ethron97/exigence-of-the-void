@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Click invite
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Click invite
 
 scoreboard players operation #compare hub.player_entity.query_idid = @s IDID
 

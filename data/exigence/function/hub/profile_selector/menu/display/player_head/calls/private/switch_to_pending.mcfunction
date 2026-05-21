@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Switch to pending
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Switch to pending
 
 # Inform player:
 #   (This info is repeated if you click the head)

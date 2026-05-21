@@ -12,7 +12,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Load coop player list
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Load coop player list
 
 # Summon text display
 $summon minecraft:text_display ~ ~ ~ {line_width:115,billboard:"fixed",alignment:"center",Tags:["CoopPlayerDisplay","CoopPlayerDisplay$(num)","NewTextDisplay"]\

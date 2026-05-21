@@ -9,8 +9,8 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.berry debug matches 1 if score debug.level debug matches 3.. run say (D3) Berry interact
-execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3) Berry interact (tutorial)
+execute if score toggle.berry debug matches 1 if score debug.level debug matches 3.. run say (D3 Berry) Berry interact
+execute if score toggle.tutorial debug matches 1 if score debug.level debug matches 3.. run say (D3 Tutorial) Berry interact
 
 # TUTORIAL:
 execute if score tut.active hub.tutorial matches 1 as @s[tag=Tutorial] in exigence:tutorial run function exigence:tutorial/flow/step

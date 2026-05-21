@@ -11,7 +11,7 @@
 
 #====================================================================================================
 
-say (D3) Leave dungeon
+execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. run say (D3 Game) Leave dungeon
 
 # Copy player cr_ scores to profile node t_ scores
 # TODO
@@ -25,6 +25,7 @@ tag @s remove Crucible
 tag @s remove HandleInteracting
 tag @s remove CurrentlyReflecting
 tag @s remove Won
+tag @s remove PreviewingTeleport
 
 team leave @s
 gamemode adventure @s
@@ -32,6 +33,8 @@ effect clear @a
 stopsound @a ambient
 title @a actionbar ""
 title @a clear
+
+attribute @s minecraft:waypoint_receive_range base set 0
 
 # Display post game stats
 function exigence:player/stats/run_stats

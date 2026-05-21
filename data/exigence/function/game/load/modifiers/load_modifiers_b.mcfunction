@@ -1,6 +1,13 @@
 # Call as player to load from
 
-## ====================== ARTIFACTS ======================
+## CONSTRAINTS
+#   AS player
+
+#====================================================================================================
+
+#====================================================================================================
+## ARTIFACTS
+#====================================================================================================
 ## COMMON
 
 # Leather Shield
@@ -11,9 +18,6 @@ execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_
 
 # Prize Eye
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'prize_eye'}}}]}] run scoreboard players add mod.bonus_cards game.modifiers 1
-
-# Charm of Peril
-execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'charm_of_peril'}}}]}] run function exigence:vault/artifact/artifacts/charm_of_peril/trigger
 
 # Water Crystal (UNAVAILABLE)
 #   We give score so that if they die and come back they keep effect
@@ -90,8 +94,9 @@ execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'gathering_storm'}}}]}] run scoreboard players set @s game.player.mod.gathering_storm 1
 
 
-
+#====================================================================================================
 ## ARMOR
+#====================================================================================================
 execute if items entity @s armor.feet * run function exigence:game/load/modifiers/private/b_boots
 execute if items entity @s armor.legs * run function exigence:game/load/modifiers/private/b_pants
 execute if items entity @s armor.chest * run function exigence:game/load/modifiers/private/b_chestplate

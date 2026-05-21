@@ -7,7 +7,7 @@
 execute unless dimension exigence:hub run return run say (C) Failed to recreate: Not in hub
 #----------------------------------------------------------------------------------------------------
 
-execute if score debug.level debug matches 3.. run say (D3) Recreate item shop menus
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Recreate item shop menus
 
 # Unload menus
 function exigence:menu/money_menus/food/unload

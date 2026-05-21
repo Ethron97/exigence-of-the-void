@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 5.. run say (D5 Menu) Get looking
+
 # Add local tag
 tag @s add IAmLooking
 

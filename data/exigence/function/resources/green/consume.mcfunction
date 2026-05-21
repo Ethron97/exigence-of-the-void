@@ -18,3 +18,4 @@ execute if score green.cost game.resources matches 6 run data modify storage exi
 
 # Update scores
 scoreboard players operation @a[tag=ActivePlayer] profile.data.resources.cr.consumed_green += green.cost game.resources
+scoreboard players operation green.total_consumed game.resources += green.cost game.resources

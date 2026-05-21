@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Change page
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Change page
 
 # Upsert/reorder all heads
 #   Outputs #order_index and #pages

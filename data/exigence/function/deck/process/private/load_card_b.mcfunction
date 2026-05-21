@@ -16,7 +16,7 @@
 #====================================================================================================
 
 # DEBUG
-$execute if score debug.level debug matches 3.. run say (D3) Loading card b ($(card_name))
+$execute if score toggle.deck debug matches 1 if score debug.level debug matches 3.. run say (D3) Loading card b ($(card_name))
 
 # Add flags
 execute if score #void deck.process_card matches 1 run tag @s add IsVoid

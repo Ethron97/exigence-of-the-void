@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-#$say Try spellsling $(card_name)
+$execute if score toggle.deck debug matches 1 if score debug.level debug matches 3.. run say (D3) Try spellsling $(card_name)
 
 tag @s add Spellslinging
 

@@ -11,6 +11,8 @@
 
 #====================================================================================================
 
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3 Profile) Select active profile(s)
+
 # Reset tags
 execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode,tag=Active] run function exigence:profile/profile_node/private/remove_select_active_tags
 

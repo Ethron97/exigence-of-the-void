@@ -12,3 +12,6 @@ execute if score @s game.node.node_state matches 3.. run particle minecraft:soul
 
 # Beacon light loop
 execute if score @s game.node.node_state matches 3..10 run function exigence:beacon/node/light_beacon
+
+# TODO
+# Update transmission

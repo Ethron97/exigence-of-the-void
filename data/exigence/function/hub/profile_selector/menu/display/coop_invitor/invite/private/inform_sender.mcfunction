@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Inform sender
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Inform sender
 
 tag @s add TempTagPlayer
 execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15] if score @s profile.node.player_id = #target player.node.invite_sent_to \

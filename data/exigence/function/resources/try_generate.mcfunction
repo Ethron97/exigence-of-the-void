@@ -30,9 +30,9 @@ scoreboard players operation #OverflowGreen game.resources > 0 number
 scoreboard players operation #OverflowRed game.resources > 0 number
 scoreboard players operation #OverflowAqua game.resources > 0 number
 
-execute if score #OverflowGreen game.resources matches 1.. run say Too many green
-execute if score #OverflowRed game.resources matches 1.. run say Too many red
-execute if score #OverflowAqua game.resources matches 1.. run say Too many aqua
+execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. if score #OverflowGreen game.resources matches 1.. run say (D3 Game) Too many green
+execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. if score #OverflowRed game.resources matches 1.. run say (D3 Game) Too many red
+execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. if score #OverflowAqua game.resources matches 1.. run say (D3 Game) Too many aqua
 
 # Get actual value added that isn't overflow
 $scoreboard players set #AddedGreen game.resources $(green)

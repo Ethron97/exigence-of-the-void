@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Protect predungeon during load sequence
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Protect predungeon during load sequence
 
 # Kill interactions
 function exigence:hub/predungeon/node/kill_all_interactions

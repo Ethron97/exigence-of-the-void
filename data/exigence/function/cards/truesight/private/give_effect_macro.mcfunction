@@ -21,7 +21,7 @@ $scoreboard players set in.ticks tick_convert $(ticks)
 function exigence:misc/general/convert_tick_to_time
 
 # Display amount of time gained in chat since it is variable
-$tellraw @s [{text:"   Gained +",color:"gray",italic:true,bold:false}\
-,{"score":{"name":"out.m","objective":"tick_convert"}},{text:"m ",italic:true,bold:false,color:"gray"}\
-,{"score":{"name":"out.s","objective":"tick_convert"}},{text:"s ",italic:true,bold:false,color:"gray"}\
-,{text:"$(display)",color:"yellow",italic:true,bold:false}]
+$tellraw @s [{text:" └ +",color:"gray",bold:false}\
+,{"score":{"name":"out.m","objective":"tick_convert"}},{text:"m ",bold:false,color:"gray"}\
+,{"score":{"name":"out.s","objective":"tick_convert"}},{text:"s ",bold:false,color:"gray"}\
+,{text:"$(display)",color:"yellow",bold:false}]

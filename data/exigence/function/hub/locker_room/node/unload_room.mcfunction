@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Unload locker room
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Unload locker room
 
 scoreboard players operation #compare hub.entity.profile_id = @s hub.entity.profile_id
 

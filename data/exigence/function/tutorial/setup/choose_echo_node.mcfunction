@@ -21,7 +21,9 @@ data modify storage exigence:compass name set value [{text:"Echo Locator",color:
 data modify storage exigence:compass lore set value []
 
 # Give player compass
-execute as @a[x=12,y=97,z=-80,dx=230,dy=100,dz=250,tag=Tutorial,limit=1] run function exigence:player/give/compass with storage exigence:compass
+#execute as @a[x=12,y=97,z=-80,dx=230,dy=100,dz=250,tag=Tutorial,limit=1] run function exigence:player/give/compass with storage exigence:compass
+# Enable waypoint receive
+execute as @a[tag=Tutorial] run attribute @s minecraft:waypoint_receive_range base set 1000
 
 # Drop embers
 execute as @n[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:marker,tag=ChosenEchoNode] at @s run function exigence:ember/echo_embers/drop_embers

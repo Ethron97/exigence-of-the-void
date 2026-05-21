@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Kicking from predungeon
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Kicking from predungeon
 
 tellraw @s [{text:"You were kicked from the Predungeon",color:"red"}]
 

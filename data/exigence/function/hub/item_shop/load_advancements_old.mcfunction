@@ -17,14 +17,17 @@ data modify storage exigence:shop one_time_purchased set value []
 
 # If player has advancement, add to array for later lookup
 
-## ====================== ONE TIME PURCHASED ======================
+#====================================================================================================
+## ONE TIME PURCHASED
+#====================================================================================================
 execute if entity @s[advancements={exigence:unlockables/one_time/one_time_food_a=true}] run data modify storage exigence:shop one_time_purchased append value one_time_food_a
 execute if entity @s[advancements={exigence:unlockables/one_time/one_time_bag_a=true}] run data modify storage exigence:shop one_time_purchased append value one_time_bag_a
 execute if entity @s[advancements={exigence:unlockables/one_time/one_time_potion_a=true}] run data modify storage exigence:shop one_time_purchased append value one_time_potion_a
 
 
-
-## ====================== CONSUMABLES ======================
+#====================================================================================================
+## CONSUMABLES
+#====================================================================================================
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_item_dust_of_appearance=true}] run data modify storage exigence:shop shop_unlocked append value dust_of_appearance
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_item_cookie=true}] run data modify storage exigence:shop shop_unlocked append value food_cookie
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_item_wind_charge=true}] run data modify storage exigence:shop shop_unlocked append value wind_charge
@@ -41,8 +44,9 @@ execute if entity @s[advancements={exigence:unlockables/shop_unlock_item_phantom
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_one_time_bag_a=true}] run data modify storage exigence:shop shop_unlocked append value one_time_bag_a
 
 
-
-## ====================== FOOD ======================
+#====================================================================================================
+## FOOD
+#====================================================================================================
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_food_a=true}] run data modify storage exigence:shop shop_unlocked append value food_a
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_food_b=true}] run data modify storage exigence:shop shop_unlocked append value food_b
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_food_c=true}] run data modify storage exigence:shop shop_unlocked append value food_c
@@ -58,8 +62,9 @@ execute if entity @s[advancements={exigence:unlockables/shop_unlock_food_honey=t
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_one_time_food_a=true}] run data modify storage exigence:shop shop_unlocked append value one_time_food_a
 
 
-
-## ====================== POTIONS ======================
+#====================================================================================================
+## POTIONS
+#====================================================================================================
 # SPEED POTIONS
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_potion_speed_1_a=true}] run data modify storage exigence:shop shop_unlocked append value potion_speed_1_a
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_potion_speed_1_b=true}] run data modify storage exigence:shop shop_unlocked append value potion_speed_1_b
@@ -107,8 +112,9 @@ execute if entity @s[advancements={exigence:unlockables/shop_unlock_potion_invis
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_one_time_potion_a=true}] run data modify storage exigence:shop shop_unlocked append value one_time_potion_a
 
 
-
-## ====================== BOOTS ======================
+#====================================================================================================
+## BOOTS
+#====================================================================================================
 # Misc boots
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_boots_snow=true}] run data modify storage exigence:shop shop_unlocked append value boots_snow
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_boots_depth_a=true}] run data modify storage exigence:shop shop_unlocked append value boots_depth_a
@@ -143,8 +149,9 @@ execute if entity @s[advancements={exigence:unlockables/shop_unlock_boots_sculk_
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_boots_sculk_c=true}] run data modify storage exigence:shop shop_unlocked append value boots_sculk_c
 
 
-
-## ====================== LEGGINGS ======================
+#====================================================================================================
+## LEGGINGS
+#====================================================================================================
 # Deep Pockets
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_pants_coin_a=true}] run data modify storage exigence:shop shop_unlocked append value pants_coin_a
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_pants_coin_b=true}] run data modify storage exigence:shop shop_unlocked append value pants_coin_b
@@ -180,8 +187,9 @@ execute if entity @s[advancements={exigence:unlockables/shop_unlock_pants_vault_
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_pants_vault_b=true}] run data modify storage exigence:shop shop_unlocked append value pants_vault_b
 
 
-
-## ====================== CHESTPLATES ======================
+#====================================================================================================
+## CHESTPLATES
+#====================================================================================================
 # NEW
 
 # Get starting resources
@@ -215,8 +223,9 @@ execute if entity @s[advancements={exigence:unlockables/shop_unlock_chestplate_s
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_chestplate_shield_d=true}] run data modify storage exigence:shop shop_unlocked append value chestplate_shield_d
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_chestplate_shield_e=true}] run data modify storage exigence:shop shop_unlocked append value chestplate_shield_e
 
-
-## ====================== CHESTPLATES ======================
+#====================================================================================================
+## CHESTPLATES
+#====================================================================================================
 # OLD
 # Green Core
 #execute if entity @s[advancements={exigence:unlockables/shop_unlock_chest_green_a=true}] run data modify storage exigence:shop shop_unlocked append value chest_green_a
@@ -249,8 +258,9 @@ execute if entity @s[advancements={exigence:unlockables/shop_unlock_chestplate_s
 #execute if entity @s[advancements={exigence:unlockables/shop_unlock_chest_white_b=true}] run data modify storage exigence:shop shop_unlocked append value chest_white_b
 
 
-
-## ====================== HELMETS ======================
+#====================================================================================================
+## HELMETS
+#====================================================================================================
 # Berry Vision
 execute if entity @s[advancements={exigence:unlockables/shop_unlock_helmet_berry_a=true}] run data modify storage exigence:shop shop_unlocked append value helmet_berry_a
 

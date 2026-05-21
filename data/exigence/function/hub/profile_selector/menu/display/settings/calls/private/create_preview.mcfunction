@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-$execute if score debug.level debug matches 3.. run say (D3) Create preview $(preview_scale)
+$execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Create preview $(preview_scale)
 
 tag @s add HasPreview
 

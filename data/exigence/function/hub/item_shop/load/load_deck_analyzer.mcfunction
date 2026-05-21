@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Load deck analyzer from ITEM SHOP room
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) Load deck analyzer from ITEM SHOP room
 
 # Call interface
 #   INPUT: #profile_id Temp, #coop_profile_id Temp

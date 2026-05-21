@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score debug.level debug matches 4.. run say (D4) Summon exit node
+execute if score toggle.game debug matches 1 if score debug.level debug matches 4.. run say (D4 Game) Summon exit node
 
 # Summon node entity
 summon minecraft:marker ~ ~ ~ {Tags:["Debug","ExitNode","NewExitNode","Node","ETICK"],CustomName:{text:"Marker | Exit"}}

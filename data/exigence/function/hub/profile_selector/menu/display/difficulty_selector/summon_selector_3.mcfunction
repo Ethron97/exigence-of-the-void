@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 4.. run say (D4) Summon selector 3
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 4.. run say (D4) Summon selector 3
 
 # Summon display
 function exigence:hub/profile_selector/menu/display/difficulty_selector/load_difficulty_selector with entity @s item.components."minecraft:custom_data"

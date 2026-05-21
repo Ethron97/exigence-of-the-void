@@ -3,7 +3,7 @@
 #====================================================================================================
 
 # DEBUG
-say Try recycle (standard)
+execute if score toggle.deck debug matches 1 if score debug.level debug matches 3.. run say (D3) Try recycle (standard)
 
 # Reset tracker score
 scoreboard players set #did_recycle Temp 0

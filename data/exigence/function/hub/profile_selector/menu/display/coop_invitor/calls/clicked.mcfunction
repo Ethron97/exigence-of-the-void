@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Clicked coop invitor
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Clicked coop invitor
 
 # Page flippers
 $execute at @s[tag=PageFlipperDisplay,tag=Left] as @n[type=minecraft:item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..5] at @s \

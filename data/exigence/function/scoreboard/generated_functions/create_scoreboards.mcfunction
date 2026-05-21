@@ -40,6 +40,8 @@ scoreboard objectives add game.dungeon dummy
 scoreboard objectives add game.dungeon.echo dummy
 scoreboard objectives add game.dungeon.setup dummy
 scoreboard objectives add game.dungeon.temp dummy
+scoreboard objectives add game.dungeon.hazard dummy
+scoreboard objectives add game.dungeon.menace dummy
 scoreboard objectives add game.effect_temp dummy
 scoreboard objectives add game.endermite.timer dummy
 scoreboard objectives add game.enemy.stun_timer dummy
@@ -147,6 +149,7 @@ scoreboard objectives add game.player.used.snowball minecraft.used:minecraft.sno
 scoreboard objectives add game.player.vault_code dummy
 scoreboard objectives add game.ravager.detect_thoughts dummy
 scoreboard objectives add game.ravager.eating_cookie dummy
+scoreboard objectives add game.warden.sniff_cooldown dummy
 scoreboard objectives add game.resources dummy
 scoreboard objectives add game.setup.level_3_stairs dummy
 scoreboard objectives add game.state dummy
@@ -1040,3 +1043,5 @@ scoreboard objectives add game.player.player_number dummy
 scoreboard objectives add trial.timer.cooldown dummy
 scoreboard objectives add trial.timer dummy
 scoreboard objectives add trial.object.timer dummy
+scoreboard objectives add game.entity.waypoint_id dummy
+scoreboard objectives add trial.status dummy

@@ -8,6 +8,6 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Cancel invite from menu-cancel
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Cancel invite from menu-cancel
 
 $execute as @a[scores={career.player_id=$(head_player_id)}] run function exigence:misc/triggers/hub/invite_coop_decline

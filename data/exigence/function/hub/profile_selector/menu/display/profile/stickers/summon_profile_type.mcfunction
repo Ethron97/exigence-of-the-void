@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Load difficulty selector
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Load difficulty selector
 
 # Summon item display
 #   Change item texture and scale depending on is coop or not

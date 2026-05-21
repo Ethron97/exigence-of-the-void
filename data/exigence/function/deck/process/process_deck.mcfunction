@@ -7,7 +7,7 @@
 execute unless entity @n[type=minecraft:marker,tag=ProfileNode,distance=..0.01] run return run tellraw @a {text:"Process deck was not run on a profile node",color:"red"}
 #----------------------------------------------------------------------------------------------------
 
-execute if score debug.level debug matches 3.. run say (D3) Process deck
+execute if score toggle.deck debug matches 1 if score debug.level debug matches 3.. run say (D3) Process deck
 
 # Reset Highest
 scoreboard players set deck.size game.deck 0
@@ -223,17 +223,14 @@ function exigence:deck/process/process_card {card_name:"inner_fire",display_name
 # PRIORITY LAST
 function exigence:deck/process/process_card {card_name:"conviction",display_name:"Conviction",rarity:4,void:0,recycler:0,spellbinder:0,instant:2,persistent:0}
 
-
 #====================================================================================================
 # DEVELOPER
 #====================================================================================================
-function exigence:deck/process/process_card {card_name:"dev_level_one_key",display_name:"Level One Key",rarity:5,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
-function exigence:deck/process/process_card {card_name:"dev_level_two_key",display_name:"Level Two Key",rarity:5,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
-function exigence:deck/process/process_card {card_name:"dev_level_three_key",display_name:"Level Three Key",rarity:5,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
-function exigence:deck/process/process_card {card_name:"dev_gib_coins",display_name:"Gib Coins",rarity:5,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
-function exigence:deck/process/process_card {card_name:"dev_vault_rain",display_name:"Vault Rain",rarity:5,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
-function exigence:deck/process/process_card {card_name:"dev_no_menace",display_name:"No Menace",rarity:5,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 function exigence:deck/process/process_card {card_name:"dev_freesources",display_name:"Freesources",rarity:5,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
+function exigence:deck/process/process_card {card_name:"dev_gib_coins",display_name:"Gib Coins",rarity:5,void:0,recycler:0,spellbinder:0,instant:2,persistent:0}
+function exigence:deck/process/process_card {card_name:"dev_level_keys",display_name:"Level Keys",rarity:5,void:0,recycler:0,spellbinder:0,instant:2,persistent:0}
+function exigence:deck/process/process_card {card_name:"dev_no_menace",display_name:"No Menace",rarity:5,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
+function exigence:deck/process/process_card {card_name:"dev_vault_rain",display_name:"Vault Rain",rarity:5,void:0,recycler:0,spellbinder:0,instant:1,persistent:0}
 
 #====================================================================================================
 

@@ -1,5 +1,8 @@
 # IF function
 
+# Use this:
+# /execute at @e[type=minecraft:marker,tag=EchoNode,scores={node.property.object_level=1..4}] if function exigence:ember/setup/detect_nonair run tp @s ~ ~ ~
+
 ## CONSTRAINTS
 #   AT echo node
 

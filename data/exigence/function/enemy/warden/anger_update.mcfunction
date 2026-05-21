@@ -14,7 +14,7 @@
 
 #====================================================================================================
 
-execute if score toggle.enemy debug matches 1 if score debug.level debug matches 3.. run say (D3) Try anger update
+execute if score toggle.enemy debug matches 1 if score debug.level debug matches 4.. run say (D4 Enemy) Try anger update
 
 execute if data entity @s {NoAI:true} run function exigence:enemy/warden/private/update_no_ai
 
@@ -22,7 +22,7 @@ execute if data entity @s {NoAI:true} run function exigence:enemy/warden/private
 execute if data entity @s {NoAI:true} run return 1
 #----------------------------------------------------------------------------------------------------
 
-execute if score toggle.enemy debug matches 1 if score debug.level debug matches 3.. run say (D3) Updating anger
+execute if score toggle.enemy debug matches 1 if score debug.level debug matches 4.. run say (D4 Enemy) Updating anger
 
 # FIRST THING WE DO... if not angry, reset suspects
 # Overwrite in-game anger if not angry so it never uses vanilla methods of detection.
@@ -36,32 +36,35 @@ scoreboard players operation @s game.warden.awareness < #max_awareness game.ward
 # Store old awareness
 scoreboard players operation #old_awareness game.warden.awareness = @s game.warden.awareness
 
-# Decrement awareness of all wardens by 1
+# Decrement awareness by 1
 scoreboard players remove @s[scores={game.warden.awareness=1..}] game.warden.awareness 1
 # Decrement faster if player gets far enough away (just to cancel the sounds faster)
 #   Decided to disable for now, since it makes stepping on Sculk way less threatening
 #execute at @s[scores={game.warden.awareness=1..}] if entity @a[tag=ActivePlayer,distance=30..] run scoreboard players remove @s game.warden.awareness 1
 
 # Increment awareness based on how close player is (unless awareness is at max)
-execute as @s[tag=!Angry] if score @s game.warden.awareness < #max_awareness game.warden.awareness at @s if entity @a[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer,distance=..24] run scoreboard players add @s game.warden.awareness 2
-execute as @s[tag=!Angry] if score @s game.warden.awareness < #max_awareness game.warden.awareness at @s if entity @a[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer,distance=..12] run scoreboard players add @s game.warden.awareness 2
-execute as @s[tag=!Angry] if score @s game.warden.awareness < #max_awareness game.warden.awareness at @s if entity @a[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer,distance=..5] run scoreboard players add @s game.warden.awareness 30
+execute as @s[tag=!Angry] if score @s game.warden.awareness < #max_awareness game.warden.awareness at @s if entity @a[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer,gamemode=adventure,distance=..24] run scoreboard players add @s game.warden.awareness 2
+execute as @s[tag=!Angry] if score @s game.warden.awareness < #max_awareness game.warden.awareness at @s if entity @a[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer,gamemode=adventure,distance=..12] run scoreboard players add @s game.warden.awareness 2
+execute as @s[tag=!Angry] if score @s game.warden.awareness < #max_awareness game.warden.awareness at @s if entity @a[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer,gamemode=adventure,distance=..5] run scoreboard players add @s game.warden.awareness 30
 execute if score game.max_menace game.state matches 1 as @s if score @s game.warden.awareness < #max_awareness game.warden.awareness run scoreboard players add @s game.warden.awareness 20
 
 # If max menace, set awareness to max
 #execute } run scoreboard players operation @s game.warden.awareness = #max_awareness game.warden.awareness
 
-# Reset random
-scoreboard players set @s Random 0
-# If awareness goes up (and not angry), 1/3 chance to sniff
-execute if score #old_awareness game.warden.awareness < @s game.warden.awareness store result score @s Random run random value 1..3
-execute if score @s Random matches 1 at @s run function exigence:enemy/warden/private/sniff
+# Reduce sniff cooldown
+execute if score @s game.warden.sniff_cooldown matches 1.. run scoreboard players remove @s game.warden.sniff_cooldown 1
+
+# If awareness goes up (and not angry), and not on sniff cooldown, sniff
+execute if score #old_awareness game.warden.awareness < @s game.warden.awareness store result score @s Random \
+if score @s game.warden.sniff_cooldown matches ..0 at @s run function exigence:enemy/warden/private/sniff
 
 
 
 # Maintain aggro (or re-aggro if in coop)
 #execute as @s[tag=Angry] if score @s game.warden.anger matches ..100 if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run damage @s 0 generic by @p[tag=ActivePlayer,scores={dead=0,game.player.vault_code=0}]
-execute as @s[scores={game.warden.anger=..100},tag=Angry] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run function exigence:enemy/warden/private/set_target with entity @p[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer]
+#execute as @s[scores={game.warden.anger=..100},tag=Angry] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run function exigence:enemy/warden/private/set_target with entity @p[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer]
+execute as @s[tag=Angry] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run function exigence:enemy/warden/private/maintain_target
+
 
 # Update anger value
 #   If first time at threshold, give +X awareness so it doesn't insta-deaggro

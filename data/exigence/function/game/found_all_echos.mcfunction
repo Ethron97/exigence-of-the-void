@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say All echos collected! You are free to leave the dungeon.
+tellraw @a[tag=ActivePlayer] [{text:"!!!",bold:true,color:"aqua"},{text:" Echo Shard collected! Return to the exit portal with it to escape.",color:"gray",bold:false}]
 
 # Modify storage when all echos are found
 scoreboard players set game.all_echos_found game.state 1

@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Leaving Locker Room
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Leaving Locker Room
 
 tag @s remove LockerRoom
 

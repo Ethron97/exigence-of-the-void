@@ -13,8 +13,8 @@ scoreboard players set 2.opened game.level_doors 1
 
 #====================================================================================================
 ## SOUNDS
-stopsound @a neutral block.beacon.activate
-playsound item.totem.use neutral @a ~ ~1000 ~ 1000 0.8
+stopsound @a[distance=..16] neutral block.beacon.activate
+playsound item.totem.use neutral @a ~ ~ ~ 3 0.8
 
 #====================================================================================================
 ## PHYSICAL EFFECTS
@@ -27,6 +27,10 @@ fill -383 136 -89 -387 132 -89 air replace barrier
 #====================================================================================================
 ## Particles
 function exigence:door/level/common/open_particles
+
+#====================================================================================================
+## ANNOUNCE
+tellraw @a[tag=ActivePlayer] [{text:"!!! ",bold:true,color:"aqua"},{text:"The door to the ",color:"gray",bold:false},{text:"Temple of Fervor ",color:"blue",bold:false},{text:"has been opened!",color:"gray",bold:false}]
 
 #====================================================================================================
 ## CLEANUP

@@ -1,4 +1,4 @@
-say (D3) Spawn petitioner
+execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. run say (D3 Game) Spawn petitioner
 
 summon minecraft:villager -411.5 159.00 -56.5 {Offers:{Recipes:[]},Tags:["NPC_Petitioner","Game","NPC","ETICK"],NoAI:true,CustomName:{text:"Petitioner",color:"light_purple",italic:false},VillagerData:{profession:"minecraft:cleric",type:"minecraft:taiga"},Invulnerable:1b,Attributes:[{Name:"generic.movement_speed", Base:0.001}]}
 

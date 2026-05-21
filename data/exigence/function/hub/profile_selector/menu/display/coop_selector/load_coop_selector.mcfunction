@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Load difficulty selector
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Load difficulty selector
 
 # Summon item display
 summon minecraft:item_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["CoopSelectorDisplay","MenuDisplay","NewItemDisplay","SizeClassMedium"],item:{id:"minecraft:sunflower",count:1},\

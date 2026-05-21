@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 4.. run say (D4) Kill Predungeon interaction
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 4.. run say (D4 Hub) Kill Predungeon interaction
 
 scoreboard players operation #compare career.player_id = @s career.player_id
 

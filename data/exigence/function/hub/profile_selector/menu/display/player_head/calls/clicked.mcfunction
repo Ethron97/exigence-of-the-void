@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) clicked head
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) clicked head
 
 # Store ahead of time to avoid flip flip
 execute store success score #o Temp run execute if entity @s[tag=DisplayingHead]

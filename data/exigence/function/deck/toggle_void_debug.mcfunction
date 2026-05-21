@@ -1,5 +1,7 @@
 # Used to toggle whether void cards get destroyed or not
 
+#====================================================================================================
+
 execute if score toggle.void debug matches 1 run scoreboard players set #temp debug 0
 execute if score toggle.void debug matches 0 run scoreboard players set #temp debug 1
 

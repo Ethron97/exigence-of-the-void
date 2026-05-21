@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-$execute if score debug.level debug matches 3.. run say (D3) Refresh from ITEM SHOP room $(profile_id)
+$execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) Refresh from ITEM SHOP room $(profile_id)
 
 #====================================================================================================
 ## SAVE CHESTS FOR REFRESH

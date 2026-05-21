@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Show text
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Show text
 
 # Summon text display
 #,background:2017213500

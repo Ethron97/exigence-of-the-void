@@ -11,7 +11,7 @@
 execute unless dimension exigence:profile_data run return run say (C) Not in dimension Profile Data?
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Load profile
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3) Load profile
 
 # Load inventory
 $execute at @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,scores={profile.node.profile_id=$(profile_id)},tag=ProfileNode,limit=1] positioned ~1 ~ ~ run function exigence:profile/profile_node/load/load_inventory

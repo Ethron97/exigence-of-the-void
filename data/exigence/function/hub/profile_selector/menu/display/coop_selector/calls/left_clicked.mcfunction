@@ -5,6 +5,6 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Left click profile
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Left click profile
 
 function exigence:hub/profile_selector/menu/display/coop_selector/calls/clicked with entity @s item.components."minecraft:custom_data"

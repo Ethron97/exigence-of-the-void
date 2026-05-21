@@ -16,7 +16,7 @@ item:{id:"minecraft:host_armor_trim_smithing_template",count:1,components:{"mine
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.0f,1.0f,1.0f]},brightness:{sky:7,block:7}}
 
 # Summon new interaction
-summon interaction ~ ~-0.5 ~ {Tags:["VaultHandle","NewVaultHandle"],response:1b}
+summon interaction ~ ~-0.5 ~ {Tags:["VaultHandle","NewVaultHandle","ETICK"],response:1b}
 
 # Copy score from host node
 scoreboard players operation @e[tag=NewVaultHandle,distance=..1] game.vault.handle.id = #compare node.id

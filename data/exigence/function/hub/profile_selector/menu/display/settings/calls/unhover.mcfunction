@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 4.. run say (D4) Unhover (settings)
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 4.. run say (D4) Unhover (settings)
 
 # Unscale entity
 $data modify entity @s transformation set value {left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[$(scale)f,$(scale)f,$(scale)f]}

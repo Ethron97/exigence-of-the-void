@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 2.. run say (D2) Load chests to waiting
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 2.. run say (D2 Profile) Load chests to waiting
 
 # Call triage function based on room type code
 execute if score #room_type Temp matches 2 in exigence:hub positioned 0.5 209.0 104.5 run function exigence:hub/predungeon/load/load_chests

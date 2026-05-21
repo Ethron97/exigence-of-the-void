@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-$execute if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3) Spawn compass on level $(level). ID: $(echo_id)
+$execute if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3 Echo) Spawn compass on level $(level). ID: $(echo_id)
 
 execute store result storage exigence:compass x int 1 run data get entity @s Pos[0]
 execute store result storage exigence:compass y int 1 run data get entity @s Pos[1]

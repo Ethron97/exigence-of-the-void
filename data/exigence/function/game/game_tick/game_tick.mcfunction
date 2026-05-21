@@ -20,7 +20,10 @@ function exigence:game/game_tick/detect_game_state
 execute unless score game.is_active game.state matches 1 run return 1
 #----------------------------------------------------------------------------------------------------
 
-# Entity ticker
+## ENTITY TICKER
+# Check and store if at least one player has Detection for most common case in waypoint checks:
+scoreboard players set #detecting game.state 0
+execute if entity @a[tag=ActivePlayer,scores={dead=0,game.player.effects.detection=1..}] run scoreboard players set #detecting game.state 1
 #   The downside of the e_tick_level is that if an item like the web-ball gets thrown in between levels... we're cooked
 #function exigence:game/game_tick/e_tick/e_tick_level
 execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,tag=ETICK] at @s run function exigence:game/game_tick/e_tick/e_tick_type
@@ -35,7 +38,6 @@ execute if score game.max_menace game.state matches 0 run function exigence:embe
 execute if score game.max_menace game.state matches 0 run function exigence:treasure/treasure_tick
 execute if score game.max_menace game.state matches 0 run function exigence:deck/deck_tick/deck_tick
 
-#function exigence:game/game_tick/ambient_tick
 #function exigence:game/game_tick/major_damage
 
 # Check which players are viewing objective bossbar (by holding compass)
@@ -53,10 +55,6 @@ execute if score game.difficulty game.state matches 3.. run function exigence:me
 # Void cache udpate
 execute if score mod.void_cache game.modifiers matches 1.. if score seconds.cooldown tick_counter matches 10 run function exigence:cards/void_cache/update
 
-
 # MOVE TO PLAYER
 # Clock item tick
 #execute if score seconds.cooldown tick_counter matches 3 run function exigence:menu/item_display/void_shop_display/items/clock/update
-
-# Claustrophobia tick
-#execute if score mod.claustrophobia game.modifiers matches 1 if score seconds.cooldown tick_counter matches 6 as @a[scores={dead=0},tag=ActivePlayer] run function exigence:cards/claustrophobia/update

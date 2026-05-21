@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say (D3) Dungeon enter
+execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. run say (D3 Game) Dungeon enter
 
 # Cleanup predungeon stuff
 function exigence:hub/predungeon/access/migrate_to_game
@@ -22,6 +22,7 @@ function exigence:game/reset/reset_advancements
 gamemode adventure @s
 team join Player @s
 attribute @s minecraft:safe_fall_distance modifier remove exigence:safe_fall
+attribute @s minecraft:waypoint_receive_range base set 1000
 
 # Reset title times (to defaults)
 title @s times 10t 70t 20t
@@ -42,11 +43,6 @@ effect clear @s
 effect give @s hunger 3 200 true
 effect give @s minecraft:glowing infinite 0 true
 
-# Load item modifiers
-function exigence:game/load/modifiers/load_modifiers_0
-function exigence:game/load/modifiers/load_modifiers_a
-function exigence:game/load/modifiers/load_modifiers_b
-
 # Setup puppet armorstand for hand holdin
 # TODO
 # Setup item preview display TODO
@@ -56,3 +52,6 @@ function exigence:game/load/modifiers/load_modifiers_b
 
 # Initialize vault score (so we can filter some bossbars)
 scoreboard players set @s game.player.vault_code 0
+
+# If admin tag + toggle, show admin menu
+execute if entity @s[tag=Admin] if score toggle.show_admin_menu debug matches 1 run function exigence:misc/triggers/admin/admin_game_menu

@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Try chest to data
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 2.. run say (D2 Profile) Try chest to data
 
 #   OUTPUT: Default, data not loaded
 scoreboard players set #data_loaded Temp 0
@@ -23,13 +23,13 @@ execute if score @s profile.node.coop_profile_id matches 1.. in exigence:profile
 as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,scores={profile.node.coop_profile_id=1..},tag=ProfileNode,tag=ChestsLoaded] \
 if score @s profile.node.profile_id = #compare profile.node.coop_profile_id run scoreboard players set #temptchd Temp 1
 
-#execute if score #temptchd Temp matches 1 run say (D3) WAITING FOR CHESTS TAG ADDED
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 2.. if score #temptchd Temp matches 1 run say (D2) WAITING FOR CHESTS TAG ADDED
 execute if score #temptchd Temp matches 1 run tag @s add WaitingForChests
 execute if score #temptchd Temp matches 1 run return fail
 #----------------------------------------------------------------------------------------------------
 
 # If this node was previously waiting for chests, remove tag
-#execute if entity @s[tag=WaitingForChests] run say (D3) YES WAS WAITING FOR CHESTS
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 2.. if entity @s[tag=WaitingForChests] run say (D2) YES WAS WAITING FOR CHESTS
 tag @s[tag=WaitingForChests] remove WaitingForChests
 
 #   OUTPUT: Data loaded

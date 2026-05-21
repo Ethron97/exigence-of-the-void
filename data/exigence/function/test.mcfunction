@@ -1,6 +1,4 @@
 # Easily accessible function we can use to test things
-scoreboard objectives add IDID dummy
-scoreboard objectives add debug dummy
 
 # Testing pot data merge for vault pot fills
 #$data merge block -261 17 -31 {item:{id:"$(id)",Count:$(Count),tag:$(tag)}}

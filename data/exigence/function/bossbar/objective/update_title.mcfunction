@@ -5,8 +5,8 @@ execute if score game.all_echos_found game.state matches 1 run return run functi
 #----------------------------------------------------------------------------------------------------
 
 # Default to "Find the Echo" if applicable
-execute if score .echos_required game.dungeon.echo matches 1 run bossbar set exigence:objective name [{text:"Find the Echo",color:"blue"}]
-execute if score .echos_required game.dungeon.echo matches 2.. run bossbar set exigence:objective name [{text:"Find all Echos",color:"blue"}]
+execute if score echos.total game.dungeon.echo matches 1 run bossbar set exigence:objective name [{text:"Find the Echo",color:"blue"}]
+execute if score echos.total game.dungeon.echo matches 2.. run bossbar set exigence:objective name [{text:"Find all Echos",color:"blue"}]
 
 # Default to "find the beacons" if applicable
 execute if score game.difficulty game.state matches 5 run bossbar set exigence:objective name [{text:"Light all beacons",color:"aqua"}]

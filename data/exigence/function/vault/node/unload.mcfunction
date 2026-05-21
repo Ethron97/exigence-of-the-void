@@ -8,6 +8,7 @@
 # Remove tags
 tag @s remove Opened
 tag @s remove PickedUp
+tag @s remove ETICK
 
 # Close
 function exigence:vault/node/close

@@ -14,16 +14,16 @@ execute unless data storage exigence:treasure queue[0] run say (C) No data in th
 execute unless data storage exigence:treasure queue[0] run return 1
 #----------------------------------------------------------------------------------------------------
 
-execute store result score #random Random run random value 1..100
+execute store result score #skip_chance Random run random value 1..100
 execute if score .difficulty_mod game.dungeon.echo matches 0.. run function exigence:treasure/resolve_treasure
-execute if score .difficulty_mod game.dungeon.echo matches -1 if score #random Random matches 11..100 run function exigence:treasure/resolve_treasure
-execute if score .difficulty_mod game.dungeon.echo matches -2 if score #random Random matches 21..100 run function exigence:treasure/resolve_treasure
-execute if score .difficulty_mod game.dungeon.echo matches -3 if score #random Random matches 31..100 run function exigence:treasure/resolve_treasure
+execute if score .difficulty_mod game.dungeon.echo matches -1 if score #skip_chance Random matches 11..100 run function exigence:treasure/resolve_treasure
+execute if score .difficulty_mod game.dungeon.echo matches -2 if score #skip_chance Random matches 21..100 run function exigence:treasure/resolve_treasure
+execute if score .difficulty_mod game.dungeon.echo matches -3 if score #skip_chance Random matches 31..100 run function exigence:treasure/resolve_treasure
 
 # Debug
-execute if score .difficulty_mod game.dungeon.echo matches -1 if score #random Random matches 1..10 run execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Treasure skip
-execute if score .difficulty_mod game.dungeon.echo matches -2 if score #random Random matches 1..20 run execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Treasure skip
-execute if score .difficulty_mod game.dungeon.echo matches -3 if score #random Random matches 1..30 run execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Treasure skip
+execute if score .difficulty_mod game.dungeon.echo matches -1 if score #skip_chance Random matches 1..10 run execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Treasure skip
+execute if score .difficulty_mod game.dungeon.echo matches -2 if score #skip_chance Random matches 1..20 run execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Treasure skip
+execute if score .difficulty_mod game.dungeon.echo matches -3 if score #skip_chance Random matches 1..30 run execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Treasure skip
 
 # Clear first element in the TreasureQueue
 data remove storage exigence:treasure queue[0]

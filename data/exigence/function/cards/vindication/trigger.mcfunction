@@ -1,6 +1,6 @@
 # Execute card play logic if resource successfully consumed
 
-# =============================================================================
+#====================================================================================================
 
 # Reset score
 scoreboard players set #highest_hearts Temp 0
@@ -14,4 +14,6 @@ scoreboard players operation #highest_hearts Temp /= 20 number
 scoreboard players operation ember.queue game.dungeon.temp += #highest_hearts Temp
 
 # Tellraw actual amount added
-tellraw @a [{text:"+",color:"gray"},{"score":{"name":"#highest_hearts","objective":"Temp"},color:"gray"},{text:" 🔥",color:"aqua"}]
+tellraw @a[tag=ActivePlayer] [{text:" └ ",color:"gray"},{score:{name:"#highest_hearts",objective:"Temp"},color:"red"}\
+,{text:" ❤ ",color:"red"},{text:"-> ",color:"yellow"}\
+,{text:"+",color:"gray"},{"score":{"name":"#highest_hearts","objective":"Temp"},color:"gray"},{text:" 🔥",color:"aqua"}]

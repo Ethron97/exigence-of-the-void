@@ -24,7 +24,7 @@ execute as @e[type=minecraft:armor_stand,tag=RotationReflection,tag=Active] stor
 #execute as @e[name=RotationReflection] store result entity @s Rotation[1] float 1 run data get entity @e[name=Rotation,limit=1] Rotation[1] 1
 execute as @e[type=minecraft:armor_stand,tag=RotationReflection,tag=Active] run data modify entity @s Rotation[1] set value 0.0f
 
-# =======================================================================================================================
+#====================================================================================================
 # Update Reflection looking angle
 execute store result score Player.Looking.Angle game.mirror.math run data get entity @s Rotation[0] 100
 scoreboard players operation LookingAngle.Difference game.mirror.math = Mirror.Node.Angle game.mirror.math
@@ -37,7 +37,7 @@ execute as @e[type=minecraft:villager,tag=Reflection,tag=Active] store result en
 execute as @e[type=minecraft:villager,tag=Reflection,tag=Active] run data modify entity @s Pose.Head set from storage temp Head
 execute as @e[type=minecraft:villager,tag=Reflection,tag=Active] run data modify entity @s Pose.Head[0] set from entity @s Rotation[1]
 
-# =======================================================================================================================
+#====================================================================================================
 # Get distance between player and mirrornode
 execute store result score Player.X game.mirror.math run data get entity @s Pos[0] 100
 execute store result score Player.Y game.mirror.math run data get entity @s Pos[1] 100
@@ -61,7 +61,7 @@ execute store result storage exigence:mirror distance double 0.01 run scoreboard
 scoreboard players operation in0.z nnmath_vec *= #-1 nnmath_vec
 execute store result storage exigence:mirror height double 0.01 run scoreboard players get in0.z nnmath_vec
 
-# =======================================================================================================================
+#====================================================================================================
 # Update reflection position
 data modify storage exigence:mirror type set value villager
 function exigence:mirror/tp_reflection with storage exigence:mirror

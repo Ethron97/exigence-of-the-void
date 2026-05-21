@@ -1,42 +1,57 @@
 # Called from play if resources successful
 
-# Tellraw
-tellraw @a [{text:"   Recycled ",color:"gray"},{"score":{"name":"@a[tag=ActivePlayer,sort=arbitrary,limit=1]","objective":"profile.data.deck.cr.cards_spellbound"},color:"gray"},{text:" ♻",color:"green"}]
+# Store number spellbound
+execute as @a[tag=ActivePlayer] run scoreboard players operation #spellbound Temp = @s profile.data.deck.cr.cards_spellbound
+
+# Tellraw feedback
+tellraw @a[tag=ActivePlayer] [{text:" └ ",color:"gray"},{score:{name:"#spellbound",objective:"Temp"},color:"gray"}\
+,{text:" 🧾 ",color:"dark_purple"},{text:"-> ",color:"yellow"}\
+,{text:"+",color:"gray"},{"score":{"name":"#spellbound","objective":"Temp"},color:"gray"},{text:" ♻",color:"green"}]
 
 # Call recycles for each card spellbound
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=1..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=2..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=3..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=4..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=5..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute unless entity @a[scores={profile.data.deck.cr.cards_spellbound=6..},tag=ActivePlayer] run return 1
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=6..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=7..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=8..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=9..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=10..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute unless entity @a[scores={profile.data.deck.cr.cards_spellbound=11..},tag=ActivePlayer] run return 1
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=11..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=12..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=13..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=14..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=15..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute unless entity @a[scores={profile.data.deck.cr.cards_spellbound=16..},tag=ActivePlayer] run return 1
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=16..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=17..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=18..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=19..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=20..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute unless entity @a[scores={profile.data.deck.cr.cards_spellbound=21..},tag=ActivePlayer] run return 1
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=21..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=22..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=23..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=24..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=25..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute unless entity @a[scores={profile.data.deck.cr.cards_spellbound=26..},tag=ActivePlayer] run return 1
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=26..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=27..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=28..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=29..},tag=ActivePlayer] run function exigence:deck/recycle/try
-execute if entity @a[scores={profile.data.deck.cr.cards_spellbound=30..},tag=ActivePlayer] run function exigence:deck/recycle/try
-
+execute if score #spellbound Temp matches 1.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 2.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 3.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 4.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 5.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 6.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 7.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 8.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 9.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 10.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 11.. run return 0
+#----------------------------------------------------------------------------------------------------
+execute if score #spellbound Temp matches 11.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 12.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 13.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 14.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 15.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 16.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 17.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 18.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 19.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 20.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 21.. run return 0
+#----------------------------------------------------------------------------------------------------
+execute if score #spellbound Temp matches 21.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 22.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 23.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 24.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 25.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 26.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 27.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 28.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 29.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 30.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 31.. run return 0
+#----------------------------------------------------------------------------------------------------
+execute if score #spellbound Temp matches 31.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 32.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 33.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 34.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 35.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 36.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 37.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 38.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 39.. run function exigence:deck/recycle/try
+execute if score #spellbound Temp matches 40.. run function exigence:deck/recycle/try

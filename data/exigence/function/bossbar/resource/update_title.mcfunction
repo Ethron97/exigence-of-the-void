@@ -2,7 +2,7 @@
 
 #====================================================================================================
 
-execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. run say (D3) Update resources needed bossbar
+execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. run say (D3 Game) Update resources needed bossbar
 
 # Recalc resources needed
 function exigence:deck/process/reset_analyze_scores

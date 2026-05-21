@@ -15,7 +15,7 @@
 
 #====================================================================================================
 
-#$say (D4) Try process card $(card_name)
+$execute if score toggle.deck debug matches 1 if score debug.level debug matches 4.. run say (D4) Try process card $(card_name)
 
 $execute store result score #cards_a deck.process_card if items block ~1 ~1 ~0 container.* minecraft:paper[custom_data={card_name:'$(card_name)'}]
 $execute store result score #cards_b deck.process_card if items block ~2 ~1 ~0 container.* minecraft:paper[custom_data={card_name:'$(card_name)'}]
@@ -27,7 +27,7 @@ scoreboard players operation #copies deck.process_card += #cards_b deck.process_
 execute if score #copies deck.process_card matches 0 run return 0
 #----------------------------------------------------------------------------------------------------
 
-$execute if score debug.level debug matches 3.. run say (D3) Process card $(card_name)
+$execute if score toggle.deck debug matches 1 if score debug.level debug matches 3.. run say (D3) Process card $(card_name)
 
 # Save inputs
 $scoreboard players set #rarity deck.process_card $(rarity)

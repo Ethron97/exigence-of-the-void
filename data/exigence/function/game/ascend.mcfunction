@@ -1,4 +1,4 @@
-say trigger ascend functions
+tellraw @a[tag=ActivePlayer] [{text:"▲▲▲",color:"gray",bold:true},{text:" Acended ",color:"yellow",bold:false},{text:"▲▲▲",color:"gray",bold:true}]
 
 # Trigger hazard on lower levels:
 execute if score game.active_level game.state matches 2.. run function exigence:hazard/proc_hazard {level:1,amount:1,type:"other"}

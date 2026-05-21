@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) Load warp door
+
 # Summon frame
 execute positioned ~ ~2.5 ~0.875 run function exigence:hub/predungeon/menu/display/warp_door/summon_frame_part
 #execute positioned ~ ~2.5 ~0.875 run function exigence:hub/predungeon/menu/display/warp_door/summon_door_base

@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) INTERFACE summon deck analyzer
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) INTERFACE summon deck analyzer
 
 data merge entity @s {Tags:["DeckAnalyzer"],CustomName:{text:"Marker | DeckAnalyzer"}}
 # Face the marker correctly (used to orient the child displays)

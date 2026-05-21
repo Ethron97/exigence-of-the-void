@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 4.. run say (D4) Summon coop invitors
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 4.. run say (D4) Summon coop invitors
 
 # Update step details
 execute at @s run data modify entity @n[type=minecraft:text_display,tag=StepDetails,distance=..5] text set value {text:"Invite Players",color:"yellow"}

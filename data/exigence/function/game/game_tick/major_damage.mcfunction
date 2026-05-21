@@ -1,3 +1,5 @@
+# Both of these should be on player_tick
+
 # If player takes 5 hearts (100 damage) and is not dead, gain +1 red
 #execute if entity @e[type=minecraft:player,tag=ActivePlayer] as @a[tag=ActivePlayer] if score @s game.player.damage_taken matches 100.. run function exigence:resources/try_generate {green:0,red:1,aqua:0}
 

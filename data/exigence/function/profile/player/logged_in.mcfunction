@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3) Player logged in
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3 Profile) Player logged in
 
 scoreboard players set @s quit 0
 

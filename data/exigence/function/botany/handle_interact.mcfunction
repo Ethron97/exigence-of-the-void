@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS BerryInteract interaction
 
-# ===============================================================================================================
+#====================================================================================================
 
 # DEBUG
 execute if score toggle.berry debug matches 1 if score debug.level debug matches 3.. run say (D3) Berry handle interact

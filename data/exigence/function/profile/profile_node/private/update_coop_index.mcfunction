@@ -10,7 +10,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Update coop index
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3) Update coop index
 
 # Re-asign profile indexes (based on the removed one)
 # Old index 4 = no changes

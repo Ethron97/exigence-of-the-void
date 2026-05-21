@@ -19,7 +19,7 @@ execute as @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:interaction,ta
 execute as @e[type=interaction,distance=..1,scores={game.interaction.node.id=0}] run kill @s
 
 # Summon new interaction
-summon minecraft:interaction ~ ~ ~ {Tags:["NewBellInteract","BellInteract"],response:1b}
+summon minecraft:interaction ~ ~ ~ {Tags:["NewBellInteract","BellInteract","ETICK"],response:1b}
 
 # Assign id
 scoreboard players operation @e[type=minecraft:interaction,tag=NewBellInteract,distance=..1] game.interaction.node.id = #compare node.id

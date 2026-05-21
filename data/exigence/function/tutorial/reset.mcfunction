@@ -22,6 +22,7 @@ kill @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=vex,tag=TutorialEyeball]
 kill @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:item]
 kill @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:armor_stand,tag=Bait1]
 kill @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:armor_stand,tag=Bait2]
+kill @e[x=12,y=97,z=-80,dx=230,dy=100,dz=250,type=minecraft:armor_stand,tag=Waypoint]
 
 effect clear @a[tag=Tutorial] luck
 effect clear @a[tag=Tutorial] jump_boost

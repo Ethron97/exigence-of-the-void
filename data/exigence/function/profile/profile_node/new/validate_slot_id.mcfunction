@@ -12,6 +12,8 @@
 
 #====================================================================================================
 
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3 Profile) Validate slot id
+
 # If value is not within 1-5, initialize to 1
 scoreboard players operation #compare profile.node.slot_id > 1 number
 

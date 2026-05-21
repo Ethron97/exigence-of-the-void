@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Remove chests [predungeon]
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Remove chests [predungeon]
 
 # Remove chests
 setblock ~-4 ~ ~3 air

@@ -16,10 +16,10 @@ $scoreboard players set red.cost game.resources $(red)
 $scoreboard players set aqua.cost game.resources $(aqua)
 
 # DEBUG
-$say try consume $(green) green, $(red) red, $(aqua) aqua
-$execute unless score green.current game.resources matches $(green).. run say Not enough green
-$execute unless score red.current game.resources matches $(red).. run say Not enough red
-$execute unless score aqua.current game.resources matches $(aqua).. run say Not enough aqua
+$execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. run say (D3 Game) try consume $(green) green, $(red) red, $(aqua) aqua
+$execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. unless score green.current game.resources matches $(green).. run say (D3 Game) Not enough green
+$execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. unless score red.current game.resources matches $(red).. run say (D3 Game) Not enough red
+$execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. unless score aqua.current game.resources matches $(aqua).. run say (D3 Game) Not enough aqua
 
 scoreboard players operation #MissingGreen game.resources = green.cost game.resources
 scoreboard players operation #MissingRed game.resources = red.cost game.resources
@@ -50,12 +50,16 @@ execute if score green.cost game.resources matches 1.. if score #LastConsumeResu
 execute if score red.cost game.resources matches 1.. if score #LastConsumeResult game.resources matches 1 run function exigence:resources/red/consume
 execute if score aqua.cost game.resources matches 1.. if score #LastConsumeResult game.resources matches 1 run function exigence:resources/aqua/consume
 
-execute if score #LastConsumeResult game.resources matches 1 run say Successful consume
+execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. if score #LastConsumeResult game.resources matches 1 run say Successful consume
 
 # Update title
 execute if score #LastConsumeResult game.resources matches 1 as @a[scores={career.settings.show_resource_consume=1},tag=ActivePlayer] run function exigence:resources/display_consume_success with storage exigence:resource_hud
 execute if score #LastConsumeResult game.resources matches 0 as @a[scores={career.settings.show_resource_underflow=1},tag=ActivePlayer] run function exigence:resources/display_consume_fail with storage exigence:resource_hud
 title @a title ""
+
+# Put the consume result in chat too
+execute if score #LastConsumeResult game.resources matches 1 run function exigence:resources/display_consume_success_chat with storage exigence:resource_hud
+execute if score #LastConsumeResult game.resources matches 0 run function exigence:resources/display_consume_fail_chat with storage exigence:resource_hud
 
 # If failed consume, add tag
 execute if score #LastConsumeResult game.resources matches 0 run tag @s[tag=Card] add FailedConsume

@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score debug.level debug matches 4.. run say (D4) Item shop load handler iterate
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Item shop load handler iterate
 #tellraw @a [{score:{name:"#item_shop_load_iterate",objective:"Temp"}}]
 
 # Load the ones that match the current tier iteration

@@ -1,5 +1,5 @@
 say +1 Echos on level 2
 
-scoreboard players add .level_2_echos game.dungeon.echo 1
+scoreboard players add echos.level_2 game.dungeon.echo 1
 
 

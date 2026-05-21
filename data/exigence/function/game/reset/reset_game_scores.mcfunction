@@ -28,6 +28,9 @@ scoreboard players set aqua.max game.resources 2
 scoreboard players set green.current game.resources 0
 scoreboard players set red.current game.resources 0
 scoreboard players set aqua.current game.resources 0
+scoreboard players set green.total_consumed game.resources 0
+scoreboard players set red.total_consumed game.resources 0
+scoreboard players set aqua.total_consumed game.resources 0
 
 # Dungeon run scores
 # GAME STATE
@@ -63,10 +66,14 @@ scoreboard players set 2.got_key game.level_doors 0
 scoreboard players set 3.got_key game.level_doors 0
 
 # DUNGEON
-scoreboard players set .min_menace game.dungeon 0
-scoreboard players set .menace game.dungeon 0
-scoreboard players set menace.block game.dungeon 0
-scoreboard players set .hazard game.dungeon 0
+scoreboard players set menace.min game.dungeon.menace 0
+scoreboard players set menace.current game.dungeon.menace 0
+scoreboard players set menace.block game.dungeon.menace 0
+scoreboard players set hazard.total game.dungeon.hazard 0
+scoreboard players set hazard.level_1 game.dungeon.hazard 0
+scoreboard players set hazard.level_2 game.dungeon.hazard 0
+scoreboard players set hazard.level_3 game.dungeon.hazard 0
+scoreboard players set hazard.level_4 game.dungeon.hazard 0
 scoreboard players set .cards game.dungeon 0
 scoreboard players set .fatigue game.dungeon 0
 scoreboard players set game.puzzle_candles game.dungeon 0
@@ -81,13 +88,13 @@ scoreboard players set berry.queue game.dungeon.temp 0
 scoreboard players set growth.level game.dungeon.temp 0
 
 # ECHO
-scoreboard players set .echos_required game.dungeon.echo 0
+scoreboard players set echos.total game.dungeon.echo 0
 scoreboard players set .difficulty_mod game.dungeon.echo 0
 scoreboard players set .echo_difficulty game.dungeon.echo 0
-scoreboard players set .level_1_echos game.dungeon.echo 0
-scoreboard players set .level_2_echos game.dungeon.echo 0
-scoreboard players set .level_3_echos game.dungeon.echo 0
-scoreboard players set .level_4_echos game.dungeon.echo 0
+scoreboard players set echos.level_1 game.dungeon.echo 0
+scoreboard players set echos.level_2 game.dungeon.echo 0
+scoreboard players set echos.level_3 game.dungeon.echo 0
+scoreboard players set echos.level_4 game.dungeon.echo 0
 
 # Cards played display
 scoreboard players reset * game.cards_played

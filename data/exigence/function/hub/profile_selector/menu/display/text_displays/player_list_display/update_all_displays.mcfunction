@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Update all displays
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Update all displays
 
 # Get all slot displays with matching coop_profile_id
 execute in exigence:hub as @e[x=-98,y=0,z=798,dx=244,dy=256,dz=16,type=minecraft:item_display,tag=SlotDisplay,tag=Coop] \

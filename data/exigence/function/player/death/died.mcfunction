@@ -18,6 +18,12 @@ scoreboard players add game.dead_players game.state 1
 title @s subtitle {text:"You died",color:"red"}
 title @s title ""
 
+# Remove any tags they may have had
+tag @s remove PreviewingTeleport
+tag @s remove Trial
+tag @s remove Crucible
+tag @s remove CurrentlyReflecting
+
 #====================================================================================================
 ## CLEAR / DROP ITEMS
 data modify storage exigence:give death_x set from entity @s LastDeathLocation.pos[0]

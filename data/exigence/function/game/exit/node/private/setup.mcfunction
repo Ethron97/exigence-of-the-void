@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score debug.level debug matches 3.. run say (D3) Setup exit node
+execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. run say (D3 Game) Setup exit node
 
 # Remove local tag
 tag @s remove NewExitNode
@@ -20,7 +20,7 @@ scoreboard players add @s game.entity.ambient_noise_cooldown 300
 
 ## DETERMINE EXIT LOCATION
 # If difficulty 1..3, exit is on start
-execute if score game.difficulty game.state matches 1..3 at @e[x=-271,y=-55,z=-113,dx=-118,dy=92,dz=-153,type=minecraft:armor_stand,tag=Start,limit=1] run tp @s ~ ~ ~ ~ ~
+#execute if score game.difficulty game.state matches 1..3  run tp @s ~ ~ ~ ~ ~
 
 # If difficulty 4, exit(s) is on a random echo node on level 2
 execute if score game.difficulty game.state matches 4 run function exigence:game/exit/node/private/mirror_exit

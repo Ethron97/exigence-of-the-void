@@ -8,6 +8,9 @@
 # Teleport to vault chamber
 tp @s -424.5 152.0 -17.5 90 0
 
+# Update status
+scoreboard players set bolt.trial trial.status 1
+
 # Setup pots (trial gets setup on game start)
 execute if entity @s[tag=Crucible] as @e[x=487,y=-1,z=455,dx=0,dy=1,dz=0,type=minecraft:marker,tag=PotMarker,tag=bolt] run function exigence:door/vault/bolt/setup/setup_pot_crucible_a with entity @s data.custom_data
 

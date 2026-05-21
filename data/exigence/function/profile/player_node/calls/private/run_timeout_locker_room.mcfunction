@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-say Run timeout locker room
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Run timeout locker room
 
 # Reset score
 scoreboard players reset @n[type=minecraft:armor_stand,tag=PlayerNode,distance=..0.1] player.node.queue.timeout_locker_room

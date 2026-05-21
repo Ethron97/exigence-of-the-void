@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Load slot background
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Load slot background
 
 # Summon item display
 summon block_display ~ ~ ~ {teleport_duration:4,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["PlayerHeadSlot","NewBlockDisplay"],block_state:{Name:"minecraft:netherite_block"},\

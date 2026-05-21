@@ -9,6 +9,9 @@ data modify entity @s Item.components."minecraft:custom_name" set from entity @s
 # Set object level for pings
 scoreboard players operation @s game.entity.object_level = #compare node.property.object_level
 
+# Copy object level to custom data for pickup logic
+execute store result entity @s Item.components."minecraft:custom_data".object_level int 1 run scoreboard players get #compare node.property.object_level
+
 # Join team for color
 team join Echo @s
 
@@ -16,7 +19,10 @@ team join Echo @s
 data merge entity @s {Age:-32768}
 
 # Change model if there are multiple echos (and not tutorial)
-execute unless score @s node.property.object_level matches 10 if score .echos_required game.dungeon.echo matches 2.. run data merge entity @s {Item:{components:{"minecraft:custom_model_data":{"strings":["disc_fragment_5"]}}}}
+execute unless score @s node.property.object_level matches 10 if score echos.total game.dungeon.echo matches 2.. run data merge entity @s {Item:{components:{"minecraft:custom_model_data":{"strings":["disc_fragment_5"]}}}}
 
 # Remove local tag
 tag @s remove NewEcho
+
+# Summon waypoint entity
+execute at @s run function exigence:game/other/waypoint/summon_waypoint_from_item

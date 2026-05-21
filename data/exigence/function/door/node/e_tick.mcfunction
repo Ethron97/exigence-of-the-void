@@ -7,3 +7,6 @@
 
 # Redistribute ravagers that get too close to door nodes
 execute as @e[type=minecraft:ravager,distance=..2] run function exigence:enemy/ravager/redistribute
+
+# TODO
+# Update transmission

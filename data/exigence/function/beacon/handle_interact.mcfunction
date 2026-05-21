@@ -3,7 +3,7 @@
 ## CONSTRAINTS
 #   AS BeaconInteraction interaction
 
-# ===============================================================================================================
+#====================================================================================================
 
 # DEBUG
 execute if score toggle.beacon debug matches 1 if score debug.level debug matches 3.. run say (D3) Beacon handle

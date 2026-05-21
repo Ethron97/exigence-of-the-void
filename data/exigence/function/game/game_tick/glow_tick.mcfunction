@@ -9,7 +9,7 @@
 scoreboard players remove @s game.entity.glow_remaining 1
 
 # For entities
-execute if entity @s[type=!minecraft:item] run return run effect give @s minecraft:glowing 1 0 true
+execute if entity @s[type=!minecraft:item] run return run effect give @s minecraft:glowing 2 0 true
 #----------------------------------------------------------------------------------------------------
 
 # Toggle glow for items

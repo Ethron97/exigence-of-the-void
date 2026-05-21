@@ -5,6 +5,6 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Right click pre button
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) Right click pre button
 
 execute at @s run function exigence:hub/predungeon/menu/display/pre_button/calls/clicked

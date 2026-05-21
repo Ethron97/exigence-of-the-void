@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Try enter coop
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Try enter coop
 
 scoreboard players set #did_coop_enter Temp 0
 

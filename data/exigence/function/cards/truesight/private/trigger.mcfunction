@@ -5,4 +5,4 @@ execute as @a[scores={dead=0,profile.data.effects.cr.effect_flicker=1..},tag=Act
 execute as @a[scores={dead=0,profile.data.effects.cr.effect_beastsense=1..},tag=ActivePlayer] run function exigence:cards/truesight/private/give_effect {effect:'beastsense',display:'Beastsense'}
 
 tellraw @a[scores={dead=0,profile.data.effects.cr.effect_beastsense=0,profile.data.effects.cr.effect_glimmer=0,profile.data.effects.cr.effect_flicker=0},tag=ActivePlayer] \
-{text:"   No effect time to give",color:"gray",italic:true}
+{text:" └ No effect time to give",color:"gray"}

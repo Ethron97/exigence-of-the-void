@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Order heads
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Order heads
 
 # Reset
 tag @e[type=minecraft:item_display,tag=PlayerHeadDisplay,tag=Ordered,distance=..5] remove Ordered

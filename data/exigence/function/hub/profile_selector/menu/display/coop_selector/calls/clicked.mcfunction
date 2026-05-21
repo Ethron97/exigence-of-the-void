@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Clicked coop selector
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Clicked coop selector
 
 # Effects
 execute at @s run playsound minecraft:entity.ender_eye.death ui @p[tag=ProfileSelecting,tag=Interacting,distance=..16] ~ ~ ~ 1 1

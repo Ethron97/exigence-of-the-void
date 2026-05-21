@@ -26,6 +26,9 @@ execute if score game.ticks tick_counter matches 60.. as @a[scores={dead=0},tag=
 # If exit portal is open, tick
 execute if entity @s[tag=OpenedPortal] run function exigence:game/exit/exit_portal/tick
 
+# TODO
+# Update transmission
+
 # Old systems
 # Call height circle based on
 #execute if score seconds.cooldown tick_counter matches 10 positioned ~ ~0.1 ~ run function exigence:game/exit/node/ambient/particles

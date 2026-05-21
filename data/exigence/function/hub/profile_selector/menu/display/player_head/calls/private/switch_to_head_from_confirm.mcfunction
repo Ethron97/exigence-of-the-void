@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Switch from confirm to head
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Switch from confirm to head
 
 # Load player head menu
 $execute at @s as @n[type=minecraft:item_display,scores={IDID=$(parent_idid)},tag=SlotDisplay,distance=..16] at @s \

@@ -11,7 +11,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Load unlocks (initialize)
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Load unlocks (initialize)
 
 # Reset array
 data modify storage exigence:shop shop_unlocked set value [] 

@@ -13,8 +13,8 @@ scoreboard players set 3.opened game.level_doors 1
 
 #====================================================================================================
 ## SOUNDS
-stopsound @a neutral block.beacon.activate
-playsound item.totem.use neutral @a ~ ~1000 ~ 1000 0.8
+stopsound @a[distance=..16] neutral block.beacon.activate
+playsound item.totem.use neutral @a ~ ~ ~ 3 0.8
 
 #====================================================================================================
 ## PHYSICAL EFFECTS
@@ -30,6 +30,10 @@ fill -360 172 -87 -364 176 -87 air replace barrier
 #====================================================================================================
 # PARTICLES
 function exigence:door/level/common/open_particles
+
+#====================================================================================================
+## ANNOUNCE
+tellraw @a[tag=ActivePlayer] [{text:"!!! ",bold:true,color:"aqua"},{text:"The door to ",color:"gray",bold:false},{text:"Ardor's Bane ",color:"light_purple",bold:false},{text:"has been opened!",color:"gray",bold:false}]
 
 #====================================================================================================
 ## CLEANUP

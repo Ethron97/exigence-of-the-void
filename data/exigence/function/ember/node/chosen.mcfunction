@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3 Echo) Chosen
+
 # Spawn cake based on EchoCake
 execute if score mod.echo_cake game.modifiers matches 1.. run function exigence:cards/tasty_surprise/try_spawn_cake
 execute if score mod.echo_cake game.modifiers matches 2.. run function exigence:cards/tasty_surprise/try_spawn_cake

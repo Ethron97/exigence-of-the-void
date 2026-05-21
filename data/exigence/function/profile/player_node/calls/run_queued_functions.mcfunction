@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Run queued functions
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3 Profile) Run queued functions
 
 # Assumes local tag was added at step "player logged in"
 execute if score @s player.node.queue.invite_decline matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_invite_decline

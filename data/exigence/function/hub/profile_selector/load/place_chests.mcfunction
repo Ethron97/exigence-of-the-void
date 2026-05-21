@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Place chests
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3) Place chests
 
 # Place blank chests
 setblock ~-4 ~ ~4 minecraft:chest[type=right,facing=east]

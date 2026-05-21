@@ -14,7 +14,7 @@ execute at @s run setblock ~ ~ ~ minecraft:soul_fire
 function exigence:beacon/node/setup/remove_interaction
 
 # Reduce menace
-execute if score .menace game.dungeon matches 1.. run scoreboard players remove .menace game.dungeon 1
+execute if score menace.current game.dungeon.menace matches 1.. run scoreboard players remove menace.current game.dungeon.menace 1
 
 # Increase aqua
 execute as @p[tag=Lighting] run function exigence:resources/try_generate {green:0,red:0,aqua:1}

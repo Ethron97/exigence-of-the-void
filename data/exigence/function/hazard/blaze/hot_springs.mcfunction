@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score toggle.hazard debug matches 1 if score debug.level debug matches 3.. run say (D3) Hot springs
+execute if score toggle.hazard debug matches 1 if score debug.level debug matches 3.. run say (D3 Hazard) Hot springs
 
 # TOAST - Hot Springs Nether Tower, West
 fill -453 104 -144 -453 105 -144 air

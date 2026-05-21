@@ -4,8 +4,10 @@
 #   IN minecraft:overworld
 
 #====================================================================================================
+execute unless dimension minecraft:overworld run return run say (C) game_off not in overworld
+#----------------------------------------------------------------------------------------------------
 
-say (D3) Game Off
+execute if score toggle.game debug matches 1 if score debug.level debug matches 2.. run say (D2 Game) Game Off
 
 scoreboard players set game.is_active game.state 0
 

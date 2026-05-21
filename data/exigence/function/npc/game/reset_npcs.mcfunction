@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. run say (D3 Game) Reset npcs
+
 kill @e[type=minecraft:villager,tag=NPC_Supplier,tag=Game]
 kill @e[type=minecraft:villager,tag=NPC_Scientist,tag=Game]
 kill @e[type=minecraft:villager,tag=NPC_Petitioner,tag=Game]

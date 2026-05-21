@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) clicked level chooser
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) clicked level chooser
 
 # Increase cooldown score for player
 scoreboard players add @p[tag=Interacting,distance=..16] hub.player.interaction_cooldown 20

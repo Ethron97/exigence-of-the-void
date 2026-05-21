@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Load primary profile related info
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3) Load primary profile related info
 
 # Get highest win
 scoreboard players operation highest.win game.dungeon.setup = @s profile.data.winloss.highest_win

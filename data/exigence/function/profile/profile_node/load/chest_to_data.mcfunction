@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Chest to data
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3 Profile) Chest to data
 
 tag @s add ChestsLoaded
 #execute if entity @s[tag=ChestsLoaded] run say (D3) YES WE ADDED THE CHEST LOADED TAG

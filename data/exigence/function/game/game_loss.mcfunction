@@ -1,7 +1,5 @@
 # Called from detect_game_state
 
-## CONSTRAINTS
-
 #====================================================================================================
 
 say Defeat!
@@ -21,7 +19,7 @@ clear @a[tag=ActivePlayer] #exigence:loss_clear
 #====================================================================================================
 
 # Turn off the game
-function exigence:game/game_off
+execute in minecraft:overworld run function exigence:game/game_off
 
 # Schedule coin convert so its after the victory sound
 #   Player scores were gathered from the access/leave function

@@ -7,7 +7,7 @@ scoreboard players set game.escape_portal game.state 1
 tag @a[tag=ActivePlayer] add Exalting
 
 # Turn the game off
-function exigence:game/game_off
+execute in minecraft:overworld run function exigence:game/game_off
 
 # Kill all items
 kill @e[type=minecraft:item]

@@ -10,7 +10,7 @@ scoreboard players operation #compare profile.node.profile_id = @s profile.node.
 execute as @a if score @s profile.player.profile_id = #compare profile.node.profile_id run return run tellraw @s {text:"Cannot remove a profile if a player has it loaded",color:"red"}
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) I have been removed
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3) I have been removed
 
 # Add X to the name for debugging
 data modify entity @s CustomName.extra append value {text:" X",color:red,bold:true}

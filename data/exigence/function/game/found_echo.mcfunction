@@ -3,6 +3,9 @@
 ## CONSTRAINTS
 #   AS player who picked up echo
 
+## INPUT
+#   SCORE #found_on_level Temp 1-4
+
 #====================================================================================================
 
 # Play wither spawn sound because it's dramatic
@@ -10,8 +13,8 @@ execute at @s run playsound minecraft:entity.wither.spawn neutral @a ~ ~1000 ~ 1
 
 # Add echo shard to their inventory
 #   If there are multiple echos, fragment instead
-execute if score .echos_required game.dungeon.echo matches 2.. as @s run function exigence:player/give/echo_fragment
-execute if score .echos_required game.dungeon.echo matches 1 as @s run function exigence:game/found_all_echos
+execute if score echos.total game.dungeon.echo matches 2.. as @s run function exigence:player/give/echo_fragment
+execute if score echos.total game.dungeon.echo matches 1 as @s run function exigence:game/found_all_echos
 
 # Add three menace to the queue
 data modify storage exigence:menace amount set value 3
@@ -47,3 +50,8 @@ execute if score game.difficulty game.state matches 4.. run function exigence:ha
 
 # Triumph
 function exigence:cards/triumph
+
+# Open any unopened level door that is below this shard
+execute if score #found_on_level Temp matches 2.. if score 1.opened game.level_doors matches 0 positioned -331.3 23.5 -257.3 run function exigence:door/level/door_1/open
+execute if score #found_on_level Temp matches 3.. if score 2.opened game.level_doors matches 0 positioned -384.5 134.5 -90.28 run function exigence:door/level/door_2/open
+execute if score #found_on_level Temp matches 4.. if score 3.opened game.level_doors matches 0 positioned -361.5 174.5 -84.7 run function exigence:door/level/door_3/open

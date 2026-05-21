@@ -8,6 +8,8 @@
 execute unless dimension exigence:profile_data run return run tellraw @a {text:"Not in exigence:profile_data, aborting",color:"red"}
 #----------------------------------------------------------------------------------------------------
 
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3 Profile) New player
+
 # Call function to locate the next available slot to place a node (tps NewPlayerNodeMarker to position)
 #   Ensure that (one) NewPlayerNodeMarker exists
 execute unless entity @n[x=0,y=0,z=32,dx=15,dy=15,dz=15,type=minecraft:marker,tag=NewPlayerNodeMarker] run summon minecraft:marker 1.5 1.0 33.5 {Tags:["NewPlayerNodeMarker"],CustomName:{text:"Marker | NewPlayer"}}

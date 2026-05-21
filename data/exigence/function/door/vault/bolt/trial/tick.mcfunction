@@ -10,15 +10,18 @@ execute if score toggle.trial debug matches 1 if score debug.level debug matches
 ## GAMESTATE
 # Detect loss
 #   If player is stepping on barrier, loss
-execute as @a[scores={dead=0,game.player.vault_code=1},distance=..24] at @s if block ~ ~-1 ~ minecraft:barrier run function exigence:door/vault/bolt/trial/loss
-execute as @a[scores={dead=0,game.player.vault_code=1},distance=..24] if predicate exigence:player/on_fire run function exigence:door/vault/bolt/trial/loss
+execute as @a[scores={dead=0,game.player.vault_code=1},distance=..24] at @s if block ~ ~-1 ~ minecraft:barrier run return run function exigence:door/vault/bolt/trial/loss
+execute as @a[scores={dead=0,game.player.vault_code=1},distance=..24] if predicate exigence:player/on_fire run return run function exigence:door/vault/bolt/trial/loss
+#----------------------------------------------------------------------------------------------------
 
 # Detect win
 #   If player survives 30 seconds, win. (600 ticks + 60 for pre-trial time)
-execute if score @s trial.timer matches 660.. as @a[scores={dead=0,game.player.vault_code=1},distance=..24] run function exigence:door/vault/bolt/trial/win
+execute if score @s trial.timer matches 660.. as @a[scores={dead=0,game.player.vault_code=1},distance=..24] run return run function exigence:door/vault/bolt/trial/win
+#----------------------------------------------------------------------------------------------------
 
 # If player died somehow, loss
-execute as @a[scores={dead=1,game.player.vault_code=1},distance=..24] run function exigence:door/vault/bolt/trial/loss
+execute as @a[scores={dead=1,game.player.vault_code=1},distance=..24] run return run function exigence:door/vault/bolt/trial/loss
+#----------------------------------------------------------------------------------------------------
 
 # If no players with vault code = 1, return.
 #   (Loss function removes this code, so if player just lost the function will return immediately after)
@@ -50,10 +53,16 @@ scoreboard players remove @e[type=minecraft:marker,tag=PizzaLightning,distance=.
 #   If at least one are triggering, sound
 execute if entity @e[type=minecraft:marker,scores={trial.object.timer=0},tag=PizzaLightning,distance=..24] run playsound minecraft:entity.breeze.jump ambient @a[scores={game.player.vault_code=1},distance=..24] ~ ~1000 ~ 1000 1
 
+scoreboard players set #hit_player Temp 0
 #   If 0, trigger lightning then kill
+#   OUPUTS: #hit_player Temp
 execute as @e[type=minecraft:marker,scores={trial.object.timer=0},tag=PizzaLightning,distance=..24] at @s run function exigence:door/vault/bolt/trial/pizza/lightning/trigger
 #   If 20, interpolate
 execute as @e[type=minecraft:marker,scores={trial.object.timer=19},tag=PizzaLightning,distance=..24] at @s run function exigence:door/vault/bolt/trial/pizza/lightning/start_interpolate
+
+# If player was hit, end trial now
+execute if score #hit_player Temp matches 1 as @a[scores={dead=0,game.player.vault_code=1},distance=..24] run return run function exigence:door/vault/bolt/trial/loss
+#----------------------------------------------------------------------------------------------------
 
 # Generate pizzas (based on Trial or Crucible)
 #   Always one final pizza(s) just before end

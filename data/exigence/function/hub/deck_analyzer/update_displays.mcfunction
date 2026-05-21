@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) updating analysis displays
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) updating analysis displays
 
 # Copy rotation to storage
 data modify storage exigence:temp color_a set from storage exigence:colors da_tan

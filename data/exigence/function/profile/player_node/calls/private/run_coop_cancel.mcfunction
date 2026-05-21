@@ -7,7 +7,7 @@
 
 #====================================================================================================
 
-say Run queued coop cancel
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Run queued coop cancel
 
 # Reset score
 scoreboard players reset @n[type=minecraft:armor_stand,tag=PlayerNode,distance=..0.1] player.node.queue.coop_cancel

@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 4.. run say (D4) Summon player sensor
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 4.. run say (D4 Menu) Summon player sensor
 
 # Summon item display
 summon minecraft:item_display ~ ~ ~ {Rotation:[180.0f,0.0f],billboard:"fixed",Tags:["PlayerSensor","MenuDisplay","NewItemDisplay","PredungeonDisplay","PredungeonMenuDisplay"]\

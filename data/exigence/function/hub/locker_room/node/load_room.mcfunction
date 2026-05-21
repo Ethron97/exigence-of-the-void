@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Load room [locker room]
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Load room [locker room]
 
 # Generate new id
 scoreboard players add #sequence hub.locker_room_id 1

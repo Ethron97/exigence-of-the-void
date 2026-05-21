@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Remove coop profile
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3) Remove coop profile
 
 # Save profile index
 scoreboard players operation #old_index Temp = @s profile.node.coop_profile_index

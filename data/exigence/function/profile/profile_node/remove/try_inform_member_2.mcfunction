@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Try inform member 2
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3) Try inform member 2
 
 scoreboard players set #player_found2 Temp 0
 
@@ -19,7 +19,6 @@ execute as @a if score @s career.player_id = #compare29 profile.node.player_id r
 execute if score #player_found2 Temp matches 1 run return 0
 #----------------------------------------------------------------------------------------------------
 
-data modify storage exigence:temp name set from entity @s equipment.head.components."minecraft:profile".name
 function exigence:profile/profile_node/remove/mail_inform_member with storage exigence:temp
 scoreboard players add @s player.node.queue.mail 1
 scoreboard players add @s player.node.queue 1

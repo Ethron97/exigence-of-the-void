@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Set blank
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Set blank
 
 # Change the block behind it
 execute at @s run setblock ~ ~ ~-1 purpur_block

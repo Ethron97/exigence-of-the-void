@@ -1,3 +1,5 @@
+execute if score toggle.mirror debug matches 1 if score debug.level debug matches 3.. run say (D3 Mirror) Setting up four wide mirror
+
 # Reset:
 function exigence:mirror/mirrors/four_wide_one_path/reset with storage exigence:mirror
 data modify storage exigence:mirror mirror set value "four_wide"

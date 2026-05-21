@@ -1,6 +1,6 @@
 $data merge entity @s {Item:{id:"minecraft:carrot_on_a_stick",count:1,components:{"minecraft:custom_name":[{text:"✨",italic:false,bold:true,color:"white"},\
 {text:" Far Step ",italic:false,bold:true,color:"$(legendary)"},{text:"✨",italic:false,bold:true,color:"white"}]\
-,"minecraft:lore":[[$(legendary_stars),{text:"Transient",italic:false,color:"white"}]\
+,"minecraft:lore":[[$(legendary_stars),{text:"(Transient)",italic:false,color:"dark_gray"}]\
 ,{text:""}\
 ,[{text:"While ",italic:false,color:"gray"},{text:"Far Stepping",italic:false,color:"$(effect)"},{text:", use to teleport",italic:false,color:"gray"}]\
 ,[{text:"to a nearby node on your level",italic:false,color:"gray"}]\

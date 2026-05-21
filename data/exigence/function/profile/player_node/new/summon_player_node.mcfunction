@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3 Profile) Summon player node
+
 setblock ~ ~ ~ diamond_block
 
 summon minecraft:armor_stand ~ ~ ~ {Tags:["NewPlayerNode","PlayerNode"],Rotation:[90,0],ShowArms:true,data:{custom_data:{mail:[]}}}

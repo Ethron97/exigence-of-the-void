@@ -9,8 +9,9 @@ execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_
 
 # TODO move void deck helmet here too?
 
-
-## ====================== CHESTPLATES ======================
+#====================================================================================================
+## CHESTPLATES
+#====================================================================================================
 ## OLD
 # Green Core
 #execute if entity @s[nbt={Inventory:[{id:"minecraft:leather_chestplate",components:{"minecraft:custom_data":{item_name:'chest_green_a'}}}]}] run scoreboard players add green.max game.resources 1

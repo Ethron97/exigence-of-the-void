@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Load invitor selector
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Load invitor selector
 
 # Summon item display
 summon minecraft:item_display ~ ~ ~ {teleport_duration:3,Rotation:[0.0f,0.0f],billboard:"fixed",Tags:["CoopInvitorDisplay","MenuDisplay","NewItemDisplay","SizeClassMedium","ConfirmGroup"],item:{id:"minecraft:sunflower",count:1},\

@@ -11,3 +11,6 @@ summon minecraft:block_display ~ ~1.5 ~ {Glowing:true,Tags:["DebugDisplay","Vari
 
 # Set team
 team join Variance @n[type=minecraft:block_display,tag=VarianceDebugDisplay,distance=..3]
+
+# Summon debug displays
+execute if entity @s[tag=Minecart] run function exigence:variance/node/debug/summon_minecart_display

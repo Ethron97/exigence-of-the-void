@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score toggle.berry debug matches 1 if score debug.level debug matches 3.. run say (D3) I am Deactivate
+execute if score toggle.berry debug matches 1 if score debug.level debug matches 4.. run say (D4 Berry) I am Deactivate
 
 # Reset active tag
 tag @s remove Active

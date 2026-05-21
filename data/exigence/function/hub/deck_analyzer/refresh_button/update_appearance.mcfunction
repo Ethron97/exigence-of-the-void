@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) Update appearance
+
 data modify entity @s item.components."minecraft:custom_model_data".strings set value ["refresh_green"]
 data modify entity @s item.components."minecraft:lore" set value [{text:""}]
 team join Green @s

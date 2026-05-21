@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3) Player logged in after world reset
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3 Profile) Player logged in after world reset
 
 team leave @s
 

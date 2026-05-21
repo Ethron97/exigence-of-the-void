@@ -8,7 +8,7 @@
 execute unless entity @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] run return run say Tried to load_profile_to_slot without being AT profile node
 #----------------------------------------------------------------------------------------------------
 
-execute if score debug.level debug matches 3.. run say (D3) Load profile to slot
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Load profile to slot
 
 # Mark
 tag @s remove Blank

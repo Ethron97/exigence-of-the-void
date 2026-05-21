@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 4.. run say (D4) Update purchasability dependencies (is researched, etc)
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 4.. run say (D4 Hub) Update purchasability dependencies (is researched, etc)
 
 # Update is researched
 execute as @s[tag=!Artifact] run function exigence:menu/item_display/item_shop_display/is_researched with entity @s item.components."minecraft:custom_data"

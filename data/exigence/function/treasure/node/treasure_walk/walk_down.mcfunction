@@ -4,7 +4,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.treasure debug matches 1 if score debug.level debug matches 3.. run say (D3) Walk down
+execute if score toggle.treasure debug matches 1 if score debug.level debug matches 4.. run say (D4) Walk down
 
 # If next block is blacklisted, return fail
 execute if block ~ ~-1 ~ #exigence:drop_blacklist run data modify storage exigence:treasure_drop verify set value 0

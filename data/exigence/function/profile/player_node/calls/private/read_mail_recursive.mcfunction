@@ -8,7 +8,7 @@
 execute unless data entity @s data.custom_data.mail[0] run return fail
 #====================================================================================================
 
-#say Read mail recursive
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Read mail recursive
 
 data modify storage exigence:temp mail set from entity @s data.custom_data.mail[0]
 

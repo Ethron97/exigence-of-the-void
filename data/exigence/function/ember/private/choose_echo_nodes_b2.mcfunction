@@ -1,9 +1,11 @@
 # Reduce bounded difficulty to single difficulty tier, based on settings
 
 ## INPUT
-#   min_difficulty
-#   max_difficulty
-#   level
+#   INT min_difficulty
+#   INT max_difficulty
+#   INT level
+#   SCORE #MinDifficulty game.dungeon.echo
+#   SCORE #MaxDifficulty game.dungeon.echo
 
 # SCORE #temp Temp initialized to number of times to iterate this function
 
@@ -15,7 +17,7 @@
 
 #====================================================================================================
 
-$execute if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3) Choose echo nodes b2 $(min_difficulty)..$(max_difficulty)
+$execute if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3 Echo) Choose echo nodes b2 $(min_difficulty)..$(max_difficulty)
 
 # Reduce iteration score
 scoreboard players remove #temp Temp 1
@@ -23,6 +25,8 @@ scoreboard players remove #temp Temp 1
 # Roll distribution based on given min/max
 $execute store result score #roll1 Temp run random value $(min_difficulty)..$(max_difficulty)
 $execute store result score #roll2 Temp run random value $(min_difficulty)..$(max_difficulty)
+# Make sure it didn't fail if they were the same (range for random function must be 2)
+execute if score #MinDifficulty game.dungeon.echo = #MaxDifficulty game.dungeon.echo run scoreboard players operation #roll1 Temp = #MinDifficulty game.dungeon.echo
 
 # Bound the rolled amounts
 $scoreboard players operation #roll1 Temp > $(level)1 number
@@ -41,9 +45,9 @@ scoreboard players operation #rollHigher Temp = #roll1 Temp
 scoreboard players operation #rollHigher Temp > #roll2 Temp
 
 # Get final difficulty based on echo_selection_type
-#execute if data storage exigence:dungeon_settings {echo_selection_type:0} run say (D3) Select random node from tier range (standard)
-#execute if data storage exigence:dungeon_settings {echo_selection_type:1} run say (D3) Select node from random tier
-#execute if data storage exigence:dungeon_settings {echo_selection_type:2} run say (D3) Select node from highest of two random tiers
+execute if data storage exigence:dungeon_settings {echo_selection_type:0} if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3 Echo) Select random node from tier range (standard)
+execute if data storage exigence:dungeon_settings {echo_selection_type:1} if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3 Echo) Select node from random tier
+execute if data storage exigence:dungeon_settings {echo_selection_type:2} if score toggle.echo debug matches 1 if score debug.level debug matches 3.. run say (D3 Echo) Select node from highest of two random tiers
 execute if data storage exigence:dungeon_settings {echo_selection_type:0} run function exigence:ember/private/choose_echo_nodes_c_alt with storage exigence:echo_selection
 execute if data storage exigence:dungeon_settings {echo_selection_type:1} store result storage exigence:echo_selection chosen_difficulty int 1 run scoreboard players get #roll1 Temp
 execute if data storage exigence:dungeon_settings {echo_selection_type:2} store result storage exigence:echo_selection chosen_difficulty int 1 run scoreboard players get #rollHigher Temp
@@ -51,6 +55,10 @@ execute if data storage exigence:dungeon_settings {echo_selection_type:2} store 
 # Call subfunction
 execute unless data storage exigence:dungeon_settings {echo_selection_type:0} run function exigence:ember/private/choose_echo_nodes_c with storage exigence:echo_selection
 
+# Handle selected node (or lack there-of)
+execute unless entity @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=NewChosenEchoNode,limit=1] run say Uhh failed to pick an echo node?
+tag @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=NewChosenEchoNode] add ChosenEchoNode
+tag @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=NewChosenEchoNode] remove NewChosenEchoNode
+
 # Handle iteration
 execute if score #temp Temp matches 1.. run function exigence:ember/private/choose_echo_nodes_b2 with storage exigence:echo_selection
-

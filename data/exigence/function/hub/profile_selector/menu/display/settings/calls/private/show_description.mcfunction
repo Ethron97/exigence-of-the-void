@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Show description
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Show description
 
 # Kill description if exists (so they don't pile up.)
 kill @n[type=minecraft:text_display,tag=SettingDescription,distance=..1]

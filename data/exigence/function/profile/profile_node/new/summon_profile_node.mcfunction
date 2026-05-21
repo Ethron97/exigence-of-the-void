@@ -11,6 +11,8 @@
 
 #====================================================================================================
 
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3 Profile) Summon profile node
+
 # Clone blocks
 clone 0 0 0 15 3 0 ~ ~-1 ~
 setblock ~ ~-1 ~ gold_block
@@ -25,6 +27,9 @@ scoreboard players operation #compare career.profiles_created = @s career.profil
 execute unless score #creating_coop Temp matches 1 run function exigence:profile/profile_node/new/identifier/generate_identifier
 #   IF COOP: Only generate new one if there is not one already popualated
 execute if score #creating_coop Temp matches 1 unless data storage exigence:temp identifier run function exigence:profile/profile_node/new/identifier/generate_identifier
+
+# Get name from player node
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] if score @s profile.node.player_id = #compare career.player_id run data modify storage exigence:temp name set from entity @s data.custom_data.name
 
 ## SUMMON ENTITY
 #   with setups

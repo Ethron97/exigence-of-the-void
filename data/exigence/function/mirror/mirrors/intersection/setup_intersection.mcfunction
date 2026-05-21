@@ -1,3 +1,5 @@
+execute if score toggle.mirror debug matches 1 if score debug.level debug matches 3.. run say (D3 Mirror) Setting up interesction mirror
+
 # Reset:
 function exigence:mirror/mirrors/intersection/reset with storage exigence:mirror
 data modify storage exigence:mirror mirror set value "intersection"

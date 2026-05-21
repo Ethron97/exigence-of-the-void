@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-$execute if score debug.level debug matches 3.. run say (D3) Input create new (profile_selector:$(profile_selector_id) slot:$(slot_id))
+$execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Input create new (profile_selector:$(profile_selector_id) slot:$(slot_id))
 
 # Tag self
 #   This tag also makes this unhoverable, so you don't mess up the creation process

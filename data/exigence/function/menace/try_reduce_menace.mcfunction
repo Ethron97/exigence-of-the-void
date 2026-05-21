@@ -16,10 +16,10 @@ execute if score toggle.menace debug matches 1 if score debug.level debug matche
 execute if score game.max_menace game.state matches 1 run return 1
 
 # If current menace is at or below minimum, return
-execute if score .menace game.dungeon <= .min_menace game.dungeon run return 1
+execute if score menace.current game.dungeon.menace <= menace.min game.dungeon.menace run return 1
 #----------------------------------------------------------------------------------------------------
 
 # Else, reduce by one
-scoreboard players remove .menace game.dungeon 1
+scoreboard players remove menace.current game.dungeon.menace 1
 # Increase player score
 scoreboard players add @p[tag=Lighting] profile.data.altar.cr.menace_reduced 1

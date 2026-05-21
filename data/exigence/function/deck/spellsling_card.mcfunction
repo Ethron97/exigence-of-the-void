@@ -1,6 +1,8 @@
 # Called when player plays a spellbound card by using it from their inventory
 
-#say Spellsling card
+#====================================================================================================
+
+execute if score toggle.deck debug matches 1 if score debug.level debug matches 3.. run say (D3) Spellsling card
 
 # Copy item to storage so we can clear it later
 execute if score #slot Temp matches 2 run data modify storage exigence:give card_name set from entity @s SelectedItem.components."minecraft:custom_data".card_name
@@ -24,8 +26,6 @@ execute if score #slot Temp matches 1 run item replace entity @e[x=537,y=-1,z=53
 scoreboard players set #remove Temp 1
 
 # Clear single copy from co-op players
-data modify storage exigence:give index set value 0
-data modify storage exigence:give type set value 'hotbar'
 execute as @a[tag=ActivePlayer,tag=!Spellslinging] run function exigence:player/clear/spellbound with storage exigence:give
 
 # Play spellbound sound

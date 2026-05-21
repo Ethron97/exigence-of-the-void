@@ -9,7 +9,7 @@
 execute unless entity @s[tag=BerryNode] run return fail
 #----------------------------------------------------------------------------------------------------
 
-execute if score toggle.berry debug matches 1 if score debug.level debug matches 3.. run say (D3) I am growing
+execute if score toggle.berry debug matches 1 if score debug.level debug matches 3.. run say (D3 Berry) I am growing
 
 # Add Grown tag
 tag @s add Grown

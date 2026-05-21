@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 4.. run say (D4) Hover call
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 4.. run say (D4 Menu) Hover call
 
 # Show player name
 execute at @s positioned ^ ^0.18 ^0.1 run function exigence:hub/profile_selector/menu/display/player_head/calls/private/show_name

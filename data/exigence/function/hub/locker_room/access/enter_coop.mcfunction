@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Entering Locker Room (COOP)
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Entering Locker Room (COOP)
 
 tag @s add LockerRoom
 

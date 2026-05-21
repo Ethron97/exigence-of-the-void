@@ -5,14 +5,14 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Try scores to player
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3 Profile) Try scores to player
 
 scoreboard players operation #compare career.player_id = @s profile.node.player_id
 scoreboard players set #online Temp 0
 
 # Check if player is online
 #   Returns: #online Temp
-execute as @a if score @s career.player_id = #compare career.player_id run function exigence:profile/profile_node/load/copy_profile_scores_to_player
+execute at @s as @a if score @s career.player_id = #compare career.player_id run function exigence:profile/profile_node/load/copy_profile_scores_to_player
 
 execute if score #online Temp matches 1 run return 0
 #----------------------------------------------------------------------------------------------------

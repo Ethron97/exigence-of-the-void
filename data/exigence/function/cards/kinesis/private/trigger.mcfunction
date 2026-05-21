@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # If no speed, return
-execute unless entity @s[predicate=exigence:effects/speed] run tellraw @s [{text:" > No speed to transfer",color:"red"}]
+execute unless entity @s[predicate=exigence:effects/speed] run tellraw @s [{text:" └ ",color:"gray"},{text:"No speed to transfer",color:"red"}]
 execute unless entity @s[predicate=exigence:effects/speed] run return fail
 #----------------------------------------------------------------------------------------------------
 
@@ -27,4 +27,5 @@ scoreboard players set #temp2 Temp 0
 # Call as each ravager wihtin 32 of this player
 execute at @s as @e[type=minecraft:ravager,distance=..32] run function exigence:cards/kinesis/private/slow
 
-tellraw @s [{text:" > Transfered speed to ",color:"gray"},{score:{name:"#temp2",objective:"Temp"},color:"green"},{text:" Ravagers",color:"gray"}]
+scoreboard players add #temp Temp 1
+tellraw @s [{text:" └ ",color:"gray"},{text:"Slowness ",color:"yellow"},{score:{name:"#temp",objective:"Temp"},color:"yellow"},{text:" applied to "},{score:{name:"#temp2",objective:"Temp"},color:"green"},{text:" Ravagers",color:"gray"}]

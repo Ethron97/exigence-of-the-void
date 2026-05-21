@@ -9,7 +9,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) CREATE COOP PROFILE FOR MEEEEEEE
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) CREATE COOP PROFILE FOR MEEEEEEE
 
 tellraw @s [{text:"Co-op profile successfully created",color:green}]
 tag @s remove Invited

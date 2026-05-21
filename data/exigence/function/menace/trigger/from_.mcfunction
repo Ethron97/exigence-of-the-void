@@ -11,7 +11,7 @@ $execute if score toggle.menace debug matches 1 if score debug.level debug match
 
 # Get max before and extra
 scoreboard players operation #before_max Temp = 20 number
-scoreboard players operation #before_max Temp -= .menace game.dungeon
+scoreboard players operation #before_max Temp -= menace.current game.dungeon.menace
 scoreboard players operation #before_max Temp -= menace.queue game.dungeon.temp
 scoreboard players operation #before_max Temp > 0 number
 $scoreboard players set #menace_added Temp $(amount)

@@ -11,3 +11,6 @@ execute if score @s game.warden.awareness matches 11..15 run playsound minecraft
 execute if score @s game.warden.awareness matches 16..20 run playsound minecraft:sniff hostile @a ~ ~ ~ 3 1.2
 execute if score @s game.warden.awareness matches 21..25 run playsound minecraft:sniff hostile @a ~ ~ ~ 3 1.3
 execute if score @s game.warden.awareness matches 26..30 run playsound minecraft:sniff hostile @a ~ ~ ~ 3 1.5
+
+# Randomize cooldown (in seconds)
+execute store result score @s game.warden.sniff_cooldown run random value 2..4

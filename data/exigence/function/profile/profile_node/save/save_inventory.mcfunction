@@ -6,6 +6,8 @@
 
 #====================================================================================================
 
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3 Profile) Save inventory
+
 # FIRST CHEST
 item replace block ~ ~ ~ container.0 from entity @s inventory.0
 item replace block ~ ~ ~ container.1 from entity @s inventory.1

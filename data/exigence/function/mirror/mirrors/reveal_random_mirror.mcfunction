@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.mirror debug matches 1 if score debug.level debug matches 3.. run say (D3) Revealing mirror
+execute if score toggle.mirror debug matches 1 if score debug.level debug matches 3.. run say (D3 Mirror) Revealing mirror
 
 # Add tag
 tag @s add RevealedMirror

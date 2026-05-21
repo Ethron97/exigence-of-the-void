@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) clicked eyeball sensors
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) clicked eyeball sensors
 
 # If admin clicks it, just finish the door
 execute if entity @p[tag=Interacting,tag=Admin,distance=..16] run return run scoreboard players set #sensor_state Temp 60

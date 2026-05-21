@@ -13,7 +13,7 @@ execute if score npc.scientist game.dialogue matches 8.. as @a[tag=ActivePlayer,
 execute if score npc.petitioner game.dialogue matches 7.. as @a[tag=ActivePlayer,sort=arbitrary,limit=1] run function exigence:profile/profile_node/story/grant {story:'rescue_petitioner'}
 
 # Teleport the npc up and kill them
-execute as @e[type=villager,tag=NPC,tag=Game] run function exigence:npc/game/unload_from_carrying
+execute as @e[type=villager,tag=NPC,tag=Game] run function exigence:misc/entity/unload_entity
 
 tag @s remove Carrying
 

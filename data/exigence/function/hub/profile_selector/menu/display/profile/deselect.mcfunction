@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Deselect
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Deselect
 
 # Change player score
 $execute at @s run scoreboard players reset @p[scores={hub.player.profile_selector_id=$(profile_selector_id)},tag=ProfileSelecting,distance=..16] profile.player.profile_id

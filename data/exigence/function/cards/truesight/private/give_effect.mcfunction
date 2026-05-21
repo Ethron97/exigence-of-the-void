@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # Store duration/effect
-$execute store result storage exigence:player_effects ticks int 1 run scoreboard players get @s cr_effect_$(effect)
+$execute store result storage exigence:player_effects ticks int 1 run scoreboard players get @s profile.data.effects.cr.effect_$(effect)
 $data modify storage exigence:player_effects effect set value '$(effect)'
 $data modify storage exigence:player_effects display set value '$(display)'
 

@@ -30,6 +30,11 @@ execute if score @s game.player.player_number matches 1 as @e[x=-520,y=-64,z=-28
 execute if score @s game.player.player_number matches 2 as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:mannequin,tag=Reflection,scores={game.entity.player_number=2}] run return run tp @s ~ ~ ~
 execute if score @s game.player.player_number matches 3 as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:mannequin,tag=Reflection,scores={game.entity.player_number=3}] run return run tp @s ~ ~ ~
 execute if score @s game.player.player_number matches 4 as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:mannequin,tag=Reflection,scores={game.entity.player_number=4}] run return run tp @s ~ ~ ~
+#   ELSE: LITERALLY ANYWHERE
+execute if score @s game.player.player_number matches 1 as @e[type=minecraft:mannequin,tag=Reflection,scores={game.entity.player_number=1},distance=..1000] run return run tp @s ~ ~ ~
+execute if score @s game.player.player_number matches 2 as @e[type=minecraft:mannequin,tag=Reflection,scores={game.entity.player_number=2},distance=..1000] run return run tp @s ~ ~ ~
+execute if score @s game.player.player_number matches 3 as @e[type=minecraft:mannequin,tag=Reflection,scores={game.entity.player_number=3},distance=..1000] run return run tp @s ~ ~ ~
+execute if score @s game.player.player_number matches 4 as @e[type=minecraft:mannequin,tag=Reflection,scores={game.entity.player_number=4},distance=..1000] run return run tp @s ~ ~ ~
 
 # Switch should have ended
 say Uhh reflection didn't tp to starting for the mirror node start currently?

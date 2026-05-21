@@ -12,7 +12,7 @@ execute if score @s game.entity.object_level matches 3 run teleport @s @e[x=-306
 execute if score @s game.entity.object_level matches 4 run teleport @s @e[x=-520,y=180,z=-287,dx=340,dy=200,dz=340,type=minecraft:marker,scores={node.property.object_level=4},tag=MenaceNode,tag=!Ravagered,tag=!RavagerBlacklist,sort=random,limit=1]
 
 # Mark the nearest 6 menace nodes as Ravagered.
-execute at @s as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=MenaceNode,tag=!Ravagered,distance=..64,sort=nearest,limit=6] run tag @s add Ravagered
+execute at @s as @e[type=minecraft:marker,tag=MenaceNode,tag=!Ravagered,distance=..64,sort=nearest,limit=6] run tag @s add Ravagered
 
 # Remove tags if applicable
 tag @s remove ReDistribute

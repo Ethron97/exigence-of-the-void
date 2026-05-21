@@ -9,4 +9,4 @@ execute as @a[tag=ActivePlayer] run scoreboard players operation #temp Temp > @s
 scoreboard players operation ember.queue game.dungeon.temp += #temp Temp
 
 # Tellraw actual amount added
-tellraw @a [{text:"+",color:"gray"},{"score":{"name":"#temp","objective":"Temp"},color:"gray"},{text:" 🔥",color:"aqua"}]
+tellraw @a [{text:" └ +",color:"gray"},{"score":{"name":"#temp","objective":"Temp"},color:"gray"},{text:" 🔥",color:"aqua"}]

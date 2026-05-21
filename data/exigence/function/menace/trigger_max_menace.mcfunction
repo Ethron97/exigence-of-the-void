@@ -26,7 +26,9 @@ bossbar set exigence:last_card name {text:"!!! DANGER !!!",color:"red"}
 # Disable interactables
 execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=BerryNode] run function exigence:botany/node/berry_bush_inactive
 execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=BellNode] at @s run function exigence:bell/node/deactivate
-execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=AltarNode] at @s run function exigence:altar/node/remove_interaction
+#execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=AltarNode] at @s run function exigence:altar/node/remove_interaction
+# Since altars are multi-stage (and we can't visually indicate its disabled), just remove particles so players can still try and click to get message
+tag @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:interaction,tag=AltarInteract,tag=ETICK] remove ETICK
 
 # Disable opening new vault doors
 kill @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:item_display,tag=VaultHandle]

@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Cancel invite from leave
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Cancel invite from leave
 
 # Call the full cancel function from the player node
 $scoreboard players set #target player.node.invite_sent_to $(head_player_id)

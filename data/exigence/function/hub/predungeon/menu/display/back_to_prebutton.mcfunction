@@ -10,6 +10,8 @@
 execute if score predungeon.door_state hub.room_misc matches 0 run return run tellraw @a {text:"? State is already 0, why run back_to_prebutton?",color:yellow}
 #----------------------------------------------------------------------------------------------------
 
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) Back to prebutton
+
 scoreboard players set predungeon.door_state hub.room_misc 0
 
 # Kill whatever current menu exists

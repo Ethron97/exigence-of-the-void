@@ -43,3 +43,6 @@ function exigence:profile/profile_node/new/private/add_profile_id_to_name with s
 
 # Initialize other scores
 function exigence:profile/profile_node/new/initialize_scores
+
+# Copy name
+data modify entity @s data.custom_data.name set from storage exigence:temp name

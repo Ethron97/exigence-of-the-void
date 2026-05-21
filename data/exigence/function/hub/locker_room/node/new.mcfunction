@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) New locker room node
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) New locker room node
 
 summon minecraft:marker ~ ~ ~ {Tags:["NewMarker","LockerRoomNode"],CustomName:[{text:"Marker | LockerRoomNode",color:"#aca927"},{text:" e",color:"#fffb00"}]}
 

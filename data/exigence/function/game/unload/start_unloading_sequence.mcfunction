@@ -4,6 +4,8 @@
 #   IN minecraft:overworld
 
 #====================================================================================================
+execute unless dimension minecraft:overworld run return run say Tried start unloading sequence from not overworld?
+#----------------------------------------------------------------------------------------------------
 
 execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. run say (D3) Start UNloading sequence
 
@@ -49,9 +51,6 @@ function exigence:npc/game/reset_npcs
 
 # Reset mirror hidden blocks
 function exigence:mirror/hidden_blocks/reset_hidden_blocks
-# Kill old entities
-kill @e[type=minecraft:armor_stand,tag=MirrorEntity]
-kill @e[type=minecraft:mannequin,tag=MirrorEntity]
 
 # Reset bookshelf on principal
 fill -481 62 -200 -473 64 -200 minecraft:chiseled_bookshelf[facing=south]
@@ -68,11 +67,16 @@ function exigence:game/unload/unload_bossbars
 # Unload wards
 function exigence:game/unload/unload_wards
 
-# Kill enemies
-execute positioned -300 0 -300 as @e[type=minecraft:vex,distance=..1000] run kill @s
-execute positioned -300 0 -300 as @e[type=minecraft:warden,distance=..1000] run kill @s
+# Cleanup waypoints
+execute positioned 0 0 0 run kill @e[type=minecraft:armor_stand,tag=Waypoint,distance=..1000]
 
 # Unload tags from profiledata? #TODO
 
+# Unload entities
+function exigence:game/unload/unload_entities
+
 # Set time to night
 time set 18000
+
+# Reset load cancel so we can
+#scoreboard players set game.cancel_load hub.room_misc 0

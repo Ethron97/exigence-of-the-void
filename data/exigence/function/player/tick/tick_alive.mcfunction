@@ -20,23 +20,29 @@ execute as @e[type=minecraft:item,tag=!SoulWarned,distance=..3] if items entity 
 # Check for looking at pot if they don't have a pot breaker
 function exigence:player/utility/pot/pot_check
 
+# Phantom item update (if they have one anywhere in their inventory, or a far stepper)
+execute store result score @s Temp run clear @s carrot_on_a_stick[custom_data~{item_name:"item_phantom_membrane"}] 0
+execute unless score @s Temp matches 1.. store result score @s Temp run clear @s carrot_on_a_stick[custom_data~{item_name:"item_far_step",is_soulbound:true}] 0
+execute if score @s Temp matches 1.. run function exigence:player/utility/teleport_preview/player_update
+# Do this before item checks so we know the preview is in the right spot (if valid)
+
+# Check for right click on items
+execute if score @s CarrotOnStick matches 1.. run function exigence:player/use_item/use_item
+
+# Sculk step
+scoreboard players remove @s[scores={game.player.sculk_step_cooldown=1..}] game.player.sculk_step_cooldown 1
+# Reset advanamcent once it runs out
+advancement revoke @s[advancements={exigence:listener/step_on_sculk=true},scores={game.player.sculk_step_cooldown=0}] only exigence:listener/step_on_sculk
+
 # Check for important items nearby
 #   FUN TIMES
 #   If you do not check "if data entity @s Thrower", then it will DUPLICATE the item and throw an un-pickup-able item on the ground
 execute as @e[type=minecraft:item,tag=!PreventItemDespawn,distance=..4] if items entity @s contents #exigence:important if data entity @s Thrower run function exigence:player/drop/dropped_important
 
-# Phantom item update (if they have one anywhere in their inventory, or a far stepper)
-execute store result score @s Temp run clear @s carrot_on_a_stick[custom_data~{item_name:"item_phantom_membrane"}] 0
-execute unless score @s Temp matches 1.. store result score @s Temp run clear @s carrot_on_a_stick[custom_data~{item_name:"item_far_step",is_soulbound:true}] 0
-execute if score @s Temp matches 1.. run function exigence:player/use_item/phantom_membrane/private/player_update
-
-# If player has any farstep, queue removal of the item
-execute if score @s game.player.effects.farstep matches 1.. run schedule function exigence:player/clear/farstepper 1t
-
 # Refresh score to track who is holding echo(s)
 execute store result score @s game.player.echo_fragments run clear @s #exigence:echo 0
 # Found all if: one player is holding all the echos (and at least 1 was required)
-execute if score .echos_required game.dungeon.echo matches 1.. if score @s game.player.echo_fragments = .echos_required game.dungeon.echo if score game.all_echos_found game.state matches 0 run function exigence:game/found_all_echos
+execute if score echos.total game.dungeon.echo matches 1.. if score @s game.player.echo_fragments = echos.total game.dungeon.echo if score game.all_echos_found game.state matches 0 run function exigence:game/found_all_echos
 
 ## ITEM SOUNDS
 # Echo item sounds
@@ -59,6 +65,12 @@ execute if score @s game.player.active_level matches 1..2 as @e[type=minecraft:m
 
 # Beacon guide
 execute if score game.difficulty game.state matches 5.. run function exigence:beacon/player/ambient_tick
+
+# Claustrophobia tick
+execute if score mod.claustrophobia game.modifiers matches 1 if score seconds.cooldown tick_counter matches 6 run function exigence:cards/claustrophobia/update
+
+# If there is a vex within 1 block of center mass, get some wither (unless player already has it)
+#execute if score game.max_menace game.state matches 1 unless entity @s[predicate=exigence:effects/wither] anchored eyes if entity @e[type=minecraft:vex,distance=..2] run effect give @s minecraft:wither 2 0 false
 
 #====================================================================================================
 ## SECOND-TICKS

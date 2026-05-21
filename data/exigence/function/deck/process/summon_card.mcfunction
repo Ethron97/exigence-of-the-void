@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 4.. run say (D4) Summon card (add card to deck)
+execute if score toggle.deck debug matches 1 if score debug.level debug matches 4.. run say (D4) Summon card (add card to deck)
 
 # Handle summoning of new card and moving the deck location marker
 function exigence:deck/process/private/summon_card_b

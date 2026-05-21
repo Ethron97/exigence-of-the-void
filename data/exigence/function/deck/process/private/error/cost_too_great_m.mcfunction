@@ -12,8 +12,6 @@
 
 #====================================================================================================
 
-#say Cost too great
-
 scoreboard players add warnings deck.analysis 1
 
 $execute as @a[scores={hub.player.room_id=1..}] if score @s hub.player.room_id = #relay_to_room_id Temp run \

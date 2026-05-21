@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 4.. run say (D4) Hover call
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 4.. run say (D4 Menu) Hover call
 
 # Playsound
 execute at @s run playsound minecraft:block.bamboo_wood_trapdoor.open ambient @a ~ ~ ~ 1 1.6

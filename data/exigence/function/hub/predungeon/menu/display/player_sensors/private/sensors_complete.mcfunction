@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Sensors complete
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Sensors complete
 
 # Set state
 scoreboard players set predungeon.door_state hub.room_misc 3

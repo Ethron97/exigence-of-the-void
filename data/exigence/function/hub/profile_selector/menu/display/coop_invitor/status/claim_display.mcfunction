@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Claim display
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Claim display
 
 scoreboard players operation @s hub.entity.player_id = #target career.player_id
 

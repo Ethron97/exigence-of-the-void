@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Accept invite (from player node)
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Accept invite (from player node)
 
 scoreboard players operation #target player.node.invite_sent_to = @s player.node.invite_sent_to
 scoreboard players operation #compare profile.node.player_id = @s profile.node.player_id

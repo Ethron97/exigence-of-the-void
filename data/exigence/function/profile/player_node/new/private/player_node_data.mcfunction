@@ -12,8 +12,9 @@ scoreboard players set @s profile.node.player_is_online 1
 # Copy data from item
 execute positioned 0.5 1.5 32.5 run data modify entity @s equipment.head set from entity @n[type=minecraft:item,distance=..1] Item
 
-# Copy name to name
+# Copy name to name (and custom data)
 data modify entity @s CustomName set from entity @s equipment.head.components."minecraft:profile".name
+data modify entity @s data.custom_data.name set from entity @s equipment.head.components."minecraft:profile".name
 
 # Remove local tag
 tag @s remove NewPlayerNode

@@ -1,7 +1,7 @@
 ## CONSTRAINTS
 #   AS BerryNode
 
-# ===============================================================================================================
+#====================================================================================================
 
 # Summon berries
 execute store result storage exigence:berry min int 1 run scoreboard players get @s node.berry.min_berries
@@ -21,6 +21,8 @@ execute unless entity @s[tag=FromSetup] as @a[tag=Picking] run function exigence
 
 # Ungrow
 function exigence:botany/node/berry_bush_ungrow
+# If final harvest, deactivate
+execute if score mod.final_harvest game.modifiers matches 1 run function exigence:botany/node/berry_bush_inactive
 
 # Playsound
 execute at @s run playsound minecraft:block.sweet_berry_bush.pick_berries block @a ~ ~ ~

@@ -17,7 +17,7 @@
 
 #====================================================================================================
 
-$execute if score debug.level debug matches 3.. run say (D3) I am loading $(card_name)
+$execute if score toggle.deck debug matches 1 if score debug.level debug matches 3.. run say (D3) I am loading $(card_name)
 
 # Summon the relavent armor stand(s)
 execute if score #copies deck.process_card matches 1.. run execute as @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=DeckCardLocation,limit=1] at @s run function exigence:deck/process/summon_card

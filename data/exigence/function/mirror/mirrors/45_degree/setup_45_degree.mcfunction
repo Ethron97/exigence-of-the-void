@@ -1,5 +1,5 @@
 # DEBUG
-execute if score toggle.mirror debug matches 1 if score debug.level debug matches 3.. run say (D3) Setting up 45_degree mirror
+execute if score toggle.mirror debug matches 1 if score debug.level debug matches 3.. run say (D3 Mirror) Setting up 45_degree mirror
 
 # Reset
 function exigence:mirror/mirrors/45_degree/reset with storage exigence:mirror

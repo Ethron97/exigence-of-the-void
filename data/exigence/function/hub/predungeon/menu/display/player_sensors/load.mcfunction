@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) Load player sensors
+
 # Playsound
 playsound minecraft:block.ender_chest.open ui @a ~ ~ ~ 1 1
 

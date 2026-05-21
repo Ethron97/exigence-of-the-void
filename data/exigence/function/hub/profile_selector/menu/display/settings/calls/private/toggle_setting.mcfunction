@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-$execute if score debug.level debug matches 3.. run say (D3) Toggle setting $(scoreboard)
+$execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Toggle setting $(scoreboard)
 
 # Increase this random score by 1
 scoreboard players add @s Random 1

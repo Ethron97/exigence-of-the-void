@@ -7,7 +7,7 @@ execute if score game.cancel_load hub.room_misc matches 1 run return fail
 # run tellraw @a [{text:"Dungeon load sequence cancelled",color:"red"}]
 #----------------------------------------------------------------------------------------------------
 
-execute if score debug.level debug matches 3.. run say (D3) Finish loading sequence
+execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. run say (D3 Game) Finish loading sequence
 
 # Try migrate players
 #   get room id for predungeon room node

@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Entering predungeon
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Entering predungeon
 
 tag @s add Predungeon
 team join Predungeon @s

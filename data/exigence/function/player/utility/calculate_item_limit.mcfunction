@@ -15,10 +15,13 @@ execute if entity @s[advancements={exigence:story/win_difficulty_3=true}] run sc
 execute if entity @s[advancements={exigence:story/win_difficulty_4=true}] run scoreboard players add @s hub.player.consumable_limit 1
 
 # FROM ITEMS
-## ====================== ARTFIACTS ======================
+#====================================================================================================
+## ARTFIACTS
+#====================================================================================================
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'satchel'}}}]}] run scoreboard players add @s hub.player.consumable_limit 1
 
-## ====================== LEGGINGS ======================
+#====================================================================================================
+## LEGGINGS
 # Extra Pockets (separate, old)
 #execute if entity @s[nbt={Inventory:[{id:"minecraft:iron_leggings",components:{"minecraft:custom_data":{item_name:'pants_pocket_a'}}}]}] run scoreboard players add food.limit hub.validate_items 1
 #execute if entity @s[nbt={Inventory:[{id:"minecraft:iron_leggings",components:{"minecraft:custom_data":{item_name:'pants_pocket_b'}}}]}] run scoreboard players add bag.limit hub.validate_items 1
@@ -29,7 +32,9 @@ execute if predicate exigence:equipment/pants/utility_a run scoreboard players a
 execute if predicate exigence:equipment/pants/utility_b run scoreboard players add @s hub.player.consumable_limit 2
 execute if predicate exigence:equipment/pants/utility_c run scoreboard players add @s hub.player.consumable_limit 4
 
-## ====================== PERMANENT UPGRADES ======================
+#====================================================================================================
+## PERMANENT UPGRADES
+#====================================================================================================
 # Separate (old)
 #execute if entity @s[advancements={exigence:unlockables/one_time/one_time_food_a=true}] run scoreboard players add food.limit hub.validate_items 1
 #execute if entity @s[advancements={exigence:unlockables/one_time/one_time_bag_a=true}] run scoreboard players add bag.limit hub.validate_items 1
