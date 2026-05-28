@@ -13,7 +13,7 @@ execute unless entity @s[type=minecraft:block_display,tag=DropBlock] run return 
 execute at @s run setblock ~ ~ ~ air
 
 # Playsound
-execute at @s run playsound minecraft:block.copper_bulb.break block @a ~ ~-1 ~ 1 1
+execute at @s run playsound minecraft:block.copper_bulb.break block @a[tag=TrialSounds_Bolt] ~ ~-1 ~ 1 1
 
 # Kill self
 kill @s

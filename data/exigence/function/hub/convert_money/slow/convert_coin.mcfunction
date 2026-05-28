@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.player debug matches 1 if score debug.level debug matches 4.. run tellraw @s [{text:"(D4 Player) Convert coin (slow) : @s : "},{score:{name:"@s",objective:"hub.coin_conversion"}}]
+
 # Update scores
 scoreboard players remove @s hub.coin_conversion 1
 scoreboard players add @s hub.coin_conversion.coins_converted 1
@@ -28,4 +30,4 @@ title @s subtitle [{text:"",color:"gray"},{"score":{"name":"@s","objective":"hub
 title @s title ""
 
 # If not enough remaining, end
-execute if score @s hub.coin_conversion <= @s hub.coin_conversion.leftover_coins run function exigence:hub/convert_money/slow/private/done_converting
+execute if score @s hub.coin_conversion <= 0 number run function exigence:hub/convert_money/slow/private/done_converting

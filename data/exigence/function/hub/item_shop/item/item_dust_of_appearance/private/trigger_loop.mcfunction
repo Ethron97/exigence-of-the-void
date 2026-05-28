@@ -1,7 +1,7 @@
 execute if score debug.level debug matches 3.. run say (D3) Dust of appearnace looping
 
 # Reveal closest block that hasn't been revealed
-tag @e[type=minecraft:marker,tag=HiddenBlock,tag=ReflectionNO,tag=Appearing,tag=!Appeared,sort=nearest,limit=1] add NewAppeared
+tag @n[type=minecraft:marker,tag=HiddenBlock,tag=ReflectionNO,tag=Appearing,tag=!Appeared] add NewAppeared
 tag @e[type=minecraft:marker,tag=NewAppeared] add Appeared
 tag @e[type=minecraft:marker,tag=NewAppeared] remove Appearing
 
@@ -11,6 +11,6 @@ execute as @e[type=minecraft:marker,tag=NewAppeared] at @s run function exigence
 tag @e[type=minecraft:marker,tag=NewAppeared] remove NewAppeared
 
 # If there are more to appear, iterate
-execute if score game.is_active game.state matches 1 if entity @e[type=minecraft:marker,tag=Appearing] run schedule function exigence:hub/item_shop/item/dust_of_appearance/private/trigger_loop 2t append
+execute if score game.is_active game.state matches 1 if entity @e[type=minecraft:marker,tag=Appearing] run schedule function exigence:hub/item_shop/item/item_dust_of_appearance/private/trigger_loop 2t append
 # If there are no more, schedule untrigger
 #execute if score game.is_active game.state matches 1 unless entity @e[type=minecraft:marker,tag=Appearing] run schedule function exigence:vault/artifact/artifacts/dust_of_appearance/private/untrigger_loop 100t

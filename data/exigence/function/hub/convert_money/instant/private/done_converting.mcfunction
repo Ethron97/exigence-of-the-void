@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3 Player) Done converting (instant)
+
 # Give this player the raw stats
 tellraw @s [{text:"You ",color:"gray"},{text:"converted ",color:"gray"},{"score":{"name":"@s","objective":"hub.coin_conversion.coins_converted"},color:"gold"}\
 ,{text:" 🔘 ",color:"gold"},{text:"to ",color:"gray"}\

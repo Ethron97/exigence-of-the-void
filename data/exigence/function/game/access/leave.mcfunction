@@ -22,6 +22,7 @@ tag @s remove PrimaryPlayer
 tag @s remove Carrying
 tag @s remove Trial
 tag @s remove Crucible
+tag @s remove Game
 tag @s remove HandleInteracting
 tag @s remove CurrentlyReflecting
 tag @s remove Won
@@ -33,6 +34,13 @@ effect clear @a
 stopsound @a ambient
 title @a actionbar ""
 title @a clear
+scoreboard players reset @s game.player.player_number
+
+# Set spawnpoint to Loss location
+execute in exigence:hub run spawnpoint @s 0 200 0
+
+# Unbind armor
+function exigence:player/utility/unbind_all_armor
 
 attribute @s minecraft:waypoint_receive_range base set 0
 
@@ -64,6 +72,11 @@ scoreboard players operation @s hub.coin_conversion.leftover_coins = @s hub.coin
 scoreboard players operation @s hub.coin_conversion.leftover_coins %= 5 number
 #   Add leftover to temp version so that if another player logged in/got kicked, it wouldn't increase their leftovers
 scoreboard players operation #coins.leftover hub.coin_conversion += @s hub.coin_conversion.leftover_coins
+#   Remove leftover from to_convert so that we don't get odd number
+scoreboard players operation @s hub.coin_conversion -= @s hub.coin_conversion.leftover_coins
+
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run tellraw @s [{text:"(D3 Player) Coins to convert: "},{score:{name:"@s",objective:"hub.coin_conversion"}}]
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run tellraw @s [{text:"(D3 Player) Leftover: "},{score:{name:"@s",objective:"hub.coin_conversion.leftover_coins"}}]
 
 # DEBUG
 gamemode creative @s[tag=Admin]

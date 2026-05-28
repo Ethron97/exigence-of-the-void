@@ -52,14 +52,14 @@ function exigence:npc/game/reset_npcs
 # Reset mirror hidden blocks
 function exigence:mirror/hidden_blocks/reset_hidden_blocks
 
-# Reset bookshelf on principal
-fill -481 62 -200 -473 64 -200 minecraft:chiseled_bookshelf[facing=south]
-
 # Kill Ravager Glass stands (function both respawns and kills)
 execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=RavagerGlass] run function exigence:game/other/ravager_glass/respawn_ravager_glass
 
 # Save profile-level data
 execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode,tag=ActiveChest] run function exigence:game/unload/save_data_to_profile_node
+
+# Reset bookshelf on principal
+fill -481 62 -200 -473 64 -200 minecraft:chiseled_bookshelf[facing=south]
 
 # Unload bossbars
 function exigence:game/unload/unload_bossbars

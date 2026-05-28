@@ -16,14 +16,17 @@ execute at @s run playsound minecraft:entity.player.teleport player @s ~ ~ ~ 1 1
 scoreboard players set @s[tag=Game] game.player.vault_code 0
 scoreboard players reset @s[tag=Hub] game.player.vault_code
 
+# Reset team (if not invisible)
+execute if entity @s[tag=Game] unless score @s game.player.effects.invisibility matches 1.. run team join Player @s
+
+# Set gamemode creative if hub admin
+gamemode creative @s[tag=Hub,tag=Admin]
+
 # Remove tag
 tag @s remove Crucible
 tag @s remove Trial
 tag @s remove Game
 tag @s remove Hub
-
-# Set gamemode creative
-gamemode creative @s[tag=Admin]
 
 # Update bossbars to only show for players who are not in a vault
 #   Effectively, hide other bossbars for players within the vault

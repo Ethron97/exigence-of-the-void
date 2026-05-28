@@ -16,20 +16,20 @@
 
 #====================================================================================================
 
-execute if score #random Random matches 0 unless block ~2 ~ ~ #exigence:silence_trial run return 1
-execute if score #random Random matches 0 unless block ~2 ~ ~-1 #exigence:silence_trial run return 1
-execute if score #random Random matches 0 unless block ~2 ~ ~1 #exigence:silence_trial run return 1
+execute if score #random Random matches 0 unless block ~2 ~-1 ~ #exigence:silence_trial run return 1
+execute if score #random Random matches 0 unless block ~2 ~-1 ~-1 #exigence:silence_trial run return 1
+execute if score #random Random matches 0 unless block ~2 ~-1 ~1 #exigence:silence_trial run return 1
 
-execute if score #random Random matches 1 unless block ~ ~ ~2 #exigence:silence_trial run return 1
-execute if score #random Random matches 1 unless block ~-1 ~ ~2 #exigence:silence_trial run return 1
-execute if score #random Random matches 1 unless block ~1 ~ ~2 #exigence:silence_trial run return 1
+execute if score #random Random matches 1 unless block ~ ~-1 ~2 #exigence:silence_trial run return 1
+execute if score #random Random matches 1 unless block ~-1 ~-1 ~2 #exigence:silence_trial run return 1
+execute if score #random Random matches 1 unless block ~1 ~-1 ~2 #exigence:silence_trial run return 1
 
-execute if score #random Random matches 2 unless block ~-2 ~ ~ #exigence:silence_trial run return 1
-execute if score #random Random matches 2 unless block ~-2 ~ ~-1 #exigence:silence_trial run return 1
-execute if score #random Random matches 2 unless block ~-2 ~ ~1 #exigence:silence_trial run return 1
+execute if score #random Random matches 2 unless block ~-2 ~-1 ~ #exigence:silence_trial run return 1
+execute if score #random Random matches 2 unless block ~-2 ~-1 ~-1 #exigence:silence_trial run return 1
+execute if score #random Random matches 2 unless block ~-2 ~-1 ~1 #exigence:silence_trial run return 1
 
-execute if score #random Random matches 3 unless block ~ ~ ~-2 #exigence:silence_trial run return 1
-execute if score #random Random matches 3 unless block ~-1 ~ ~-2 #exigence:silence_trial run return 1
-execute if score #random Random matches 3 unless block ~1 ~ ~-2 #exigence:silence_trial run return 1
+execute if score #random Random matches 3 unless block ~ ~-1 ~-2 #exigence:silence_trial run return 1
+execute if score #random Random matches 3 unless block ~-1 ~-1 ~-2 #exigence:silence_trial run return 1
+execute if score #random Random matches 3 unless block ~1 ~-1 ~-2 #exigence:silence_trial run return 1
 
 return 0

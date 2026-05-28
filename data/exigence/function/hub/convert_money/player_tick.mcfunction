@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-# Call sub tick function based on setting (just quick for now)
+# Call sub tick function based on setting
 execute if score @s hub.coin_conversion matches 1.. if score @s career.settings.coin_conversion_style matches 2 run function exigence:hub/convert_money/slow/convert_coin
 
 # Only tick every other tick for slow

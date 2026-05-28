@@ -32,3 +32,6 @@
 say test
 #advancement revoke @a[advancements={exigence:listener/pickup/coin/bonus_coin=true}] only exigence:listener/pickup/coin/bonus_coin
 #$say $(Rotation)
+
+
+#give Ethron97 copper_leggings[minecraft:attribute_modifiers=[{type:'minecraft:armor',id:'exigence:remove',amount:0.0,operation:'add_multiplied_base',slot:'legs'}]]

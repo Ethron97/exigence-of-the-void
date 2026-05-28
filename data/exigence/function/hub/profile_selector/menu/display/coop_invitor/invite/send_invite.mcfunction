@@ -11,9 +11,7 @@ scoreboard players enable @s AcceptCoopInvite
 scoreboard players enable @s DeclineCoopInvite
 
 # Inform
-tellraw @s [{text:"\nYou have been invited by ",color:"green"},{selector:"@p[tag=SendingInvite,distance=..0.1]",color:"gold"},{text:" to join a co-co profile!",color:"green"}]
-tellraw @s [{text:"Click:    ",color:gray},{text:"[ACCEPT]",italic:false,bold:false,color:"green","click_event": {"action":"run_command","command":"/trigger AcceptCoopInvite"}},"    ",{text:"[DECLINE]",italic: false,color: "red","click_event": {"action":"run_command","command":"/trigger DeclineCoopInvite"}}]
-tellraw @s [{text:""}]
+function exigence:hub/profile_selector/menu/display/coop_invitor/invite/message/inform_invited
 execute at @s run playsound entity.experience_orb.pickup player @s ~ ~100 ~ 100 1
 
 # Save IDID of the player head that sourced the invite

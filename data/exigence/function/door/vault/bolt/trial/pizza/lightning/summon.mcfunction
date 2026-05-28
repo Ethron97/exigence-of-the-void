@@ -9,7 +9,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) New lightning
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 4.. run say (D4 Trial) New lightning
 
 $summon minecraft:marker ~ ~ ~ {Tags:["PizzaLightning","NewPizzaLightning"],Rotation:$(Rotation),CustomName:{text:"Marker | PizzaLightning"}}
 

@@ -11,4 +11,4 @@ $data merge entity @s {Item:{id:"minecraft:chainmail_boots",count:1,components:{
 ,[{text:"Reduce fall damage by 48% and",italic:false,color:"gray"}]\
 ,[{text:"increase safe fall distance",italic:false,color:"gray"}]\
 ,[{text:"by 40 blocks",italic:false,color:"gray"}]\
-],"minecraft:custom_data":{item_name:"boots_feather_f",is_soulbound:true}}}}
+],"minecraft:custom_data":{item_name:"boots_feather_f",is_soulbound:true,enchanted:true}}}}

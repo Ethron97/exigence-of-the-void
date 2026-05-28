@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score toggle.altar debug matches 1 if score debug.level debug matches 3.. run say (D3) Activate altar node
+execute if score toggle.altar debug matches 1 if score debug.level debug matches 3.. run say (D3 Altar) Activate altar node
 
 # Clone built altar from prebuilds
 execute at @s[tag=!Crucible] run clone -390 -43 -119 -388 -42 -117 ~-1 ~-1 ~-1

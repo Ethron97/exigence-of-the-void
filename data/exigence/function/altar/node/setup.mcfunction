@@ -1,9 +1,11 @@
 # Setup/reset Altar node
 
 ## CONSTRAINTS
-#   AS AltarNode
+#   AS/AT AltarNode
 
 #====================================================================================================
+
+execute if score toggle.altar debug matches 1 if score debug.level debug matches 4.. run say (D4 Altar) Setup
 
 # Reset
 scoreboard players set @s game.node.node_state -1

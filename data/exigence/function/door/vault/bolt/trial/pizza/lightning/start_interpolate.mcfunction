@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.trial debug matches 1 if score debug.level debug matches 4.. run say (D4) Start interolate
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 4.. run say (D4 Trial) Start interolate
 
 execute unless score @s trial.object.pizza_id matches 1.. run say No pizza id?
 

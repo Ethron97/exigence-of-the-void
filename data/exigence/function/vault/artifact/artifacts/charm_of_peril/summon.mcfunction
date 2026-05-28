@@ -3,7 +3,7 @@ $data merge entity @s {Item:{id:"minecraft:fermented_spider_eye",count:1,compone
 ,"minecraft:lore":[[$(common_stars),{text:"Passive Artifact ",italic:false,color:"white"},{text:"(Soulbound)",color:"dark_gray",italic:false}]\
 ,{text:""}\
 ,[{text:"Increases chance for deeper ",italic:false,color:"gray"},{text:"Echo Shards",color:"blue"}]\
-,[{text:"(Deeper = harder to get, but gives more ",italic:false,color:"dark_gray"},{text:"🔥 ",color:"aqua"},{text:")",color:"dark_gray"}]\
+,[{text:"(Deeper = harder to get, but gives more ",italic:false,color:"dark_gray"},{text:"🔥",color:"aqua"},{text:")",color:"dark_gray"}]\
 ,{text:""}\
 ,[{text:"+1 ",italic:false,color:"gray"},{text:"☢ ",italic:false,color:"red"},{text:"on primary ",italic:false,color:"gray"},{text:"Echo Shard ",italic:false,color:"blue"},{text:"level",italic:false,color:"gray"}]\
 ,{text:""}\

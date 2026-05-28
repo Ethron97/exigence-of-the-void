@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3 Player) Finish converting
+
 # Reset tags
 tag @s remove QueueCoinConversion
 tag @s remove ConvertingCoins

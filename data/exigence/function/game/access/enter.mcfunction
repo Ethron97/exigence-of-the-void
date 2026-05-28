@@ -24,12 +24,17 @@ team join Player @s
 attribute @s minecraft:safe_fall_distance modifier remove exigence:safe_fall
 attribute @s minecraft:waypoint_receive_range base set 1000
 
+# Load player modifier scores (after resetting them)
+function exigence:game/load/modifiers/load_modifiers_b
+
+# Set spawnpoint to Loss location
+execute in exigence:hub run spawnpoint @s 12 198 -12
+
 # Reset title times (to defaults)
 title @s times 10t 70t 20t
 
-# Set waypoint to not transmit (so coop players don't get confused seeing each other on it)
-#   Spectators already don't appear on it, and the hub will be in a different world.
-#attribute @s minecraft:waypoint_transmit_range base set 0
+# Set waypoint to not transmit (so coop players don't get confused seeing each other on it they are already glowing)
+attribute @s minecraft:waypoint_transmit_range base set 0
 
 # Teleport to dungeon start
 # TODO try and do some lining up / randomness based on where they stand in the predungeon room

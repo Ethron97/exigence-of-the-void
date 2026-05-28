@@ -1,4 +1,4 @@
-# Called by trial.tick when loss condition is met
+# Called by trial.tick when win condition is met
 
 ## CONSTRAINTS
 #   AS player
@@ -6,7 +6,8 @@
 #====================================================================================================
 
 # Teleport back to above trial room
-execute at @n[type=minecraft:marker,tag=TrialNode,tag=Bolt] run tp @s ~ ~13 ~
+#execute at @n[type=minecraft:marker,tag=TrialNode,tag=Bolt] run tp @s ~ ~13 ~
+tp 16.5 182.0 -16.5
 
 # Give win scores
 # TODO add scoreboards for "practice" trials

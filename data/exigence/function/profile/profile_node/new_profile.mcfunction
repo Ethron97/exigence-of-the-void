@@ -28,10 +28,7 @@ execute if score #temp Temp matches 5.. run return run tellraw @s {text:"Maximum
 
 #----------------------------------------------------------------------------------------------------
 
-execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3) Creating new profile
-
-# Increase number of profiles created
-scoreboard players add @s career.profiles_created 1
+execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3) Creating new profile
 
 # Call function to locate the next available slot to place a node (tps NewProfileNodeMarker to position)
 execute unless entity @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=NewProfileNodeMarker,limit=1] run summon minecraft:marker 0.5 5.0 0.5 {Tags:["NewProfileNodeMarker"],CustomName:{text:"Marker | NewProfileNodeMarker"}}
@@ -39,6 +36,10 @@ execute unless entity @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=NewProfileNodeMarker
 tp @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=NewProfileNodeMarker,limit=1] 0.5 5.0 0.5
 #   Iterative over possible positions to find first empty
 execute as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=NewProfileNodeMarker,limit=1] at @s run function exigence:profile/profile_node/new/locate_next_profile_slot
+
+# Validate
+execute unless entity @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=NewProfileNodeMarker,limit=1] run return run say No valid location found for new profile
+#----------------------------------------------------------------------------------------------------
 
 # Generate profile id
 function exigence:profile/profile_node/new/generate_id
@@ -53,4 +54,7 @@ execute at @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=NewProfileNodeMarker,limit=1] r
 kill @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,type=minecraft:item]
 
 # Remove temp marker
-kill @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=NewProfileNodeMarker,limit=1]
+kill @e[x=0,y=0,z=0,dx=16,dy=256,dz=16,tag=NewProfileNodeMarker,limit=1]
+
+# Increase number of profiles created
+scoreboard players add @s career.profiles_created 1

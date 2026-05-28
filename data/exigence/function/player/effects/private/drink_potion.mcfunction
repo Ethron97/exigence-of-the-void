@@ -11,15 +11,17 @@ execute if score toggle.player debug matches 1 if score debug.level debug matche
 scoreboard players set @s game.player.used.potion 0
 clear @s glass_bottle
 
-# Store player id
-scoreboard players operation #compare profile.node.player_id = @s career.player_id
-
-# Get player node from player id
-execute as @e[type=minecraft:armor_stand,tag=PlayerNode] if score @s profile.node.player_id = #compare profile.node.player_id run tag @s add SelectedPlayerNode
+# Store player number
+scoreboard players operation #compare game.player.player_number = @s game.player.player_number
 
 # Get potion item name from player node (offhand first so mainhand is prioritized)
-execute as @e[type=minecraft:armor_stand,tag=PlayerNode,tag=SelectedPlayerNode] run data modify storage exigence:player_effects potion_name set from entity @s equipment.offhand.components."minecraft:custom_data".item_name
-execute as @e[type=minecraft:armor_stand,tag=PlayerNode,tag=SelectedPlayerNode] run data modify storage exigence:player_effects potion_name set from entity @s equipment.mainhand.components."minecraft:custom_data".item_name
+execute in minecraft:overworld as @e[x=519,y=0,z=502,dx=0,dy=0,dz=3,type=minecraft:armor_stand,tag=PlayerArmorstand] \
+if score @s game.entity.player_number = #compare game.player.player_number \
+run data modify storage exigence:player_effects potion_name set from entity @s equipment.offhand.components."minecraft:custom_data".item_name
+
+execute in minecraft:overworld as @e[x=519,y=0,z=502,dx=0,dy=0,dz=3,type=minecraft:armor_stand,tag=PlayerArmorstand] \
+if score @s game.entity.player_number = #compare game.player.player_number \
+run data modify storage exigence:player_effects potion_name set from entity @s equipment.mainhand.components."minecraft:custom_data".item_name
 
 # Setup function
 scoreboard players set et.FromPotion game.effect_temp 1
@@ -57,6 +59,3 @@ execute if data storage exigence:player_effects {potion_name:"potion_jump_6"} ru
 execute if data storage exigence:player_effects {potion_name:"potion_jump_8"} run function exigence:player/effects/set_effect_time {effect:'jump8',duration:200}
 
 scoreboard players set et.FromPotion game.effect_temp 0
-
-# Remove local tag
-tag @e[type=minecraft:armor_stand,tag=PlayerNode,tag=SelectedPlayerNode] remove SelectedPlayerNode

@@ -9,6 +9,6 @@
 #====================================================================================================
 
 # DEBUG
-$execute if score toggle.trial debug matches 1 if score debug.level debug matches 4.. run say (D4) Interpolate $(length)
+$execute if score toggle.trial debug matches 1 if score debug.level debug matches 4.. run say (D4 Trial) Interpolate $(length)
 
 $data merge entity @s {start_interpolation:-1,transformation:{translation:[-1.0f,-0.1f,0.0f],scale:[2.0f,0.2f,$(length)f]}}

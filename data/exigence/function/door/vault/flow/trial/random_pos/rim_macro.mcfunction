@@ -15,7 +15,10 @@ $execute if score toggle.trial debug matches 1 if score debug.level debug matche
 $execute at @s run tp @s ~ ~ ~ ~$(RotA) ~
 
 # Teleport A to first marker position
-execute at @s positioned ^ ^ ^6.5 run tp @e[type=minecraft:marker,tag=FlowPosA] ~ ~ ~
+execute at @s positioned ^ ^ ^6.5 run tp @e[type=minecraft:marker,tag=FlowPosA,distance=..24] ~ ~ ~
 
 # Rotate A to be facing towards the center
-execute as @e[type=minecraft:marker,tag=FlowPosA] at @s facing entity @e[type=minecraft:marker,tag=FlowCenter,limit=1] eyes rotated ~ ~ run tp @s ~ ~ ~ ~ ~
+execute as @e[type=minecraft:marker,tag=FlowPosA,distance=..24] at @s facing entity @e[type=minecraft:marker,tag=FlowCenter,distance=..24,limit=1] eyes rotated ~ ~ run tp @s ~ ~ ~ ~ ~
+
+# Move up by a fraction so no z fighting
+#execute at @s run tp @s ~ ~0.3 ~

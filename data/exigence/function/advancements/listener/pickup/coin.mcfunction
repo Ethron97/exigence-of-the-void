@@ -38,11 +38,11 @@ execute if score #Bonus Temp matches 1 if score @s game.player.active_level matc
 # Increase source scores
 function exigence:advancements/listener/pickup/coin/_source_scores
 
+# Clear picked-up item
+clear @s minecraft:large_amethyst_bud 1
+
 # Give coins
 execute if score #stacksize game.treasure.picked_up_coin_handle matches 1.. run function exigence:player/pickup/coin
 execute if score #stacksize game.treasure.picked_up_coin_handle matches 2.. run function exigence:player/pickup/coin
 execute if score #stacksize game.treasure.picked_up_coin_handle matches 3.. run function exigence:player/pickup/coin
 execute if score #stacksize game.treasure.picked_up_coin_handle matches 4.. run function exigence:player/pickup/coin
-
-# Clear picked-up item
-clear @s minecraft:large_amethyst_bud 1

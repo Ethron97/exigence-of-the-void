@@ -5,10 +5,12 @@
 
 #====================================================================================================
 
-# Playsound
-playsound minecraft:block.sculk.spread block @a[scores={game.player.vault_code=3}] ~ ~1000 ~ 1000 1
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3 Trial) Step
 
-# Move platform
+# Playsound
+playsound minecraft:block.sculk.spread block @a[tag=TrialSounds_Silence] ~ ~1000 ~ 1000 1
+
+# Move platform in direction chosen last step
 fill ^-1 ^-1 ^-1 ^1 ^-1 ^-1 minecraft:air replace magenta_glazed_terracotta
 tp @s ^ ^ ^1
 execute at @s run fill ~-1 ~-1 ~-1 ~1 ~-1 ~1 magenta_glazed_terracotta replace air
@@ -21,13 +23,3 @@ scoreboard players operation #silence_previous Random = #random Random
 
 # Indicate next step
 execute at @s run function exigence:door/vault/silence/trial/platform/prep_step
-
-# Reset cooldown TODO
-# Reset timer
-execute if entity @a[scores={dead=0,game.player.vault_code=3},tag=ActivePlayer,tag=Trial] if score Silence TrialTimer matches ..200 run scoreboard players set SilencePlatform TrialTimer 20
-execute if entity @a[scores={dead=0,game.player.vault_code=3},tag=ActivePlayer,tag=Trial] if score Silence TrialTimer matches 201..400 run scoreboard players set SilencePlatform TrialTimer 16
-execute if entity @a[scores={dead=0,game.player.vault_code=3},tag=ActivePlayer,tag=Trial] if score Silence TrialTimer matches 400.. run scoreboard players set SilencePlatform TrialTimer 12
-
-execute if entity @a[scores={dead=0,game.player.vault_code=3},tag=ActivePlayer,tag=Crucible] if score Silence TrialTimer matches ..200 run scoreboard players set SilencePlatform TrialTimer 14
-execute if entity @a[scores={dead=0,game.player.vault_code=3},tag=ActivePlayer,tag=Crucible] if score Silence TrialTimer matches 201..400 run scoreboard players set SilencePlatform TrialTimer 11
-execute if entity @a[scores={dead=0,game.player.vault_code=3},tag=ActivePlayer,tag=Crucible] if score Silence TrialTimer matches 400.. run scoreboard players set SilencePlatform TrialTimer 9

@@ -1,15 +1,20 @@
 # Called by trial.tick when loss condition is met
 
 ## CONSTRAINTS
-#   AS player
+#   AS Trial Node
 
 #====================================================================================================
 
-# Teleport to vault anti-chamber facing the vault door
-tp @s -367.5 152.0 6.5 90 0
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3 Trial) Eye trial loss
 
 # Reset vault
-function exigence:door/vault/eye/trial/reset
+execute at @s run function exigence:door/vault/eye/trial/reset
 
-# Loss
-function exigence:door/vault/_trial/_loss
+# Try loss function as player, else queue
+scoreboard players set #invoke_failure Temp 0
+execute if score game.is_active game.state matches 1 if entity @s[tag=Game] run scoreboard players set #invoke_failure Temp 1
+
+scoreboard players operation #compare career.player_id = @s hub.entity.player_id
+## INPUT: invoke_failure
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] if score @s profile.node.player_id = #compare career.player_id \
+run function exigence:door/vault/_trial/_try_loss

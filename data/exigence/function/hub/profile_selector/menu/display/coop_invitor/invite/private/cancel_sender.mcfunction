@@ -11,7 +11,7 @@ execute if score toggle.menu debug matches 1 if score debug.level debug matches 
 tag @s remove InviteSent
 tag @s add CancelledBy
 
-execute if score @s player.node.invite_sent_to matches 1.. run tellraw @s [{text:"Outgoing invitation cancelled.",color:'red'}]
+execute if score @s player.node.invite_sent_to matches 1.. run tellraw @s [{text:"Outgoing invitation cancelled",color:'red'}]
 scoreboard players reset @s player.node.invite_sent_to
 
 scoreboard players set #found_player Temp 1

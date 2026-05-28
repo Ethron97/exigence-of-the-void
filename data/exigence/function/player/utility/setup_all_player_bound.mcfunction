@@ -13,4 +13,6 @@ function exigence:player/utility/setup_warp_preview_display
 function exigence:mirror/reflection/setup_player_reflection
 
 # TODO interaction
-# TODO hand holder?
+
+# Hand holder
+function exigence:player/utility/setup_player_armorstand

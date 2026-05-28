@@ -12,6 +12,9 @@ execute if score toggle.menu debug matches 1 if score debug.level debug matches 
 
 scoreboard players operation #compare hub.player_entity.query_idid = @s IDID
 
+# Get difficulty from SlotDisplay
+execute at @s as @n[type=minecraft:item_display,tag=SlotDisplay,tag=CreationProcess,distance=..3] store result score #creating_difficulty Temp run data get entity @s item.components."minecraft:custom_data".difficulty
+
 $tag @a[scores={career.player_id=$(player_id)},limit=1] add SendingInvite
 
 scoreboard players set #successful_invite Temp 0

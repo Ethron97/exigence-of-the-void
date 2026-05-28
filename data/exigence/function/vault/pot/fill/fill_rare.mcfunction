@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Fill (rare)
+execute if score toggle.vault debug matches 1 if score debug.level debug matches 4.. run say (D4 Vault) Fill (rare)
 
 # If gold idol, fill with money and return
 execute if score mod.gold_idol game.modifiers matches 1 run return run function exigence:vault/pot/fill/money

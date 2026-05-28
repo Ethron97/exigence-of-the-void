@@ -20,6 +20,8 @@ scoreboard players reset @s hub.player.consumable_limit
 scoreboard players reset @s shop.player.looking_at_idid
 scoreboard players reset @s DisableCurrencyWarning
 
+function exigence:player/utility/unbind_all_armor
+
 #====================================================================================================
 # Remove THIS player from room node
 scoreboard players operation #compare career.player_id = @s career.player_id

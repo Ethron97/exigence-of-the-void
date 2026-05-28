@@ -17,6 +17,10 @@ execute as @n[type=minecraft:marker,tag=PredungeonMenuNode,distance=..5] at @s r
 
 execute if score #predungeon_validate_total Temp matches 0 run return run playsound minecraft:block.sculk_sensor.clicking ui @a ~ ~ ~ 1 1.4
 #----------------------------------------------------------------------------------------------------
+
+# If everything is validated, lock player armor
+execute as @a[tag=Predungeon] run function exigence:player/utility/bind_all_armor
+
 # Effects
 #particle glow ~ ~ ~0.1 0.1 0.1 0.0 0.001 5
 

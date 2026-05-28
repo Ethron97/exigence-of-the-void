@@ -15,6 +15,9 @@ execute at @s run playsound minecraft:entity.player.teleport player @s ~ ~ ~ 1 1
 # Begin sound
 execute at @s run playsound minecraft:block.trial_spawner.about_to_spawn_item ambient @s ~ ~1000 ~ 1000 0.8
 
+# Join enemy team to avoid default warden tracking
+team join Enemy @s
+
 # Update bossbars to only show for players who are not in a vault
 #   Effectively, hide other bossbars for players within the vault
 # TODO Run update function that recalls update, incase stuff like dynamic resource bossbar whatever

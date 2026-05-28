@@ -1,5 +1,8 @@
 # Loop over all variances 1 tick at a time
 
+## CONSTRAINTS
+#   IN minecraft:overworld
+
 #====================================================================================================
 execute if score game.cancel_load hub.room_misc matches 1 run return fail
 #----------------------------------------------------------------------------------------------------
@@ -38,5 +41,5 @@ execute if score #blockade_level Temp matches 4 if score #didnt_reset Temp match
 # If didn't setup OR reset, add to variance
 scoreboard players operation #blockade_level Temp += #didnt_setup Temp
 
-execute unless score #blockade_level Temp matches 5 run schedule function exigence:game/load/blockades/setup_loop 1t append
+execute unless score #blockade_level Temp matches 5 run schedule function exigence:game/load/blockades/setup_loop_schedule 1t append
 execute if score #blockade_level Temp matches 5 run function exigence:game/load/blockades/setup_finish

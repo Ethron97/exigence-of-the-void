@@ -9,7 +9,7 @@
 #====================================================================================================
 
 #$say Unhover (profile) (profile_selector:$(profile_selector_id) slot:$(slot_id))
-execute if score debug.level debug matches 4.. run say (D4) Unhover pre button
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 4.. run say (D4) Unhover player sensor
 
 team join Yellow @s
 

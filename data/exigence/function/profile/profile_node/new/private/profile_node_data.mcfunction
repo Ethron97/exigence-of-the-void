@@ -9,9 +9,14 @@ data merge entity @s {Tags:["ProfileNode"],CustomName:[{text:"Marker | ProfileNo
 
 # Assign difficulty
 scoreboard players operation @s profile.node.profile_difficulty = #difficulty Temp
+execute if score @s profile.node.profile_difficulty matches 1 run data modify entity @s data.custom_data.difficulty_id set value 'difficulty_radiant'
+execute if score @s profile.node.profile_difficulty matches 2 run data modify entity @s data.custom_data.difficulty_id set value 'difficulty_ancient'
+execute if score @s profile.node.profile_difficulty matches 3 run data modify entity @s data.custom_data.difficulty_id set value 'difficulty_ascendant'
+# ...
 
-# Assign player id
+# Assign profile id
 scoreboard players operation @s profile.node.profile_id = #sequence profile.player.profile_id
+execute store result entity @s data.custom_data.profile_id int 1 run scoreboard players get @s profile.node.profile_id
 
 # Assign "local" profile id (sequence that increments each profile this player creates)
 scoreboard players operation @s profile.node.local_profile_id = #compare career.profiles_created
@@ -22,6 +27,7 @@ scoreboard players operation @s profile.node.coop_profile_index = #player_index 
 # Copy co-op id
 execute if score #creating_coop Temp matches 1 run scoreboard players operation @s profile.node.coop_profile_id = @s profile.node.profile_id
 execute if score #creating_coop Temp matches 1 if score #coop_profile_id Temp matches 1.. run scoreboard players operation @s profile.node.coop_profile_id = #coop_profile_id Temp
+execute if score #creating_coop Temp matches 1 store result entity @s data.custom_data.coop_profile_id int 1 run scoreboard players get @s profile.node.coop_profile_id
 #   Save stable id, which persists original relationships even if something gets deleted
 execute if score #creating_coop Temp matches 1 run scoreboard players operation @s profile.node.coop_profile_id_original = @s profile.node.coop_profile_id
 

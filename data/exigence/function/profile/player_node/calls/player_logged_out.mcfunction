@@ -28,3 +28,8 @@ execute if score @s player.node.room_id matches 1.. run scoreboard players opera
 execute if score @s player.node.room_id matches 1.. unless score predungeon.door_state hub.room_misc matches 0 in exigence:hub \
 as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,scores={hub.room.room_type=2},tag=RoomNode] if score @s hub.room.room_id = #compare player.node.room_id \
 run function exigence:room/predungeon/player_logged_out
+
+# If loaded profile is a co-op, inform other members
+scoreboard players operation #compare player.node.loaded_profile_id = @s player.node.loaded_profile_id
+execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] if score @s profile.node.profile_id = #compare player.node.loaded_profile_id \
+if score @s profile.node.coop_profile_id matches 1.. run function exigence:profile/profile_node/private/inform_logged_out_profile with entity @s data.custom_data

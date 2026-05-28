@@ -12,4 +12,3 @@ execute if score toggle.player debug matches 1 if score debug.level debug matche
 
 execute as @a[tag=Predungeon] run function exigence:game/load/modifiers/load_modifiers_0
 execute as @a[tag=Predungeon] run function exigence:game/load/modifiers/load_modifiers_a
-execute as @a[tag=Predungeon] run function exigence:game/load/modifiers/load_modifiers_b

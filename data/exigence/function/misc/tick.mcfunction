@@ -56,6 +56,9 @@ execute as @e[type=minecraft:mannequin,tag=Dance] at @s run function exigence:mi
 # Double check FULL boundary
 execute in minecraft:overworld if score debug.level debug matches 1.. if score seconds.cooldown tick_counter matches 18 positioned -380 39 -109 as @e[distance=..1000,type=!player] unless entity @s[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345] run say I am outside the FULL game boundary
 
+# RAVAGER SMART AGGRO
+#execute in minecraft:overworld as @e[x=516,y=-1,z=532,dx=7,dy=7,dz=7,type=minecraft:ravager] run function exigence:enemy/ravager/smart_aggro/update
+
 #====================================================================================================
 # Reset seconds clock if necessary, after executing ALL other tick functions
 #====================================================================================================

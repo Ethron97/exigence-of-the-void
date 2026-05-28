@@ -27,3 +27,5 @@ scoreboard players reset @s hub.player.consumable_limit
 scoreboard players reset @s shop.player.looking_at_idid
 scoreboard players reset @s hub.player.room_id
 scoreboard players reset @s DisableCurrencyWarning
+
+function exigence:player/utility/unbind_all_armor

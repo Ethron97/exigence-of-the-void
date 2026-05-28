@@ -2,7 +2,7 @@
 #   Call every second as each Warden
 
 ## CONSTRAINTS
-#   AS warden
+#   AS/AT warden
 
 # Handles anger/awareness of player on all wardens
 #   game.warden.awareness measured in seconds
@@ -10,7 +10,7 @@
 # Design goals:
 #   Wardens are threatening, more than annoying (but not just annoying)
 #   Sneaking does nothing (encourage movement vs complete lack of danger)
-#   Wardens can track players through walls/floors
+#   Wardens can track players through walls/floors, but sonic boom is disabled so they don't feel like cheaters
 
 #====================================================================================================
 
@@ -18,7 +18,7 @@ execute if score toggle.enemy debug matches 1 if score debug.level debug matches
 
 execute if data entity @s {NoAI:true} run function exigence:enemy/warden/private/update_no_ai
 
-# Return if no ai
+# Return if (still) no ai
 execute if data entity @s {NoAI:true} run return 1
 #----------------------------------------------------------------------------------------------------
 
@@ -60,10 +60,13 @@ if score @s game.warden.sniff_cooldown matches ..0 at @s run function exigence:e
 
 
 
-# Maintain aggro (or re-aggro if in coop)
 #execute as @s[tag=Angry] if score @s game.warden.anger matches ..100 if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run damage @s 0 generic by @p[tag=ActivePlayer,scores={dead=0,game.player.vault_code=0}]
 #execute as @s[scores={game.warden.anger=..100},tag=Angry] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run function exigence:enemy/warden/private/set_target with entity @p[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer]
-execute as @s[tag=Angry] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run function exigence:enemy/warden/private/maintain_target
+
+# Maintain aggro (or re-aggro if in coop)
+execute as @s[tag=Angry] if score @s game.warden.angry_at matches 1.. unless score @s game.warden.anger matches 100.. if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run function exigence:enemy/warden/private/maintain_target with entity @s data.custom_data
+# If angry but we don't know who, new target
+execute as @s[tag=Angry] unless score @s game.warden.angry_at matches 1.. if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run function exigence:enemy/warden/private/set_target with entity @p[scores={dead=0,game.player.vault_code=0},tag=ActivePlayer]
 
 
 # Update anger value

@@ -4,7 +4,7 @@
 
 #====================================================================================================
 
-scoreboard players set #i Tutorial 0
+scoreboard players set #i hub.tutorial 0
 
 stopsound @a[tag=Tutorial] ambient minecraft:heartbeat
 

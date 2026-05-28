@@ -1,27 +1,37 @@
 # Cleans up everything after a trial, win or lose
 
-# DEBUG
-execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) Reset Dune
+## CONSTRAINTS
+#   AS/AT trial node
 
-# Hide bossbar
-bossbar set exigence:trial_dune visible false
+#====================================================================================================
 
-# Kill setups
-kill @e[type=minecraft:marker,tag=DuneTrialSetup]
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3 Trial) Dune trial reset
 
-# Kill skulls
-kill @e[type=minecraft:item_display,tag=DuneSkull]
+# Kill entities
+kill @e[type=minecraft:marker,tag=DuneTrialSetup,distance=..24]
+kill @e[type=minecraft:item_display,tag=DuneSkull,distance=..24]
+
+# Reset tags
+tag @s remove Crucible
+tag @s remove ETICK
+tag @a remove TrialSounds_Dune
+
+# Clone ground
+execute if entity @s[tag=Game] run clone ~5 ~11 ~5 ~-5 ~11 ~-5 ~-5 ~-1 ~-5
+execute if entity @s[tag=Hub] run clone ~5 ~-7 ~5 ~-5 ~-7 ~-5 ~-5 ~-1 ~-5
 
 # Replace end portal
-fill -406 148 6 -422 148 -10 black_concrete replace end_portal
+fill ~7 ~-4 ~7 ~-7 ~-4 ~-7 black_concrete replace end_portal
 
 # Reset fire
-fill -407 158 -9 -421 158 5 minecraft:chiseled_tuff replace minecraft:soul_soil
-setblock -407 159 -2 fire
-setblock -409 159 3 fire
-setblock -414 159 5 fire
-setblock -419 159 3 fire
-setblock -421 159 -2 fire
-setblock -419 159 -7 fire
-setblock -414 159 -9 fire
-setblock -409 159 -7 fire
+function exigence:door/vault/_trial/fire/_reset
+
+# Hide bossbar
+execute if entity @s[tag=Game] run bossbar set exigence:trial_dune visible false
+execute if entity @s[tag=Hub] run bossbar set exigence:hub_trial_dune visible false
+
+# Update status
+execute if entity @s[tag=Game] run scoreboard players set game.dune.trial trial.status 0
+execute if entity @s[tag=Game] run scoreboard players set game.dune.crucible trial.status 0
+execute if entity @s[tag=Hub] run scoreboard players set hub.dune.trial trial.status 0
+execute if entity @s[tag=Hub] run scoreboard players set hub.dune.crucible trial.status 0

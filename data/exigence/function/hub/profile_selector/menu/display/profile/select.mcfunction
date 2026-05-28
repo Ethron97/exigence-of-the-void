@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Select
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 2.. run say (D2 Menu) Select profile slot
 
 # Change player score
 $execute at @s run scoreboard players set @p[scores={hub.player.profile_selector_id=$(profile_selector_id)},tag=ProfileSelecting,distance=..16] profile.player.profile_id $(profile_id)

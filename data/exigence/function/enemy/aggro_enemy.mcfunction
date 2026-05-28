@@ -11,17 +11,10 @@ execute if score toggle.enemy debug matches 1 if score debug.level debug matches
 # Force team enemy
 execute if entity @s[team=Player] run team join Enemy @s
 
-execute unless score @s game.entity.object_level matches 1.. run return run damage @s 0 minecraft:generic by @p[scores={dead=0},tag=ActivePlayer]
+execute unless score @s game.entity.object_level matches 1.. at @s run return run damage @s 0 minecraft:generic by @p[scores={dead=0},tag=ActivePlayer]
 #----------------------------------------------------------------------------------------------------
 
-# Comarre object level
-scoreboard players operation #compare game.entity.object_level = @s game.entity.object_level
-
-# Get closest player on same level
-execute as @a[scores={dead=0},tag=ActivePlayer] if score @s game.player.active_level = #compare game.entity.object_level run tag @s add Aggroing
-
-# Damage to draw aggro
-damage @s 0 minecraft:generic by @p[tag=Aggroing]
-
-# Remove local tag
-tag @a[tag=Aggroing] remove Aggroing
+execute if score @s game.entity.object_level matches 1 at @s run return run damage @s 0 minecraft:generic by @p[scores={dead=0,game.player.active_level=1},tag=ActivePlayer]
+execute if score @s game.entity.object_level matches 2 at @s run return run damage @s 0 minecraft:generic by @p[scores={dead=0,game.player.active_level=2},tag=ActivePlayer]
+execute if score @s game.entity.object_level matches 3 at @s run return run damage @s 0 minecraft:generic by @p[scores={dead=0,game.player.active_level=3},tag=ActivePlayer]
+execute if score @s game.entity.object_level matches 4 at @s run return run damage @s 0 minecraft:generic by @p[scores={dead=0,game.player.active_level=4},tag=ActivePlayer]

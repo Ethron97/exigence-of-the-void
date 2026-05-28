@@ -1,22 +1,40 @@
 # Cleans up everything after a trial, win or lose
 
-# Hide bossbar
-bossbar set exigence:trial_flow visible false
+## CONSTRAINTS
+#   AS/AT trial node
 
-# Kill setup entities
-kill @e[type=minecraft:marker,tag=FlowTrialSetup]
-kill @e[type=minecraft:block_display,tag=FlowTrialSetup]
+#====================================================================================================
+
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3 Trial) Flow trial reset
+
+# Kill entities
+kill @e[type=minecraft:marker,tag=FlowTrialSetup,distance=..24]
+kill @e[type=minecraft:block_display,tag=FlowTrialSetup,distance=..24]
+
+# Reset tags
+tag @s remove Crucible
+tag @s remove ETICK
+tag @a remove TrialSounds_Flow
+
+# Clone ground
+#execute if entity @s[tag=Game] run clone ~5 ~11 ~5 ~-5 ~11 ~-5 ~-5 ~-1 ~-5
+#execute if entity @s[tag=Hub] run clone ~5 ~-7 ~5 ~-5 ~-7 ~-5 ~-5 ~-1 ~-5
+
+# Remove drop block preview
+kill @n[type=minecraft:block_display,tag=DropBlock,distance=..2]
 
 # Replace end portal
-fill -347 148 -34 -364 148 -18 black_concrete replace end_portal
+fill ~7 ~-4 ~7 ~-7 ~-4 ~-7 black_concrete replace end_portal
 
 # Reset fire
-fill -363 158 -19 -349 158 -33 minecraft:chiseled_tuff replace minecraft:soul_soil
-setblock -363 159 -26 fire
-setblock -361 159 -31 fire
-setblock -356 159 -33 fire
-setblock -351 159 -31 fire
-setblock -349 159 -26 fire
-setblock -351 159 -21 fire
-setblock -356 159 -19 fire
-setblock -361 159 -21 fire
+function exigence:door/vault/_trial/fire/_reset
+
+# Hide bossbar
+execute if entity @s[tag=Game] run bossbar set exigence:trial_flow visible false
+execute if entity @s[tag=Hub] run bossbar set exigence:hub_trial_flow visible false
+
+# Update status
+execute if entity @s[tag=Game] run scoreboard players set game.flow.trial trial.status 0
+execute if entity @s[tag=Game] run scoreboard players set game.flow.crucible trial.status 0
+execute if entity @s[tag=Hub] run scoreboard players set hub.flow.trial trial.status 0
+execute if entity @s[tag=Hub] run scoreboard players set hub.flow.crucible trial.status 0

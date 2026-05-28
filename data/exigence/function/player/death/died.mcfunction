@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-tellraw @a [{text:"(D3) Died ",color:"red"},{"score": {"name": "@s","objective": "game.player.active_level"}}]
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run tellraw @a [{text:"(D3 Player) Died on level",color:"red"},{"score": {"name": "@s","objective": "game.player.active_level"}}]
 
 # Increase score to dead=2 so this doesn't recall
 scoreboard players set @s dead 2
@@ -17,6 +17,9 @@ scoreboard players add game.dead_players game.state 1
 # "You Died"
 title @s subtitle {text:"You died",color:"red"}
 title @s title ""
+
+# Loss vault
+execute if score @s game.player.vault_code matches 1.. run function exigence:player/death/private/died_in_vault
 
 # Remove any tags they may have had
 tag @s remove PreviewingTeleport
@@ -58,7 +61,7 @@ execute if score @s game.player.active_level matches 1 run scoreboard players ad
 execute if score @s game.player.active_level matches 2 run scoreboard players add @s profile.data.winloss.cr.deaths_L2 1
 execute if score @s game.player.active_level matches 3 run scoreboard players add @s profile.data.winloss.cr.deaths_L3 1
 execute if score @s game.player.active_level matches 4 run scoreboard players add @s profile.data.winloss.cr.deaths_L4 1
-execute if score @s game.player.active_level matches 5 run scoreboard players add @s profile.data.winloss.cr.deaths_L5 1
+#execute if score @s game.player.active_level matches 5 run scoreboard players add @s profile.data.winloss.cr.deaths_L5 1
 
 # Increase difficulty deaths
 execute if score game.difficulty game.state matches 1 run scoreboard players add @s profile.data.winloss.cr.deaths_D1 1
@@ -83,3 +86,9 @@ tag @s add DontTitle
 title @a[tag=ActivePlayer,tag=!DontTitle] subtitle [{"selector":"@s"},{text:" died",color:"red"}]
 title @a[tag=ActivePlayer,tag=!DontTitle] title ""
 tag @s remove DontTitle
+
+# Reset warden angers at you
+execute if score @s game.player.player_number matches 1 in minecraft:overworld as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:warden,scores={game.warden.angry_at=1}] run scoreboard players reset @s game.warden.angry_at
+execute if score @s game.player.player_number matches 2 in minecraft:overworld as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:warden,scores={game.warden.angry_at=2}] run scoreboard players reset @s game.warden.angry_at
+execute if score @s game.player.player_number matches 3 in minecraft:overworld as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:warden,scores={game.warden.angry_at=3}] run scoreboard players reset @s game.warden.angry_at
+execute if score @s game.player.player_number matches 4 in minecraft:overworld as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:warden,scores={game.warden.angry_at=4}] run scoreboard players reset @s game.warden.angry_at

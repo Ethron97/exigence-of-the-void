@@ -1,0 +1,16 @@
+# Small chance for each minecart variance to start as Cart Cache
+
+## CONSTRAINTS
+#   AS/AT variance node
+#       Level 2, tag=Minecart, doesn't already have CartCache tag
+
+#====================================================================================================
+
+execute if score toggle.variance debug matches 1 if score debug.level debug matches 4.. run say (D4 Variance) Proc minecart
+
+# 18 cart caches, so to have 0.2 expected value, 1/90 chance per minecart
+
+execute store result score @s RandomB run random value 1..90
+#execute store result score @s RandomB run random value 1..9
+
+execute if score @s RandomB matches 1 run function exigence:variance/node/cart_trigger

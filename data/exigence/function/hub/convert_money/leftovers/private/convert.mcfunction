@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-say (D3) Convert leftover
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3 Player) Convert leftover
 
 # Playsound
 execute at @s run playsound minecraft:block.amethyst_block.break neutral @a ~ ~ ~ 1 1

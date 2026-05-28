@@ -6,7 +6,8 @@
 #====================================================================================================
 
 # Set no ai
-data modify entity @s NoAI set value true
+data modify entity @s[type=!minecraft:warden] NoAI set value true
+attribute @s[type=minecraft:warden] movement_speed modifier add exigence:stun -0.5 add_multiplied_base
 tag @s add ETICK
 
 # Set score

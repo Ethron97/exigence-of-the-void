@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score toggle.altar debug matches 1 if score debug.level debug matches 3.. run say (D3) Me setup
+execute if score toggle.altar debug matches 1 if score debug.level debug matches 4.. run say (D4 Altar) Puzzle candle setup
 
 # Setup candles
 function exigence:altar/puzzle/candle/reset

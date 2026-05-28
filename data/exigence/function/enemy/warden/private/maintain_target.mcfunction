@@ -9,7 +9,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.enemy debug matches 1 if score debug.level debug matches 4.. run say (D4) Refreshing target
+execute if score toggle.enemy debug matches 1 if score debug.level debug matches 3.. run say (D3) Refreshing target
 
 # Store target in entity data, as well as anger
 $data merge entity @s {anger:{suspects:[{uuid:$(target),anger:150}]}}

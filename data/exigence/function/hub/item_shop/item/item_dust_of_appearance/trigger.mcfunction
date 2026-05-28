@@ -1,4 +1,10 @@
 # Execute at active player
+
+## CONSTRAINTS
+#   AS/AT player
+
+#====================================================================================================
+
 execute if score debug.level debug matches 3.. run say (D3) trigger dust of appearance
 
 # Playsound
@@ -11,5 +17,4 @@ particle minecraft:dust_color_transition{from_color:[1.0f,0.91f,0.36f],scale:1.0
 tag @e[type=minecraft:marker,tag=HiddenBlock,tag=ReflectionNO,tag=!Appeared,tag=!Appearing,distance=..15] add Appearing
 
 # Begin loop to reveal blocks one tick at a time
-function exigence:hub/item_shop/item/dust_of_appearance/private/trigger_loop
-
+function exigence:hub/item_shop/item/item_dust_of_appearance/private/trigger_loop

@@ -6,10 +6,16 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) New pizza
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3 Trial) New pizza
 
 # New Pizza ID
 scoreboard players add #next trial.object.pizza_id 1
+
+# Convert pizza id to height offset
+scoreboard players operation #temp2 Temp = #next trial.object.pizza_id
+scoreboard players operation #temp2 Temp %= 10 number
+# Value between 0 and 9 -> 0.00..0.09
+execute store result storage exigence:trial height double 0.01 run scoreboard players get #temp2 Temp
 
 # Random rotation 20..340, to prevent clumping
 execute store result storage exigence:trial RotA int 1 run random value 20..340
@@ -34,4 +40,4 @@ execute as @e[type=minecraft:marker,tag=PizzaA,distance=..24] run function exige
 execute as @e[type=minecraft:marker,tag=PizzaA,distance=..24] at @s run function exigence:door/vault/bolt/trial/pizza/lightning/summon with entity @s
 
 # Playsound
-execute at @e[type=minecraft:marker,tag=PizzaA,distance=..24] run playsound minecraft:entity.guardian.hurt ambient @a ^ ^ ^5 1 1.3
+execute at @e[type=minecraft:marker,tag=PizzaA,distance=..24] run playsound minecraft:entity.guardian.hurt ambient @a[tag=TrialSounds_Bolt] ^ ^ ^5 1 1.3

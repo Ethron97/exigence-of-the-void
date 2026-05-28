@@ -1,26 +1,35 @@
 # Cleans up everything after a trial, win or lose
 
-# Clone ground
-#clone -420 125 8 -408 125 20 -420 151 8
+## CONSTRAINTS
+#   AS/AT trial node
+
+#====================================================================================================
+
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3 Trial) Silence trial reset
+
+# Kill entities
+kill @e[type=minecraft:marker,tag=SilenceTrialSetup,distance=..24]
+
+# Reset tags
+tag @s remove Crucible
+tag @s remove ETICK
+tag @a remove TrialSounds_Silence
+
 # Clear platform
-fill -423 151 22 -406 150 6 air replace minecraft:magenta_glazed_terracotta
+fill ~-7 ~-1 ~-7 ~7 ~-1 ~7 air replace minecraft:magenta_glazed_terracotta
 
-# Hide bossbar
-bossbar set exigence:trial_silence visible false
-
-# Kill setup entities
-kill @e[type=minecraft:marker,tag=SilenceTrialSetup]
-
-# Replace end portal with black concrete
-fill -406 148 22 -422 148 6 black_concrete replace end_portal
+# Replace end portal
+fill ~7 ~-4 ~7 ~-7 ~-4 ~-7 black_concrete replace end_portal
 
 # Reset fire
-fill -407 158 7 -421 158 21 minecraft:chiseled_tuff replace minecraft:soul_soil
-setblock -407 159 14 fire
-setblock -409 159 19 fire
-setblock -414 159 21 fire
-setblock -419 159 19 fire
-setblock -421 159 14 fire
-setblock -419 159 9 fire
-setblock -414 159 7 fire
-setblock -409 159 9 fire
+function exigence:door/vault/_trial/fire/_reset
+
+# Hide bossbar
+execute if entity @s[tag=Game] run bossbar set exigence:trial_silence visible false
+execute if entity @s[tag=Hub] run bossbar set exigence:hub_trial_silence visible false
+
+# Update status
+execute if entity @s[tag=Game] run scoreboard players set game.silence.trial trial.status 0
+execute if entity @s[tag=Game] run scoreboard players set game.silence.crucible trial.status 0
+execute if entity @s[tag=Hub] run scoreboard players set hub.silence.trial trial.status 0
+execute if entity @s[tag=Hub] run scoreboard players set hub.silence.crucible trial.status 0

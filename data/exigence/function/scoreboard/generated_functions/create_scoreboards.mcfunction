@@ -164,6 +164,9 @@ scoreboard objectives add game.void_merchant.shop_id dummy
 scoreboard objectives add game.warden.active_level dummy
 scoreboard objectives add game.warden.anger dummy
 scoreboard objectives add game.warden.awareness dummy
+scoreboard objectives add game.warden.angry_at dummy
+scoreboard objectives add game.ravager.aggroing dummy
+scoreboard objectives add game.ravager.aggro_status dummy
 scoreboard objectives add global_settings dummy
 scoreboard objectives add hub.coin_conversion dummy
 scoreboard objectives add hub.coin_conversion.glint_owed dummy
@@ -252,7 +255,9 @@ scoreboard objectives add player.node.queue.timeout_locker_room dummy
 scoreboard objectives add player.node.queue.timeout_predungeon dummy
 scoreboard objectives add player.node.queue.timeout_profile_selector dummy
 scoreboard objectives add player.node.queue.timeout_tutorial dummy
+scoreboard objectives add player.node.queue.vault_loss dummy
 scoreboard objectives add player.node.room_id dummy
+scoreboard objectives add player.node.loaded_profile_id dummy
 scoreboard objectives add profile.data.altar.cr.altars_enhanced dummy
 scoreboard objectives add profile.data.altar.t.altars_enhanced dummy
 scoreboard objectives add profile.data.altar.cr.altars_lit dummy
@@ -1036,12 +1041,15 @@ scoreboard objectives add CarrotOnStick minecraft.used:minecraft.carrot_on_a_sti
 scoreboard objectives add node.id dummy
 scoreboard objectives add hub.tutorial dummy
 scoreboard objectives add tutorial.marker.id dummy
+scoreboard objectives add trial.object.direction dummy
+scoreboard objectives add trial.object.speed dummy
+scoreboard objectives add trial.object.steps dummy
 scoreboard objectives add trial.object.pizza_id dummy
 scoreboard objectives add trial.object.pizza_length dummy
+scoreboard objectives add trial.timer dummy
 scoreboard objectives add game.entity.player_number dummy
 scoreboard objectives add game.player.player_number dummy
 scoreboard objectives add trial.timer.cooldown dummy
-scoreboard objectives add trial.timer dummy
 scoreboard objectives add trial.object.timer dummy
 scoreboard objectives add game.entity.waypoint_id dummy
 scoreboard objectives add trial.status dummy

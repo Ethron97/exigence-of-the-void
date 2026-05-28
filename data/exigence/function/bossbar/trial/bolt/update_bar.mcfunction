@@ -1,7 +1,7 @@
 # Update bar value of Bolt trial
 
 ## CONSTRAINTS
-# AS trial node
+#   AS trial node
 
 #====================================================================================================
 

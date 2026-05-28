@@ -23,6 +23,10 @@ execute if score @s profile.player.coop_profile_id matches 1.. in exigence:profi
 if score @s profile.node.profile_id = #compare profile.player.profile_id at @s as @a if score @s profile.player.profile_id = #compare profile.player.profile_id \
 run function exigence:profile/player/call_grant_advancements_from_scores
 
+# If co-op profile, announce logged in
+execute if score @s profile.player.coop_profile_id matches 1.. in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] \
+if score @s profile.node.profile_id = #compare profile.player.profile_id run function exigence:profile/profile_node/private/inform_logged_in_profile with entity @s data.custom_data
+
 # Check if logged out while coin converting:
 execute if score @s hub.coin_conversion.glint_owed matches 1.. run function exigence:hub/convert_money/instant/start_conversion
 # Or if queued:
@@ -35,6 +39,12 @@ execute if entity @s[tag=Admin] run function exigence:misc/triggers/admin/enable
 
 # Clear other misc tags
 tag @s remove OpeningVault
+tag @s remove TrialSounds_Bolt
+tag @s remove TrialSounds_Dune
+tag @s remove TrialSounds_Silence
+tag @s remove TrialSounds_Eye
+tag @s remove TrialSounds_Spire
+tag @s remove TrialSounds_Flow
 
 # Remove local tag
 tag @s remove JustLoggedIn

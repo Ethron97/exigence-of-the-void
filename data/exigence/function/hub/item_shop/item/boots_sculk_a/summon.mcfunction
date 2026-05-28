@@ -6,6 +6,7 @@ $data merge entity @s {Item:{id:"minecraft:netherite_boots",count:1,components:{
 ,"minecraft:attribute_modifiers":[{type:'minecraft:armor',id:'exigence:remove',amount:0.0,operation:'add_multiplied_base',slot:'feet'}]\
 ,"minecraft:lore":[[$(rare_stars),{text:"Boots ",italic:false,color:"white"},{text:"(Soulbound)",color:"dark_gray",italic:false}]\
 ,{text:""}\
-,[{text:"Stepping on sculk generates 25%",italic:false,color:"gray"}]\
-,[{text:"less Menace and Warden awareness",italic:false,color:"gray"}]\
+,[{text:"Stepping on sculk generates ",italic:false,color:"gray"},{text:"25%",italic:false,color:"aqua"}]\
+,[{text:"less ",italic:false,color:"gray"},{text:"Menace ",italic:false,color:"dark_purple"},{text:"and ",italic:false,color:"gray"}\
+,{text:"Warden ",italic:false,color:"dark_red"},{text:"awareness",italic:false,color:"gray"}]\
 ],"minecraft:custom_data":{item_name:"boots_sculk_a",is_soulbound:true}}}}

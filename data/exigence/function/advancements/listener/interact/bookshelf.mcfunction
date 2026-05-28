@@ -7,6 +7,6 @@ execute unless entity @s[tag=ActivePlayer] run return 1
 #----------------------------------------------------------------------------------------------------
 
 # If the player is near the Scientist Bookshelf, check bookshelf match
-execute at @s[advancements={exigence:story/match_bookshelf=false},predicate=exigence:mirror/bookshelf] run schedule function exigence:mirror/bookshelf/test_match 1t
+execute at @s[advancements={exigence:story/match_bookshelf=false},predicate=exigence:mirror/bookshelf] run schedule function exigence:mirror/bookshelf/test_match_schedule 1t
 
 #say Interact bookshelf

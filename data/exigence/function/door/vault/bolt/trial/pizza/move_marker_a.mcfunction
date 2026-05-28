@@ -10,13 +10,13 @@
 #====================================================================================================
 
 # DEBUG
-$execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) Moving markers, $(RotA) $(RotB)
+$execute if score toggle.trial debug matches 1 if score debug.level debug matches 4.. run say (D4 Trial) Moving markers, $(RotA) $(RotB)
 
 # Teleport center marker to face new rotation
 $execute at @s run tp @s ~ ~ ~ ~$(RotA) ~
 
 # Teleport A to first marker position
-execute at @s positioned ^ ^ ^6.5 run tp @e[type=minecraft:marker,tag=PizzaA] ~ ~ ~
+execute at @s positioned ^ ^ ^6.5 run tp @e[type=minecraft:marker,tag=PizzaA,distance=..24] ~ ~ ~
 
 # Rotate A to be facing towards second marker position, +-the second random arc
-$execute as @e[type=minecraft:marker,tag=PizzaA] at @s facing entity @e[type=minecraft:marker,tag=BoltThrower,limit=1] eyes rotated ~$(RotB) ~ run tp @s ~ ~ ~ ~ ~
+$execute as @e[type=minecraft:marker,tag=PizzaA,distance=..24] at @s facing entity @e[type=minecraft:marker,tag=BoltThrower,distance=..24,limit=1] eyes rotated ~$(RotB) ~ run tp @s ~ ~$(height) ~ ~ ~

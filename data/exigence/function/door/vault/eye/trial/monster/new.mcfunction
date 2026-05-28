@@ -12,21 +12,16 @@
 
 #====================================================================================================
 
-$summon $(Type) ~ ~ ~ {Invulnerable:1b,NoAI:1b,Silent:1b,Tags:["EyeTrialSetup","Monster","NewMonster"],Rotation:$(Rotation)}
+$execute align xyz run summon $(Type) ~0.5 ~ ~0.5 {Invulnerable:1b,NoAI:1b,Silent:1b,Tags:["EyeTrialSetup","Monster","NewMonster"],Rotation:$(Rotation)}
 
 # Speed should not change once set
-$scoreboard players set @e[type=#exigence:eye_trial,tag=NewMonster] EyeSpeed $(Speed)
-$scoreboard players set @e[type=#exigence:eye_trial,tag=NewMonster] EyeDirection $(Direction)
-execute as @e[type=#exigence:eye_trial,tag=NewMonster] run function exigence:door/vault/eye/trial/monster/reset_steps
+$scoreboard players set #set trial.object.speed $(Speed)
+$scoreboard players set #set trial.object.direction $(Direction)
 
-# Frozen cooldown
-scoreboard players set @e[type=#exigence:eye_trial,tag=NewMonster] TrialTimer 60
+# Set data; Removes local tag
+#   INPUT: #set trial.object.speed
+#          #set trial.object.direction
+execute as @e[type=#exigence:eye_trial,tag=NewMonster,distance=..1] run function exigence:door/vault/eye/trial/monster/new_data
 
-# Initialize turn
-execute as @e[type=#exigence:eye_trial,tag=NewMonster] at @s run function exigence:door/vault/eye/trial/monster/turn
-
-# Particles
-execute at @e[type=#exigence:eye_trial,tag=NewMonster] run function exigence:door/vault/eye/trial/monster/particles
-
-# Remove local tag
-tag @e[type=#exigence:eye_trial,tag=NewMonster] remove NewMonster
+# Make noise
+execute as @e[type=#exigence:eye_trial,tag=NewMonster,distance=..1] run function exigence:door/vault/eye/trial/monster/private/make_noise

@@ -12,8 +12,8 @@ execute unless entity @e[tag=ProfileNode,distance=..0.5] run return 1
 # If there is a player node in the current space, move one over
 tp @s ~ ~ ~2
 
-# If we are above air, move back to start of next row
-execute at @s if block ~ 0 ~ minecraft:air run tp @s ~ ~4 0.5
+# If we are above red glazed, move back to start of next row
+execute at @s if block ~ 0 ~ minecraft:red_glazed_terracotta run tp @s ~ ~4 0.5
 
 # Iterate
 execute at @s run function exigence:profile/profile_node/new/locate_next_profile_slot

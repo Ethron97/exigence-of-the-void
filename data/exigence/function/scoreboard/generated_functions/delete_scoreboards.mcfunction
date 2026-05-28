@@ -164,6 +164,9 @@ scoreboard objectives remove game.void_merchant.shop_id
 scoreboard objectives remove game.warden.active_level
 scoreboard objectives remove game.warden.anger
 scoreboard objectives remove game.warden.awareness
+scoreboard objectives remove game.warden.angry_at
+scoreboard objectives remove game.ravager.aggroing
+scoreboard objectives remove game.ravager.aggro_status
 scoreboard objectives remove global_settings
 scoreboard objectives remove hub.coin_conversion
 scoreboard objectives remove hub.coin_conversion.glint_owed
@@ -252,7 +255,9 @@ scoreboard objectives remove player.node.queue.timeout_locker_room
 scoreboard objectives remove player.node.queue.timeout_predungeon
 scoreboard objectives remove player.node.queue.timeout_profile_selector
 scoreboard objectives remove player.node.queue.timeout_tutorial
+scoreboard objectives remove player.node.queue.vault_loss
 scoreboard objectives remove player.node.room_id
+scoreboard objectives remove player.node.loaded_profile_id
 scoreboard objectives remove profile.data.altar.cr.altars_enhanced
 scoreboard objectives remove profile.data.altar.t.altars_enhanced
 scoreboard objectives remove profile.data.altar.cr.altars_lit
@@ -1036,12 +1041,15 @@ scoreboard objectives remove CarrotOnStick
 scoreboard objectives remove node.id
 scoreboard objectives remove hub.tutorial
 scoreboard objectives remove tutorial.marker.id
+scoreboard objectives remove trial.object.direction
+scoreboard objectives remove trial.object.speed
+scoreboard objectives remove trial.object.steps
 scoreboard objectives remove trial.object.pizza_id
 scoreboard objectives remove trial.object.pizza_length
+scoreboard objectives remove trial.timer
 scoreboard objectives remove game.entity.player_number
 scoreboard objectives remove game.player.player_number
 scoreboard objectives remove trial.timer.cooldown
-scoreboard objectives remove trial.timer
 scoreboard objectives remove trial.object.timer
 scoreboard objectives remove game.entity.waypoint_id
 scoreboard objectives remove trial.status

@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-say (D3) Start converting Leftovers
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3 Player) Start converting Leftovers
 
 # Reset scores
 scoreboard players set #leftover hub.coin_conversion.coins_converted 0
@@ -18,7 +18,7 @@ scoreboard players set #leftover hub.coin_conversion.money_converted 0
 execute unless score coins.leftover hub.coin_conversion matches 5.. run return fail
 #----------------------------------------------------------------------------------------------------
 
-say (D3) Start converting Leftovers (B)
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3 Player) (D3) Start converting Leftovers (B)
 
 # It should always be co-op when this is called because you can't have enough leftovers for a Glint in solo (it would just do a normal convert)
 

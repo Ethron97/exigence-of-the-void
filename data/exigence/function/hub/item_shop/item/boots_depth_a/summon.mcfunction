@@ -8,4 +8,4 @@ $data merge entity @s {Item:{id:"minecraft:diamond_boots",count:1,components:{"m
 ,"minecraft:lore":[[$(common_stars),{text:"Boots ",italic:false,color:"white"},{text:"(Soulbound)",color:"dark_gray",italic:false}]\
 ,{text:""}\
 ,[{text:"Depth Strider III",italic:false,color:"gray"}]\
-],"minecraft:custom_data":{item_name:"boots_depth_a",is_soulbound:true}}}}
+],"minecraft:custom_data":{item_name:"boots_depth_a",is_soulbound:true,enchanted:true}}}}

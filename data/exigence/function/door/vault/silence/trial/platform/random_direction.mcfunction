@@ -3,7 +3,7 @@
 #====================================================================================================
 
 # DEBUG
-execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3) Try choose direction
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3 Trial) Try choose direction
 
 # Random value between 0..3
 execute store result score #random Random run random value 0..4
@@ -20,8 +20,8 @@ scoreboard players operation #compare Random += 2 number
 scoreboard players operation #compare Random %= 4 number
 #tellraw Ethron97 [{"score":{"name": "random","objective": "Random"}},{text:" "},{"score":{"name": "#compare","objective": "Random"}}]
 
-# If runs into wall, retry
-# If matches previous, retry
+# If runs into wall, retry (skip return)
+# If matches previous, retry (skip return)
 execute unless score #random Random = #compare Random unless function exigence:door/vault/silence/trial/platform/if_wall run return 1
 #----------------------------------------------------------------------------------------------------
 

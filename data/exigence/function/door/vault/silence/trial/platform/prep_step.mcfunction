@@ -8,6 +8,8 @@
 
 #====================================================================================================
 
+execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3 Trial) Prep step
+
 # Teleport facing new direction
 execute if score #silence_previous Random matches 0 run tp @s ~ ~ ~ -90 0
 execute if score #silence_previous Random matches 1 run tp @s ~ ~ ~ 0 0

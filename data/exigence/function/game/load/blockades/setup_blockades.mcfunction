@@ -1,5 +1,8 @@
 # Called by game load sequences
 
+## CONSTRAINTS
+#   IN minecraft:overworld
+
 #====================================================================================================
 
 # Mark starting hazard
@@ -14,4 +17,4 @@ execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag
 
 # Start setup loop
 scoreboard players set #blockade_level Temp 1
-schedule function exigence:game/load/blockades/setup_loop 1t
+schedule function exigence:game/load/blockades/setup_loop_schedule 1t

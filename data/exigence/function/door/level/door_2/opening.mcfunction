@@ -14,7 +14,7 @@ execute unless score Door.2 game.door.inserting_key matches 1.. run return 1
 
 ## ANIMATION / SOUND SEQUENCE
 #   Interpolate key forward into the lock
-execute positioned -384.5 132.0 -90.0 at @n[type=minecraft:item_display,tag=Door2Handle,distance=..10] run function exigence:door/level/door_2/opening_at
+execute in minecraft:overworld positioned -384.5 132.0 -90.0 at @n[type=minecraft:item_display,tag=Door2Handle,distance=..10] run function exigence:door/level/door_2/opening_at
 
 #====================================================================================================
 # Remove inserting key
