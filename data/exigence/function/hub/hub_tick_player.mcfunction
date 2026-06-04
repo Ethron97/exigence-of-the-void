@@ -29,3 +29,5 @@ execute at @s[scores={hub.player.profile_selector_id=1..}] run function exigence
 
 # Converting coins:
 execute if entity @s[tag=ConvertingCoins] run function exigence:hub/convert_money/player_tick
+
+effect clear @s nausea

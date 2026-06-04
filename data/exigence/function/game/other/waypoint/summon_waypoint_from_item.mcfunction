@@ -29,6 +29,7 @@ scoreboard players operation @n[type=minecraft:armor_stand,tag=NewWaypoint,dista
 
 # Initialize style (temp)
 waypoint modify @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] style set minecraft:default
+waypoint modify @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] color dark_gray
 
 # Set waypoint style based on item tag
 #   Echo shard
@@ -38,14 +39,21 @@ execute if entity @s[tag=EchoShard] run waypoint modify @n[type=minecraft:armor_
 execute if entity @s[tag=EchoShard,scores={game.entity.object_level=10}] run waypoint modify @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] color aqua
 #   Level key
 execute if entity @s[tag=LevelKey] run tag @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] add LevelKeyWaypoint
+execute if entity @s[tag=Level1Key] run waypoint modify @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] style set exigence:level_1_key
+execute if entity @s[tag=Level2Key] run waypoint modify @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] style set exigence:level_2_key
+execute if entity @s[tag=Level3Key] run waypoint modify @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] style set exigence:level_3_key
 #   Vault key
 execute if entity @s[tag=VaultKey] run tag @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] add VaultKeyWaypoint
+execute if entity @s[tag=VaultKey] run waypoint modify @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] style set exigence:vault_key
+
 #   Ardor flame
-execute if entity @s[tag=ArdorFlame] run tag @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] add ArdorFlameWaypoint
+execute if entity @s[tag=Ardor] run tag @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] add ArdorWaypoint
+execute if entity @s[tag=Ardor] run waypoint modify @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] style set exigence:ardor
 
 # Dropped item
 execute if entity @s[tag=DroppedItem] run tag @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] add DroppedItem
 execute if entity @s[tag=DroppedItem] run waypoint modify @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] color green
+execute if entity @s[tag=DroppedItem] run attribute @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] minecraft:waypoint_transmit_range base set 1000
 
 # If echo shard, max transmission range now (and update)
 execute if entity @s[tag=EchoShard] run attribute @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] minecraft:waypoint_transmit_range base set 1000

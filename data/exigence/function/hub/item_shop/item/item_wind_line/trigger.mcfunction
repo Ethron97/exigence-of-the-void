@@ -5,7 +5,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) trigger wind line item
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3 Player) trigger wind line item
 
 # Playsound
 playsound minecraft:entity.breeze.idle_ground ambient @a ^ ^ ^4 1 1.0
@@ -22,6 +22,10 @@ particle minecraft:gust ^ ^1.8 ^5 0 0 0 0.1 1
 
 execute anchored eyes positioned ^ ^ ^2 run function exigence:hub/item_shop/item/item_wind_line/private/particles
 
+scoreboard players set #collected Temp 0
 scoreboard players set #i Temp 200
 # Begin functionality loop
 execute anchored eyes positioned ^ ^ ^2 run function exigence:hub/item_shop/item/item_wind_line/private/trigger_loop
+
+# Report
+tellraw @s [{text:"Storm Rod ",color:"light_purple"},{text:"> Picked up ",color:"gray"},{"score":{"name":"#collected","objective":"Temp"},color:"yellow"},{text:" items",color:"gray"}]

@@ -15,17 +15,20 @@ execute unless entity @a[tag=ActivePlayer,tag=CardEffecting] run tag @a[scores={
 
 # From card
 scoreboard players set et.FromCard game.effect_temp 1
-execute store result score et.FromSpellsling game.effect_temp if entity @e[type=minecraft:armor_stand,tag=Spellslinging]
+scoreboard players set et.FromSpellsling game.effect_temp 0
+execute if entity @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,tag=Card,type=minecraft:armor_stand,tag=Spellslinging] run scoreboard players set et.FromSpellsling game.effect_temp 1
+
 execute as @a[tag=ActivePlayer] run function exigence:player/effects/private/calc_heighten
 # If any heighten is getting used, reduce everyone's heighten level in 1t
-execute if entity @a[scores={dead=0,game.player.heighten=1..},tag=ActivePlayer,tag=CardEffecting] run schedule function exigence:player/effects/heighten/decrease 1t replace
+execute as @a[scores={dead=0,game.player.heighten=1..},tag=ActivePlayer,tag=CardEffecting] run tag @s add ReduceHeighten
 
 # Store given duration in temp variable
 $scoreboard players set et.BaseTime game.effect_temp $(duration)
 scoreboard players set et.SetTime game.effect_temp 0
+scoreboard players set et.BonusTime game.effect_temp 0
 
 # Tellraw if heighten
-$execute as @a[scores={dead=0,game.player.calc_heighten=2..},tag=ActivePlayer,tag=CardEffecting] run tellraw @s [{text:" └─ [Heighten]: Duration of $(effect) multiplied by ",color:"gray"},{score:{name:"@s",objective:"game.player.calc_heighten"},color:"yellow"}]
+#$execute as @a[scores={dead=0,game.player.calc_heighten=2..},tag=ActivePlayer,tag=CardEffecting] run tellraw @s [{text:" └─ [Heighten]: Duration of $(effect) multiplied by ",color:"gray"},{score:{name:"@s",objective:"game.player.calc_heighten"},color:"yellow"}]
 
 # Update in-game player effects
 $execute as @a[scores={dead=0},tag=ActivePlayer,tag=CardEffecting] run function exigence:player/effects/private/update_effect/$(effect)

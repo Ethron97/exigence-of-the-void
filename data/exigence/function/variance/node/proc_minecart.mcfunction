@@ -8,9 +8,10 @@
 
 execute if score toggle.variance debug matches 1 if score debug.level debug matches 4.. run say (D4 Variance) Proc minecart
 
-# 18 cart caches, so to have 0.2 expected value, 1/90 chance per minecart
+# 18 minecarts, so to have 0.2 expected value, 1/90 chance per minecart
 
 execute store result score @s RandomB run random value 1..90
 #execute store result score @s RandomB run random value 1..9
 
-execute if score @s RandomB matches 1 run function exigence:variance/node/cart_trigger
+execute if score @s RandomB matches 1 run tag @s add CartCache
+execute if score @s RandomB matches 1 run scoreboard players add cart_cache.proc game.dungeon 1

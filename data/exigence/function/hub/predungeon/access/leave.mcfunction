@@ -20,7 +20,7 @@ scoreboard players reset @s hub.player.consumable_limit
 scoreboard players reset @s shop.player.looking_at_idid
 scoreboard players reset @s DisableCurrencyWarning
 
-function exigence:player/utility/unbind_all_armor
+function exigence:player/utility/armor/unbind_all_armor
 
 #====================================================================================================
 # Remove THIS player from room node

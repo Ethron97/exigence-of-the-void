@@ -11,6 +11,10 @@ execute if score toggle.variance debug matches 1 if score debug.level debug matc
 tag @s remove Setup
 scoreboard players set #didnt_setup Temp 0
 
+# If cart cache, trigger that
+execute if entity @s[tag=CartCache] run return run function exigence:variance/node/cart_cache/trigger
+#----------------------------------------------------------------------------------------------------
+
 # Generate and assign random values based on the max node state
 function exigence:variance/node/randomize_node_state
 

@@ -2,14 +2,12 @@
 
 ## CONSTRAINTS
 #   AS Player
-#   AT where to teleport interaction
+#   AT location
 
 #====================================================================================================
 
-# Store player id for comparison
-scoreboard players operation #compare game.entity.profile_id = @s profile.player.profile_id
-
-execute store result storage exigence:temp player_id int 1 run scoreboard players get #compare game.entity.profile_id
-
-# Get correponding interaction
-execute as @e[type=interaction,scores={game.entity.profile_id=1..}] if score @s game.entity.profile_id = #compare game.entity.profile_id run tp @s ~ ~ ~
+# Call subfunction to make switches easier
+execute if score @s game.player.player_number matches 1 run return run function exigence:player/utility/interaction/private/tp_here_1
+execute if score @s game.player.player_number matches 2 run return run function exigence:player/utility/interaction/private/tp_here_2
+execute if score @s game.player.player_number matches 3 run return run function exigence:player/utility/interaction/private/tp_here_3
+execute if score @s game.player.player_number matches 4 run return run function exigence:player/utility/interaction/private/tp_here_4

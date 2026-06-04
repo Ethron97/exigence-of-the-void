@@ -21,3 +21,6 @@ execute if score toggle.vault debug matches 1 run data modify entity @s Glowing 
 
 # Remove "NewVaultKey" tag
 tag @s remove NewVaultKey
+
+# Summon waypoint entity
+execute at @s run function exigence:game/other/waypoint/summon_waypoint_from_item

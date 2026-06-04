@@ -25,3 +25,6 @@ execute if score toggle.beacon debug matches 1 run data modify entity @s Glowing
 
 # Remove local tag
 tag @s remove NewArdorFlame
+
+# Summon waypoint entity
+execute at @s run function exigence:game/other/waypoint/summon_waypoint_from_item

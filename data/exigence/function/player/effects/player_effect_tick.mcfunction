@@ -27,6 +27,7 @@ scoreboard players add @s[scores={game.player.effects.jump4=1..}] profile.data.e
 scoreboard players add @s[scores={game.player.effects.jump6=1..}] profile.data.effects.cr.effect_jump6 1
 scoreboard players add @s[scores={game.player.effects.jump8=1..}] profile.data.effects.cr.effect_jump8 1
 scoreboard players add @s[scores={game.player.effects.regen=1..}] profile.data.effects.cr.effect_regen 1
+scoreboard players add @s[scores={game.player.effects.resistance=1..}] profile.data.effects.cr.effect_resistance 1
 scoreboard players add @s[scores={game.player.effects.speed1=1..}] profile.data.effects.cr.effect_speed1 1
 scoreboard players add @s[scores={game.player.effects.speed2=1..}] profile.data.effects.cr.effect_speed2 1
 scoreboard players add @s[scores={game.player.effects.speed3=1..}] profile.data.effects.cr.effect_speed3 1
@@ -52,6 +53,7 @@ scoreboard players remove @s[scores={game.player.effects.jump4=1..}] game.player
 scoreboard players remove @s[scores={game.player.effects.jump6=1..}] game.player.effects.jump6 1
 scoreboard players remove @s[scores={game.player.effects.jump8=1..}] game.player.effects.jump8 1
 scoreboard players remove @s[scores={game.player.effects.regen=1..}] game.player.effects.regen 1
+scoreboard players remove @s[scores={game.player.effects.resistance=1..}] game.player.effects.resistance 1
 scoreboard players remove @s[scores={game.player.effects.speed=1..}] game.player.effects.speed 1
 scoreboard players remove @s[scores={game.player.effects.speed1=1..}] game.player.effects.speed1 1
 scoreboard players remove @s[scores={game.player.effects.speed2=1..}] game.player.effects.speed2 1
@@ -79,18 +81,8 @@ execute as @s[scores={game.player.effects.invisibility=0},team=Enemy] unless sco
 #====================================================================================================
 ## MODIFIERS
 
-execute at @s[scores={game.player.mod.treasure_lantern=1..}] run function exigence:player/modifiers/treasure_lantern
-execute at @s[scores={game.player.mod.ember_lantern=1..}] run function exigence:player/modifiers/ember_lantern
-execute at @s[scores={game.player.mod.berry_vision=1..}] run function exigence:player/modifiers/berry_vision
-execute at @s[scores={game.player.mod.magnet=1..}] run function exigence:player/modifiers/magnet
-execute at @s[scores={game.player.mod.dragon_breath=1..}] run function exigence:player/modifiers/dragon_breath
-
-# Give Slowness III, if carrying entity
-effect give @s[tag=Carrying,predicate=!exigence:effects/slowness2] slowness infinite 2 true
-
-# Clear slowness II (so Grease doesn't kill the player)
-effect clear @s[predicate=exigence:effects/slowness1] minecraft:slowness
-
-# If luckyfeather modifier, and holding feather, give slowfal
-execute if score mod.lucky_feather game.modifiers matches 1 as @s[predicate=exigence:equipment/holding_feather,predicate=!exigence:effects/slow_falling1] run effect give @s slow_falling infinite 1
-execute if score mod.lucky_feather game.modifiers matches 1 as @s[predicate=!exigence:equipment/holding_feather,predicate=exigence:effects/slow_falling1] run effect clear @s slow_falling
+execute if score @s game.player.mod.treasure_lantern matches 1.. run function exigence:player/modifiers/treasure_lantern
+execute if score @s game.player.mod.ember_lantern matches 1.. run function exigence:player/modifiers/ember_lantern
+execute if score @s game.player.mod.berry_vision matches 1.. run function exigence:player/modifiers/berry_vision
+execute if score @s game.player.mod.magnet matches 1.. run function exigence:player/modifiers/magnet
+execute if score @s game.player.mod.dragon_breath matches 1.. run function exigence:player/modifiers/dragon_breath

@@ -20,4 +20,4 @@ execute if score game.difficulty game.state matches 2 unless entity @a[tag=Predu
 execute if score game.difficulty game.state matches 3 unless entity @a[tag=Predungeon,advancements={exigence:story/rescue_petitioner=true}] run function exigence:npc/game/spawn_petitioner
 
 # VOID MERCHANTS
-#execute if score game.difficulty game.state matches 3.. positioned -384.5 37.0 -118.5 run function exigence:npc/game/void_merchant/setup_vms
+execute if score game.difficulty game.state matches 3.. positioned -384.5 188.0 -35.5 run function exigence:npc/game/void_merchant/load_merchants

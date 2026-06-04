@@ -1,0 +1,16 @@
+[
+  {
+    "function": "minecraft:set_lore",
+    "lore": [
+      [{"text":""}]
+    ],
+    "mode": "replace_section",
+    "offset": 2,
+    "size": 2
+  },
+  {
+    "function": "minecraft:set_damage",
+    "damage": 0.0,
+    "add": false
+  }
+]

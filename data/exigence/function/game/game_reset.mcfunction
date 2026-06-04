@@ -5,9 +5,6 @@ say Game Reset
 
 # ENTITY CLEANUP
 
-# Reset web ball related stuff
-function exigence:hub/item_shop/item/item_web_ball/reset
-
 scoreboard objectives setdisplay sidebar.team.dark_aqua
 scoreboard objectives setdisplay sidebar.team.dark_red
 

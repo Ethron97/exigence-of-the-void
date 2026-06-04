@@ -19,7 +19,7 @@ execute if score #predungeon_validate_total Temp matches 0 run return run playso
 #----------------------------------------------------------------------------------------------------
 
 # If everything is validated, lock player armor
-execute as @a[tag=Predungeon] run function exigence:player/utility/bind_all_armor
+execute as @a[tag=Predungeon] run function exigence:player/utility/armor/bind_all_armor
 
 # Effects
 #particle glow ~ ~ ~0.1 0.1 0.1 0.0 0.001 5

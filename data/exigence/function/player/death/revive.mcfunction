@@ -26,6 +26,9 @@ execute if score game.active_level game.state matches 4 at @e[type=minecraft:arm
 # Give slowfall 5 seconds
 effect give @s slow_falling 5 0 true
 
+# Enable seeing locator bar again
+attribute @s waypoint_receive_range base set 1000
+
 # Gamemode adventure
 gamemode adventure @s
 

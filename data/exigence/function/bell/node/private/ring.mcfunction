@@ -17,7 +17,7 @@ execute at @s run setblock ~ ~ ~ minecraft:air
 execute at @s run particle minecraft:end_rod ~ ~ ~ 0.3 0.3 0.3 0.1 20
 
 # Play bell ring sound
-execute at @s run playsound minecraft:block.bell.use ambient @a ~ ~ ~ 1 1
+execute at @s run playsound minecraft:block.bell.use block @a ~ ~ ~ 4 1
 
 # Remove interaction
 function exigence:bell/node/remove_interaction

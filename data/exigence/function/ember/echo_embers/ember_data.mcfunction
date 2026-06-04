@@ -7,8 +7,9 @@
 #====================================================================================================
 
 tag @s add Ember
+tag @s add ETICK
 team join Ember @s
-scoreboard players operation @s node.property.object_level = #compare node.property.object_level
+scoreboard players operation @s game.entity.object_level = #compare node.property.object_level
 data merge entity @s {Age:-32768}
 
 # Get rid of "just spawed" data

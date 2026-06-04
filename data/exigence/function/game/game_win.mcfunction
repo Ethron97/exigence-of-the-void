@@ -52,4 +52,4 @@ execute in minecraft:overworld run function exigence:game/game_off
 
 # Schedule coin convert so its after the victory sound
 #   Player scores were gathered from the access/leave function
-schedule function exigence:game/unload/schedule_coin_conversions 80t
+schedule function exigence:game/unload/schedule_coin_conversions 60t

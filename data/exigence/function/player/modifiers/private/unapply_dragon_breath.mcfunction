@@ -9,5 +9,9 @@
 execute if score toggle.enemy debug matches 1 if score debug.level debug matches 3.. run say (D3) Unapply dragon breath
 
 tag @s remove DragonBreath
+
+# If glow inked, don't bother
+execute if entity @s[tag=GlowInked] run return 0
+#----------------------------------------------------------------------------------------------------
 scoreboard players set @s game.entity.glow_remaining 0
 effect clear @s glowing

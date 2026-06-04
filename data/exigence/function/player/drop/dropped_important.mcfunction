@@ -23,9 +23,15 @@ team join Green @s
 # Set to glowing
 data modify entity @s Glowing set value true
 
-# Re-add tag so that it has particles
+# Re-add tag so that it has particles / correct waypoint
 #   Wont re-start the sound unless All Echos Found is false still, which is fine
 execute if items entity @s contents #exigence:echo run tag @s add EchoShard
+execute if items entity @s contents minecraft:trial_key run tag @s add LevelKey
+execute if items entity @s contents minecraft:trial_key[custom_model_data={"strings":["level_1_key"]}] run tag @s add Level1Key
+execute if items entity @s contents minecraft:trial_key[custom_model_data={"strings":["level_2_key"]}] run tag @s add Level2Key
+execute if items entity @s contents minecraft:trial_key[custom_model_data={"strings":["level_3_key"]}] run tag @s add Level3Key
+#execute if items entity @s contents #exigence:trim_templates run tag @s add VaultKey
+execute if items entity @s contents #exigence:ardor run tag @s add Ardor
 
 # Default to -1 if not on any level
 scoreboard players set @s game.entity.object_level -1

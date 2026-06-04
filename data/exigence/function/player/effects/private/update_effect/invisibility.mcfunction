@@ -18,11 +18,19 @@ scoreboard players operation et.AddingTime game.effect_temp = et.BaseTime game.e
 
 # DURATION MODIFIERS
 function exigence:player/effects/private/update_effect/common_duration_mods
-execute if score et.FromCard game.effect_temp matches 1 if score @s game.player.mod.phantom_scales matches 1 run scoreboard players add et.AddingTime game.effect_temp 100
-execute if score et.FromCard game.effect_temp matches 1 if score @s game.player.mod.phantom_scales matches 2 run scoreboard players add et.AddingTime game.effect_temp 200
-execute if score et.FromCard game.effect_temp matches 1 if score @s game.player.mod.phantom_scales matches 3 run scoreboard players add et.AddingTime game.effect_temp 400
-execute if score et.FromCard game.effect_temp matches 1 if score @s game.player.mod.phantom_scales matches 4 run scoreboard players add et.AddingTime game.effect_temp 600
-execute if score et.FromCard game.effect_temp matches 1 if score @s game.player.mod.phantom_scales matches 5.. run scoreboard players add et.AddingTime game.effect_temp 1200
+execute if score et.FromCard game.effect_temp matches 1 if score @s game.player.mod.phantom_scales matches 1 run scoreboard players add et.BonusTime game.effect_temp 100
+execute if score et.FromCard game.effect_temp matches 1 if score @s game.player.mod.phantom_scales matches 2 run scoreboard players add et.BonusTime game.effect_temp 200
+execute if score et.FromCard game.effect_temp matches 1 if score @s game.player.mod.phantom_scales matches 3 run scoreboard players add et.BonusTime game.effect_temp 400
+execute if score et.FromCard game.effect_temp matches 1 if score @s game.player.mod.phantom_scales matches 4 run scoreboard players add et.BonusTime game.effect_temp 600
+execute if score et.FromCard game.effect_temp matches 1 if score @s game.player.mod.phantom_scales matches 5.. run scoreboard players add et.BonusTime game.effect_temp 1200
+
+# Tellraw feedback of total increase to duration from bonuses:
+scoreboard players operation #temp game.effect_temp = et.BonusTime game.effect_temp
+scoreboard players operation #temp game.effect_temp /= 20 number
+execute if score et.FromCard game.effect_temp matches 1 if score #temp game.effect_temp matches 1.. run tellraw @s [{text:" └─ [",color:"gray"},{text:"Bonus Effects",color:"green"},{text:"]: +",color:"gray"},{score:{name:"#temp",objective:"game.effect_temp"},color:"gray"},{text:" seconds of ",color:"gray"},{text:"Invisibility",color:"yellow"}]
+
+# Add bonus time to adding time
+scoreboard players operation et.AddingTime game.effect_temp += et.BonusTime game.effect_temp
 
 # Multiply total add time by heighten modifier
 scoreboard players operation et.AddingTime game.effect_temp *= @s game.player.calc_heighten

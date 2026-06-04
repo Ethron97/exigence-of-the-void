@@ -27,6 +27,7 @@ tag @s remove HandleInteracting
 tag @s remove CurrentlyReflecting
 tag @s remove Won
 tag @s remove PreviewingTeleport
+tag @s remove ReduceHeighten
 
 team leave @s
 gamemode adventure @s
@@ -40,7 +41,7 @@ scoreboard players reset @s game.player.player_number
 execute in exigence:hub run spawnpoint @s 0 200 0
 
 # Unbind armor
-function exigence:player/utility/unbind_all_armor
+function exigence:player/utility/armor/unbind_all_armor
 
 attribute @s minecraft:waypoint_receive_range base set 0
 
@@ -48,8 +49,8 @@ attribute @s minecraft:waypoint_receive_range base set 0
 function exigence:player/stats/run_stats
 
 # Reset-reset scores
-function exigence:scoreboard/generated_functions/reset_on_leave
 function exigence:scoreboard/generated_functions/reset_on_death
+function exigence:scoreboard/generated_functions/reset_on_leave
 function exigence:game/reset/reset_advancements
 
 # Reset attributers

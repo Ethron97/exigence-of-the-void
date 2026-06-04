@@ -20,6 +20,7 @@ scoreboard players reset @s game.player.effects.jump4
 scoreboard players reset @s game.player.effects.jump6
 scoreboard players reset @s game.player.effects.jump8
 scoreboard players reset @s game.player.effects.regen
+scoreboard players reset @s game.player.effects.resistance
 scoreboard players reset @s game.player.effects.speed
 scoreboard players reset @s game.player.effects.speed1
 scoreboard players reset @s game.player.effects.speed10
@@ -139,6 +140,7 @@ scoreboard players reset @s profile.data.effects.cr.effect_jump4
 scoreboard players reset @s profile.data.effects.cr.effect_jump6
 scoreboard players reset @s profile.data.effects.cr.effect_jump8
 scoreboard players reset @s profile.data.effects.cr.effect_regen
+scoreboard players reset @s profile.data.effects.cr.effect_resistance
 scoreboard players reset @s profile.data.effects.cr.effect_speed1
 scoreboard players reset @s profile.data.effects.cr.effect_speed10
 scoreboard players reset @s profile.data.effects.cr.effect_speed2
@@ -351,3 +353,4 @@ scoreboard players reset @s profile.data.winloss.cr.deaths_total
 scoreboard players reset @s profile.data.winloss.cr.max_menace_deaths
 scoreboard players reset @s profile.data.winloss.cr.max_menace_reached
 scoreboard players reset @s profile.data.winloss.cr.max_menace_wins
+scoreboard players reset @s game.player.dust_appearance

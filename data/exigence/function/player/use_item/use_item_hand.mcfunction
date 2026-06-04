@@ -17,7 +17,7 @@ $execute if items entity @s weapon.$(slot) carrot_on_a_stick[custom_data~{is_spe
 $execute if items entity @s weapon.$(slot) carrot_on_a_stick[custom_data~{item_name:'item_dust_of_appearance'}] run function exigence:player/use_item/other/use_dust
 $execute if items entity @s weapon.$(slot) carrot_on_a_stick[custom_data~{item_name:'item_dust_heighten'}] run function exigence:player/use_item/other/use_redstone
 $execute if items entity @s weapon.$(slot) carrot_on_a_stick[custom_data~{item_name:'clock'}] run function exigence:menu/item_display/void_shop_display/items/clock/use
-$execute if items entity @s weapon.$(slot) carrot_on_a_stick[custom_data~{item_name:'glow_ink_sac'}] run function exigence:player/use_item/other/glow_ink_sac
+$execute if items entity @s weapon.$(slot) carrot_on_a_stick[custom_data~{item_name:'item_glow_ink_sac'}] run function exigence:player/use_item/other/glow_ink_sac
 $execute if items entity @s weapon.$(slot) carrot_on_a_stick[custom_data~{item_name:'item_wind_line'}] run function exigence:player/use_item/other/item_wind_line
 $execute if items entity @s weapon.$(slot) carrot_on_a_stick[custom_data~{item_name:'item_phantom_membrane'}] run function exigence:player/use_item/phantom_membrane/try_use
 $execute if items entity @s weapon.$(slot) carrot_on_a_stick[custom_data~{item_name:'item_far_step'}] run function exigence:player/use_item/far_step/try_use

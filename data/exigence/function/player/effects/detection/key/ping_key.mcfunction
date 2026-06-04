@@ -61,5 +61,8 @@ tag @s add GetDistance
 execute if score @s game.player.effects.detection matches 1.. as @e[type=minecraft:item,tag=ClosestLevelKey,distance=..96] run function exigence:player/effects/detection/vibrate/vibrate
 tag @s remove GetDistance
 
+# Enable waypoint
+execute if score @s game.player.effects.detection matches 1.. as @e[type=minecraft:item,tag=ClosestLevelKey,distance=..96] run scoreboard players set @s game.waypoint.revealed_ticks 100
+
 # Remove local tag
 tag @e[type=minecraft:item,tag=ClosestLevelKey,distance=..96] remove ClosestLevelKey

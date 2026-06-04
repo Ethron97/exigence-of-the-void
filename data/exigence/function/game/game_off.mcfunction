@@ -28,7 +28,7 @@ execute as @a[tag=ActivePlayer] run function exigence:game/access/leave
 scoreboard players operation coins.leftover hub.coin_conversion = #coins.leftover hub.coin_conversion
 
 # Start unload
-function exigence:game/unload/start_unloading_sequence
+execute positioned -300 0 -300 run function exigence:game/unload/start_unloading_sequence
 
 # DEBUG/TESTING
 # Add all ravagers to player's team so they stop tracking

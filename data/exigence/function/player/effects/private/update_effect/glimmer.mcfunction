@@ -11,8 +11,16 @@ scoreboard players operation et.AddingTime game.effect_temp = et.BaseTime game.e
 
 # DURATION MODIFIERS
 function exigence:player/effects/private/update_effect/common_duration_mods
-execute if score et.FromCard game.effect_temp matches 1 if score @s game.player.mod.glimmer matches 6 run scoreboard players add et.AddingTime game.effect_temp 300
-execute if score et.FromCard game.effect_temp matches 1 if score @s game.player.mod.glimmer matches 7 run scoreboard players add et.AddingTime game.effect_temp 600
+execute if score et.FromCard game.effect_temp matches 1 if score @s game.player.mod.glimmer matches 6 run scoreboard players add et.BonusTime game.effect_temp 300
+execute if score et.FromCard game.effect_temp matches 1 if score @s game.player.mod.glimmer matches 7 run scoreboard players add et.BonusTime game.effect_temp 600
+
+# Tellraw feedback of total increase to duration from bonuses:
+scoreboard players operation #temp game.effect_temp = et.BonusTime game.effect_temp
+scoreboard players operation #temp game.effect_temp /= 20 number
+execute if score et.FromCard game.effect_temp matches 1 if score #temp game.effect_temp matches 1.. run tellraw @s [{text:" └─ [",color:"gray"},{text:"Bonus Effects",color:"green"},{text:"]: +",color:"gray"},{score:{name:"#temp",objective:"game.effect_temp"},color:"gray"},{text:" seconds of ",color:"gray"},{text:"Glimmer",color:"yellow"}]
+
+# Add bonus time to adding time
+scoreboard players operation et.AddingTime game.effect_temp += et.BonusTime game.effect_temp
 
 # Multiply total add time by heighten modifier
 scoreboard players operation et.AddingTime game.effect_temp *= @s game.player.calc_heighten

@@ -1,11 +1,14 @@
 # Summon void merchant NPC
 
 ## CONSTRAINTS
-# Only if difficulty 3
+#   AT location
 
 ## INPUT
 #   STR block - storage path to minecraft block for enderman holding
 
 #====================================================================================================
 
-$summon enderman -384.5 188.00 -34.5 {Tags:["VoidMerchant"],carriedBlockState:{Name:"$(block)"},NoAI:1,CustomName:{text:"Void Merchant",color:"dark_purple",italic:false}}
+$summon enderman ~ ~ ~ {Tags:["VoidMerchant","NewVoidMerchant","ETICK"]\
+,carriedBlockState:{Name:"$(block)"},NoAI:1,CustomName:{text:"Void Merchant",color:"dark_purple",italic:false}}
+
+execute as @e[type=minecraft:enderman,tag=NewVoidMerchant,distance=..1] run function exigence:npc/game/void_merchant/setup_vm

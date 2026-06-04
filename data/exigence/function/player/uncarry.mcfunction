@@ -11,4 +11,7 @@ execute as @e[type=minecraft:villager,tag=Carried] run function exigence:misc/en
 
 tellraw @s {text:"The NPC returns to hiding",color:"gray"}
 
+# Inform coop
+tellraw @a[tag=ActivePlayer,tag=!Carrying] [{selector:"@a[tag=Carrying]",color:"dark_aqua"},{text:" dropped their NPC",color:"red"}]
+
 tag @s remove Carrying

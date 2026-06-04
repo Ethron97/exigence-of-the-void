@@ -22,6 +22,9 @@ function exigence:menace/node/check_for_nodes
 # Break invis if max menace
 execute if score game.max_menace game.state matches 1 if entity @s[team=Enemy] run function exigence:player/effects/break_invisibility
 
+# Clear nausea (from Grease)
+effect clear @s nausea
+
 #====================================================================================================
 ## MODIFIERS
 # (Others are probably still under "player effect tick"
@@ -29,8 +32,8 @@ execute if score game.max_menace game.state matches 1 if entity @s[team=Enemy] r
 # Gathering Storm (with speed)
 execute if score @s[predicate=exigence:effects/speed] game.player.mod.gathering_storm matches 1 run function exigence:player/modifiers/gathering_storm
 
-# Sunplate (speed)
-execute if score @s game.player.mod.sun_plate matches 5 run function exigence:player/modifiers/sun_plate_s_tick
+# Sunplate (give resistance if has absorption)
+execute if score @s[predicate=exigence:effects/absorption] game.player.mod.sun_plate matches 5 run function exigence:player/modifiers/sun_plate_s_tick
 
 # Phantom Cloak (speed)
 execute if score @s game.player.mod.phantom_scales matches 7 run function exigence:player/modifiers/phantom_cloak_s_tick

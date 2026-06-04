@@ -6,32 +6,22 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) trigger web ball throw
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3 Player) trigger web ball throw
 
 # Reset snowball score
 scoreboard players set @s game.player.used.snowball 0
 
 # If there is no snowball, stop here!
-execute unless entity @e[type=minecraft:snowball,distance=..32] run say No snowball found?
-execute unless entity @e[type=minecraft:snowball,distance=..32] run return 1
+execute unless entity @e[type=minecraft:snowball,distance=..32] run return run say No snowball found?
 #----------------------------------------------------------------------------------------------------
 
 # Spawn a Marker to track snowball's last position
-summon minecraft:marker ~ ~ ~ {Tags:["NewSnowballMarker","SnowballMarker"],CustomName:{text:"Marker | Snowball"}}
+summon minecraft:marker ~ ~ ~ {Tags:["NewSnowballMarker","SnowballMarker","ETICK"],CustomName:{text:"Marker | Snowball"}}
 
-# Get snowball without tag, copy marker as Thrower
-execute as @e[type=snowball,tag=!AccountedFor,distance=..32] run data modify entity @s Owner set from entity @e[type=minecraft:marker,tag=NewSnowballMarker,distance=..32,limit=1] UUID
+# Call snowball function as closest non-accounted for snowball
+execute as @n[type=minecraft:snowball,tag=!AccountedFor,distance=..32] at @s run function exigence:hub/item_shop/item/item_web_ball/private/snowball_data
 
-# Generate next id
-scoreboard players add #sequence game.entity.snowball.id 1
-
-# Copy next id to snowball
-scoreboard players operation @e[type=snowball,tag=!AccountedFor,distance=..32] game.entity.snowball.id = #sequence game.entity.snowball.id
-
-# Account for snowball
-tag @e[type=snowball,tag=!AccountedFor,distance=..32] add AccountedFor
-
-# Copy highest score to snowball Marker
+# Copy sequence to score to snowball Marker
 scoreboard players operation @e[type=minecraft:marker,tag=NewSnowballMarker,distance=..32] game.entity.snowball.id = #sequence game.entity.snowball.id
 
 # Remove local tag

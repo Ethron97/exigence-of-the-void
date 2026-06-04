@@ -28,3 +28,6 @@ tag @s remove NewLevelKey
 
 # If treasure debug on, glow coin
 execute if score toggle.treasure debug matches 1 run data modify entity @s Glowing set value true
+
+# Summon waypoint entity
+execute at @s run function exigence:game/other/waypoint/summon_waypoint_from_item

@@ -1,10 +1,9 @@
 # Macro
 # function exigence:player/effects/set_effect_time {effect:"",duration:}
-# Valid effects: regen, jump, darkVision, beastSense
 
 #====================================================================================================
 
-$execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3) $(effect) $(duration)
+$execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3 Player) Set effect: $(effect) $(duration)
 
 # Setup scores
 scoreboard players set et.FromCard game.effect_temp 0

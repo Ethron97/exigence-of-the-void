@@ -1,7 +1,7 @@
 # Loads data for void item display
 
 ## CONSTRAINTS:
-#   AS/AT new void item display
+#   AS/AT new void ITEM
 
 ## INPUT:
 #   STR item_name
@@ -29,6 +29,9 @@ $function exigence:menu/load_item_display {menu_tag:'MenuVoid',Rotation:'$(Rotat
 
 # Assign game.void_merchant.shop_id
 scoreboard players operation @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] game.void_merchant.shop_id = #highest game.void_merchant.shop_id
+
+# Initialize shop cooldown
+scoreboard players set @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] shop.frame.purchase_cooldown 0
 
 # Give ItemShopDisplay tag
 tag @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] add VoidShopDisplay

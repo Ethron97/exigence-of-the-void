@@ -1,0 +1,21 @@
+[
+  {
+    "function": "minecraft:set_lore",
+    "lore": [
+      [{"text":"Durability: [ ","color":"dark_gray","italic":false},{"text":"♦♦♦♦♦♦♦♦♦♦","color":"#2d8114","italic":false},{"text":" ]","color":"dark_gray","italic":false}]
+    ],
+    "mode": "replace_section",
+    "offset": 1,
+    "size": 1
+  },
+  {
+    "function": "minecraft:set_custom_data",
+    "tag": {
+      "durability": 10
+    }
+  },
+  {
+    "function": "minecraft:set_damage",
+    "damage": 1.0
+  }
+]

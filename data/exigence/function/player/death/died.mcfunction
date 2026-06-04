@@ -26,8 +26,14 @@ tag @s remove PreviewingTeleport
 tag @s remove Trial
 tag @s remove Crucible
 tag @s remove CurrentlyReflecting
+tag @s remove ReduceHeighten
 
-#====================================================================================================
+# Prevent spectator from seeing everything
+attribute @s waypoint_receive_range base set 0
+
+# Damage armor
+function exigence:player/utility/armor/damage_all
+
 ## CLEAR / DROP ITEMS
 data modify storage exigence:give death_x set from entity @s LastDeathLocation.pos[0]
 data modify storage exigence:give death_y set from entity @s LastDeathLocation.pos[1]
@@ -54,8 +60,26 @@ function exigence:player/effects/reset_active_effects
 
 scoreboard players set @s game.player.heighten 0
 
-scoreboard players set @s game.player.damage_since_last_death 0
+# If player dies while carrying NPC (and game is coop), remove NPC and carrying tag and send message
+execute if entity @s[tag=Carrying] run function exigence:player/uncarry
 
+# Title to alert teammates
+tag @s add DontTitle
+title @a[tag=ActivePlayer,tag=!DontTitle] subtitle [{"selector":"@s"},{text:" died",color:"red"}]
+title @a[tag=ActivePlayer,tag=!DontTitle] title ""
+tag @s remove DontTitle
+
+# Reset warden angers at you
+execute if score @s game.player.player_number matches 1 in minecraft:overworld as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:warden,scores={game.warden.angry_at=1}] run scoreboard players reset @s game.warden.angry_at
+execute if score @s game.player.player_number matches 2 in minecraft:overworld as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:warden,scores={game.warden.angry_at=2}] run scoreboard players reset @s game.warden.angry_at
+execute if score @s game.player.player_number matches 3 in minecraft:overworld as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:warden,scores={game.warden.angry_at=3}] run scoreboard players reset @s game.warden.angry_at
+execute if score @s game.player.player_number matches 4 in minecraft:overworld as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:warden,scores={game.warden.angry_at=4}] run scoreboard players reset @s game.warden.angry_at
+
+# Tp interaction home
+function exigence:player/utility/interaction/tp_home
+
+#====================================================================================================
+## SCORES
 # Increase locational deaths
 execute if score @s game.player.active_level matches 1 run scoreboard players add @s profile.data.winloss.cr.deaths_L1 1
 execute if score @s game.player.active_level matches 2 run scoreboard players add @s profile.data.winloss.cr.deaths_L2 1
@@ -77,18 +101,3 @@ scoreboard players add @s profile.data.winloss.cr.deaths 1
 
 # If died at max menace, add to score
 execute if score game.max_menace game.state matches 1 run scoreboard players add @s profile.data.winloss.cr.max_menace_deaths 1
-
-# If player dies while carrying NPC (and game is coop), remove NPC and carrying tag and send message
-execute if entity @s[tag=Carrying] run function exigence:player/uncarry
-
-# Title to alert teammates
-tag @s add DontTitle
-title @a[tag=ActivePlayer,tag=!DontTitle] subtitle [{"selector":"@s"},{text:" died",color:"red"}]
-title @a[tag=ActivePlayer,tag=!DontTitle] title ""
-tag @s remove DontTitle
-
-# Reset warden angers at you
-execute if score @s game.player.player_number matches 1 in minecraft:overworld as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:warden,scores={game.warden.angry_at=1}] run scoreboard players reset @s game.warden.angry_at
-execute if score @s game.player.player_number matches 2 in minecraft:overworld as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:warden,scores={game.warden.angry_at=2}] run scoreboard players reset @s game.warden.angry_at
-execute if score @s game.player.player_number matches 3 in minecraft:overworld as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:warden,scores={game.warden.angry_at=3}] run scoreboard players reset @s game.warden.angry_at
-execute if score @s game.player.player_number matches 4 in minecraft:overworld as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:warden,scores={game.warden.angry_at=4}] run scoreboard players reset @s game.warden.angry_at

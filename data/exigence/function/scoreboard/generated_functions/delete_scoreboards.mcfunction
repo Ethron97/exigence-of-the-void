@@ -82,6 +82,7 @@ scoreboard objectives remove game.player.effects.jump4
 scoreboard objectives remove game.player.effects.jump6
 scoreboard objectives remove game.player.effects.jump8
 scoreboard objectives remove game.player.effects.regen
+scoreboard objectives remove game.player.effects.resistance
 scoreboard objectives remove game.player.effects.speed
 scoreboard objectives remove game.player.effects.speed1
 scoreboard objectives remove game.player.effects.speed10
@@ -374,6 +375,8 @@ scoreboard objectives remove profile.data.effects.cr.effect_jump8
 scoreboard objectives remove profile.data.effects.t.effect_jump8
 scoreboard objectives remove profile.data.effects.cr.effect_regen
 scoreboard objectives remove profile.data.effects.t.effect_regen
+scoreboard objectives remove profile.data.effects.cr.effect_resistance
+scoreboard objectives remove profile.data.effects.t.effect_resistance
 scoreboard objectives remove profile.data.effects.cr.effect_speed1
 scoreboard objectives remove profile.data.effects.t.effect_speed1
 scoreboard objectives remove profile.data.effects.cr.effect_speed10
@@ -1053,3 +1056,5 @@ scoreboard objectives remove trial.timer.cooldown
 scoreboard objectives remove trial.object.timer
 scoreboard objectives remove game.entity.waypoint_id
 scoreboard objectives remove trial.status
+scoreboard objectives remove game.player.dust_appearance
+scoreboard objectives remove game.waypoint.revealed_ticks

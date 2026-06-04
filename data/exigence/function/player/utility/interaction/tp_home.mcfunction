@@ -6,9 +6,7 @@
 #====================================================================================================
 
 # Store player id for comparison
-scoreboard players operation #compare game.entity.profile_id = @s profile.player.profile_id
-
-execute store result storage exigence:temp profile_id int 1 run scoreboard players get #compare game.entity.profile_id
+scoreboard players operation #compare game.player.player_number = @s game.player.player_number
 
 # Get correponding interaction
-execute as @e[type=interaction,scores={game.entity.profile_id=1..}] if score @s game.entity.profile_id = #compare game.entity.profile_id run function exigence:player/utility/interaction/private/tp_home with storage exigence:temp
+execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:interaction,tag=PlayerInteraction] if score @s game.entity.player_number = #compare game.player.player_number run function exigence:player/utility/interaction/private/tp_home

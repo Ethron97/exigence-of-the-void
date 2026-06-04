@@ -3,9 +3,9 @@
 ## CONSTRAINTS
 #   AS interaction
 
-## INPUT
-#   INT profile_id
-
 #====================================================================================================
 
-#$execute at @e[type=minecraft:armor_stand,scores={profile.node.profile_id=$(profile_id)},tag=ProfileNode] run tp @s ~ ~ ~
+execute if score @s game.player.player_number matches 1 run tp @s 519.5 0.0 486.5
+execute if score @s game.player.player_number matches 2 run tp @s 519.5 0.0 487.5
+execute if score @s game.player.player_number matches 3 run tp @s 519.5 0.0 488.5
+execute if score @s game.player.player_number matches 4 run tp @s 519.5 0.0 489.5

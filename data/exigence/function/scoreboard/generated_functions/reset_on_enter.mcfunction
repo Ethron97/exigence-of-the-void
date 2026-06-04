@@ -3,9 +3,6 @@
 scoreboard players set @s dead 0
 scoreboard players set @s game.player.active_level 0
 scoreboard players set @s game.player.calc_heighten 0
-scoreboard players set @s game.player.damage_absorbed 0
-scoreboard players set @s game.player.damage_since_last_death 0
-scoreboard players set @s game.player.damage_taken 0
 scoreboard players set @s game.player.echo_fragments 0
 scoreboard players set @s game.player.heighten 0
 scoreboard players set @s game.player.holding_compass 0
@@ -107,6 +104,7 @@ scoreboard players set @s profile.data.effects.cr.effect_jump4 0
 scoreboard players set @s profile.data.effects.cr.effect_jump6 0
 scoreboard players set @s profile.data.effects.cr.effect_jump8 0
 scoreboard players set @s profile.data.effects.cr.effect_regen 0
+scoreboard players set @s profile.data.effects.cr.effect_resistance 0
 scoreboard players set @s profile.data.effects.cr.effect_speed1 0
 scoreboard players set @s profile.data.effects.cr.effect_speed10 0
 scoreboard players set @s profile.data.effects.cr.effect_speed2 0
@@ -319,3 +317,4 @@ scoreboard players set @s profile.data.winloss.cr.deaths_total 0
 scoreboard players set @s profile.data.winloss.cr.max_menace_deaths 0
 scoreboard players set @s profile.data.winloss.cr.max_menace_reached 0
 scoreboard players set @s profile.data.winloss.cr.max_menace_wins 0
+scoreboard players set @s game.player.dust_appearance 0

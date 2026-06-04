@@ -8,6 +8,8 @@
 
 #====================================================================================================
 
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 4.. run say (D4 Game) Void shop Hover call
+
 # Remove item details
 function exigence:menu/item_display/remove_item_details with entity @s item.components."minecraft:custom_data"
 

@@ -1,5 +1,8 @@
 ## CONSTRAINTS
 #    AS player, when they die (or enter the dungeon)
+scoreboard players set @s game.player.damage_absorbed 0
+scoreboard players set @s game.player.damage_since_last_death 0
+scoreboard players set @s game.player.damage_taken 0
 scoreboard players set @s game.player.effects.beastsense 0
 scoreboard players set @s game.player.effects.circulation 0
 scoreboard players set @s game.player.effects.detection 0
@@ -13,6 +16,7 @@ scoreboard players set @s game.player.effects.jump4 0
 scoreboard players set @s game.player.effects.jump6 0
 scoreboard players set @s game.player.effects.jump8 0
 scoreboard players set @s game.player.effects.regen 0
+scoreboard players set @s game.player.effects.resistance 0
 scoreboard players set @s game.player.effects.speed 0
 scoreboard players set @s game.player.effects.speed1 0
 scoreboard players set @s game.player.effects.speed10 0

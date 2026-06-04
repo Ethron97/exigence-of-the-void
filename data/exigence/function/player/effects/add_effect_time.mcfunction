@@ -17,6 +17,7 @@ scoreboard players set @s game.player.calc_heighten 1
 # Store given duration in temp variable
 $scoreboard players set et.BaseTime game.effect_temp $(duration)
 scoreboard players set et.SetTime game.effect_temp 0
+scoreboard players set et.BonusTime game.effect_temp 0
 
 # Update in-game player effects
 $function exigence:player/effects/private/update_effect/$(effect)

@@ -75,6 +75,9 @@ execute positioned 0 0 0 run kill @e[type=minecraft:armor_stand,tag=Waypoint,dis
 # Unload entities
 function exigence:game/unload/unload_entities
 
+# Reset web ball related stuff
+function exigence:hub/item_shop/item/item_web_ball/reset
+
 # Set time to night
 time set 18000
 

@@ -1,14 +1,18 @@
 # Iterate forward to teleport items back to player
 
 ## CONSTRAITNS
-#   AS/AT Player
+#   AS Player
+#   AT position (marches forward)
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Wind line loop
+execute if score toggle.player debug matches 1 if score debug.level debug matches 4.. run say (D4 Player) Wind line loop
 
 # Reduce iteration
 scoreboard players remove #i Temp 1
+
+# Add to report
+execute as @e[type=minecraft:item,distance=..4] run scoreboard players add #collected Temp 1
 
 # Teleport all items back to player
 execute at @e[type=minecraft:item,distance=..4] run particle minecraft:small_gust ~ ~ ~ 0.1 0.1 0.1 0.1 1

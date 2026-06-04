@@ -16,13 +16,16 @@ execute unless entity @a[tag=ActivePlayer,tag=CardEffecting] run tag @a[scores={
 scoreboard players set et.FromCard game.effect_temp 1
 scoreboard players set et.FromPotion game.effect_temp 0
 scoreboard players set et.FromSpellsling game.effect_temp 0
+execute if entity @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,tag=Card,type=minecraft:armor_stand,tag=Spellslinging] run scoreboard players set et.FromSpellsling game.effect_temp 1
+
 execute as @a[tag=ActivePlayer] run function exigence:player/effects/private/calc_heighten
 # If any heighten is getting used, reduce everyone's heighten level
-execute if entity @a[scores={dead=0,game.player.heighten=1..},tag=ActivePlayer,tag=CardEffecting] run schedule function exigence:player/effects/heighten/decrease 1t replace
+execute as @a[scores={dead=0,game.player.heighten=1..},tag=ActivePlayer,tag=CardEffecting] run tag @s add ReduceHeighten
 
 # Store given duration in temp variable
 $scoreboard players set et.BaseTime game.effect_temp $(duration)
 scoreboard players set et.SetTime game.effect_temp 0
+scoreboard players set et.BonusTime game.effect_temp 0
 
 # Amplifier is one less than level
 $scoreboard players set et.Level game.effect_temp $(level)

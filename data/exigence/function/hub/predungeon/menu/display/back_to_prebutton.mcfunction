@@ -23,7 +23,7 @@ kill @e[type=#exigence:display,tag=PlayerSensorPupil,distance=..5]
 execute as @e[type=minecraft:item_display,tag=Open,distance=..5] run function exigence:hub/predungeon/menu/display/warp_door/slot/close_slot
 
 # Unlock player armor
-execute as @a[tag=Predungeon] run function exigence:player/utility/unbind_all_armor
+execute as @a[tag=Predungeon] run function exigence:player/utility/armor/unbind_all_armor
 
 # Load prebutton (schedule)
 schedule function exigence:hub/predungeon/menu/display/pre_button/schedule_load 20t

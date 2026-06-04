@@ -26,4 +26,4 @@ execute unless entity @s[tag=FromSetup] as @a[tag=Picking] run function exigence
 function exigence:botany/node/berry_bush_ungrow
 
 # Playsound
-execute at @s run playsound minecraft:block.sweet_berry_bush.pick_berries block @a ~ ~ ~
+execute at @s run playsound minecraft:block.sweet_berry_bush.pick_berries block @a ~ ~ ~ 1 1.3

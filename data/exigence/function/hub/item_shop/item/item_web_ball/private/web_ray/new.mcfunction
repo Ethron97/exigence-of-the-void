@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) New web march
+execute if score toggle.player debug matches 1 if score debug.level debug matches 4.. run say (D4 Player) New web march
 
 # Generate random yaw and pitch
 execute store result storage exigence:temp snowball_yaw float 0.1 run random value 0..3600

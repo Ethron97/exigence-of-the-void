@@ -25,4 +25,4 @@ execute at @s[tag=BerryNode] run setblock ~ ~1 ~ air
 function exigence:botany/node/remove_interaction
 
 # Kill glow
-kill @e[type=minecraft:block_display,tag=BerryGlow,distance=..3]
+execute at @s run kill @e[type=minecraft:block_display,tag=BerryGlow,distance=..3]

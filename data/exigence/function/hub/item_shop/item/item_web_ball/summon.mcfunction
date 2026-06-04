@@ -2,7 +2,8 @@ $data merge entity @s {Item:{id:"minecraft:snowball",count:1,components:{"minecr
 {text:" Web Blob ",italic:false,bold:true,color:"$(rare)"},{text:"💼",italic:false,bold:true,color:"white"}]\
 ,"minecraft:lore":[[$(rare_stars),{text:"Consumable",italic:false,color:"white"}]\
 ,{text:""}\
-,[{text:"Creates a mass of spider web",italic:false,color:"gray"}]\
+,[{text:"Creates a mass of spider ",italic:false,color:"gray"}]\
+,[{text:"web where it lands",italic:false,color:"gray"}]\
 ,[{text:"(Throw to use)",italic:false,color:"dark_gray"}]\
 ],"minecraft:custom_data":{item_name:"item_web_ball"}\
 ,"minecraft:max_stack_size":1\

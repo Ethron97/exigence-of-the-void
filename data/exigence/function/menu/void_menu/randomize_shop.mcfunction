@@ -1,7 +1,8 @@
 # Randomizes the shop contents based on the number of shop slots
 # Called by void_menu/load
 
-# AT location
+## CONSTRAINTS
+#   AT location (arbitrary, as long as the chunk is loaded)
 
 #====================================================================================================
 
@@ -10,7 +11,7 @@ summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","ender_pearl"]}
 summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","golden_carrot"]}
 summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","golden_apple"]}
 summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","totem_of_undying"]}
-summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","clock"]}
+#summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","clock"]}
 summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","master_key"]}
 summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","boots_sculk"]}
 summon minecraft:marker ~ ~ ~ {Tags:["RandomVoid","leggings_artifact"]}

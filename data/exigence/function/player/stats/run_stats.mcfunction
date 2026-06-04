@@ -9,7 +9,7 @@ tellraw @s [{text:"-------------------------------------",italic:false,bold:fals
 
 # Header
 execute if score game.difficulty game.state matches ..0 run tellraw @s [{text:"✪ ",italic:false,bold:false,color:"white"},{text:"Run Summary",italic:false,bold:true,color:"gold"},{text:" ✪",italic:false,bold:false,color:"white"}]
-execute if score game.difficulty game.state matches 1 run tellraw @s [{text:"✪ ",italic:false,bold:false,color:"white"},{text:"Run Summary",italic:false,bold:true,color:"gold"},{text:" ✪",italic:false,bold:false,color:"white"}]
+execute if score game.difficulty game.state matches 1 run tellraw @s [{text:"✪ ",italic:false,bold:false,color:"dark_aqua"},{text:"Run Summary",italic:false,bold:true,color:"gold"},{text:" ✪",italic:false,bold:false,color:"dark_aqua"}]
 execute if score game.difficulty game.state matches 2 run tellraw @s [{text:"✪✪ ",italic:false,bold:false,color:"green"},{text:"Run Summary",italic:false,bold:true,color:"gold"},{text:" ✪✪",italic:false,bold:false,color:"green"}]
 execute if score game.difficulty game.state matches 3 run tellraw @s [{text:"✪✪✪ ",italic:false,bold:false,color:"blue"},{text:"Run Summary",italic:false,bold:true,color:"gold"},{text:" ✪✪✪",italic:false,bold:false,color:"blue"}]
 execute if score game.difficulty game.state matches 4 run tellraw @s [{text:"✪✪✪✪ ",italic:false,bold:false,color:"light_purple"},{text:"Run Summary",italic:false,bold:true,color:"gold"},{text:" ✪✪✪✪",italic:false,bold:false,color:"light_purple"}]

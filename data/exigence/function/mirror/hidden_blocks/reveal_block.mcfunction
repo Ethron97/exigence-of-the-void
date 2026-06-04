@@ -10,4 +10,4 @@ execute if entity @s[tag=ReflectionYES] run team join Menace @e[type=minecraft:b
 
 tag @e[type=minecraft:block_display,tag=NewRevealedBlock,distance=..1] remove NewRevealedBlock
 
-execute if entity @s[tag=ReflectionNO] run playsound minecraft:block.end_portal_frame.fill neutral @a ~ ~ ~ 1 1.2
+execute if entity @s[tag=ReflectionNO] run playsound minecraft:block.end_portal_frame.fill block @a ~ ~ ~ 1 1.2

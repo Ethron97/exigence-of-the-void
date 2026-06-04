@@ -15,14 +15,15 @@ function exigence:player/effects/private/update_effect/common_duration_mods
 #   Metabolism = +30 seconds * modifier
 scoreboard players set #temp game.effect_temp 600
 scoreboard players operation #temp game.effect_temp *= mod.metabolism game.modifiers
-execute if score et.FromCard game.effect_temp matches 1 run scoreboard players operation et.AddingTime game.effect_temp += #temp game.effect_temp
+execute if score et.FromCard game.effect_temp matches 1 run scoreboard players operation et.BonusTime game.effect_temp += #temp game.effect_temp
 
+# Tellraw feedback of total increase to duration from bonuses:
+scoreboard players operation #temp game.effect_temp = et.BonusTime game.effect_temp
 scoreboard players operation #temp game.effect_temp /= 20 number
-# Tellraw feedback that Metabolism increased the speed:
-$execute if score mod.metabolism game.modifiers matches 1.. run tellraw @s [{text:" └─ [Metabolism]: +",color:"gray"},{score:{name:"#temp",objective:"game.effect_temp"},color:"gray"},{text:" seconds of ",color:"gray"},{text:"Speed $(level)",color:"yellow"}]
+$execute if score et.FromCard game.effect_temp matches 1 if score #temp game.effect_temp matches 1.. run tellraw @s [{text:" └─ [",color:"gray"},{text:"Bonus Effects",color:"green"},{text:"]: +",color:"gray"},{score:{name:"#temp",objective:"game.effect_temp"},color:"gray"},{text:" seconds of ",color:"gray"},{text:"Speed $(level)",color:"yellow"}]
 
-# If heighten calc >1, tellraw
-execute if score @s game.player.calc_heighten matches 2.. run tellraw @s [{text:" └─ [Heighten]: Duration of Speed multiplied by ",color:"gray"},{score:{name:"@s",objective:"game.player.calc_heighten"},color:"yellow"}]
+# Add bonus time to adding time
+scoreboard players operation et.AddingTime game.effect_temp += et.BonusTime game.effect_temp
 
 # Multiply total add time by heighten modifier
 scoreboard players operation et.AddingTime game.effect_temp *= @s game.player.calc_heighten

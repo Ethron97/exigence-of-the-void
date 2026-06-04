@@ -40,4 +40,4 @@ execute if score #Sentry vault_open_state matches 14 run playsound minecraft:blo
 scoreboard players add #Sentry vault_open_state 1
 
 # Iterate
-execute if score #Sentry vault_open_state matches ..14 run schedule function exigence:door/vault/sentry/open_loop 2t
+execute if score #Sentry vault_open_state matches ..14 run schedule function exigence:door/vault/sentry/open_loop_schedule 2t

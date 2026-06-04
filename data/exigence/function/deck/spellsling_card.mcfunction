@@ -1,5 +1,8 @@
 # Called when player plays a spellbound card by using it from their inventory
 
+## CONSTRAINTS
+#   IN minecraft:overworld
+
 #====================================================================================================
 
 execute if score toggle.deck debug matches 1 if score debug.level debug matches 3.. run say (D3) Spellsling card
@@ -32,7 +35,7 @@ execute as @a[tag=ActivePlayer,tag=!Spellslinging] run function exigence:player/
 execute at @s positioned ~ ~1000 ~ run playsound minecraft:item.trident.return ambient @a ~ ~ ~ 1000 1
 
 # Call functions common to Drawing a card
-execute as @e[type=minecraft:armor_stand,tag=Spellslinging] run function exigence:cards/spellsling
+execute as @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=Spellslinging] run function exigence:cards/spellsling
 
 # Update displays
 function exigence:deck/update_card_counter

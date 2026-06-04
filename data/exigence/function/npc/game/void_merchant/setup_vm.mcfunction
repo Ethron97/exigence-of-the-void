@@ -12,9 +12,13 @@ team join Menace @s
 effect give @s resistance infinite 200 true
 effect give @s fire_resistance infinite 200 true
 effect give @s instant_health infinite 200 true
-
 # DEBUG
 execute if score toggle.void debug matches 1 run effect give @s glowing infinite 0 true
 
-# Teleport all void merchants to initialize their position
-execute as @s run function exigence:npc/game/void_merchant/teleport
+# If we want each enderman to have their ownshop, re-randomize it here.
+# ...
+# Copy selected shop to entity data
+data modify entity @s data.custom_data.selected set from storage exigence:void_shop selected
+
+# Initialize position
+function exigence:npc/game/void_merchant/teleport

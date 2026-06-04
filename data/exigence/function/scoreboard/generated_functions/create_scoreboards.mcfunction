@@ -82,6 +82,7 @@ scoreboard objectives add game.player.effects.jump4 dummy
 scoreboard objectives add game.player.effects.jump6 dummy
 scoreboard objectives add game.player.effects.jump8 dummy
 scoreboard objectives add game.player.effects.regen dummy
+scoreboard objectives add game.player.effects.resistance dummy
 scoreboard objectives add game.player.effects.speed dummy
 scoreboard objectives add game.player.effects.speed1 dummy
 scoreboard objectives add game.player.effects.speed10 dummy
@@ -374,6 +375,8 @@ scoreboard objectives add profile.data.effects.cr.effect_jump8 dummy
 scoreboard objectives add profile.data.effects.t.effect_jump8 dummy
 scoreboard objectives add profile.data.effects.cr.effect_regen dummy
 scoreboard objectives add profile.data.effects.t.effect_regen dummy
+scoreboard objectives add profile.data.effects.cr.effect_resistance dummy
+scoreboard objectives add profile.data.effects.t.effect_resistance dummy
 scoreboard objectives add profile.data.effects.cr.effect_speed1 dummy
 scoreboard objectives add profile.data.effects.t.effect_speed1 dummy
 scoreboard objectives add profile.data.effects.cr.effect_speed10 dummy
@@ -1053,3 +1056,5 @@ scoreboard objectives add trial.timer.cooldown dummy
 scoreboard objectives add trial.object.timer dummy
 scoreboard objectives add game.entity.waypoint_id dummy
 scoreboard objectives add trial.status dummy
+scoreboard objectives add game.player.dust_appearance dummy
+scoreboard objectives add game.waypoint.revealed_ticks dummy

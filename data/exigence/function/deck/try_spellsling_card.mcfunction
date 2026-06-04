@@ -19,7 +19,7 @@ function exigence:resources/test_consume
 $execute if score #LastConsumeTest game.resources matches 1 run function exigence:deck/spellsling_card {card_name:'$(card_name)'}
 
 # If cannot afford, message
-execute if score #LastConsumeTest game.resources matches 0 run say Cannot afford to play
+execute if score #LastConsumeTest game.resources matches 0 run tellraw @s [{text:"✖ Cannot afford to play",color:"red"}] 
 execute if score #LastConsumeTest game.resources matches 0 at @s run playsound minecraft:block.fire.extinguish ambient @s ~ ~1000 ~ 1000 1
 
 tag @s remove Spellslinging

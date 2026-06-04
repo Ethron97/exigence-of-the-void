@@ -1,5 +1,5 @@
 # Update a specific snowball marker pair
-#   Called from ./tick_loop
+#   Called from game tick e tick
 
 ## CONSTRAINTS
 #   AS/AT snowball marker

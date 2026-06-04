@@ -6,4 +6,4 @@
 #====================================================================================================
 
 # Apply dragonbreath
-execute as @e[type=#exigence:glowable_enemies,team=Enemy,tag=!DragonBreath,distance=..5] at @s run function exigence:player/modifiers/private/apply_dragon_breath
+execute as @n[type=#exigence:dragon_breath,team=Enemy,tag=!DragonBreath,distance=..5] at @s run function exigence:player/modifiers/private/apply_dragon_breath

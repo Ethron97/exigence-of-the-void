@@ -43,12 +43,12 @@ execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_
 
 # Heavy Core
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'heavy_core'}}}]}] run attribute @s minecraft:knockback_resistance modifier add exigence:heavy_core 1.0 add_value 
+execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'heavy_core'}}}]}] run attribute @s minecraft:fall_damage_multiplier modifier add exigence:heavy_core 0.2 add_multiplied_base 
 
 # Dragon Breath
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'dragon_breath'}}}]}] run scoreboard players set @s game.player.mod.dragon_breath 1
-execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'dragon_breath'}}}]}] run scoreboard players add mod.max_dragon_breath game.modifiers 5
+execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'dragon_breath'}}}]}] run scoreboard players add mod.max_dragon_breath game.modifiers 4
 
-execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'enchanted_book'}}}]}] run scoreboard players set @s game.player.mod.enchanted_book 1
 
 
 
@@ -76,7 +76,9 @@ execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'ravager_hoof'}}}]}] run scoreboard players set @s game.player.mod.ravager_hoof 1
 
 # Lucky Feather
-execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'lucky_feather'}}}]}] run scoreboard players set mod.lucky_feather game.modifiers 1
+execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'lucky_feather'}}}]}] run attribute @s minecraft:knockback_resistance modifier add exigence:feather -1 add_value 
+execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'lucky_feather'}}}]}] run attribute @s minecraft:fall_damage_multiplier modifier add exigence:feather -0.5 add_multiplied_total
+execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'lucky_feather'}}}]}] run attribute @s minecraft:safe_fall_distance modifier add exigence:feather 5 add_value
 
 # Heighten
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'heighten'}}}]}] run scoreboard players set @s game.player.mod.war_paint 1

@@ -45,6 +45,9 @@ execute as @a[scores={dead=0},tag=ActivePlayer] run function exigence:player/dis
 # Update objective bossbar if at least one player is viewing
 execute if entity @a[scores={dead=0},tag=ActivePlayer,tag=DisplayObjective] run function exigence:bossbar/objective/update_title
 
+# If Heighten was consumed, reduce heighten
+execute as @a[scores={dead=0},tag=ActivePlayer,tag=ReduceHeighten] at @s run function exigence:player/effects/heighten/decrease
+
 # TEMP BREAK POINT
 #----------------------------------------------------------------------------------------------------
 return 0

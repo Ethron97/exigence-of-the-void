@@ -16,4 +16,4 @@ execute if score @s[tag=BerryNode] Random matches 1 at @s align x align z align 
 execute if score @s[tag=BerryNode] Random matches 2..3 at @s align x align z align y run summon minecraft:block_display ~ ~ ~ {block_state:{Name:"minecraft:glass"},Glowing:1b,Tags:["BerryGlow","NewBerryGlow"]}
 
 # Call data function (removes local tag)
-execute as @e[type=minecraft:block_display,tag=NewBerryGlow,distance=..1] run function exigence:botany/node/glow_data
+execute at @s as @e[type=minecraft:block_display,tag=NewBerryGlow,distance=..1] run function exigence:botany/node/glow_data

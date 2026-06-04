@@ -55,7 +55,7 @@ execute if score game.difficulty game.state matches 5 run function exigence:play
 function exigence:player/sound/item_sounds/vault_key
 
 # Check for ravager glass
-execute if entity @s[gamemode=adventure] run function exigence:player/ravager_glass/check
+execute if entity @s[gamemode=adventure] unless score @s game.player.mod.ravager_hoof matches 1 run function exigence:player/ravager_glass/check
 
 # Move any carried entities along with the player
 execute if entity @s[tag=Carrying] as @e[type=minecraft:villager,tag=Carried,distance=..100,limit=1] run tp @s ~ ~2 ~
@@ -71,6 +71,18 @@ execute if score mod.claustrophobia game.modifiers matches 1 if score seconds.co
 
 # If there is a vex within 1 block of center mass, get some wither (unless player already has it)
 #execute if score game.max_menace game.state matches 1 unless entity @s[predicate=exigence:effects/wither] anchored eyes if entity @e[type=minecraft:vex,distance=..2] run effect give @s minecraft:wither 2 0 false
+
+# If appearing dust:
+execute if score @s game.player.dust_appearance matches 1.. run function exigence:hub/item_shop/item/item_dust_of_appearance/private/try_appear
+
+#execute if score @s game.player.damage_taken matches 1.. run say Took damage
+#execute if score @s game.player.damage_absorbed matches 1.. run say Absorbed damage
+# If player has sunplate:
+execute if score @s game.player.mod.sun_plate matches 4 run function exigence:player/modifiers/sun_plate_4_tick
+# If player takes any damage and has PanicBoots, trigger panic boots
+execute if score @s game.player.damage_taken matches 1.. if score @s game.player.mod.panic_boots matches 1.. run function exigence:player/modifiers/panic_boots
+scoreboard players set @s game.player.damage_taken 0
+scoreboard players set @s game.player.damage_absorbed 0
 
 #====================================================================================================
 ## SECOND-TICKS

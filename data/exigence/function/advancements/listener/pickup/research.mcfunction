@@ -24,7 +24,7 @@ execute if items entity @s inventory.* minecraft:burn_pottery_sherd[custom_data=
 execute if score #is_pot Temp matches 0 run scoreboard players add @s profile.data.treasure.cr.research_picked_up 1
 execute if score #is_pot Temp matches 1 run scoreboard players add @s profile.data.treasure.cr.research_pot_picked_up 1
 
-# Delete the music disc from their inventory
+# Clear picked up item
 clear @s minecraft:burn_pottery_sherd 1
 
 # Call function to handle the rest of the event

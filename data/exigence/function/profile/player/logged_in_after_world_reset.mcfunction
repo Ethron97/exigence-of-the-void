@@ -12,6 +12,9 @@ team leave @s
 
 scoreboard players set @s quits 0
 
+# Have to clear because they may have outdated armor
+clear @s
+
 # List of all room tags they could have been in
 tag @s remove ActivePlayer
 tag @s remove LockerRoom

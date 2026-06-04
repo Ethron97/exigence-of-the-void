@@ -55,6 +55,7 @@ scoreboard players operation @s profile.data.effects.t.effect_jump4 += @p[distan
 scoreboard players operation @s profile.data.effects.t.effect_jump6 += @p[distance=..0.01,tag=CopyingLocal] profile.data.effects.cr.effect_jump6
 scoreboard players operation @s profile.data.effects.t.effect_jump8 += @p[distance=..0.01,tag=CopyingLocal] profile.data.effects.cr.effect_jump8
 scoreboard players operation @s profile.data.effects.t.effect_regen += @p[distance=..0.01,tag=CopyingLocal] profile.data.effects.cr.effect_regen
+scoreboard players operation @s profile.data.effects.t.effect_resistance += @p[distance=..0.01,tag=CopyingLocal] profile.data.effects.cr.effect_resistance
 scoreboard players operation @s profile.data.effects.t.effect_speed1 += @p[distance=..0.01,tag=CopyingLocal] profile.data.effects.cr.effect_speed1
 scoreboard players operation @s profile.data.effects.t.effect_speed10 += @p[distance=..0.01,tag=CopyingLocal] profile.data.effects.cr.effect_speed10
 scoreboard players operation @s profile.data.effects.t.effect_speed2 += @p[distance=..0.01,tag=CopyingLocal] profile.data.effects.cr.effect_speed2

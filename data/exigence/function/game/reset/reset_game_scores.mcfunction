@@ -77,6 +77,8 @@ scoreboard players set hazard.level_4 game.dungeon.hazard 0
 scoreboard players set .cards game.dungeon 0
 scoreboard players set .fatigue game.dungeon 0
 scoreboard players set game.puzzle_candles game.dungeon 0
+scoreboard players set cart_cache.card game.dungeon 0
+scoreboard players set cart_cache.proc game.dungeon 0
 
 # TEMP
 scoreboard players set card.queue game.dungeon.temp 0
@@ -125,7 +127,6 @@ scoreboard players set mod.echo_cake game.modifiers 0
 scoreboard players set mod.gold_idol game.modifiers 0
 scoreboard players set mod.void_shop_slots game.modifiers 3
 scoreboard players set mod.void_merchants game.modifiers 1
-scoreboard players set mod.lucky_feather game.modifiers 0
 scoreboard players set mod.brush game.modifiers 0
 scoreboard players set mod.claustrophobia game.modifiers 0
 scoreboard players set mod.exigence game.modifiers 0

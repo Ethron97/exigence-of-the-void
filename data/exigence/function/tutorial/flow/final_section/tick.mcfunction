@@ -26,4 +26,3 @@ function exigence:tutorial/flow/final_section/heartbeat_tick
 execute if score tut.menace hub.tutorial matches ..19 run function exigence:tutorial/flow/final_section/deck_tick
 execute if score tut.menace hub.tutorial matches 20.. if score tut.max_menace hub.tutorial matches 0 run function exigence:tutorial/flow/final_section/max_menace
 execute if score tut.max_menace hub.tutorial matches 1 run function exigence:tutorial/flow/final_section/max_menace_tick
-

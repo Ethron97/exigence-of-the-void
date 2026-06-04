@@ -9,5 +9,8 @@ execute if score toggle.bell debug matches 1 if score debug.level debug matches 
 # Increase Red resource by 2
 execute as @p[tag=Ringing] run function exigence:resources/try_generate {green:0,red:2,aqua:0}
 
+execute at @s run playsound minecraft:block.bell.use block @a ~ ~ ~ 4 1.5
+execute at @s run playsound minecraft:block.bell.use block @a ~ ~ ~ 4 1.2
+
 # Add tag so the bell does not return
 tag @s add Smashed
