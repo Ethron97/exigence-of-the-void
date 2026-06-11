@@ -10,3 +10,4 @@ execute at @s run fill ~-1 ~ ~-1 ~1 ~ ~1 air
 execute at @s run setblock ~ ~2 ~ air
 
 tag @s remove VoidCache
+tag @s remove ETICK

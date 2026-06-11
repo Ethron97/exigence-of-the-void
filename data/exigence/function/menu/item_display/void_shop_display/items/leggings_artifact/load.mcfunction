@@ -9,4 +9,4 @@
 
 #====================================================================================================
 
-$function exigence:menu/void_menu/void_item_display {item_name:'leggings_artifact',money_cost:30,Rotation:'$(Rotation)'}
+$function exigence:menu/void_menu/void_item_display {item_name:'leggings_artifact',money_cost:15,Rotation:'$(Rotation)'}

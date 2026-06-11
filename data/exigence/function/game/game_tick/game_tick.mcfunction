@@ -45,19 +45,11 @@ execute as @a[scores={dead=0},tag=ActivePlayer] run function exigence:player/dis
 # Update objective bossbar if at least one player is viewing
 execute if entity @a[scores={dead=0},tag=ActivePlayer,tag=DisplayObjective] run function exigence:bossbar/objective/update_title
 
-# If Heighten was consumed, reduce heighten
+# If Heighten was consumed, reduce heighten (must happen after all players have resolved Effect Tick)
 execute as @a[scores={dead=0},tag=ActivePlayer,tag=ReduceHeighten] at @s run function exigence:player/effects/heighten/decrease
 
-# TEMP BREAK POINT
-#----------------------------------------------------------------------------------------------------
-return 0
-
-# Void menu tick if void merchants were loaded
-execute if score game.difficulty game.state matches 3.. run function exigence:menu/void_menu/void_menu_tick
+# Clock update
+execute if score seconds.cooldown tick_counter matches 3 run function exigence:player/use_item/clock/update
 
 # Void cache udpate
 execute if score mod.void_cache game.modifiers matches 1.. if score seconds.cooldown tick_counter matches 10 run function exigence:cards/void_cache/update
-
-# MOVE TO PLAYER
-# Clock item tick
-#execute if score seconds.cooldown tick_counter matches 3 run function exigence:menu/item_display/void_shop_display/items/clock/update

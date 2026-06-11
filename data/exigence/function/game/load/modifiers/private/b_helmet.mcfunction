@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if predicate exigence:equipment/helmet/deck run return run function exigence:menu/item_display/void_shop_display/items/helmet_deck/trigger
+
 # Berry Vision
 execute if predicate exigence:equipment/helmet/berry_a run return run scoreboard players set @s game.player.mod.berry_vision 1
 

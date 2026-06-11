@@ -1,0 +1,12 @@
+{
+    "values": [
+        "#exigence:armor_chainmail",
+        "#exigence:armor_copper",
+        "#exigence:armor_diamond",
+        "#exigence:armor_gold",
+        "#exigence:armor_iron",
+        "#exigence:armor_leather",
+        "#exigence:armor_netherite",
+        "minecraft:elytra"
+    ]
+}

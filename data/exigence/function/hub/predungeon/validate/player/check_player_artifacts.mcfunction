@@ -29,6 +29,9 @@ tellraw @s [{text:"✖ You have too many artifacts! (",color:"red"}\
 ,{score:{name:"#temp",objective:"Temp"}},{text:"/",color:"red"},{score:{name:"#artifact_limit",objective:"Temp"}},{text:")",color:"red"}]
 #execute at @s run playsound minecraft:block.sculk_sensor.clicking ui @s ~ ~10 ~ 2 1.4
 
+# If player has Wings, remind them that wings count as artifact + chestplate
+execute if items entity @s armor.chest minecraft:elytra run tellraw @s [{text:" └ ",color:"gray"},{text:"Remember, Wings count as an ✨ Artifact",color:"gray"}]
+
 # Message other players
 tellraw @a[tag=Predungeon,tag=!LocalLocal,distance=..32] \
 [{text:"✖ ",color:red},{selector:"@p[tag=LocalLocal]",color:gold},{text:" has too many artifacts!",color:"red"}]

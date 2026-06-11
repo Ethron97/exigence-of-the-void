@@ -16,9 +16,6 @@ scoreboard players set mod.void_deck_modifier game.modifiers 0
 # Potion pack
 #execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'potion_pack'}}}]}] run scoreboard players add potion.limit hub.validate_items 1
 
-# Helmet deck
-execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'helmet_deck'}}}]}] run scoreboard players add mod.void_deck_modifier game.modifiers 3
-
 # Leggings artifact
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'leggings_artifact'}}}]}] run scoreboard players add artifact.limit hub.validate_items 1
 

@@ -26,6 +26,7 @@ execute store result entity @s Item.components."minecraft:custom_data".VoidShopI
 # Call load_item_display as summoned item
 #   This handles copying the data and summoning item display
 $function exigence:menu/load_item_display {menu_tag:'MenuVoid',Rotation:'$(Rotation)',scale:'0.3',hover_scale:'0.4'}
+data modify entity @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] brightness set value {block:13,sky:13}
 
 # Assign game.void_merchant.shop_id
 scoreboard players operation @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] game.void_merchant.shop_id = #highest game.void_merchant.shop_id

@@ -37,9 +37,9 @@ $execute positioned ^0.5 ^5 ^ run function exigence:menu/money_menus/money_item_
 $execute positioned ^0.5 ^5.75 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuBoots',item_name:'boots_feather_f',rarity:4,tier:8,money_cost:20,research_cost:64,parents:['boots_feather_e'],num_parents:1,Rotation:'$(Rotation)'}
 
 # SCULK BOOTS
-$execute positioned ^1.5 ^4.25 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuBoots',item_name:'boots_sculk_a',rarity:3,tier:5,money_cost:11,research_cost:24,parents:['boots_feather_c'],num_parents:1,Rotation:'$(Rotation)'}
-$execute positioned ^1.5 ^5 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuBoots',item_name:'boots_sculk_b',rarity:3,tier:6,money_cost:13,research_cost:40,parents:['boots_sculk_a'],num_parents:1,Rotation:'$(Rotation)'}
-$execute positioned ^1.5 ^5.75 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuBoots',item_name:'boots_sculk_c',rarity:4,tier:7,money_cost:20,research_cost:64,parents:['boots_sculk_b'],num_parents:1,Rotation:'$(Rotation)'}
+$execute positioned ^1.5 ^4.25 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuBoots',item_name:'boots_sculk_a',rarity:3,tier:6,money_cost:11,research_cost:24,parents:['boots_feather_c'],num_parents:1,Rotation:'$(Rotation)'}
+$execute positioned ^1.5 ^5 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuBoots',item_name:'boots_sculk_b',rarity:3,tier:7,money_cost:13,research_cost:40,parents:['boots_sculk_a'],num_parents:1,Rotation:'$(Rotation)'}
+$execute positioned ^1.5 ^5.75 ^ run function exigence:menu/money_menus/money_item_display {menu_tag:'MenuBoots',item_name:'boots_sculk_c',rarity:4,tier:8,money_cost:20,research_cost:64,parents:['boots_sculk_b'],num_parents:1,Rotation:'$(Rotation)'}
 
 # Connect parents
 execute as @e[type=minecraft:item_display,scores={shop.frame.parents=1..},tag=NewItemDisplays,tag=ItemShopDisplay,distance=..16] run function exigence:menu/item_display/item_shop_display/parent/connect_parents

@@ -1058,3 +1058,4 @@ scoreboard objectives add game.entity.waypoint_id dummy
 scoreboard objectives add trial.status dummy
 scoreboard objectives add game.player.dust_appearance dummy
 scoreboard objectives add game.waypoint.revealed_ticks dummy
+scoreboard objectives add UseTrident minecraft.used:minecraft.trident

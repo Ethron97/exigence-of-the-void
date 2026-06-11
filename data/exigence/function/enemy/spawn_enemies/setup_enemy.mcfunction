@@ -22,7 +22,7 @@ effect give @s[type=minecraft:witch] minecraft:speed infinite 0 true
 effect give @s[type=minecraft:witch] minecraft:regeneration infinite 0 true
 
 # If RADIANT difficulty (0), give enemies slowness I
-execute if score game.profile_difficulty game.state matches 0 run attribute @s movement_speed modifier add exigence:enemy_slow -0.2 add_multiplied_base
+execute if score game.profile_difficulty game.state matches 1 run attribute @s movement_speed modifier add exigence:enemy_slow -0.2 add_multiplied_base
 
 # Add silence tag to mobs we want to be silenced in between rounds
 tag @s add Silence
@@ -57,5 +57,5 @@ execute if score toggle.enemy debug matches 1 run effect give @s minecraft:glowi
 #effect give @s[type=creaking] strength infinite 10
 #effect give @s[type=creaking] speed infinite 0 true
 
-# If profile = 2, give ravagers strength XXXX so they can insta kill
-#execute if score game.profile_difficulty game.state matches 2 run effect give @s[type=minecraft:ravager] strength infinite 100 true
+# If profile = 3, give ravagers strength XXXX so they can insta kill
+#execute if score game.profile_difficulty game.state matches 3 run effect give @s[type=minecraft:ravager] strength infinite 100 true

@@ -24,3 +24,6 @@ team join Enemy @s
 bossbar set exigence:bossbar players @a[tag=ActivePlayer,scores={game.player.vault_code=0}]
 bossbar set exigence:last_card players @a[tag=ActivePlayer,scores={game.player.vault_code=0,career.settings.card_display_bossbar=1}]
 bossbar set exigence:resources players @a[tag=ActivePlayer,scores={game.player.vault_code=0,career.settings.resource_bossbar_style=1..}]
+
+# Remove clock markers
+execute in minecraft:overworld run function exigence:player/use_item/clock/reset_player

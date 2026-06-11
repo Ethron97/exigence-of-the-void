@@ -47,6 +47,9 @@ execute unless entity @a[scores={career.settings.echo_win_tracking=0},tag=Active
 
 #====================================================================================================
 
+# Convert placeholder void items to actual armor loot
+execute as @a[tag=ActivePlayer] at @s positioned ~ ~10 ~ run function exigence:player/utility/armor/void_armor/check_for_placeholders
+
 # Turn off the game
 execute in minecraft:overworld run function exigence:game/game_off
 

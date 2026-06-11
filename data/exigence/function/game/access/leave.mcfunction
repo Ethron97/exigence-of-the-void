@@ -40,9 +40,13 @@ scoreboard players reset @s game.player.player_number
 # Set spawnpoint to Loss location
 execute in exigence:hub run spawnpoint @s 0 200 0
 
-# Unbind armor
+# Unbind armor (remove Curse of Binding)
 function exigence:player/utility/armor/unbind_all_armor
 
+# Use armor (void armor)
+execute unless score toggle.void debug matches 1 run function exigence:player/utility/armor/use_all
+
+# Disable locator bar while in hub
 attribute @s minecraft:waypoint_receive_range base set 0
 
 # Display post game stats

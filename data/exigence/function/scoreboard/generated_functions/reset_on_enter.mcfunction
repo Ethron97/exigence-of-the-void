@@ -318,3 +318,4 @@ scoreboard players set @s profile.data.winloss.cr.max_menace_deaths 0
 scoreboard players set @s profile.data.winloss.cr.max_menace_reached 0
 scoreboard players set @s profile.data.winloss.cr.max_menace_wins 0
 scoreboard players set @s game.player.dust_appearance 0
+scoreboard players set @s UseTrident 0

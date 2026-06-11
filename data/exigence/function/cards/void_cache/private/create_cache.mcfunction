@@ -6,6 +6,7 @@
 #====================================================================================================
 
 tag @s add VoidCache
+tag @s add ETICK
 
 # Set blocks
 fill ~-1 ~ ~-1 ~1 ~ ~1 minecraft:purpur_slab

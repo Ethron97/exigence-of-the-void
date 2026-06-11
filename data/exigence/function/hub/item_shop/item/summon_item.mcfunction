@@ -17,4 +17,4 @@ $execute as @n[type=minecraft:item,tag=NSS,distance=..1] run function exigence:h
 #execute as @n[distance=..1,type=minecraft:item,tag=NSS] run data modify entity @s Item.components."minecraft:tooltip_display" set value \
 {hidden_components:["unbreakable","attribute_modifiers","potion_contents","trim","dyed_color"]}
 
-execute as @n[type=minecraft:item,tag=NSS,distance=..1] if items entity @s container.* #enchantable/armor run function exigence:hub/item_shop/item/armor_data
+execute as @n[type=minecraft:item,tag=NSS,distance=..1] if items entity @s container.* #exigence:armor run function exigence:hub/item_shop/item/armor_data

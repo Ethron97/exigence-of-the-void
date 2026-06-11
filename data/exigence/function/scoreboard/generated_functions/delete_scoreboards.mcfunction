@@ -1058,3 +1058,4 @@ scoreboard objectives remove game.entity.waypoint_id
 scoreboard objectives remove trial.status
 scoreboard objectives remove game.player.dust_appearance
 scoreboard objectives remove game.waypoint.revealed_ticks
+scoreboard objectives remove UseTrident

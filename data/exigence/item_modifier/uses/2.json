@@ -1,0 +1,21 @@
+[
+  {
+    "function": "minecraft:set_lore",
+    "lore": [
+      [{"text":"Uses: [ ","color":"dark_gray","italic":false},{"text":"⚡⚡","color":"#da9c15","bold":true,"italic":false},{"text":"⚡","color":"dark_gray","bold":true,"italic":false},{"text":" ]","color":"dark_gray","italic":false}]
+    ],
+    "mode": "replace_section",
+    "offset": 1,
+    "size": 1
+  },
+  {
+    "function": "minecraft:set_custom_data",
+    "tag": {
+      "uses": 2
+    }
+  },
+  {
+    "function": "minecraft:set_damage",
+    "damage": 0.6
+  }
+]

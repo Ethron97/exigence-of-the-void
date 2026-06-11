@@ -5,7 +5,11 @@
 
 #====================================================================================================
 
-execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3 Player) Damage FEET
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3 Player) Try damage FEET
+
+# Return if uses not found
+execute unless data entity @s equipment.feet.components."minecraft:custom_data".durability run return fail
+#----------------------------------------------------------------------------------------------------
 
 # Get durability level
 scoreboard players set #durability Temp 0

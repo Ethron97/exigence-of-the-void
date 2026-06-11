@@ -9,6 +9,8 @@
         "minecraft:paper",
         "minecraft:amethyst_shard",
         "minecraft:glow_ink_sac",
-        "minecraft:ghast_tear"
+        "minecraft:ghast_tear",
+        "minecraft:wooden_sword",
+        "minecraft:netherite_nautilus_armor"
     ]
 }

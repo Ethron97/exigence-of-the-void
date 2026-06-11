@@ -1,6 +1,6 @@
 say [Void cards are not consumed this run. Menace starts at and cannot be reduced below 2 * X where X is the number of void cards in the deck]
 
-
+# Used to delay triggering until game starts
 scoreboard players set mod.oblivion game.modifiers 1
 
 

@@ -27,7 +27,7 @@ execute as @a if score @s hub.player.room_id = #relay_to_room_id Temp \
 if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'quartz_core'}}}]}] run function exigence:vault/artifact/artifacts/quartz_core/trigger
 
 #   Helmet Deck (void items)
-execute as @a if score @s hub.player.room_id = #relay_to_room_id Temp \
+#execute as @a if score @s hub.player.room_id = #relay_to_room_id Temp \
 if predicate exigence:equipment/helmet/deck run scoreboard players add cards.void_discount deck.analysis 3
 
 # Process resource max modifiers first so we can detect if cards are un-playable

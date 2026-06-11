@@ -31,7 +31,7 @@ execute if score mod.void_shop_slots game.modifiers matches 5 run function exige
 execute if score mod.void_shop_slots game.modifiers matches 6 run function exigence:game/other/void_shop/load/load_6 with storage exigence:void_shop
 
 # Initalize purchasability
-#function exigence:menu/void_menu/update_purchasability
+execute at @s run function exigence:game/other/void_shop/update_all_purchasability_displays
 
 # Temp disable glowing
 effect clear @s glowing

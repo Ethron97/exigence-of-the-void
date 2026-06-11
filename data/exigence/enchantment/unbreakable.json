@@ -1,6 +1,6 @@
 {
   "description": "Unbreakable",
-  "supported_items": "#minecraft:enchantable/armor",
+  "supported_items": "#exigence:armor",
   "weight": 1,
   "max_level": 1,
   "min_cost": {

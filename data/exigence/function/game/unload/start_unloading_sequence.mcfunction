@@ -81,5 +81,8 @@ function exigence:hub/item_shop/item/item_web_ball/reset
 # Set time to night
 time set 18000
 
+# Kill clock markers
+execute positioned 0 0 0 run kill @e[type=minecraft:marker,tag=ClockMarker,distance=..1000]
+
 # Reset load cancel so we can
 #scoreboard players set game.cancel_load hub.room_misc 0

@@ -16,3 +16,5 @@ execute if entity @s[tag=TrialNode] run return run function exigence:door/vault/
 execute if entity @s[tag=DoorNode] run return run function exigence:door/node/e_tick
 execute if entity @s[tag=BeaconNode] run return run function exigence:beacon/node/e_tick
 execute if entity @s[tag=ExitNode] run return run function exigence:game/exit/node/e_tick
+# Voidcache is technically an Echonode, so may need to move this if we add EchoNode here officially
+execute if entity @s[tag=VoidCache] run return run function exigence:cards/void_cache/e_tick

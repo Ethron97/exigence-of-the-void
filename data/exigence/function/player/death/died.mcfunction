@@ -38,6 +38,7 @@ function exigence:player/utility/armor/damage_all
 data modify storage exigence:give death_x set from entity @s LastDeathLocation.pos[0]
 data modify storage exigence:give death_y set from entity @s LastDeathLocation.pos[1]
 data modify storage exigence:give death_z set from entity @s LastDeathLocation.pos[2]
+data modify storage exigence:give dimension set from entity @s LastDeathLocation.dimension
 
 # Before clear, check if character has echo (or shards)
 execute store result score #temp Temp run clear @s minecraft:echo_shard 0
@@ -77,6 +78,9 @@ execute if score @s game.player.player_number matches 4 in minecraft:overworld a
 
 # Tp interaction home
 function exigence:player/utility/interaction/tp_home
+
+# Remove clock markers
+execute in minecraft:overworld run function exigence:player/use_item/clock/reset_player
 
 #====================================================================================================
 ## SCORES

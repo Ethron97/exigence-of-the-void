@@ -28,6 +28,7 @@ execute if score @s Temp matches 1.. run function exigence:player/utility/telepo
 
 # Check for right click on items
 execute if score @s CarrotOnStick matches 1.. run function exigence:player/use_item/use_item
+execute if score @s UseTrident matches 1.. run function exigence:player/use_item/other/trident
 
 # Sculk step
 scoreboard players remove @s[scores={game.player.sculk_step_cooldown=1..}] game.player.sculk_step_cooldown 1
@@ -83,6 +84,9 @@ execute if score @s game.player.mod.sun_plate matches 4 run function exigence:pl
 execute if score @s game.player.damage_taken matches 1.. if score @s game.player.mod.panic_boots matches 1.. run function exigence:player/modifiers/panic_boots
 scoreboard players set @s game.player.damage_taken 0
 scoreboard players set @s game.player.damage_absorbed 0
+
+# If hitbox touching (roughly) a warden, die
+execute at @e[type=warden,distance=..5] positioned ~-0.5 ~ ~-0.5 if entity @s[dx=0,dy=2,dz=0] run damage @s 45 mob_attack
 
 #====================================================================================================
 ## SECOND-TICKS

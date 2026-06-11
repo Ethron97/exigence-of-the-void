@@ -76,7 +76,6 @@ scoreboard players set hazard.level_3 game.dungeon.hazard 0
 scoreboard players set hazard.level_4 game.dungeon.hazard 0
 scoreboard players set .cards game.dungeon 0
 scoreboard players set .fatigue game.dungeon 0
-scoreboard players set game.puzzle_candles game.dungeon 0
 scoreboard players set cart_cache.card game.dungeon 0
 scoreboard players set cart_cache.proc game.dungeon 0
 
@@ -118,6 +117,7 @@ scoreboard players set #current game.item.clock_marker.id 0
 #====================================================================================================
 # Global Modifiers
 scoreboard players set mod.void_deck_modifier game.modifiers 0
+scoreboard players set mod.void_keep game.modifiers 0
 scoreboard players set mod.led_by_ancient_light game.modifiers 0
 scoreboard players set mod.max_dragon_breath game.modifiers 0
 scoreboard players set mod.void_cache game.modifiers 0

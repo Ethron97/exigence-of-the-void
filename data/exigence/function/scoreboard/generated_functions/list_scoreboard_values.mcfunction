@@ -877,3 +877,4 @@ execute if score @s game.entity.waypoint_id matches -2147483647..2147483647 run 
 execute if score @s trial.status matches -2147483647..2147483647 run tellraw @p [{text:"trial.status",color:"green"},{text:": ",color:"gray"},{score:{name:"@s",objective:"trial.status"},color:"gold" }]
 execute if score @s game.player.dust_appearance matches -2147483647..2147483647 run tellraw @p [{text:"game.player.dust_appearance",color:"green"},{text:": ",color:"gray"},{score:{name:"@s",objective:"game.player.dust_appearance"},color:"gold" }]
 execute if score @s game.waypoint.revealed_ticks matches -2147483647..2147483647 run tellraw @p [{text:"game.waypoint.revealed_ticks",color:"green"},{text:": ",color:"gray"},{score:{name:"@s",objective:"game.waypoint.revealed_ticks"},color:"gold" }]
+execute if score @s UseTrident matches -2147483647..2147483647 run tellraw @p [{text:"UseTrident",color:"green"},{text:": ",color:"gray"},{score:{name:"@s",objective:"UseTrident"},color:"gold" }]

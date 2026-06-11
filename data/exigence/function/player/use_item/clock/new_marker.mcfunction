@@ -12,8 +12,11 @@ execute at @s run summon minecraft:marker ~ ~ ~ {Tags:["ClockMarker","NewClockMa
 scoreboard players operation @n[type=minecraft:marker,tag=NewClockMarker,distance=..0.1] game.item.clock_marker.id = #current game.item.clock_marker.id
 
 # Assign player id
-scoreboard players operation #current game.entity.profile_id = @s profile.player.profile_id
-scoreboard players operation @n[type=minecraft:marker,tag=NewClockMarker,distance=..0.1] game.entity.profile_id = #current game.entity.profile_id
+scoreboard players operation #current game.player.player_number = @s game.player.player_number
+scoreboard players operation @n[type=minecraft:marker,tag=NewClockMarker,distance=..0.1] game.entity.player_number = #current game.player.player_number
+
+# Make marker look in the same direction the player as
+data modify entity @n[type=minecraft:marker,tag=NewClockMarker,distance=..0.1] Rotation set from entity @s Rotation
 
 # Remove local tag
 tag @n[type=minecraft:marker,tag=NewClockMarker,distance=..0.1] remove NewClockMarker

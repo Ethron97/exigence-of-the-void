@@ -22,6 +22,11 @@ execute if score game.difficulty game.state matches 2 run scoreboard players add
 execute if score game.difficulty game.state matches 3 run scoreboard players add echos.level_3 game.dungeon.echo 1
 execute if score game.difficulty game.state matches 4 run scoreboard players add echos.level_4 game.dungeon.echo 1
 
+# Cap echos based on difficulty (so you can't spawn echos from dissonance if that level isn't active)
+execute unless score game.difficulty game.state matches 2.. run scoreboard players set echos.level_2 game.dungeon.echo 0
+execute unless score game.difficulty game.state matches 3.. run scoreboard players set echos.level_3 game.dungeon.echo 0
+execute unless score game.difficulty game.state matches 4.. run scoreboard players set echos.level_4 game.dungeon.echo 0
+
 # Move scores to data
 execute store result storage exigence:echo_selection Level1Echos int 1 run scoreboard players get echos.level_1 game.dungeon.echo
 execute store result storage exigence:echo_selection Level2Echos int 1 run scoreboard players get echos.level_2 game.dungeon.echo

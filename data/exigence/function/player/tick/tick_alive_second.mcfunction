@@ -25,6 +25,10 @@ execute if score game.max_menace game.state matches 1 if entity @s[team=Enemy] r
 # Clear nausea (from Grease)
 effect clear @s nausea
 
+# Update is void shopping
+execute if entity @s[tag=VoidShopping] unless entity @e[type=minecraft:enderman,distance=..7] run function exigence:player/tick/private/end_void_shopping
+execute if entity @s[tag=!VoidShopping] if entity @e[type=minecraft:enderman,distance=..7] run function exigence:player/tick/private/start_void_shopping
+
 #====================================================================================================
 ## MODIFIERS
 # (Others are probably still under "player effect tick"
