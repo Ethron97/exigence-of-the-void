@@ -776,6 +776,9 @@ scoreboard objectives add profile.data.winloss.attempts_D4 dummy
 scoreboard objectives add profile.data.winloss.attempts_D5 dummy
 scoreboard objectives add profile.data.winloss.attempts_D6 dummy
 scoreboard objectives add profile.data.winloss.attempts_total dummy
+scoreboard objectives add profile.data.winloss.reached_L2 dummy
+scoreboard objectives add profile.data.winloss.reached_L3 dummy
+scoreboard objectives add profile.data.winloss.reached_L4 dummy
 scoreboard objectives add profile.data.winloss.cr.deaths_D1 dummy
 scoreboard objectives add profile.data.winloss.t.deaths_D1 dummy
 scoreboard objectives add profile.data.winloss.cr.deaths_D2 dummy

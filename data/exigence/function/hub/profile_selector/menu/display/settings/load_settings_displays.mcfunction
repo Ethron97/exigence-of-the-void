@@ -17,7 +17,7 @@ execute positioned ~5.49 ~1.9 ~-1.3 run function exigence:hub/profile_selector/m
 execute positioned ~5.49 ~1.6 ~-1.3 run function exigence:hub/profile_selector/menu/display/settings/load/show_resource_underflow
 
 execute positioned ~5.49 ~1.0 ~-1.3 run function exigence:hub/profile_selector/menu/display/settings/load/ravager_glass_break
-execute positioned ~5.49 ~0.7 ~-1.3 run function exigence:hub/profile_selector/menu/display/settings/load/return_compass
+#execute positioned ~5.49 ~0.7 ~-1.3 run function exigence:hub/profile_selector/menu/display/settings/load/return_compass
 execute positioned ~5.49 ~0.4 ~-1.3 run function exigence:hub/profile_selector/menu/display/settings/load/coin_conversion_style
 
 #   Lower middle

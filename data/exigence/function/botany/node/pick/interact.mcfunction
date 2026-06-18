@@ -23,6 +23,9 @@ execute if score game.is_active game.state matches 0 run return 1
 execute unless entity @s[tag=ActivePlayer] run return 1
 #----------------------------------------------------------------------------------------------------
 
+scoreboard players set #picked_with_harvest Temp 0
+execute if items entity @s weapon.mainhand minecraft:golden_hoe run scoreboard players set #picked_with_harvest Temp 1
+
 # Increase the player's berry_bushes_picked (total) score by 1
 scoreboard players add @s profile.data.berry.cr.berry_bushes_picked 1
 execute if score @s game.player.active_level matches 1 run scoreboard players add @s profile.data.berry.cr.berry_bushes_picked_L1 1
@@ -31,5 +34,5 @@ execute if score @s game.player.active_level matches 3 run scoreboard players ad
 execute if score @s game.player.active_level matches 4 run scoreboard players add @s profile.data.berry.cr.berry_bushes_picked_L4 1
 
 # Pick berry bush
-execute at @s[nbt={SelectedItem:{id:"minecraft:golden_hoe"}}] run execute as @n[type=minecraft:marker,tag=BerryNode,distance=..10] if score @s node.id = #compare node.id run function exigence:botany/node/pick/pick_bush_harvest_b
-execute at @s[nbt=!{SelectedItem:{id:"minecraft:golden_hoe"}}] run execute as @n[type=minecraft:marker,tag=BerryNode,distance=..10] if score @s node.id = #compare node.id run function exigence:botany/node/pick/pick_bush
+execute if score #picked_with_harvest Temp matches 1 at @s run execute as @n[type=minecraft:marker,tag=BerryNode,distance=..10] if score @s node.id = #compare node.id run function exigence:botany/node/pick/pick_bush_harvest_b
+execute if score #picked_with_harvest Temp matches 0 at @s run execute as @n[type=minecraft:marker,tag=BerryNode,distance=..10] if score @s node.id = #compare node.id run function exigence:botany/node/pick/pick_bush

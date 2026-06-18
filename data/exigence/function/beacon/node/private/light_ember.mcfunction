@@ -61,4 +61,7 @@ execute if score @s node.property.object_level matches 4 run clear @a ghast_tear
 
 # Kill leftover ardor ember items
 scoreboard players operation #compare node.property.object_level = @s node.property.object_level
-execute as @e[x=-520,y=180,z=-287,dx=340,dy=200,dz=340,type=minecraft:item,tag=ArdorEmber] if score @s game.entity.object_level = #compare node.property.object_level run kill @s
+execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:item,tag=ArdorEmber] if score @s game.entity.object_level = #compare node.property.object_level run kill @s
+
+# Remove waypoint
+execute at @s run kill @n[type=minecraft:armor_stand,tag=Waypoint,tag=Beacon,distance=..3]

@@ -13,9 +13,9 @@ execute if score #copies deck.process_card matches 3.. run function exigence:car
 execute if score #copies deck.process_card matches 4.. run function exigence:deck/process/private/error/too_many_copies_m {display_name:'Roots of Vitality',rarity_color:'dark_aqua'}
 
 # Call analyze_b based on number of copies
-execute if score #copies deck.process_card matches 1.. run function exigence:cards/roots_of_vitality/analyze_b
-execute if score #copies deck.process_card matches 2.. run function exigence:cards/roots_of_vitality/analyze_b
-execute if score #copies deck.process_card matches 3.. run function exigence:cards/roots_of_vitality/analyze_b
+execute if score #copies deck.process_card matches 1.. run function exigence:cards/roots_of_vitality/analyze_b {copy:1}
+execute if score #copies deck.process_card matches 2.. run function exigence:cards/roots_of_vitality/analyze_b {copy:2}
+execute if score #copies deck.process_card matches 3.. run function exigence:cards/roots_of_vitality/analyze_b {copy:3}
 
 # Increment card totals
 scoreboard players operation #copies deck.process_card < 3 number

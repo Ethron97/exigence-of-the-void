@@ -65,6 +65,10 @@ scoreboard players set 1.got_key game.level_doors 0
 scoreboard players set 2.got_key game.level_doors 0
 scoreboard players set 3.got_key game.level_doors 0
 
+scoreboard players set 2.reached game.level_doors 0
+scoreboard players set 3.reached game.level_doors 0
+scoreboard players set 4.reached game.level_doors 0
+
 # DUNGEON
 scoreboard players set menace.min game.dungeon.menace 0
 scoreboard players set menace.current game.dungeon.menace 0
@@ -78,6 +82,10 @@ scoreboard players set .cards game.dungeon 0
 scoreboard players set .fatigue game.dungeon 0
 scoreboard players set cart_cache.card game.dungeon 0
 scoreboard players set cart_cache.proc game.dungeon 0
+scoreboard players set void_cache.revealed game.dungeon 0
+scoreboard players set forgotten.belongings game.dungeon 0
+scoreboard players set forgotten.experiments game.dungeon 0
+scoreboard players set forgotten.offerings game.dungeon 0
 
 # TEMP
 scoreboard players set card.queue game.dungeon.temp 0

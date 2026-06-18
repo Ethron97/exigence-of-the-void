@@ -14,7 +14,7 @@ scoreboard players remove @s game.entity.ambient_noise_cooldown 1
 # Playsound and reset timer
 execute if score @s game.entity.ambient_noise_cooldown matches ..0 run function exigence:game/exit/node/ambient/noise
 
-# If a player gets within 8 blocks, glow it
+# If a player gets within 8 blocks, discover it
 #execute if score game.difficulty game.state matches 4 
 execute if entity @s[tag=!PortalDiscovered] if entity @a[tag=ActivePlayer,distance=..8] run function exigence:game/exit/node/private/discover
 

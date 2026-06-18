@@ -1,23 +1,26 @@
-# With {max_node_state:#}
+# Summon new variance node
 
-say Recode this
-return 0
+## CONSTRAINTS
+#   AS player
+
+# INPUT
+#   INT max_node_state
+
+#====================================================================================================
+
+scoreboard players set #compare node.property.object_level 0
+execute if entity @s[x=-271,y=-55,z=-113,dx=-118,dy=92,dz=-153] run scoreboard players set #compare node.property.object_level 1
+execute if entity @s[x=-366,y=13,z=-106,dx=-118,dy=107,dz=-178] run scoreboard players set #compare node.property.object_level 2
+execute if entity @s[x=-306,y=113,z=33,dx=-168,dy=60,dz=-132] run scoreboard players set #compare node.property.object_level 3
+execute if entity @s[x=-520,y=180,z=-287,dx=340,dy=200,dz=340] run scoreboard players set #compare node.property.object_level 4
+# Cancel if not found on a level
+execute unless score #compare node.property.object_level matches 1.. run return run say Not on a level?
+#----------------------------------------------------------------------------------------------------
 
 # Create a new node with tag "NewMarker"
-execute at @s align x align y align z run summon minecraft:marker ~.5 ~ ~.5 {Tags:["NewMarker","Marker"],CustomName:{text:"Marker | ?"}}
+execute at @s align x align y align z run summon minecraft:marker ~.5 ~ ~.5 {Tags:["NewMarker","Node","VarianceNode"],CustomName:{text:"Marker | VarianceNode"}}
 
-# Give name and tags
-execute as @e[type=minecraft:marker,tag=NewMarker] run data modify entity @s CustomName set value {text:"Variance",color:"gray",italic:false}
-execute as @e[type=minecraft:marker,tag=NewMarker] run tag @s add VarianceNode
+$scoreboard players set #temp Temp $(max_node_state)
 
-# Add to Variance team for color
-team join Variance @e[type=minecraft:marker,tag=NewMarker]
-
-# Set from data
-$scoreboard players set @e[type=minecraft:marker,tag=NewMarker] node.property.max_node_state $(max_node_state)
-
-# Glow if debug on
-execute if score toggle.variance debug matches 1 as @e[type=minecraft:marker,tag=VarianceNode] run data merge entity @s {Glowing:1b,CustomNameVisible:1b,Invisible:0b,Marker:0b}
-
-# Remove local tag
-tag @e[type=minecraft:marker,tag=NewMarker] remove NewMarker
+# Assign data
+execute as @n[type=minecraft:marker,tag=NewMarker,distance=..1] run function exigence:variance/admin/summon_variance_node_data

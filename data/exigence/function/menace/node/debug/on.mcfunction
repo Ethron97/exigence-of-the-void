@@ -15,4 +15,5 @@ team join Menace @n[type=minecraft:block_display,tag=MenaceDebugDisplay,distance
 # Summon debug displays
 execute if entity @s[tag=RavagerBlacklist] run function exigence:menace/node/debug/summon_ravager_blacklist_display
 execute if entity @s[tag=CreakingBlacklist] run function exigence:menace/node/debug/summon_creaking_blacklist_display
+execute if entity @s[tag=VoidShopBlacklist] run function exigence:menace/node/debug/summon_void_shop_blacklist_display
 function exigence:menace/node/debug/summon_triggered_display

@@ -17,3 +17,5 @@ tag @e[x=-366,y=13,z=-106,dx=-118,dy=107,dz=-178,type=minecraft:marker,tag=NewHa
 
 # Remove local tag
 tag @e[x=-366,y=13,z=-106,dx=-118,dy=107,dz=-178,type=minecraft:marker,tag=NewHasPortal,limit=1] remove NewHasPortal
+
+scoreboard players set @s node.property.object_level 2

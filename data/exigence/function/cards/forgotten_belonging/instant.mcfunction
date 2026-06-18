@@ -1,5 +1,8 @@
 say [Dropping random Common Void card in the tavern]
 
+# Track
+scoreboard players add forgotten.belongings game.dungeon 1
+
 execute store result score #random Random run random value 1..4
 execute if score #random Random matches 1 positioned -339.5 13.0 -190.5 run function exigence:cards/summon_card {card_name:"endurance"}
 execute if score #random Random matches 2 positioned -339.5 13.0 -190.5 run function exigence:cards/summon_card {card_name:"fallow_coffers"}

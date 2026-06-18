@@ -18,7 +18,7 @@ execute if score #random Random matches 7 run tp @s -441.5 154.0 -73.5
 tag @s add ForgottenOffering
 
 # Give glow because we keep forgetting them
-data modify entity @s Glowing set value true
+#data modify entity @s Glowing set value true
 
 # Green team
 team join Botany @s

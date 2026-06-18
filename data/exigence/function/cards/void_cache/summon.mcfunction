@@ -5,5 +5,5 @@ $data modify entity @s Item.components."minecraft:custom_model_data".strings set
 
 $data modify entity @s Item.components."minecraft:lore" append value [$(legendary_stars),{text:"Instant Void Card",italic:false,color:"white"}]
 data modify entity @s Item.components."minecraft:lore" append value [{text:""}]
-data modify entity @s Item.components."minecraft:lore" append value [{text:"Spawn a Void Cache on level 4. It",italic:false,color:"gray"}]
-data modify entity @s Item.components."minecraft:lore" append value [{text:"contains random Void consumabls.",italic:false,color:"gray"}]
+data modify entity @s Item.components."minecraft:lore" append value [{text:"Spawn a Void Cache on level 4 that",italic:false,color:"gray"}]
+data modify entity @s Item.components."minecraft:lore" append value [{text:"contains 4 random Void consumables",italic:false,color:"gray"}]

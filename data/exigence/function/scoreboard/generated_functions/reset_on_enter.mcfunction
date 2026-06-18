@@ -303,6 +303,9 @@ scoreboard players set @s profile.data.vaults.cr.vault_keys_picked_up 0
 scoreboard players set @s profile.data.vaults.cr.vault_keys_spawned 0
 scoreboard players set @s profile.data.vaults.cr.vaults_opened 0
 scoreboard players set @s profile.data.winless.cr.deaths_L5 0
+scoreboard players set @s profile.data.winloss.reached_L2 0
+scoreboard players set @s profile.data.winloss.reached_L3 0
+scoreboard players set @s profile.data.winloss.reached_L4 0
 scoreboard players set @s profile.data.winloss.cr.deaths_D1 0
 scoreboard players set @s profile.data.winloss.cr.deaths_D2 0
 scoreboard players set @s profile.data.winloss.cr.deaths_D3 0

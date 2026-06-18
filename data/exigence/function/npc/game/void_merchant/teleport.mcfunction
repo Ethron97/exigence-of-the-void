@@ -22,8 +22,8 @@ execute at @s run playsound minecraft:entity.enderman.teleport neutral @a ~ ~ ~ 
 
 # Teleport
 #   Add all echo (other than chosen) and menace nodes to CanVoidTeleport
-tag @e[x=-306,y=113,z=33,dx=-168,dy=60,dz=-132,type=minecraft:marker,scores={node.property.object_level=3},tag=EchoNode,tag=!ChosenEchoNode] add CanVoidTeleport
-tag @e[x=-306,y=113,z=33,dx=-168,dy=60,dz=-132,type=minecraft:marker,scores={node.property.object_level=3},tag=MenaceNode] add CanVoidTeleport
+tag @e[x=-306,y=113,z=33,dx=-168,dy=60,dz=-132,type=minecraft:marker,scores={node.property.object_level=3},tag=EchoNode,tag=!ChosenEchoNode,tag=!VoidShopBlacklist] add CanVoidTeleport
+tag @e[x=-306,y=113,z=33,dx=-168,dy=60,dz=-132,type=minecraft:marker,scores={node.property.object_level=3},tag=MenaceNode,tag=!VoidShopBlacklist] add CanVoidTeleport
 tag @e[x=-306,y=113,z=33,dx=-168,dy=60,dz=-132,type=minecraft:marker,tag=VoidTent] add CanVoidTeleport
 
 #   As each CanVoidTeleport, remove tag if there is a bad guy nearby (or enderman, or player)

@@ -11,7 +11,7 @@
 # CARD COUNT:
 execute if score cards.count deck.analysis matches ..40 run tag @s add GoodCards
 # ATTEMPTED LEVEL:
-execute if score #attempts_d4 Temp matches 1.. run tag @s add GoodKnown
+execute if score #reached_4 Temp matches 1.. run tag @s add GoodKnown
 # GOT PREVIOUS ACHIEVEMENT:
 execute if entity @p[tag=Predungeon,distance=..16,advancements={exigence:story/rescue_petitioner=true}] run tag @s add GoodUnlock
 

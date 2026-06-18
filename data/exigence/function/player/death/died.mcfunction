@@ -56,8 +56,14 @@ execute if entity @a[scores={dead=0},tag=ActivePlayer] run schedule function exi
 # Ensure is on player team
 team join Player @s
 
+# Reset health mod (attributes get cleared on death in Minecraft)
+scoreboard players set @s game.player.mod.health_boost 0
+
 # Reset effects (effect_)
 function exigence:player/effects/reset_active_effects
+
+# Re-add attributes from artifacts
+function exigence:player/utility/grant_attributes
 
 scoreboard players set @s game.player.heighten 0
 

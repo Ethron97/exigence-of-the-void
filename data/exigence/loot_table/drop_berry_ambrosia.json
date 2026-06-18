@@ -1,0 +1,29 @@
+{
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:sweet_berries",
+            "functions": [
+              {
+                "function": "minecraft:set_custom_data",
+                "tag": {"dropped_from_bush":true}
+              },
+              {
+                "function": "minecraft:set_custom_model_data",
+                "strings": {
+                  "values": [
+                    "ambrosia"
+                  ],
+                  "mode": "append"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

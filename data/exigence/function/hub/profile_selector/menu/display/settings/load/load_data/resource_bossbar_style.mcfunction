@@ -23,8 +23,8 @@ data modify entity @s item.components."minecraft:custom_data".display1 set value
 data modify entity @s item.components."minecraft:custom_data".display2 set value [{text:"Resource Bossbar Style: ",color:"white"},{text:"Always",color:"yellow"}]
 
 data modify entity @s item.components."minecraft:custom_data".preview0 set value {text:""}
-data modify entity @s item.components."minecraft:custom_data".preview1 set value [{text:"Resources Needed: ",color:"white"},{text:"3",color:"dark_green"}," ",{text:"1",color:"dark_red"}," ",{text:"0",color:"aqua"}]
-data modify entity @s item.components."minecraft:custom_data".preview2 set value [{text:"Resources Needed: ",color:"white"},{text:"3",color:"dark_green"}," ",{text:"1",color:"dark_red"}," ",{text:"0",color:"aqua"}]
+data modify entity @s item.components."minecraft:custom_data".preview1 set value [{text:"Deck Cost: ",color:"gray"},{text:"3",color:"dark_green"}," ",{text:"1",color:"dark_red"}," ",{text:"0",color:"aqua"}]
+data modify entity @s item.components."minecraft:custom_data".preview2 set value [{text:"Deck Cost: ",color:"gray"},{text:"3",color:"dark_green"}," ",{text:"1",color:"dark_red"}," ",{text:"0",color:"aqua"}]
 
 # Overwrite hover data
 data modify entity @s item.components."minecraft:custom_data".preview_scale set value '0.3'

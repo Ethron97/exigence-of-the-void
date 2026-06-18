@@ -1,28 +1,26 @@
 # Called from try_consume if a card is played and fails due to lack of resources
 
 ## CONSTRAINTS
-#   AS 1 player with magma cream in their inventory
+#   AS/AT 1 player with magma cream in their inventory
 
 #====================================================================================================
 
-# Add missing to "Creamed" stats, or just Underflow?
-scoreboard players operation @a[tag=ActivePlayer] profile.data.resources.cr.underflow_green += #MissingGreen game.resources
-scoreboard players operation @a[tag=ActivePlayer] profile.data.resources.cr.underflow_red += #MissingRed game.resources
-scoreboard players operation @a[tag=ActivePlayer] profile.data.resources.cr.underflow_aqua += #MissingAqua game.resources
+# If missing resources is 0, return
+execute if score #Missing game.resources matches 0 run return 0
+#----------------------------------------------------------------------------------------------------
 
-
-# Set #Missing variables to 0
-scoreboard players set #MissingGreen game.resources 0
-scoreboard players set #MissingRed game.resources 0
-scoreboard players set #MissingAqua game.resources 0
-
-# Set LastConsumeResult to 1
-scoreboard players set #LastConsumeResult game.resources 1
-
-# Cap "Costs" at the current player resources so we don't go negative
-scoreboard players operation green.cost game.resources < green.current game.resources
-scoreboard players operation green.cost game.resources < green.current game.resources
-scoreboard players operation green.cost game.resources < green.current game.resources
+# Call resource function
+function exigence:resources/apply_magma_cream
 
 # Clear
 clear @s magma_cream 1
+
+# Playsound
+playsound minecraft:entity.slime.squish player @a ~ ~ ~ 1 1
+
+# Tellraw
+# TODO nbt lore on hover
+tellraw @a [{text:" └ ",color:"gray"},{selector:"@s",color:"dark_aqua"},{text:" Consumed ",color:"gray"},{sprite:"minecraft:item/magma_cream",atlas:"items",color:"white"}]
+
+# Particles
+particle minecraft:item{item:{id:"minecraft:magma_cream"}} ^ ^1 ^0.5 0.2 0.2 0.2 0.03 10

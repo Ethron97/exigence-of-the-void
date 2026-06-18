@@ -22,7 +22,8 @@ execute as @a[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,tag=ActivePlayer,scores={
 
 ## SWITCH
 execute if entity @s[tag=Item] run return run function exigence:game/other/waypoint/update_waypoint_item_a
+execute if entity @s[tag=ExitPortal] run return run function exigence:game/other/waypoint/update/exit_portal
 execute if entity @s[tag=Cart] run return run function exigence:game/other/waypoint/update/cart
+execute if entity @s[tag=Beacon] run return run function exigence:game/other/waypoint/update/beacon
+execute if entity @s[tag=VoidCache] run return run function exigence:game/other/waypoint/update/void_cache
 # Level door
-# Beacon
-# Exit portal

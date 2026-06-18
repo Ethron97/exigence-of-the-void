@@ -17,4 +17,7 @@ execute positioned ~-1 ~ ~ run function exigence:cards/void_cache/private/fill_p
 execute positioned ~ ~ ~1 run function exigence:cards/void_cache/private/fill_pot
 execute positioned ~ ~ ~-1 run function exigence:cards/void_cache/private/fill_pot
 
-execute at @s run setblock ~ ~2 ~ light[level=7]
+setblock ~ ~2 ~ light[level=7]
+
+# Spawn waypoint
+function exigence:ember/node/void_cache/summon_waypoint

@@ -17,6 +17,8 @@ execute if data storage exigence:dungeon {debug:1} run data merge entity @s {Glo
 # Initialize sound cooldown (so they don't immediately start hearing sounds at game start)
 scoreboard players add @s game.entity.ambient_noise_cooldown 300
 
+# Default object level to 1
+scoreboard players set @s node.property.object_level 1
 
 ## DETERMINE EXIT LOCATION
 # If difficulty 1..3, exit is on start
@@ -38,3 +40,6 @@ execute at @s as @e[type=minecraft:block_display,tag=ExitPortalDisplay,distance=
 
 # Set light above portal (gets cleared on gamereset)
 execute at @s run setblock ~ ~1 ~ minecraft:light
+
+# Summon waypoint
+execute at @s run function exigence:game/exit/node/waypoint/summon

@@ -776,6 +776,9 @@ scoreboard objectives remove profile.data.winloss.attempts_D4
 scoreboard objectives remove profile.data.winloss.attempts_D5
 scoreboard objectives remove profile.data.winloss.attempts_D6
 scoreboard objectives remove profile.data.winloss.attempts_total
+scoreboard objectives remove profile.data.winloss.reached_L2
+scoreboard objectives remove profile.data.winloss.reached_L3
+scoreboard objectives remove profile.data.winloss.reached_L4
 scoreboard objectives remove profile.data.winloss.cr.deaths_D1
 scoreboard objectives remove profile.data.winloss.t.deaths_D1
 scoreboard objectives remove profile.data.winloss.cr.deaths_D2

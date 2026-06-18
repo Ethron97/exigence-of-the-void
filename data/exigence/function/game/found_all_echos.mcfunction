@@ -10,6 +10,11 @@ tellraw @a[tag=ActivePlayer] [{text:"!!!",bold:true,color:"aqua"},{text:" Echo S
 # Modify storage when all echos are found
 scoreboard players set game.all_echos_found game.state 1
 
+# Glow discovered exit portals
+execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=ExitNode,tag=PortalDiscovered] at @s run function exigence:game/exit/node/private/discover_glow
+# Enable all exit portal waypoints
+execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:armor_stand,tag=Waypoint,tag=ExitPortal] run function exigence:game/exit/node/waypoint/activate
+
 # Clear echo/fragments
 clear @s #exigence:echo
 
@@ -17,7 +22,7 @@ clear @s #exigence:echo
 function exigence:player/give/echo_shard
 
 # Give return compass
-execute as @a[tag=ActivePlayer] if score @s career.settings.return_compass matches 1 run function exigence:player/give/return_compass
+#execute as @a[tag=ActivePlayer] if score @s career.settings.return_compass matches 1 run function exigence:player/give/return_compass
 
 # Give portal compass(s) to all players if difficulty 4
 execute if score game.difficulty game.state matches 4 as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=ExitNode] run function exigence:player/give/portal_compass

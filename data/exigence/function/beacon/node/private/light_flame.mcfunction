@@ -36,3 +36,6 @@ execute if score @s node.property.object_level matches 1 run clear @a[tag=Lighti
 execute if score @s node.property.object_level matches 2 run clear @a[tag=Lighting] nether_star[custom_model_data={"strings":[ardor_flame_2]}]
 execute if score @s node.property.object_level matches 3 run clear @a[tag=Lighting] nether_star[custom_model_data={"strings":[ardor_flame_3]}]
 execute if score @s node.property.object_level matches 4 run clear @a[tag=Lighting] nether_star[custom_model_data={"strings":[ardor_flame_4]}]
+
+# Remove waypoint
+execute at @s run kill @n[type=minecraft:armor_stand,tag=Waypoint,tag=Beacon,distance=..3]

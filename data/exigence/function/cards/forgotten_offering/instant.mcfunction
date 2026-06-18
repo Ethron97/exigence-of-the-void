@@ -1,5 +1,8 @@
 say [Dropping random Rare Void card on a random Altar on level 3]
 
+# Track
+scoreboard players add forgotten.offerings game.dungeon 1
+
 execute store result score #random Random run random value 1..4
 execute if score #random Random matches 1 positioned -462.5 62.00 -203.5 run function exigence:cards/summon_card {card_name:"dissonance_ii"}
 execute if score #random Random matches 2 positioned -462.5 62.00 -203.5 run function exigence:cards/summon_card {card_name:"prescience"}

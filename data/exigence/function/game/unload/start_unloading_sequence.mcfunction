@@ -57,6 +57,7 @@ execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag
 
 # Save profile-level data
 execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode,tag=ActiveChest] run function exigence:game/unload/save_data_to_profile_node
+execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode,tag=Active] run function exigence:game/unload/save_data_to_profile_nodes
 
 # Reset bookshelf on principal
 fill -481 62 -200 -473 64 -200 minecraft:chiseled_bookshelf[facing=south]

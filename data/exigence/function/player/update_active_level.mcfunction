@@ -15,7 +15,11 @@ execute if predicate exigence:level/3 run scoreboard players set @s game.player.
 execute if predicate exigence:level/4 run scoreboard players set @s game.player.active_level 4
 
 # If went down and echo has been found, give new return compass
-execute unless score #OldActiveLevel game.player.active_level = @s game.player.active_level if score game.all_echos_found game.state matches 1 if score @s career.settings.return_compass matches 1 run function exigence:player/give/return_compass
+#execute unless score #OldActiveLevel game.player.active_level = @s game.player.active_level if score game.all_echos_found game.state matches 1 if score @s career.settings.return_compass matches 1 run function exigence:player/give/return_compass
+
+# If active level is same, early return
+execute if score #OldActiveLevel game.player.active_level = @s game.player.active_level run return 0
+#----------------------------------------------------------------------------------------------------
 
 # If active level changed, give title
 execute unless score #OldActiveLevel game.player.active_level = @s game.player.active_level if predicate exigence:level/1 run title @s subtitle {text:"⋉ Ruins of Solstice ⋊",color:"aqua"}
@@ -23,3 +27,10 @@ execute unless score #OldActiveLevel game.player.active_level = @s game.player.a
 execute unless score #OldActiveLevel game.player.active_level = @s game.player.active_level if predicate exigence:level/3 run title @s subtitle {text:"⋉ Temple of Fervor ⋊",color:"aqua"}
 execute unless score #OldActiveLevel game.player.active_level = @s game.player.active_level if predicate exigence:level/4 run title @s subtitle {text:"⋉ Ardor's Bane ⋊",color:"aqua"}
 execute unless score #OldActiveLevel game.player.active_level = @s game.player.active_level run title @s title ""
+
+execute if score @s game.player.active_level matches 2 run scoreboard players set 2.reached game.level_doors 1
+execute if score @s game.player.active_level matches 3 run scoreboard players set 3.reached game.level_doors 1
+execute if score @s game.player.active_level matches 4 run scoreboard players set 4.reached game.level_doors 1
+
+# Update objectives
+# TODO

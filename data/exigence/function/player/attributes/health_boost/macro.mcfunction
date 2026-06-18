@@ -9,4 +9,4 @@
 
 #====================================================================================================
 
-$attribute @s max_health modifier add exigence:health_boost_$(new_total) $(amount) add_value
+$attribute @s minecraft:max_health modifier add exigence:health_boost_$(new_total) $(amount) add_value

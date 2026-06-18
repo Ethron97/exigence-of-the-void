@@ -11,8 +11,8 @@ execute if score toggle.game debug matches 1 if score debug.level debug matches 
 #scoreboard players add #sequence game.entity.waypoint_id 1
 
 # Summon armorstand
-#   No ETICK at start; Gets added once a player picks up the map.
-summon minecraft:armor_stand ~ ~ ~ {Tags:["Cart","Waypoint","NewWaypoint"],CustomName:{text:"ArmorStand | Waypoint:Cart"}\
+#   YES ETICK at start; Still want to remove the waypoint when pots are looted, even if map isn't picked up.
+summon minecraft:armor_stand ~ ~ ~ {Tags:["Cart","Waypoint","NewWaypoint","ETICK"],CustomName:{text:"ArmorStand | Waypoint:Cart"}\
 ,NoGravity:true,NoBasePlate:true,Invulnerable:true,Invisible:true}
 
 # Assign transitor id to armorstand

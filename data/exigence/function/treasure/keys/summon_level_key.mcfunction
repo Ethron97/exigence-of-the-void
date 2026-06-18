@@ -29,5 +29,11 @@ tag @s remove NewLevelKey
 # If treasure debug on, glow coin
 execute if score toggle.treasure debug matches 1 run data modify entity @s Glowing set value true
 
+# If game is active (not loading), add "bonus" tag
+execute if score game.is_active game.state matches 1 run data modify entity @s Item.components."minecraft:custom_data".bonus set value true
+
+# Playsound
+playsound minecraft:block.anvil.land block @a ~ ~ ~ 2 1.3
+
 # Summon waypoint entity
 execute at @s run function exigence:game/other/waypoint/summon_waypoint_from_item

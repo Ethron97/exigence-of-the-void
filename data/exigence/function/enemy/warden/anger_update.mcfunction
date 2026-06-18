@@ -83,8 +83,7 @@ execute as @s[tag=!Angry] unless entity @a[scores={dead=0,game.player.vault_code
 scoreboard players add @a[tag=NewTarget] profile.data.enemy.cr.wardens_angered 1
 
 execute as @s[tag=!Angry] if entity @a[tag=NewTarget] run function exigence:enemy/warden/private/set_target with entity @a[tag=ActivePlayer,tag=NewTarget,limit=1]
-execute as @s[tag=!Angry] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run function exigence:resources/try_generate {green:0,red:1,aqua:0}
-execute as @s[tag=!Angry] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run tag @s add Angry
+execute as @s[tag=!Angry] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run function exigence:enemy/warden/private/start_angry
 tag @a[tag=NewTarget] remove NewTarget
 
 # If any warden is aggro, break invis
@@ -96,4 +95,4 @@ execute as @s[scores={game.warden.awareness=1..},tag=Silenced] run function exig
 execute as @s[scores={game.warden.awareness=0},tag=!Silenced] run function exigence:enemy/warden/silence
 
 # Prevent warden from becoming angry again until they cool off
-execute as @s[scores={game.warden.awareness=..10}] run tag @s remove Angry
+execute as @s[scores={game.warden.awareness=..10}] run function exigence:enemy/warden/private/stop_angry

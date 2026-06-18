@@ -9,6 +9,9 @@ execute unless dimension minecraft:overworld run return run say (C) setup_exits 
 # If difficulty is not set, fail
 execute if score game.difficulty game.state matches 0 run return run say (C) Difficulty invalid?
 #----------------------------------------------------------------------------------------------------
+# Don't setup if lighting beacons
+execute if score game.difficulty game.state matches 5.. run return 0
+#----------------------------------------------------------------------------------------------------
 
 # Always create one exit
 execute at @e[x=-271,y=-55,z=-113,dx=-118,dy=92,dz=-153,type=minecraft:armor_stand,tag=Start,limit=1] run function exigence:game/exit/node/summon_exit_node

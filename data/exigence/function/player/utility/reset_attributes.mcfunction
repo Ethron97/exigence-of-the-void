@@ -8,14 +8,21 @@
 ## ATTRIBUTES
 attribute @s minecraft:safe_fall_distance modifier add exigence:safe_fall 100 add_value
 attribute @s minecraft:step_height modifier remove exigence:step_height_qol
+
+attribute @s minecraft:gravity modifier remove exigence:carrying
+attribute @s minecraft:fall_damage_multiplier modifier remove exigence:carrying
+attribute @s minecraft:movement_speed modifier remove exigence:carrying
+
+## ARTIFACTS
 attribute @s minecraft:movement_efficiency modifier remove exigence:ashes
+
 attribute @s minecraft:knockback_resistance modifier remove exigence:heavy_core
 attribute @s minecraft:fall_damage_multiplier modifier remove exigence:heavy_core
-attribute @s minecraft:gravity modifier remove exigence:carrying
-attribute @s minecraft:movement_speed modifier remove exigence:carrying
+
 attribute @s minecraft:knockback_resistance modifier remove exigence:feather
 attribute @s minecraft:fall_damage_multiplier modifier remove exigence:feather
 attribute @s minecraft:safe_fall_distance modifier remove exigence:feather
+
 attribute @s minecraft:max_health modifier remove exigence:health_boost_1
 attribute @s minecraft:max_health modifier remove exigence:health_boost_2
 attribute @s minecraft:max_health modifier remove exigence:health_boost_3

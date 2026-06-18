@@ -26,3 +26,6 @@ execute if score game.difficulty game.state matches 4.. if score #random Random 
 
 # Distribute level 4 wardens
 execute if score game.difficulty game.state matches 4.. as @e[x=-284,y=-64,z=-140,dx=7,dy=7,dz=7,type=minecraft:warden,tag=L4] run function exigence:enemy/warden/distribute_warden/4
+
+# Attribute all wardens
+execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:warden] run attribute @s movement_speed modifier add exigence:warden_shuffle 0.2 add_multiplied_base

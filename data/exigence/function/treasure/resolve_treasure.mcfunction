@@ -34,7 +34,7 @@ execute store result score #VaultKeyCheck Random run random value 1..16
 execute if score mod.brush game.modifiers matches 1 run execute store result score #VaultKeyCheck Random run random value 1..8
 # If dev vault key card, always drop
 execute if score .vault_rain game.dev_modifiers matches 1 run scoreboard players set #VaultKeyCheck Random 1
-execute if score #VaultKeyCheck Random matches 1 run function exigence:vault/generate_key/generate
+execute if score #VaultKeyCheck Random matches 1 as @r[tag=ActivePlayer,scores={dead=0}] run function exigence:vault/generate_key/generate
 
 #====================================================================================================
 ## LEVEL KEYS+

@@ -35,3 +35,6 @@ execute at @s run function exigence:game/other/void_shop/update_all_purchasabili
 
 # Temp disable glowing
 effect clear @s glowing
+
+# If there is a void cache that has not been revealed, reveal
+execute if score mod.void_cache game.modifiers matches 1.. if score void_cache.revealed game.dungeon matches 0 at @s run function exigence:npc/game/void_merchant/reveal_void_cache

@@ -11,7 +11,7 @@ execute if score #copies deck.process_card matches 1.. run function exigence:car
 execute if score #copies deck.process_card matches 2.. run function exigence:deck/process/private/error/too_many_copies_legendary {display_name:'Tranquility',rarity_color:'light_purple'}
 
 # Call analyze_b based on number of copies
-execute if score #copies deck.process_card matches 1.. run function exigence:cards/tranquility/analyze_b
+execute if score #copies deck.process_card matches 1.. run function exigence:cards/tranquility/analyze_b {copy:1}
 
 # Increment card totals
 scoreboard players operation #copies deck.process_card < 1 number

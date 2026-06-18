@@ -43,7 +43,7 @@ execute in minecraft:overworld as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,ty
 execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode,tag=ActiveChest] run scoreboard players operation @s profile.data.winloss.highest_win > #temp Temp
 
 # Update the win score of the chosen Echo Nodes
-execute unless entity @a[scores={career.settings.echo_win_tracking=0},tag=ActivePlayer] run scoreboard players add @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=ChosenEchoNode] node.data.echo.times_won 1
+execute unless entity @a[tag=Admin,tag=ActivePlayer] run scoreboard players add @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=ChosenEchoNode] node.data.echo.times_won 1
 
 #====================================================================================================
 

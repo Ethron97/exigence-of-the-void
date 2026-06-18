@@ -65,7 +65,7 @@ execute if entity @s[tag=Carrying] as @e[type=minecraft:villager,tag=Carried,dis
 execute if score @s game.player.active_level matches 1..2 as @e[type=minecraft:marker,tag=HiddenBlock,tag=Discovered,tag=ReflectionNO,tag=!Revealed,tag=!Appeared,distance=..16] at @s run function exigence:mirror/hidden_blocks/reveal_block
 
 # Beacon guide
-execute if score game.difficulty game.state matches 5.. run function exigence:beacon/player/ambient_tick
+#execute if score game.difficulty game.state matches 5.. run function exigence:beacon/player/ambient_tick
 
 # Claustrophobia tick
 execute if score mod.claustrophobia game.modifiers matches 1 if score seconds.cooldown tick_counter matches 6 run function exigence:cards/claustrophobia/update

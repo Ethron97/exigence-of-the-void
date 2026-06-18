@@ -24,8 +24,8 @@ execute in exigence:profile_data run function exigence:game/load/private/give_at
 schedule function exigence:game/reset/reset_game_scores 1t
 schedule function exigence:game/load/load_player_modifiers 2t
 schedule function exigence:game/load/load_deck 3t
-schedule function exigence:game/load/load_exits 4t
-schedule function exigence:game/load/load_echos 5t
+schedule function exigence:game/load/load_echos 4t
+schedule function exigence:game/load/load_exits 5t
 schedule function exigence:game/load/load_enemies_spawn 6t
 schedule function exigence:game/load/load_enemies_setup 7t
 schedule function exigence:game/load/load_enemies_distribute 8t

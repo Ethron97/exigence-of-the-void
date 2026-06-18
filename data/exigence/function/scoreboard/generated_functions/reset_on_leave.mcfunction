@@ -339,6 +339,9 @@ scoreboard players reset @s profile.data.vaults.cr.vault_keys_picked_up
 scoreboard players reset @s profile.data.vaults.cr.vault_keys_spawned
 scoreboard players reset @s profile.data.vaults.cr.vaults_opened
 scoreboard players reset @s profile.data.winless.cr.deaths_L5
+scoreboard players reset @s profile.data.winloss.reached_L2
+scoreboard players reset @s profile.data.winloss.reached_L3
+scoreboard players reset @s profile.data.winloss.reached_L4
 scoreboard players reset @s profile.data.winloss.cr.deaths_D1
 scoreboard players reset @s profile.data.winloss.cr.deaths_D2
 scoreboard players reset @s profile.data.winloss.cr.deaths_D3

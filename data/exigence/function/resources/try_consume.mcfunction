@@ -33,12 +33,26 @@ scoreboard players operation #MissingGreen game.resources > 0 number
 scoreboard players operation #MissingRed game.resources > 0 number
 scoreboard players operation #MissingAqua game.resources > 0 number
 
+scoreboard players operation #Missing game.resources = #MissingGreen game.resources
+scoreboard players operation #Missing game.resources += #MissingRed game.resources
+scoreboard players operation #Missing game.resources += #MissingAqua game.resources
+
+# Mark as unplayable if the cost is greater than the max
+scoreboard players set #Unplayable game.resources 0
+execute unless score green.cost game.resources <= green.max game.resources unless score red.cost game.resources <= red.max game.resources unless score aqua.cost game.resources <= aqua.max game.resources run scoreboard players set #Unplayable game.resources 1
+
 # If nothing is missing, set succeed = 1
 execute if score #MissingGreen game.resources matches 0 if score #MissingRed game.resources matches 0 if score #MissingAqua game.resources matches 0 run scoreboard players set #LastConsumeResult game.resources 1
 
 # MAGMA CREAM
-#   Needs to be consumed if anything is missing
-execute if score #LastConsumeResult game.resources matches 0 as @a[tag=ActivePlayer,scores={dead=0},nbt={Inventory:[{id:"minecraft:magma_cream"}]},sort=random,limit=1] run function exigence:player/use_item/other/use_magma_cream
+#   Get how many resources can be supplemented (at least 1 magma cream = +1-2 wild resources)
+scoreboard players set #WildResources game.resources 0
+#   FOR NOW: Applies max of once per card
+execute if entity @a[tag=ActivePlayer,scores={dead=0},nbt={Inventory:[{id:"minecraft:magma_cream"}]},limit=1] run scoreboard players add #WildResources game.resources 2
+#execute if score #LastConsumeResult game.resources matches 0 as @a[tag=ActivePlayer,scores={dead=0},nbt={Inventory:[{id:"minecraft:magma_cream"}]},sort=random,limit=1] run function exigence:player/use_item/other/use_magma_cream
+#   If playable and missing <= wild, apply some creams one player at a time
+execute if score #Unplayable game.resources matches 0 if score #Missing game.resources <= #WildResources game.resources \
+as @a[tag=ActivePlayer,scores={dead=0},nbt={Inventory:[{id:"minecraft:magma_cream"}]},sort=random,limit=1] at @s run function exigence:player/use_item/other/use_magma_cream
 
 # Consume fail
 execute if score #MissingGreen game.resources matches 1.. run function exigence:resources/green/consume_fail

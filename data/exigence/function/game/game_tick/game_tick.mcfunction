@@ -41,9 +41,10 @@ execute if score game.max_menace game.state matches 0 run function exigence:deck
 #function exigence:game/game_tick/major_damage
 
 # Check which players are viewing objective bossbar (by holding compass)
-execute as @a[scores={dead=0},tag=ActivePlayer] run function exigence:player/display/objective/update
+#execute as @a[scores={dead=0},tag=ActivePlayer] run function exigence:player/display/objective/update
 # Update objective bossbar if at least one player is viewing
-execute if entity @a[scores={dead=0},tag=ActivePlayer,tag=DisplayObjective] run function exigence:bossbar/objective/update_title
+#execute if entity @a[scores={dead=0},tag=ActivePlayer,tag=DisplayObjective] run function exigence:bossbar/objective/update_title
+execute if score seconds.cooldown tick_counter matches 1 run function exigence:bossbar/objective/update_title_v1
 
 # If Heighten was consumed, reduce heighten (must happen after all players have resolved Effect Tick)
 execute as @a[scores={dead=0},tag=ActivePlayer,tag=ReduceHeighten] at @s run function exigence:player/effects/heighten/decrease
@@ -51,5 +52,5 @@ execute as @a[scores={dead=0},tag=ActivePlayer,tag=ReduceHeighten] at @s run fun
 # Clock update
 execute if score seconds.cooldown tick_counter matches 3 run function exigence:player/use_item/clock/update
 
-# Void cache udpate
-execute if score mod.void_cache game.modifiers matches 1.. if score seconds.cooldown tick_counter matches 10 run function exigence:cards/void_cache/update
+# Void cache udpate (should just be handled by ETICK)
+#execute if score mod.void_cache game.modifiers matches 1.. if score seconds.cooldown tick_counter matches 10 run function exigence:cards/void_cache/update

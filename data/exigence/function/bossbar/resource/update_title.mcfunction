@@ -18,4 +18,4 @@ execute if score resource.green.consume deck.analysis matches 1.. run bossbar se
 execute if score resource.red.consume deck.analysis matches 1.. run bossbar set exigence:resources players @a[scores={game.player.vault_code=0,career.settings.resource_bossbar_style=1..}]
 execute if score resource.aqua.consume deck.analysis matches 1.. run bossbar set exigence:resources players @a[scores={game.player.vault_code=0,career.settings.resource_bossbar_style=1..}]
 
-bossbar set exigence:resources name [{text:"Resources Needed: ",color:"white"},{"score":{"name":"resource.green.consume","objective":"deck.analysis"},color:"dark_green"}," ",{"score":{"name":"resource.red.consume","objective":"deck.analysis"},color:"dark_red"}," ",{"score":{"name":"resource.aqua.consume","objective":"deck.analysis"},color:"aqua"}]
+bossbar set exigence:resources name [{text:"Deck Cost: ",color:"gray"},{"score":{"name":"resource.green.consume","objective":"deck.analysis"},color:"dark_green"}," ",{"score":{"name":"resource.red.consume","objective":"deck.analysis"},color:"dark_red"}," ",{"score":{"name":"resource.aqua.consume","objective":"deck.analysis"},color:"aqua"}]

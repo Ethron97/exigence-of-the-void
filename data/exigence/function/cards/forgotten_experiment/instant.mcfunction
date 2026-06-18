@@ -1,5 +1,8 @@
 say [Dropping random Uncommon Void card in the laboratory]
 
+# Track
+scoreboard players add forgotten.experiments game.dungeon 1
+
 execute store result score #random Random run random value 1..4
 execute if score #random Random matches 1 positioned -462.5 62.00 -203.5 run function exigence:cards/summon_card {card_name:"dissonance"}
 execute if score #random Random matches 2 positioned -462.5 62.00 -203.5 run function exigence:cards/summon_card {card_name:"cart_cache"}

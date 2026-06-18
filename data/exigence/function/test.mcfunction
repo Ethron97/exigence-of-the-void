@@ -11,9 +11,6 @@
 #execute as @e[type=minecraft:armor_stand,tag=marker] at @s if entity @e[distance=..16,type=minecraft:marker,tag=MenaceNode] run say I need personal space
 
 
-# Testing CartCache en masse
-#tag @e[type=minecraft:marker,tag=CartCache] remove CartCache
-#execute as @e[type=minecraft:marker,tag=VarianceNode,tag=Minecart] run function exigence:cards/cart_cache/cart_trigger
 
 # Test for nonair around all echo nodes
 #execute as @e[type=minecraft:marker,tag=EchoNode] at @s if function exigence:ember/setup/detect_nonair run tp Ethron97 @s

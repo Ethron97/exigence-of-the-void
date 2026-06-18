@@ -9,3 +9,5 @@
 fill ~-1 ~ ~-1 ~1 ~ ~1 minecraft:air replace minecraft:cake
 
 setblock ~ ~1 ~ air
+
+execute if entity @s[tag=VoidCache] run function exigence:cards/void_cache/reset

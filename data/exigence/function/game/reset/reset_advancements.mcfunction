@@ -28,6 +28,7 @@ advancement revoke @s[advancements={exigence:listener/pickup/level_2_key=true}] 
 advancement revoke @s[advancements={exigence:listener/pickup/level_3_key=true}] only exigence:listener/pickup/level_3_key
 advancement revoke @s[advancements={exigence:listener/pickup/money=true}] only exigence:listener/pickup/money
 advancement revoke @s[advancements={exigence:listener/pickup/research=true}] only exigence:listener/pickup/research
+advancement revoke @s[advancements={exigence:listener/pickup/berry=true}] only exigence:listener/pickup/berry
 
 advancement revoke @s[advancements={exigence:listener/pickup/vault_key/host=true}] only exigence:listener/pickup/vault_key/host
 advancement revoke @s[advancements={exigence:listener/pickup/vault_key/wayfinder=true}] only exigence:listener/pickup/vault_key/wayfinder
