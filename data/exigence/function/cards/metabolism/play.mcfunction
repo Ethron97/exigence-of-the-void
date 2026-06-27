@@ -1,4 +1,5 @@
-say [Lose 3 Hunger bars. Speed from cards gains +30 seconds duration]
+#say [Lose 3 Hunger bars. Speed from cards gains +30 seconds duration]
+function exigence:cards/announce_card
 
 # Give hunger
 effect give @a[scores={dead=0},tag=ActivePlayer] hunger 6 39 false

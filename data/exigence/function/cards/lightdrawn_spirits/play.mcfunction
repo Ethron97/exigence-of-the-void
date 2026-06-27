@@ -1,4 +1,5 @@
-say [3 Aqua: Automatically pick up all items that are glowing]
+#say [3 Aqua: Automatically pick up all items that are glowing]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

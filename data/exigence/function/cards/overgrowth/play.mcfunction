@@ -1,4 +1,5 @@
-say [2 Aqua: ALL grown bushes have a 25% chance to gain +1/2 berries]
+#say [2 Aqua: ALL grown bushes have a 25% chance to gain +1/2 berries]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

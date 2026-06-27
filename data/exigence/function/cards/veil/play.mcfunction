@@ -1,4 +1,5 @@
-say 2 Green, 1 Aqua: +2 minutes Invisibility
+#say 2 Green, 1 Aqua: +2 minutes Invisibility
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

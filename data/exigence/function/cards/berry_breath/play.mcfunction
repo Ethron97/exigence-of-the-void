@@ -1,4 +1,5 @@
-say Each ravager on your level tries to eat the nearest berry bush. +20s Beast Sense per bush eaten.
+#say Each ravager on your level tries to eat the nearest berry bush. +20s Beast Sense per bush eaten.
+function exigence:cards/announce_card
 
 # Track how many berries got eaten
 scoreboard players set #berries_eaten Temp 0

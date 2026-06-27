@@ -1,4 +1,5 @@
-say +30 seconds of Beast Sense
+#say +30 seconds of Beast Sense
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

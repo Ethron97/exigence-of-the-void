@@ -1,5 +1,6 @@
 # Replaces play.mcfunction
-say [Cards are drawn 3-7 seconds slower]
+#say [Cards are drawn 3-7 seconds slower]
+function exigence:cards/announce_card
 
 # Functionality
 scoreboard players set mod.tranquility game.modifiers 1

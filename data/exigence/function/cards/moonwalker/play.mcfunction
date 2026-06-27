@@ -1,4 +1,5 @@
-say [6 Green: +2 minutes of Invisibility, Regeneration, and Beastsense]
+#say [6 Green: +2 minutes of Invisibility, Regeneration, and Beastsense]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

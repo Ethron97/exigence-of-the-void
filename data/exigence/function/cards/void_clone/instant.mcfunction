@@ -1,4 +1,5 @@
-say +1 Void Merchant on level 3, +1 Hazard on level 3 (+1 Hazard per player in COOP)
+#say +1 Void Merchant on level 3, +1 Hazard on level 3 (+1 Hazard per player in COOP)
+function exigence:cards/announce_card
 
 scoreboard players add mod.void_merchants game.modifiers 1
 

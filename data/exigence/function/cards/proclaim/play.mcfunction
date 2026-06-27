@@ -1,4 +1,5 @@
-say [1 Aqua: Spellbind 1 Legendary Card]
+#say [1 Aqua: Spellbind 1 Legendary Card]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

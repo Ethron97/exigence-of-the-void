@@ -1,4 +1,5 @@
-say [Dropping random Rare Void card on a random Altar on level 3]
+#say [Dropping random Rare Void card on a random Altar on level 3]
+function exigence:cards/announce_card
 
 # Track
 scoreboard players add forgotten.offerings game.dungeon 1

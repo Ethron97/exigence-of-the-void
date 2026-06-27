@@ -1,4 +1,5 @@
-say [+20 seconds of Clairvoyance for each Aqua ❂ consumed this run]
+#say [+20 seconds of Clairvoyance for each Aqua ❂ consumed this run]
+function exigence:cards/announce_card
 
 # Store score for calc and display
 scoreboard players operation #temp Temp = aqua.total_consumed game.resources

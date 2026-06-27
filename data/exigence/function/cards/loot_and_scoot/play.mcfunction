@@ -1,4 +1,5 @@
-say [1 Red: +30s Speed II, +7 🍪]
+#say [1 Red: +30s Speed II, +7 🍪]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

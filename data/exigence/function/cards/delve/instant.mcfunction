@@ -1,4 +1,5 @@
-say Delve I (More difficult echo selected)
+#say Delve I (More difficult echo selected)
+function exigence:cards/announce_card
 
 scoreboard players add .difficulty_mod game.dungeon.echo 1
 

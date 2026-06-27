@@ -1,4 +1,5 @@
-say 6 Green: +5 🍒. One ravager on each level gets Slowness II.
+#say 6 Green: +5 🍒. One ravager on each level gets Slowness II.
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

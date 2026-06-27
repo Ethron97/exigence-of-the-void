@@ -1,4 +1,5 @@
-say [5 Red: +3 minutes of Jump Boost II and Speed II]
+#say [5 Red: +3 minutes of Jump Boost II and Speed II]
+function exigence:cards/announce_card
 
 # Consume
 function exigence:resources/try_consume with storage exigence:resources

@@ -1,4 +1,5 @@
-say [Automatically pick up all items within 32 blocks]
+#say [Automatically pick up all items within 32 blocks]
+function exigence:cards/announce_card
 
 # Reset count score
 scoreboard players set @a[scores={dead=0},tag=ActivePlayer] Temp 0

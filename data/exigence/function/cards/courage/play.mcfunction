@@ -1,4 +1,5 @@
-say Courage [1 Red: +4 Embers]
+#say Courage [1 Red: +4 Embers]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

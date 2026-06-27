@@ -1,5 +1,6 @@
 # Replaces play.mcfunction
-say [Trigger Ascend when all Echo shards are found]
+#say [Trigger Ascend when all Echo shards are found]
+function exigence:cards/announce_card
 
 # Functionality
 scoreboard players set mod.final_ascension game.modifiers 1

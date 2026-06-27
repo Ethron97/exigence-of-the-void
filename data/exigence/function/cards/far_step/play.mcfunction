@@ -1,4 +1,5 @@
-say [6 Aqua: +15 seconds Far Step (allows you to teleport)]
+#say [6 Aqua: +15 seconds Far Step (allows you to teleport)]
+function exigence:cards/announce_card
 
 # Consume resources
 function exigence:resources/try_consume with storage exigence:resources

@@ -1,4 +1,5 @@
-say Sneak [-2 Menace]
+#say Sneak [-2 Menace]
+function exigence:cards/announce_card
 
 # Subtract two menace. Assumes game is not at max menace. Cannot subtract below 0.
 execute if score menace.current game.dungeon.menace matches 1 run scoreboard players remove menace.current game.dungeon.menace 1

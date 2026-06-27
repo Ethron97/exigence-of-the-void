@@ -1,4 +1,5 @@
-say +1 Ardor's Bane key, +1 Hazard on level 3 (+1 Hazard for each player in COOP)
+#say +1 Ardor's Bane key, +1 Hazard on level 3 (+1 Hazard for each player in COOP)
+function exigence:cards/announce_card
 
 # FUNCTIONALITY
 scoreboard players add 3.keys_to_drop game.level_doors 1

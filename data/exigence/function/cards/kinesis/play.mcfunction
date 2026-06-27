@@ -1,4 +1,5 @@
-say 5 Red: Ravagers within 32 blocks get Slow equal to your Speed level
+#say 5 Red: Ravagers within 32 blocks get Slow equal to your Speed level
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

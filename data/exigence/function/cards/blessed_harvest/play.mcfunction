@@ -1,4 +1,5 @@
-say [2 Aqua: +8 Berry Bushes]
+#say [2 Aqua: +8 Berry Bushes]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

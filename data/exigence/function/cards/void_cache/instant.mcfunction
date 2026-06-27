@@ -1,4 +1,5 @@
-say Spawn a Void Cache on level 4 that contains random Void consumables
+#say Spawn a Void Cache on level 4 that contains random Void consumables
+function exigence:cards/announce_card
 
 scoreboard players set mod.void_cache game.modifiers 1
 scoreboard players set endermite.spawn.cooldown tick_counter 30

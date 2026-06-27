@@ -1,4 +1,5 @@
-say +1 Temple of Fervor key, +1 Hazard on level 2 (+1 Hazard for each player in COOP)
+#say +1 Temple of Fervor key, +1 Hazard on level 2 (+1 Hazard for each player in COOP)
+function exigence:cards/announce_card
 
 # FUNCTIONALITY
 scoreboard players add 2.keys_to_drop game.level_doors 1

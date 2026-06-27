@@ -1,4 +1,5 @@
-say 1 Aqua: For 1 minute, gain +1 🍪 whenever you pick up a coin 🔘
+#say 1 Aqua: For 1 minute, gain +1 🍪 whenever you pick up a coin 🔘
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

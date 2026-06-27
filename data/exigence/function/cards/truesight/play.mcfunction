@@ -1,4 +1,5 @@
-say 4 Aqua: For each of the following (Glimmer, Flicker, Beastsense), gain +X seconds where X is how many seconds you have had that effect this game. This time cannot be modified.
+#say 4 Aqua: For each of the following (Glimmer, Flicker, Beastsense), gain +X seconds where X is how many seconds you have had that effect this game. This time cannot be modified.
+function exigence:cards/announce_card
 
 # Does not get modified by heighten or armor.
 

@@ -1,4 +1,5 @@
-say Quick Leap [1 Red: +30s of Jump Boost 2]
+#say Quick Leap [1 Red: +30s of Jump Boost 2]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

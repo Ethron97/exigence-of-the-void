@@ -1,4 +1,5 @@
-say Crop Rotation [+3 Berry Bushes]
+#say Crop Rotation [+3 Berry Bushes]
+function exigence:cards/announce_card
 
 scoreboard players add berry.queue game.dungeon.temp 3
 

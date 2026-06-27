@@ -1,5 +1,6 @@
 # Replaces play.mcfunction
-say [Start game with 1 of each key]
+#say [Start game with 1 of each key]
+function exigence:cards/announce_card
 
 # Functionality
 execute as @a[tag=ActivePlayer] run function exigence:player/give/level_1_key

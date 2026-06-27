@@ -1,4 +1,5 @@
-say [1 Green, 1 Red: +1 Heighten]
+#say [1 Green, 1 Red: +1 Heighten]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

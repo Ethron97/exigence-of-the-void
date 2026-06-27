@@ -1,4 +1,5 @@
-say [1 Red: +30s Glimmer, +30s Flicker, +30 Speed II]
+#say [1 Red: +30s Glimmer, +30s Flicker, +30 Speed II]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

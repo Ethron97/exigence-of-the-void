@@ -1,4 +1,5 @@
-say 1 Aqua: +1 minute of Flicker
+#say 1 Aqua: +1 minute of Flicker
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

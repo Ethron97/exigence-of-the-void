@@ -1,4 +1,5 @@
-say Bounding Strides [+60s of Jump Boost 2]
+#say Bounding Strides [+60s of Jump Boost 2]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

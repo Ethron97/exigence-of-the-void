@@ -1,4 +1,5 @@
-say 3 Green, 3 Aqua: +1 ♻ per 🧾 this game
+#say 3 Green, 3 Aqua: +1 ♻ per 🧾 this game
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 execute if score #LastConsumeResult game.resources matches 1 run function exigence:cards/rejuvination/private/trigger

@@ -18,7 +18,8 @@ summon minecraft:marker ~ ~ ~ {Tags:["NewNode","Node","EchoNode","EmberNode"],Cu
 execute as @e[type=minecraft:marker,tag=NewNode,distance=..1] run team join Echo @s
 
 # Copy echo difficulty and save to data
-scoreboard players operation @e[type=minecraft:marker,tag=NewNode,distance=..1] node.property.echo.difficulty = @s EchoDifficulty
+#scoreboard players operation @e[type=minecraft:marker,tag=NewNode,distance=..1] node.property.echo.difficulty = @s EchoDifficulty
+scoreboard players operation @e[type=minecraft:marker,tag=NewNode,distance=..1] node.property.echo.difficulty = @s node.property.echo.difficulty
 execute as @e[type=minecraft:marker,tag=NewNode,distance=..1] store result entity @s data.custom_data.echo_difficulty int 1 run scoreboard players get @s node.property.echo.difficulty 
 
 # Copy object level

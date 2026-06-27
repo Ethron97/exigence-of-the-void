@@ -37,3 +37,5 @@ summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:stone",count:1},Tags:["CardSumm
 
 # Apply data to the card
 $execute as @e[type=minecraft:item,tag=NCS,distance=..1] run function exigence:cards/$(card_name)/summon with storage exigence:colors
+
+#data modify entity @n[type=minecraft:item,tag=NCS,distance=..1] Item.components."minecraft:tooltip_style" set value 'exigence:card_test_1'

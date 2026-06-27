@@ -1,4 +1,5 @@
-say [1 Green, 1 Red, 1 Aqua: ALL grown bushes gain +2/3 berries, and no new bushes can grow]
+#say [1 Green, 1 Red, 1 Aqua: ALL grown bushes gain +2/3 berries, and no new bushes can grow]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

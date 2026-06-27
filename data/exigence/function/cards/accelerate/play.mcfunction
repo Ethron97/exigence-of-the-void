@@ -1,4 +1,5 @@
-say [2 Aqua: +1 minute of Speed X, where X is 1 higher than the highest speed amplifier you have received this run]
+#say [2 Aqua: +1 minute of Speed X, where X is 1 higher than the highest speed amplifier you have received this run]
+function exigence:cards/announce_card
 
 # Manage resources
 function exigence:resources/try_consume with storage exigence:resources

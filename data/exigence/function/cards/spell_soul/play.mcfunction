@@ -1,4 +1,5 @@
-say Consume all Aqua. Spellbind 1 for each Aqua consumed
+#say Consume all Aqua. Spellbind 1 for each Aqua consumed
+function exigence:cards/announce_card
 
 # How much aqua is there?
 scoreboard players operation #aqua_current Temp = aqua.current game.resources

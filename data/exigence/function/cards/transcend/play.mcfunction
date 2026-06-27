@@ -1,4 +1,5 @@
-say Trigger all played Ascend cards
+#say Trigger all played Ascend cards
+function exigence:cards/announce_card
 
 # Call as every card with Ascend (only played cards get that tag)
 #   Will only trigger once per card in the deck, regardless of whether it is recycled or spellbound.

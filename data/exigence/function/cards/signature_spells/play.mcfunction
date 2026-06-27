@@ -1,4 +1,5 @@
-say [4 Aqua: Spellbind 3 Uncommon cards]
+#say [4 Aqua: Spellbind 3 Uncommon cards]
+function exigence:cards/announce_card
 
 # Consume resources
 function exigence:resources/try_consume with storage exigence:resources

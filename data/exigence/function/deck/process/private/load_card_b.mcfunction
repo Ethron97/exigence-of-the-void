@@ -26,13 +26,18 @@ execute if score #instant deck.process_card matches 1.. run tag @s add Instant
 execute if score #instant deck.process_card matches 1 run tag @s add PlayDuringSetup
 execute if score #persistent deck.process_card matches 1 run tag @s add Persistent
 
-# Copy card name to armor stand name for chat report
-data modify entity @s CustomName set from entity @e[x=537,y=0,z=472,dx=0,dy=0,dz=0,type=minecraft:item,tag=NCS,limit=1] Item.components."minecraft:custom_name"
-
 # Copy item into armor stand hand so we can access the item's custom_data.card_name
-$item replace entity @s weapon.mainhand with paper[custom_data={card_name:'$(card_name)',display_name:'$(display_name)'}]
+#$item replace entity @s weapon.mainhand with paper[custom_data={card_name:'$(card_name)',display_name:'$(display_name)'}]
+item replace entity @s weapon.mainhand from entity @e[x=537,y=0,z=472,dx=0,dy=0,dz=0,type=minecraft:item,tag=NCS,limit=1] container.0
+
+# Add display name to lore
+$data modify entity @s equipment.mainhand.components."minecraft:custom_data".display_name set value '$(display_name)'
+
 # Copy a copy of the copy to the offhand so we always have a copy of the original copy
 item replace entity @s weapon.offhand from entity @s weapon.mainhand
+
+# Copy card name to armor stand name for chat report
+data modify entity @s CustomName set from entity @s equipment.mainhand.components."minecraft:custom_name"
 
 # Copy rarity score
 scoreboard players operation @s deck.card.rarity = #rarity deck.process_card

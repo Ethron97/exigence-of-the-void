@@ -1,4 +1,5 @@
-say [Dropping random Common Void card in the tavern]
+#say [Dropping random Common Void card in the tavern]
+function exigence:cards/announce_card
 
 # Track
 scoreboard players add forgotten.belongings game.dungeon 1

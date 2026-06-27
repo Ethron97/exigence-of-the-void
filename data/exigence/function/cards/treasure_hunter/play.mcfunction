@@ -1,3 +1,5 @@
-say +4 Treasure
+#say +4 Treasure
+function exigence:cards/announce_card
+
 # Add to treasure queue
 function exigence:treasure/queue/add_to_queue {source:"treasure_hunter",amount:4}

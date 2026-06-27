@@ -1,4 +1,5 @@
-say [+1 copper minecart on level contains loot]
+#say [+1 copper minecart on level contains loot]
+function exigence:cards/announce_card
 
 scoreboard players add cart_cache.card game.dungeon 1
 

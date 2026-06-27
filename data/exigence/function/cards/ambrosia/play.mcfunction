@@ -1,4 +1,5 @@
-say [5 Green: For the rest of the run, eating a berry grants one of the following effects: +5 seconds Jump II, +10 seconds Regen I, +15 seconds Speed II]
+#say [5 Green: For the rest of the run, eating a berry grants one of the following effects: +5 seconds Jump II, +10 seconds Regen I, +15 seconds Speed II]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 execute if score #LastConsumeResult game.resources matches 1 run scoreboard players add mod.ambrosia game.modifiers 1

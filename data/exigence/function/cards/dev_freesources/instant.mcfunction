@@ -1,5 +1,6 @@
 # Replaces play.mcfunction
-say [Fill each resources, also increase max by 6 each so we can test cards]
+#say [Fill each resources, also increase max by 6 each so we can test cards]
+function exigence:cards/announce_card
 
 scoreboard players add green.max game.resources 6
 scoreboard players add red.max game.resources 6

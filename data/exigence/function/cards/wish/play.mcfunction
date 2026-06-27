@@ -1,4 +1,5 @@
-say [+5 minutes of a random effect. Reduce the capacity of one random resource by 2]
+#say [+5 minutes of a random effect. Reduce the capacity of one random resource by 2]
+function exigence:cards/announce_card
 
 # Randomize the effect to be given
 execute store result score #random Random run random value 1..14

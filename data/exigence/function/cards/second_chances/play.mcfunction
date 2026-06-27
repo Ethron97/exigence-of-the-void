@@ -1,4 +1,5 @@
-say 2 Green, 2 Red, 2 Aqua: +3 ♻ that failed to play due to lack of resources
+#say 2 Green, 2 Red, 2 Aqua: +3 ♻ that failed to play due to lack of resources
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 execute if score #LastConsumeResult game.resources matches 0 run return 1

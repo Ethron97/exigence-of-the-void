@@ -32,3 +32,21 @@ say test
 
 
 #give Ethron97 copper_leggings[minecraft:attribute_modifiers=[{type:'minecraft:armor',id:'exigence:remove',amount:0.0,operation:'add_multiplied_base',slot:'legs'}]]
+
+tellraw @s [{nbt:"SelectedItem.components.'minecraft:lore'[0]",source:"entity",entity:"@s",interpret:true},{text:"\n"},\
+{nbt:"SelectedItem.components.'minecraft:lore'[1]",source:"entity",entity:"@s",interpret:true},{text:"\n"},\
+{nbt:"SelectedItem.components.'minecraft:lore'[2]",source:"entity",entity:"@s",interpret:true},{text:"\n"},\
+{nbt:"SelectedItem.components.'minecraft:lore'[3]",source:"entity",entity:"@s",interpret:true},{text:"\n"}]
+
+tellraw @s [{text:"Hover here",hover_event:{action:"show_text",value:[{nbt:"SelectedItem.components.'minecraft:custom_name'",source:"entity",entity:"@s",interpret:true},{text:"\n"},\
+{nbt:"SelectedItem.components.'minecraft:lore'[0]",source:"entity",entity:"@s",interpret:true},{text:"\n"},\
+{nbt:"SelectedItem.components.'minecraft:lore'[1]",source:"entity",entity:"@s",interpret:true},{text:"\n"},\
+{nbt:"SelectedItem.components.'minecraft:lore'[2]",source:"entity",entity:"@s",interpret:true},{text:"\n"},\
+{nbt:"SelectedItem.components.'minecraft:lore'[3]",source:"entity",entity:"@s",interpret:true},{text:"\n"}]}}]
+
+tellraw @s [{text:"Hover here",hover_event:{action:"show_text",value:[{nbt:"SelectedItem.components.'minecraft:custom_name'",source:"entity",entity:"@s",interpret:true},{text:"\n"},\
+{nbt:"SelectedItem.components.'minecraft:lore'[]",source:"entity",entity:"@s",interpret:true,separator:'\n'}]}}]
+
+#tellraw @s [{nbt:"lore",source:"storage",storage:'exigence:tellraw',interpret:true}]
+
+#tellraw @s [{nbt:"SelectedItem.components.'minecraft:lore'",source:"entity",entity:"@s",interpret:true,separator:'{text:"\n"}'}]

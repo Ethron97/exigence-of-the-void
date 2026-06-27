@@ -1,4 +1,5 @@
-say Fervor [+5s Poison II, +6 🔥]
+#say Fervor [+5s Poison II, +6 🔥]
+function exigence:cards/announce_card
 
 scoreboard players add ember.queue game.dungeon.temp 6
 

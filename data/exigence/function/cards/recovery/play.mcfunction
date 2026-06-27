@@ -1,4 +1,5 @@
-say 1 Green: +30 seconds of Regen I
+#say 1 Green: +30 seconds of Regen I
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

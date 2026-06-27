@@ -1,4 +1,5 @@
-say +1 of each level key, +4 hazard spread throughout dungeon (+4 per player in COOP)
+#say +1 of each level key, +4 hazard spread throughout dungeon (+4 per player in COOP)
+function exigence:cards/announce_card
 
 # FUNCTIONALITY
 scoreboard players add 1.keys_to_drop game.level_doors 1

@@ -1,4 +1,5 @@
-say [Shuffle 1 Null card into your deck]
+#say [Shuffle 1 Null card into your deck]
+function exigence:cards/announce_card
 
 # Save inputs
 scoreboard players set #rarity deck.process_card 1

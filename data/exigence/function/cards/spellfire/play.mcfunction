@@ -1,4 +1,5 @@
-say 1 Aqua: +2 🧾 (Spellbind)
+#say 1 Aqua: +2 🧾 (Spellbind)
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 execute if score #LastConsumeResult game.resources matches 1 run function exigence:deck/spellbind/try

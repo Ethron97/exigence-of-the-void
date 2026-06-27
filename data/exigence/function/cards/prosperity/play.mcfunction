@@ -1,4 +1,5 @@
-say 3 Aqua: +5 🍪, +5 🔥, +1 minute of Flicker and Glimmer
+#say 3 Aqua: +5 🍪, +5 🔥, +1 minute of Flicker and Glimmer
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

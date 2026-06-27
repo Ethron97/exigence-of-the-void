@@ -1,4 +1,5 @@
-say [Increase max Red by 1 if this is the first copy of this card, 2 if second, 3 if third]
+#say [Increase max Red by 1 if this is the first copy of this card, 2 if second, 3 if third]
+function exigence:cards/announce_card
 
 # FUNCTIONALITY
 # Add tag

@@ -1,4 +1,5 @@
-say Consume half of the berries in your inventory. Gain +3 🍪 per berry consumed.
+#say Consume half of the berries in your inventory. Gain +3 🍪 per berry consumed.
+function exigence:cards/announce_card
 
 # Convert crops
 execute as @a[scores={dead=0},tag=ActivePlayer] run function exigence:cards/cash_crop/convert_crops

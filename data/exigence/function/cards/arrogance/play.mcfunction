@@ -1,4 +1,5 @@
-say +1 🔥 for each time you stepped on sculk this run (highest of all players used in coop)
+#say +1 🔥 for each time you stepped on sculk this run (highest of all players used in coop)
+function exigence:cards/announce_card
 
 # Add sculk steps to ember queue
 scoreboard players set #temp Temp 0

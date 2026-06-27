@@ -1,4 +1,5 @@
-say Second Wind [2 Green: +60s of Regen, +60s of Speed I]
+#say Second Wind [2 Green: +60s of Regen, +60s of Speed I]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

@@ -1,4 +1,5 @@
-say [+4 🍒, +1 ☢]
+#say [+4 🍒, +1 ☢]
+function exigence:cards/announce_card
 
 # Grow four berries
 scoreboard players add berry.queue game.dungeon.temp 4

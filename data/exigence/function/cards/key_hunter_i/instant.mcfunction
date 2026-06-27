@@ -1,4 +1,5 @@
-say +1 Mirror Mines key, +1 Hazard on level 1 (+1 Hazard for each player in Coop)
+#say +1 Mirror Mines key, +1 Hazard on level 1 (+1 Hazard for each player in Coop)
+function exigence:cards/announce_card
 
 # FUNCTIONALITY
 scoreboard players add 1.keys_to_drop game.level_doors 1

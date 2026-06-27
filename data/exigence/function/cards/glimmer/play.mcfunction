@@ -1,4 +1,5 @@
-say [1 Aqua: +60s Glimmer]
+#say [1 Aqua: +60s Glimmer]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

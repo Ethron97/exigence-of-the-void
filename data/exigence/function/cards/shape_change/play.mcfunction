@@ -1,4 +1,5 @@
-say [6 Red: +10 Max Health. +30 seconds of Saturation]
+#say [6 Red: +10 Max Health. +30 seconds of Saturation]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

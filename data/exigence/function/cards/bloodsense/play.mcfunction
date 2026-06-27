@@ -1,4 +1,5 @@
-say Fervor [+5s Poison II, +2 minutes of Beastsense]
+#say Fervor [+5s Poison II, +2 minutes of Beastsense]
+function exigence:cards/announce_card
 
 function exigence:player/effects/add_effect_time_card {effect:"beastsense",duration:2400}
 

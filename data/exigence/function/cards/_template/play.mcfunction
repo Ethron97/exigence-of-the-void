@@ -1,4 +1,5 @@
-say [Card effect here]
+#say [Card effect here]
+function exigence:cards/announce_card
 
 # Functionality
 

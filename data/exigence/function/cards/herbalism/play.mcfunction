@@ -1,4 +1,5 @@
-say Herbalism [1 Green: +6 Treasure]
+#say Herbalism [1 Green: +6 Treasure]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

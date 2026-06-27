@@ -1,4 +1,5 @@
-say [4 Red: +2 minutes of Jump Boost 4]
+#say [4 Red: +2 minutes of Jump Boost 4]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

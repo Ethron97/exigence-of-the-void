@@ -1,4 +1,5 @@
-say [+3 🔥 for each Red ❂ consumed this run]
+#say [+3 🔥 for each Red ❂ consumed this run]
+function exigence:cards/announce_card
 
 # Functionality
 scoreboard players set #temp Temp 0

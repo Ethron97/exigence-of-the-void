@@ -1,4 +1,5 @@
-say [Dropping random Uncommon Void card in the laboratory]
+#say [Dropping random Uncommon Void card in the laboratory]
+function exigence:cards/announce_card
 
 # Track
 scoreboard players add forgotten.experiments game.dungeon 1

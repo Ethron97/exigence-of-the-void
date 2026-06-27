@@ -1,4 +1,5 @@
-say Dash [1 Red: +60s of Speed II]
+#say Dash [1 Red: +60s of Speed II]
+function exigence:cards/announce_card
 
 function exigence:resources/try_consume with storage exigence:resources
 

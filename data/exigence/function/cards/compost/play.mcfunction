@@ -1,4 +1,5 @@
-say +2 🍒 for each ♻ this run
+#say +2 🍒 for each ♻ this run
+function exigence:cards/announce_card
 
 # Reset score
 scoreboard players set #recycled Temp 0
