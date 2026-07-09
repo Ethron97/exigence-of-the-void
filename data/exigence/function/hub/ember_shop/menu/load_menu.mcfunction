@@ -24,15 +24,10 @@ scoreboard players operation @n[type=minecraft:marker,tag=EmberShopMenuNode,dist
 execute if score @s profile.player.coop_profile_id matches 1.. \
 run scoreboard players operation @n[type=minecraft:marker,tag=EmberShopMenuNode,distance=..0.01] hub.entity.coop_profile_id = @s profile.player.coop_profile_id
 
+# Make sure library displays are reset
+function exigence:hub/ember_shop/menu/refresh/reset_library_displays
 # First refresh
+function exigence:hub/ember_shop/menu/refresh/refresh
 
 # Load main card shop menu
-# REFRESH BUTTON
-# RARITY BUTTONS
-# INITIAL CARD DISPLAYS
-
-# Load door + frame
-#execute as @n[type=minecraft:marker,tag=EmberShopMenuNode,distance=..0.01] at @s run function exigence:hub/predungeon/menu/display/warp_door/load
-
-# Load menu a
-#execute as @n[type=minecraft:marker,tag=EmberShopMenuNode,distance=..0.01] at @s run function exigence:hub/predungeon/menu/display/pre_button/load
+function exigence:hub/ember_shop/menu/display/card/load

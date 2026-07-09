@@ -17,7 +17,7 @@ execute as @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] \
 run function exigence:hub/profile_selector/menu/display/settings/load/load_data/card_display_bossbar
 
 # Summon preview
-execute at @s positioned ~5.47 ~2.5 ~0.0 as @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..16] run function exigence:hub/profile_selector/menu/display/settings/calls/private/create_preview with entity @s item.components."minecraft:custom_data"
+execute at @s positioned ~5.47 ~2.4 ~0.0 as @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..16] run function exigence:hub/profile_selector/menu/display/settings/calls/private/create_preview with entity @s item.components."minecraft:custom_data"
 
 # Remove local tag
 tag @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..0.1] remove NewItemDisplay

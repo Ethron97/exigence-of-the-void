@@ -8,6 +8,12 @@
             "name": "minecraft:prize_pottery_sherd",
             "functions": [
               {
+                "function": "minecraft:set_components",
+                "components": {
+                  "minecraft:max_stack_size": 80
+                }
+              },
+              {
                 "function": "minecraft:set_name",
                 "entity": "this",
                 "target": "custom_name",

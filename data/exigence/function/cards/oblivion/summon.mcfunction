@@ -7,7 +7,8 @@ $data modify entity @s Item.components."minecraft:lore" append value [$(legendar
 data modify entity @s Item.components."minecraft:lore" append value [{text:""}]
 data modify entity @s Item.components."minecraft:lore" append value [{text:"✘ Void ",italic:false,color:"dark_purple"},{text:"cards are not consumed this run.",italic:false,color:"gray"}]
 data modify entity @s Item.components."minecraft:lore" append value [{text:"For each ",italic:false,color:"gray"},{text:"Void ",italic:false,color:"dark_purple"},{text:"card, the minimum amount",italic:false,color:"gray"}]
-data modify entity @s Item.components."minecraft:lore" append value [{text:"of ",italic:false,color:"gray"},{text:"Menace ",italic:false,color:"dark_purple"},{text:"is increased by 2.",italic:false,color:"gray"}]
+data modify entity @s Item.components."minecraft:lore" append value [{text:"of ",italic:false,color:"gray"},{text:"Menace ",italic:false,color:"dark_purple"},{text:"is increased based on the rarity.",italic:false,color:"gray"}]
+data modify entity @s Item.components."minecraft:lore" append value [{text:"(Common: +1 | Uncommon: +2 | Rare: +3 | Legendary: +4)",italic:false,color:"dark_gray"}]
 data modify entity @s Item.components."minecraft:lore" append value [{text:"(Menace cannot be reduced below minumum)",italic:false,color:"dark_gray"}]
 
 # OLD

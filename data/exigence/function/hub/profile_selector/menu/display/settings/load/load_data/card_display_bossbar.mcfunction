@@ -19,7 +19,7 @@ data modify entity @s item.components."minecraft:custom_data".display set value 
 data modify entity @s item.components."minecraft:custom_data".display0 set value {text:"Last card played bossbar"}
 data modify entity @s item.components."minecraft:custom_data".display1 set value {text:"Last card played bossbar"}
 data modify entity @s item.components."minecraft:custom_data".preview0 set value {text:""}
-data modify entity @s item.components."minecraft:custom_data".preview1 set value [{text:"Last Card: ",color:"white"},{text:"- Treasure Hunter -",color:"dark_aqua"}]
+data modify entity @s item.components."minecraft:custom_data".preview1 set value [{text:"Last Card: ",color:"gray"},{text:"- Treasure Hunter -",color:"dark_aqua"}]
 # Overwrite hover data
 data modify entity @s item.components."minecraft:custom_data".preview_scale set value '0.3'
 data modify entity @s item.components."minecraft:custom_data".preview_hover_scale set value '0.4'

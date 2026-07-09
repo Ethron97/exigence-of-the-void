@@ -2,6 +2,10 @@
 
 #====================================================================================================
 
+# Discard rare ChosenCard cards
+execute as @e[x=40,y=200,z=-28,dx=0,dy=2,dz=23,type=minecraft:item_display,tag=LibraryDisplay,tag=ChosenCard] run function exigence:hub/ember_shop/menu/library_display/discard
+
+
 ## STANDARD CARDS
 function exigence:hub/ember_shop/menu/refresh/pick/rare
 function exigence:hub/ember_shop/menu/refresh/pick/rare

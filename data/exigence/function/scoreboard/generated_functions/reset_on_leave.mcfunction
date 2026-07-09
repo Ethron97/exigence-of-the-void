@@ -56,6 +56,7 @@ scoreboard players reset @s game.player.mod.gathering_storm
 scoreboard players reset @s game.player.mod.glimmer
 scoreboard players reset @s game.player.mod.glint_keep
 scoreboard players reset @s game.player.mod.health_boost
+scoreboard players reset @s game.player.mod.living_spark
 scoreboard players reset @s game.player.mod.loot_boots
 scoreboard players reset @s game.player.mod.magnet
 scoreboard players reset @s game.player.mod.mirror_vision

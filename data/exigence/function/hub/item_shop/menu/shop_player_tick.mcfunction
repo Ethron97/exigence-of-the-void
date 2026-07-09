@@ -38,3 +38,6 @@ function exigence:hub/item_shop/private/refresh_currency_player
 
 # Refresh consumable item amounts
 execute if score seconds.cooldown tick_counter matches 17 run function exigence:player/utility/calculate_item_limit
+
+# Update player suffix (displays currency amounts)
+execute if score @s profile.player.coop_profile_id matches 1.. if score @s shop.player.currency_amounts_changed matches 1 run function exigence:hub/item_shop/access/team/update_suffix

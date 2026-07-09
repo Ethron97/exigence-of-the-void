@@ -11,6 +11,7 @@ execute as @a[distance=..2000,tag=!ActivePlayer] run function exigence:hub/hub_t
 # Room menu ticks (part 2, part 1 is in hub_tick_player because it's easier)
 execute positioned -43.5 200.0 0.5 if entity @a[tag=ItemShop,distance=..50,limit=1] run function exigence:hub/item_shop/menu/shop_menu_tick
 execute positioned 0.5 209.0 104.5 if entity @a[tag=Predungeon,distance=..16,limit=1] run function exigence:hub/predungeon/menu/predungeon_menu_tick
+execute positioned 45.5 209.0 0.5 if entity @a[tag=EmberShop,distance=..16,limit=1] run function exigence:hub/ember_shop/menu/ember_shop_menu_tick
 execute as @e[x=-29,y=197,z=6,dx=24,dy=8,dz=24,type=minecraft:marker,scores={hub.locker_room_id=1..},tag=LockerRoomNode] at @s run function exigence:hub/locker_room/menu/locker_menu_tick
 
 # Trial tick

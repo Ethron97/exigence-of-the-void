@@ -39,7 +39,7 @@ execute if score game.difficulty game.state matches 5 if score beacon.2 game.sto
 execute if score game.difficulty game.state matches 5 if score beacon.2 game.story.beacons matches 3.. run data modify storage exigence:objective level_2 append value [{sprite:"exigence:item/beacon_lit",atlas:"items",color:"white"},{text:""}]
 # EXIT PORTAL
 #   Once all echo nodes found
-execute if score game.difficulty game.state matches 4 if score game.all_echos_found game.state matches 1 run data modify storage exigence:objective level_1 append value [{sprite:"exigence:item/exit_portal",atlas:"items",color:"white"},{text:""}]
+execute if score game.difficulty game.state matches 4 if score game.all_echos_found game.state matches 1 run data modify storage exigence:objective level_2 append value [{sprite:"exigence:item/exit_portal",atlas:"items",color:"white"},{text:""}]
 execute if score game.difficulty game.state matches 4 if score game.all_echos_found game.state matches 1 if score mod.backup_plan game.modifiers matches 1 run data modify storage exigence:objective level_2 append value [{sprite:"exigence:item/exit_portal",atlas:"items",color:"white"},{text:""}]
 
 

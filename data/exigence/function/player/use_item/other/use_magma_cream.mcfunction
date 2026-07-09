@@ -9,6 +9,8 @@
 execute if score #Missing game.resources matches 0 run return 0
 #----------------------------------------------------------------------------------------------------
 
+scoreboard players set #used_cream game.resources 1
+
 # Call resource function
 function exigence:resources/apply_magma_cream
 

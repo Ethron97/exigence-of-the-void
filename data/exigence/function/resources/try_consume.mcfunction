@@ -9,6 +9,7 @@ data modify storage exigence:resource_hud green_fail set value {text:""}
 data modify storage exigence:resource_hud red_fail set value {text:""}
 data modify storage exigence:resource_hud aqua_fail set value {text:""}
 
+scoreboard players set #used_cream game.resources 0
 scoreboard players set #LastConsumeResult game.resources 0
 
 $scoreboard players set green.cost game.resources $(green)

@@ -2,12 +2,15 @@
 
 #====================================================================================================
 
+# Discard commons ChosenCard cards
+execute as @e[x=30,y=200,z=12,dx=0,dy=2,dz=15,type=minecraft:item_display,tag=LibraryDisplay,tag=ChosenCard] run function exigence:hub/ember_shop/menu/library_display/discard
+
+
 ## STANDARD CARDS
 function exigence:hub/ember_shop/menu/refresh/pick/common
 function exigence:hub/ember_shop/menu/refresh/pick/common
 function exigence:hub/ember_shop/menu/refresh/pick/common
 # ... Extra card slot(s)
-
 
 
 ## VOID CARDS

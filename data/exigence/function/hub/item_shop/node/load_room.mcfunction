@@ -10,6 +10,12 @@
 # DEBUG
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Load item shop
 
+# Reset team suffixes
+team modify ItemShop1 suffix ""
+team modify ItemShop2 suffix ""
+team modify ItemShop3 suffix ""
+team modify ItemShop4 suffix ""
+
 #====================================================================================================
 ## LOAD CHESTS
 scoreboard players operation #compare profile.player.profile_id = @s profile.player.profile_id

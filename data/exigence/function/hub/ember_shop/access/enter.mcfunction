@@ -1,42 +1,30 @@
-# Handle player entering the room
+# Handle player entering the ember shop room
 
 ## CONSTRAINTS
 #   AS player
-#   AT LockerRoom node
 
 #====================================================================================================
 
-execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Entering Locker Room
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Entering ember shop
 
-tag @s add LockerRoom
+# Leave limbo (players only ever join the ember shop from Limbo)
+function exigence:hub/limbo/access/leave
 
-execute if entity @n[tag=LockerRoomNode,tag=South,distance=..0.1] at @s run tp @s ~ ~ ~1
-execute if entity @n[tag=LockerRoomNode,tag=West,distance=..0.1] at @s run tp @s ~-1 ~ ~
-execute at @s run playsound minecraft:entity.enderman.teleport ambient @s ~ ~1000 ~ 1000 1
+tag @s add EmberShop
+team join EmberShop @s
 
-# Store ids
-scoreboard players operation #compare career.player_id = @s career.player_id
-scoreboard players operation #compare profile.player.profile_id = @s profile.player.profile_id
+# Update bossbar visibility
+function exigence:bossbar/ember_shop/update_visibility
 
-# Load room as chosen locker room node (validation done in previous function)
-# Inputting: #compare profile.node.profile_id
-execute as @n[tag=LockerRoomNode,distance=..1] at @s run function exigence:hub/locker_room/node/load_room
-
-scoreboard players operation @s hub.player.locker_room_id = @n[tag=LockerRoomNode,distance=..1] hub.locker_room_id
-execute if score @s profile.player.coop_profile_id matches 1.. run scoreboard players operation @n[tag=LockerRoomNode,distance=..1] hub.entity.coop_profile_id = @s profile.player.coop_profile_id
+execute in exigence:hub run tp @s 45.5 209.0 0.5 -90 0
+execute at @s run playsound minecraft:entity.player.teleport player @s ~ ~1000 ~ 1000 1
 
 # Summon interaction
-function exigence:hub/locker_room/node/setup_interaction
+execute at @s run function exigence:hub/ember_shop/node/setup_interaction
 
-#====================================================================================================
-# Summon Room Node
-scoreboard players set #room_type Temp 11
-execute in exigence:hub positioned 100 200 100 run function exigence:room/node/new
+# If shop is already loaded, add embers
+#    Required if a player was offline when ember shop got loaded
+execute if score shop.loaded ember_shop matches 1 run scoreboard players operation shop.embers_to_spend ember_shop += @s hub.player.embers_retrieved
 
-# Assign room ids
-#   PLAYER
-scoreboard players operation @s hub.player.room_id = #next hub.room.room_id
-execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] if score @s profile.node.player_id = #compare career.player_id \
-run scoreboard players operation @s player.node.room_id = #next hub.room.room_id
-#   FK (link room node to specific room node)
-scoreboard players operation @n[tag=LockerRoomNode,distance=..1] hub.entity.room_id = #next hub.room.room_id
+# If shop is not loaded, load it
+execute if score shop.loaded ember_shop matches 0 in exigence:hub positioned 45.5 209.0 0.5 run return run function exigence:hub/ember_shop/node/load_room

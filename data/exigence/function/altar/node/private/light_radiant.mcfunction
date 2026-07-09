@@ -1,4 +1,4 @@
-# Call if triggering for the first time with ember / spark
+# Call if triggering for the first time with ember
 
 ## CONSTRAINTS
 #   AS/AT AltarNode
@@ -30,9 +30,12 @@ scoreboard players add @p[tag=Lighting] profile.data.altar.cr.altars_enhanced 1
 # Reduce menace by 2
 function exigence:menace/try_reduce_menace
 function exigence:menace/try_reduce_menace
+# Third if spark
+execute if score #spark Temp matches 1 run function exigence:menace/try_reduce_menace
 
-# Increase aqua by 2
-execute as @p[tag=Lighting] run function exigence:resources/try_generate {green:0,red:0,aqua:2}
+# Increase aqua by 2 (3 if spark)
+execute if score #spark Temp matches 0 as @p[tag=Lighting] run function exigence:resources/try_generate {green:0,red:0,aqua:2}
+execute if score #spark Temp matches 1 as @p[tag=Lighting] run function exigence:resources/try_generate {green:0,red:0,aqua:3}
 
 # Give tracker score
 scoreboard players add @s node.data.altar.times_enhanced 1

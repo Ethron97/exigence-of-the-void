@@ -21,6 +21,10 @@ item:{id:"minecraft:black_concrete",count:1},CustomName:{text:"ItemDisplay | Pre
 summon minecraft:text_display ~ ~1.8 ~ {brightness:{block:11,sky:11},Rotation:[90,0],billboard:"fixed",alignment:"center",Tags:["PreviewTitle","NewDisplay"]\
 ,text:{text:"Settings Preview"},background:1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.6f,0.6f,0.6f]}}
 
+# Inform how to view long description
+summon minecraft:text_display ~ ~0.05 ~ {line_width:250,brightness:{block:11,sky:11},Rotation:[90,0],billboard:"fixed",alignment:"center",Tags:["PreviewReminder","NewDisplay"]\
+,text:{text:"Shift click a settings button to view description",color:"gray"},background:1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.3f,0.3f,0.3f]}}
+
 # Preview foopter (not to scale)
 summon minecraft:text_display ~ ~0.19 ~ {brightness:{block:11,sky:11},Rotation:[90,0],billboard:"fixed",alignment:"center",Tags:["PreviewFooter","NewDisplay"]\
 ,text:{text:"(Not to scale)",color:"gray"},background:1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.2f,0.2f,0.2f]}}
@@ -36,7 +40,7 @@ item:{id:"minecraft:sunflower",count:1,components:{"minecraft:custom_model_data"
 ,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.2f,0.2f,0.01f]}}
 
 # Player hud
-summon minecraft:item_display ~ ~0.45 ~ {brightness:{block:13,sky:13},Rotation:[90.0f,0.0f],billboard:"fixed",Tags:["PreviewHud","NewDisplay"],\
+summon minecraft:item_display ~-0.02 ~0.45 ~ {brightness:{block:13,sky:13},Rotation:[90.0f,0.0f],billboard:"fixed",Tags:["PreviewHud","NewDisplay"],\
 item:{id:"minecraft:sunflower",count:1,components:{"minecraft:custom_model_data":{strings:["player_hud"]}}},CustomName:{text:"ItemDisplay | PreviewHud"}\
 ,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[1.0f,1.0f,0.01f]}}
 

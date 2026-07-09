@@ -1,0 +1,31 @@
+# Save chests to storage
+
+## CONSTRAINTS
+#   AT center of ember shop ( 45.5 209.0 0.5 )
+
+## OUTPUT
+#   exigence:profile.chests
+#   SCORE #chests_saved Temp
+
+#====================================================================================================
+
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 2.. run say (D2 Hub) Save chests [ember shop]
+
+#   OUTPUT
+execute store success score #chests_saved Temp if block ~-4 ~ ~-6 minecraft:chest
+
+# Save chest to storage
+data modify storage exigence:profile chests.blue_left set from block ~-4 ~ ~-6 Items
+data modify storage exigence:profile chests.blue_right set from block ~-3 ~ ~-6 Items
+
+data modify storage exigence:profile chests.orange_left set from block ~-2 ~ ~-7 Items
+data modify storage exigence:profile chests.orange_right set from block ~-1 ~ ~-7 Items
+
+data modify storage exigence:profile chests.deck_left set from block ~1 ~ ~-7 Items
+data modify storage exigence:profile chests.deck_right set from block ~2 ~ ~-7 Items
+
+data modify storage exigence:profile chests.green_left set from block ~3 ~ ~-6 Items
+data modify storage exigence:profile chests.green_right set from block ~4 ~ ~-6 Items
+
+# Make sure chests are removed
+function exigence:hub/ember_shop/load/remove_chests

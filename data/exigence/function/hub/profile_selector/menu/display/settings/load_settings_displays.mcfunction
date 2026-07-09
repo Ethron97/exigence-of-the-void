@@ -25,10 +25,11 @@ execute positioned ~5.49 ~0.7 ~0.325 run function exigence:hub/profile_selector/
 execute positioned ~5.49 ~0.4 ~0.325 run function exigence:hub/profile_selector/menu/display/settings/load/allow_coop_invites
 
 #   Right side
-execute positioned ~5.49 ~2.5 ~1.3 run function exigence:hub/profile_selector/menu/display/settings/load/card_display_bossbar
-execute positioned ~5.49 ~2.2 ~1.3 run function exigence:hub/profile_selector/menu/display/settings/load/card_display_sidebar
+execute positioned ~5.49 ~2.5 ~1.3 run function exigence:hub/profile_selector/menu/display/settings/load/objective_bossbar
+execute positioned ~5.49 ~2.2 ~1.3 run function exigence:hub/profile_selector/menu/display/settings/load/card_display_bossbar
+execute positioned ~5.49 ~1.9 ~1.3 run function exigence:hub/profile_selector/menu/display/settings/load/card_display_sidebar
 ## CYCLE
-execute positioned ~5.49 ~1.8 ~1.3 run function exigence:hub/profile_selector/menu/display/settings/load/resource_bossbar_style
+#execute positioned ~5.49 ~1.8 ~1.3 run function exigence:hub/profile_selector/menu/display/settings/load/resource_bossbar_style
 execute positioned ~5.49 ~1.4 ~1.3 run function exigence:hub/profile_selector/menu/display/settings/load/resource_actionbar_style
 
 #====================================================================================================

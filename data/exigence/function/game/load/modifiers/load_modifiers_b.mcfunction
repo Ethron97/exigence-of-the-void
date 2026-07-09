@@ -66,6 +66,9 @@ execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_
 # Void Crystal
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'void_crystal'}}}]}] run scoreboard players set @s game.player.mod.void_crystal 1
 
+# Living Spark
+execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'living_spark'}}}]}] run scoreboard players set @s game.player.mod.living_spark 1
+
 
 
 # LEGENDARY

@@ -8,7 +8,8 @@
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Entering item shop
 
 tag @s add ItemShop
-team join ItemShop @s
+
+function exigence:hub/item_shop/access/team/join
 
 tp @s ~-3 ~ ~
 playsound minecraft:entity.enderman.teleport ambient @s ~ ~1000 ~ 1000 1

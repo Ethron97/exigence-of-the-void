@@ -11,7 +11,7 @@
 
 #====================================================================================================
 
-execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. run say (D3 Game) Leave dungeon
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3 Game) Leave dungeon
 
 # Copy player cr_ scores to profile node t_ scores
 # TODO
@@ -66,6 +66,10 @@ function exigence:player/clear/all_spellbound
 # Clear win items
 clear @s #exigence:win_clear
 
+# EMBERS
+#   Clear embers and remember amount
+execute store result score @s hub.player.embers_retrieved run clear @s minecraft:blaze_powder
+
 # COIN CONVERSION
 #   Clear gold nuggets and remember amount
 execute store result score @s hub.coin_conversion run clear @s minecraft:gold_nugget
@@ -86,24 +90,3 @@ execute if score toggle.player debug matches 1 if score debug.level debug matche
 # DEBUG
 gamemode creative @s[tag=Admin]
 effect give @s[tag=Admin] night_vision infinite 0 true
-
-# This stuff is temp just to remove the room node; In the future the room node just gets migrated
-#====================================================================================================
-# Remove THIS player from room node
-scoreboard players operation #compare career.player_id = @s career.player_id
-scoreboard players operation #compare hub.player.room_id = @s hub.player.room_id
-execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] \
-if score @s profile.node.player_id = #compare career.player_id run scoreboard players reset @s player.node.room_id
-scoreboard players reset @s hub.player.room_id
-
-# CHECK IF THERE ARE OTHER PLAYERS ON THE ROOM NODE
-scoreboard players set #other_players Temp 0
-#   If yes, earlyu return so we don't kill the room node/unload the room
-execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode,scores={player.node.room_id=1..}] if score @s player.node.room_id = #compare hub.player.room_id \
-run scoreboard players set #other_players Temp 1
-
-execute if score #other_players Temp matches 1 run return 0
-#----------------------------------------------------------------------------------------------------
-
-# If this player was the last one, kill room node
-execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,tag=RoomNode] if score @s hub.room.room_id = #compare hub.player.room_id run kill @s

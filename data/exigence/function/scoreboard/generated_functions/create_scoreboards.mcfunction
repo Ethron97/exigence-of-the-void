@@ -16,6 +16,7 @@ scoreboard objectives add career.settings.show_resource_consume dummy
 scoreboard objectives add career.settings.show_resource_generate dummy
 scoreboard objectives add career.settings.show_resource_overflow dummy
 scoreboard objectives add career.settings.show_resource_underflow dummy
+scoreboard objectives add career.settings.objective_bossbar dummy
 scoreboard objectives add career.tutorial dummy
 scoreboard objectives add dead minecraft.custom:minecraft.deaths
 scoreboard objectives add debug.node_counter dummy
@@ -118,6 +119,7 @@ scoreboard objectives add game.player.mod.gathering_storm dummy
 scoreboard objectives add game.player.mod.glimmer dummy
 scoreboard objectives add game.player.mod.glint_keep dummy
 scoreboard objectives add game.player.mod.health_boost dummy
+scoreboard objectives add game.player.mod.living_spark dummy
 scoreboard objectives add game.player.mod.loot_boots dummy
 scoreboard objectives add game.player.mod.magnet dummy
 scoreboard objectives add game.player.mod.mirror_vision dummy
@@ -190,6 +192,7 @@ scoreboard objectives add hub.entity.profile_invite_timer dummy
 scoreboard objectives add hub.entity.profile_selector_id dummy
 scoreboard objectives add hub.entity.room_id dummy
 scoreboard objectives add hub.locker_room_id dummy
+scoreboard objectives add hub.player.embers_retrieved dummy
 scoreboard objectives add hub.player_entity.query_idid dummy
 scoreboard objectives add hub.player.consumable_limit dummy
 scoreboard objectives add hub.player.interaction_cooldown dummy
@@ -203,6 +206,9 @@ scoreboard objectives add hub.room.current_timeout dummy
 scoreboard objectives add hub.room.max_timeout dummy
 scoreboard objectives add hub.room.room_id dummy
 scoreboard objectives add hub.room.room_type dummy
+scoreboard objectives add hub.room.difficulty dummy
+scoreboard objectives add hub.room.bonus_slots dummy
+scoreboard objectives add hub.room.refresh_modifier dummy
 scoreboard objectives add hub.validate_items dummy
 scoreboard objectives add node.berry.data.times_picked dummy
 scoreboard objectives add node.berry.max_berries dummy
@@ -1043,6 +1049,9 @@ scoreboard objectives add temp.treasure_stats dummy
 scoreboard objectives add tick_convert dummy
 scoreboard objectives add tick_counter dummy
 scoreboard objectives add vault_open_state dummy
+scoreboard objectives add ember_shop dummy
+scoreboard objectives add ember_shop.cost dummy
+scoreboard objectives add ember_shop.rarity dummy
 scoreboard objectives add CarrotOnStick minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add node.id dummy
 scoreboard objectives add hub.tutorial dummy

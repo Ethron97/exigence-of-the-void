@@ -23,10 +23,10 @@ execute if score mod.oblivion game.modifiers matches 1 run function exigence:car
 function exigence:bossbar/deck/initialize
 function exigence:bossbar/deck/update_data
 
-function exigence:bossbar/last_card/initialize
-
 function exigence:bossbar/objective/initialize
 function exigence:bossbar/objective/update_visibility
+
+function exigence:bossbar/last_card/initialize
 
 function exigence:bossbar/resource/initialize
 function exigence:bossbar/resource/update_title

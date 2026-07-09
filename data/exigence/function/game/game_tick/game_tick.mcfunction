@@ -10,8 +10,8 @@
 scoreboard players add total.game.ticks tick_counter 1
 scoreboard players add game.ticks tick_counter 1
 
-# Call tick functions
-execute as @a[tag=ActivePlayer] at @s run function exigence:player/tick/tick
+# Call player tick functions (unless they have escaped)
+execute as @a[tag=ActivePlayer,tag=!Escaped] at @s run function exigence:player/tick/tick
 
 # Check for game end
 function exigence:game/game_tick/detect_game_state

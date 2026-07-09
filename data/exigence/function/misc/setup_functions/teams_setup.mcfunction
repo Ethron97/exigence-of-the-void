@@ -67,6 +67,14 @@ team modify ItemShop color gold
 team add EmberShop
 team add EmberView
 
+team add ItemShop1
+team add ItemShop2
+team add ItemShop3
+team add ItemShop4
+team modify ItemShop1 color gold
+team modify ItemShop2 color gold
+team modify ItemShop3 color gold
+team modify ItemShop4 color gold
 
 team add Card1
 team add Card2

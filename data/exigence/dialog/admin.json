@@ -63,6 +63,13 @@
       }
     },
     {
+      "label": "Tp Limbo/Waiting",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger TpLimbo"
+      }
+    },
+    {
       "label": "Creative mode",
       "action": {
         "type": "minecraft:run_command",

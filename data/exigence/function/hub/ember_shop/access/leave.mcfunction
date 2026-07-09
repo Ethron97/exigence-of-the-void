@@ -1,0 +1,43 @@
+# Handle player leaving the room
+
+## CONSTRAINTS
+#   AS/AT player
+
+#====================================================================================================
+
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Leaving ember shop
+
+tag @s remove EmberShop
+team leave @s
+
+# Update bossbar visibility
+function exigence:bossbar/ember_shop/update_visibility
+
+tp @s ~ ~-0.1 ~
+execute at @s run playsound minecraft:entity.player.teleport player @s ~ ~1000 ~ 1000 1
+
+# Remove interaction
+function exigence:hub/ember_shop/node/kill_interaction
+
+scoreboard players reset @s shop.player.looking_at_idid
+
+#====================================================================================================
+# Remove THIS player from room node
+scoreboard players operation #compare career.player_id = @s career.player_id
+scoreboard players operation #compare hub.player.room_id = @s hub.player.room_id
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] \
+if score @s profile.node.player_id = #compare career.player_id run scoreboard players reset @s player.node.room_id
+scoreboard players reset @s hub.player.room_id
+
+# CHECK IF THERE ARE OTHER PLAYERS ON THE ROOM NODE
+scoreboard players set #other_players Temp 0
+#   If yes, earlyu return so we don't kill the room node/unload the room
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode,scores={player.node.room_id=1..}] if score @s player.node.room_id = #compare hub.player.room_id \
+run scoreboard players set #other_players Temp 1
+
+execute if score #other_players Temp matches 1 run return 0
+#----------------------------------------------------------------------------------------------------
+
+# If this player was the last one, kill room node and unload room
+execute in exigence:hub positioned 45.5 209.0 0.5 run function exigence:hub/ember_shop/node/unload_room
+execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,tag=RoomNode] if score @s hub.room.room_id = #compare hub.player.room_id run kill @s

@@ -15,3 +15,6 @@ execute if score #player_found Temp matches 0 run function exigence:room/node/in
 
 # If player found, reset timeout
 execute if score #player_found Temp matches 1 run scoreboard players set @s hub.room.current_timeout 0
+
+# If limbo room node, and player found, call limbo tick
+execute if score @s hub.room.room_type matches 4 if score #player_found Temp matches 1 run function exigence:hub/limbo/node/limbo_room_update

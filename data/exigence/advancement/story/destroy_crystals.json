@@ -8,7 +8,7 @@
   "display": {
     "description": "Disable the wards around the final beacon",
     "icon": {
-      "id": "minecraft:amethyst_shard"
+      "id": "minecraft:end_crystal"
     },
     "title": "Fracture Wards"
   }

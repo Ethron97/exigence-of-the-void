@@ -22,3 +22,4 @@ scoreboard objectives add TpOldHub trigger
 scoreboard objectives add TpProfileData trigger
 scoreboard objectives add TpProfileSelector trigger
 scoreboard objectives add TpTutorial trigger
+scoreboard objectives add TpLimbo trigger

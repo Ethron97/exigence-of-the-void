@@ -16,6 +16,7 @@ scoreboard objectives remove career.settings.show_resource_consume
 scoreboard objectives remove career.settings.show_resource_generate
 scoreboard objectives remove career.settings.show_resource_overflow
 scoreboard objectives remove career.settings.show_resource_underflow
+scoreboard objectives remove career.settings.objective_bossbar
 scoreboard objectives remove career.tutorial
 scoreboard objectives remove dead
 scoreboard objectives remove debug.node_counter
@@ -118,6 +119,7 @@ scoreboard objectives remove game.player.mod.gathering_storm
 scoreboard objectives remove game.player.mod.glimmer
 scoreboard objectives remove game.player.mod.glint_keep
 scoreboard objectives remove game.player.mod.health_boost
+scoreboard objectives remove game.player.mod.living_spark
 scoreboard objectives remove game.player.mod.loot_boots
 scoreboard objectives remove game.player.mod.magnet
 scoreboard objectives remove game.player.mod.mirror_vision
@@ -190,6 +192,7 @@ scoreboard objectives remove hub.entity.profile_invite_timer
 scoreboard objectives remove hub.entity.profile_selector_id
 scoreboard objectives remove hub.entity.room_id
 scoreboard objectives remove hub.locker_room_id
+scoreboard objectives remove hub.player.embers_retrieved
 scoreboard objectives remove hub.player_entity.query_idid
 scoreboard objectives remove hub.player.consumable_limit
 scoreboard objectives remove hub.player.interaction_cooldown
@@ -203,6 +206,9 @@ scoreboard objectives remove hub.room.current_timeout
 scoreboard objectives remove hub.room.max_timeout
 scoreboard objectives remove hub.room.room_id
 scoreboard objectives remove hub.room.room_type
+scoreboard objectives remove hub.room.difficulty
+scoreboard objectives remove hub.room.bonus_slots
+scoreboard objectives remove hub.room.refresh_modifier
 scoreboard objectives remove hub.validate_items
 scoreboard objectives remove node.berry.data.times_picked
 scoreboard objectives remove node.berry.max_berries
@@ -1043,6 +1049,9 @@ scoreboard objectives remove temp.treasure_stats
 scoreboard objectives remove tick_convert
 scoreboard objectives remove tick_counter
 scoreboard objectives remove vault_open_state
+scoreboard objectives remove ember_shop
+scoreboard objectives remove ember_shop.cost
+scoreboard objectives remove ember_shop.rarity
 scoreboard objectives remove CarrotOnStick
 scoreboard objectives remove node.id
 scoreboard objectives remove hub.tutorial

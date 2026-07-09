@@ -20,3 +20,7 @@ execute as @n[type=minecraft:marker,tag=NewRavagerGlass,distance=..3] run functi
 
 # Give player score
 scoreboard players add @s[tag=!Tutorial] profile.data.gameplay.cr.ravager_glass 1
+
+# Playsound of glass breaking (force if tutorial)
+execute at @s[tag=Tutorial] run playsound minecraft:block.glass.break ambient @a ~ ~ ~ 0.5 1
+execute at @s[tag=!Tutorial] run playsound minecraft:block.glass.break ambient @a[tag=ActivePlayer,scores={career.settings.ravager_glass_break=1}] ~ ~ ~ 0.5 1

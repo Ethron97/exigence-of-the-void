@@ -20,6 +20,7 @@ scoreboard players set @s game.player.mod.gathering_storm 0
 scoreboard players set @s game.player.mod.glimmer 0
 scoreboard players set @s game.player.mod.glint_keep 0
 scoreboard players set @s game.player.mod.health_boost 0
+scoreboard players set @s game.player.mod.living_spark 0
 scoreboard players set @s game.player.mod.loot_boots 0
 scoreboard players set @s game.player.mod.magnet 0
 scoreboard players set @s game.player.mod.mirror_vision 0

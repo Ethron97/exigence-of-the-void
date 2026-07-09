@@ -5,8 +5,7 @@ say Game Reset
 
 # ENTITY CLEANUP
 
-scoreboard objectives setdisplay sidebar.team.dark_aqua
-scoreboard objectives setdisplay sidebar.team.dark_red
+
 
 # Kill floating flames
 kill @e[type=minecraft:vex,tag=FloatingFlame]

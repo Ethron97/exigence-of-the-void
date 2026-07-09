@@ -29,9 +29,12 @@ scoreboard players add @p[tag=Lighting] profile.data.altar.cr.altars_upgraded 1
 
 # Reduce menace by 1
 function exigence:menace/try_reduce_menace
+# 2 if spark
+execute if score #spark Temp matches 1 run function exigence:menace/try_reduce_menace
 
-# Increase aqua by 1
-execute as @p[tag=Lighting] run function exigence:resources/try_generate {green:0,red:0,aqua:1}
+# Increase aqua by 1 (2 if spark)
+execute if score #spark Temp matches 0 as @p[tag=Lighting] run function exigence:resources/try_generate {green:0,red:0,aqua:1}
+execute if score #spark Temp matches 1 as @p[tag=Lighting] run function exigence:resources/try_generate {green:0,red:0,aqua:2}
 
 # Give tracker score
 scoreboard players add @s node.data.altar.times_upgraded 1

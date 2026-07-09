@@ -1,0 +1,22 @@
+# Load deck analyzer for this room
+
+## CONSTRAINTS
+#   AS marker (blank)
+#   AT location (+facing)
+
+## INPUT
+#   SCORE #profile_id Temp
+#   SCORE #coop_profile_id Temp
+
+#====================================================================================================
+
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Setup deck analyzer [ember shop]
+
+# Call interface-summon
+function exigence:hub/deck_analyzer/setup_deck_analyzer_node
+
+tag @s add EmberShopAnalyzerDisplay
+
+# Load load
+#   INPUT: #profile_id Temp, #coop_profile_id Temp
+function exigence:hub/ember_shop/load/load_deck_analyzer

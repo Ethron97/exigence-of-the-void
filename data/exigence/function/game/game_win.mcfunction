@@ -16,8 +16,8 @@ title @a[tag=ActivePlayer] title [{text:"Victory",color:"green"}]
 # Play victory sound
 execute in exigence:hub run playsound minecraft:ui.toast.challenge_complete neutral @a 986.5 100.0 1000.5 1000 1
 
-# Teleport players still in the dungeon
-execute as @a[tag=ActivePlayer,tag=!Won] in exigence:hub run tp @s 986.5 100.0 1000.5
+# Teleport players still in the dungeon (?)
+#execute as @a[tag=ActivePlayer,tag=!Won] in exigence:hub run tp @s 986.5 100.0 1000.5
 
 # Give appropriate advancements
 execute if score game.difficulty game.state matches 1 as @a[tag=ActivePlayer,sort=arbitrary,limit=1] run function exigence:profile/profile_node/story/grant {story:'win_difficulty_1'}
@@ -26,16 +26,13 @@ execute if score game.difficulty game.state matches 3 as @a[tag=ActivePlayer,sor
 execute if score game.difficulty game.state matches 4 as @a[tag=ActivePlayer,sort=arbitrary,limit=1] run function exigence:profile/profile_node/story/grant {story:'win_difficulty_4'}
 
 # Track win scores
-#   MOVE DATA TO PROFILE DIRECTLY
+#   MOVE DATA TO PROFILE DIRECTLY (because in co-op, one player might not be online)
 execute if score game.difficulty game.state matches 1 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.wins_D1 1
 execute if score game.difficulty game.state matches 2 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.wins_D2 1
 execute if score game.difficulty game.state matches 3 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.wins_D3 1
 execute if score game.difficulty game.state matches 4 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.wins_D4 1
 # Add Max Menace Wins score
 execute if score game.max_menace game.state matches 1 run scoreboard players add @a[tag=ActivePlayer] profile.data.winloss.cr.max_menace_wins 1
-
-# Copy additional card procs from modifiers to embershop
-scoreboard players operation BonusCards EmberShop = mod.bonus_cards game.modifiers
 
 # Update profile.data.winloss.highest_win score
 scoreboard players set #temp Temp 0
@@ -47,8 +44,11 @@ execute unless entity @a[tag=Admin,tag=ActivePlayer] run scoreboard players add 
 
 #====================================================================================================
 
-# Convert placeholder void items to actual armor loot
-execute as @a[tag=ActivePlayer] at @s positioned ~ ~10 ~ run function exigence:player/utility/armor/void_armor/check_for_placeholders
+# Teleport players not in limbo to
+execute as @a[tag=ActivePlayer,tag=!Limbo] run function exigence:hub/limbo/access/enter
+
+# Migrate data to room node (for card shop)
+execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,scores={hub.room.room_type=3}] run function exigence:game/unload/migrate_data_to_room_node
 
 # Turn off the game
 execute in minecraft:overworld run function exigence:game/game_off
@@ -56,3 +56,8 @@ execute in minecraft:overworld run function exigence:game/game_off
 # Schedule coin convert so its after the victory sound
 #   Player scores were gathered from the access/leave function
 schedule function exigence:game/unload/schedule_coin_conversions 60t
+
+#====================================================================================================
+
+# Update room node type (game->limbo)
+execute in exigence:hub run scoreboard players set @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,scores={hub.room.room_type=3}] hub.room.room_type 4

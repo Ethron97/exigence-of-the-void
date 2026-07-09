@@ -85,5 +85,9 @@ time set 18000
 # Kill clock markers
 execute positioned 0 0 0 run kill @e[type=minecraft:marker,tag=ClockMarker,distance=..1000]
 
+# Reset sidebars
+scoreboard objectives setdisplay sidebar.team.dark_aqua
+scoreboard objectives setdisplay sidebar.team.dark_red
+
 # Reset load cancel so we can
 #scoreboard players set game.cancel_load hub.room_misc 0
