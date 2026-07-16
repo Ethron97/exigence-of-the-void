@@ -12,6 +12,7 @@ execute if score toggle.variance debug matches 1 if score debug.level debug matc
 
 execute store result score @s RandomB run random value 1..90
 #execute store result score @s RandomB run random value 1..9
+#scoreboard players set @s RandomB 1
 
 execute if score @s RandomB matches 1 run tag @s add CartCache
 execute if score @s RandomB matches 1 run scoreboard players add cart_cache.proc game.dungeon 1

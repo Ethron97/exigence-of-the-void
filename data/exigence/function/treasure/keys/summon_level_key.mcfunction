@@ -33,7 +33,7 @@ execute if score toggle.treasure debug matches 1 run data modify entity @s Glowi
 execute if score game.is_active game.state matches 1 run data modify entity @s Item.components."minecraft:custom_data".bonus set value true
 
 # Playsound
-playsound minecraft:block.anvil.land block @a ~ ~ ~ 2 1.3
+execute at @s run playsound minecraft:block.anvil.land block @a ~ ~ ~ 2 1.3
 
 # Summon waypoint entity
 execute at @s run function exigence:game/other/waypoint/summon_waypoint_from_item

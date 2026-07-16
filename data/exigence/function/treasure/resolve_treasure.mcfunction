@@ -40,6 +40,8 @@ execute if score #VaultKeyCheck Random matches 1 as @r[tag=ActivePlayer,scores={
 ## LEVEL KEYS+
 # Change per dungeon proc to summon a LEVEL KEY at any active treasure node, on a level with at least one person (and unopened level door)
 execute store result score #LevelKeyCheck Random run random value 1..30
+#scoreboard players set #LevelKeyCheck Random 1
+
 #   Drop if random check + less than 5 keys exist + door not opened + 
 execute if score #LevelKeyCheck Random matches 1 if score game.difficulty game.state matches 2.. unless score 1.keys_dropped game.level_doors matches 5.. unless score 1.opened game.level_doors matches 1 unless score 1.got_key game.level_doors matches 1 if entity @a[scores={game.player.active_level=1},tag=ActivePlayer] as @e[x=-271,y=-55,z=-113,dx=-118,dy=92,dz=-153,type=minecraft:marker,scores={node.property.object_level=1},tag=TreasureNode,tag=!KeyDropper,tag=!KeyBlacklist,sort=random,limit=1] run function exigence:treasure/keys/private/drop_key_1
 execute if score #LevelKeyCheck Random matches 1 if score game.difficulty game.state matches 3.. unless score 2.keys_dropped game.level_doors matches 5.. unless score 2.opened game.level_doors matches 1 unless score 2.got_key game.level_doors matches 1 if entity @a[scores={game.player.active_level=2},tag=ActivePlayer] as @e[x=-366,y=13,z=-106,dx=-118,dy=107,dz=-178,type=minecraft:marker,scores={node.property.object_level=2},tag=TreasureNode,tag=!KeyDropper,tag=!KeyBlacklist,sort=random,limit=1] run function exigence:treasure/keys/private/drop_key_2

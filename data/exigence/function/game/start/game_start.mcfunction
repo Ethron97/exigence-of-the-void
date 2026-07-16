@@ -28,8 +28,9 @@ function exigence:bossbar/objective/update_visibility
 
 function exigence:bossbar/last_card/initialize
 
-function exigence:bossbar/resource/initialize
-function exigence:bossbar/resource/update_title
+# Moved resource/deck cost to Obective bossbar
+#function exigence:bossbar/resource/initialize
+#function exigence:bossbar/resource/update_title
 
 # Void cache
 execute if score mod.void_cache game.modifiers matches 1.. if score game.difficulty game.state matches 4.. run function exigence:cards/void_cache/trigger

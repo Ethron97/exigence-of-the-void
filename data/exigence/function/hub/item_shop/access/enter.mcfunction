@@ -27,6 +27,9 @@ function exigence:hub/item_shop/node/setup_interaction
 # Initialize item limit upon joining
 function exigence:player/utility/calculate_item_limit
 
+# Initialize currency suffix
+execute if score @s profile.player.coop_profile_id matches 1.. run function exigence:hub/item_shop/access/team/update_suffix
+
 #====================================================================================================
 # Summon Room Node
 scoreboard players set #room_type Temp 9

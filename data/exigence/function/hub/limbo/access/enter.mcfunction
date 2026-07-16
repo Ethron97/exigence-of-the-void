@@ -14,3 +14,5 @@ tag @s add Limbo
 
 # Update bossbar visibility
 function exigence:bossbar/limbo/update_visibility
+
+attribute @s minecraft:safe_fall_distance modifier add exigence:safe_fall 100 add_value

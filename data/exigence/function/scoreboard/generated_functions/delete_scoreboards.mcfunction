@@ -1052,6 +1052,7 @@ scoreboard objectives remove vault_open_state
 scoreboard objectives remove ember_shop
 scoreboard objectives remove ember_shop.cost
 scoreboard objectives remove ember_shop.rarity
+scoreboard objectives remove ember_shop.display_sequence
 scoreboard objectives remove CarrotOnStick
 scoreboard objectives remove node.id
 scoreboard objectives remove hub.tutorial

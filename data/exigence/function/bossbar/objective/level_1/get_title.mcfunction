@@ -18,7 +18,7 @@ execute as @e[x=-271,y=-55,z=-113,dx=-118,dy=92,dz=-153,type=minecraft:armor_sta
 #   If no one got the key yet, 1 key icon
 execute if score game.difficulty game.state matches 2.. if score 1.got_key game.level_doors matches 0 run data modify storage exigence:objective level_1 append value [{sprite:"exigence:item/level_1_key",atlas:"items",color:"white"}]
 #   If key is picked up and not used, 1 per key on the ground
-execute if score game.difficulty game.state matches 2.. if score 1.got_key game.level_doors matches 1 if score 1.opened game.level_doors matches 0 as @e[x=-271,y=-55,z=-113,dx=-118,dy=92,dz=-153,type=minecraft:armor_stand,tag=LevelKeyWaypoint] \
+#execute if score game.difficulty game.state matches 2.. if score 1.got_key game.level_doors matches 1 if score 1.opened game.level_doors matches 0 as @e[x=-271,y=-55,z=-113,dx=-118,dy=92,dz=-153,type=minecraft:armor_stand,tag=LevelKeyWaypoint] \
 run function exigence:bossbar/objective/level_1/level_key
 
 # LEVEL DOOR

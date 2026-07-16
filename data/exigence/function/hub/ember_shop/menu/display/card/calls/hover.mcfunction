@@ -13,9 +13,7 @@ execute if score toggle.menu debug matches 1 if score debug.level debug matches 
 team join Green @s
 
 # Playsound
-execute at @s run playsound minecraft:block.bamboo_wood_trapdoor.open ui @a ~ ~ ~ 1 1.2
+execute at @s run playsound minecraft:item.book.page_turn ui @a ~ ~ ~ 1 1.4
 
 # Display item details
-#execute at @s positioned ^ ^0.3 ^0 run function exigence:hub/profile_selector/menu/display/profile/calls/private/show_hover_name
-#execute at @s positioned ^ ^-0.4 ^0 run function exigence:hub/profile_selector/menu/display/profile/calls/private/show_hover_line {line:0}
-#execute at @s[tag=!Selected] positioned ^ ^-0.48 ^0 run function exigence:hub/profile_selector/menu/display/profile/calls/private/show_hover_line {line:1}
+function exigence:hub/ember_shop/menu/display/card/calls/private/display_item_details

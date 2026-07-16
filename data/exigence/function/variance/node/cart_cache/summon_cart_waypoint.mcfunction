@@ -1,6 +1,7 @@
 # Summon armorstand to transmit locator bar
 
 ## CONSTRAINTS
+#   AS variance node
 #   AT location
 
 #====================================================================================================
@@ -27,6 +28,9 @@ waypoint modify @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] colo
 
 # Transmission range starts at 0 (until a player picks up the map)
 attribute @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] minecraft:waypoint_transmit_range base set 0
+
+# If from card, start with Active tag so it shows up objective bossbar
+execute if entity @s[tag=CartCacheFromCard] run tag @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] add ObjectiveBossbar
 
 # Remove local tag
 tag @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] remove NewWaypoint

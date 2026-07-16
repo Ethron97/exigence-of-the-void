@@ -39,6 +39,10 @@ function exigence:misc/setup_functions/initialize_global_settings
 say 7. Recreating item shop
 execute in exigence:hub positioned -43.5 200.0 0.5 run function exigence:hub/item_shop/recreate
 
+say 8. Initialize scores on Library Displays
+execute in exigence:hub run function exigence:hub/ember_shop/admin/update_library_rarities
+execute in exigence:hub run function exigence:hub/ember_shop/admin/update_library_costs
+
 # Prevent online players from needing to tp/remove tags (because when the scoreboard is replaced, it would detect null as != 0)
 scoreboard players set @a quits 0
 team leave @a

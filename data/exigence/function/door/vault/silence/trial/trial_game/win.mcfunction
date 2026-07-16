@@ -16,7 +16,9 @@ scoreboard players add @s[tag=Trial] profile.data.vaults.cr.silence_trial_win 1
 scoreboard players add @s[tag=Crucible] profile.data.vaults.cr.silence_crucible_win 1
 
 # Give advancement
-execute as @s[tag=Trial] run function exigence:profile/profile_node/set/shop_unlock_vault {vault_string:"trial_silence"}
+#   Always give trial unlock
+#execute as @s[tag=Trial] run 
+function exigence:profile/profile_node/set/shop_unlock_vault {vault_string:"trial_silence"}
 execute as @s[tag=Crucible] run function exigence:profile/profile_node/set/shop_unlock_vault {vault_string:"crucible_silence"}
 
 # COOP - Show title to all other players

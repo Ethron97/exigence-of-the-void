@@ -27,7 +27,25 @@ run scoreboard players operation @n[type=minecraft:marker,tag=EmberShopMenuNode,
 # Make sure library displays are reset
 function exigence:hub/ember_shop/menu/refresh/reset_library_displays
 # First refresh
-function exigence:hub/ember_shop/menu/refresh/refresh
+function exigence:hub/ember_shop/menu/refresh/refresh_all
+
 
 # Load main card shop menu
-function exigence:hub/ember_shop/menu/display/card/load
+#function exigence:hub/ember_shop/menu/display/card/load
+# Summon refresh button
+# TODO
+
+# Summon rarity selection buttons
+# TODO create only if <= input difficulty
+execute if score shop.difficulty ember_shop matches 1.. positioned ~ ~1.25 ~0.4 run function exigence:hub/ember_shop/menu/display/rarity_selector/load/summon_rarity_selector_1
+execute if score shop.difficulty ember_shop matches 2.. positioned ~ ~1.25 ~0.7 run function exigence:hub/ember_shop/menu/display/rarity_selector/load/summon_rarity_selector_2
+execute if score shop.difficulty ember_shop matches 3.. positioned ~ ~1.25 ~1.0 run function exigence:hub/ember_shop/menu/display/rarity_selector/load/summon_rarity_selector_3
+execute if score shop.difficulty ember_shop matches 4.. positioned ~ ~1.25 ~1.3 run function exigence:hub/ember_shop/menu/display/rarity_selector/load/summon_rarity_selector_4
+
+# Initialize highest rarity button as selected
+#   Displays first card set and sets refresh cost
+execute if score shop.difficulty ember_shop matches 1 as @n[type=minecraft:item_display,tag=RaritySelector,tag=Common,distance=..5] run function exigence:hub/ember_shop/menu/display/rarity_selector/select_rarity
+execute if score shop.difficulty ember_shop matches 2 as @n[type=minecraft:item_display,tag=RaritySelector,tag=Uncommon,distance=..5] run function exigence:hub/ember_shop/menu/display/rarity_selector/select_rarity
+execute if score shop.difficulty ember_shop matches 3 as @n[type=minecraft:item_display,tag=RaritySelector,tag=Rare,distance=..5] run function exigence:hub/ember_shop/menu/display/rarity_selector/select_rarity
+execute if score shop.difficulty ember_shop matches 4.. as @n[type=minecraft:item_display,tag=RaritySelector,tag=Legendary,distance=..5] run function exigence:hub/ember_shop/menu/display/rarity_selector/select_rarity
+

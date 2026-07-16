@@ -27,4 +27,4 @@ title @a[tag=ActivePlayer,tag=!FoundMap] title ""
 tag @s remove FoundMap
 
 # Enable waypoints
-execute in minecraft:overworld as @e[x=-366,y=13,z=-106,dx=-118,dy=107,dz=-178,type=minecraft:armor_stand,tag=Waypoint,tag=Cart] run function exigence:variance/node/cart_cache/activate_cart_waypoint
+execute in minecraft:overworld as @e[x=-366,y=13,z=-106,dx=-118,dy=107,dz=-178,type=minecraft:armor_stand,tag=Waypoint,tag=Cart,tag=!Active] run function exigence:variance/node/cart_cache/activate_cart_waypoint

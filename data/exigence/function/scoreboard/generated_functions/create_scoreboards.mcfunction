@@ -1052,6 +1052,7 @@ scoreboard objectives add vault_open_state dummy
 scoreboard objectives add ember_shop dummy
 scoreboard objectives add ember_shop.cost dummy
 scoreboard objectives add ember_shop.rarity dummy
+scoreboard objectives add ember_shop.display_sequence dummy
 scoreboard objectives add CarrotOnStick minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add node.id dummy
 scoreboard objectives add hub.tutorial dummy

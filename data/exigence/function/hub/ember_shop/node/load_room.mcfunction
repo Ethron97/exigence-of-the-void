@@ -18,9 +18,10 @@ execute if score toggle.hub debug matches 1 if score debug.level debug matches 3
 scoreboard players set shop.loaded ember_shop 1
 scoreboard players set shop.embers_to_spend ember_shop 0
 
-scoreboard players set shop.difficulty ember_shop 0
-scoreboard players set shop.bonus_slots ember_shop 0
-scoreboard players set shop.refresh_modifier ember_shop 0
+scoreboard players operation shop.difficulty ember_shop = #shop.difficulty ember_shop
+scoreboard players operation shop.bonus_slots ember_shop = #shop.bonus_slots ember_shop
+scoreboard players operation shop.refresh_modifier ember_shop = #shop.refresh_modifier ember_shop
+#...
 
 # Get embers from all players
 execute as @a[scores={hub.player.room_id=1..}] if score @s hub.player.room_id = #compare hub.room.room_id \
@@ -49,3 +50,6 @@ execute positioned ~ ~ ~-7.49 rotated 0 0 summon marker run function exigence:hu
 
 # Load main menu
 execute positioned ~5.49 ~ ~ run function exigence:hub/ember_shop/menu/load_menu
+
+# Update bossbar
+function exigence:bossbar/ember_shop/update

@@ -10,8 +10,14 @@ execute unless entity @s[tag=ActivePlayer] run return 1
 
 execute if score toggle.door debug matches 1 if score debug.level debug matches 3.. run say (D3) Pickup level 2 key
 
+# If key has "bonus", inform (TEMP FORCED DEBUG)
+scoreboard players set #temp Temp 0
+execute store result score #temp Temp run clear @s trial_key[custom_data~{key_level:"2",bonus:true}]
+execute if score #temp Temp matches 1 run tellraw @a[tag=ActivePlayer] [{text:"(D3) Picked up bonus key (dropped from treasure, not setups)"}]
+execute if score #temp Temp matches 1 at @s run playsound block.anvil.land block @a ~ ~ ~ 1 1.5
+
 # Replace key with give key
-clear @s trial_key[custom_data={key_level:"2"}]
+clear @s trial_key[custom_data~{key_level:"2"}]
 execute as @s run function exigence:player/give/level_2_key
 
 # Call generic functions

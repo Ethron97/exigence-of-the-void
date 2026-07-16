@@ -17,10 +17,7 @@ team join Yellow @s
 #data modify entity @s Glowing set value false
 
 # Playsound
-execute at @s run playsound minecraft:block.bamboo_wood_trapdoor.close ui @a ~ ~ ~ 1 0.7
-
-# Move pupil back to rest
-#execute at @s run tp @n[type=minecraft:item_display,tag=PlayerSensorPupil,distance=..0.5] ~ ~ ~-0.0325
+execute at @s run playsound minecraft:item.book.page_turn ui @a ~ ~ ~ 1 1.1
 
 # Remove item details
-#function exigence:hub/profile_selector/menu/display/profile/calls/private/remove_hover_details with entity @s item.components."minecraft:custom_data"
+function exigence:hub/ember_shop/menu/display/card/calls/private/remove_item_details with entity @s item.components."minecraft:custom_data"

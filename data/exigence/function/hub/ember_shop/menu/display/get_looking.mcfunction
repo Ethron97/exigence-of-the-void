@@ -11,10 +11,10 @@ tag @s add IAmLooking
 # Reset tag
 execute anchored eyes run tag @e[type=minecraft:item_display,tag=HoverCandidate,distance=..6] remove HoverCandidate
 
-# Check
-execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=!RaritySelector,distance=..2] at @s anchored eyes facing entity \
+## CARD DISPLAY
+execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=CardDisplay,tag=Displaying,distance=..2] at @s anchored eyes facing entity \
 @p[tag=IAmLooking,distance=..16] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=IAmLooking,distance=..16] positioned ^ ^ ^1 if entity @s[distance=..0.16] run tag @s add HoverCandidate
-execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=!RaritySelector,distance=2..5] at @s anchored eyes facing entity \
+execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=CardDisplay,tag=Displaying,distance=2..5] at @s anchored eyes facing entity \
 @p[tag=IAmLooking,distance=..16] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=IAmLooking,distance=..16] positioned ^ ^ ^1 if entity @s[distance=..0.11] run tag @s add HoverCandidate
 ## RARITY selector
 execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=RaritySelector,distance=..2] at @s anchored eyes facing entity \

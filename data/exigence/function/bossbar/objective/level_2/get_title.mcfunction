@@ -16,7 +16,7 @@ execute if score 2.reached game.level_doors matches 0 run data modify storage ex
 execute if score 2.reached game.level_doors matches 1 if score forgotten.experiments game.dungeon matches 1.. as @e[x=-366,y=13,z=-106,dx=-118,dy=107,dz=-178,type=minecraft:item,tag=ForgottenExperiment] run function exigence:bossbar/objective/level_2/forgotten
 
 # CART CACHE
-execute if score 2.reached game.level_doors matches 1 if score cart_cache.card game.dungeon matches 1.. as @e[x=-366,y=13,z=-106,dx=-118,dy=107,dz=-178,type=minecraft:armor_stand,tag=Waypoint,tag=Cart] run data modify storage exigence:objective level_2 append value [{sprite:"minecraft:item/chest_minecart",atlas:"items",color:"white"}]
+execute if score 2.reached game.level_doors matches 1 if score cart_cache.card game.dungeon matches 1.. as @e[x=-366,y=13,z=-106,dx=-118,dy=107,dz=-178,type=minecraft:armor_stand,tag=Waypoint,tag=Cart,tag=ObjectiveBossbar] run data modify storage exigence:objective level_2 append value [{sprite:"minecraft:item/chest_minecart",atlas:"items",color:"white"}]
 
 # ECHOS
 #execute as @e[x=-366,y=13,z=-106,dx=-118,dy=107,dz=-178,type=minecraft:marker,tag=EchoNode,tag=ChosenEchoNode,sort=nearest] at @s run function exigence:bossbar/objective/level_2/echos
@@ -26,7 +26,7 @@ execute as @e[x=-366,y=13,z=-106,dx=-118,dy=107,dz=-178,type=minecraft:armor_sta
 #   If no one got the key yet, 1 key icon
 execute if score game.difficulty game.state matches 3.. if score 2.reached game.level_doors matches 1 if score 2.got_key game.level_doors matches 0 run data modify storage exigence:objective level_2 append value [{sprite:"exigence:item/level_2_key",atlas:"items",color:"white"}]
 #   If key is picked up and not used, 1 per key on the ground
-execute if score game.difficulty game.state matches 3.. if score 2.reached game.level_doors matches 1 if score 2.got_key game.level_doors matches 1 if score 2.opened game.level_doors matches 0 as @e[x=-366,y=13,z=-106,dx=-118,dy=107,dz=-178,type=minecraft:armor_stand,tag=LevelKeyWaypoint] \
+#execute if score game.difficulty game.state matches 3.. if score 2.reached game.level_doors matches 1 if score 2.got_key game.level_doors matches 1 if score 2.opened game.level_doors matches 0 as @e[x=-366,y=13,z=-106,dx=-118,dy=107,dz=-178,type=minecraft:armor_stand,tag=LevelKeyWaypoint] \
 run function exigence:bossbar/objective/level_2/level_key
 
 # LEVEL DOOR
