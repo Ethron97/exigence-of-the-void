@@ -2,7 +2,6 @@
 scoreboard players add resource.green.cards deck.analysis 1
 scoreboard players add resource.green.consume deck.analysis 5
 scoreboard players add core.berry deck.analysis 5
-scoreboard players add cards.persistent deck.analysis 1
 
 scoreboard players add class.survival deck.analysis 5
 scoreboard players add class.survival.weighted deck.analysis 20

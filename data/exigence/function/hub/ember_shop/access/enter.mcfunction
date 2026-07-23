@@ -25,6 +25,8 @@ execute at @s run function exigence:hub/ember_shop/node/setup_interaction
 # If shop is already loaded, add embers
 #    Required if a player was offline when ember shop got loaded
 execute if score shop.loaded ember_shop matches 1 run scoreboard players operation shop.embers_to_spend ember_shop += @s hub.player.embers_retrieved
+# Update bossbar
+execute if score shop.loaded ember_shop matches 1 run function exigence:bossbar/ember_shop/update
 
 # If shop is not loaded, load it
-execute if score shop.loaded ember_shop matches 0 in exigence:hub positioned 45.5 209.0 0.5 run return run function exigence:hub/ember_shop/node/load_room
+execute if score shop.loaded ember_shop matches 0 in exigence:hub positioned 45.5 209.0 0.5 run function exigence:hub/ember_shop/node/load_room

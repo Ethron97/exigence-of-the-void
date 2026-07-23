@@ -9,7 +9,7 @@ execute if entity @s[tag=!Selected] run return run say I was not Selected? Canno
 #----------------------------------------------------------------------------------------------------
 
 # Unpress button into the altar
-# TODO
+execute at @s run tp @s ~-0.035 ~ ~
 
 # Tags
 tag @s remove Selected

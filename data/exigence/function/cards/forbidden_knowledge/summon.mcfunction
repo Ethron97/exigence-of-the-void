@@ -5,6 +5,7 @@ $data modify entity @s Item.components."minecraft:custom_model_data".strings set
 
 $data modify entity @s Item.components."minecraft:lore" append value [$(rare_stars),{text:"Instant Card",italic:false,color:"white"}]
 data modify entity @s Item.components."minecraft:lore" append value [{text:""}]
-data modify entity @s Item.components."minecraft:lore" append value [{text:"After this run, +2 cards are available",italic:false,color:"gray"}]
-data modify entity @s Item.components."minecraft:lore" append value [{text:"to purchase in the ember shop for each",italic:false,color:"gray"}]
-data modify entity @s Item.components."minecraft:lore" append value [{text:"rarity each time the shop is refreshed",italic:false,color:"gray"}]
+#data modify entity @s Item.components."minecraft:lore" append value [{text:"After this run, +2 cards are available",italic:false,color:"gray"}]
+#data modify entity @s Item.components."minecraft:lore" append value [{text:"to purchase in the ember shop for each",italic:false,color:"gray"}]
+#data modify entity @s Item.components."minecraft:lore" append value [{text:"rarity each time the shop is refreshed",italic:false,color:"gray"}]
+data modify entity @s Item.components."minecraft:lore" append value [{text:"Refreshing the ember shop costs 1 fewer ",italic:false,color:"gray"},{text:"💎",italic:false,color:"aqua"}]

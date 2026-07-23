@@ -10,4 +10,5 @@
 
 #====================================================================================================
 
-$execute as @e[type=minecraft:item_display,tag=CardDisplay] if items entity @s container.0 paper[custom_data~{card_name:'$(card_name)'}] run kill @s
+$execute as @e[type=minecraft:item_display,tag=CardDisplay] if items entity @s container.0 paper[custom_data~{card_name:'$(card_name)'}] \
+at @s run function exigence:hub/ember_shop/menu/display/card/unload

@@ -8,7 +8,7 @@
 #====================================================================================================
 
 # Summon item display
-summon minecraft:item_display ~ ~ ~ {Rotation:[90.0f,0.0f],billboard:"fixed",Tags:["CardDisplay","MenuDisplay","NewItemDisplay","EmberShopDisplay","EmberShopMenuDisplay"]\
+summon minecraft:item_display ~ ~ ~ {Rotation:[90.0f,0.0f],billboard:"fixed",Tags:["CardDisplay","MenuDisplay","NewItemDisplay","EmberShopDisplay","EmberShopMenuDisplay","Archived"]\
 ,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.5f,0.5f,0.5f]},CustomName:{text:"ItemDisplay | CardDisplay"}\
 ,teleport_duration:3,interpolation_duration:3,Glowing:false\
 ,item:{id:"minecraft:paper",count:1}}
@@ -21,6 +21,9 @@ scoreboard players operation @n[type=minecraft:item_display,tag=NewItemDisplay,d
 
 # Copy cost score
 scoreboard players operation @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..1] ember_shop.cost = @s ember_shop.cost
+
+# Copy void
+execute if entity @s[tag=Void] run tag @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..1] add Void
 
 # Add other data
 #   Removes local tag

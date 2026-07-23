@@ -29,18 +29,18 @@ function exigence:hub/ember_shop/menu/refresh/reset_library_displays
 # First refresh
 function exigence:hub/ember_shop/menu/refresh/refresh_all
 
-
-# Load main card shop menu
-#function exigence:hub/ember_shop/menu/display/card/load
+#====================================================================================================
+## SUMMON MENU ELEMENTS
 # Summon refresh button
-# TODO
+execute positioned ~ ~0.5 ~-1.5 run function exigence:hub/ember_shop/menu/display/refresh_button/summon_refresh_button
+execute positioned ~-0.01 ~0.1 ~-1.5 run function exigence:hub/ember_shop/menu/display/refresh_button/cost_display/summon_refresh_cost
 
 # Summon rarity selection buttons
-# TODO create only if <= input difficulty
-execute if score shop.difficulty ember_shop matches 1.. positioned ~ ~1.25 ~0.4 run function exigence:hub/ember_shop/menu/display/rarity_selector/load/summon_rarity_selector_1
-execute if score shop.difficulty ember_shop matches 2.. positioned ~ ~1.25 ~0.7 run function exigence:hub/ember_shop/menu/display/rarity_selector/load/summon_rarity_selector_2
-execute if score shop.difficulty ember_shop matches 3.. positioned ~ ~1.25 ~1.0 run function exigence:hub/ember_shop/menu/display/rarity_selector/load/summon_rarity_selector_3
-execute if score shop.difficulty ember_shop matches 4.. positioned ~ ~1.25 ~1.3 run function exigence:hub/ember_shop/menu/display/rarity_selector/load/summon_rarity_selector_4
+execute if score shop.difficulty ember_shop matches 1.. positioned ~ ~0.25 ~1.05 run function exigence:hub/ember_shop/menu/display/rarity_selector/load/summon_rarity_selector_1
+execute if score shop.difficulty ember_shop matches 2.. positioned ~ ~0.25 ~1.35 run function exigence:hub/ember_shop/menu/display/rarity_selector/load/summon_rarity_selector_2
+execute if score shop.difficulty ember_shop matches 3.. positioned ~ ~0.25 ~1.65 run function exigence:hub/ember_shop/menu/display/rarity_selector/load/summon_rarity_selector_3
+execute if score shop.difficulty ember_shop matches 4.. positioned ~ ~0.25 ~1.95 run function exigence:hub/ember_shop/menu/display/rarity_selector/load/summon_rarity_selector_4
+execute positioned ~-0.01 ~0.45 ~1.5 run function exigence:hub/ember_shop/menu/display/rarity_selector/load/summon_title
 
 # Initialize highest rarity button as selected
 #   Displays first card set and sets refresh cost

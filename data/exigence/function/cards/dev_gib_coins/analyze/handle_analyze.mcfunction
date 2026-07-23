@@ -10,6 +10,5 @@
 execute if score #copies deck.process_card matches 1.. run function exigence:cards/dev_gib_coins/analyze
 execute if score #copies deck.process_card matches 2.. run function exigence:deck/process/private/error/too_many_copies_legendary {display_name:'Dev Gib Coins',rarity_color:'red'}
 
-# Increment card totals
-scoreboard players operation #copies deck.process_card < 1 number
-scoreboard players operation cards.total deck.analysis += #copies deck.process_card
+# Analyze card counts:
+function exigence:cards/dev_gib_coins/analyze/card_counts

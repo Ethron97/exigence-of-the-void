@@ -13,7 +13,5 @@ execute if score #copies deck.process_card matches 2.. run function exigence:dec
 # Call analyze_b based on number of copies
 execute if score #copies deck.process_card matches 1.. run function exigence:cards/tranquility/analyze_b {copy:1}
 
-# Increment card totals
-scoreboard players operation #copies deck.process_card < 1 number
-scoreboard players operation cards.total deck.analysis += #copies deck.process_card
-scoreboard players operation cards.legendary deck.analysis += #copies deck.process_card
+# Analyze card counts:
+function exigence:cards/tranquility/analyze/card_counts

@@ -39,10 +39,12 @@ kill @e[type=minecraft:marker,tag=EmberShopAnalyzerDisplay,distance=..10]
 function exigence:hub/ember_shop/node/kill_all_interactions
 
 # Unload predungeon menu
-execute positioned ~5 ~ ~ run kill @n[type=minecraft:marker,tag=EmberShopMenuNode,distance=..5]
+execute positioned ~5 ~ ~ run kill @n[type=minecraft:marker,tag=EmberShopMenuNode,distance=..10]
 
-execute positioned ~5 ~ ~ run kill @e[type=#exigence:display,tag=EmberShopDisplay,distance=..5]
-execute positioned ~5 ~ ~ run kill @e[type=minecraft:marker,tag=EmberShopDisplay,distance=..5]
+execute positioned ~5 ~ ~ run kill @e[type=#exigence:display,tag=EmberShopDisplay,distance=..10]
+execute positioned ~5 ~ ~ run kill @e[type=minecraft:marker,tag=EmberShopDisplay,distance=..10]
+# Set fire off
+fill 52 210 -1 52 210 1 air replace soul_fire
 
 # Reset library displays
 function exigence:hub/ember_shop/menu/refresh/reset_library_displays

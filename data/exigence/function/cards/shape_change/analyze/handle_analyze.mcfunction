@@ -16,7 +16,5 @@ execute if score red.cost game.resources > resource.red.max deck.analysis run fu
 execute if score #copies deck.process_card matches 1.. run function exigence:cards/shape_change/analyze
 execute if score #copies deck.process_card matches 2.. run function exigence:deck/process/private/error/too_many_copies_legendary {display_name:'Shape Change',rarity_color:'light_purple'}
 
-# Increment card totals
-scoreboard players operation #copies deck.process_card < 1 number
-scoreboard players operation cards.total deck.analysis += #copies deck.process_card
-scoreboard players operation cards.legendary deck.analysis += #copies deck.process_card
+# Analyze card counts:
+function exigence:cards/shape_change/analyze/card_counts

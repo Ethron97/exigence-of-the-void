@@ -11,6 +11,9 @@ execute if entity @s[tag=!Displaying] run return run say I was not displaying? C
 execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) Undisplay card
 
 tag @s remove Displaying
+tag @s add Archived
+
+#execute at @s run function exigence:
 
 # Teleport to hidden location
-tp @s ~1.5 ~1.5 ~
+tp @s ~1.5 ~0.7 ~

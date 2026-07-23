@@ -14,18 +14,26 @@
 # DEBUG
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Load ember shop
 
-# Set scores
+# Initialize scores
 scoreboard players set shop.loaded ember_shop 1
 scoreboard players set shop.embers_to_spend ember_shop 0
+scoreboard players set shop.displaying_rarity ember_shop 0
+scoreboard players set shop.double_time ember_shop 0
 
+scoreboard players set shop.refreshed_1 ember_shop 0
+scoreboard players set shop.refreshed_2 ember_shop 0
+scoreboard players set shop.refreshed_3 ember_shop 0
+scoreboard players set shop.refreshed_4 ember_shop 0
+
+# Import scores
 scoreboard players operation shop.difficulty ember_shop = #shop.difficulty ember_shop
 scoreboard players operation shop.bonus_slots ember_shop = #shop.bonus_slots ember_shop
 scoreboard players operation shop.refresh_modifier ember_shop = #shop.refresh_modifier ember_shop
 #...
 
-# Get embers from all players
-execute as @a[scores={hub.player.room_id=1..}] if score @s hub.player.room_id = #compare hub.room.room_id \
-run scoreboard players operation shop.embers_to_spend ember_shop += @s hub.player.embers_retrieved
+# Get embers from this player
+#   Other embers are collected when the co-op player enter, be it now or after a delayed time
+scoreboard players operation shop.embers_to_spend ember_shop += @s hub.player.embers_retrieved
 
 #====================================================================================================
 ## LOAD CHESTS

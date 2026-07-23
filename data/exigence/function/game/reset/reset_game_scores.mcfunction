@@ -130,6 +130,7 @@ scoreboard players set mod.led_by_ancient_light game.modifiers 0
 scoreboard players set mod.max_dragon_breath game.modifiers 0
 scoreboard players set mod.void_cache game.modifiers 0
 scoreboard players set mod.bonus_cards game.modifiers 0
+scoreboard players set mod.refresh_discount game.modifiers 0
 scoreboard players set mod.evergrowth game.modifiers 0
 scoreboard players set mod.echo_cake game.modifiers 0
 scoreboard players set mod.gold_idol game.modifiers 0

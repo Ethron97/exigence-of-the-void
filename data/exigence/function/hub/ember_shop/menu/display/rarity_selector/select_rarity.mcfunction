@@ -9,13 +9,21 @@ execute if entity @s[tag=Selected] run return run say I was already selected? Ca
 #----------------------------------------------------------------------------------------------------
 
 # Press button into the altar
-# TODO
+execute at @s run tp @s ~0.035 ~ ~
 
 # Tags
 tag @s add Selected
 
-# Display card displays
-execute if entity @s[tag=Common] as @e[type=minecraft:item_display,tag=CardDisplay,scores={ember_shop.rarity=1},distance=..7] run function exigence:hub/ember_shop/menu/display/card/display
-execute if entity @s[tag=Uncommon] as @e[type=minecraft:item_display,tag=CardDisplay,scores={ember_shop.rarity=2},distance=..7] run function exigence:hub/ember_shop/menu/display/card/display
-execute if entity @s[tag=Rare] as @e[type=minecraft:item_display,tag=CardDisplay,scores={ember_shop.rarity=3},distance=..7] run function exigence:hub/ember_shop/menu/display/card/display
-execute if entity @s[tag=Legendary] as @e[type=minecraft:item_display,tag=CardDisplay,scores={ember_shop.rarity=4},distance=..7] run function exigence:hub/ember_shop/menu/display/card/display
+# Save current displaying
+scoreboard players operation shop.displaying_rarity ember_shop = @s ember_shop.rarity
+
+# Update title
+data modify entity @n[type=minecraft:text_display,tag=RaritySelectorTitle,distance=..5] text set from entity @s item.components."minecraft:custom_name"
+
+# Call part 2
+function exigence:hub/ember_shop/menu/display/rarity_selector/select_rarity_cards
+
+# Update title/lore for Refresh button
+data modify entity @n[type=minecraft:item_display,tag=RefreshButton,distance=..5] item.components."minecraft:lore" set from entity @s item.components."minecraft:lore"
+data modify entity @n[type=minecraft:text_display,tag=RefreshDisplay,distance=..5] text set from entity @s item.components."minecraft:lore"[1]
+

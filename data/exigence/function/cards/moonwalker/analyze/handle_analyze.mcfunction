@@ -16,7 +16,5 @@ execute if score green.cost game.resources > resource.green.max deck.analysis ru
 execute if score #copies deck.process_card matches 1.. run function exigence:cards/moonwalker/analyze
 execute if score #copies deck.process_card matches 2.. run function exigence:deck/process/private/error/too_many_copies_legendary {display_name:'Moonwalker',rarity_color:'light_purple'}
 
-# Increment card totals
-scoreboard players operation #copies deck.process_card < 1 number
-scoreboard players operation cards.total deck.analysis += #copies deck.process_card
-scoreboard players operation cards.legendary deck.analysis += #copies deck.process_card
+# Analyze card counts:
+function exigence:cards/moonwalker/analyze/card_counts

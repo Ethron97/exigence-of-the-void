@@ -12,4 +12,4 @@ scoreboard players operation @s hub.room.difficulty = game.difficulty game.state
 scoreboard players operation @s hub.room.bonus_slots = mod.bonus_cards game.modifiers
 
 # Refresh cost modifier
-#scoreboard players operation @s hub.room.refresh_modifier = 
+scoreboard players operation @s hub.room.refresh_modifier = mod.refresh_discount game.modifiers

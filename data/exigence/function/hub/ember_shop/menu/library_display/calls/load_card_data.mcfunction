@@ -13,6 +13,7 @@ data modify entity @s item.components."minecraft:custom_data".function_hover set
 data modify entity @s item.components."minecraft:custom_data".function_unhover set value 'exigence:hub/ember_shop/menu/display/card/calls/unhover'
 data modify entity @s item.components."minecraft:custom_data".scale set value '0.5'
 data modify entity @s item.components."minecraft:custom_data".hover_scale set value '0.5'
+execute store result entity @s item.components."minecraft:custom_data".ember_cost int 1 run scoreboard players get @s ember_shop.cost
 
 # Join glow team
 #team join 

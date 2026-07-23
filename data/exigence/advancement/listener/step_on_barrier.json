@@ -13,9 +13,6 @@
                       "minecraft:barrier"
                     ]
                   }
-                },
-                "type_specific": {
-                  "type": "player"
                 }
               }
             }

@@ -11,7 +11,7 @@
 #$say Unhover (profile) (profile_selector:$(profile_selector_id) slot:$(slot_id))
 execute if score toggle.menu debug matches 1 if score debug.level debug matches 4.. run say (D4) Unhover card shop
 
-team join Yellow @s
+#team join Yellow @s
 
 # Override unhover's natural un-glow
 #data modify entity @s Glowing set value false

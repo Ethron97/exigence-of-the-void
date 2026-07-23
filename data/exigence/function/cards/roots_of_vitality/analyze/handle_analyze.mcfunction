@@ -17,7 +17,5 @@ execute if score #copies deck.process_card matches 1.. run function exigence:car
 execute if score #copies deck.process_card matches 2.. run function exigence:cards/roots_of_vitality/analyze_b {copy:2}
 execute if score #copies deck.process_card matches 3.. run function exigence:cards/roots_of_vitality/analyze_b {copy:3}
 
-# Increment card totals
-scoreboard players operation #copies deck.process_card < 3 number
-scoreboard players operation cards.total deck.analysis += #copies deck.process_card
-scoreboard players operation cards.common deck.analysis += #copies deck.process_card
+# Analyze card counts:
+function exigence:cards/roots_of_vitality/analyze/card_counts

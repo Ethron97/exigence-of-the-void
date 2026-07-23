@@ -23,6 +23,9 @@ function exigence:hub/item_shop/node/setup_interaction
 
 function exigence:hub/item_shop/refresh_currency
 
+# Initialize currency suffix
+execute if score @s profile.player.coop_profile_id matches 1.. run function exigence:hub/item_shop/access/team/update_suffix
+
 #====================================================================================================
 # Assign room ids
 execute in exigence:hub run scoreboard players operation #compare hub.entity.room_id \

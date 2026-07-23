@@ -1,6 +1,12 @@
 # Call at position
 #   With {card_name:""}, simple name to match the directory
 
+## INPUT
+#   SCORE #spellbinding Temp (1 = true)
+#   SCORE mod.spellbook game.modifiers
+
+#====================================================================================================
+
 #$say Summon card $(card_name)
 
 $data modify storage exigence:colors card_name set value $(card_name)

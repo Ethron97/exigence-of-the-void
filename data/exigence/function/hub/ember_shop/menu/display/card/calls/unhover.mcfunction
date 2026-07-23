@@ -21,3 +21,5 @@ execute at @s run playsound minecraft:item.book.page_turn ui @a ~ ~ ~ 1 1.1
 
 # Remove item details
 function exigence:hub/ember_shop/menu/display/card/calls/private/remove_item_details with entity @s item.components."minecraft:custom_data"
+# Remove cost display
+execute at @s run function exigence:hub/ember_shop/menu/display/card/calls/cost_display/delete with entity @s item.components."minecraft:custom_data"

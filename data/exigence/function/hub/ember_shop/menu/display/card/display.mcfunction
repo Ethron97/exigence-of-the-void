@@ -11,6 +11,7 @@ execute if entity @s[tag=Displaying] run return run say I was displaying? Cannot
 execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3 Menu) Display card
 
 tag @s add Displaying
+tag @s remove Archived
 
 # Teleport to position based on max number of slots, and this cards slot
 #execute at @s run tp @s ~-1 ~ ~
@@ -38,3 +39,6 @@ scoreboard players operation #position ember_shop.display_sequence -= #slots emb
 execute store result storage exigence:card_shop position double 0.01 run scoreboard players get #position ember_shop.display_sequence
 
 function exigence:hub/ember_shop/menu/display/card/calls/position with storage exigence:card_shop
+
+# Update purchasability
+function exigence:hub/ember_shop/menu/display/card/calls/update_purchasability

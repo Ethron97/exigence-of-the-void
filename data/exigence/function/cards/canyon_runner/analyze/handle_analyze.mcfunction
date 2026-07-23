@@ -12,7 +12,5 @@ execute if score #copies deck.process_card matches 2.. run function exigence:car
 execute if score #copies deck.process_card matches 3.. run function exigence:cards/canyon_runner/analyze
 execute if score #copies deck.process_card matches 4.. run function exigence:deck/process/private/error/too_many_copies_m {display_name:'Canyon Runner',rarity_color:'dark_aqua'}
 
-# Increment card totals
-scoreboard players operation #copies deck.process_card < 3 number
-scoreboard players operation cards.total deck.analysis += #copies deck.process_card
-scoreboard players operation cards.common deck.analysis += #copies deck.process_card
+# Analyze card counts:
+function exigence:cards/canyon_runner/analyze/card_counts

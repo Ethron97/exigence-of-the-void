@@ -15,3 +15,7 @@ execute as @a[tag=EmberShop,distance=..16] at @s run function exigence:hub/ember
 
 # Hover logic
 execute as @e[type=minecraft:item_display,tag=MenuDisplay,distance=..16] run function exigence:hub/ember_shop/menu/display_hover_logic
+
+# Purchase animation:
+execute if score shop.animating ember_shop matches 1 positioned ~5.5 ~ ~ as @n[type=minecraft:item_display,tag=CardDisplay,tag=Purchasing,distance=..10] \
+run function exigence:hub/ember_shop/menu/display/purchase_animation/next
