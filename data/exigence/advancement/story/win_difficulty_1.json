@@ -8,7 +8,14 @@
     "display": {
       "description": "Return from the Ruins of Solstice",
       "icon": {
-        "id": "minecraft:warped_door"
+        "id": "minecraft:map",
+        "components": {
+          "minecraft:custom_model_data": {
+            "strings": [
+              "win_difficulty_1"
+            ]
+          }
+        }
       },
       "title": "Ruins of Solstice"
     }

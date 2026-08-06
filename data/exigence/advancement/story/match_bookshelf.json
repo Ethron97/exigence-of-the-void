@@ -6,9 +6,16 @@
       }
     },
     "display": {
-      "description": "Seven years bad luck",
+      "description": "Locate the Scientist in the Mirror Mines and find a way to free them",
       "icon": {
-        "id": "minecraft:book"
+        "id": "minecraft:map",
+        "components": {
+          "minecraft:custom_model_data": {
+            "strings": [
+              "match_bookshelf"
+            ]
+          }
+        }
       },
       "title": "Free the Scientist"
     }

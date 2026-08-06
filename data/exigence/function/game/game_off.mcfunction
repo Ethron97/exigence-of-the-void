@@ -24,6 +24,14 @@ scoreboard players set #coins.leftover hub.coin_conversion 0
 # Force player leaves
 execute as @a[tag=ActivePlayer] run function exigence:game/access/leave
 
+# If there are any trials in progress, force-lose
+execute if score game.bolt.trial trial.status matches 1 positioned -413.5 152.0 -17.5 as @n[type=minecraft:marker,tag=TrialNode,tag=Bolt,distance=..3] run function exigence:door/vault/bolt/trial/loss
+execute if score game.dune.trial trial.status matches 1 positioned -413.5 152.0 -1.5 as @n[type=minecraft:marker,tag=TrialNode,tag=Dune,distance=..3] run function exigence:door/vault/dune/trial/loss
+execute if score game.silence.trial trial.status matches 1 positioned -413.5 152.0 14.5 as @n[type=minecraft:marker,tag=TrialNode,tag=Silence,distance=..3] run function exigence:door/vault/silence/trial/loss
+execute if score game.eye.trial trial.status matches 1 positioned -355.5 152.0 6.5 as @n[type=minecraft:marker,tag=TrialNode,tag=Eye,distance=..3] run function exigence:door/vault/eye/trial/loss
+execute if score game.spire.trial trial.status matches 1 positioned -355.5 152.0 -9.5 as @n[type=minecraft:marker,tag=TrialNode,tag=Spire,distance=..3] run function exigence:door/vault/spire/trial/loss
+execute if score game.flow.trial trial.status matches 1 positioned -355.5 152.0 -25.5 as @n[type=minecraft:marker,tag=TrialNode,tag=Flow,distance=..3] run function exigence:door/vault/flow/trial/loss
+
 # Coin convert
 scoreboard players operation coins.leftover hub.coin_conversion = #coins.leftover hub.coin_conversion
 

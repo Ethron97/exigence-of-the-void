@@ -11,6 +11,10 @@
 # Clear coins
 $clear @s minecraft:gold_nugget $(amount)
 
+# Clear but don't drop:
+execute if entity @s[tag=ClearDontDrop] run return 0
+#----------------------------------------------------------------------------------------------------
+
 # Spawn coin with special data
 loot spawn ~ ~ ~ loot exigence:coin_dropped_on_death
 

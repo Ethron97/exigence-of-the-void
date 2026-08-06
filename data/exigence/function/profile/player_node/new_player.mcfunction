@@ -35,3 +35,8 @@ kill @n[x=0,y=0,z=32,dx=15,dy=15,dz=15,type=minecraft:marker,tag=NewPlayerNodeMa
 
 # Initialize settings
 function exigence:profile/player_node/new/initialize_settings
+
+# Count how many players there are now. If more than 1, is multiplayer world
+scoreboard players set #temp Temp 0
+execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] run scoreboard players add #temp Temp 1
+execute if score #temp Temp matches 2.. run scoreboard players set world.is_multiplayer exigence 1

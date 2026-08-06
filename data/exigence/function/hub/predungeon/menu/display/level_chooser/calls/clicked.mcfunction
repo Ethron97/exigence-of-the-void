@@ -43,7 +43,7 @@ execute if entity @s[tag=Level5] run scoreboard players set game.difficulty game
 
 ## SWITCH TO PLAYER SENSORS
 # Kill level choosers (except this one)
-execute at @s run kill @e[type=#exigence:display,tag=PredungeonMenuDisplay,distance=0.5..5]
+execute at @s run kill @e[type=#exigence:display,tag=PredungeonMenuDisplay,tag=!SidebarDisplay,distance=0.5..5]
 execute at @s run kill @e[type=minecraft:text_display,tag=LevelChooserDetails,distance=0.5..5]
 
 # Close all (open) slots (except this one)

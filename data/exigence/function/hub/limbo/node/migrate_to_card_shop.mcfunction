@@ -8,8 +8,8 @@
 
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3) Migrate from limbo to card shop
 
-# Update room node score
-scoreboard players set @s hub.room.room_type 5
+# Migrate room node (room type: limbo -> ember shop)
+function exigence:room/limbo/migrate_room_to_shop
 
 scoreboard players operation #compare hub.room.room_id = @s hub.room.room_id
 

@@ -8,6 +8,7 @@
 execute if score toggle.profile debug matches 1 if score debug.level debug matches 3.. run say (D3 Profile) Run queued functions
 
 # Assumes local tag was added at step "player logged in"
+## HUB
 execute if score @s player.node.queue.invite_decline matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_invite_decline
 execute if score @s player.node.queue.invite_leave matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_invite_leave
 execute if score @s player.node.queue.coop_cancel matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_coop_cancel
@@ -19,6 +20,10 @@ execute if score @s player.node.queue.timeout_locker_room matches 1.. at @s as @
 execute if score @s player.node.queue.timeout_item_shop matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_timeout_item_shop
 execute if score @s player.node.queue.timeout_predungeon matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_timeout_predungeon
 execute if score @s player.node.queue.kicked_predungeon matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_kicked_predungeon
+execute if score @s player.node.queue.timeout_limbo matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_timeout_limbo
+execute if score @s player.node.queue.timeout_ember_shop matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_timeout_ember_shop
+## GAME
+execute if score @s player.node.queue.logout_game matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_timeout_game
 execute if score @s player.node.queue.vault_loss matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_vault_loss
 # Vault loss should play before game die
 

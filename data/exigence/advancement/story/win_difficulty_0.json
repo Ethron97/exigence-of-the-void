@@ -8,7 +8,14 @@
     "display": {
       "description": "Complete the tutorial",
       "icon": {
-        "id": "minecraft:warped_sign"
+        "id": "minecraft:map",
+        "components": {
+          "minecraft:custom_model_data": {
+            "strings": [
+              "win_difficulty_0"
+            ]
+          }
+        }
       },
       "title": "Road to Solstice"
     }

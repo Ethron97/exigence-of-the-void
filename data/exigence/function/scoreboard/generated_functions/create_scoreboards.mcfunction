@@ -206,8 +206,13 @@ scoreboard objectives add hub.room.current_timeout dummy
 scoreboard objectives add hub.room.max_timeout dummy
 scoreboard objectives add hub.room.room_id dummy
 scoreboard objectives add hub.room.room_type dummy
+scoreboard objectives add hub.room.current_timer dummy
+scoreboard objectives add hub.room.knock dummy
+scoreboard objectives add hub.room.max_timer dummy
+scoreboard objectives add hub.room.loaded_time dummy
 scoreboard objectives add hub.room.difficulty dummy
 scoreboard objectives add hub.room.bonus_slots dummy
+scoreboard objectives add hub.room.expire_threshold dummy
 scoreboard objectives add hub.room.refresh_modifier dummy
 scoreboard objectives add hub.validate_items dummy
 scoreboard objectives add node.berry.data.times_picked dummy
@@ -262,6 +267,9 @@ scoreboard objectives add player.node.queue.timeout_locker_room dummy
 scoreboard objectives add player.node.queue.timeout_predungeon dummy
 scoreboard objectives add player.node.queue.timeout_profile_selector dummy
 scoreboard objectives add player.node.queue.timeout_tutorial dummy
+scoreboard objectives add player.node.queue.logout_game dummy
+scoreboard objectives add player.node.queue.timeout_limbo dummy
+scoreboard objectives add player.node.queue.timeout_ember_shop dummy
 scoreboard objectives add player.node.queue.vault_loss dummy
 scoreboard objectives add player.node.room_id dummy
 scoreboard objectives add player.node.loaded_profile_id dummy
@@ -1072,3 +1080,5 @@ scoreboard objectives add trial.status dummy
 scoreboard objectives add game.player.dust_appearance dummy
 scoreboard objectives add game.waypoint.revealed_ticks dummy
 scoreboard objectives add UseTrident minecraft.used:minecraft.trident
+scoreboard objectives add game.player.kill_queue dummy
+scoreboard objectives add exigence dummy

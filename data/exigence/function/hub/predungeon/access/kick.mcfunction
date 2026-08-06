@@ -17,9 +17,6 @@ execute at @s run playsound minecraft:entity.enderman.teleport ambient @s ~ ~100
 # Reset team
 team leave @s
 
-# Clear compass (in case they got kicked during game load)
-clear @s compass
-
 # Interaction gets removed on Unload room
 
 # Handle scores

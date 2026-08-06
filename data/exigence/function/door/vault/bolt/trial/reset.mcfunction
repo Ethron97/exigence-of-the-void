@@ -34,6 +34,4 @@ execute if entity @s[tag=Hub] run bossbar set exigence:hub_trial_bolt visible fa
 
 # Update status
 execute if entity @s[tag=Game] run scoreboard players set game.bolt.trial trial.status 0
-execute if entity @s[tag=Game] run scoreboard players set game.bolt.crucible trial.status 0
 execute if entity @s[tag=Hub] run scoreboard players set hub.bolt.trial trial.status 0
-execute if entity @s[tag=Hub] run scoreboard players set hub.bolt.crucible trial.status 0

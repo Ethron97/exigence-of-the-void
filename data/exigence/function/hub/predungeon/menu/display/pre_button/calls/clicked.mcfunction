@@ -34,7 +34,7 @@ schedule function exigence:hub/predungeon/menu/display/level_chooser/schedule_lo
 # Update state
 scoreboard players set predungeon.door_state hub.room_misc 1
 
-# Close this menu (do last so we retainer executor)
+# Close this menu (do last so we retaine executor)
 execute at @s run function exigence:hub/predungeon/menu/display/pre_button/calls/hover/remove_hover_details with entity @s item.components."minecraft:custom_data"
 kill @s[type=minecraft:item_display,tag=PreButtonDisplay]
 

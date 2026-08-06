@@ -13,7 +13,7 @@ execute if score tut.step hub.tutorial matches 107.. run function exigence:bossb
 # Set to default
 schedule clear exigence:tutorial/utility/flashing_bossbar_b
 bossbar set exigence:tutorial name {text:"Follow the Tutorial Tokens",color:"green",italic:false}
-bossbar set exigence:tutorial color green
+bossbar set exigence:tutorial color white
 
 
 execute if score tut.step hub.tutorial matches 107.. run bossbar set exigence:tutorial_deck name [{text:"Deck (5",color:"white"},{text:"/",color:"gray"},{text:"5): [ ",color:"white"},\

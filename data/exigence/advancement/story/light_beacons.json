@@ -6,9 +6,16 @@
       }
     },
     "display": {
-      "description": "Light the beacons",
+      "description": "Light the beacons to herald the return of the Ardor",
       "icon": {
-        "id": "minecraft:nether_star"
+        "id": "minecraft:map",
+        "components": {
+          "minecraft:custom_model_data": {
+            "strings": [
+              "light_beacons"
+            ]
+          }
+        }
       },
       "title": "Solace"
     }

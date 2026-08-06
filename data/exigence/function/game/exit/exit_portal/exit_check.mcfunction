@@ -14,5 +14,5 @@ execute if score @s game.player.echo_fragments matches 1.. if score game.all_ech
 #----------------------------------------------------------------------------------------------------
 
 # If coop and someone else already escpaed (escape_portal:1), escape
-execute if score game.player_count game.state matches 2.. if score game.escape_portal game.state matches 1 run return run function exigence:game/access/escape
+execute if score game.escape_portal game.state matches 1 run return run function exigence:game/access/escape
 #----------------------------------------------------------------------------------------------------

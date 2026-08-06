@@ -6,9 +6,16 @@
     }
   },
   "display": {
-    "description": "Disable the wards around the final beacon",
+    "description": "Destroy the gemstone wards on Ardor's Bane",
     "icon": {
-      "id": "minecraft:end_crystal"
+      "id": "minecraft:map",
+      "components": {
+        "minecraft:custom_model_data": {
+          "strings": [
+            "destroy_crystals"
+          ]
+        }
+      }
     },
     "title": "Fracture Wards"
   }

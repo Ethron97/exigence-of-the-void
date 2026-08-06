@@ -5,11 +5,14 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Node close triage
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 2.. run say (D2 Hub) Node close triage (TIMEOUT)
 
 # Triage
 execute if score @s hub.room.room_type matches 1 run function exigence:room/tutorial/close_from_timeout
 execute if score @s hub.room.room_type matches 2 run function exigence:room/predungeon/close_from_timeout
+execute if score @s hub.room.room_type matches 3 run function exigence:room/game/close_from_timeout
+execute if score @s hub.room.room_type matches 4 run function exigence:room/limbo/close_from_timeout
+execute if score @s hub.room.room_type matches 5 run function exigence:room/ember_shop/close_from_timeout
 
 execute if score @s hub.room.room_type matches 9 run function exigence:room/item_shop/close_from_timeout
 execute if score @s hub.room.room_type matches 10 run function exigence:room/profile_selector/close_from_timeout

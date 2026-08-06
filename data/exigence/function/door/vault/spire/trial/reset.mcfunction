@@ -34,9 +34,7 @@ execute if entity @s[tag=Hub] run bossbar set exigence:hub_trial_spire visible f
 
 # Update status
 execute if entity @s[tag=Game] run scoreboard players set game.spire.trial trial.status 0
-execute if entity @s[tag=Game] run scoreboard players set game.spire.crucible trial.status 0
 execute if entity @s[tag=Hub] run scoreboard players set hub.spire.trial trial.status 0
-execute if entity @s[tag=Hub] run scoreboard players set hub.spire.crucible trial.status 0
 
 # Clear purpurpillar
 #fill -364 150 -18 -347 150 -2 air replace purpur_pillar

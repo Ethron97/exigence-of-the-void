@@ -24,7 +24,7 @@ execute as @e[x=-366,y=13,z=-106,dx=-118,dy=107,dz=-178,type=minecraft:armor_sta
 
 # LEVEL KEYS - starts once players reach level 2
 #   If no one got the key yet, 1 key icon
-execute if score game.difficulty game.state matches 3.. if score 2.reached game.level_doors matches 1 if score 2.got_key game.level_doors matches 0 run data modify storage exigence:objective level_2 append value [{sprite:"exigence:item/level_2_key",atlas:"items",color:"white"}]
+execute if score game.difficulty game.state matches 3.. if score 2.opened game.level_doors matches 0 if score 2.reached game.level_doors matches 1 if score 2.got_key game.level_doors matches 0 run data modify storage exigence:objective level_2 append value [{sprite:"exigence:item/level_2_key",atlas:"items",color:"white"}]
 #   If key is picked up and not used, 1 per key on the ground
 #execute if score game.difficulty game.state matches 3.. if score 2.reached game.level_doors matches 1 if score 2.got_key game.level_doors matches 1 if score 2.opened game.level_doors matches 0 as @e[x=-366,y=13,z=-106,dx=-118,dy=107,dz=-178,type=minecraft:armor_stand,tag=LevelKeyWaypoint] \
 run function exigence:bossbar/objective/level_2/level_key

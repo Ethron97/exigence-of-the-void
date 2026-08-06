@@ -23,9 +23,11 @@ scoreboard players operation @s hub.room.room_type = #room_type Temp
 
 # Set max timeout based on room type
 function exigence:room/node/private/set_max_timeout
+# Set max timer based on room type
+function exigence:room/node/private/set_max_timer
 
-# Initialize timeout at 0
-scoreboard players set @s hub.room.current_timeout 0
+# Initialize bossbar
+function exigence:room/node/private/initialize_expire_bossbar
 
 # Remove local tag
 tag @s remove NewRoomNode

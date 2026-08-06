@@ -30,6 +30,4 @@ execute if entity @s[tag=Hub] run bossbar set exigence:hub_trial_silence visible
 
 # Update status
 execute if entity @s[tag=Game] run scoreboard players set game.silence.trial trial.status 0
-execute if entity @s[tag=Game] run scoreboard players set game.silence.crucible trial.status 0
 execute if entity @s[tag=Hub] run scoreboard players set hub.silence.trial trial.status 0
-execute if entity @s[tag=Hub] run scoreboard players set hub.silence.crucible trial.status 0

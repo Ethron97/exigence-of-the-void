@@ -6,10 +6,17 @@
       }
     },
     "display": {
-      "description": "Unlock Rare items",
+      "description": "Rescue the Petitioner from the Temple of Fervor",
       "icon": {
-        "id": "minecraft:soul_campfire"
+        "id": "minecraft:map",
+        "components": {
+          "minecraft:custom_model_data": {
+            "strings": [
+              "rescue_petitioner"
+            ]
+          }
+        }
       },
-      "title": "Rescue the Petitioner"
+      "title": "Unlock Rare Items"
     }
   }

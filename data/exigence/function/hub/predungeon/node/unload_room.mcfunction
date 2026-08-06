@@ -20,6 +20,8 @@ run scoreboard players operation #compare hub.entity.profile_id = @s hub.entity.
 # Reset state
 scoreboard players set predungeon.door_state hub.room_misc 0
 
+bossbar set exigence:expire_predungeon visible false
+
 #====================================================================================================
 # Get storage from chest contents
 #   RETURNS: #chests_saved Temp

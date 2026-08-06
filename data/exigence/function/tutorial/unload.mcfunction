@@ -14,3 +14,4 @@ function exigence:tutorial/reset
 function exigence:bossbar/tutorial/hide
 function exigence:bossbar/tutorial_deck/hide
 scoreboard players set tut.active hub.tutorial 0
+bossbar set exigence:expire_tutorial visible false

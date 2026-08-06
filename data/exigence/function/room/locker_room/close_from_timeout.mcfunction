@@ -5,12 +5,12 @@
 
 #====================================================================================================
 
-execute if score debug.level debug matches 3.. run say (D3) Close locker room (player(s) timed out)
+execute if score toggle.hub debug matches 1 if score debug.level debug matches 2.. run say (D2 Hub) Close locker room (player(s) timed out)
 
 scoreboard players operation #compare hub.room.room_id = @s hub.room.room_id
 
 # Close the room down
-execute in exigence:hub positioned 0 200 0 as @e[type=minecraft:marker,tag=LockerRoomNode,distance=..100] \
+execute in exigence:hub as @e[x=-29,y=197,z=6,dx=24,dy=8,dz=24,type=minecraft:marker,tag=LockerRoomNode] \
 if score @s hub.entity.room_id = #compare hub.room.room_id at @s run function exigence:hub/locker_room/node/unload_room
 
 # Add queued functions to player node(s)

@@ -6,9 +6,16 @@
       }
     },
     "display": {
-      "description": "Talk to the Petitioner",
+      "description": "Find the Petitioner in the Temple of Fervor and talk to them",
       "icon": {
-        "id": "minecraft:candle"
+        "id": "minecraft:map",
+        "components": {
+          "minecraft:custom_model_data": {
+            "strings": [
+              "talk_to_petitioner"
+            ]
+          }
+        }
       },
       "title": "A New Alliance"
     }

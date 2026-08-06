@@ -60,4 +60,4 @@ schedule function exigence:game/unload/schedule_coin_conversions 60t
 #====================================================================================================
 
 # Update room node type (game->limbo)
-execute in exigence:hub run scoreboard players set @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,scores={hub.room.room_type=3}] hub.room.room_type 4
+execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,scores={hub.room.room_type=3}] run function exigence:room/game/migrate_room_to_limbo

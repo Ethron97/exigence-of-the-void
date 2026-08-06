@@ -11,6 +11,10 @@
 # Clear coins
 $clear @s minecraft:prize_pottery_sherd $(amount)
 
+# Clear but don't drop:
+execute if entity @s[tag=ClearDontDrop] run return 0
+#----------------------------------------------------------------------------------------------------
+
 # Spawn fragment with special data
 loot spawn ~ ~ ~ loot exigence:fragment_dropped_on_death
 

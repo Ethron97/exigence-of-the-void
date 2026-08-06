@@ -359,3 +359,4 @@ scoreboard players reset @s profile.data.winloss.cr.max_menace_reached
 scoreboard players reset @s profile.data.winloss.cr.max_menace_wins
 scoreboard players reset @s game.player.dust_appearance
 scoreboard players reset @s UseTrident
+scoreboard players reset @s game.player.kill_queue

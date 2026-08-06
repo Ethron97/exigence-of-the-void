@@ -38,18 +38,18 @@ execute store result entity @s item.components."minecraft:custom_data".difficult
 
 # Item type
 data modify entity @s item.id set value "minecraft:map"
-execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.win_difficulty_1 matches 1 run data modify entity @s item.id set value "minecraft:warped_door"
-execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.rescue_supplier matches 1 run data modify entity @s item.id set value "minecraft:bundle"
-execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.win_difficulty_2 matches 1 run data modify entity @s item.id set value "minecraft:iron_pickaxe"
-execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.match_bookshelf matches 1 run data modify entity @s item.id set value "minecraft:book"
-execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.rescue_scientist matches 1 run data modify entity @s item.id set value "minecraft:brewing_stand"
-execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.win_difficulty_3 matches 1 run data modify entity @s item.id set value "minecraft:campfire"
-execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.talk_to_petitioner matches 1 run data modify entity @s item.id set value "minecraft:candle"
-execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.light_altars matches 1 run data modify entity @s item.id set value "minecraft:light_blue_candle"
-execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.rescue_petitioner matches 1 run data modify entity @s item.id set value "minecraft:soul_campfire"
-execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.win_difficulty_4 matches 1 run data modify entity @s item.id set value "minecraft:sculk_vein"
-execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.destroy_crystals matches 1 run data modify entity @s item.id set value "minecraft:amethyst_shard"
-execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.light_beacons matches 1 run data modify entity @s item.id set value "minecraft:nether_star"
+execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.win_difficulty_1 matches 1 run data modify entity @s item.components."minecraft:custom_model_data".strings set value ["win_difficulty_1"]
+execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.rescue_supplier matches 1 run data modify entity @s item.components."minecraft:custom_model_data".strings set value ["rescue_supplier"]
+execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.win_difficulty_2 matches 1 run data modify entity @s item.components."minecraft:custom_model_data".strings set value ["win_difficulty_2"]
+execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.match_bookshelf matches 1 run data modify entity @s item.components."minecraft:custom_model_data".strings set value ["match_bookshelf"]
+execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.rescue_scientist matches 1 run data modify entity @s item.components."minecraft:custom_model_data".strings set value ["rescue_scientist"]
+execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.win_difficulty_3 matches 1 run data modify entity @s item.components."minecraft:custom_model_data".strings set value ["win_difficulty_3"]
+execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.talk_to_petitioner matches 1 run data modify entity @s item.components."minecraft:custom_model_data".strings set value ["talk_to_petitioner"]
+execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.light_altars matches 1 run data modify entity @s item.components."minecraft:custom_model_data".strings set value ["light_altars"]
+execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.rescue_petitioner matches 1 run data modify entity @s item.components."minecraft:custom_model_data".strings set value ["rescue_petitioner"]
+execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.win_difficulty_4 matches 1 run data modify entity @s item.components."minecraft:custom_model_data".strings set value ["win_difficulty_4"]
+execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.destroy_crystals matches 1 run data modify entity @s item.components."minecraft:custom_model_data".strings set value ["destroy_crystals"]
+execute if score @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] profile.story.adv.light_beacons matches 1 run data modify entity @s item.components."minecraft:custom_model_data".strings set value ["light_beacons"]
 #data modify entity @s item.id set value "minecraft:glass_pane"
 
 # Load profile info

@@ -7,11 +7,15 @@
 
 # Return if not active
 execute unless entity @s[tag=ActivePlayer] run return run tellraw @a [{text:"Called player/tick as non-active player?",color:"red"}]
+#----------------------------------------------------------------------------------------------------
+
+# Don't register anything if they are queued for death
+execute if score @s game.player.kill_queue matches 1.. run function exigence:player/tick/private/kill_from_queue
+#----------------------------------------------------------------------------------------------------
 
 # If just died:
 execute if score @s dead matches 1 run return run function exigence:player/death/died
 #----------------------------------------------------------------------------------------------------
-
 
 # COMMON FUNCTIONS (dead or alive)
 # Snowball usage

@@ -11,7 +11,6 @@ execute if score toggle.trial debug matches 1 if score debug.level debug matches
 
 # Update status
 scoreboard players set hub.dune.trial trial.status 1
-execute if entity @s[tag=Crucible] run scoreboard players set hub.dune.crucible trial.status 1
 
 # Call generic functions
 function exigence:door/vault/_trial/_begin_hub

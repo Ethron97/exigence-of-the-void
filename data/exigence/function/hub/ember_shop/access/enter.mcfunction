@@ -8,7 +8,7 @@
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Entering ember shop
 
 # Leave limbo (players only ever join the ember shop from Limbo)
-function exigence:hub/limbo/access/leave
+execute if entity @s[tag=Limbo] run function exigence:hub/limbo/access/leave
 
 tag @s add EmberShop
 team join EmberShop @s

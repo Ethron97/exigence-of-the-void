@@ -1,7 +1,7 @@
 # Handle closing functions to clear/reset the room after all players have left (or timed out)
 
 ## CONSTRAINTS
-#   AS/AT profile locker room node
+#   AS/AT locker room node
 
 #====================================================================================================
 
@@ -36,3 +36,6 @@ scoreboard players reset @s hub.entity.profile_id
 scoreboard players reset @s hub.entity.coop_profile_id
 scoreboard players set @s hub.locker_room_id 0
 scoreboard players reset @s hub.entity.room_id
+
+# Since this room is free, we don't need to kick another locker room:
+execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,tag=RoomNode,scores={hub.room.room_type=11,hub.room.knock=1}] run scoreboard players set @s hub.room.knock 0

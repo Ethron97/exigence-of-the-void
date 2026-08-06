@@ -33,7 +33,7 @@ scoreboard players set tut.fatigue hub.tutorial 0
 scoreboard players set tut.ravager_aggro_cooldown hub.tutorial 0
 scoreboard players set tut.max_menace hub.tutorial 0
 bossbar set exigence:tutorial_deck color white
-bossbar set exigence:tutorial color green
+bossbar set exigence:tutorial color white
 worldborder warning distance 0
 
 # Ice doors

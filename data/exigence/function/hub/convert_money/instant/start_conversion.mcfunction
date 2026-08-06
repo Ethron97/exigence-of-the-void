@@ -1,5 +1,5 @@
 # Convert money instantly without any sort of animation
-# Meant to be called if a player was logged out
+# Meant to be called if a player was logged out before or during coin conversion
 
 ## CONSTRAINTS
 #   AS player

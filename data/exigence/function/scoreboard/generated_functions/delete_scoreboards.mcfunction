@@ -206,8 +206,13 @@ scoreboard objectives remove hub.room.current_timeout
 scoreboard objectives remove hub.room.max_timeout
 scoreboard objectives remove hub.room.room_id
 scoreboard objectives remove hub.room.room_type
+scoreboard objectives remove hub.room.current_timer
+scoreboard objectives remove hub.room.knock
+scoreboard objectives remove hub.room.max_timer
+scoreboard objectives remove hub.room.loaded_time
 scoreboard objectives remove hub.room.difficulty
 scoreboard objectives remove hub.room.bonus_slots
+scoreboard objectives remove hub.room.expire_threshold
 scoreboard objectives remove hub.room.refresh_modifier
 scoreboard objectives remove hub.validate_items
 scoreboard objectives remove node.berry.data.times_picked
@@ -262,6 +267,9 @@ scoreboard objectives remove player.node.queue.timeout_locker_room
 scoreboard objectives remove player.node.queue.timeout_predungeon
 scoreboard objectives remove player.node.queue.timeout_profile_selector
 scoreboard objectives remove player.node.queue.timeout_tutorial
+scoreboard objectives remove player.node.queue.logout_game
+scoreboard objectives remove player.node.queue.timeout_limbo
+scoreboard objectives remove player.node.queue.timeout_ember_shop
 scoreboard objectives remove player.node.queue.vault_loss
 scoreboard objectives remove player.node.room_id
 scoreboard objectives remove player.node.loaded_profile_id
@@ -1072,3 +1080,5 @@ scoreboard objectives remove trial.status
 scoreboard objectives remove game.player.dust_appearance
 scoreboard objectives remove game.waypoint.revealed_ticks
 scoreboard objectives remove UseTrident
+scoreboard objectives remove game.player.kill_queue
+scoreboard objectives remove exigence

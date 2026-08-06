@@ -1,0 +1,18 @@
+# Called by menu_tick -> item_display.hover
+
+## CONSTRAINTS
+#   AS item_shop_display to hover; must have "Hover" tag
+
+## INPUT
+#   WITH item.components."minecraft:custom_data" for hover_function
+
+#====================================================================================================
+
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 4.. run say (D4 Menu) Hover advancement
+
+# Playsound
+execute at @s run playsound minecraft:block.bamboo_wood_trapdoor.open ambient @a ~ ~ ~ 1 1.2
+#execute at @s run playsound minecraft:block.ender_chest.open ui @a ~ ~ ~ 1 1.5
+
+# Display item details
+execute at @s run function exigence:hub/predungeon/menu/display/story_sidebar/advancement/calls/hover/load_hover_details

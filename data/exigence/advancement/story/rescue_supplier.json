@@ -6,10 +6,17 @@
     }
   },
   "display": {
-    "description": "Unlock the Glint Shop",
+    "description": "Rescue the Supplier from the Ruins of Solstice",
     "icon": {
-      "id": "minecraft:bundle"
+      "id": "minecraft:map",
+      "components": {
+        "minecraft:custom_model_data": {
+          "strings": [
+            "rescue_supplier"
+          ]
+        }
+      }
     },
-    "title": "Rescue the Supplier"
+    "title": "Unlock the Glint Shop"
   }
 }

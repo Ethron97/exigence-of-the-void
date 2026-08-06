@@ -8,7 +8,14 @@
     "display": {
       "description": "Return from the Mirror Mines",
       "icon": {
-        "id": "minecraft:iron_pickaxe"
+        "id": "minecraft:map",
+        "components": {
+          "minecraft:custom_model_data": {
+            "strings": [
+              "win_difficulty_2"
+            ]
+          }
+        }
       },
       "title": "Mirror Mines"
     }

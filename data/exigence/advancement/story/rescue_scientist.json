@@ -6,10 +6,17 @@
       }
     },
     "display": {
-      "description": "Unlock Uncommon items",
+      "description": "Rescue the Scientist from the Mirror Mines",
       "icon": {
-        "id": "minecraft:brewing_stand"
+        "id": "minecraft:map",
+        "components": {
+          "minecraft:custom_model_data": {
+            "strings": [
+              "rescue_scientist"
+            ]
+          }
+        }
       },
-      "title": "Rescue the Scientist"
+      "title": "Unlock Uncommon Items"
     }
   }

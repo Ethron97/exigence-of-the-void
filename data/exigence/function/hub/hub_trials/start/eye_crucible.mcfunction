@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # Return if active
-execute if score hub.eye.crucible trial.status matches 1 run return run tellraw @s [{text:"✖ Trial in use",color:"red"}]
+execute if score hub.eye.trial trial.status matches 1 run return run tellraw @s [{text:"✖ Trial in use",color:"red"}]
 #----------------------------------------------------------------------------------------------------
 
 # Set scores

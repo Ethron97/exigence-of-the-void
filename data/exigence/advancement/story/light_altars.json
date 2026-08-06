@@ -6,10 +6,17 @@
       }
     },
     "display": {
-      "description": "Kindle Faith",
+      "description": "Convince the Petitioner to join you",
       "icon": {
-        "id": "minecraft:light_blue_candle"
+        "id": "minecraft:map",
+        "components": {
+          "minecraft:custom_model_data": {
+            "strings": [
+              "light_altars"
+            ]
+          }
+        }
       },
-      "title": "Free the Petitioner"
+      "title": "Kindle Faith"
     }
 }

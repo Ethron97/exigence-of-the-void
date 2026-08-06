@@ -22,7 +22,7 @@ execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=Profil
 if score @s profile.node.profile_id = #compare profile.node.profile_id at @s run function exigence:profile/profile_node/save/try_data_to_chest
 
 # Remove chests
-function exigence:hub/profile_selector/load/remove_chests
+#function exigence:hub/profile_selector/load/remove_chests
 
 # Kill all menu entities
 execute store result storage exigence:temp profile_selector_id int 1 run scoreboard players get @s hub.profile_selector_id
@@ -34,3 +34,6 @@ function exigence:hub/profile_selector/node/kill_interaction
 # Reset id
 scoreboard players set @s hub.profile_selector_id 0
 scoreboard players reset @s hub.entity.room_id
+
+# Since this room is free, we don't need to kick another profile selector:
+execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,tag=RoomNode,scores={hub.room.room_type=10,hub.room.knock=1}] run scoreboard players set @s hub.room.knock 0

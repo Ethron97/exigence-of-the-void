@@ -18,6 +18,8 @@ execute as @e[type=minecraft:item_display,tag=ItemShopDisplay,tag=Loaded,distanc
 execute in exigence:hub as @n[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,scores={hub.room.room_type=9},tag=RoomNode] \
 run scoreboard players operation #compare hub.entity.profile_id = @s hub.entity.profile_id
 
+bossbar set exigence:expire_item_shop visible false
+
 #====================================================================================================
 # Get storage from chest contents
 #   RETURNS: #chests_saved Temp

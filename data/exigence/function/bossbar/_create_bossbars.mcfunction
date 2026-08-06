@@ -9,6 +9,12 @@ bossbar add exigence:tutorial_deck ""
 bossbar add exigence:limbo ""
 bossbar add exigence:ember_shop ""
 
+bossbar add exigence:expire_tutorial ""
+bossbar add exigence:expire_predungeon ""
+bossbar add exigence:expire_item_shop ""
+bossbar add exigence:expire_ember_shop ""
+# ...
+
 bossbar add exigence:trial_bolt ""
 bossbar add exigence:trial_flow ""
 bossbar add exigence:trial_silence ""

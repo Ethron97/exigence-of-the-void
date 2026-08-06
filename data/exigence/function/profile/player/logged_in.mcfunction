@@ -13,6 +13,7 @@ scoreboard players set @s quit 0
 tag @s add JustLoggedIn
 
 # Call player node
+#   (Checks for queued functions and other stuff)
 scoreboard players operation #compare career.player_id = @s career.player_id
 execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15] if score @s profile.node.player_id = #compare career.player_id \
 run function exigence:profile/player_node/calls/player_logged_in
@@ -27,12 +28,15 @@ run function exigence:profile/player/call_grant_advancements_from_scores
 execute if score @s profile.player.coop_profile_id matches 1.. in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] \
 if score @s profile.node.profile_id = #compare profile.player.profile_id run function exigence:profile/profile_node/private/inform_logged_in_profile with entity @s data.custom_data
 
+## CHECK FOR SPECIFIC TAG SITUATIONS
 # Check if logged out while coin converting:
 execute if score @s hub.coin_conversion.glint_owed matches 1.. run function exigence:hub/convert_money/instant/start_conversion
 # Or if queued:
 execute if entity @s[tag=QueueCoinConversion] run function exigence:hub/convert_money/instant/start_conversion
 # Or if converting:
 execute if entity @s[tag=ConvertingCoins] run function exigence:hub/convert_money/instant/start_conversion
+# If logged out in limbo
+execute if entity @s[tag=Limbo] run function exigence:profile/player/check_limbo_to_ember
 
 # Enable admin triggers
 execute if entity @s[tag=Admin] run function exigence:misc/triggers/admin/enable_all_admin_triggers

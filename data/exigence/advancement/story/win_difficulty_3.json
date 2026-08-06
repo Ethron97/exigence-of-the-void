@@ -8,7 +8,14 @@
     "display": {
       "description": "Return from the Temple of Fervor",
       "icon": {
-        "id": "minecraft:campfire"
+        "id": "minecraft:map",
+        "components": {
+          "minecraft:custom_model_data": {
+            "strings": [
+              "win_difficulty_3"
+            ]
+          }
+        }
       },
       "title": "Temple of Fervor"
     }

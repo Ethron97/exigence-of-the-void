@@ -14,5 +14,5 @@ execute if entity @s[tag=BerryGlowing] unless entity @a[scores={dead=0,game.play
 # Particles on overgrown berries
 execute if entity @s[tag=Overgrown] if entity @a[tag=ActivePlayer,distance=..24,limit=1] run particle happy_villager ~ ~0.3 ~ 0.3 0.3 0.3 0 1
 
-# Ambrosia particles
-execute if score mod.ambrosia game.modifiers matches 1.. if entity @a[tag=ActivePlayer,distance=..24,limit=1] run particle minecraft:dust_color_transition{from_color:[0.75f,1.0f,0.1f],scale:1.0f,to_color:[0.0f,0.75f,0.1f]} ~ ~0.3 ~ 0.3 0.3 0.3 0 1
+# Ambrosia particles (if grown)
+execute if entity @s[tag=Grown] if score mod.ambrosia game.modifiers matches 1.. if entity @a[tag=ActivePlayer,distance=..24,limit=1] run particle minecraft:dust_color_transition{from_color:[0.75f,1.0f,0.1f],scale:1.0f,to_color:[0.0f,0.75f,0.1f]} ~ ~0.3 ~ 0.3 0.3 0.3 0 1

@@ -29,6 +29,7 @@ scoreboard objectives modify game.cards_played displayname {text:"Cards Played"}
 scoreboard objectives setdisplay sidebar.team.gold hub.player.consumable_limit
 scoreboard objectives setdisplay sidebar.team.dark_purple hub.player.consumable_limit
 scoreboard objectives modify hub.player.consumable_limit displayname {text:"Consumable Item Limit"}
+scoreboard players set world.is_multiplayer exigence 0
 
 say 5. Loading entity property scores from entity data
 function exigence:scoreboard/load_score_from_property
@@ -42,6 +43,7 @@ execute in exigence:hub positioned -43.5 200.0 0.5 run function exigence:hub/ite
 say 8. Initialize scores on Library Displays
 execute in exigence:hub run function exigence:hub/ember_shop/admin/update_library_rarities
 execute in exigence:hub run function exigence:hub/ember_shop/admin/update_library_costs
+execute in exigence:hub run function exigence:hub/ember_shop/admin/update_library_card_data
 
 # Prevent online players from needing to tp/remove tags (because when the scoreboard is replaced, it would detect null as != 0)
 scoreboard players set @a quits 0
