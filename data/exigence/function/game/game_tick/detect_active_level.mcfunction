@@ -14,7 +14,7 @@ execute if score game.all_echos_found game.state matches 0 if entity @a[scores={
 execute if score game.all_echos_found game.state matches 0 as @a[scores={dead=0},tag=ActivePlayer] run scoreboard players operation game.active_level game.state < @s game.player.active_level
 
 # If echo has been retrieved, active dungeon level = active level of player with the echo (or that last had the echo)
-execute if score game.all_echos_found game.state matches 1 as @a[scores={game.player.echo_fragments=1},tag=ActivePlayer] run scoreboard players operation game.active_level game.state = @s game.player.active_level
+execute if score game.difficulty game.state matches 1..4 if score game.all_echos_found game.state matches 1 as @a[scores={game.player.echo_fragments=1},tag=ActivePlayer] run scoreboard players operation game.active_level game.state = @s game.player.active_level
 
 
 ## LEVEL CHANGE LOGIC

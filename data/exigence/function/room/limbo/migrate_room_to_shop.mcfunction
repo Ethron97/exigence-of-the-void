@@ -13,3 +13,6 @@ function exigence:room/node/private/set_max_timeout
 
 # Update max timer
 function exigence:room/node/private/set_max_timer
+
+# Initlize expire bossbar
+function exigence:room/node/private/initialize_expire_bossbar

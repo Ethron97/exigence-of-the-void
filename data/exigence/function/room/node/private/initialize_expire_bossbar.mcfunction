@@ -8,4 +8,7 @@
 ## SWITCH
 execute if score @s hub.room.room_type matches 1 run return run function exigence:bossbar/room_expire/tutorial/initialize
 execute if score @s hub.room.room_type matches 2 run return run function exigence:bossbar/room_expire/predungeon/initialize
-# ...
+
+execute if score @s hub.room.room_type matches 5 run return run function exigence:bossbar/room_expire/ember_shop/initialize
+
+execute if score @s hub.room.room_type matches 9 run return run function exigence:bossbar/room_expire/item_shop/initialize

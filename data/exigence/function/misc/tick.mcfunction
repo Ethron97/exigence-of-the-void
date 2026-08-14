@@ -54,7 +54,7 @@ execute if score toggle.echo debug matches 1 if score seconds.cooldown tick_coun
 execute as @e[type=minecraft:mannequin,tag=Dance] at @s run function exigence:misc/entity/mannequin_fun
 
 # Double check FULL boundary
-execute in minecraft:overworld if score debug.level debug matches 1.. if score seconds.cooldown tick_counter matches 18 positioned -380 39 -109 as @e[distance=..1000,type=!player] unless entity @s[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345] run say I am outside the FULL game boundary
+execute in minecraft:overworld if score debug.level debug matches 1.. if score seconds.cooldown tick_counter matches 18 positioned -380 39 -109 as @e[distance=..1000,type=!player] unless entity @s[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345] run function exigence:misc/entity/outside_game_boundary
 
 # RAVAGER SMART AGGRO
 #execute in minecraft:overworld as @e[x=516,y=-1,z=532,dx=7,dy=7,dz=7,type=minecraft:ravager] run function exigence:enemy/ravager/smart_aggro/update

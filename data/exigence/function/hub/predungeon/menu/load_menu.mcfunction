@@ -31,7 +31,14 @@ execute as @n[type=minecraft:marker,tag=PredungeonMenuNode,distance=..0.01] at @
 execute as @n[type=minecraft:marker,tag=PredungeonMenuNode,distance=..0.01] at @s run function exigence:hub/predungeon/menu/display/pre_button/load
 
 # Load story preview sidebar (left)
-execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] if score @s profile.node.profile_id = #compare profile.player.profile_id \
+#   COOP
+execute if score @s profile.player.coop_profile_id matches 1.. \
+in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] if score @s profile.node.profile_id = #compare profile.player.coop_profile_id \
+in exigence:hub positioned 0.5 209.0 104.5 at @n[type=minecraft:marker,tag=PredungeonMenuNode,distance=..10] positioned ~2.75 ~2.5 ~ \
+run function exigence:hub/predungeon/menu/display/story_sidebar/load
+#   NOT COOP
+execute unless score @s profile.player.coop_profile_id matches 1.. \
+in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] if score @s profile.node.profile_id = #compare profile.player.profile_id \
 in exigence:hub positioned 0.5 209.0 104.5 at @n[type=minecraft:marker,tag=PredungeonMenuNode,distance=..10] positioned ~2.75 ~2.5 ~ \
 run function exigence:hub/predungeon/menu/display/story_sidebar/load
 
