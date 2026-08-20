@@ -34,3 +34,6 @@ function exigence:bossbar/last_card/initialize
 
 # Void cache
 execute if score mod.void_cache game.modifiers matches 1.. if score game.difficulty game.state matches 4.. run function exigence:cards/void_cache/trigger
+
+# If difficulty 5, kill the echo shards (but leave the embers)
+# TODO

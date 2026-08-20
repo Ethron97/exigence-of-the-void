@@ -19,10 +19,7 @@ execute if score 4.reached game.level_doors matches 1 if score mod.void_cache ga
 #execute as @e[x=-520,y=180,z=-287,dx=340,dy=200,dz=340,type=minecraft:marker,tag=EchoNode,tag=ChosenEchoNode,sort=nearest] at @s run function exigence:bossbar/objective/level_2/echos
 execute as @e[x=-520,y=180,z=-287,dx=340,dy=200,dz=340,type=minecraft:armor_stand,tag=EchoWaypoint] at @s run function exigence:bossbar/objective/level_4/echos
 
-# BEACONS
-#   If difficulty 5, lit vs unlit
-execute if score game.difficulty game.state matches 5 if score beacon.4 game.story.beacons matches ..2 run data modify storage exigence:objective level_4 append value [{sprite:"exigence:item/beacon_unlit",atlas:"items",color:"white"},{text:""}]
-execute if score game.difficulty game.state matches 5 if score beacon.4 game.story.beacons matches 3.. run data modify storage exigence:objective level_4 append value [{sprite:"exigence:item/beacon_lit",atlas:"items",color:"white"},{text:""}]
-
+# BEACONS/ARDOR
+execute if score game.difficulty game.state matches 5 run function exigence:bossbar/objective/level_4/ardor
 
 data modify storage exigence:objective level_4 append value [{text:"]",color:"#821aac"}]

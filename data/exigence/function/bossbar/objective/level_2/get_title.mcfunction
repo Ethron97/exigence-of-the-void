@@ -33,10 +33,10 @@ run function exigence:bossbar/objective/level_2/level_key
 #   Once door is opened it goes away
 execute if score game.difficulty game.state matches 3.. if score 2.reached game.level_doors matches 1 if score 2.opened game.level_doors matches 0 run data modify storage exigence:objective level_2 append value [{sprite:"exigence:item/door_lock_b",atlas:"items",color:"white"},{text:""}]
 
-# BEACONS
-#   If difficulty 5, lit vs unlit
-execute if score game.difficulty game.state matches 5 if score beacon.2 game.story.beacons matches ..2 run data modify storage exigence:objective level_2 append value [{sprite:"exigence:item/beacon_unlit",atlas:"items",color:"white"},{text:""}]
-execute if score game.difficulty game.state matches 5 if score beacon.2 game.story.beacons matches 3.. run data modify storage exigence:objective level_2 append value [{sprite:"exigence:item/beacon_lit",atlas:"items",color:"white"},{text:""}]
+# BEACONS/ARDOR
+#   If difficulty 5
+execute if score game.difficulty game.state matches 5 run function exigence:bossbar/objective/level_2/ardor
+
 # EXIT PORTAL
 #   Once all echo nodes found
 execute if score game.difficulty game.state matches 4 if score game.all_echos_found game.state matches 1 run data modify storage exigence:objective level_2 append value [{sprite:"exigence:item/exit_portal",atlas:"items",color:"white"},{text:""}]

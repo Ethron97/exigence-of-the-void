@@ -6,7 +6,7 @@
 #====================================================================================================
 
 # DEBUG
-#say update locked reason
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Update locked reason
 
 # UPDATE LOCKED REASON
 # Reset

@@ -14,15 +14,15 @@
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'leather_shield'}}}]}] run effect give @s absorption infinite 1 true
 
 # Piggy Bank (UNAVAILABLE)
-execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'piggy_bank'}}}]}] run scoreboard players add @s game.player.mod.coin_keep 2
+#execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'piggy_bank'}}}]}] run scoreboard players add @s game.player.mod.coin_keep 2
 
 # Prize Eye
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'prize_eye'}}}]}] run scoreboard players add mod.bonus_cards game.modifiers 1
 
 # Water Crystal (UNAVAILABLE)
 #   We give score so that if they die and come back they keep effect
-execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'water_crystal'}}}]}] run scoreboard players set @s game.player.mod.water_crystal 1
-execute if entity @s[scores={game.player.mod.water_crystal=1}] run effect give @s dolphins_grace infinite 0 true
+#execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'water_crystal'}}}]}] run scoreboard players set @s game.player.mod.water_crystal 1
+#execute if entity @s[scores={game.player.mod.water_crystal=1}] run effect give @s dolphins_grace infinite 0 true
 
 # Treasure Lantern
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'treasure_lantern'}}}]}] run scoreboard players set @s game.player.mod.treasure_lantern 1
@@ -39,7 +39,7 @@ execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'enchanted_book'}}}]}] run function exigence:deck/spellbind/try
 
 # Evergrow (UNAVAILABLE)
-execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'evergrowth'}}}]}] run scoreboard players set mod.evergrowth game.modifiers 1
+#execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'evergrowth'}}}]}] run scoreboard players set mod.evergrowth game.modifiers 1
 
 # Heavy Core
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'heavy_core'}}}]}] run attribute @s minecraft:knockback_resistance modifier add exigence:heavy_core 1.0 add_value 
@@ -73,7 +73,7 @@ execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_
 
 # LEGENDARY
 # Gold Idol (UNAVAILABLE)
-execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'gold_idol'}}}]}] run scoreboard players set mod.gold_idol game.modifiers 1
+#execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'gold_idol'}}}]}] run scoreboard players set mod.gold_idol game.modifiers 1
 
 # Lucky Ravager Hoof
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'ravager_hoof'}}}]}] run scoreboard players set @s game.player.mod.ravager_hoof 1
@@ -82,6 +82,7 @@ execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'lucky_feather'}}}]}] run attribute @s minecraft:knockback_resistance modifier add exigence:feather -1 add_value 
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'lucky_feather'}}}]}] run attribute @s minecraft:fall_damage_multiplier modifier add exigence:feather -0.5 add_multiplied_total
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'lucky_feather'}}}]}] run attribute @s minecraft:safe_fall_distance modifier add exigence:feather 5 add_value
+execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'lucky_feather'}}}]}] run scoreboard players set @s game.player.mod.feather 1
 
 # Heighten
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'heighten'}}}]}] run scoreboard players set @s game.player.mod.war_paint 1
@@ -93,7 +94,7 @@ execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'catalyst'}}}]}] run scoreboard players set @s game.player.mod.catalyst 1
 
 # Brush (UNAVAILABLE)
-execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'brush'}}}]}] run scoreboard players set mod.brush game.modifiers 1
+#execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'brush'}}}]}] run scoreboard players set mod.brush game.modifiers 1
 
 # Gathering Storm
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{item_name:'gathering_storm'}}}]}] run scoreboard players set @s game.player.mod.gathering_storm 1

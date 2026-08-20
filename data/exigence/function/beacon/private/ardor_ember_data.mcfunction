@@ -20,6 +20,11 @@ execute if score @s game.entity.object_level matches 2 run data modify entity @s
 execute if score @s game.entity.object_level matches 3 run data modify entity @s Item.components."minecraft:custom_model_data" set value {strings:["ardor_ember_3"]}
 execute if score @s game.entity.object_level matches 4 run data modify entity @s Item.components."minecraft:custom_model_data" set value {strings:["ardor_ember_4"]}
 
+execute if score @s game.entity.object_level matches 1 run tag @s add Level1Ardor
+execute if score @s game.entity.object_level matches 2 run tag @s add Level2Ardor
+execute if score @s game.entity.object_level matches 3 run tag @s add Level3Ardor
+execute if score @s game.entity.object_level matches 4 run tag @s add Level4Ardor
+
 # If BEACON debug on, glow
 execute if score toggle.beacon debug matches 1 run data modify entity @s Glowing set value true
 

@@ -10,3 +10,6 @@ execute if score toggle.player debug matches 1 if score debug.level debug matche
 playsound minecraft:entity.item.break player @s ~ ~ ~ 1 1
 tellraw @s [{text:"♦ Item ",color:"red"},{nbt:"equipment.chest.components.'minecraft:custom_name'",source:"entity",entity:"@s",interpret:true},{text:" broke!",color:"red"}]
 item replace entity @s armor.chest with minecraft:air
+
+# If player is in-game, reset modifiers
+execute if entity @s[tag=ActivePlayer] run function exigence:game/load/modifiers/private/c_chestplate

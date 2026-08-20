@@ -13,11 +13,11 @@ scoreboard players set #player_found Temp 1
 # Play loss sound
 execute at @s run playsound minecraft:entity.lightning_bolt.impact player @s ~ ~ ~ 1 1
 
+# Break insisibility
+execute if entity @s[tag=Game] if score @s game.player.effects.invisibility matches 1.. run function exigence:player/effects/invis/break_from_trial
+
 # Title
 function exigence:door/vault/_trial/titles/loss
 
 # Generic end
 function exigence:door/vault/_trial/_end
-
-# Break insisibility
-execute if entity @s[tag=Game] if score @s game.player.effects.invisibility matches 1.. run function exigence:player/effects/break_invisibility

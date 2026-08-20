@@ -21,6 +21,8 @@ execute if entity @s[tag=DroppedItem] run return run function exigence:game/othe
 waypoint modify @s color white
 
 # Update transmission range
+#   If Illuminate:
+execute if entity @n[type=minecraft:item,tag=Ardor,tag=Illuminated,distance=..1] run return run attribute @s waypoint_transmit_range base set 1000
 #   If glowing:
 execute if score @n[type=minecraft:item,tag=Ardor,distance=..1] game.entity.glow_remaining matches 1.. run return run attribute @s waypoint_transmit_range base set 1000
 #   If detection pinged:

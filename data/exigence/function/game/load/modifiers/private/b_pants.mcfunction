@@ -1,17 +1,17 @@
 # Called from load_modifiers_b
 
 ## CONSTRAINTS
-#   AS Player wearing pants
+#   AS player
 
 #====================================================================================================
 
 # Deep Pockets
-execute if predicate exigence:equipment/pants/coin_a run return run scoreboard players add @s game.player.mod.coin_keep 5
-execute if predicate exigence:equipment/pants/coin_b run return run scoreboard players add @s game.player.mod.coin_keep 8
-execute if predicate exigence:equipment/pants/coin_c run return run scoreboard players add @s game.player.mod.coin_keep 14
-execute if predicate exigence:equipment/pants/coin_d run return run scoreboard players add @s game.player.mod.coin_keep 21
-execute if predicate exigence:equipment/pants/coin_e run return run scoreboard players add @s game.player.mod.coin_keep 29
-execute if predicate exigence:equipment/pants/coin_f run return run scoreboard players add @s game.player.mod.coin_keep 38
+execute if predicate exigence:equipment/pants/coin_a run return run scoreboard players set @s game.player.mod.coin_keep 5
+execute if predicate exigence:equipment/pants/coin_b run return run scoreboard players set @s game.player.mod.coin_keep 8
+execute if predicate exigence:equipment/pants/coin_c run return run scoreboard players set @s game.player.mod.coin_keep 14
+execute if predicate exigence:equipment/pants/coin_d run return run scoreboard players set @s game.player.mod.coin_keep 21
+execute if predicate exigence:equipment/pants/coin_e run return run scoreboard players set @s game.player.mod.coin_keep 29
+execute if predicate exigence:equipment/pants/coin_f run return run scoreboard players set @s game.player.mod.coin_keep 38
 
 # Padded Pockets
 execute if predicate exigence:equipment/pants/sherd_a run return run scoreboard players set @s game.player.mod.research_keep 2

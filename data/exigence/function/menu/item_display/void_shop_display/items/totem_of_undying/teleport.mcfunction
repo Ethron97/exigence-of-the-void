@@ -19,7 +19,7 @@ execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag
 execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=EchoNode,tag=!ChosenEchoNode] if score @s node.property.object_level = #compare game.player.active_level run tag @s add CanTotemTeleport
 
 #   As each CanTotemTeleport, remove tag if there is a bad guy nearby
-execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=CanTotemTeleport] at @s if entity @e[type=#exigence:enemy,distance=..15] run tag @s remove CanTotemTeleport
+execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=CanTotemTeleport] at @s if entity @e[type=#exigence:enemy,distance=..25] run tag @s remove CanTotemTeleport
 
 # Remove the nearest 5 options
 execute at @s run tag @e[type=minecraft:marker,tag=CanTotemTeleport,distance=..128,sort=nearest,limit=5] remove CanTotemTeleport

@@ -1,7 +1,7 @@
 # Called from load_modifiers_b
 
 ## CONSTRAINTS
-#   AS Player wearing a helmet
+#   AS player
 
 #====================================================================================================
 

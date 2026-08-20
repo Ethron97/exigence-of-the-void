@@ -36,9 +36,3 @@ execute if score toggle.echo debug matches 1 if score debug.level debug matches 
 # Call function to handle the rest of the event
 #   INPUT: #found_on_level Temp 1-4
 function exigence:game/found_echo
-
-# If coop, title otherp layers
-tag @s add DontTitle
-execute if score game.player_count game.state matches 2.. run title @a[tag=!DontTitle] subtitle [{"selector":"@s",color:"aqua"},{text:" picked up an echo shard",color:"gray"}]
-execute if score game.player_count game.state matches 2.. run title @a[tag=!DontTitle] title ""
-tag @s remove DontTitle

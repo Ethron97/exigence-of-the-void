@@ -8,7 +8,7 @@
 
 #====================================================================================================
 
-execute if score toggle.bell debug matches 1 if score debug.level debug matches 3.. run say (D3) I am a bell setting up interaction
+execute if score toggle.bell debug matches 1 if score debug.level debug matches 3.. run say (D3 Bell) Setup bell interaction
 
 # Store this bell's id for lookup
 scoreboard players operation #compare node.id = @s node.id

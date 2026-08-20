@@ -19,7 +19,7 @@ execute positioned -200 1000 -200 if score #heartbeatModulus tick_counter matche
 execute positioned -200 1000 -200 if score #heartbeatModulus tick_counter matches 0 if score menace.current game.dungeon.menace matches 15.. run playsound minecraft:heartbeat ambient @a ~ ~1000 ~ 1000 1.1
 
 # On heartbeat trigger, call "heartbeat sculks" on active nodes
-execute if score #heartbeatModulus tick_counter matches 0 run execute as @e[type=minecraft:armor_stand,tag=HeartbeatSculk] run function exigence:hazard/node/heartbeat_sculk/flip
+execute if score #heartbeatModulus tick_counter matches 0 run execute as @e[x=-520,y=180,z=-287,dx=340,dy=200,dz=340,type=minecraft:marker,tag=HeartbeatSculk] run function exigence:hazard/node/heartbeat_sculk/flip
 
 # MAX MENACE
 execute if score game.max_menace game.state matches 1 run function exigence:menace/max_menace_tick

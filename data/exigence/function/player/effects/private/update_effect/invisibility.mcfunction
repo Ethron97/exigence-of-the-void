@@ -6,12 +6,15 @@
 
 #====================================================================================================
 
-# TODO fix going invisible while a warden is aware
-# IF there is any warden with Awareness
-#   Pretty sure this never worked..... player doesn't use Awareness score :(
-#execute if score @s Awareness >= #anger_threshold Awareness run function exigence:player/effects/break_invisibility
-#execute if score @s Awareness >= #anger_threshold Awareness run return 1
-# ELSE continue
+# CHECK FOR EXCEPTIONS:
+#   IF MAX MENACE:
+execute if score game.max_menace game.state matches 1 run return run tellraw @s [{text:"✖ Cannot become invisible at max menace!",color:"red"}]
+#   IF WARDEN IS ANGRY AT YOU:
+execute if score @s game.player.player_number matches 1 if entity @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:warden,tag=Angry,tag=!Cooldown,scores={game.warden.angry_at=1},limit=1] run return run tellraw @s [{text:"✖ Cannot become invisible while a warden is angry at you!",color:"red"}]
+execute if score @s game.player.player_number matches 2 if entity @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:warden,tag=Angry,tag=!Cooldown,scores={game.warden.angry_at=2},limit=1] run return run tellraw @s [{text:"✖ Cannot become invisible while a warden is angry at you!",color:"red"}]
+execute if score @s game.player.player_number matches 3 if entity @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:warden,tag=Angry,tag=!Cooldown,scores={game.warden.angry_at=3},limit=1] run return run tellraw @s [{text:"✖ Cannot become invisible while a warden is angry at you!",color:"red"}]
+execute if score @s game.player.player_number matches 4 if entity @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:warden,tag=Angry,tag=!Cooldown,scores={game.warden.angry_at=4},limit=1] run return run tellraw @s [{text:"✖ Cannot become invisible while a warden is angry at you!",color:"red"}]
+#----------------------------------------------------------------------------------------------------
 
 # Copy base "add time"
 scoreboard players operation et.AddingTime game.effect_temp = et.BaseTime game.effect_temp

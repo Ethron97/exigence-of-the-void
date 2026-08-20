@@ -25,3 +25,9 @@ execute if score @s game.player.active_level matches 1 as @e[x=-271,y=-55,z=-113
 execute if score @s game.player.active_level matches 2 as @e[x=-366,y=13,z=-106,dx=-118,dy=107,dz=-178,type=minecraft:armor_stand,tag=Waypoint,tag=Beacon] run function exigence:beacon/node/waypoint/activate
 execute if score @s game.player.active_level matches 3 as @e[x=-306,y=113,z=33,dx=-168,dy=60,dz=-132,type=minecraft:armor_stand,tag=Waypoint,tag=Beacon] run function exigence:beacon/node/waypoint/activate
 execute if score @s game.player.active_level matches 4 as @e[x=-520,y=180,z=-287,dx=340,dy=200,dz=340,type=minecraft:armor_stand,tag=Waypoint,tag=Beacon] run function exigence:beacon/node/waypoint/activate
+
+# Increase score
+execute if score @s game.player.active_level matches 1 run scoreboard players add ardor_embers.1 game.story.beacons 1
+execute if score @s game.player.active_level matches 2 run scoreboard players add ardor_embers.2 game.story.beacons 1
+execute if score @s game.player.active_level matches 3 run scoreboard players add ardor_embers.3 game.story.beacons 1
+execute if score @s game.player.active_level matches 4 run scoreboard players add ardor_embers.4 game.story.beacons 1

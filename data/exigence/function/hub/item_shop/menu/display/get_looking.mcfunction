@@ -14,8 +14,8 @@ tag @s add IAmLooking
 tag @e[type=minecraft:item_display,tag=HoverCandidate,distance=..8] remove HoverCandidate
 
 # Check
-execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=Loaded,distance=4..8] at @s anchored eyes facing entity @p[tag=IAmLooking,distance=..16] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=IAmLooking,distance=..16] positioned ^ ^ ^1 if entity @s[distance=..0.05] run tag @s add HoverCandidate
-execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=Loaded,distance=..4] at @s anchored eyes facing entity @p[tag=IAmLooking,distance=..16] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=IAmLooking,distance=..16] positioned ^ ^ ^1 if entity @s[distance=..0.08] run tag @s add HoverCandidate
+execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=!Unloaded,distance=4..8] at @s anchored eyes facing entity @p[tag=IAmLooking,distance=..16] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=IAmLooking,distance=..16] positioned ^ ^ ^1 if entity @s[distance=..0.05] run tag @s add HoverCandidate
+execute as @e[type=minecraft:item_display,tag=MenuDisplay,tag=!Unloaded,distance=..4] at @s anchored eyes facing entity @p[tag=IAmLooking,distance=..16] eyes anchored feet positioned ^ ^ ^1 rotated as @p[tag=IAmLooking,distance=..16] positioned ^ ^ ^1 if entity @s[distance=..0.08] run tag @s add HoverCandidate
 
 # Get closest of HoverCandidates
 execute as @n[type=minecraft:item_display,tag=HoverCandidate,distance=..8] run tag @s add Hover
@@ -26,7 +26,7 @@ scoreboard players operation #compare IDID = @s shop.player.looking_at_idid
 
 # If looking at was found, make interaction of this player big enough to use
 #   TODO Emergency check if interaction is not within 8 blocks
-execute if score @s shop.player.looking_at_idid matches 1.. as @n[type=interaction,tag=ItemShopInteraction,tag=CurrentCheckingInteraction,distance=..8] run data merge entity @s {width:1,height:1}
+execute if score @s shop.player.looking_at_idid matches 1.. as @n[type=minecraft:interaction,tag=ItemShopInteraction,tag=CurrentCheckingInteraction,distance=..8] run data merge entity @s {width:1,height:1}
 
 # Remove local tag
 tag @s remove IAmLooking

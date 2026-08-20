@@ -73,7 +73,7 @@ execute as @s[scores={game.player.effects.flicker=1..}] at @s run function exige
 execute as @s[scores={game.player.effects.glimmer=1..}] at @s run function exigence:player/effects/glimmer/glimmer_tick
 
 # If the player gets within 5 blocks of an enemy, remove pacfiy
-execute as @s[scores={game.player.effects.invisibility=1..}] at @s if entity @e[type=#exigence:enemy,team=Enemy,distance=..5] run function exigence:player/effects/break_invisibility
+execute as @s[scores={game.player.effects.invisibility=1..}] at @s if entity @e[type=#exigence:enemy,team=Enemy,distance=..5] run function exigence:player/effects/invis/break_from_enemy
 
 # If no longer invisible, but on enemy team, rejoin player (unless in a vault)
 execute as @s[scores={game.player.effects.invisibility=0},team=Enemy] unless score @s game.player.vault_code matches 1.. run team join Player @s

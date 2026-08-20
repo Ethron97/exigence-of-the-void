@@ -20,7 +20,7 @@ function exigence:player/update_active_level
 function exigence:menace/node/check_for_nodes
 
 # Break invis if max menace
-execute if score game.max_menace game.state matches 1 if entity @s[team=Enemy] run function exigence:player/effects/break_invisibility
+execute if score game.max_menace game.state matches 1 if entity @s[team=Enemy] run function exigence:player/effects/invis/break_from_max_menace
 
 # Clear nausea (from Grease)
 effect clear @s nausea
@@ -44,3 +44,7 @@ execute if score @s game.player.mod.phantom_scales matches 7 run function exigen
 
 # Mirror Vision
 execute if score @s game.player.mod.mirror_vision matches 1.. run function exigence:player/modifiers/mirror_vision
+
+# Feather + Wind Charge attribute reset if on ground after a second after using a wind charge
+execute if score @s game.player.feather_gravity matches 1.. run scoreboard players remove @s game.player.feather_gravity 1
+execute if score @s game.player.feather_gravity matches 1 if entity @s[predicate=exigence:player/is_on_ground] run attribute @s minecraft:gravity modifier remove exigence:feather

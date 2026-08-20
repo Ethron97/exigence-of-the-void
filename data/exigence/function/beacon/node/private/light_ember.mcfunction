@@ -37,6 +37,13 @@ item modify entity @p[tag=Lighting,gamemode=!creative] weapon.mainhand exigence:
 #execute if score @s node.property.object_level matches 3 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_3"]}] 1
 #execute if score @s node.property.object_level matches 4 run clear @a[tag=Lighting] ghast_tear[custom_model_data={"strings":["ardor_ember_4"]}] 1
 
+# NEW FEATURE
+#   Glow the nearest ardor ember on the ground on this level that was not dropped on the ground
+execute if score @s node.property.object_level matches 1 at @s as @n[x=-271,y=-55,z=-113,dx=-118,dy=92,dz=-153,type=minecraft:item,tag=ArdorEmber,tag=!DroppedItem,tag=!Illuminated] run function exigence:beacon/node/private/illuminate
+execute if score @s node.property.object_level matches 2 at @s as @n[x=-366,y=13,z=-106,dx=-118,dy=107,dz=-178,type=minecraft:item,tag=ArdorEmber,tag=!DroppedItem,tag=!Illuminated] run function exigence:beacon/node/private/illuminate
+execute if score @s node.property.object_level matches 3 at @s as @n[x=-306,y=113,z=33,dx=-168,dy=60,dz=-132,type=minecraft:item,tag=ArdorEmber,tag=!DroppedItem,tag=!Illuminated] run function exigence:beacon/node/private/illuminate
+execute if score @s node.property.object_level matches 4 at @s as @n[x=-520,y=180,z=-287,dx=340,dy=200,dz=340,type=minecraft:item,tag=ArdorEmber,tag=!DroppedItem,tag=!Illuminated] run function exigence:beacon/node/private/illuminate
+
 # Only run past here if the final state was lit
 execute if score @s game.node.node_state matches ..2 run return 1
 #----------------------------------------------------------------------------------------------------

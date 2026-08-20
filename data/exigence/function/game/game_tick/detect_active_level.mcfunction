@@ -8,15 +8,21 @@ scoreboard players operation #active_level_old game.state = game.active_level ga
 
 
 ## DUNGEON LEVEL LOGIC
+# NORMAL RUNS:
 # If echo has not been retrieved, active dungeon level = lowest active level with a living player
 #   This is to incentivize players to ascend together instead of leaving someone behind to loot or something
-execute if score game.all_echos_found game.state matches 0 if entity @a[scores={dead=0},tag=ActivePlayer] run scoreboard players set game.active_level game.state 10 
-execute if score game.all_echos_found game.state matches 0 as @a[scores={dead=0},tag=ActivePlayer] run scoreboard players operation game.active_level game.state < @s game.player.active_level
+execute if score game.difficulty game.state matches 1..4 if score game.all_echos_found game.state matches 0 if entity @a[scores={dead=0},tag=ActivePlayer] run scoreboard players set game.active_level game.state 10 
+execute if score game.difficulty game.state matches 1..4 if score game.all_echos_found game.state matches 0 as @a[scores={dead=0},tag=ActivePlayer] run scoreboard players operation game.active_level game.state < @s game.player.active_level
 
 # If echo has been retrieved, active dungeon level = active level of player with the echo (or that last had the echo)
 execute if score game.difficulty game.state matches 1..4 if score game.all_echos_found game.state matches 1 as @a[scores={game.player.echo_fragments=1},tag=ActivePlayer] run scoreboard players operation game.active_level game.state = @s game.player.active_level
 
+# BEACON RUNS:
+# We do not care whether the echo is found or not. Active level is lowest combined
+execute if score game.difficulty game.state matches 5 run scoreboard players set game.active_level game.state 10 
+execute if score game.difficulty game.state matches 5 as @a[scores={dead=0},tag=ActivePlayer] run scoreboard players operation game.active_level game.state < @s game.player.active_level
 
+#====================================================================================================
 ## LEVEL CHANGE LOGIC
 #execute if score #active_level_old game.state < game.active_level game.state run say Level up!
 #execute if score #active_level_old game.state > game.active_level game.state run say Level down!

@@ -13,3 +13,4 @@ function exigence:menu/item_display/item_shop_display/load/follow with entity @s
 
 # Remove loaded tag
 tag @s remove Loaded
+tag @s add Unloaded

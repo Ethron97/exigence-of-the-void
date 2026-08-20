@@ -86,13 +86,17 @@ execute as @s[tag=!Angry] if entity @a[tag=NewTarget] run function exigence:enem
 execute as @s[tag=!Angry] if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run function exigence:enemy/warden/private/start_angry
 tag @a[tag=NewTarget] remove NewTarget
 
-# If any warden is aggro, break invis
-execute if score @s game.warden.awareness >= #anger_threshold game.warden.awareness as @a[team=Enemy,tag=ActivePlayer] run function exigence:player/effects/break_invisibility
+# If this warden is aggro, break invis on TARGET player
+#execute if score @s game.warden.awareness >= #anger_threshold game.warden.awareness as @a[team=Enemy,tag=ActivePlayer] run function exigence:player/effects/break_invisibility
+execute if score @s game.warden.awareness >= #anger_threshold game.warden.awareness run function exigence:enemy/warden/private/remove_target_invis with entity @s data.custom_data
 
 # If aware at all, unsilence
 execute as @s[scores={game.warden.awareness=1..},tag=Silenced] run function exigence:enemy/warden/unsilence
 # If not aware, silence
 execute as @s[scores={game.warden.awareness=0},tag=!Silenced] run function exigence:enemy/warden/silence
 
+# Add cooling tag
+execute if entity @s[tag=Angry,tag=!Cooldown] if score @s game.warden.awareness < #anger_threshold game.warden.awareness run tag @s add Cooldown
+
 # Prevent warden from becoming angry again until they cool off
-execute as @s[scores={game.warden.awareness=..10}] run function exigence:enemy/warden/private/stop_angry
+execute as @s[scores={game.warden.awareness=..10},tag=Angry] run function exigence:enemy/warden/private/stop_angry

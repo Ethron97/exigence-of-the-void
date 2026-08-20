@@ -9,7 +9,7 @@
 #====================================================================================================
 
 # DEBUG
-#say Creating locked reason display
+execute if score toggle.menu debug matches 1 if score debug.level debug matches 3.. run say (D3) Show locked reason
 
 # Add tag
 tag @s add DisplayingLockedReason

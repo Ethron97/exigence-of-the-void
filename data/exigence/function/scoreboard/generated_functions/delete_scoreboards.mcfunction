@@ -114,6 +114,7 @@ scoreboard objectives remove game.player.mod.detection
 scoreboard objectives remove game.player.mod.dragon_breath
 scoreboard objectives remove game.player.mod.ember_lantern
 scoreboard objectives remove game.player.mod.enchanted_book
+scoreboard objectives remove game.player.mod.feather
 scoreboard objectives remove game.player.mod.flicker
 scoreboard objectives remove game.player.mod.gathering_storm
 scoreboard objectives remove game.player.mod.glimmer
@@ -1062,6 +1063,8 @@ scoreboard objectives remove ember_shop.cost
 scoreboard objectives remove ember_shop.rarity
 scoreboard objectives remove ember_shop.display_sequence
 scoreboard objectives remove CarrotOnStick
+scoreboard objectives remove use.wind_charge
+scoreboard objectives remove game.player.feather_gravity
 scoreboard objectives remove node.id
 scoreboard objectives remove hub.tutorial
 scoreboard objectives remove tutorial.marker.id

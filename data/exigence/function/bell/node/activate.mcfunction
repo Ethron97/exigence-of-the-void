@@ -13,3 +13,5 @@ setblock ~ ~ ~ minecraft:bell[attachment=ceiling]
 
 # Setup interaction
 function exigence:bell/node/setup_interaction
+
+# Setup lure

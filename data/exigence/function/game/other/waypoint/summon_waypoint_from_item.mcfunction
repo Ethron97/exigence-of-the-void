@@ -38,20 +38,12 @@ execute if entity @s[tag=EchoShard] run waypoint modify @n[type=minecraft:armor_
 execute if entity @s[tag=EchoShard] run waypoint modify @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] style set exigence:echo_shard
 execute if entity @s[tag=EchoShard,scores={game.entity.object_level=10}] run waypoint modify @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] color aqua
 #   Level key
-execute if entity @s[tag=LevelKey] run tag @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] add LevelKeyWaypoint
-execute if entity @s[tag=Level1Key] run tag @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] add Level1Key
-execute if entity @s[tag=Level2Key] run tag @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] add Level2Key
-execute if entity @s[tag=Level3Key] run tag @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] add Level3Key
-execute if entity @s[tag=Level1Key] run waypoint modify @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] style set exigence:level_1_key
-execute if entity @s[tag=Level2Key] run waypoint modify @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] style set exigence:level_2_key
-execute if entity @s[tag=Level3Key] run waypoint modify @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] style set exigence:level_3_key
+execute if entity @s[tag=LevelKey] run function exigence:game/other/waypoint/private/setup_key
 #   Vault key
 execute if entity @s[tag=VaultKey] run tag @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] add VaultKeyWaypoint
 execute if entity @s[tag=VaultKey] run waypoint modify @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] style set exigence:vault_key
-
 #   Ardor flame
-execute if entity @s[tag=Ardor] run tag @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] add ArdorWaypoint
-execute if entity @s[tag=Ardor] run waypoint modify @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] style set exigence:ardor
+execute if entity @s[tag=Ardor] run function exigence:game/other/waypoint/private/setup_ardor
 
 # Dropped item
 execute if entity @s[tag=DroppedItem] run tag @n[type=minecraft:armor_stand,tag=NewWaypoint,distance=..1] add DroppedItem

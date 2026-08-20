@@ -51,6 +51,7 @@ scoreboard players reset @s game.player.mod.detection
 scoreboard players reset @s game.player.mod.dragon_breath
 scoreboard players reset @s game.player.mod.ember_lantern
 scoreboard players reset @s game.player.mod.enchanted_book
+scoreboard players reset @s game.player.mod.feather
 scoreboard players reset @s game.player.mod.flicker
 scoreboard players reset @s game.player.mod.gathering_storm
 scoreboard players reset @s game.player.mod.glimmer
@@ -357,6 +358,8 @@ scoreboard players reset @s profile.data.winloss.cr.deaths_total
 scoreboard players reset @s profile.data.winloss.cr.max_menace_deaths
 scoreboard players reset @s profile.data.winloss.cr.max_menace_reached
 scoreboard players reset @s profile.data.winloss.cr.max_menace_wins
+scoreboard players reset @s use.wind_charge
+scoreboard players reset @s game.player.feather_gravity
 scoreboard players reset @s game.player.dust_appearance
 scoreboard players reset @s UseTrident
 scoreboard players reset @s game.player.kill_queue

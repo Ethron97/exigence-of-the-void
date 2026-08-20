@@ -5,9 +5,6 @@
 
 #====================================================================================================
 
-# Add coin to their inventory
-function exigence:player/give/coin
-
 # If wearing gold boots (loot boots)
 execute as @s[scores={game.player.mod.loot_boots=1..}] run function exigence:player/modifiers/loot_boots
 

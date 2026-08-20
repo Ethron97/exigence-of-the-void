@@ -16,7 +16,7 @@ scoreboard players set predungeon.door_state hub.room_misc 0
 
 # Kill whatever current menu exists
 kill @e[type=#exigence:display,tag=FromHover,distance=..5]
-kill @e[type=#exigence:display,tag=PredungeonMenuDisplay,distance=..5]
+kill @e[type=#exigence:display,tag=PredungeonMenuDisplay,tag=!SidebarDisplay,distance=..5]
 kill @e[type=#exigence:display,tag=PlayerSensorPupil,distance=..5]
 
 # Close all slots

@@ -114,6 +114,7 @@ scoreboard objectives add game.player.mod.detection dummy
 scoreboard objectives add game.player.mod.dragon_breath dummy
 scoreboard objectives add game.player.mod.ember_lantern dummy
 scoreboard objectives add game.player.mod.enchanted_book dummy
+scoreboard objectives add game.player.mod.feather dummy
 scoreboard objectives add game.player.mod.flicker dummy
 scoreboard objectives add game.player.mod.gathering_storm dummy
 scoreboard objectives add game.player.mod.glimmer dummy
@@ -1062,6 +1063,8 @@ scoreboard objectives add ember_shop.cost dummy
 scoreboard objectives add ember_shop.rarity dummy
 scoreboard objectives add ember_shop.display_sequence dummy
 scoreboard objectives add CarrotOnStick minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add use.wind_charge minecraft.used:minecraft.wind_charge
+scoreboard objectives add game.player.feather_gravity dummy
 scoreboard objectives add node.id dummy
 scoreboard objectives add hub.tutorial dummy
 scoreboard objectives add tutorial.marker.id dummy

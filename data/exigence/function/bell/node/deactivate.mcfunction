@@ -5,6 +5,8 @@
 
 #====================================================================================================
 
+execute if score toggle.bell debug matches 1 if score debug.level debug matches 3.. run say (D3 Bell) Deactivate bell node
+
 tag @s remove Active
 tag @s remove Smashed
 tag @s remove ETICK

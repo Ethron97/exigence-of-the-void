@@ -29,6 +29,7 @@ execute if score @s Temp matches 1.. run function exigence:player/utility/telepo
 # Check for right click on items
 execute if score @s CarrotOnStick matches 1.. run function exigence:player/use_item/use_item
 execute if score @s UseTrident matches 1.. run function exigence:player/use_item/other/trident
+execute if score @s use.wind_charge matches 1.. run function exigence:player/use_item/other/wind_charge
 
 # Sculk step
 scoreboard players remove @s[scores={game.player.sculk_step_cooldown=1..}] game.player.sculk_step_cooldown 1
@@ -56,7 +57,8 @@ execute if score game.difficulty game.state matches 5 run function exigence:play
 function exigence:player/sound/item_sounds/vault_key
 
 # Check for ravager glass
-execute if entity @s[gamemode=adventure] unless score @s game.player.mod.ravager_hoof matches 1 run function exigence:player/ravager_glass/check
+#execute if entity @s[gamemode=adventure] unless score @s game.player.mod.ravager_hoof matches 1 run function exigence:player/ravager_glass/check
+execute if entity @s[gamemode=adventure] run function exigence:player/ravager_glass/check
 
 # Move any carried entities along with the player
 execute if entity @s[tag=Carrying] as @e[type=minecraft:villager,tag=Carried,distance=..100,limit=1] run tp @s ~ ~2 ~
@@ -86,7 +88,8 @@ scoreboard players set @s game.player.damage_taken 0
 scoreboard players set @s game.player.damage_absorbed 0
 
 # If hitbox touching (roughly) a warden, die
-execute at @e[type=warden,distance=..5] positioned ~-0.5 ~ ~-0.5 if entity @s[dx=0,dy=2,dz=0] run damage @s 45 mob_attack
+execute at @e[type=minecraft:warden,tag=!Big,distance=..5] positioned ~-0.5 ~ ~-0.5 if entity @s[dx=0,dy=2,dz=0] run damage @s 45 mob_attack by @n[type=minecraft:warden,distance=..5]
+execute at @e[type=minecraft:warden,tag=Big,distance=..5] positioned ~-0.5 ~ ~-0.5 if entity @s[dx=1,dy=5,dz=1] run damage @s 45 mob_attack by @n[type=minecraft:warden,distance=..5]
 
 #====================================================================================================
 ## SECOND-TICKS

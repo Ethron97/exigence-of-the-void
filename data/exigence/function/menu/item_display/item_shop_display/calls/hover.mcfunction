@@ -20,9 +20,9 @@ execute as @s[tag=ItemShopDisplay,tag=!IsOneTimePurchased,tag=Artifact,tag=!IsRe
 execute as @s[tag=ItemShopDisplay,tag=!IsOneTimePurchased] at @s unless entity @s[tag=!IsTierUnlocked,tag=!IsParentResearched] run function exigence:menu/item_display/item_shop_display/update_purchasability_displays with entity @s item.components."minecraft:custom_data"
 
 # Update locked reason
-execute as @s[tag=ItemShopDisplay,tag=!CanPurchase] run function exigence:menu/item_display/item_shop_display/locked_reason/update
+execute as @s[tag=ItemShopDisplay,tag=!CanPurchase,tag=!IsOneTimePurchased] run function exigence:menu/item_display/item_shop_display/locked_reason/update
 execute as @s[tag=ItemShopDisplay,tag=IsOneTimePurchased] run function exigence:menu/item_display/item_shop_display/locked_reason/update
 
 # Show locked reason
-execute as @s[tag=ItemShopDisplay,tag=!CanPurchase] at @s run function exigence:menu/item_display/item_shop_display/locked_reason/show with entity @s
+execute as @s[tag=ItemShopDisplay,tag=!CanPurchase,tag=!IsOneTimePurchased] at @s run function exigence:menu/item_display/item_shop_display/locked_reason/show with entity @s
 execute as @s[tag=ItemShopDisplay,tag=IsOneTimePurchased] at @s run function exigence:menu/item_display/item_shop_display/locked_reason/show with entity @s

@@ -30,10 +30,7 @@ run function exigence:bossbar/objective/level_3/level_key
 #   Once door is opened it goes away
 execute if score game.difficulty game.state matches 4.. if score 3.reached game.level_doors matches 1 if score 3.opened game.level_doors matches 0 run data modify storage exigence:objective level_3 append value [{sprite:"exigence:item/door_lock_b",atlas:"items",color:"white"},{text:""}]
 
-# BEACONS
-#   If difficulty 5, lit vs unlit
-execute if score game.difficulty game.state matches 5 if score beacon.3 game.story.beacons matches ..2 run data modify storage exigence:objective level_3 append value [{sprite:"exigence:item/beacon_unlit",atlas:"items",color:"white"},{text:""}]
-execute if score game.difficulty game.state matches 5 if score beacon.3 game.story.beacons matches 3.. run data modify storage exigence:objective level_3 append value [{sprite:"exigence:item/beacon_lit",atlas:"items",color:"white"},{text:""}]
-
+# BEACONS/ARDOR
+execute if score game.difficulty game.state matches 5 run function exigence:bossbar/objective/level_3/ardor
 
 data modify storage exigence:objective level_3 append value [{text:"]",color:"#1824cc"}]

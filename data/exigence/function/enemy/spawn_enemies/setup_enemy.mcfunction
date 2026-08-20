@@ -35,9 +35,10 @@ attribute @s knockback_resistance base set 10.0
 attribute @s step_height base set 2.0
 
 # Scale wardens on level 4 (so they don't fall into lava)
-execute as @s[type=warden,tag=L4] run attribute @s scale base set 2.0
+execute as @s[type=minecraft:warden,tag=L4] run attribute @s scale base set 2.0
+execute as @s[type=minecraft:warden,tag=L4] run tag @s add Big
 # Initialize awareness
-scoreboard players add @s[type=warden] game.warden.awareness 0
+scoreboard players add @s[type=minecraft:warden] game.warden.awareness 0
 
 # Initialize scores
 scoreboard players add @s[type=minecraft:ravager] game.ravager.eating_cookie 0

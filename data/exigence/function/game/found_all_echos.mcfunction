@@ -25,7 +25,7 @@ function exigence:player/give/echo_shard
 #execute as @a[tag=ActivePlayer] if score @s career.settings.return_compass matches 1 run function exigence:player/give/return_compass
 
 # Give portal compass(s) to all players if difficulty 4
-execute if score game.difficulty game.state matches 4 as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=ExitNode] run function exigence:player/give/portal_compass
+#execute if score game.difficulty game.state matches 4 as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=ExitNode] run function exigence:player/give/portal_compass
 
 # If Final Ascension, ascend
 execute if score mod.final_ascension game.modifiers matches 1 run function exigence:game/ascend

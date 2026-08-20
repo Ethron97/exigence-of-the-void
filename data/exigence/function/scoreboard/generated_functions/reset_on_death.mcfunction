@@ -36,3 +36,4 @@ scoreboard players set @s game.player.killed_by.vex 0
 scoreboard players set @s game.player.killed_by.warden 0
 scoreboard players set @s game.player.killed_by.witch 0
 scoreboard players set @s game.player.killed_by.wither_skeleton 0
+scoreboard players set @s game.player.feather_gravity 0

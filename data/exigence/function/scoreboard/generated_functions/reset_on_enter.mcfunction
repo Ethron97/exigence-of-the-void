@@ -15,6 +15,7 @@ scoreboard players set @s game.player.mod.detection 0
 scoreboard players set @s game.player.mod.dragon_breath 0
 scoreboard players set @s game.player.mod.ember_lantern 0
 scoreboard players set @s game.player.mod.enchanted_book 0
+scoreboard players set @s game.player.mod.feather 0
 scoreboard players set @s game.player.mod.flicker 0
 scoreboard players set @s game.player.mod.gathering_storm 0
 scoreboard players set @s game.player.mod.glimmer 0
@@ -321,6 +322,7 @@ scoreboard players set @s profile.data.winloss.cr.deaths_total 0
 scoreboard players set @s profile.data.winloss.cr.max_menace_deaths 0
 scoreboard players set @s profile.data.winloss.cr.max_menace_reached 0
 scoreboard players set @s profile.data.winloss.cr.max_menace_wins 0
+scoreboard players set @s use.wind_charge 0
 scoreboard players set @s game.player.dust_appearance 0
 scoreboard players set @s UseTrident 0
 scoreboard players set @s game.player.kill_queue 0
