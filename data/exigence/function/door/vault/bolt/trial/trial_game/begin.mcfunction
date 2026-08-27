@@ -38,7 +38,6 @@ execute if entity @s[tag=Crucible] as @a[tag=ActivePlayer] unless score @s game.
 execute as @a[tag=ActivePlayer] unless score @s game.player.vault_code matches 1 run title @s title ""
 
 # Initialize bolt bossbar
-bossbar set exigence:trial_bolt visible true
 bossbar set exigence:trial_bolt players @s
 execute if entity @s[tag=Trial] run bossbar set exigence:trial_bolt color yellow
 execute if entity @s[tag=Trial] run bossbar set exigence:trial_bolt name [{sprite:"minecraft:item/bolt_armor_trim_smithing_template",atlas:"items",color:"white"},{text:" Trial of Lightning ",color:"yellow"},{sprite:"minecraft:item/bolt_armor_trim_smithing_template",atlas:"items",color:"white"}]

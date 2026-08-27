@@ -19,11 +19,9 @@ execute at @s run playsound minecraft:block.trial_spawner.about_to_spawn_item am
 team join Enemy @s
 
 # Update bossbars to only show for players who are not in a vault
-#   Effectively, hide other bossbars for players within the vault
-# TODO Run update function that recalls update, incase stuff like dynamic resource bossbar whatever
-bossbar set exigence:bossbar players @a[tag=ActivePlayer,scores={game.player.vault_code=0}]
-bossbar set exigence:last_card players @a[tag=ActivePlayer,scores={game.player.vault_code=0,career.settings.card_display_bossbar=1}]
-bossbar set exigence:resources players @a[tag=ActivePlayer,scores={game.player.vault_code=0,career.settings.resource_bossbar_style=1..}]
+function exigence:bossbar/deck/update_visibility
+function exigence:bossbar/objective/update_visibility
+function exigence:bossbar/last_card/update_visibility
 
 # Remove clock markers
 execute in minecraft:overworld run function exigence:player/use_item/clock/reset_player

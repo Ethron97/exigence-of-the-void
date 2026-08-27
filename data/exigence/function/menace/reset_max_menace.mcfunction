@@ -9,6 +9,8 @@ execute unless dimension minecraft:overworld run return run say Reset max menace
 
 # Update score
 scoreboard players set game.max_menace game.state 0
+scoreboard players set effect.cooldown game.dungeon.menace 0
+scoreboard players set effect.score game.dungeon.menace 0
 
 # Enable red vinette
 worldborder warning distance 0

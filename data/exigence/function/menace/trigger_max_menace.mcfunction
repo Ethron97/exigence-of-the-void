@@ -11,6 +11,8 @@ execute if score toggle.menace debug matches 1 if score debug.level debug matche
 
 # Update storage
 scoreboard players set game.max_menace game.state 1
+scoreboard players set effect.cooldown game.dungeon.menace 60
+scoreboard players set effect.score game.dungeon.menace 0
 
 # Enable red vinette
 worldborder warning distance 300000
@@ -20,8 +22,7 @@ playsound minecraft:block.end_portal.spawn hostile @a[tag=ActivePlayer] 0 100 0 
 
 # Set bossbar color to red, and 100%
 bossbar set exigence:bossbar color red
-bossbar set exigence:bossbar value 100
-bossbar set exigence:last_card name {text:"!!! DANGER !!!",color:"red"}
+function exigence:bossbar/deck/update_bar_max_menace
 
 # Disable interactables
 execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=BerryNode] run function exigence:botany/node/berry_bush_inactive

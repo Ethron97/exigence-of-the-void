@@ -33,8 +33,9 @@ execute in exigence:hub run kill @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,scores={hub
 
 #====================================================================================================
 
-# Turn off the game
+# Turn off the game, then unload
 execute in minecraft:overworld run function exigence:game/game_off
+execute in minecraft:overworld positioned -300 0 -300 run function exigence:game/unload/start_unloading_sequence
 
 # Schedule coin convert so its after the victory sound
 #   Player scores were gathered from the access/leave function

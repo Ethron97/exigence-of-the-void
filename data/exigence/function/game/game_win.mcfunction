@@ -50,8 +50,9 @@ execute as @a[tag=ActivePlayer,tag=!Limbo] run function exigence:hub/limbo/acces
 # Migrate data to room node (for card shop)
 execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,scores={hub.room.room_type=3}] run function exigence:game/unload/migrate_data_to_room_node
 
-# Turn off the game
+# Turn off the game, then unload
 execute in minecraft:overworld run function exigence:game/game_off
+execute in minecraft:overworld positioned -300 0 -300 run function exigence:game/unload/start_unloading_sequence
 
 # Schedule coin convert so its after the victory sound
 #   Player scores were gathered from the access/leave function

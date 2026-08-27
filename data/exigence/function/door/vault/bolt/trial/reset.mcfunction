@@ -29,7 +29,7 @@ fill ~7 ~-4 ~7 ~-7 ~-4 ~-7 black_concrete replace end_portal
 function exigence:door/vault/_trial/fire/_reset
 
 # Hide bossbar
-execute if entity @s[tag=Game] run bossbar set exigence:trial_bolt visible false
+execute if entity @s[tag=Game] run bossbar set exigence:trial_bolt players
 execute if entity @s[tag=Hub] run bossbar set exigence:hub_trial_bolt visible false
 
 # Update status

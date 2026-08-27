@@ -12,3 +12,8 @@ execute if score ravager.aggro.cooldown tick_counter matches 0 run function exig
 # The nearest eyeball chases the player (DEPRECATED)
 #execute if score ravager.aggro.cooldown tick_counter matches 1 at @a[tag=ActivePlayer,scores={dead=0}] as @e[type=minecraft:armor_stand,tag=Eyeball,tag=Staring,limit=1,sort=nearest] run function exigence:menace/eyeball/flyball
 #execute if score ravager.aggro.cooldown tick_counter matches 0 as @e[type=minecraft:vex,tag=EyeballMount] run function exigence:enemy/aggro_enemy
+
+# Count seconds down to next effect
+execute if score seconds.cooldown tick_counter matches 8 run scoreboard players remove effect.cooldown game.dungeon.menace 1
+execute if score seconds.cooldown tick_counter matches 8 run function exigence:bossbar/deck/update_bar_max_menace
+execute if score effect.cooldown game.dungeon.menace matches ..0 run function exigence:menace/menace_effects/next_effect
