@@ -1,4 +1,5 @@
 # Easily accessible function we can use to test things
+say test
 
 # Testing pot data merge for vault pot fills
 #$data merge block -261 17 -31 {item:{id:"$(id)",Count:$(Count),tag:$(tag)}}
@@ -9,8 +10,6 @@
 
 # Check if two menace nodes are within 16 blocks (meaning both could be triggered at the same time)
 #execute as @e[type=minecraft:armor_stand,tag=marker] at @s if entity @e[distance=..16,type=minecraft:marker,tag=MenaceNode] run say I need personal space
-
-
 
 # Test for nonair around all echo nodes
 #execute as @e[type=minecraft:marker,tag=EchoNode] at @s if function exigence:ember/setup/detect_nonair run tp Ethron97 @s
@@ -26,7 +25,7 @@
 #gamemode spectator @s
 #schedule function exigence:player/game/refresh_spectate 2t
 
-say test
+
 #advancement revoke @a[advancements={exigence:listener/pickup/coin/bonus_coin=true}] only exigence:listener/pickup/coin/bonus_coin
 #$say $(Rotation)
 
@@ -35,7 +34,6 @@ say test
 
 #scoreboard objectives modify ItemShopBelowName displayname [{sprite:"exigence:item/glint",atlas:"items",color:"white"}\
 ,{score:{name:"@s",objective:"shop.player.money_to_spend"},color:"aqua"},{text:" "},{sprite:"minecraft:item/prize_pottery_sherd",atlas:"items",color:"white"},{score:{name:"@s",objective:"shop.player.research_to_spend"},color:"light_purple"},{text:" "}]
-
 
 
 #tellraw @s [{nbt:"lore",source:"storage",storage:'exigence:tellraw',interpret:true}]

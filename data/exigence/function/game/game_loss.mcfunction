@@ -29,7 +29,7 @@ if score @s player.node.room_id = #compare hub.room.room_id run scoreboard playe
 scoreboard players reset @a[tag=ActivePlayer] hub.player.room_id
 
 # Kill room node
-execute in exigence:hub run kill @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,scores={hub.room.room_type=3}]
+execute in exigence:hub run tag @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,scores={hub.room.room_type=3}] add KillMe
 
 #====================================================================================================
 

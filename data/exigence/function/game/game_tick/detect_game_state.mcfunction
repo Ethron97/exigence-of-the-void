@@ -21,6 +21,8 @@ scoreboard players operation #temp Temp += #temp2 Temp
 execute if score #temp Temp = game.player_count game.state run function exigence:game/game_win
 
 # If four beacons are lit, campaign is over
-execute if score game.beacons_lit game.state matches 4 run say Game win (temp, beacons lit)
-execute if score game.beacons_lit game.state matches 4 run function exigence:game/game_win
-#execute if score game.beacons_lit game.state matches 4 run function exigence:game/game_win_campaign
+#   Normal win if beacons have already been lit
+#   Nevermind, no reason not to let them exalt again if they want to
+#execute if score game.beacons_lit game.state matches 4 if score game.beacons_lit game.dungeon.setup matches 1 run function exigence:game/game_win
+#execute if score game.beacons_lit game.state matches 4 if score game.beacons_lit game.dungeon.setup matches 0 run function exigence:game/game_win_campaign
+execute if score game.beacons_lit game.state matches 4 run function exigence:game/game_win_campaign

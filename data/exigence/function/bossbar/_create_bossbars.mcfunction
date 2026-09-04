@@ -13,6 +13,7 @@ bossbar add exigence:expire_tutorial ""
 bossbar add exigence:expire_predungeon ""
 bossbar add exigence:expire_item_shop ""
 bossbar add exigence:expire_ember_shop ""
+bossbar add exigence:expire_game ""
 # ...
 
 bossbar add exigence:trial_bolt ""

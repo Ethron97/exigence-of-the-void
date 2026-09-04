@@ -1,9 +1,13 @@
 # Called as advancement reward
 
-execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3) Step on barrier
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3 Player) Step on barrier
 
 # Reset advancement
 advancement revoke @s only exigence:listener/step_on_barrier
+
+# If player is ember shopping
+execute if entity @s[tag=EmberShop] at @s run return run function exigence:hub/ember_shop/access/step_on_barrier
+#----------------------------------------------------------------------------------------------------
 
 # Return if the game is not active or this player is not active
 execute if score game.is_active game.state matches 0 run return 1

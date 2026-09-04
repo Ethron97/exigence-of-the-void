@@ -13,6 +13,8 @@ execute if score toggle.game debug matches 1 if score debug.level debug matches 
 # Just in case the game ended while it was still loading
 scoreboard players set game.cancel_load hub.room_misc 1
 
+scoreboard players set game.exalting game.state 0
+
 # Queue coin conversion
 tag @a[tag=ActivePlayer] add QueueCoinConversion
 # Reset coin conversion scores
@@ -39,9 +41,6 @@ execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag
 
 # Close doors
 function exigence:door/level/reset_doors
-
-# Cleanup npcs
-function exigence:npc/game/reset_npcs
 
 # Reset mirror hidden blocks
 function exigence:mirror/hidden_blocks/reset_hidden_blocks
@@ -70,6 +69,8 @@ time set 18000
 # Reset sidebars
 scoreboard objectives setdisplay sidebar.team.dark_aqua
 scoreboard objectives setdisplay sidebar.team.dark_red
+
+bossbar set exigence:expire_game visible false
 
 # Reset load cancel so we can
 #scoreboard players set game.cancel_load hub.room_misc 0

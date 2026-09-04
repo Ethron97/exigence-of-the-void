@@ -19,10 +19,12 @@ execute as @a[scores={hub.player.room_id=1..}] if score @s hub.player.room_id = 
 
 # If no player found, increase timeout
 #   May kill this room node and early exit
-execute if score #player_found Temp matches 0 run function exigence:room/node/increase_timeout
+execute if score #player_found Temp matches 0 run return run function exigence:room/node/increase_timeout
+#----------------------------------------------------------------------------------------------------
+# Else player found:
 
-# If player found, reset timeout
-execute if score #player_found Temp matches 1 run scoreboard players set @s hub.room.current_timeout 0
+# Reset timeout
+scoreboard players set @s hub.room.current_timeout 0
 
 # If limbo room node, and player found, call limbo tick (checks to migrate room to Ember Shop)
-execute if score @s hub.room.room_type matches 4 if score #player_found Temp matches 1 run function exigence:hub/limbo/node/limbo_room_update
+execute if score @s hub.room.room_type matches 4 run function exigence:hub/limbo/node/limbo_room_update

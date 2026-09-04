@@ -48,3 +48,5 @@ scoreboard players set @s[scores={hub.room.room_type=4}] hub.room.max_timer -1
 # Set expire threshold to max timer - 1 minute
 scoreboard players operation @s hub.room.expire_threshold = @s hub.room.max_timer
 scoreboard players remove @s hub.room.expire_threshold 1200
+# Minimum of 5 seconds
+scoreboard players operation @s hub.room.expire_threshold > 100 number

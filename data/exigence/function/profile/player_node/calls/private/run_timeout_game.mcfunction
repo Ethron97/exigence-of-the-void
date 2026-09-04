@@ -6,7 +6,7 @@
 
 #====================================================================================================
 
-execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Run timeout game (when they log back in)
+execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run say (D3 Player) Run timeout game (when they log back in)
 
 # Reset score
 scoreboard players reset @n[type=minecraft:armor_stand,tag=PlayerNode,distance=..0.1] player.node.queue.logout_game
@@ -42,7 +42,8 @@ if score @s hub.room.room_id = #compare hub.player.room_id run scoreboard player
 
 execute if score #found_room_node Temp matches 1 run say Run timeout game case: GAME IN LIMBO MODE
 # Kick from game and join limbo if not already in limbo (would only happen if player was mid-escape waiting for their coop members)
-execute if score #found_room_node Temp matches 1 if entity @s[tag=ActivePlayer] run function exigence:game/access/kick
+execute if score #found_room_node Temp matches 1 if entity @s[tag=ActivePlayer,tag=!Exalting] run function exigence:game/access/kick
+execute if score #found_room_node Temp matches 1 if entity @s[tag=ActivePlayer,tag=Exalting] run function exigence:game/access/kick_exalt
 execute if score #found_room_node Temp matches 1 if entity @s[tag=!Limbo] run function exigence:hub/limbo/access/enter
 execute if score #found_room_node Temp matches 1 run return 0
 #----------------------------------------------------------------------------------------------------
@@ -53,9 +54,12 @@ execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:ma
 if score @s hub.room.room_id = #compare hub.player.room_id run scoreboard players set #found_room_node Temp 1
 
 execute if score #found_room_node Temp matches 1 run say Run timeout game case: GAME IN EMBER SHOP MODE
-execute if score #found_room_node Temp matches 1 run function exigence:game/access/kick
+execute if score #found_room_node Temp matches 1 if entity @s[tag=ActivePlayer,tag=!Exalting] run function exigence:game/access/kick
+execute if score #found_room_node Temp matches 1 if entity @s[tag=ActivePlayer,tag=Exalting] run function exigence:game/access/kick_exalt
 execute if score #found_room_node Temp matches 1 run return run function exigence:hub/ember_shop/access/enter
 #----------------------------------------------------------------------------------------------------
 
 # TEMP just kick them if we got here (if they are still in the game)
-execute if entity @s[tag=ActivePlayer] run function exigence:game/access/kick
+execute if entity @s[tag=ActivePlayer,tag=!Exalting] run function exigence:game/access/kick
+execute if entity @s[tag=ActivePlayer,tag=Exalting] in exigence:hub run tp 0.5 200.0 0.5
+execute if entity @s[tag=ActivePlayer,tag=Exalting] run function exigence:game/access/kick_exalt

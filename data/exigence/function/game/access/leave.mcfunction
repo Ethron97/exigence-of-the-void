@@ -28,6 +28,7 @@ tag @s remove CurrentlyReflecting
 tag @s remove Won
 tag @s remove PreviewingTeleport
 tag @s remove ReduceHeighten
+tag @s remove Exalting
 
 team leave @s
 gamemode adventure @s
@@ -86,6 +87,9 @@ scoreboard players operation @s hub.coin_conversion -= @s hub.coin_conversion.le
 
 execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run tellraw @s [{text:"(D3 Player) Coins to convert: "},{score:{name:"@s",objective:"hub.coin_conversion"}}]
 execute if score toggle.player debug matches 1 if score debug.level debug matches 3.. run tellraw @s [{text:"(D3 Player) Leftover: "},{score:{name:"@s",objective:"hub.coin_conversion.leftover_coins"}}]
+
+# Clear if came from exalting
+clear @s carrot_on_a_stick[custom_data~{item_name:'exit_exalting'}]
 
 # DEBUG
 gamemode creative @s[tag=Admin]

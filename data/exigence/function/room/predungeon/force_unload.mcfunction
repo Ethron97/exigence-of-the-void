@@ -23,4 +23,4 @@ execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=Player
 if score @s player.node.room_id = #compare hub.room.room_id run scoreboard players add @s player.node.queue.kicked_predungeon 1
 
 # Kill this room node
-kill @s[type=minecraft:marker,tag=RoomNode]
+tag @s add KillMe

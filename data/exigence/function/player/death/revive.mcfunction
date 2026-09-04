@@ -13,15 +13,8 @@ scoreboard players set @s dead 0
 # Decrement death check counter
 scoreboard players remove game.dead_players game.state 1
 
-# Teleport to revive station that matches new active level
-execute if score game.active_level game.state matches 2 at @e[type=minecraft:armor_stand,scores={node.property.object_level=2},tag=RespawnNode] run tp @s ~ ~5 ~ ~ ~
-execute if score game.active_level game.state matches 3 at @e[type=minecraft:armor_stand,scores={node.property.object_level=3},tag=RespawnNode] run tp @s ~ ~5 ~ ~ ~
-execute if score game.active_level game.state matches 4 at @e[type=minecraft:armor_stand,scores={node.property.object_level=4},tag=RespawnNode] run tp @s ~ ~5 ~ ~ ~
-
-# Particles
-execute if score game.active_level game.state matches 2 at @e[type=minecraft:armor_stand,scores={node.property.object_level=2},tag=RespawnNode] run function exigence:player/death/private/revive_particles
-execute if score game.active_level game.state matches 3 at @e[type=minecraft:armor_stand,scores={node.property.object_level=3},tag=RespawnNode] run function exigence:player/death/private/revive_particles
-execute if score game.active_level game.state matches 4 at @e[type=minecraft:armor_stand,scores={node.property.object_level=4},tag=RespawnNode] run function exigence:player/death/private/revive_particles
+# Revive location
+function exigence:player/death/private/pick_revive_location
 
 # Give slowfall 5 seconds
 effect give @s slow_falling 5 0 true

@@ -12,6 +12,12 @@ scoreboard players add game.player_count game.state 1
 
 # If they escaped, do nothing
 execute if entity @s[tag=Won] run return 0
+# They exalted, do nothing
+execute if entity @s[tag=Exalting] run return 0
+#----------------------------------------------------------------------------------------------------
+
+# If game is exalting and they didnt, exalt them
+execute if score game.exalting game.state matches 1 if entity @s[tag=!Exalting] run return run function exigence:player/utility/start_exalting
 #----------------------------------------------------------------------------------------------------
 
 # Kill the player

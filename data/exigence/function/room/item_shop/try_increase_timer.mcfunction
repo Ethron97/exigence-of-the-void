@@ -13,3 +13,8 @@ function exigence:bossbar/room_expire/item_shop/update_visibility
 
 # Run condition checker
 execute if function exigence:room/node/if_increase_timer run function exigence:room/item_shop/increase_timer
+
+# Update the expire timer display (only if approaching threshold?)
+#execute if score @s hub.room.current_timer >= @s hub.room.expire_threshold in exigence:hub positioned -23.1 202.5 2.50 run function exigence:room/item_shop/expire_display/update
+# Update the expire timer display
+execute in exigence:hub positioned -23.1 202.5 2.50 run function exigence:room/item_shop/expire_display/update

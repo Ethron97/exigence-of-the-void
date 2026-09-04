@@ -9,11 +9,7 @@ execute if score game.cancel_load hub.room_misc matches 1 run return fail
 
 execute if score toggle.game debug matches 1 if score debug.level debug matches 3.. run say (D3 Game) Finish loading sequence
 
-# Try migrate players
-#   get room id for predungeon room node
-#   get all playuer nodes with that room id
-#   try as player node player
-# Assume online for now
+# Assume online for now, we cancel load if they logout before start
 execute as @a[tag=Predungeon] run function exigence:game/access/enter
 
 # Migrate room node (room type: predungeon -> game)

@@ -7,14 +7,11 @@ say The beacons are lit, the Ardor return to destroy the Watchers!
 
 # Set escape portal to 1 so that the game_win thinks the game actually won
 scoreboard players set game.escape_portal game.state 1
+# Switch from game-tick to exalting-tick
+scoreboard players set game.exalting game.state 1
 
 # Turn the game off
 execute in minecraft:overworld run function exigence:game/game_off
-# Setup game room unload timer and expire, only if it is in EXALT mode
-# TODO
-# Unload game if all players who are online leave the Exalting
-# Or if room times out
-# Or if room expires
 
 # Grayify sculk
 function exigence:menace/private/transform_sculk {redify:2}
@@ -22,22 +19,29 @@ function exigence:menace/private/transform_sculk {redify:2}
 # Set time to day
 time set 6000
 
-# Create "try_exalting" function so if player was offline they can then be exalting when they join
-# TODO move to by-player function
-# Main title
-title @a[tag=ActivePlayer] title {text:"Campaign Victory",color:"aqua"}
-# Add tag "Exalting" or something
-tag @a[tag=ActivePlayer] add Exalting
-# Set dead players to adventure
-execute as @a[scores={dead=2},tag=ActivePlayer] run function exigence:player/death/revive
-# Give all players resistance/fire resistance/regen so they can't die (for simplicity)
-effect give @a[tag=ActivePlayer] resistance infinite 4 true
-effect give @a[tag=ActivePlayer] regeneration infinite 4 true
-effect give @a[tag=ActivePlayer] fire_resistance infinite 0 true
-effect give @a[tag=ActivePlayer] saturation infinite 4 true
-# Give exalting players an exit button which ends the run fully, as if they had just won
-give @a[tag=Exalting] minecraft:carrot_on_a_stick[custom_name=[{text:"Return to Hub",color:"aqua",italic:false}]]
-# TODO advancement
-# PREVENT DROPPING ITEMS
+# Play victory sound
+execute in minecraft:overworld run playsound minecraft:ui.toast.challenge_complete neutral @a 986.5 100.0 1000.5 1000 1
+
+# Disable card sidebar
+scoreboard objectives setdisplay sidebar.team.dark_aqua
+
+# Disable objective bossbar
+bossbar set exigence:objective players
+bossbar set exigence:last_card players
+
+# Set name of deck bossbar to campaign victory
+bossbar set exigence:bossbar name [{text:"Campaign Victory!",color:"aqua"}]
+bossbar set exigence:bossbar value 0
+bossbar set exigence:bossbar color pink
+
+# Give advancement (do it now instead of game_win since they might have gone offline)
+execute as @a[tag=ActivePlayer,sort=arbitrary,limit=1] run function exigence:profile/profile_node/story/grant {story:'light_beacons'}
+
+# Enable room expire
+execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,scores={hub.room.room_type=3}] run scoreboard players set @s hub.room.max_timer 1300
+execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,scores={hub.room.room_type=3}] run scoreboard players set @s hub.room.current_timer 1
+
+# Exalt online players. If they are offline, it gets called when they log in if relevant.
+execute as @a[tag=ActivePlayer] run function exigence:player/utility/start_exalting
 
 # TODO credit sequence

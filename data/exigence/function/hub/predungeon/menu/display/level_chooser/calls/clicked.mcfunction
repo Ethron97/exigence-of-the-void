@@ -18,7 +18,8 @@ scoreboard players add @p[tag=Interacting,distance=..16] hub.player.interaction_
 # Cancel button
 execute if entity @s[tag=Cancel] run return run function exigence:hub/predungeon/menu/display/level_chooser/calls/private/cancel
 # Return if state is 2
-execute if score predungeon.door_state hub.room_misc matches 2 run return run tellraw @p[tag=Interacting,distance=..16] [{text:"Activate the door sensors to proceed!",color:"yellow"}]
+execute if score predungeon.door_state hub.room_misc matches 2 run return run tellraw @p[tag=Interacting,distance=..16] [{text:"Activate the door sensors ",color:"yellow"}\
+,{sprite:"minecraft:item/ender_eye",atlas:"minecraft:items",color:"white"},{text:" to proceed!",color:"yellow"}]
 #----------------------------------------------------------------------------------------------------
 
 # REVALIDATE EVERYTHING?

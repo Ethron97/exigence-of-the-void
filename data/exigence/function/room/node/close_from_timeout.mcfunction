@@ -7,6 +7,9 @@
 
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 2.. run say (D2 Hub) Node close triage (TIMEOUT)
 
+# Kill room node (can be overriden by removing it based on close_time_timeout circumstances)
+tag @s add KillMe
+
 # Triage
 execute if score @s hub.room.room_type matches 1 run function exigence:room/tutorial/close_from_timeout
 execute if score @s hub.room.room_type matches 2 run function exigence:room/predungeon/close_from_timeout
@@ -19,10 +22,11 @@ execute if score @s hub.room.room_type matches 10 run function exigence:room/pro
 execute if score @s hub.room.room_type matches 11 run function exigence:room/locker_room/close_from_timeout
 # ...
 
+# If killme was removed, don't clear id
+execute unless entity @s[tag=KillMe] run return 1
+#----------------------------------------------------------------------------------------------------
+
 scoreboard players operation #compare hub.room.room_id = @s hub.room.room_id
 # Clear room id from player and player node
 execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode,scores={player.node.room_id=1..}] if score @s player.node.room_id = #compare hub.room.room_id run scoreboard players reset @s player.node.room_id
 execute as @a if score @s hub.player.room_id = #compare hub.room.room_id run scoreboard players reset @s hub.player.room_id
-
-# Kill room node
-kill @s[type=minecraft:marker,tag=RoomNode]

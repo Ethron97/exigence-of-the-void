@@ -48,3 +48,7 @@ function exigence:hub/item_shop/refresh_currency
 scoreboard players set #cancel_item_shop_iterate Temp 0
 scoreboard players set #item_shop_load_iterate Temp 1
 schedule function exigence:hub/item_shop/load/load_handler/schedule 10t
+
+#====================================================================================================
+## EXPIRE DISPLAY
+function exigence:room/item_shop/expire_display/setup

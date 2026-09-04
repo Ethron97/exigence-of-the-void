@@ -24,7 +24,7 @@ execute as @s run function exigence:player/give/level_3_key
 function exigence:advancements/listener/pickup/level_key/generic
 
 # Kill all level keys of the current active level
-execute at @s as @e[type=minecraft:item,scores={game.entity.object_level=3},tag=LevelKey,distance=..1000] run kill @s
+execute at @s run kill @e[type=minecraft:item,scores={game.entity.object_level=3},tag=LevelKey,distance=..1000]
 
 # Update got score
 scoreboard players set 3.got_key game.level_doors 1

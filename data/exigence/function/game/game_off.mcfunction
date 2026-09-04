@@ -21,7 +21,7 @@ execute if score game.spire.trial trial.status matches 1 positioned -355.5 152.0
 execute if score game.flow.trial trial.status matches 1 positioned -355.5 152.0 -25.5 as @n[type=minecraft:marker,tag=TrialNode,tag=Flow,distance=..3] run function exigence:door/vault/flow/trial/loss
 
 # Kill all items (in dungeon)
-execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:item] run kill @s
+kill @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:item]
 
 # Reset max menace
 function exigence:menace/reset_max_menace
@@ -44,6 +44,9 @@ execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag
 function exigence:game/unload/unload_variance_and_hazard
 # Reset vault nodes
 execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag=VaultNode] at @s run function exigence:vault/node/unload
+
+# Cleanup npcs
+function exigence:npc/game/reset_npcs
 
 # Reset web ball related stuff
 function exigence:hub/item_shop/item/item_web_ball/reset

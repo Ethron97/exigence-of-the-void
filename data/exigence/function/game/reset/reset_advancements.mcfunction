@@ -16,7 +16,10 @@ advancement revoke @s[advancements={exigence:listener/interact/npc_petitioner_ga
 advancement revoke @s[advancements={exigence:listener/interact/npc_scientist_game=true}] only exigence:listener/interact/npc_scientist_game
 advancement revoke @s[advancements={exigence:listener/interact/npc_supplier_game=true}] only exigence:listener/interact/npc_supplier_game
 
-advancement revoke @s[advancements={exigence:listener/pickup/ardor_ember=true}] only exigence:listener/pickup/ardor_ember
+advancement revoke @s[advancements={exigence:listener/pickup/ardor_ember_1=true}] only exigence:listener/pickup/ardor_ember_1
+advancement revoke @s[advancements={exigence:listener/pickup/ardor_ember_2=true}] only exigence:listener/pickup/ardor_ember_2
+advancement revoke @s[advancements={exigence:listener/pickup/ardor_ember_3=true}] only exigence:listener/pickup/ardor_ember_3
+advancement revoke @s[advancements={exigence:listener/pickup/ardor_ember_4=true}] only exigence:listener/pickup/ardor_ember_4
 advancement revoke @s[advancements={exigence:listener/pickup/ardor_flame=true}] only exigence:listener/pickup/ardor_flame
 advancement revoke @s[advancements={exigence:listener/pickup/coin=true}] only exigence:listener/pickup/coin
 advancement revoke @s[advancements={exigence:listener/pickup/echo=true}] only exigence:listener/pickup/echo

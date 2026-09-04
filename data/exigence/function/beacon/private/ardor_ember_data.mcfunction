@@ -20,6 +20,12 @@ execute if score @s game.entity.object_level matches 2 run data modify entity @s
 execute if score @s game.entity.object_level matches 3 run data modify entity @s Item.components."minecraft:custom_model_data" set value {strings:["ardor_ember_3"]}
 execute if score @s game.entity.object_level matches 4 run data modify entity @s Item.components."minecraft:custom_model_data" set value {strings:["ardor_ember_4"]}
 
+# Assign data based on level
+execute if score @s game.entity.object_level matches 1 run data modify entity @s Item.components."minecraft:custom_data".ardor_level set value "1"
+execute if score @s game.entity.object_level matches 2 run data modify entity @s Item.components."minecraft:custom_data".ardor_level set value "2"
+execute if score @s game.entity.object_level matches 3 run data modify entity @s Item.components."minecraft:custom_data".ardor_level set value "3"
+execute if score @s game.entity.object_level matches 4 run data modify entity @s Item.components."minecraft:custom_data".ardor_level set value "4"
+
 execute if score @s game.entity.object_level matches 1 run tag @s add Level1Ardor
 execute if score @s game.entity.object_level matches 2 run tag @s add Level2Ardor
 execute if score @s game.entity.object_level matches 3 run tag @s add Level3Ardor

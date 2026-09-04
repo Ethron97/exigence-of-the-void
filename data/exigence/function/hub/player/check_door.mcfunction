@@ -27,10 +27,3 @@ execute as @s[tag=!ItemShop] at @s if block ~ ~ ~ minecraft:orange_stained_glass
 # Predungeon
 execute as @s[tag=!Predungeon] at @s if block ~ ~ ~ minecraft:purple_stained_glass_pane run function exigence:hub/predungeon/access/try_enter_door
 execute as @s[tag=Predungeon] at @s if block ~ ~ ~ minecraft:purple_stained_glass_pane run function exigence:hub/predungeon/access/leave
-
-# Ember shop (viewing)
-#execute as @s[tag=EmberViewing] at @s if block ~ ~ ~ minecraft:light_blue_stained_glass_pane run function exigence:hub/ember_shop/door_viewing/try_leave
-#execute as @s[tag=!ItemShop,tag=!Lockerroom,tag=!Predungeon,tag=!EmberViewing,tag=!EmberShopping] at @s if block ~ ~ ~ minecraft:light_blue_stained_glass_pane run function exigence:hub/ember_shop/door_viewing/try_enter
-
-# Ember shop (shopping)
-#execute as @s[tag=EmberShopping] at @s if block ~ ~ ~ minecraft:light_blue_stained_glass_pane run function exigence:hub/ember_shop/door_shopping/try_leave

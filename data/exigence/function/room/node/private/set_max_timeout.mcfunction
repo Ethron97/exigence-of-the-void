@@ -22,10 +22,10 @@ scoreboard players set @s hub.room.max_timeout 100
 scoreboard players set @s[scores={hub.room.room_type=1}] hub.room.max_timeout 100
 #   PREDUNGEON
 scoreboard players set @s[scores={hub.room.room_type=2}] hub.room.max_timeout 120000
-#   Set ITEM SHOP to short for same reason, people may be waiting.
-scoreboard players set @s[scores={hub.room.room_type=9}] hub.room.max_timeout 100
 #   Set GAME to be instant, as when a player logs out they are considered dead anyways
 scoreboard players set @s[scores={hub.room.room_type=3}] hub.room.max_timeout 0
+#   Set ITEM SHOP to short for same reason, people may be waiting.
+scoreboard players set @s[scores={hub.room.room_type=9}] hub.room.max_timeout 100
 #   Set LIMBO to 24h
 #   1728000
 scoreboard players set @s[scores={hub.room.room_type=4}] hub.room.max_timeout 1728000

@@ -32,9 +32,9 @@ execute if score @s player.node.room_id matches 1.. unless score predungeon.door
 as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,scores={hub.room.room_type=2},tag=RoomNode] if score @s hub.room.room_id = #compare player.node.room_id \
 run function exigence:room/predungeon/player_logged_out
 
-#   If Game room exists, and is active, and this player was in that room
+#   If Game room exists, and this player was in that room
 scoreboard players set #temp Temp 0
-execute if score @s player.node.room_id matches 1.. if score game.is_active game.state matches 1 in exigence:hub \
+execute if score @s player.node.room_id matches 1.. in exigence:hub \
 as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,scores={hub.room.room_type=3},tag=RoomNode] if score @s hub.room.room_id = #compare player.node.room_id \
 run scoreboard players set #temp Temp 1
 execute if score #temp Temp matches 1 run function exigence:room/game/player_logged_out

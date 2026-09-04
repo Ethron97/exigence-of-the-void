@@ -2,7 +2,7 @@
 
 #====================================================================================================
 
-# === SECONDS CLOCK ===
+## SECONDS CLOCK
 # Update seconds cooldown. Most /tick/ functions have at least one function that relies on this.
 # All queable systems resolve one queued item per second.
 scoreboard players remove seconds.cooldown tick_counter 1
@@ -12,18 +12,21 @@ function exigence:profile/profile_tick
 
 # If game is active, game tick
 execute in minecraft:overworld if score game.is_active game.state matches 1 run function exigence:game/game_tick/game_tick
-# If any players are in the hub dimension, hub tick
-execute in exigence:hub positioned 0 200 0 if entity @a[distance=..2000,limit=1] run function exigence:hub/hub_tick
+# If game exalting
+execute in minecraft:overworld if score game.exalting game.state matches 1 run function exigence:game/game_tick/exalting_tick
+# Hub tick
+# TODO if single player world 
+execute in exigence:hub positioned 0 200 0 run function exigence:hub/hub_tick
 # If tutorial is active, tutorial tick
 execute in exigence:tutorial if score tut.active hub.tutorial matches 1 run function exigence:tutorial/tick
 
-# Interaction handling
+# Interaction handling, regardless of where the player is
 execute at @a as @e[type=minecraft:interaction,distance=..8] at @s run function exigence:misc/interaction/check_interaction
 
 # Send to prologue (disabled for testing)
 #execute as @a[advancements={exigence:story/root=false},tag=!Introducing] unless score @s career.prologue matches 1 in exigence:hub run function exigence:hub/prologue/enter
 
-# TP eople stuck in the sky box (respawn broken for some reason)
+# TP people stuck in the sky box (respawn broken for some reason)
 #execute positioned -376.5 318.00 -119.5 run tp @a[distance=..5] -260.5 17.00 -44.5
 
 # Triggers
@@ -51,10 +54,10 @@ execute if score toggle.echo debug matches 1 if score seconds.cooldown tick_coun
 execute if score toggle.echo debug matches 1 if score seconds.cooldown tick_counter matches 0 at @e[type=minecraft:marker,scores={node.property.echo.difficulty=1..},tag=EchoNode] run team join Echo @n[type=minecraft:block_display,team=Hazard,tag=EchoDebugDisplay,distance=..3]
 
 # Fun
-execute as @e[type=minecraft:mannequin,tag=Dance] at @s run function exigence:misc/entity/mannequin_fun
+#execute as @e[type=minecraft:mannequin,tag=Dance] at @s run function exigence:misc/entity/mannequin_fun
 
 # Double check FULL boundary
-execute in minecraft:overworld if score debug.level debug matches 1.. if score seconds.cooldown tick_counter matches 18 positioned -380 39 -109 as @e[distance=..1000,type=!player] unless entity @s[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345] run function exigence:misc/entity/outside_game_boundary
+execute in minecraft:overworld if score debug.level debug matches 1.. if score seconds.cooldown tick_counter matches 18 positioned -380 39 -109 as @e[distance=..1000,type=!player,type=!minecraft:firework_rocket] unless entity @s[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345] run function exigence:misc/entity/outside_game_boundary
 
 # RAVAGER SMART AGGRO
 #execute in minecraft:overworld as @e[x=516,y=-1,z=532,dx=7,dy=7,dz=7,type=minecraft:ravager] run function exigence:enemy/ravager/smart_aggro/update

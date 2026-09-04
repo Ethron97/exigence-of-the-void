@@ -47,3 +47,6 @@ kill @e[type=minecraft:text_display,tag=LockedReasonDisplay,distance=..32]
 # TODO
 #   Or, teleport all items to the player that left? But then what do we do on room kick?
 
+#====================================================================================================
+## EXPIRE DISPLAY
+function exigence:room/item_shop/expire_display/remove
