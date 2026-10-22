@@ -53,3 +53,6 @@ execute if entity @s[tag=Admin] if score toggle.show_admin_menu debug matches 1 
 
 # Load player modifier scores (after resetting them)
 function exigence:game/load/modifiers/load_modifiers_b
+
+# Convert placeholder consumables to real thing
+function exigence:player/utility/placeholder_consumables/to_item/check

@@ -1,0 +1,19 @@
+[
+  {
+    "function": "minecraft:set_item",
+    "item": "minecraft:ender_pearl"
+  },
+  {
+    "function": "minecraft:set_custom_data",
+    "tag": {
+      "item_name": "ender_pearl"
+    }
+  },
+  {
+    "function": "minecraft:set_custom_model_data",
+    "strings": {
+      "values": [],
+      "mode": "replace_all"
+    }
+  }
+]

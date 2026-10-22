@@ -37,3 +37,6 @@ effect clear @s
 
 # Convert placeholder void items to actual armor loot
 execute at @s positioned ~ ~10 ~ run function exigence:player/utility/armor/void_armor/check_for_placeholders
+
+# Convert placeholder consumables to placeholders
+function exigence:player/utility/placeholder_consumables/to_placeholder/check

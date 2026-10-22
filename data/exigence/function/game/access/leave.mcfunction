@@ -44,6 +44,9 @@ execute in exigence:hub run spawnpoint @s 0 200 0
 # Unbind armor (remove Curse of Binding)
 function exigence:player/utility/armor/unbind_all_armor
 
+# Convert placeholder consumables to placeholders
+function exigence:player/utility/placeholder_consumables/to_placeholder/check
+
 # Use armor (void armor)
 execute unless score toggle.void debug matches 1 run function exigence:player/utility/armor/use_all
 

@@ -22,8 +22,8 @@ scoreboard players set @s hub.room.max_timer 1300
 #   TUTORIAL
 #scoreboard players set @s[scores={hub.room.room_type=1}] hub.room.max_timer 24000
 
-#   PREDUNGEON (5 minutes)
-scoreboard players set @s[scores={hub.room.room_type=2}] hub.room.max_timer 6000
+#   PREDUNGEON (2.5 minutes)
+#scoreboard players set @s[scores={hub.room.room_type=2}] hub.room.max_timer 3000
 
 #   Set GAME to indefinite (game will kill them eventually)
 scoreboard players set @s[scores={hub.room.room_type=3}] hub.room.max_timer -1

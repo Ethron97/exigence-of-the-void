@@ -5,4 +5,6 @@ $data merge entity @s {Item:{id:"minecraft:ender_pearl",count:1,components:{"min
 ,[{text:"Throw to teleport where it lands",italic:false,color:"gray"}]\
 ,{text:""}\
 ,[{text:"Right click to use",color:"dark_gray",italic:false}]\
-],"minecraft:custom_data":{item_name:"ender_pearl"}}}}
+],"minecraft:custom_data":{item_name:"ender_pearl"}\
+,"minecraft:max_stack_size":1\
+,"minecraft:custom_model_data":{strings:["ender_pearl"]}}}}

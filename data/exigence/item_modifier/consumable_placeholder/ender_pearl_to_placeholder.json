@@ -1,0 +1,21 @@
+[
+  {
+    "function": "minecraft:set_item",
+    "item": "minecraft:carrot_on_a_stick"
+  },
+  {
+    "function": "minecraft:set_custom_data",
+    "tag": {
+      "item_name": "ender_pearl_placeholder"
+    }
+  },
+  {
+    "function": "minecraft:set_custom_model_data",
+    "strings": {
+      "values": [
+        "ender_pearl"
+      ],
+      "mode": "replace_all"
+    }
+  }
+]

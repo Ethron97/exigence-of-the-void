@@ -1,0 +1,21 @@
+[
+  {
+    "function": "minecraft:set_item",
+    "item": "minecraft:carrot_on_a_stick"
+  },
+  {
+    "function": "minecraft:set_custom_data",
+    "tag": {
+      "item_name": "item_wind_charge_placeholder"
+    }
+  },
+  {
+    "function": "minecraft:set_custom_model_data",
+    "strings": {
+      "values": [
+        "item_wind_charge"
+      ],
+      "mode": "replace_all"
+    }
+  }
+]

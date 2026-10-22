@@ -12,5 +12,8 @@ execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,tag
 
 # Activate all
 execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,scores={node.property.object_level=1..3},tag=BeaconNode] at @s run function exigence:beacon/node/setup/activate
-# Pick a random 1 to activate on level 4
-execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,scores={node.property.object_level=4},tag=BeaconNode,sort=random,limit=1] at @s run function exigence:beacon/node/setup/activate
+# Level 4:
+#   Activate all on level 4
+execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,scores={node.property.object_level=4},tag=BeaconNode] at @s run function exigence:beacon/node/setup/activate
+#   Pick a random 1 to activate on level 4
+#execute as @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:marker,scores={node.property.object_level=4},tag=BeaconNode,sort=random,limit=1] at @s run function exigence:beacon/node/setup/activate

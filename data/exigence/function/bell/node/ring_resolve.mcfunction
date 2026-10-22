@@ -12,6 +12,9 @@ execute if score toggle.bell debug matches 1 if score debug.level debug matches 
 execute on target run tag @s add Ringing
 execute on attacker run tag @s add Ringing
 
+# Break invis
+execute as @a[tag=ActivePlayer,tag=Ringing] if score @s game.player.effects.invisibility matches 1.. run function exigence:player/effects/invis/break_from_bell
+
 # Store compare
 scoreboard players operation #compare node.id = @s game.interaction.node.id
 

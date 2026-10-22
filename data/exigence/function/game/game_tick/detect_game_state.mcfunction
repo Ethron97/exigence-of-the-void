@@ -25,4 +25,6 @@ execute if score #temp Temp = game.player_count game.state run function exigence
 #   Nevermind, no reason not to let them exalt again if they want to
 #execute if score game.beacons_lit game.state matches 4 if score game.beacons_lit game.dungeon.setup matches 1 run function exigence:game/game_win
 #execute if score game.beacons_lit game.state matches 4 if score game.beacons_lit game.dungeon.setup matches 0 run function exigence:game/game_win_campaign
-execute if score game.beacons_lit game.state matches 4 run function exigence:game/game_win_campaign
+#execute if score game.beacons_lit game.state matches 4 run function exigence:game/game_win_campaign
+#   1 2 3 4 4 4
+execute if score game.beacons_lit game.state matches 6 run function exigence:game/game_win_campaign

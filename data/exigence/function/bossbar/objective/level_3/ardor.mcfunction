@@ -10,5 +10,5 @@ execute if score 3.reached game.level_doors matches 1 if score ardor_embers.3 ga
 
 # BEACONS
 #   lit vs unlit
-execute if score beacon.3 game.story.beacons matches ..2 run data modify storage exigence:objective level_3 append value [{sprite:"exigence:item/beacon_unlit",atlas:"items",color:"white"},{text:""}]
-execute if score beacon.3 game.story.beacons matches 3.. run data modify storage exigence:objective level_3 append value [{sprite:"exigence:item/beacon_lit",atlas:"items",color:"white"},{text:""}]
+execute if score lit.3 game.story.beacons matches 0 run data modify storage exigence:objective level_3 append value [{sprite:"exigence:item/beacon_unlit",atlas:"items",color:"white"},{text:""}]
+execute if score lit.3 game.story.beacons matches 1 run data modify storage exigence:objective level_3 append value [{sprite:"exigence:item/beacon_lit",atlas:"items",color:"white"},{text:""}]

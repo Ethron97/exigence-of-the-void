@@ -10,7 +10,7 @@
 # DEBUG
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Load predungeon
 
-fill 1 207 35 -1 209 35 minecraft:air
+fill 1 207 35 -1 209 35 minecraft:black_concrete strict
 
 #====================================================================================================
 ## LOAD CHESTS
@@ -36,3 +36,7 @@ execute positioned ~ ~ ~5.49 run function exigence:hub/predungeon/menu/load_menu
 
 # Initialize "state"
 scoreboard players set predungeon.door_state hub.room_misc 0
+
+#====================================================================================================
+## EXPIRE DISPLAY
+function exigence:room/predungeon/expire_display/setup

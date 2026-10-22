@@ -9,6 +9,7 @@ execute if score toggle.hub debug matches 1 if score debug.level debug matches 3
 
 tag @s remove EmberShop
 team leave @s
+title @s actionbar ""
 
 # Update bossbar visibility
 function exigence:bossbar/ember_shop/update_visibility

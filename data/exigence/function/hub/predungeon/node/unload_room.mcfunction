@@ -50,3 +50,7 @@ execute positioned ~ ~ ~5 run kill @e[type=minecraft:marker,tag=PredungeonDispla
 
 # Clean up the warp stuff
 kill @e[type=minecraft:block_display,tag=schem_display,distance=..150]
+
+#====================================================================================================
+## EXPIRE DISPLAY
+function exigence:room/predungeon/expire_display/remove

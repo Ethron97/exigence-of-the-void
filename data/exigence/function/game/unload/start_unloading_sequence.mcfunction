@@ -72,5 +72,8 @@ scoreboard objectives setdisplay sidebar.team.dark_red
 
 bossbar set exigence:expire_game visible false
 
+# Put back to gateways
+execute in exigence:hub run fill 1 207 35 -1 209 35 minecraft:end_gateway
+
 # Reset load cancel so we can
 #scoreboard players set game.cancel_load hub.room_misc 0
