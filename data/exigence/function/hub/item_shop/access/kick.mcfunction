@@ -18,3 +18,6 @@ execute at @s run playsound minecraft:entity.enderman.teleport ambient @s ~ ~100
 scoreboard players reset @s hub.player.consumable_limit
 scoreboard players reset @s shop.player.looking_at_idid
 scoreboard players reset @s hub.player.room_id
+
+# Teleport leftover items (insurance)
+function exigence:player/utility/teleport_nearby_items_here

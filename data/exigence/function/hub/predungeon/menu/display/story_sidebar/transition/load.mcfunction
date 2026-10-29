@@ -15,8 +15,10 @@ execute if score toggle.menu debug matches 1 if score debug.level debug matches 
 execute if score @s profile.story.adv.win_difficulty_2 matches 1 unless score @s profile.story.adv.match_bookshelf matches 1 \
 positioned ~ ~ ~ run function exigence:hub/predungeon/menu/display/story_sidebar/transition/load_bookshelf
 
-# ALTARS
-
+# ALTARS/CANDLES
+#   If spoken to petitioner, and faith not kindled, load bookshelf display
+execute if score @s profile.story.adv.talk_to_petitioner matches 1 unless score @s profile.story.adv.light_altars matches 1 \
+positioned ~ ~ ~ run function exigence:hub/predungeon/menu/display/story_sidebar/transition/load_candles
 
 # CYRSTALS
 #   If won difficulty 4, and crystals are not destroyed, load crystal display

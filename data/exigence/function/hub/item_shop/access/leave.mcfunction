@@ -37,3 +37,6 @@ run return 0
 # If this player was the last one, kill room node and unload room
 execute in exigence:hub positioned -43.5 200.0 0.5 run function exigence:hub/item_shop/node/unload_room
 execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,tag=RoomNode] if score @s hub.room.room_id = #compare hub.player.room_id run kill @s
+
+# Teleport leftover items (insurance)
+function exigence:player/utility/teleport_nearby_items_here

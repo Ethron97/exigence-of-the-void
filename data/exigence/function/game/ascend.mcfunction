@@ -13,5 +13,7 @@ execute as @e[x=537,y=-1,z=531,dx=4,dy=1,dz=10,type=minecraft:armor_stand,tag=Ca
 # If (living) player has Sun Plate, trigger
 execute as @a[scores={dead=0,game.player.mod.sun_plate=1..},tag=ActivePlayer] run function exigence:player/modifiers/sun_plate_ascend
 
-# Revive dead players
-execute as @a[scores={dead=2},tag=ActivePlayer] run function exigence:player/death/revive
+# Revive dead players (pending)
+#execute as @a[scores={dead=2},tag=ActivePlayer] run function exigence:player/death/revive
+#execute as @a[scores={dead=2},tag=ActivePlayer] run scoreboard players set @s game.player.revive_pending 1
+execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode,tag=Active] run function exigence:player/death/check_revive_player

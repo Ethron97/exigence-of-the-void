@@ -11,6 +11,11 @@ execute if score toggle.hub debug matches 1 if score debug.level debug matches 3
 
 execute in exigence:hub as @n[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,scores={hub.room.room_type=5},tag=RoomNode] \
 run scoreboard players operation #compare hub.entity.profile_id = @s hub.entity.profile_id
+execute in exigence:hub as @n[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,scores={hub.room.room_type=5},tag=RoomNode] \
+run scoreboard players operation #compare hub.entity.coop_profile_id = @s hub.entity.coop_profile_id
+
+# If there was a card purchasing, finish that one now:
+execute if score shop.animating ember_shop matches 1 as @n[type=minecraft:item_display,tag=Purchasing,distance=..10] at @s run function exigence:hub/ember_shop/menu/display/purchase_animation/finish
 
 # Reset score(s)
 scoreboard players set shop.loaded ember_shop 0

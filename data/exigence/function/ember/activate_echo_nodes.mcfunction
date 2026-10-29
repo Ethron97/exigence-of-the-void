@@ -27,6 +27,12 @@ execute unless score game.difficulty game.state matches 2.. run scoreboard playe
 execute unless score game.difficulty game.state matches 3.. run scoreboard players set echos.level_3 game.dungeon.echo 0
 execute unless score game.difficulty game.state matches 4.. run scoreboard players set echos.level_4 game.dungeon.echo 0
 
+# Get total echos
+scoreboard players operation echos.total game.dungeon.echo = echos.level_1 game.dungeon.echo
+scoreboard players operation echos.total game.dungeon.echo += echos.level_2 game.dungeon.echo
+scoreboard players operation echos.total game.dungeon.echo += echos.level_3 game.dungeon.echo
+scoreboard players operation echos.total game.dungeon.echo += echos.level_4 game.dungeon.echo
+
 # Move scores to data
 execute store result storage exigence:echo_selection Level1Echos int 1 run scoreboard players get echos.level_1 game.dungeon.echo
 execute store result storage exigence:echo_selection Level2Echos int 1 run scoreboard players get echos.level_2 game.dungeon.echo

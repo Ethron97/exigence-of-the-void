@@ -1,5 +1,5 @@
 # Common functions to dying from other sources
-#   IE game kick and then logging in
+#   IE game kick and then logging in after the game already ended
 
 #====================================================================================================
 

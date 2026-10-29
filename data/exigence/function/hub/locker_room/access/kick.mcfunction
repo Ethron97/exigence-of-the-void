@@ -23,3 +23,6 @@ scoreboard players reset @s hub.player.locker_room_id
 
 scoreboard players reset @s hub.player.room_id
 scoreboard players reset @s shop.player.looking_at_idid
+
+# Teleport leftover items (insurance)
+function exigence:player/utility/teleport_nearby_items_here

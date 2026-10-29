@@ -24,6 +24,9 @@ execute if score shop.bonus_slots ember_shop matches 7.. run function exigence:h
 ## VOID CARDS
 function exigence:hub/ember_shop/menu/refresh/pick/rare_void
 # ... Extra void card slot(s)
+execute if score shop.void_crystals ember_shop matches 1.. run function exigence:hub/ember_shop/menu/refresh/pick/rare_void
+execute if score shop.void_crystals ember_shop matches 2.. run function exigence:hub/ember_shop/menu/refresh/pick/rare_void
+execute if score shop.void_crystals ember_shop matches 3.. run function exigence:hub/ember_shop/menu/refresh/pick/rare_void
 
 # Random chance for bonus void card slots
 execute store result score #temp Temp run random value 1..4

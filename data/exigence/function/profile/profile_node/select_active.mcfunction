@@ -15,7 +15,6 @@ execute if score toggle.profile debug matches 1 if score debug.level debug match
 
 # Reset tags
 execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode,tag=Active] run function exigence:profile/profile_node/private/remove_select_active_tags
-
 ## THIS PLAYERS PROFILE
 # Store this player id for comparison
 scoreboard players operation #temp Temp = @s profile.player.profile_id

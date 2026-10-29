@@ -30,5 +30,8 @@ execute at @s[scores={hub.player.profile_selector_id=1..}] run function exigence
 # Converting coins:
 execute if entity @s[tag=ConvertingCoins] run function exigence:hub/convert_money/player_tick
 
+# TP back up if fell
+execute at @s as @s[tag=!Limbo,y=-100,dy=100] in exigence:hub run tp @s 0.5 200.0 0.5
+
 effect clear @s nausea
 effect clear @s glowing

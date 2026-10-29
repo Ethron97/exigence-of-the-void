@@ -19,7 +19,8 @@ team join Echo @s
 data merge entity @s {Age:-32768}
 
 # Change model if there are multiple echos (and not tutorial)
-execute unless score @s node.property.object_level matches 10 if score echos.total game.dungeon.echo matches 2.. run data merge entity @s {Item:{components:{"minecraft:custom_model_data":{"strings":["disc_fragment_5"]}}}}
+execute unless score @s node.property.object_level matches 10 if score echos.total game.dungeon.echo matches 2.. run data modify entity @s Item.components."minecraft:custom_model_data".strings set value ["echo_fragment"]
+#execute if score echos.total game.dungeon.echo matches 2.. run data modify entity @s Item.components."minecraft:custom_model_data".strings set value ["echo_fragment"]
 
 # Remove local tag
 tag @s remove NewEcho

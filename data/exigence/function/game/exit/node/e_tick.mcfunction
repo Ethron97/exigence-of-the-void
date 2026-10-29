@@ -21,7 +21,8 @@ execute if entity @s[tag=!PortalDiscovered] if entity @a[tag=ActivePlayer,distan
 # Exit check
 # The player is at the start/exit with an Echo shard in their inventory (victory)
 #   Start 3 seconds after game start so you don't get the actionbar right away
-execute if score game.ticks tick_counter matches 60.. as @a[scores={dead=0},tag=ActivePlayer,distance=..2] run function exigence:game/exit/exit_portal/exit_check
+# MOVED TO PLAYER TICK
+#execute if score game.ticks tick_counter matches 60.. as @a[scores={dead=0},tag=ActivePlayer,distance=..2] run function exigence:game/exit/exit_portal/exit_check
 
 # If exit portal is open, tick
 execute if entity @s[tag=OpenedPortal] run function exigence:game/exit/exit_portal/tick

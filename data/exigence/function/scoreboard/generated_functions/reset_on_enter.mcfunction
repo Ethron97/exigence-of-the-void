@@ -4,7 +4,6 @@ scoreboard players set @s dead 0
 scoreboard players set @s game.player.active_level 0
 scoreboard players set @s game.player.calc_heighten 0
 scoreboard players set @s game.player.echo_fragments 0
-scoreboard players set @s game.player.heighten 0
 scoreboard players set @s game.player.holding_compass 0
 scoreboard players set @s game.player.mod.accelerate 0
 scoreboard players set @s game.player.mod.beast_vision 0
@@ -20,7 +19,6 @@ scoreboard players set @s game.player.mod.flicker 0
 scoreboard players set @s game.player.mod.gathering_storm 0
 scoreboard players set @s game.player.mod.glimmer 0
 scoreboard players set @s game.player.mod.glint_keep 0
-scoreboard players set @s game.player.mod.health_boost 0
 scoreboard players set @s game.player.mod.living_spark 0
 scoreboard players set @s game.player.mod.loot_boots 0
 scoreboard players set @s game.player.mod.magnet 0
@@ -35,7 +33,6 @@ scoreboard players set @s game.player.mod.sun_plate 0
 scoreboard players set @s game.player.mod.treasure_lantern 0
 scoreboard players set @s game.player.mod.vault_keep 0
 scoreboard players set @s game.player.mod.void_bundle 0
-scoreboard players set @s game.player.mod.void_crystal 0
 scoreboard players set @s game.player.mod.war_paint 0
 scoreboard players set @s game.player.mod.water_crystal 0
 scoreboard players set @s game.player.nearby_eyeballs 0
@@ -323,6 +320,7 @@ scoreboard players set @s profile.data.winloss.cr.max_menace_deaths 0
 scoreboard players set @s profile.data.winloss.cr.max_menace_reached 0
 scoreboard players set @s profile.data.winloss.cr.max_menace_wins 0
 scoreboard players set @s use.wind_charge 0
+scoreboard players set @s game.player.revive_pending 0
 scoreboard players set @s game.player.dust_appearance 0
 scoreboard players set @s UseTrident 0
 scoreboard players set @s game.player.kill_queue 0

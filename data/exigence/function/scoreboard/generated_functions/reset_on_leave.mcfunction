@@ -71,7 +71,6 @@ scoreboard players reset @s game.player.mod.sun_plate
 scoreboard players reset @s game.player.mod.treasure_lantern
 scoreboard players reset @s game.player.mod.vault_keep
 scoreboard players reset @s game.player.mod.void_bundle
-scoreboard players reset @s game.player.mod.void_crystal
 scoreboard players reset @s game.player.mod.war_paint
 scoreboard players reset @s game.player.mod.water_crystal
 scoreboard players reset @s game.player.nearby_eyeballs
@@ -360,6 +359,8 @@ scoreboard players reset @s profile.data.winloss.cr.max_menace_reached
 scoreboard players reset @s profile.data.winloss.cr.max_menace_wins
 scoreboard players reset @s use.wind_charge
 scoreboard players reset @s game.player.feather_gravity
+scoreboard players reset @s game.player.revive_cooldown
+scoreboard players reset @s game.player.revive_pending
 scoreboard players reset @s game.player.dust_appearance
 scoreboard players reset @s UseTrident
 scoreboard players reset @s game.player.kill_queue

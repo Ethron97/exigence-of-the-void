@@ -10,6 +10,9 @@ execute if score toggle.player debug matches 1 if score debug.level debug matche
 # Reset dead score
 scoreboard players set @s dead 0
 
+# Reset pending score
+scoreboard players set @s game.player.revive_pending 0
+
 # Decrement death check counter
 scoreboard players remove game.dead_players game.state 1
 
@@ -34,5 +37,6 @@ execute if entity @s[scores={game.player.mod.water_crystal=1}] run effect give @
 effect give @s minecraft:glowing infinite 0 true
 
 # Title
+tellraw @a [{selector:"@s",color:"dark_aqua"},{text:" was revived!",color:"green"}]
 title @s subtitle {text:"Reviving",color:"green"}
 title @s title ""

@@ -22,6 +22,9 @@ scoreboard players set coins.converting hub.coin_conversion 0
 scoreboard players set coins.leftover hub.coin_conversion 0
 scoreboard players set #coins.leftover hub.coin_conversion 0
 
+# Announce dungeon is ready (to players who weren't just inside)
+tellraw @a[tag=!ActivePlayer] [{text:"⚔ The dungeon is ready for its next victim",color:"gold"}]
+
 # Force player leaves
 execute as @a[tag=ActivePlayer] run function exigence:game/access/leave
 
@@ -74,6 +77,9 @@ bossbar set exigence:expire_game visible false
 
 # Put back to gateways
 execute in exigence:hub run fill 1 207 35 -1 209 35 minecraft:end_gateway
+
+# Reset dungeon step bossbars
+function exigence:bossbar/dungeon_steps/reset
 
 # Reset load cancel so we can
 #scoreboard players set game.cancel_load hub.room_misc 0

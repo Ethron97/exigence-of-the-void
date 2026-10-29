@@ -10,7 +10,8 @@
 # DEBUG
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Load predungeon
 
-fill 1 207 35 -1 209 35 minecraft:black_concrete strict
+#fill 1 207 35 -1 209 35 minecraft:black_concrete strict
+fill 1 207 35 -1 209 35 air
 
 #====================================================================================================
 ## LOAD CHESTS

@@ -134,7 +134,6 @@ scoreboard objectives remove game.player.mod.sun_plate
 scoreboard objectives remove game.player.mod.treasure_lantern
 scoreboard objectives remove game.player.mod.vault_keep
 scoreboard objectives remove game.player.mod.void_bundle
-scoreboard objectives remove game.player.mod.void_crystal
 scoreboard objectives remove game.player.mod.war_paint
 scoreboard objectives remove game.player.mod.water_crystal
 scoreboard objectives remove game.player.nearby_eyeballs
@@ -215,6 +214,7 @@ scoreboard objectives remove hub.room.difficulty
 scoreboard objectives remove hub.room.bonus_slots
 scoreboard objectives remove hub.room.expire_threshold
 scoreboard objectives remove hub.room.refresh_modifier
+scoreboard objectives remove hub.room.void_crystals
 scoreboard objectives remove hub.validate_items
 scoreboard objectives remove node.berry.data.times_picked
 scoreboard objectives remove node.berry.max_berries
@@ -272,6 +272,7 @@ scoreboard objectives remove player.node.queue.logout_game
 scoreboard objectives remove player.node.queue.timeout_limbo
 scoreboard objectives remove player.node.queue.timeout_ember_shop
 scoreboard objectives remove player.node.queue.vault_loss
+scoreboard objectives remove player.node.queue.revive
 scoreboard objectives remove player.node.room_id
 scoreboard objectives remove player.node.loaded_profile_id
 scoreboard objectives remove profile.data.altar.cr.altars_enhanced
@@ -1060,11 +1061,14 @@ scoreboard objectives remove tick_counter
 scoreboard objectives remove vault_open_state
 scoreboard objectives remove ember_shop
 scoreboard objectives remove ember_shop.cost
+scoreboard objectives remove ember_shop.original_cost
 scoreboard objectives remove ember_shop.rarity
 scoreboard objectives remove ember_shop.display_sequence
 scoreboard objectives remove CarrotOnStick
 scoreboard objectives remove use.wind_charge
 scoreboard objectives remove game.player.feather_gravity
+scoreboard objectives remove game.player.revive_cooldown
+scoreboard objectives remove game.player.revive_pending
 scoreboard objectives remove node.id
 scoreboard objectives remove hub.tutorial
 scoreboard objectives remove tutorial.marker.id

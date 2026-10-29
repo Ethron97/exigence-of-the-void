@@ -3,6 +3,7 @@
 
 ## CONSTRAINTS
 #   IN exigence:hub
+#   AT ( 0 200 0 )
 
 #====================================================================================================
 
@@ -16,6 +17,9 @@ execute as @e[x=-29,y=197,z=6,dx=24,dy=8,dz=24,type=minecraft:marker,scores={hub
 
 # Trial tick
 function exigence:hub/hub_trials/hub_trial_tick
+
+# Dungeon steps bossbar visibility
+function exigence:bossbar/dungeon_steps/update_visibility
 
 # Add 0 to all players player id to initialize it
 #scoreboard players add @a career.player_id 0

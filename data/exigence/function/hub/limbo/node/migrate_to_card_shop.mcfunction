@@ -17,6 +17,7 @@ scoreboard players operation #compare hub.room.room_id = @s hub.room.room_id
 scoreboard players operation #shop.difficulty ember_shop = @s hub.room.difficulty
 scoreboard players operation #shop.bonus_slots ember_shop = @s hub.room.bonus_slots
 scoreboard players operation #shop.refresh_modifier ember_shop = @s hub.room.refresh_modifier
+scoreboard players operation #shop.void_crystals ember_shop = @s hub.room.void_crystals
 # ...
 
 # Migrate players

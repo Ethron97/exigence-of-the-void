@@ -5,9 +5,9 @@
 
 #====================================================================================================
 
-# Animation lasts cost+30 ticks
-scoreboard players operation shop.animation_duration ember_shop = @s ember_shop.cost
-#execute if score @s ember_shop.cost matches 21.. run scoreboard players operation shop.animation_duration ember_shop /= 2 number
+# Animation lasts original_cost+30 ticks
+scoreboard players operation shop.animation_duration ember_shop = @s ember_shop.original_cost
+#execute if score @s ember_shop.original_cost matches 21.. run scoreboard players operation shop.animation_duration ember_shop /= 2 number
 execute if score shop.double_time ember_shop matches 1 run scoreboard players operation shop.animation_duration ember_shop /= 2 number
 # *2 because every-other
 scoreboard players operation shop.animation_duration ember_shop *= 2 number
@@ -38,7 +38,7 @@ fill 52 210 -1 52 210 1 soul_fire replace air
 
 # A bunch of runes explode from the fire upward
 #   Spawn runes
-scoreboard players operation #i Temp = @s ember_shop.cost
+scoreboard players operation #i Temp = @s ember_shop.original_cost
 execute at @s run function exigence:hub/ember_shop/menu/display/purchase_animation/ember/load_runes
 
 # Interpolate to big

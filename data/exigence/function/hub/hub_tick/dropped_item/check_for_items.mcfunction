@@ -5,8 +5,17 @@
 
 #====================================================================================================
 
+# If in locker room
+#execute if entity @s[tag=LockerRoom] run return run function exigence:hub/hub_tick/dropped_item/check_for_items_soulbound
+#----------------------------------------------------------------------------------------------------
+
+# If in profile selector
+execute if entity @s[tag=ProfileSelecting] run return run function exigence:hub/hub_tick/dropped_item/check_for_items_soulbound
+#----------------------------------------------------------------------------------------------------
+
 # If in predungeon and dungeon state is 1..
-execute if entity @s[tag=Predungeon] if score predungeon.door_state hub.room_misc matches 1.. run return run function exigence:hub/hub_tick/dropped_item/check_for_items_predungeon
+execute if entity @s[tag=Predungeon] if score predungeon.door_state hub.room_misc matches 1.. run return run function exigence:hub/hub_tick/dropped_item/check_for_items_soulbound
+#----------------------------------------------------------------------------------------------------
 
 # Check for item on the ground
 execute at @s as @e[type=minecraft:item,tag=!DropChecked,distance=..4] run function exigence:hub/hub_tick/dropped_item/just_dropped_item

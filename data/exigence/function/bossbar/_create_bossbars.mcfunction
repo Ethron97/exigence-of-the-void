@@ -9,6 +9,9 @@ bossbar add exigence:tutorial_deck ""
 bossbar add exigence:limbo ""
 bossbar add exigence:ember_shop ""
 
+bossbar add exigence:ds_deck ""
+bossbar add exigence:ds_objective ""
+
 bossbar add exigence:expire_tutorial ""
 bossbar add exigence:expire_predungeon ""
 bossbar add exigence:expire_item_shop ""

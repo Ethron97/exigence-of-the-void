@@ -134,7 +134,6 @@ scoreboard objectives add game.player.mod.sun_plate dummy
 scoreboard objectives add game.player.mod.treasure_lantern dummy
 scoreboard objectives add game.player.mod.vault_keep dummy
 scoreboard objectives add game.player.mod.void_bundle dummy
-scoreboard objectives add game.player.mod.void_crystal dummy
 scoreboard objectives add game.player.mod.war_paint dummy
 scoreboard objectives add game.player.mod.water_crystal dummy
 scoreboard objectives add game.player.nearby_eyeballs dummy
@@ -215,6 +214,7 @@ scoreboard objectives add hub.room.difficulty dummy
 scoreboard objectives add hub.room.bonus_slots dummy
 scoreboard objectives add hub.room.expire_threshold dummy
 scoreboard objectives add hub.room.refresh_modifier dummy
+scoreboard objectives add hub.room.void_crystals dummy
 scoreboard objectives add hub.validate_items dummy
 scoreboard objectives add node.berry.data.times_picked dummy
 scoreboard objectives add node.berry.max_berries dummy
@@ -272,6 +272,7 @@ scoreboard objectives add player.node.queue.logout_game dummy
 scoreboard objectives add player.node.queue.timeout_limbo dummy
 scoreboard objectives add player.node.queue.timeout_ember_shop dummy
 scoreboard objectives add player.node.queue.vault_loss dummy
+scoreboard objectives add player.node.queue.revive dummy
 scoreboard objectives add player.node.room_id dummy
 scoreboard objectives add player.node.loaded_profile_id dummy
 scoreboard objectives add profile.data.altar.cr.altars_enhanced dummy
@@ -1060,11 +1061,14 @@ scoreboard objectives add tick_counter dummy
 scoreboard objectives add vault_open_state dummy
 scoreboard objectives add ember_shop dummy
 scoreboard objectives add ember_shop.cost dummy
+scoreboard objectives add ember_shop.original_cost dummy
 scoreboard objectives add ember_shop.rarity dummy
 scoreboard objectives add ember_shop.display_sequence dummy
 scoreboard objectives add CarrotOnStick minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add use.wind_charge minecraft.used:minecraft.wind_charge
 scoreboard objectives add game.player.feather_gravity dummy
+scoreboard objectives add game.player.revive_cooldown dummy
+scoreboard objectives add game.player.revive_pending dummy
 scoreboard objectives add node.id dummy
 scoreboard objectives add hub.tutorial dummy
 scoreboard objectives add tutorial.marker.id dummy

@@ -20,6 +20,7 @@ function exigence:menace/private/transform_sculk {redify:0}
 
 # Set bossbar back to white
 bossbar set exigence:bossbar color white
+bossbar set exigence:ds_deck color white
 
 # Disallow ravagers up certain areas
 ## Cherry tree cave

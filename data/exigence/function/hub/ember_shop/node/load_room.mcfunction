@@ -29,6 +29,7 @@ scoreboard players set shop.refreshed_4 ember_shop 0
 scoreboard players operation shop.difficulty ember_shop = #shop.difficulty ember_shop
 scoreboard players operation shop.bonus_slots ember_shop = #shop.bonus_slots ember_shop
 scoreboard players operation shop.refresh_modifier ember_shop = #shop.refresh_modifier ember_shop
+scoreboard players operation shop.void_crystals ember_shop = #shop.void_crystals ember_shop
 #...
 
 # Get embers from this player

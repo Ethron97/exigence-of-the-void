@@ -42,9 +42,9 @@ item replace entity @s hotbar.7 with minecraft:carrot_on_a_stick[custom_name=[{t
 # Restart chain
 function exigence:tutorial/flow/next_token
 
-bossbar set exigence:tutorial name {text:"",color:"green",italic:false}
+bossbar set exigence:tutorial name {text:"",color:"aqua",italic:false}
 bossbar set exigence:tutorial value 0
 
-tellraw @s [{text:"-> Try again!",color:"green"}]
+tellraw @s [{text:"-> Try again!",color:"aqua"}]
 
 function exigence:tutorial/flow/reset_bossbars

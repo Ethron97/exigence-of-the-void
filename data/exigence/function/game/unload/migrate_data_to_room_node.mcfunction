@@ -13,3 +13,6 @@ scoreboard players operation @s hub.room.bonus_slots = mod.bonus_cards game.modi
 
 # Refresh cost modifier
 scoreboard players operation @s hub.room.refresh_modifier = mod.refresh_discount game.modifiers
+
+# Void crystal artifacts
+scoreboard players operation @s hub.room.void_crystals = mod.void_crystals game.modifiers

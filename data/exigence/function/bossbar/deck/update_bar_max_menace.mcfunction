@@ -4,10 +4,15 @@ scoreboard players operation #UpdateBarVal tick_counter = effect.cooldown game.d
 
 # Scale from 0-60 to 0-100
 execute store result storage exigence:bossbar value int 1.6666 run scoreboard players get #UpdateBarVal tick_counter
-data modify storage exigence:bossbar name set value 'bossbar'
 
+data modify storage exigence:bossbar name set value 'bossbar'
+function exigence:bossbar/update_bar_macro with storage exigence:bossbar
+
+data modify storage exigence:bossbar name set value 'ds_deck'
 function exigence:bossbar/update_bar_macro with storage exigence:bossbar
 
 # Update name
 bossbar set exigence:bossbar name [{text:"!!! DANGER !!! ",color:"red"},{text:"Next effect in ",color:"gray"}\
+,{score:{name:"effect.cooldown",objective:"game.dungeon.menace"},color:"red"},{text:" seconds",color:'gray'}]
+bossbar set exigence:ds_deck name [{text:"!!! DANGER !!! ",color:"red"},{text:"Next effect in ",color:"gray"}\
 ,{score:{name:"effect.cooldown",objective:"game.dungeon.menace"},color:"red"},{text:" seconds",color:'gray'}]

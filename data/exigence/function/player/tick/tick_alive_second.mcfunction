@@ -48,3 +48,9 @@ execute if score @s game.player.mod.mirror_vision matches 1.. run function exige
 # Feather + Wind Charge attribute reset if on ground after a second after using a wind charge
 execute if score @s game.player.feather_gravity matches 1.. run scoreboard players remove @s game.player.feather_gravity 1
 execute if score @s game.player.feather_gravity matches 1 if entity @s[predicate=exigence:player/is_on_ground] run attribute @s minecraft:gravity modifier remove exigence:feather
+
+
+#====================================================================================================
+## EXIT CHECK
+#   Moved here so that game_state checks this for win in the same tick as players escape
+execute if score game.ticks tick_counter matches 60.. if entity @e[type=minecraft:marker,tag=ExitNode,distance=..2] run function exigence:game/exit/exit_portal/exit_check

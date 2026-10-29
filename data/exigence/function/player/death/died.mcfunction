@@ -18,6 +18,11 @@ scoreboard players add game.dead_players game.state 1
 title @s subtitle {text:"You died",color:"red"}
 title @s title ""
 
+# Reset on death scores
+function exigence:scoreboard/generated_functions/reset_on_death
+# Delay potential revive by 1 second
+scoreboard players set @s game.player.revive_cooldown 20
+
 # Loss vault
 execute if score @s game.player.vault_code matches 1.. run function exigence:player/death/private/died_in_vault
 
@@ -40,7 +45,7 @@ data modify storage exigence:give dimension set from entity @s LastDeathLocation
 # Before clear, check if character has echo (or shards)
 execute store result score #temp Temp run clear @s minecraft:echo_shard 0
 scoreboard players operation @s profile.data.ember.cr.echos_lost += #temp Temp
-execute store result score #temp Temp run clear @s minecraft:disc_fragment_5 0
+execute store result score #temp Temp run clear @s minecraft:flint 0
 scoreboard players operation @s profile.data.ember.cr.echo_fragment_lost += #temp Temp
 
 # Drop items
@@ -53,16 +58,11 @@ execute if entity @a[scores={dead=0},tag=ActivePlayer] run schedule function exi
 # Ensure is on player team
 team join Player @s
 
-# Reset health mod (attributes get cleared on death in Minecraft)
-scoreboard players set @s game.player.mod.health_boost 0
-
 # Reset effects (effect_)
 function exigence:player/effects/reset_active_effects
 
 # Re-add attributes from artifacts
 function exigence:player/utility/grant_attributes
-
-scoreboard players set @s game.player.heighten 0
 
 # If player dies while carrying NPC (and game is coop), remove NPC and carrying tag and send message
 execute if entity @s[tag=Carrying] run function exigence:player/uncarry
@@ -86,7 +86,7 @@ function exigence:player/utility/interaction/tp_home
 execute in minecraft:overworld run function exigence:player/use_item/clock/reset_player
 
 #====================================================================================================
-## SCORES
+## STATS
 
 # If died at max menace, add to score
 execute if score game.max_menace game.state matches 1 run scoreboard players add @s profile.data.winloss.cr.max_menace_deaths 1

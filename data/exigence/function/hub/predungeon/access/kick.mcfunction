@@ -26,3 +26,6 @@ scoreboard players reset @s hub.player.room_id
 scoreboard players reset @s DisableCurrencyWarning
 
 function exigence:player/utility/armor/unbind_all_armor
+
+# Teleport leftover items (insurance)
+function exigence:player/utility/teleport_nearby_items_here_128

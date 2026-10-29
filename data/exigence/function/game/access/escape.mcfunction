@@ -14,6 +14,9 @@ execute if score game.escape_portal game.state matches 0 if score game.player_co
 # Add "Won" tag
 tag @s add Won
 
+# Announce (to in-game players)
+tellraw @a[tag=ActivePlayer] [{sprite:"minecraft:item/echo_shard",atlas:"items",color:"white"},{text:" "},{selector:"@s",color:"gold"},{text:" escaped the dungeon!",color:"aqua"}]
+
 # Reset gamemode
 gamemode adventure @s
 
@@ -40,3 +43,5 @@ execute at @s positioned ~ ~10 ~ run function exigence:player/utility/armor/void
 
 # Convert placeholder consumables to placeholders
 function exigence:player/utility/placeholder_consumables/to_placeholder/check
+
+# If single player, instant-win

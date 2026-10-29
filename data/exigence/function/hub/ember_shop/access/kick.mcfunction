@@ -20,3 +20,6 @@ execute at @s run playsound minecraft:entity.player.teleport player @s ~ ~1000 ~
 function exigence:hub/ember_shop/node/kill_interaction
 
 scoreboard players reset @s shop.player.looking_at_idid
+
+# Teleport leftover items (insurance)
+function exigence:player/utility/teleport_nearby_items_here

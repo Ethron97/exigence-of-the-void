@@ -15,3 +15,6 @@ function exigence:bossbar/tutorial/hide
 function exigence:bossbar/tutorial_deck/hide
 scoreboard players set tut.active hub.tutorial 0
 bossbar set exigence:expire_tutorial visible false
+
+# Announce to any other online players who are not in game that the tutorial is available
+tellraw @a[tag=!ActivePlayer,advancements={exigence:story/win_difficulty_0=false}] [{text:"The tutorial is now available!",color:"green"}]

@@ -25,6 +25,7 @@ execute if score @s player.node.queue.timeout_ember_shop matches 1.. at @s as @p
 ## GAME
 execute if score @s player.node.queue.logout_game matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_timeout_game
 execute if score @s player.node.queue.vault_loss matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_vault_loss
+execute if score @s player.node.queue.revive matches 1.. at @s as @p[tag=JustLoggedIn] run function exigence:profile/player_node/calls/private/run_revive
 # Vault loss should play before game die
 
 # ...

@@ -28,6 +28,7 @@ scoreboard players set @s game.player.effects.speed6 0
 scoreboard players set @s game.player.effects.speed7 0
 scoreboard players set @s game.player.effects.speed8 0
 scoreboard players set @s game.player.effects.speed9 0
+scoreboard players set @s game.player.heighten 0
 scoreboard players set @s game.player.killed_by.blaze 0
 scoreboard players set @s game.player.killed_by.creaking 0
 scoreboard players set @s game.player.killed_by.endermite 0
@@ -36,4 +37,6 @@ scoreboard players set @s game.player.killed_by.vex 0
 scoreboard players set @s game.player.killed_by.warden 0
 scoreboard players set @s game.player.killed_by.witch 0
 scoreboard players set @s game.player.killed_by.wither_skeleton 0
+scoreboard players set @s game.player.mod.health_boost 0
 scoreboard players set @s game.player.feather_gravity 0
+scoreboard players set @s game.player.revive_cooldown 0

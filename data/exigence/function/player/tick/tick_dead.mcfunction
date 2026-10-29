@@ -9,6 +9,12 @@
 #   This should be covered in detect_game_state I think
 #execute if score game.escape_portal game.state matches 1 if entity @s[tag=!Won] run function exigence:game/access/escape
 
+# If cooldown revive, reduce by 1 tick
+execute if score @s game.player.revive_cooldown matches 1.. run scoreboard players remove @s game.player.revive_cooldown 1
+# If no cooldown and revive is pending, revive
+execute if score @s game.player.revive_cooldown matches 0 if score @s game.player.revive_pending matches 1 run return run function exigence:player/death/revive
+#----------------------------------------------------------------------------------------------------
+
 # Refresh spectate
 spectate
 execute at @s run spectate @p[tag=ActivePlayer,scores={dead=0}]

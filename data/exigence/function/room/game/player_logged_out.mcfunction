@@ -17,3 +17,6 @@ scoreboard players operation #compare hub.room.room_id = @s hub.room.room_id
 # Add queued functions to player node(s)
 scoreboard players add @s player.node.queue 1
 scoreboard players add @s player.node.queue.logout_game 1
+
+# Trigger check for cleaning up NPC (if a villager being carried exists)
+execute in minecraft:overworld if entity @e[x=-520,y=-64,z=-287,dx=345,dy=345,dz=345,type=minecraft:villager,tag=Carried,limit=1] run function exigence:game/other/player_logged_out_while_carrying

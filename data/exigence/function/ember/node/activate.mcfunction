@@ -50,9 +50,6 @@ execute at @s run function exigence:ember/node/summon_echo_item
 
 #execute as @s run tellraw @a [{text:"Embers to drop: "},{"score":{"name":"@s","objective":"node.ember.embers_to_drop"}}]
 
-# Increase "EchosRequired" so we know how many echos the player needs to escape
-scoreboard players add echos.total game.dungeon.echo 1
-
 
 # DEBUGGING
 # Make sure that this echo node has all air around it

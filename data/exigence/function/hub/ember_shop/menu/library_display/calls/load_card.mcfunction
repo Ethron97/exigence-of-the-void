@@ -21,6 +21,10 @@ scoreboard players operation @n[type=minecraft:item_display,tag=NewItemDisplay,d
 
 # Copy cost score
 scoreboard players operation @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..1] ember_shop.cost = @s ember_shop.cost
+scoreboard players operation @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..1] ember_shop.original_cost = @s ember_shop.cost
+
+# If void crystal and void, half cost on item display
+execute if entity @s[tag=Void] if score shop.void_crystals ember_shop matches 1.. run scoreboard players operation @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..1] ember_shop.cost /= 2 number
 
 # Copy void
 execute if entity @s[tag=Void] run tag @n[type=minecraft:item_display,tag=NewItemDisplay,distance=..1] add Void

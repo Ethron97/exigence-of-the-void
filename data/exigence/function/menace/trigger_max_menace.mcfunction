@@ -22,6 +22,7 @@ playsound minecraft:block.end_portal.spawn hostile @a[tag=ActivePlayer] 0 100 0 
 
 # Set bossbar color to red, and 100%
 bossbar set exigence:bossbar color red
+bossbar set exigence:ds_deck color red
 function exigence:bossbar/deck/update_bar_max_menace
 
 # Disable interactables

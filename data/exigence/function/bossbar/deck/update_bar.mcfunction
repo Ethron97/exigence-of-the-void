@@ -5,6 +5,9 @@ scoreboard players operation #UpdateBarVal tick_counter *= 100 number
 scoreboard players operation #UpdateBarVal tick_counter /= card.draw.cooldown_max tick_counter
 
 execute store result storage exigence:bossbar value int 1 run scoreboard players get #UpdateBarVal tick_counter
-data modify storage exigence:bossbar name set value 'bossbar'
 
+data modify storage exigence:bossbar name set value 'bossbar'
+function exigence:bossbar/update_bar_macro with storage exigence:bossbar
+
+data modify storage exigence:bossbar name set value 'ds_deck'
 function exigence:bossbar/update_bar_macro with storage exigence:bossbar
