@@ -7,6 +7,8 @@
 
 execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3 Trial) Bolt trial reset
 
+scoreboard players operation #trial_time Temp = @s trial.timer
+
 # Kill entities
 kill @e[type=minecraft:block_display,tag=DropBlock,distance=..24]
 kill @e[type=minecraft:block_display,tag=PizzaLine,distance=..24]
@@ -14,7 +16,9 @@ kill @e[type=minecraft:marker,tag=BoltTrialSetup,distance=..24]
 kill @e[type=minecraft:marker,tag=PizzaLightning,distance=..24]
 
 # Reset tags
+tag @s remove Trial
 tag @s remove Crucible
+tag @s remove Endless
 tag @s remove ETICK
 tag @a remove TrialSounds_Bolt
 
@@ -35,3 +39,6 @@ execute if entity @s[tag=Hub] run bossbar set exigence:hub_trial_bolt visible fa
 # Update status
 execute if entity @s[tag=Game] run scoreboard players set game.bolt.trial trial.status 0
 execute if entity @s[tag=Hub] run scoreboard players set hub.bolt.trial trial.status 0
+
+# If hub, reset board
+execute if entity @s[tag=Hub] run function exigence:hub/hub_trials/end/bolt

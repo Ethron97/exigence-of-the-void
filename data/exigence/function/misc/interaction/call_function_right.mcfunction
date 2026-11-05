@@ -1,7 +1,7 @@
 # Macro to call the right click function from the item display item data
 
 ## CONSTRAINTS
-#   AS item display
+#   AS item display(?)
 
 ## INPUTS
 #   STR function_right - Full function path

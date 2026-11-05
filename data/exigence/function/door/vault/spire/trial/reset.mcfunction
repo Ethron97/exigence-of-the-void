@@ -12,7 +12,9 @@ kill @e[type=minecraft:marker,tag=SpireTrialSetup,distance=..24]
 kill @e[type=minecraft:block_display,tag=SpireTrialSetup,distance=..24]
 
 # Reset tags
+tag @s remove Trial
 tag @s remove Crucible
+tag @s remove Endless
 tag @s remove ETICK
 tag @a remove TrialSounds_Spire
 
@@ -39,3 +41,6 @@ execute if entity @s[tag=Hub] run scoreboard players set hub.spire.trial trial.s
 # Clear purpurpillar
 #fill -364 150 -18 -347 150 -2 air replace purpur_pillar
 #execute at @e[type=minecraft:marker,tag=SpireObject] run fill ~ ~ ~ ~ ~ ~ air replace purpur_pillar
+
+# If hub, reset board
+execute if entity @s[tag=Hub] run function exigence:hub/hub_trials/end/spire

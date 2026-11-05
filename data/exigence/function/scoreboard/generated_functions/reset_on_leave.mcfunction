@@ -87,6 +87,7 @@ scoreboard players reset @s game.player.time_off_level
 scoreboard players reset @s game.player.used.potion
 scoreboard players reset @s game.player.used.snowball
 scoreboard players reset @s game.player.vault_code
+scoreboard players reset @s game.player.track_length
 scoreboard players reset @s profile.data.altar.cr.altars_enhanced
 scoreboard players reset @s profile.data.altar.cr.altars_lit
 scoreboard players reset @s profile.data.altar.cr.altars_red

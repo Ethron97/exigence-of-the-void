@@ -8,13 +8,15 @@
 
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3) Entering profile selector
 
+tellraw @s [{text:">> ",color:"green"},{text:"Entered ",color:"gray"},{text:"Profile Selector",color:"white"}]
+
 tag @s add ProfileSelecting
 
 tp @s ~ ~ ~5 180 0 
 execute at @s run playsound minecraft:entity.enderman.teleport ambient @s ~ ~1000 ~ 1000 1
 
-# Join team (to hide nametag)
-team join ProfileSelecting @s
+# Update team (color and to hide nametag)
+function exigence:profile/player/team/enter_profile_selector
 
 # Enforce player node exists
 scoreboard players add @s career.player_id 0

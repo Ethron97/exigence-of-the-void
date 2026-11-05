@@ -26,6 +26,8 @@ execute if entity @s[tag=Trial] run tellraw @s [{text:"[!]",color:"yellow"},{tex
 ,{text:"Trial of Lightning ",color:"yellow"},{sprite:"minecraft:item/bolt_armor_trim_smithing_template",atlas:"items",color:"white"}]
 execute if entity @s[tag=Crucible] run tellraw @s [{text:"[!]",color:"light_purple"},{text:" Entered the ",color:"gray"}\
 ,{text:"Crucible of Lightning ",color:"light_purple"},{sprite:"minecraft:item/bolt_armor_trim_smithing_template",atlas:"items",color:"white"}]
+execute if entity @s[tag=Endless] run tellraw @s [{text:"[!]",color:"aqua"},{text:" Entered the ",color:"gray"}\
+,{text:"Endless Lightning ",color:"aqua"},{sprite:"minecraft:item/bolt_armor_trim_smithing_template",atlas:"items",color:"white"}]
 
 # Initialize bolt bossbar
 bossbar set exigence:hub_trial_bolt visible true
@@ -34,7 +36,10 @@ execute if entity @s[tag=Trial] run bossbar set exigence:hub_trial_bolt color ye
 execute if entity @s[tag=Trial] run bossbar set exigence:hub_trial_bolt name [{sprite:"minecraft:item/bolt_armor_trim_smithing_template",atlas:"items",color:"white"},{text:" Trial of Lightning ",color:"yellow"},{sprite:"minecraft:item/bolt_armor_trim_smithing_template",atlas:"items",color:"white"}]
 execute if entity @s[tag=Crucible] run bossbar set exigence:hub_trial_bolt color purple
 execute if entity @s[tag=Crucible] run bossbar set exigence:hub_trial_bolt name [{sprite:"minecraft:item/bolt_armor_trim_smithing_template",atlas:"items",color:"white"},{text:" Crucible of Lightning ",color:"light_purple"},{sprite:"minecraft:item/bolt_armor_trim_smithing_template",atlas:"items",color:"white"}]
+execute if entity @s[tag=Endless] run bossbar set exigence:hub_trial_bolt color blue
+execute if entity @s[tag=Endless] run bossbar set exigence:hub_trial_bolt name [{sprite:"minecraft:item/bolt_armor_trim_smithing_template",atlas:"items",color:"white"},{text:" Endless Lightning ",color:"aqua"},{sprite:"minecraft:item/bolt_armor_trim_smithing_template",atlas:"items",color:"white"}]
 
-# TODO add "practice" score tracking
-#scoreboard players add @s[tag=ActivePlayer,tag=Trial] profile.data.vaults.cr.bolt_trial_try 1
-#scoreboard players add @s[tag=ActivePlayer,tag=Crucible] profile.data.vaults.cr.bolt_crucible_try 1
+# Add "practice" score tracking
+scoreboard players add @s[tag=Trial] career.vault.bolt_trial_try 1
+scoreboard players add @s[tag=Crucible] career.vault.bolt_crucible_try 1
+scoreboard players add @s[tag=Endless] career.vault.bolt_endless_try 1

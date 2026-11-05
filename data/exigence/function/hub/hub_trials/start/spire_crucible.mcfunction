@@ -20,5 +20,8 @@ gamemode adventure @s
 tag @s add Crucible
 tag @s add Hub
 
+# Disable buttons
+function exigence:hub/hub_trials/node/spire/disable_buttons
+
 # Call begin function
 function exigence:door/vault/spire/trial/trial_hub/begin

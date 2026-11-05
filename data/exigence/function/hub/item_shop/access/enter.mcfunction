@@ -7,6 +7,8 @@
 
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Entering item shop
 
+tellraw @s [{text:">> ",color:"green"},{text:"Entered ",color:"gray"},{text:"Item Shop",color:"gold"}]
+
 tag @s add ItemShop
 
 function exigence:hub/item_shop/access/team/join

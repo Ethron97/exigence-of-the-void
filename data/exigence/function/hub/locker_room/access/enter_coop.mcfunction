@@ -11,6 +11,8 @@
 
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Entering Locker Room (COOP)
 
+tellraw @s [{text:">> ",color:"green"},{text:"Entered ",color:"gray"},{text:"Locker Room",color:"yellow"}]
+
 tag @s add LockerRoom
 
 execute if entity @n[tag=LockerRoomNode,tag=South,distance=..0.1] at @s run tp @s ~ ~ ~1

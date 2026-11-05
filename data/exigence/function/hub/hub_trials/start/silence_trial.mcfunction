@@ -20,5 +20,8 @@ gamemode adventure @s
 tag @s add Trial
 tag @s add Hub
 
+# Disable buttons
+function exigence:hub/hub_trials/node/silence/disable_buttons
+
 # Call begin function
 function exigence:door/vault/silence/trial/trial_hub/begin

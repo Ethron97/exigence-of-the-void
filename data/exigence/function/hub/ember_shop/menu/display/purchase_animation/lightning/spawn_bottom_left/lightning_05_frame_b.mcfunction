@@ -1,0 +1,6 @@
+# Lightning 7b1e15130ada | frame B | 10 ticks
+# Run as each display entity (@s); pending tag is removed by your tick handler.
+execute if entity @s[tag=lt_7b1e15130ada_1] run data merge entity @s {start_interpolation:-1,transformation:{translation:[-0.02538933f,-0.03349344f,-0.01155731f],left_rotation:[-0.15651645f,-0.20657163f,0.00000000f,0.96583164f],scale:[0.06000000f,0.06000000f,0.39591457f],right_rotation:[0f,0f,0f,1f]}}
+execute if entity @s[tag=lt_7b1e15130ada_2] run data merge entity @s {start_interpolation:-1,transformation:{translation:[-0.17677089f,0.07972277f,0.31975221f],left_rotation:[-0.23865591f,-0.19608588f,0.00000000f,0.95110130f],scale:[0.06000000f,0.06000000f,0.42215009f],right_rotation:[0f,0f,0f,1f]}}
+execute if entity @s[tag=lt_7b1e15130ada_3] run data merge entity @s {start_interpolation:-1,transformation:{translation:[-0.32894845f,0.26391611f,0.65514132f],left_rotation:[-0.36969966f,-0.16890456f,0.00000000f,0.91367030f],scale:[0.06000000f,0.06000000f,0.50599340f],right_rotation:[0f,0f,0f,1f]}}
+execute if entity @s[tag=lt_7b1e15130ada_4] run data merge entity @s {start_interpolation:-1,transformation:{translation:[-0.47876411f,0.59196517f,0.97964648f],left_rotation:[-0.35801044f,-0.17191054f,0.00000000f,0.91775557f],scale:[0.06000000f,0.06000000f,0.49536996f],right_rotation:[0f,0f,0f,1f]}}

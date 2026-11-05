@@ -17,8 +17,9 @@ execute if score toggle.profile debug matches 1 if score debug.level debug match
 ## VALIDATE
 execute unless dimension exigence:profile_data run return run tellraw @s {text:"Not in exigence:profile_data, aborting",color:"red"}
 
-# If there are already 1008 total, fail
-execute if score #sequence profile.player.profile_id matches 1008.. run return run tellraw @s {text:"Maximum number of TOTAL profiles reached (1008)",color:"red"}
+# If there are already 288 total, fail
+#   Number depends on unique cominbations of profile sprite + color
+execute if score #sequence profile.player.profile_id matches 288.. run return run tellraw @s {text:"Maximum number of TOTAL profiles reached (288)",color:"red"}
 
 # If this player already has more than 5, fail
 scoreboard players set #temp Temp 0

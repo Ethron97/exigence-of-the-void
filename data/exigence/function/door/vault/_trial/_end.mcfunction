@@ -18,5 +18,6 @@ execute if entity @s[tag=Hub] run function exigence:door/vault/_trial/_end_hub
 # Remove tag
 tag @s remove Crucible
 tag @s remove Trial
+tag @s remove Endless
 tag @s remove Game
 tag @s remove Hub

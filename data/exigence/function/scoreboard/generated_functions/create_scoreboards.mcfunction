@@ -18,6 +18,12 @@ scoreboard objectives add career.settings.show_resource_overflow dummy
 scoreboard objectives add career.settings.show_resource_underflow dummy
 scoreboard objectives add career.settings.objective_bossbar dummy
 scoreboard objectives add career.tutorial dummy
+scoreboard objectives add career.vault.bolt_trial_try dummy
+scoreboard objectives add career.vault.bolt_trial_win dummy
+scoreboard objectives add career.vault.bolt_crucible_try dummy
+scoreboard objectives add career.vault.bolt_crucible_win dummy
+scoreboard objectives add career.vault.bolt_endless_try dummy
+scoreboard objectives add career.vault.bolt_endless_best dummy
 scoreboard objectives add dead minecraft.custom:minecraft.deaths
 scoreboard objectives add debug.node_counter dummy
 scoreboard objectives add debug.vault_pots_1 dummy
@@ -150,6 +156,7 @@ scoreboard objectives add game.player.time_off_level dummy
 scoreboard objectives add game.player.used.potion minecraft.used:minecraft.potion
 scoreboard objectives add game.player.used.snowball minecraft.used:minecraft.snowball
 scoreboard objectives add game.player.vault_code dummy
+scoreboard objectives add game.player.track_length dummy
 scoreboard objectives add game.ravager.detect_thoughts dummy
 scoreboard objectives add game.ravager.eating_cookie dummy
 scoreboard objectives add game.warden.sniff_cooldown dummy
@@ -193,6 +200,9 @@ scoreboard objectives add hub.entity.profile_selector_id dummy
 scoreboard objectives add hub.entity.room_id dummy
 scoreboard objectives add hub.locker_room_id dummy
 scoreboard objectives add hub.player.embers_retrieved dummy
+scoreboard objectives add hub.player.coins_retrieved dummy
+scoreboard objectives add hub.player.research_retrieved dummy
+scoreboard objectives add hub.player.money_retrieved dummy
 scoreboard objectives add hub.player_entity.query_idid dummy
 scoreboard objectives add hub.player.consumable_limit dummy
 scoreboard objectives add hub.player.interaction_cooldown dummy

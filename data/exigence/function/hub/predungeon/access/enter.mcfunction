@@ -7,6 +7,8 @@
 
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Entering predungeon
 
+tellraw @s [{text:">> ",color:"green"},{text:"Entered ",color:"gray"},{text:"Predungeon",color:"dark_purple"}]
+
 tag @s add Predungeon
 team join Predungeon @s
 

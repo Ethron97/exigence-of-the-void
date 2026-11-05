@@ -7,7 +7,7 @@
 
 # Teleport back to above trial room
 #execute at @n[type=minecraft:marker,tag=TrialNode,tag=Silence] run tp @s ~ ~13 ~
-tp -15.5 182.0 -16.5
+tp @s -15.5 182.0 -16.5 0 0
 
 # Give win scores
 # TODO add scoreboards for "practice" trials

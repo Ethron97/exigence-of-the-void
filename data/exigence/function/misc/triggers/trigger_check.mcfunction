@@ -17,5 +17,9 @@ execute if score @s AcceptCoopInvite matches -2147483647..2147483647 unless scor
 execute if score @s DeclineCoopInvite matches -2147483647..2147483647 unless score @s DeclineCoopInvite matches 0 run function exigence:misc/triggers/hub/invite_coop_decline
 execute if score @s DisableCurrencyWarning matches -2147483647..2147483647 unless score @s DisableCurrencyWarning matches 0 run function exigence:misc/triggers/hub/disable_currency_warn
 
+# Other
+execute if score @s FollowToPredungeon matches -2147483647..2147483647 unless score @s FollowToPredungeon matches 0 run function exigence:misc/triggers/hub/follow_to_predungeon_run
+
+
 # Admin
 execute as @s[tag=Admin] run function exigence:misc/triggers/trigger_check_admin

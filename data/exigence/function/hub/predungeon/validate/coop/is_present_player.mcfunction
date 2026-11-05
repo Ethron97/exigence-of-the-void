@@ -14,7 +14,10 @@ execute if entity @s[tag=Predungeon] run scoreboard players set #player_found Te
 
 # Otherwise, message this player and tell them to get their butt in predungeon.
 tellraw @s[tag=!Predungeon] [{text:"!!! ",bold:true,color:red},{text:"Your co-op fellows are waiting for you in the ",color:red,bold:false}\
-,{text:"Predungeon",color:"dark_purple",bold:false},{text:" room!",color:red,bold:false}]
-# TODO "click here to warp there now"
+,{text:"Predungeon",color:"dark_purple",bold:false},{text:" room! ",color:red,bold:false}\
+,{text:"CLICK HERE",click_event:{action:"run_command",command:"/trigger FollowToPredungeon"},color:"yellow"}\
+,{text:" to teleport there!",color:"red",bold:false}]
+
+scoreboard players enable @s FollowToPredungeon
 
 execute at @s run playsound minecraft:block.sculk_sensor.clicking ui @s ~ ~10 ~ 2 1.4

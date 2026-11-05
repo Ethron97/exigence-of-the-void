@@ -20,14 +20,19 @@ scoreboard players set shop.animating ember_shop 1
 tag @s add Purchasing
 data modify entity @s teleport_duration set value 3
 
-# Set teleport-up-distance (10000 = 1.0000)
-#   initial value = blocks (1 - rate of decay)
-scoreboard players set @s Random 15000
-
 # Set target coordinates
 data modify entity @s item.components."minecraft:custom_data".target_x set value 51.0
-data modify entity @s item.components."minecraft:custom_data".target_y set value 215.5
+data modify entity @s item.components."minecraft:custom_data".target_y set value 213.5
 data modify entity @s item.components."minecraft:custom_data".target_z set value 0.5
+
+# Set teleport-up-distance (10000 = 1.0000)
+#   initial value = blocks (1 - rate of decay)
+#scoreboard players set @s Random 15000
+function exigence:hub/ember_shop/menu/display/purchase_animation/private/get_distance_to_big_card_center with entity @s item.components."minecraft:custom_data"
+#   Function returns 1.4 = 14
+scoreboard players operation @s Random *= 100 number
+scoreboard players operation @s Random *= 5 number
+#tellraw @a [{selector:"@s"},{text:" me my distance is "},{score:{name:"@s",objective:"Random"}}]
 
 # Things that happen the instance you purchase the card:
 # Particles

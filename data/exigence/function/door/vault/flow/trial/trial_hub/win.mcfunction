@@ -7,7 +7,7 @@
 
 # Teleport back to above trial room
 #execute at @n[type=minecraft:marker,tag=TrialNode,tag=Flow] run tp @s ~ ~13 ~
-tp 16.5 182.0 -0.5
+tp @s 16.5 182.0 -0.5 180 0
 
 # Give win scores
 # TODO add scoreboards for "practice" trials

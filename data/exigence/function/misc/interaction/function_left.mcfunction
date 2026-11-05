@@ -9,10 +9,15 @@
 # DEBUG
 #say function left
 
+# Is direct function?
+data modify storage exigence:temp function_left set from entity @s data.custom_data.function_left
+execute if data entity @s data.custom_data.function_left on attacker run return run function exigence:misc/interaction/call_function_left with storage exigence:temp
+#----------------------------------------------------------------------------------------------------
+
 execute on attacker run scoreboard players operation #compare shop.player.looking_at_idid = @s shop.player.looking_at_idid
 
 # Check cooldown
-execute on target unless function exigence:misc/interaction/check_cooldown run return fail
+execute on attacker unless function exigence:misc/interaction/check_cooldown run return fail
 #----------------------------------------------------------------------------------------------------
 
 # Call macro using the IDID of the itemdisplay that the player is looking at

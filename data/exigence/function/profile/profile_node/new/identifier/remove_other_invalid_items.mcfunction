@@ -1,0 +1,21 @@
+# Send out create commands for the co-op profiles
+
+## CONSTRAINTS
+#   AS player node (of main coop profile)
+
+#====================================================================================================
+
+scoreboard players operation #compare player.node.joined_player_1 = @s player.node.joined_player_1
+execute if score @s player.node.joined_player_1 matches 1.. in exigence:profile_data \
+as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] if score @s profile.node.player_id = #compare player.node.joined_player_1 \
+run function exigence:profile/profile_node/new/identifier/private/try_remove_item with entity @s data.custom_data.profile_icon
+
+scoreboard players operation #compare player.node.joined_player_2 = @s player.node.joined_player_2
+execute if score @s player.node.joined_player_2 matches 1.. in exigence:profile_data \
+as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] if score @s profile.node.player_id = #compare player.node.joined_player_2 \
+run function exigence:profile/profile_node/new/identifier/private/try_remove_item with entity @s data.custom_data.profile_icon
+
+scoreboard players operation #compare player.node.joined_player_3 = @s player.node.joined_player_3
+execute if score @s player.node.joined_player_3 matches 1.. in exigence:profile_data \
+as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode] if score @s profile.node.player_id = #compare player.node.joined_player_3 \
+run function exigence:profile/profile_node/new/identifier/private/try_remove_item with entity @s data.custom_data.profile_icon

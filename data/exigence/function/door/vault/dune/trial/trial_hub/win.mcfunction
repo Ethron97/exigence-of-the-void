@@ -7,7 +7,7 @@
 
 # Teleport back to above trial room
 #execute at @n[type=minecraft:marker,tag=TrialNode,tag=Dune] run tp @s ~ ~13 ~
-tp 0.5 182.0 -16.5
+tp @s 0.5 182.0 -16.5 0 0
 
 # Give win scores
 # TODO add scoreboards for "practice" trials

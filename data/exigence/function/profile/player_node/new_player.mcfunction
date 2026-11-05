@@ -19,7 +19,11 @@ tp @n[x=0,y=0,z=32,dx=15,dy=15,dz=15,type=minecraft:marker,tag=NewPlayerNodeMark
 execute as @n[x=0,y=0,z=32,dx=15,dy=15,dz=15,type=minecraft:marker,tag=NewPlayerNodeMarker] at @s run function exigence:profile/player_node/new/locate_next_player_slot
 
 # Generate player id
+#   ASSIGNS @s career.player_id
 function exigence:profile/player_node/new/generate_id
+
+# Create team
+function exigence:profile/player_node/team/create_team
 
 # Summon player head
 loot spawn 0.5 1.5 32.5 loot exigence:get_player_head
@@ -40,3 +44,6 @@ function exigence:profile/player_node/new/initialize_settings
 scoreboard players set #temp Temp 0
 execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] run scoreboard players add #temp Temp 1
 execute if score #temp Temp matches 2.. run scoreboard players set world.is_multiplayer exigence 1
+
+# Join player specific team
+function exigence:profile/player/team/join

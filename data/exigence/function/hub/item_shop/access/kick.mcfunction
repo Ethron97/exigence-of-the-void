@@ -7,8 +7,10 @@
 
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Kicking from item shop
 
+tellraw @s [{text:"<< ",color:"red"},{text:"You were kicked from ",color:"gray"},{text:"Item Shop",color:"gold"}]
+
 tag @s remove ItemShop
-team leave @s
+function exigence:profile/player/team/join
 
 execute in exigence:hub run tp @s -16.5 200.0 0.5 -90 0
 execute at @s run playsound minecraft:entity.enderman.teleport ambient @s ~ ~1000 ~ 1000 1

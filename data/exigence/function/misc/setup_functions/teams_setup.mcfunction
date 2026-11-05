@@ -54,9 +54,6 @@ team modify Botany color dark_green
 team add Tutorial
 team modify Tutorial color green
 
-team add ProfileSelecting
-team modify ProfileSelecting color gray
-
 # Teams on GOLD will display hub.player.consumable_limit
 team add Lockerroom
 team modify Lockerroom color gold

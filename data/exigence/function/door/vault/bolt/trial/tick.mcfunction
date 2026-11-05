@@ -19,9 +19,9 @@ execute as @a[scores={dead=0,game.player.vault_code=1},distance=..24] at @s if b
 execute as @a[scores={dead=0,game.player.vault_code=1},distance=..24] if predicate exigence:player/on_fire run return run function exigence:door/vault/bolt/trial/loss/fire
 #----------------------------------------------------------------------------------------------------
 
-# Detect win
+# Detect win (unless Endless)
 #   If player survives 30 seconds, win. (600 ticks + 60 for pre-trial time)
-execute if score @s trial.timer matches 660.. as @a[scores={dead=0,game.player.vault_code=1},distance=..24] run return run function exigence:door/vault/bolt/trial/win
+execute if entity @s[tag=!Endless] if score @s trial.timer matches 660.. as @a[scores={dead=0,game.player.vault_code=1},distance=..24] run return run function exigence:door/vault/bolt/trial/win
 #----------------------------------------------------------------------------------------------------
 
 #====================================================================================================
@@ -44,10 +44,10 @@ execute if score @s trial.timer matches 60 as @a[tag=TrialSounds_Bolt] run title
 execute if score @s trial.timer matches 80 as @a[tag=TrialSounds_Bolt] run function exigence:door/vault/_trial/titles/blank
 
 # Almost there!
-execute if score @s trial.timer matches 600 as @a[tag=TrialSounds_Bolt] run function exigence:door/vault/_trial/titles/3
-execute if score @s trial.timer matches 620 as @a[tag=TrialSounds_Bolt] run function exigence:door/vault/_trial/titles/2
-execute if score @s trial.timer matches 640 as @a[tag=TrialSounds_Bolt] run function exigence:door/vault/_trial/titles/1
-execute if score @s trial.timer matches 659 as @a[tag=TrialSounds_Bolt] run function exigence:door/vault/_trial/titles/blank
+execute if score @s[tag=!Endless] trial.timer matches 600 as @a[tag=TrialSounds_Bolt] run function exigence:door/vault/_trial/titles/3
+execute if score @s[tag=!Endless] trial.timer matches 620 as @a[tag=TrialSounds_Bolt] run function exigence:door/vault/_trial/titles/2
+execute if score @s[tag=!Endless] trial.timer matches 640 as @a[tag=TrialSounds_Bolt] run function exigence:door/vault/_trial/titles/1
+execute if score @s[tag=!Endless] trial.timer matches 659 as @a[tag=TrialSounds_Bolt] run function exigence:door/vault/_trial/titles/blank
 
 
 
@@ -71,23 +71,27 @@ execute as @e[type=minecraft:marker,scores={trial.object.timer=19},tag=PizzaLigh
 execute if score #hit_player Temp matches 1 as @a[scores={dead=0,game.player.vault_code=1},distance=..24] run return run function exigence:door/vault/bolt/trial/loss/lightning
 #----------------------------------------------------------------------------------------------------
 
-# Generate pizzas (based on Trial or Crucible)
+# Generate pizzas (based on Trial, Crucible, or Endless)
 #   Always one final pizza(s) just before end
-execute if score @s trial.timer matches 630 run function exigence:door/vault/bolt/trial/proc/proc_pizzas
-#   Unless game is about to end
-execute if score @s trial.timer.cooldown matches ..0 unless score @s trial.timer matches 630.. run function exigence:door/vault/bolt/trial/proc/proc_pizzas
+execute unless entity @s[tag=Endless] if score @s trial.timer matches 630 run function exigence:door/vault/bolt/trial/proc/proc_pizzas
+#   When timer runs out (Unless nonendless and game is about to end)
+execute if score @s[tag=!Endless] trial.timer.cooldown matches ..0 unless score @s trial.timer matches 630.. run function exigence:door/vault/bolt/trial/proc/proc_pizzas
+execute if score @s[tag=Endless] trial.timer.cooldown matches ..0 run function exigence:door/vault/bolt/trial/proc/proc_pizzas
 
 # Countdown pizza timer
 scoreboard players remove @s trial.timer.cooldown 1
 
 
-
 ## Crucible
 #   Drop 10 blocks out every "bracket" change
-execute if score @s trial.timer matches 0 if entity @s[tag=Crucible] as @n[type=minecraft:marker,tag=BoltThrower,distance=..1] run function exigence:door/vault/bolt/trial/proc/proc_drop_blocks
-execute if score @s trial.timer matches 200 if entity @s[tag=Crucible] as @n[type=minecraft:marker,tag=BoltThrower,distance=..1] run function exigence:door/vault/bolt/trial/proc/proc_drop_blocks
-execute if score @s trial.timer matches 400 if entity @s[tag=Crucible] as @n[type=minecraft:marker,tag=BoltThrower,distance=..1] run function exigence:door/vault/bolt/trial/proc/proc_drop_blocks
-execute if score @s trial.timer matches 520 if entity @s[tag=Crucible] as @n[type=minecraft:marker,tag=BoltThrower,distance=..1] run function exigence:door/vault/bolt/trial/proc/proc_drop_blocks
+execute if score @s trial.timer matches 0 if entity @s[tag=!Trial] as @n[type=minecraft:marker,tag=BoltThrower,distance=..1] run function exigence:door/vault/bolt/trial/proc/proc_drop_blocks
+execute if score @s trial.timer matches 200 if entity @s[tag=!Trial] as @n[type=minecraft:marker,tag=BoltThrower,distance=..1] run function exigence:door/vault/bolt/trial/proc/proc_drop_blocks
+execute if score @s trial.timer matches 400 if entity @s[tag=!Trial] as @n[type=minecraft:marker,tag=BoltThrower,distance=..1] run function exigence:door/vault/bolt/trial/proc/proc_drop_blocks
+execute if score @s trial.timer matches 520 if entity @s[tag=!Trial] as @n[type=minecraft:marker,tag=BoltThrower,distance=..1] run function exigence:door/vault/bolt/trial/proc/proc_drop_blocks
+#   If endless, one more drop block every 5 seconds
+scoreboard players operation #temp Temp = @s trial.timer
+scoreboard players operation #temp Temp %= 100 number
+execute if entity @s[tag=Endless] if score @s trial.timer matches 520.. if score #temp Temp matches 0 as @n[type=minecraft:marker,tag=BoltThrower,distance=..1] run function exigence:door/vault/bolt/trial/drop_block/generate_single
 
 # Dropblocks update
 #   Reduce scores

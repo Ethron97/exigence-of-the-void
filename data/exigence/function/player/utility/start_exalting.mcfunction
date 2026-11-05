@@ -13,7 +13,8 @@ title @s title [{text:"Campaign Victory",color:"aqua"}]
 tag @s add Exalting
 
 # Set dead players to adventure
-execute as @s[scores={dead=2},tag=ActivePlayer] run function exigence:player/death/revive
+#execute as @s[scores={dead=2},tag=ActivePlayer] run function exigence:player/death/revive
+execute in exigence:profile_data as @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,tag=ProfileNode,tag=Active] run function exigence:player/death/check_revive_player
 
 # Give all players resistance/fire resistance/regen so they can't die (for simplicity)
 effect give @s resistance infinite 4 true

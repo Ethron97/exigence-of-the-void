@@ -7,8 +7,10 @@
 
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Leaving Item Shop
 
+tellraw @s [{text:"<< ",color:"yellow"},{text:"Left ",color:"gray"},{text:"Item Shop",color:"gold"}]
+
 tag @s remove ItemShop
-team leave @s
+function exigence:profile/player/team/join
 
 tp @s ~3 ~ ~
 playsound minecraft:entity.enderman.teleport ambient @s ~ ~1000 ~ 1000 1

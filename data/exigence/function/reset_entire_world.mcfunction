@@ -48,6 +48,10 @@ execute in exigence:hub run function exigence:hub/ember_shop/admin/update_librar
 # Prevent online players from needing to tp/remove tags (because when the scoreboard is replaced, it would detect null as != 0)
 scoreboard players set @a quits 0
 team leave @a
+clear @a
+execute as @a run function exigence:scoreboard/generated_functions/revoke_advancements
+advancement revoke @a only exigence:story/win_difficulty_0
+advancement revoke @a only exigence:story/root
 
 ## Initialize scores
 # Max attempts of a treasure node before giving up treasure drop

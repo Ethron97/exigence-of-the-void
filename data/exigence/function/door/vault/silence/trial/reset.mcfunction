@@ -11,7 +11,9 @@ execute if score toggle.trial debug matches 1 if score debug.level debug matches
 kill @e[type=minecraft:marker,tag=SilenceTrialSetup,distance=..24]
 
 # Reset tags
+tag @s remove Trial
 tag @s remove Crucible
+tag @s remove Endless
 tag @s remove ETICK
 tag @a remove TrialSounds_Silence
 
@@ -31,3 +33,6 @@ execute if entity @s[tag=Hub] run bossbar set exigence:hub_trial_silence visible
 # Update status
 execute if entity @s[tag=Game] run scoreboard players set game.silence.trial trial.status 0
 execute if entity @s[tag=Hub] run scoreboard players set hub.silence.trial trial.status 0
+
+# If hub, reset board
+execute if entity @s[tag=Hub] run function exigence:hub/hub_trials/end/silence

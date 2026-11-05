@@ -32,7 +32,11 @@ execute if score #creating_coop Temp matches 1 store result entity @s data.custo
 execute if score #creating_coop Temp matches 1 run scoreboard players operation @s profile.node.coop_profile_id_original = @s profile.node.coop_profile_id
 
 # Assign to marker customdata
-data modify entity @s data.custom_data.profile_identifier set from storage exigence:temp identifier
+data modify entity @s data.custom_data.profile_icon set from storage exigence:profile_icon icon_output
+# Extract item from sprite (bleh)
+data modify storage exigence:profile_icon sprite set from storage exigence:profile_icon icon_output.sprite
+function exigence:profile/profile_node/new/identifier/private/get_item_from_sprite
+data modify entity @s data.custom_data.profile_identifier set from storage exigence:profile_icon item_output
 
 # Copy data from item
 data modify entity @s CustomName.extra[0].text set from entity @e[x=0,y=0,z=0,dx=15,dy=256,dz=15,type=minecraft:item,limit=1] Item.components."minecraft:profile".name

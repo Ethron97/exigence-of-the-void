@@ -21,7 +21,7 @@ scoreboard players set #player_index Temp 1
 scoreboard players reset #coop_profile_id Temp
 
 # Create profile for main player
-data remove storage exigence:temp identifier
+data remove storage exigence:profile_icon icon_output
 function exigence:hub/profile_selector/menu/display/profile/create_new with entity @s item.components."minecraft:custom_data"
 #   OUTPUT: profile.node.profile_id of this profile
 scoreboard players operation #coop_profile_id Temp = #sequence profile.player.profile_id

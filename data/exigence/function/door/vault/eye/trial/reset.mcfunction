@@ -12,7 +12,9 @@ kill @e[type=#exigence:eye_trial,tag=EyeTrialSetup,distance=..24]
 kill @e[type=minecraft:item_display,tag=EyeTrialSetup,distance=..24]
 
 # Reset tags
+tag @s remove Trial
 tag @s remove Crucible
+tag @s remove Endless
 tag @s remove ETICK
 tag @a remove TrialSounds_Eye
 
@@ -37,3 +39,6 @@ execute if entity @s[tag=Hub] run bossbar set exigence:hub_trial_eye visible fal
 # Update status
 execute if entity @s[tag=Game] run scoreboard players set game.eye.trial trial.status 0
 execute if entity @s[tag=Hub] run scoreboard players set hub.eye.trial trial.status 0
+
+# If hub, reset board
+execute if entity @s[tag=Hub] run function exigence:hub/hub_trials/end/eye

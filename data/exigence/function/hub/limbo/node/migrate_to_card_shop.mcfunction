@@ -22,4 +22,14 @@ scoreboard players operation #shop.void_crystals ember_shop = @s hub.room.void_c
 
 # Migrate players
 #   Also loads shop (as first player)
-execute as @a[scores={hub.player.room_id=1..}] if score @s hub.player.room_id = #compare hub.room.room_id run function exigence:hub/ember_shop/access/enter
+execute as @a[scores={hub.player.room_id=1..}] if score @s hub.player.room_id = #compare hub.room.room_id run tag @s add EnteringEmberShop
+execute as @a[tag=EnteringEmberShop] run function exigence:hub/ember_shop/access/enter
+
+# Inform self and possible co-op members of loot collected (after they've all entered ember shop)
+execute as @a[tag=EnteringEmberShop] run tellraw @a[tag=EnteringEmberShop] [{selector:"@s",color:"gold"},{text:" escaped with ",color:"gray"}\
+,{score:{name:"@s",objective:"hub.player.embers_retrieved"},color:"aqua"},{sprite:"exigence:item/ancient_ember",atlas:"items",color:"white"},{text:"  "}\
+,{score:{name:"@s",objective:"hub.player.coins_retrieved"},color:"gold"},{sprite:"exigence:item/coin",atlas:"items",color:"white"},{text:"  "}\
+,{score:{name:"@s",objective:"hub.player.research_retrieved"},color:"light_purple"},{sprite:"minecraft:item/prize_pottery_sherd",atlas:"items",color:"white"},{text:"  "}\
+,{score:{name:"@s",objective:"hub.player.money_retrieved"},color:"gold"},{sprite:"exigence:item/glint",atlas:"items",color:"white"}]
+
+tag @a[tag=EnteringEmberShop] remove EnteringEmberShop

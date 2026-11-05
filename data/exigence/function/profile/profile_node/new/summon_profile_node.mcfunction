@@ -15,6 +15,8 @@ execute if score toggle.profile debug matches 1 if score debug.level debug match
 
 # Clone blocks
 clone 0 0 0 15 3 0 ~ ~-1 ~
+#   If ADMIN tag, clone prefilled-chests
+execute if entity @s[tag=Admin] run clone 4 1 2 5 3 2 ~4 ~ ~
 setblock ~ ~-1 ~ gold_block
 
 # Prep data
@@ -23,10 +25,10 @@ execute store result storage exigence:temp player_id int 1 run scoreboard player
 scoreboard players operation #compare career.player_id = @s career.player_id
 scoreboard players operation #compare career.profiles_created = @s career.profiles_created
 
-# Get identifier (outputs to exigence:temp identifier)
+# Get identifier (outputs to exigence:profile_icon icon_output)
 execute unless score #creating_coop Temp matches 1 run function exigence:profile/profile_node/new/identifier/generate_identifier
 #   IF COOP: Only generate new one if there is not one already popualated
-execute if score #creating_coop Temp matches 1 unless data storage exigence:temp identifier run function exigence:profile/profile_node/new/identifier/generate_identifier
+execute if score #creating_coop Temp matches 1 unless data storage exigence:profile_icon icon_output run function exigence:profile/profile_node/new/identifier/generate_identifier
 
 # Get name from player node
 execute in exigence:profile_data as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] if score @s profile.node.player_id = #compare career.player_id run data modify storage exigence:temp name set from entity @s data.custom_data.name

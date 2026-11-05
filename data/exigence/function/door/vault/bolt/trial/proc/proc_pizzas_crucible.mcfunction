@@ -35,6 +35,7 @@ execute store result score #random Random if score @s trial.timer matches 400.. 
 execute if score #random Random matches 1 run function exigence:door/vault/bolt/trial/pizza/new_pizza
 
 # Reset timer
-execute store result score @s trial.timer.cooldown if score @s trial.timer matches ..200 run random value 12..55
-execute store result score @s trial.timer.cooldown if score @s trial.timer matches 201..400 run random value 10..36
-execute store result score @s trial.timer.cooldown if score @s trial.timer matches 400.. run random value 8..27
+## SWITCH
+execute store result score @s trial.timer.cooldown if score @s trial.timer matches ..200 run return run random value 12..55
+execute store result score @s trial.timer.cooldown if score @s trial.timer matches 201..400 run return run random value 10..36
+execute store result score @s trial.timer.cooldown if score @s trial.timer matches 400.. run return run random value 8..27

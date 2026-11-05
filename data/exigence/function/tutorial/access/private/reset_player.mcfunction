@@ -8,7 +8,7 @@
 
 clear @s
 tag @s remove Tutorial
-team leave @s
+function exigence:profile/player/team/join
 effect clear @s
 attribute @s minecraft:safe_fall_distance modifier add exigence:safe_fall 100 add_value
 attribute @s minecraft:waypoint_receive_range base set 0

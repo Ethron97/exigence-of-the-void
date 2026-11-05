@@ -7,8 +7,10 @@
 
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Kicking from ember shop
 
+tellraw @s [{text:"<< ",color:"yellow"},{text:"Left ",color:"gray"},{text:"Ember Shop",color:"aqua"}]
+
 tag @s remove EmberShop
-team leave @s
+function exigence:profile/player/team/join
 
 # Update bossbar visibility
 function exigence:bossbar/ember_shop/update_visibility
@@ -20,6 +22,7 @@ execute at @s run playsound minecraft:entity.player.teleport player @s ~ ~1000 ~
 function exigence:hub/ember_shop/node/kill_interaction
 
 scoreboard players reset @s shop.player.looking_at_idid
+scoreboard players reset @s hub.player.embers_retrieved
 
 # Teleport leftover items (insurance)
 function exigence:player/utility/teleport_nearby_items_here

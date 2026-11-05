@@ -39,3 +39,38 @@ say test
 #tellraw @s [{nbt:"lore",source:"storage",storage:'exigence:tellraw',interpret:true}]
 
 #tellraw @s [{nbt:"SelectedItem.components.'minecraft:lore'",source:"entity",entity:"@s",interpret:true,separator:'{text:"\n"}'}]
+
+
+tellraw @s [{sprite:"minecraft:item/diamond",atlas:"items",color:"white"}\
+,{sprite:"minecraft:item/diamond",atlas:"items",color:"yellow"}\
+,{sprite:"minecraft:item/diamond",atlas:"items",color:"gold"}\
+,{sprite:"minecraft:item/diamond",atlas:"items",color:"red"}\
+,{sprite:"minecraft:item/diamond",atlas:"items",color:"dark_red"}\
+,{sprite:"minecraft:item/diamond",atlas:"items",color:"dark_purple"}\
+,{sprite:"minecraft:item/diamond",atlas:"items",color:"light_purple"}\
+,{sprite:"minecraft:item/diamond",atlas:"items",color:"aqua"}\
+,{sprite:"minecraft:item/diamond",atlas:"items",color:"dark_aqua"}\
+,{sprite:"minecraft:item/diamond",atlas:"items",color:"blue"}\
+,{sprite:"minecraft:item/diamond",atlas:"items",color:"dark_blue"}\
+,{sprite:"minecraft:item/diamond",atlas:"items",color:"black"}\
+,{sprite:"minecraft:item/diamond",atlas:"items",color:"dark_gray"}\
+,{sprite:"minecraft:item/diamond",atlas:"items",color:"gray"}\
+,{sprite:"minecraft:item/diamond",atlas:"items",color:"green"}\
+,{sprite:"minecraft:item/diamond",atlas:"items",color:"dark_green"}]
+
+tellraw @s [{sprite:"minecraft:item/snowball",atlas:"items",color:"white"}\
+,{sprite:"minecraft:item/snowball",atlas:"items",color:"yellow"}\
+,{sprite:"minecraft:item/snowball",atlas:"items",color:"gold"}\
+,{sprite:"minecraft:item/snowball",atlas:"items",color:"red"}\
+,{sprite:"minecraft:item/snowball",atlas:"items",color:"dark_red"}\
+,{sprite:"minecraft:item/snowball",atlas:"items",color:"dark_purple"}\
+,{sprite:"minecraft:item/snowball",atlas:"items",color:"light_purple"}\
+,{sprite:"minecraft:item/snowball",atlas:"items",color:"aqua"}\
+,{sprite:"minecraft:item/snowball",atlas:"items",color:"dark_aqua"}\
+,{sprite:"minecraft:item/snowball",atlas:"items",color:"blue"}\
+,{sprite:"minecraft:item/snowball",atlas:"items",color:"dark_blue"}\
+,{sprite:"minecraft:item/snowball",atlas:"items",color:"black"}\
+,{sprite:"minecraft:item/snowball",atlas:"items",color:"dark_gray"}\
+,{sprite:"minecraft:item/snowball",atlas:"items",color:"gray"}\
+,{sprite:"minecraft:item/snowball",atlas:"items",color:"green"}\
+,{sprite:"minecraft:item/snowball",atlas:"items",color:"dark_green"}]

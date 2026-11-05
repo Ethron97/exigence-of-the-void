@@ -14,7 +14,7 @@ scoreboard players set #did_coop_enter Temp 0
 
 scoreboard players operation #compare profile.player.coop_profile_id = @s profile.player.coop_profile_id
 
-# Look for other co-op members in a Item Shop (even if they are offline)
+# Look for other co-op members in predungeon (even if they are offline)
 execute in exigence:hub as @e[x=100,y=199,z=100,dx=0,dy=1,dz=0,type=minecraft:marker,scores={hub.room.room_type=2},tag=RoomNode] \
 if score @s hub.entity.coop_profile_id = #compare profile.player.coop_profile_id run scoreboard players set #did_coop_enter Temp 1
 

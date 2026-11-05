@@ -13,15 +13,18 @@ execute if score toggle.trial debug matches 1 if score debug.level debug matches
 # Reset scores
 scoreboard players set @s trial.timer 0
 
-# Add crucible tag if applicable
+# Add applicable tag
+execute if entity @a[scores={game.player.vault_code=1},tag=Trial,distance=..64] run tag @s add Trial
 execute if entity @a[scores={game.player.vault_code=1},tag=Crucible,distance=..64] run tag @s add Crucible
+execute if entity @a[scores={game.player.vault_code=1},tag=Endless,distance=..64] run tag @s add Endless
 
 # Copy player id
 scoreboard players operation @s hub.entity.player_id = @p[scores={game.player.vault_code=1},distance=..64] career.player_id
 
 # Set fire
-execute if entity @s[tag=!Crucible] run function exigence:door/vault/_trial/fire/_set_trial
+execute if entity @s[tag=Trial] run function exigence:door/vault/_trial/fire/_set_trial
 execute if entity @s[tag=Crucible] run function exigence:door/vault/_trial/fire/_set_crucible
+execute if entity @s[tag=Endless] run function exigence:door/vault/_trial/fire/_set_crucible
 
 # Add etick so we know to tick it
 tag @s add ETICK

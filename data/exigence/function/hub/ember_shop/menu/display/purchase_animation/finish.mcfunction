@@ -1,7 +1,7 @@
 # Finish purchase animation
 
 ## CONSTRAINTS
-#   AS/AT card display
+#   AS card display
 
 #====================================================================================================
 
@@ -14,6 +14,9 @@ fill 52 210 -1 52 210 1 air replace soul_fire
 # Kill any leftover runes
 kill @e[type=minecraft:item_display,tag=Rune,distance=..10]
 kill @e[type=minecraft:item_display,tag=Piece,distance=..10]
+
+# Kill any leftover lightnings
+kill @e[type=minecraft:block_display,tag=lightning,distance=..10]
 
 # The purchasing card turns into a real card
 execute at @s run function exigence:hub/ember_shop/menu/display/card/give_card

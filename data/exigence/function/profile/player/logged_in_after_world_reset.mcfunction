@@ -30,5 +30,10 @@ tag @s remove InviteSent
 tag @s remove Carrying
 tag @s remove CurrentlyReflecting
 
+# Revoke advancements
+function exigence:scoreboard/generated_functions/revoke_advancements
+advancement revoke @s only exigence:story/win_difficulty_0
+advancement revoke @s only exigence:story/root
+
 # Teleport to ship
 execute in exigence:hub run tp @s -10.5 202.0 -64.5 -90 0

@@ -7,8 +7,10 @@
 
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Leaving Predungeon
 
+tellraw @s [{text:"<< ",color:"yellow"},{text:"Left ",color:"gray"},{text:"Predungeon",color:"dark_purple"}]
+
 tag @s remove Predungeon
-team leave @s
+function exigence:profile/player/team/join
 
 tp @s ~ ~-3 ~-66
 playsound minecraft:entity.enderman.teleport ambient @s ~ ~1000 ~ 1000 1

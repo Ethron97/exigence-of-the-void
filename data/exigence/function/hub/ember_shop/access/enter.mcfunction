@@ -10,6 +10,8 @@ execute if score toggle.hub debug matches 1 if score debug.level debug matches 3
 # Leave limbo (players only ever join the ember shop from Limbo)
 execute if entity @s[tag=Limbo] run function exigence:hub/limbo/access/leave
 
+tellraw @s [{text:">> ",color:"green"},{text:"Entered ",color:"gray"},{text:"Ember Shop",color:"aqua"}]
+
 tag @s add EmberShop
 team join EmberShop @s
 

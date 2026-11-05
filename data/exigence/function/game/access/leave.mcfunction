@@ -30,7 +30,7 @@ tag @s remove PreviewingTeleport
 tag @s remove ReduceHeighten
 tag @s remove Exalting
 
-team leave @s
+function exigence:profile/player/team/join
 gamemode adventure @s
 effect clear @a
 stopsound @a ambient
@@ -73,6 +73,9 @@ clear @s #exigence:win_clear
 # EMBERS
 #   Clear embers and remember amount
 execute store result score @s hub.player.embers_retrieved run clear @s minecraft:blaze_powder
+execute store result score @s hub.player.coins_retrieved run clear @s minecraft:gold_nugget 0
+execute store result score @s hub.player.research_retrieved run clear @s minecraft:prize_pottery_sherd 0
+execute store result score @s hub.player.money_retrieved run clear @s minecraft:diamond 0
 
 # COIN CONVERSION
 #   Clear gold nuggets and remember amount

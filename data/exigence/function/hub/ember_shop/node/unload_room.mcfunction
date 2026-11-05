@@ -44,7 +44,7 @@ function exigence:hub/ember_shop/node/kill_all_interactions
 
 # Unload predungeon menu
 execute positioned ~5 ~ ~ run kill @n[type=minecraft:marker,tag=EmberShopMenuNode,distance=..10]
-
+execute positioned ~5 ~ ~ run kill @e[type=minecraft:block_display,tag=lightning,distance=..10]
 execute positioned ~5 ~ ~ run kill @e[type=#exigence:display,tag=EmberShopDisplay,distance=..10]
 execute positioned ~5 ~ ~ run kill @e[type=minecraft:marker,tag=EmberShopDisplay,distance=..10]
 # Set fire off

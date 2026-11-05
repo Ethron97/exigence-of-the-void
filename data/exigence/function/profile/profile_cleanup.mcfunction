@@ -9,6 +9,9 @@
 execute unless dimension exigence:profile_data run return run say (C) profile/profile_cleanup not run in profile_data dimension
 #====================================================================================================
 
+# Cleanup player teams
+execute as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] run function exigence:profile/player_node/team/remove_team with entity @s data.custom_data
+
 # Remove entites
 #   Player nodes
 kill @e[x=0,y=0,z=32,dx=15,dy=15,dz=15]
@@ -29,7 +32,7 @@ scoreboard players set #sequence profile.player.profile_id 0
 
 # Clear blocks
 #   Profile nodes
-fill 1 1 2 15 1 15 air
+#fill 1 1 2 15 1 15 air
 fill 0 4 0 15 128 15 air
 fill 0 129 0 15 255 15 air
 #   Player nodes

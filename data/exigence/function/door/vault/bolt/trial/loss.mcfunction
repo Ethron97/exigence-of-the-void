@@ -8,6 +8,7 @@
 execute if score toggle.trial debug matches 1 if score debug.level debug matches 3.. run say (D3 Trial) Bolt trial loss
 
 # Reset vault
+#   If Endless, saves trail time to #trial_time Temp
 execute at @s run function exigence:door/vault/bolt/trial/reset
 
 # Try loss function as player, else queue

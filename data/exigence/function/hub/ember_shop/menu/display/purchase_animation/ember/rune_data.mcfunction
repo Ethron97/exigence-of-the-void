@@ -13,12 +13,17 @@ data modify entity @s teleport_duration set value 3
 # Set teleport-up-distance (10000 = 1.0000)
 #   initial value = blocks (1 - rate of decay)
 #scoreboard players set @s Random 15000
-execute store result score @s Random run random value 15000..20000
+#execute store result score @s Random run random value 10000..14000
 
 # Randomize target coordinates
 execute store result entity @s item.components."minecraft:custom_data".target_x double 0.1 run random value 490..500
 execute store result entity @s item.components."minecraft:custom_data".target_y double 0.1 run random value 2120..2150
 execute store result entity @s item.components."minecraft:custom_data".target_z double 0.1 run random value -20..30
+
+function exigence:hub/ember_shop/menu/display/purchase_animation/private/get_distance_to_big_card_center with entity @s item.components."minecraft:custom_data"
+#   Function returns 1.4 = 14
+scoreboard players operation @s Random *= 100 number
+scoreboard players operation @s Random *= 3 number
 
 #execute store result entity @s item.components."minecraft:custom_data".rot_a double 0.01 run random value 50..100
 #execute store result entity @s item.components."minecraft:custom_data".rot_b double 0.01 run random value 50..100

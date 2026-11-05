@@ -12,7 +12,9 @@ kill @e[type=minecraft:marker,tag=FlowTrialSetup,distance=..24]
 kill @e[type=minecraft:block_display,tag=FlowTrialSetup,distance=..24]
 
 # Reset tags
+tag @s remove Trial
 tag @s remove Crucible
+tag @s remove Endless
 tag @s remove ETICK
 tag @a remove TrialSounds_Flow
 
@@ -36,3 +38,6 @@ execute if entity @s[tag=Hub] run bossbar set exigence:hub_trial_flow visible fa
 # Update status
 execute if entity @s[tag=Game] run scoreboard players set game.flow.trial trial.status 0
 execute if entity @s[tag=Hub] run scoreboard players set hub.flow.trial trial.status 0
+
+# If hub, reset board
+execute if entity @s[tag=Hub] run function exigence:hub/hub_trials/end/flow

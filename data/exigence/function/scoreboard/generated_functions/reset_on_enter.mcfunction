@@ -49,6 +49,7 @@ scoreboard players set @s game.player.time_off_level 0
 scoreboard players set @s game.player.used.potion 0
 scoreboard players set @s game.player.used.snowball 0
 scoreboard players set @s game.player.vault_code 0
+scoreboard players set @s game.player.track_length 0
 scoreboard players set @s profile.data.altar.cr.altars_enhanced 0
 scoreboard players set @s profile.data.altar.cr.altars_lit 0
 scoreboard players set @s profile.data.altar.cr.altars_red 0

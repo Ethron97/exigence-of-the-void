@@ -8,6 +8,7 @@
 # Assign player id
 scoreboard players operation @s profile.node.player_id = #sequence career.player_id
 scoreboard players set @s profile.node.player_is_online 1
+execute store result entity @s data.custom_data.player_id int 1 run scoreboard players get @s profile.node.player_id
 
 # Copy data from item
 execute positioned 0.5 1.5 32.5 run data modify entity @s equipment.head set from entity @n[type=minecraft:item,distance=..1] Item

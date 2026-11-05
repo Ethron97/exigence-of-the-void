@@ -49,5 +49,27 @@ execute if score #temp Temp matches 10 as @e[type=minecraft:item_display,tag=Pie
 ,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,1f,0f,0f],translation:[0f,0f,0f],scale:[0.5f,0.5f,0.5f]}}
 
 #====================================================================================================
+## FIREWORKS
+# Felt delayed, so -2 ticks out from finish
+execute if score #temp Temp matches 2 at @s run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:"minecraft:firework_rocket",components:{"minecraft:fireworks":{\
+explosions:[{shape:"large_ball",colors:[1502427],fade_colors:[1502427],has_trail:false,has_twinkle:false}]\
+}}}}
+
+#====================================================================================================
+## LIGHTNING
+# Lightning circle testing
+#execute positioned ~6.4 ~4.5 ~ run function exigence:hub/ember_shop/menu/display/purchase_animation/lightning/circle_2
+execute positioned ~6.4 ~4.5 ~ as @e[type=minecraft:block_display,tag=lightning,distance=..10] run function exigence:hub/ember_shop/menu/display/purchase_animation/lightning/lightning_tick
+execute positioned ~6.4 ~4.5 ~ run kill @e[type=minecraft:block_display,tag=lightning,distance=..10,scores={Random=..0}]
+
+# Unless we are in the final stage, spawn new lightnings based on progress:
+execute if score #temp Temp matches 20.. run function exigence:hub/ember_shop/menu/display/purchase_animation/private/lightning_pacer
+
+#execute if score seconds.cooldown tick_counter matches 1 run function exigence:hub/ember_shop/menu/display/purchase_animation/lightning/try_spawn_lightning
+#execute if score seconds.cooldown tick_counter matches 6 run function exigence:hub/ember_shop/menu/display/purchase_animation/lightning/try_spawn_lightning
+#execute if score seconds.cooldown tick_counter matches 11 run function exigence:hub/ember_shop/menu/display/purchase_animation/lightning/try_spawn_lightning
+#execute if score seconds.cooldown tick_counter matches 16 run function exigence:hub/ember_shop/menu/display/purchase_animation/lightning/try_spawn_lightning
+
+#====================================================================================================
 ## FINISH
 execute if score shop.purchase_animation ember_shop >= shop.animation_duration ember_shop run function exigence:hub/ember_shop/menu/display/purchase_animation/finish

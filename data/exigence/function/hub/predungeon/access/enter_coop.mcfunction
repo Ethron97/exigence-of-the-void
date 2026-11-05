@@ -7,11 +7,16 @@
 
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Entering predungeon (COOP)
 
+tellraw @s [{text:">> ",color:"green"},{text:"Entered ",color:"gray"},{text:"Predungeon",color:"dark_purple"}]
+
 tag @s add Predungeon
 team join Predungeon @s
 
-tp @s ~ ~3 ~65.5
-playsound minecraft:entity.enderman.teleport ambient @s ~ ~1000 ~ 1000 1
+# Entered via door
+tp @s[tag=!Following] ~ ~3 ~65.5
+# Entered via following
+tp @s[tag=Following] 0.5 209.0 101.5 0 0
+execute at @s run playsound minecraft:entity.enderman.teleport ambient @s ~ ~1000 ~ 1000 1
 
 # Store ids
 scoreboard players operation #compare career.player_id = @s career.player_id
@@ -22,6 +27,10 @@ execute at @s run function exigence:hub/predungeon/node/setup_interaction
 
 # Initialize item limit upon entering
 function exigence:player/utility/calculate_item_limit
+
+tag @s remove Following
+
+scoreboard players reset @s FollowToPredungeon
 
 #====================================================================================================
 # Assign room ids

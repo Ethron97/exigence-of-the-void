@@ -7,7 +7,7 @@
 
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) Kicking from predungeon
 
-tellraw @s [{text:"You were kicked from the Predungeon",color:"red"}]
+tellraw @s [{text:"<< ",color:"red"},{text:"You were kicked from the Predungeon",color:"red"}]
 
 tag @s remove Predungeon
 
@@ -15,7 +15,7 @@ execute in exigence:hub run tp @s 0.5 200.0 18.5
 execute at @s run playsound minecraft:entity.enderman.teleport ambient @s ~ ~1000 ~ 1000 1
 
 # Reset team
-team leave @s
+function exigence:profile/player/team/join
 
 # Interaction gets removed on Unload room
 

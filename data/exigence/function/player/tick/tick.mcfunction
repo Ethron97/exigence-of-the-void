@@ -32,6 +32,9 @@ execute if score game.max_menace game.state matches 1 run scoreboard players add
 # If player takes 5 hearts (100 damage) and is not dead, gain +1 red
 #execute if entity @e[type=minecraft:player,tag=ActivePlayer] as @a[tag=ActivePlayer] if score @s game.player.damage_taken matches 100.. run function exigence:resources/try_generate {green:0,red:1,aqua:0}
 
+# Music tick
+function exigence:player/music/game/music_update
+
 #====================================================================================================
 # LIVING PLAYER FUNCTIONS:
 execute if score @s dead matches 0 at @s run function exigence:player/tick/tick_alive

@@ -18,6 +18,12 @@ scoreboard objectives remove career.settings.show_resource_overflow
 scoreboard objectives remove career.settings.show_resource_underflow
 scoreboard objectives remove career.settings.objective_bossbar
 scoreboard objectives remove career.tutorial
+scoreboard objectives remove career.vault.bolt_trial_try
+scoreboard objectives remove career.vault.bolt_trial_win
+scoreboard objectives remove career.vault.bolt_crucible_try
+scoreboard objectives remove career.vault.bolt_crucible_win
+scoreboard objectives remove career.vault.bolt_endless_try
+scoreboard objectives remove career.vault.bolt_endless_best
 scoreboard objectives remove dead
 scoreboard objectives remove debug.node_counter
 scoreboard objectives remove debug.vault_pots_1
@@ -150,6 +156,7 @@ scoreboard objectives remove game.player.time_off_level
 scoreboard objectives remove game.player.used.potion
 scoreboard objectives remove game.player.used.snowball
 scoreboard objectives remove game.player.vault_code
+scoreboard objectives remove game.player.track_length
 scoreboard objectives remove game.ravager.detect_thoughts
 scoreboard objectives remove game.ravager.eating_cookie
 scoreboard objectives remove game.warden.sniff_cooldown
@@ -193,6 +200,9 @@ scoreboard objectives remove hub.entity.profile_selector_id
 scoreboard objectives remove hub.entity.room_id
 scoreboard objectives remove hub.locker_room_id
 scoreboard objectives remove hub.player.embers_retrieved
+scoreboard objectives remove hub.player.coins_retrieved
+scoreboard objectives remove hub.player.research_retrieved
+scoreboard objectives remove hub.player.money_retrieved
 scoreboard objectives remove hub.player_entity.query_idid
 scoreboard objectives remove hub.player.consumable_limit
 scoreboard objectives remove hub.player.interaction_cooldown

@@ -57,6 +57,7 @@ execute at @s run function exigence:hub/profile_selector/menu/display/profile/pr
 
 # Load identifier
 data modify entity @s item.components."minecraft:custom_data".identifier set from entity @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] data.custom_data.profile_identifier
+data modify entity @s item.components."minecraft:custom_data".profile_icon set from entity @n[type=minecraft:marker,tag=ProfileNode,distance=..0.1] data.custom_data.profile_icon
 # Load stickers
 function exigence:hub/profile_selector/menu/display/profile/effects/summon_stickers
 

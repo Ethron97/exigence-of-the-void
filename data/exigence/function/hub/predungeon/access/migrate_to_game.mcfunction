@@ -9,7 +9,7 @@
 execute if score toggle.hub debug matches 1 if score debug.level debug matches 3.. run say (D3 Hub) migrate player to game
 
 tag @s remove Predungeon
-team leave @s
+function exigence:profile/player/team/join
 scoreboard players reset @s hub.player.consumable_limit
 scoreboard players reset @s shop.player.looking_at_idid
 scoreboard players reset @s DisableCurrencyWarning

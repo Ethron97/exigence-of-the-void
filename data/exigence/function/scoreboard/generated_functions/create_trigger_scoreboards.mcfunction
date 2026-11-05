@@ -5,6 +5,7 @@ scoreboard objectives add 3 trigger
 scoreboard objectives add 4 trigger
 scoreboard objectives add AcceptCoopInvite trigger
 scoreboard objectives add Admin trigger
+scoreboard objectives add FollowToPredungeon trigger
 scoreboard objectives add DebugMenu trigger
 scoreboard objectives add DeclineCoopInvite trigger
 scoreboard objectives add DisableCurrencyWarning trigger

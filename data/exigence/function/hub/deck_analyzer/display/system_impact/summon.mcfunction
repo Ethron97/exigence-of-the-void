@@ -85,27 +85,27 @@ $summon block_display ^0.8125 ^1.25 ^0.03 {Rotation:$(Rotation),Tags:["Treasure"
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.0f,0.125f,0.01f]}}
 
 $summon block_display ^0.8125 ^1.0625 ^0.03 {Rotation:$(Rotation),Tags:["Ember","BarChart","NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","NewBlockDisplay"]\
-,interpolation_duration:10,billboard:"fixed",brightness:{sky:12,block:12},block_state:{Name:"minecraft:yellow_concrete",Properties:{axis:x}},\
+,interpolation_duration:10,billboard:"fixed",brightness:{sky:12,block:12},block_state:{Name:"minecraft:light_blue_concrete",Properties:{axis:x}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.0f,0.125f,0.01f]}}
 
 $summon block_display ^0.8125 ^0.875 ^0.03 {Rotation:$(Rotation),Tags:["Deck","BarChart","NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","NewBlockDisplay"]\
-,interpolation_duration:10,billboard:"fixed",brightness:{sky:12,block:12},block_state:{Name:"minecraft:yellow_concrete",Properties:{axis:x}},\
+,interpolation_duration:10,billboard:"fixed",brightness:{sky:12,block:12},block_state:{Name:"minecraft:white_concrete",Properties:{axis:x}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.0f,0.125f,0.01f]}}
 
 $summon block_display ^0.8125 ^0.6875 ^0.03 {Rotation:$(Rotation),Tags:["Movement","BarChart","NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","NewBlockDisplay"]\
-,interpolation_duration:10,billboard:"fixed",brightness:{sky:12,block:12},block_state:{Name:"minecraft:yellow_concrete",Properties:{axis:x}},\
+,interpolation_duration:10,billboard:"fixed",brightness:{sky:12,block:12},block_state:{Name:"minecraft:red_concrete",Properties:{axis:x}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.0f,0.125f,0.01f]}}
 
 $summon block_display ^0.8125 ^0.5 ^0.03 {Rotation:$(Rotation),Tags:["Survival","BarChart","NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","NewBlockDisplay"]\
-,interpolation_duration:10,billboard:"fixed",brightness:{sky:12,block:12},block_state:{Name:"minecraft:yellow_concrete",Properties:{axis:x}},\
+,interpolation_duration:10,billboard:"fixed",brightness:{sky:12,block:12},block_state:{Name:"minecraft:green_concrete",Properties:{axis:x}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.0f,0.125f,0.01f]}}
 
 $summon block_display ^0.8125 ^0.3125 ^0.03 {Rotation:$(Rotation),Tags:["Utility","BarChart","NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","NewBlockDisplay"]\
-,interpolation_duration:10,billboard:"fixed",brightness:{sky:12,block:12},block_state:{Name:"minecraft:yellow_concrete",Properties:{axis:x}},\
+,interpolation_duration:10,billboard:"fixed",brightness:{sky:12,block:12},block_state:{Name:"minecraft:purple_concrete",Properties:{axis:x}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.0f,0.125f,0.01f]}}
 
 $summon block_display ^0.8125 ^0.125 ^0.03 {Rotation:$(Rotation),Tags:["Other","BarChart","NewDeckAnalyzerDisplay","DeckAnalyzerDisplay","NewBlockDisplay"]\
-,interpolation_duration:10,billboard:"fixed",brightness:{sky:12,block:12},block_state:{Name:"minecraft:yellow_concrete",Properties:{axis:x}},\
+,interpolation_duration:10,billboard:"fixed",brightness:{sky:12,block:12},block_state:{Name:"minecraft:brown_concrete",Properties:{axis:x}},\
 transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.0f,0.0f,0.0f],scale:[0.0f,0.125f,0.01f]}}
 
 # BAR BACKGROUNDS

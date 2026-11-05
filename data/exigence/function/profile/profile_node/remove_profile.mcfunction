@@ -22,6 +22,9 @@ execute if score @s profile.node.coop_profile_id matches 1.. run function exigen
 #   We don't care about keeping items or book progress.
 execute at @s run fill ~ ~-1 ~ ~15 ~2 ~ air
 
+# Reduce counter
+scoreboard players remove #count profile.player.profile_id 1
+
 # Clear slot id
 #   This should prevent it from being loaded from the selector
 scoreboard players reset @s profile.node.slot_id

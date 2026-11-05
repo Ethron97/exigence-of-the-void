@@ -34,4 +34,6 @@ $execute if score @s profile.player.coop_profile_id matches 1.. as @e[x=0,y=0,z=
 scoreboard players operation #compare career.player_id = @s career.player_id
 $execute as @e[x=0,y=0,z=32,dx=15,dy=15,dz=15,tag=PlayerNode] if score @s profile.node.player_id = #compare career.player_id run scoreboard players set @s player.node.loaded_profile_id $(profile_id)
 
+function exigence:profile/player_node/team/set_prefix
+
 tag @s remove LoadingProfile

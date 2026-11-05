@@ -9,6 +9,11 @@
 # DEBUG
 #say function right
 
+# Is direct function?
+data modify storage exigence:temp function_right set from entity @s data.custom_data.function_right
+execute if data entity @s data.custom_data.function_right on target run return run function exigence:misc/interaction/call_function_right with storage exigence:temp
+#----------------------------------------------------------------------------------------------------
+
 execute on target run scoreboard players operation #compare shop.player.looking_at_idid = @s shop.player.looking_at_idid
 
 # Check cooldown

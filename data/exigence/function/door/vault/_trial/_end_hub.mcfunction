@@ -8,6 +8,9 @@
 # DEBUG
 execute if score toggle.vault debug matches 1 if score debug.level debug matches 3.. run say (D3) Hub trial end
 
+# Endless
+execute if entity @s[tag=Endless] run function exigence:door/vault/_trial/_end_endless
+
 # Reset vault code
 scoreboard players reset @s game.player.vault_code
 
